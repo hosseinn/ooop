@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic">const DefaultWiki=2
+&apos;********************************************************************************
+&apos;Copyright (C) 2003-2005 Laurent Godard
+&apos;lgodard@indesko.com
+
+&apos;This library is free software; you can redistribute it and/or
+&apos;modify it under the terms of the GNU Lesser General Public
+&apos;License as published by the Free Software Foundation; either
+&apos;version 2.1 of the License, or (at your option) any later version.
+
+&apos;This library is distributed in the hope that it will be useful,
+&apos;but WITHOUT ANY WARRANTY; without even the implied warranty of
+&apos;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+&apos;Lesser General Public License for more details.
+&apos;http://www.opensource.org/licenses/lgpl-license.php
+
+&apos;You should have received a copy of the GNU Lesser General Public
+&apos;License along with this library; if not, write to the Free Software
+&apos;Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+&apos;******************************************************************************
+
+const version=&quot;2.3&quot;
+const nbLangues=17
+public WikipediaConf(1 to nbLangues, 0 to 13)
+global indexWikiLang
+
+
+dim oDlg
+
+Sub StarWithDefaultLanguage
+	call main(True)
+end Sub
+
+Sub StartWithChooseBox
+	call main(False)
+end sub
+
+&apos;-------------------------------
+Sub Main(defaultLanguage as boolean)
+
+dim message as string
+
+call DefineWikis
+
+indexWikiLang = WikiIndexFromISO(checkOOoLanguage)
+
+&apos;Other than windows
+if getGUIType&lt;&gt;1 and not checkHTTP then
+	message=WikipediaConf(indexWikiLang,5)+chr(13)+chr(13) _
+			+WikipediaConf(indexWikiLang,6)+chr(13) _
+			+WikipediaConf(indexWikiLang,7)
+	msgbox message,48,&quot;OOoWikipedia&quot;
+	exit sub
+endif
+
+if not defaultLanguage then
+ 	call ChooseWikipedia(false)
+endif
+
+if indexWikiLang &lt;&gt; -1 then
+	Call CheckWiki(indexWikiLang)
+endif
+
+End Sub
+&apos;----------------------
+sub DefineWikis()
+
+dim CurLang as long
+
+&apos;fr
+CurLang=1
+WikipediaConf(CurLang,0)=&quot;fr&quot;
+WikipediaConf(CurLang,1)=&quot;Français&quot;
+WikipediaConf(CurLang,2)=&quot;http://fr.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Consulter&quot;
+WikipediaConf(CurLang,4)=&quot;Entrer le mot à chercher :&quot;
+WikipediaConf(CurLang,5)=&quot;Aucun navigateur n&apos;est lié à OOo&quot;
+WikipediaConf(CurLang,6)=&quot;Veuiller remplir le paramètre HTTP situé dans le menu &quot;
+WikipediaConf(CurLang,7)=&quot;Outils &gt; Options &gt; OpenOffice.org &gt; programmes Auxiliaires&quot;
+
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;A propos de OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Outil offert sous license LGPL&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia direct&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia au choix&quot;
+WikipediaConf(CurLang,12)=&quot;Installation terminée !&quot;
+WikipediaConf(CurLang,13)=&quot;Merci à tous les traducteurs&quot;
+
+
+&apos;en
+CurLang=2
+WikipediaConf(CurLang,0)=&quot;en&quot;
+WikipediaConf(CurLang,1)=&quot;English&quot;
+WikipediaConf(CurLang,2)=&quot;http://en.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Go&quot;
+WikipediaConf(CurLang,4)=&quot;Enter a word to find :&quot;
+WikipediaConf(CurLang,5)=&quot;No browser linked to OOo&quot;
+WikipediaConf(CurLang,6)=&quot;Please fill the HTTP parameter located in the menu&quot;
+WikipediaConf(CurLang,7)=&quot;Tools &gt; Options &gt; OpenOffice.org &gt; Programmes Auxiliaires&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;About OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Tool offered under LGPL license&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Direct&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Choice&quot;
+WikipediaConf(CurLang,12)=&quot;Done !&quot;
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;de
+CurLang=3
+WikipediaConf(CurLang,0)=&quot;de&quot;
+WikipediaConf(CurLang,1)=&quot;Deutsch&quot;
+WikipediaConf(CurLang,2)=&quot;http://de.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Los&quot;
+WikipediaConf(CurLang,4)=&quot;Zu suchendes Wort eingeben:&quot;
+WikipediaConf(CurLang,5)=&quot;Kein Browser mit OOo verbunden.&quot;
+WikipediaConf(CurLang,6)=&quot;Bitte füllen Sie die HTTP-Parameter im folgenden Menue aus:&quot;
+WikipediaConf(CurLang,7)=&quot;Extras &gt; Optionen &gt; OpenOffice.org &gt; Hilfsprogramme&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;Über OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Programm steht unter der LGPL-Lizenz&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Direkktaufruf&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Auswahl&quot;
+WikipediaConf(CurLang,12)=&quot;Fertig!&quot;
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;it
+CurLang=4
+WikipediaConf(CurLang,0)=&quot;it&quot;
+WikipediaConf(CurLang,1)=&quot;Italiano&quot;
+WikipediaConf(CurLang,2)=&quot;http://it.wikipedia.org/wiki/Speciale:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Vai&quot;
+WikipediaConf(CurLang,4)=&quot;Inserisci una parola da ricercare:&quot;
+WikipediaConf(CurLang,5)=&quot;Nessun Navigatore collegato a OOo&quot;
+WikipediaConf(CurLang,6)=&quot;Per favore introducete il parametro HTTP situato all&apos;interno del menu&quot;
+WikipediaConf(CurLang,7)=&quot;Strumenti &gt; Opzioni &gt; OpenOffice.org &gt; Programmi Ausiliari&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;Informazioni su OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Tool rilasciato sotto licenza LGPL&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia diretta&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia a scelta lingua&quot;
+WikipediaConf(CurLang,12)=&quot;Installazione completata!&quot;
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;es
+CurLang=5
+WikipediaConf(CurLang,0)=&quot;es&quot;
+WikipediaConf(CurLang,1)=&quot;Español&quot;
+WikipediaConf(CurLang,2)=&quot;http://es.wikipedia.org/wiki/Especial:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Ir&quot;
+WikipediaConf(CurLang,4)=&quot;Enter a word to find :&quot;
+WikipediaConf(CurLang,5)=&quot;No browser linked to OOo&quot;
+WikipediaConf(CurLang,6)=&quot;Please fill the HTTP parameter located in the menu&quot;
+WikipediaConf(CurLang,7)=&quot;Tools &gt; Options &gt; OpenOffice.org &gt; Programmes Auxiliaires&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;About OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Tool offered under LGPL license&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Direct&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Choice&quot;
+WikipediaConf(CurLang,12)=&quot;Done !&quot;
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;ca
+CurLang=6
+WikipediaConf(CurLang,0)=&quot;ca&quot;
+WikipediaConf(CurLang,1)=&quot;Català&quot;
+WikipediaConf(CurLang,2)=&quot;http://ca.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=V%C3%A9s-hi&quot;
+WikipediaConf(CurLang,4)=&quot;Introduïu una cerca :&quot;
+WikipediaConf(CurLang,5)=&quot;No hi ha cap navegador associat a l&apos;OOo&quot;
+WikipediaConf(CurLang,6)=&quot;Introduïu el paràmetre HTTP que situat en el menu&quot;
+WikipediaConf(CurLang,7)=&quot;Eines &gt; Opcions &gt; OpenOffice.org &gt; Programes externs&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;Quant a l&apos;OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Eina sota la llicència LGPL&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Directe&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Selecció&quot;
+WikipediaConf(CurLang,12)=&quot;Fet !&quot; 
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;sl
+CurLang=7
+WikipediaConf(CurLang,0)=&quot;sl&quot;
+WikipediaConf(CurLang,1)=&quot;Slovenščina&quot;
+WikipediaConf(CurLang,2)=&quot;http://sl.wikipedia.org/wiki/Posebno:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Pojdi&quot;
+WikipediaConf(CurLang,4)=&quot;Vnesite iskani pojem :&quot;
+WikipediaConf(CurLang,5)=&quot;V OOo ni nastavljen privzeti brskalnik&quot;
+WikipediaConf(CurLang,6)=&quot;Vnesite parameter HTTP v meniju&quot;
+WikipediaConf(CurLang,7)=&quot;Orodja &gt; Možnosti &gt; OpenOffice.org &gt; Zunanji programi&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;O programu OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Orodje je pod licenco LGPL&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Neposredno&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Izbira&quot;
+WikipediaConf(CurLang,12)=&quot;Narejeno !&quot;
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+&apos;da
+CurLang=8
+WikipediaConf(CurLang,0)=&quot;da&quot;
+WikipediaConf(CurLang,1)=&quot;Dansk&quot;
+WikipediaConf(CurLang,2)=&quot;http://da.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=go&quot;
+WikipediaConf(CurLang,4)=&quot;Indtast et søgeord:&quot;
+WikipediaConf(CurLang,5)=&quot;Ingen browser tilgængelig for OpenOffice.org&quot;
+WikipediaConf(CurLang,6)=&quot;Udfyld venligst HTTP-parameteren i menuen&quot;
+WikipediaConf(CurLang,7)=&quot;Funktioner -&gt; Indstillinger -&gt; OpenOffice.org -&gt; Eksterne programmer&quot;
+WikipediaConf(CurLang,8)=&quot;Om OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Værktøj under LGPL-licens&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia direkte&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia med valg af sprog&quot;
+WikipediaConf(CurLang,12)=&quot;Færdig!&quot; 
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;nl
+CurLang=9
+WikipediaConf(CurLang,0)=&quot;nl&quot;
+WikipediaConf(CurLang,1)=&quot;Dutch&quot;
+WikipediaConf(CurLang,2)=&quot;http://nl.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Uitvoeren&quot;
+WikipediaConf(CurLang,4)=&quot;Voer een woord in om op te zoeken :&quot;
+WikipediaConf(CurLang,5)=&quot;Geen browser gekoppeld aan OOo&quot;
+WikipediaConf(CurLang,6)=&quot;Vul a.u.b. de HTTP parameter in het menu in&quot;
+WikipediaConf(CurLang,7)=&quot;Extra &gt; Opties &gt; OpenOffice.org &gt; Hulpprogramma&apos;s&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;Info over OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Werktuig  beschikbaar gemaakt onder de LGPL licentie&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Direct&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Keuze&quot;
+WikipediaConf(CurLang,12)=&quot;Klaar !&quot; 
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;esperanto
+CurLang=10
+WikipediaConf(CurLang,0)=&quot;eo&quot;
+WikipediaConf(CurLang,1)=&quot;Esperanto&quot;
+WikipediaConf(CurLang,2)=&quot;http://eo.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Ek!&quot;
+WikipediaConf(CurLang,4)=&quot;Tajpu la serĉotan vorton:&quot;
+WikipediaConf(CurLang,5)=&quot;Neniu TTT-legilo estas ligita al OOo&quot;
+WikipediaConf(CurLang,6)=&quot;Bonvolu plenigi la HTTP-parametron en la menuo&quot;
+WikipediaConf(CurLang,7)=&quot;Iloj &gt; Opcioj &gt; OpenOffice.org &gt; Aldonaj programoj&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;Pri OOoWikipedia...&quot;
+WikipediaConf(CurLang,9)=&quot;Ilo disdonata laŭ LGPL-licenco&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Rekte&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia kun Elekto&quot;
+WikipediaConf(CurLang,12)=&quot;Preta!&quot;
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;Kiswahili
+CurLang=11
+WikipediaConf(CurLang,0)=&quot;sw&quot;
+WikipediaConf(CurLang,1)=&quot;Kiswahili&quot;
+WikipediaConf(CurLang,2)=&quot;http://sw.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Go&quot;
+WikipediaConf(CurLang,4)=&quot;Andika neno la kutafutia :&quot;
+WikipediaConf(CurLang,5)=&quot;Kipitiapitiaji chochote hakipatikani kwenye OOo&quot;
+WikipediaConf(CurLang,6)=&quot;Tafadhali parameta ya HTTP kwenye orodha ya chaguo&quot;
+WikipediaConf(CurLang,7)=&quot;Vifaa &gt; Chaguo &gt; OpenOffice.org &gt; Programu saidizi&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;Kuhusu OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Programu hii inatolewa kulingana na leseni ya LGPL&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Moja-kwa-moja&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Chagua&quot;
+WikipediaConf(CurLang,12)=&quot;Tayari !&quot;
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;pt-BR
+CurLang=12
+WikipediaConf(CurLang,0)=&quot;pt-BR&quot;
+WikipediaConf(CurLang,1)=&quot;Português do Brasil&quot;
+WikipediaConf(CurLang,2)=&quot;http://pt.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Vai&quot;
+WikipediaConf(CurLang,4)=&quot;Digite a palavra para pesquisar:&quot;
+WikipediaConf(CurLang,5)=&quot;Nenhum navegador associado ao OpenOffice.org&quot;
+WikipediaConf(CurLang,6)=&quot;Por favor, insira os parâmetros HTTP localizado no menu&quot;
+WikipediaConf(CurLang,7)=&quot;Ferramentas &gt; Opções &gt; OpenOffice.org &gt; Programas externos&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;Om OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;Ferramenta licenciada sob a LGPL&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia direto&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia selecionando um idioma&quot;
+WikipediaConf(CurLang,12)=&quot;Concluído !&quot; 
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;ja
+CurLang=13
+WikipediaConf(CurLang,0)=&quot;ja&quot; 
+WikipediaConf(CurLang,1)=&quot;日本語&quot; 
+WikipediaConf(CurLang,2)=&quot;http://ja.wikipedia.org/wiki/Special:Search?search=&quot; 
+WikipediaConf(CurLang,3)=&quot;&amp;go=Go&quot; 
+WikipediaConf(CurLang,4)=&quot;検索単語入力 :&quot; 
+WikipediaConf(CurLang,5)=&quot;OpenOffice.orgにブラウザが設定されていません&quot; 
+WikipediaConf(CurLang,6)=&quot;メニューにあるHTTPパラメーターを設定してください。&quot; 
+WikipediaConf(CurLang,7)=&quot;ツール &gt; オプション &gt; OpenOffice.org &gt; ヘルププログラム&quot; 
+&apos;needed for install process 
+WikipediaConf(CurLang,8)=&quot;About OOoWikipedia ...&quot; 
+WikipediaConf(CurLang,9)=&quot;このツールはLGPLでライセンスされています&quot; 
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia  direct&quot; 
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia  select&quot; 
+WikipediaConf(CurLang,12)=&quot;完了!&quot;
+WikipediaConf(CurLang,13)=&quot;Many thanks to all translators&quot;
+
+&apos;ko
+CurLang=14
+WikipediaConf(CurLang,0)=&quot;ko&quot;
+WikipediaConf(CurLang,1)=&quot;한국어&quot;
+WikipediaConf(CurLang,2)=&quot;http://ko.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Go&quot;
+WikipediaConf(CurLang,4)=&quot;검색을 원하는 단어를 입력하십시오 :&quot;
+WikipediaConf(CurLang,5)=&quot;오픈오피스에 연결된 브라우저가 없습니다.&quot;
+WikipediaConf(CurLang,6)=&quot;메뉴에 있는 HTTP 파라미터를 입력하십시오.&quot;
+WikipediaConf(CurLang,7)=&quot;도구 &gt; 옵션 &gt; OpenOffice.org &gt; 추가 기능&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;About OOoWikipedia ...&quot;
+WikipediaConf(CurLang,9)=&quot;이 프로그램은 LGPL 라이센스를 따릅니다.&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Direct&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Choice&quot;
+WikipediaConf(CurLang,12)=&quot;완료 !&quot;
+WikipediaConf(CurLang,13)=&quot;번역해주신 분들께 감사드립니다.&quot;
+
+&apos;zh
+CurLang=15
+WikipediaConf(CurLang,0)=&quot;zh&quot;
+WikipediaConf(CurLang,1)=&quot;中文&quot;
+WikipediaConf(CurLang,2)=&quot;http://zh.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Go&quot;
+WikipediaConf(CurLang,4)=&quot;输入单词查询 :&quot;
+WikipediaConf(CurLang,5)=&quot;找不到相应的连接 OOo&quot;
+WikipediaConf(CurLang,6)=&quot;请输入目录上的 HTTP 参数&quot;
+WikipediaConf(CurLang,7)=&quot;工具 &gt; 选项 &gt; OpenOffice.org &gt; 追加选项 &quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;关于维基...&quot;
+WikipediaConf(CurLang,9)=&quot;本系统由 LGPL 提供版权&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Direct&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Choice&quot;
+WikipediaConf(CurLang,12)=&quot;完成 !&quot;
+WikipediaConf(CurLang,13)=&quot;感谢所有翻译人员&quot;
+
+&apos;hebrew
+CurLang=16
+WikipediaConf(CurLang,0)=&quot;he&quot;
+WikipediaConf(CurLang,1)=&quot;עברית&quot;
+WikipediaConf(CurLang,2)=&quot;http://he.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Go&quot;
+WikipediaConf(CurLang,4)=&quot;הכנס מילה לחיפוש :&quot;
+WikipediaConf(CurLang,5)=&quot;אין דפדפן המשוייך לאופן אופיס&quot;
+WikipediaConf(CurLang,6)=&quot;מלא בוקשה את מאפיין ה HTTP בתפריט&quot;
+WikipediaConf(CurLang,7)=&quot;כלים &gt; אפשרויות &gt; OpenOffice.org &gt; עזרים&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;אודות ויקיפדיה ...&quot;
+WikipediaConf(CurLang,9)=&quot;הכלי מוצע תחת רישיון LGPL&quot;
+WikipediaConf(CurLang,10)=&quot;OOoWikipedia Direct&quot;
+WikipediaConf(CurLang,11)=&quot;OOoWikipedia Choice&quot;
+WikipediaConf(CurLang,12)=&quot;סיום !&quot;
+WikipediaConf(CurLang,13)=&quot;תודה רבה לכל המתרגמים&quot;
+
+&apos;HUngarian
+CurLang=17
+WikipediaConf(CurLang,0)=&quot;hu&quot;
+WikipediaConf(CurLang,1)=&quot;Magyar&quot;
+WikipediaConf(CurLang,2)=&quot;http://hu.wikipedia.org/wiki/Special:Search?search=&quot;
+WikipediaConf(CurLang,3)=&quot;&amp;go=Ugrás&quot;
+WikipediaConf(CurLang,4)=&quot;Írja be a keresett szót:&quot;
+WikipediaConf(CurLang,5)=&quot;Az OOo-hoz nincs böngésző rendelve.&quot;
+WikipediaConf(CurLang,6)=&quot;Írja be a menüben található HTTP-paramétert.&quot;
+WikipediaConf(CurLang,7)=&quot;Eszközök &gt; Beállítások &gt; OpenOffice.org &gt; Segédprogramok&quot;
+&apos;needed for install process
+WikipediaConf(CurLang,8)=&quot;Az OOoWikipedia névjegye...&quot;
+WikipediaConf(CurLang,9)=&quot;Erre az eszközre az LGPL licenc vonatkozik.&quot;
+WikipediaConf(CurLang,10)=&quot;Közvetlen OOoWikipedia&quot;
+WikipediaConf(CurLang,11)=&quot;Nyelvválasztós OOoWikipedia&quot;
+WikipediaConf(CurLang,12)=&quot;Kész!&quot;
+WikipediaConf(CurLang,13)=&quot;Köszönjük a fordítók munkáját!&quot;
+
+end sub
+
+&apos;---------------------
+Function FindSelectedWord() as string
+
+dim theWord as string
+
+if ThisComponent.getCurrentSelection.supportsService(&quot;com.sun.star.table.Cell&quot;) then
+	theWord=trim(thiscomponent.getCurrentSelection.string)
+endif
+
+if ThisComponent.getCurrentSelection.supportsService(&quot;com.sun.star.drawing.Shapes&quot;) then
+	theWord=trim(ThisComponent.getCurrentSelection.getByIndex(0).string)
+endif
+
+if ThisComponent.getCurrentSelection.supportsService(&quot;com.sun.star.text.TextRanges&quot;) then
+	theWord=trim(ThisComponent.getCurrentSelection.getByIndex(0).string)
+	if TheWord=&quot;&quot; then
+		&apos;guess the word tant contains the cursor
+		curseurVisible = ThisComponent.CurrentController.ViewCursor
+		monCurseur = curseurVisible.text.createTextCursorByRange(CurseurVisible)
+		monCurseur.gotoStartofWord(False)
+		monCurseur.gotoEndOfWord(True)
+		theWord=monCurseur.string
+	endif	
+endif
+
+FindSelectedWord=theWord
+
+end function
+&apos;----------------------
+
+Sub CheckWiki(index as long)
+
+on error resume next
+&apos;This &apos;solves&apos; some errors on Windows with both firefox and IE6 in use
+&apos;thanks to Gaspard for its help
+
+Selection=FindSelectedWord()
+
+if Selection=&quot;&quot; then
+	LeMot=inputBox(WikipediaConf(index,4))
+	if leMot=&quot;&quot; then 
+		exit sub
+	endif
+else
+	LeMot=Selection
+endif
+
+objlancer = CreateUnoService(&quot;com.sun.star.system.SystemShellExecute&quot;)
+Adresse=WikipediaConf(index,2)&amp; LeMot &amp;WikipediaConf(index,3)
+
+Adresse=convertToURL(adresse)
+
+handleErrors=com.sun.star.system.SystemShellExecuteFlags.NO_SYSTEM_ERROR_MESSAGE &apos;=1 or DEFAULTS=0
+
+objlancer.execute(Adresse, &quot;&quot;, handleErrors)
+ 
+End Sub
+
+&apos;------------------------
+sub ChooseWikipedia(install as boolean, optional ISOLang as string) 
+
+if install then
+	DialogLibraries.loadLibrary(&quot;OOoWikipedia&quot;)
+	Feuille=DialogLibraries.OOoWikipedia.Dialog1
+	indexWikiLang=WikiIndexFromISO(ISOLang)
+else
+	globalscope.DialogLibraries.loadLibrary(&quot;OOoWikipedia&quot;)
+	Feuille=globalscope.DialogLibraries.OOoWikipedia.Dialog1
+	indexWikiLang=indexWikiLang
+endif
+
+oDlg=CreateUnoDialog(Feuille)
+
+&apos;fill the list box
+dim TempArray(0 to nbLangues-1)
+for i=1 to nbLangues
+	TempArray(i-1)=WikipediaConf(i,1)
+next i
+myList=oDlg.getControl(&quot;lstWiki&quot;)
+myList.addItems(TempArray(),0)
+myList.selectItemPos(indexWikiLang-1,true)
+
+indexWikiLang = -1 &apos;set to dummy for aborting
+
+oDlg.execute
+
+end sub
+&apos;--------------------------
+sub GoWikipedia
+	myList=oDlg.getControl(&quot;lstWiki&quot;)
+	indexWikiLang=myList.selectedItemPos + 1
+	oDlg.endExecute
+end sub
+&apos;------------------------------
+function checkHTTP()
+
+Dim aSettings, aConfigProvider
+Dim aParams2(0) As new com.sun.star.beans.PropertyValue
+
+if getSolarVersion = 680 then
+	&apos;OOo 2
+	checkHTTP = true
+else
+	&apos;OOo 1.1.x
+	aConfigProvider = createUnoService( &quot;com.sun.star.configuration.ConfigurationProvider&quot; )
+	aParams2(0).Name = &quot;nodepath&quot;
+	aParams2(0).Value = &quot;/org.openoffice.Office.Common/ExternalApps/&quot;
+	aSettings = aConfigProvider.createInstanceWithArguments( &quot;com.sun.star.configuration.ConfigurationUpdateAccess&quot;, aParams2() )
+	checkHTTP=(trim(aSettings.http)&lt;&gt;&quot;&quot;)
+endif
+
+end Function
+
+&apos;---------------------
+Function WikiIndexFromISO(lang as string) as long
+
+myIndex=DefaultWiki
+
+for i=1 to nbLangues
+	if WikipediaConf(i,0)=lang then
+		myIndex=i
+		exit for
+	endif
+next i
+
+WikiIndexFromISO=myIndex
+
+end function
+&apos;------------------------
+function checkOOoLanguage()
+Dim OOLang as string	
+Dim aSettings, aConfigProvider
+Dim aParams2(0) As new com.sun.star.beans.PropertyValue
+aConfigProvider = createUnoService( &quot;com.sun.star.configuration.ConfigurationProvider&quot; )
+aParams2(0).Name = &quot;nodepath&quot;
+aParams2(0).Value = &quot;/org.openoffice.Setup/L10N&quot;
+aSettings = aConfigProvider.createInstanceWithArguments(&quot;com.sun.star.configuration.ConfigurationAccess&quot;, aParams2() )
+
+OOLang = aSettings.getbyname(&quot;ooLocale&quot;)
+OOLang =lcase(Left(trim(OOLang),2))
+
+checkOOoLanguage = OOLang
+	
+end function
+&apos;-----------------------
+function FindAddonDirectory(libraryName)
+
+dim newSplit()
+redim NewSplit(0)
+
+if basiclibraries.isLibraryLink(libraryName) then
+
+	thePath = basiclibraries.getLibraryLinkURL(libraryName)
+	splitted = split(thePath,&quot;/&quot;)
+	newSplit() = splitted()
+	redim preserve newSplit(0 to ubound(splitted)-2)
+	theNewPath = join(NewSplit(),&quot;/&quot;)+&quot;/&quot;+libraryName
+
+else
+	
+	aService = CreateUnoService(&quot;com.sun.star.util.PathSubstitution&quot;)
+	theNewPath=aService.substituteVariables(&quot;$(user)/basic/&quot; + libraryName, true)
+	
+endif
+
+FindAddonDirectory = theNewPath
+
+end function
+&apos;-----------
+Sub OpenAboutFile()
+
+dim args()
+
+myURL = slash(FindAddonDirectory(&quot;OOoWikipedia&quot;)) + &quot;OOoWikipedia.sxw&quot;
+stardesktop.loadcomponentFromURL(myURL,&quot;_blank&quot;,0,args())
+
+end sub
+&apos;---------
+function slash(byVal thePath)
+	if right(thePath,1)&lt;&gt; &quot;/&quot; then
+		thePath = thePath + &quot;/&quot;
+	endif
+	slash = thePath
+end function
+&apos;--------------------
+Sub Help
+
+call DefineWikis
+indexWikiLang=WikiIndexFromISO(checkOOoLanguage)
+
+globalscope.DialogLibraries.loadLibrary(&quot;OOoWikipedia&quot;)
+Feuille=globalscope.DialogLibraries.OOoWikipedia.Dialog2
+oDlg=CreateUnoDialog(Feuille)
+
+oDlg.getControl(&quot;lblTitle&quot;).text = &quot;OOoWikipedia &quot;+version
+chaine = &quot;Laurent Godard&quot;+chr(10)
+chaine = chaine + &quot;lgodard@indesko.com&quot;+chr(10)
+chaine = chaine + &quot;http://www.indesko.com&quot; + chr(10)+chr(10)
+chaine = chaine + WikipediaConf(indexWikiLang,9)+chr(10)
+chaine = chaine + WikipediaConf(indexWikiLang,13)
+
+oDlg.getControl(&quot;lblMore&quot;).text = chaine
+
+oDlg.title = WikipediaConf(indexWikiLang,8)
+
+oDlg.execute
+
+end sub
+</script:module>

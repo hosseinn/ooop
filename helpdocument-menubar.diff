@@ -1,0 +1,176 @@
+--- basctl/uiconfig/basicide/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ basctl/uiconfig/basicide/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -82,6 +82,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- framework/uiconfig/startmodule/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ framework/uiconfig/startmodule/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -75,6 +75,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- sw/uiconfig/sglobal/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ sw/uiconfig/sglobal/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -434,6 +434,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- sw/uiconfig/swriter/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ sw/uiconfig/swriter/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -437,6 +437,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- sw/uiconfig/sweb/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ sw/uiconfig/sweb/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -362,6 +362,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- sd/uiconfig/sdraw/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ sd/uiconfig/sdraw/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -314,6 +314,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- sd/uiconfig/simpress/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ sd/uiconfig/simpress/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -289,6 +289,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- dbaccess/uiconfig/dbapp/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ dbaccess/uiconfig/dbapp/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -132,6 +132,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- dbaccess/uiconfig/dbbrowser/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ dbaccess/uiconfig/dbbrowser/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -64,6 +64,7 @@
+			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- dbaccess/uiconfig/dbquery/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ dbaccess/uiconfig/dbquery/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -78,6 +78,7 @@
+			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- dbaccess/uiconfig/dbrelation/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ dbaccess/uiconfig/dbrelation/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -61,6 +61,7 @@
+			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- dbaccess/uiconfig/dbtable/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ dbaccess/uiconfig/dbtable/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -62,6 +62,7 @@
+			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- sc/uiconfig/scalc/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ sc/uiconfig/scalc/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -429,6 +429,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- extensions/source/bibliography/uiconfig/sbibliography/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ extensions/source/bibliography/uiconfig/sbibliography/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -85,6 +85,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+			<menu:menuseparator/>
+			<menu:menuitem menu:id=".uno:About"/>
+
+--- starmath/uiconfig/smath/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ starmath/uiconfig/smath/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -111,6 +111,7 @@
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuitem menu:id=".uno:OnlineUpdate"/>
+ 			<menu:menuseparator/>
+
+--- sch/uiconfig/schart/menubar/menubar.xml.orig	2006-05-17 09:43:14.000000000 +0200
++++ sch/uiconfig/schart/menubar/menubar.xml	2006-07-05 15:08:14.015625000 +0200
+@@ -131,6 +131,7 @@
+			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+			<menu:menuseparator/>
+			<menu:menuitem menu:id=".uno:About"/>
+
