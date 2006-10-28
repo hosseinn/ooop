@@ -38,5 +38,5 @@ de = "Fonts"
 en-US = "Fonts"
 
 [STR_DESC_MODULE_OPTIONAL_ACCESSORIES_FONTS]
-de = "Zusätzliche Fonts für OpenOffice.org und andere Applikationen."
-en-US = "Additional fonts for OpenOffice.org and other applications."
+de = "Zusätzliche Fonts für %PRODUCTNAME und andere Applikationen."
+en-US = "Additional fonts for %PRODUCTNAME and other applications."

@@ -46,14 +46,14 @@ de = "Dokumentation"
 en-US = "Documentations"
 
 [STR_DESC_MODULE_OPTIONAL_ACCESSORIES_DOCUMENTATIONS]
-de = "OpenOffice.org Dokumentation."
-en-US = "OpenOffice.org documentations."
+de = "%PRODUCTNAME Dokumentation."
+en-US = "%PRODUCTNAME documentations."
 
 [STR_NAME_MODULE_OPTIONAL_ACCESSORIES_ADVERTISEMENT]
 de = "Werbung"
 en-US = "Advertisement"
 
 [STR_DESC_MODULE_OPTIONAL_ACCESSORIES_ADVERTISEMENT]
-de = "OpenOffice.org Werbematerial."
-en-US = "OpenOffice.org advertisement materials."
+de = "%PRODUCTNAME Werbematerial."
+en-US = "%PRODUCTNAME advertisement materials."
 

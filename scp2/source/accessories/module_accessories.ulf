@@ -38,5 +38,5 @@ de = "Zubehör"
 en-US = "Accessories"
 
 [STR_DESC_MODULE_OPTIONAL_ACCESSORIES]
-de = "Wertvolles OpenOffice.org Zubehör inklusive verschiedener Gallerythemen, Vorlagen, Beispieldokumenten und Fonts."
-en-US = "Useful OpenOffice.org accessories including various Galleries, Templates, Sample documents and Fonts."
+de = "Wertvolles %PRODUCTNAME Zubehör inklusive verschiedener Gallerythemen, Vorlagen, Beispieldokumenten und Fonts."
+en-US = "Useful %PRODUCTNAME accessories including various Galleries, Templates, Sample documents and Fonts."
