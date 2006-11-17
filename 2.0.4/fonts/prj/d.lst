@@ -1,3 +1,0 @@
-mkdir: %_DEST%\pck%_EXT%
-..\%__SRC%\misc\build\ttf-fonts\*.ttf             %_DEST%\pck%_EXT%\*.tff
-

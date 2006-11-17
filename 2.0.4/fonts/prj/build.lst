@@ -1,3 +1,0 @@
-bs	fonts : solenv NULL
-bs	fonts		usr1	-	all	bs_mkout NULL
-bs	fonts		nmake	-	all	bs_fonts NULL
