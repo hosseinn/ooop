@@ -1,0 +1,350 @@
+--- basctl/uiconfig/basicide/menubar/menubar.xml.orig	2006-08-11 21:50:11.000000000 +0200
++++ basctl/uiconfig/basicide/menubar/menubar.xml	2006-11-01 13:24:04.687500000 +0100
+@@ -79,9 +79,15 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+--- framework/uiconfig/startmodule/menubar/menubar.xml.orig	2006-08-11 21:54:43.000000000 +0200
++++ framework/uiconfig/startmodule/menubar/menubar.xml	2006-11-01 13:24:04.718750000 +0100
+@@ -72,12 +72,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- sw/uiconfig/sglobal/menubar/menubar.xml.orig	2006-08-11 21:51:15.000000000 +0200
++++ sw/uiconfig/sglobal/menubar/menubar.xml	2006-11-01 13:24:04.578125000 +0100
+@@ -431,12 +431,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- sw/uiconfig/swriter/menubar/menubar.xml.orig	2006-08-11 21:51:16.000000000 +0200
++++ sw/uiconfig/swriter/menubar/menubar.xml	2006-11-01 13:24:04.562500000 +0100
+@@ -434,12 +434,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- sw/uiconfig/sweb/menubar/menubar.xml.orig	2006-08-11 21:51:15.000000000 +0200
++++ sw/uiconfig/sweb/menubar/menubar.xml	2006-11-01 13:24:04.609375000 +0100
+@@ -359,12 +359,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- sd/uiconfig/sdraw/menubar/menubar.xml.orig	2006-08-11 21:45:14.000000000 +0200
++++ sd/uiconfig/sdraw/menubar/menubar.xml	2006-11-01 13:24:04.625000000 +0100
+@@ -311,12 +311,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- sd/uiconfig/simpress/menubar/menubar.xml.orig	2006-08-11 21:45:15.000000000 +0200
++++ sd/uiconfig/simpress/menubar/menubar.xml	2006-11-01 13:24:04.640625000 +0100
+@@ -286,12 +286,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- dbaccess/uiconfig/dbapp/menubar/menubar.xml.orig	2006-08-11 21:43:29.000000000 +0200
++++ dbaccess/uiconfig/dbapp/menubar/menubar.xml	2006-11-01 13:23:34.000000000 +0100
+@@ -129,12 +129,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- dbaccess/uiconfig/dbbrowser/menubar/menubar.xml.orig	2006-08-11 21:43:29.000000000 +0200
++++ dbaccess/uiconfig/dbbrowser/menubar/menubar.xml	2006-11-01 13:24:04.734375000 +0100
+@@ -59,14 +59,18 @@
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
+ 			<menu:menuseparator/>
+-			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuitem menu:id=".uno:HelpTip"/>
+ 			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- dbaccess/uiconfig/dbquery/menubar/menubar.xml.orig	2006-08-11 21:43:29.000000000 +0200
++++ dbaccess/uiconfig/dbquery/menubar/menubar.xml	2006-11-01 13:24:04.703125000 +0100
+@@ -73,14 +73,18 @@
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
+ 			<menu:menuseparator/>
+-			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuitem menu:id=".uno:HelpTip"/>
+ 			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- dbaccess/uiconfig/dbrelation/menubar/menubar.xml.orig	2006-08-11 21:43:30.000000000 +0200
++++ dbaccess/uiconfig/dbrelation/menubar/menubar.xml	2006-11-01 13:24:04.765625000 +0100
+@@ -56,14 +56,18 @@
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
+ 			<menu:menuseparator/>
+-			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuitem menu:id=".uno:HelpTip"/>
+ 			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- dbaccess/uiconfig/dbtable/menubar/menubar.xml.orig	2006-08-11 21:43:30.000000000 +0200
++++ dbaccess/uiconfig/dbtable/menubar/menubar.xml	2006-11-01 13:24:04.750000000 +0100
+@@ -57,14 +57,18 @@
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
+ 			<menu:menuseparator/>
+-			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuitem menu:id=".uno:HelpTip"/>
+ 			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- sc/uiconfig/scalc/menubar/menubar.xml.orig	2006-08-11 21:49:53.000000000 +0200
++++ sc/uiconfig/scalc/menubar/menubar.xml	2006-11-01 13:24:04.593750000 +0100
+@@ -426,12 +426,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- extensions/source/bibliography/uiconfig/sbibliography/menubar/menubar.xml.orig	2006-08-11 21:52:59.000000000 +0200
++++ extensions/source/bibliography/uiconfig/sbibliography/menubar/menubar.xml	2006-11-01 13:24:04.671875000 +0100
+@@ -82,12 +82,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- starmath/uiconfig/smath/menubar/menubar.xml.orig	2006-08-11 21:51:22.000000000 +0200
++++ starmath/uiconfig/smath/menubar/menubar.xml	2006-11-01 13:24:04.671875000 +0100
+@@ -108,12 +108,19 @@
+ 	<menu:menu menu:id=".uno:HelpMenu">
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
++			<menu:menuitem menu:id=".uno:HelpTip"/>
++			<menu:menuitem menu:id=".uno:ActiveHelp"/>
++			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+ </menu:menubar>
++
+--- sch/uiconfig/schart/menubar/menubar.xml.orig	2006-08-11 21:45:25.000000000 +0200
++++ sch/uiconfig/schart/menubar/menubar.xml	2006-11-01 13:26:37.500000000 +0100
+@@ -126,14 +126,18 @@
+ 		<menu:menupopup>
+ 			<menu:menuitem menu:id=".uno:HelpIndex"/>
+ 			<menu:menuseparator/>
+-			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuitem menu:id=".uno:ExtendedHelp"/>
+ 			<menu:menuitem menu:id=".uno:HelpTip"/>
+ 			<menu:menuitem menu:id=".uno:ActiveHelp"/>
+ 			<menu:menuseparator/>
++			<menu:menuitem menu:id=".uno:HelperDialog"/>
++			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:HelpSupport"/>
++                        <menu:menuitem menu:id="macro:///Premium.OOoHelpDocumentation.OpenHelpDocument"/>
+ 			<menu:menuitem menu:id=".uno:OnlineRegistrationDlg"/>
+ 			<menu:menuseparator/>
+ 			<menu:menuitem menu:id=".uno:About"/>
+ 		</menu:menupopup>
+ 	</menu:menu>
+-</menu:menubar>
+\ No newline at end of file
++</menu:menubar>
++
