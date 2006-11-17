@@ -1,0 +1,29 @@
+--- officecfg/registry/data/org/openoffice/Office/UI/GenericCommands.xcu.orig	2006-08-11 21:53:30.000000000 +0200
++++ officecfg/registry/data/org/openoffice/Office/UI/GenericCommands.xcu	2006-10-19 14:20:12.359375000 +0200
+@@ -5991,6 +5991,26 @@
+                     <value xml:lang="en-US">~Right-to-left mark</value>
+                 </prop>
+             </node>
++            <node oor:name="macro:///OOoWikipedia.Module1.StarWithDefaultLanguage">
++                <prop oor:name="Label" oor:type="xs:string">
++                    <value xml:lang="de">OOoWikipedia</value>
++                    <value xml:lang="en-US">OOoWikipedia</value>
++                    <value xml:lang="hu">OOoWikipedia</value>
++                </prop>
++                <prop oor:name="Properties" oor:type="xs:int">
++                    <value>1</value>
++		 </prop>
++            </node>
++            <node oor:name="macro:///OOoWikipedia.Module1.StartWithChooseBox">
++                <prop oor:name="Label" oor:type="xs:string">
++                    <value xml:lang="de">OOoWikipedia - Idiom</value>
++                    <value xml:lang="en-US">OOoWikipedia - Language</value>
++                    <value xml:lang="hu">OOoWikipedia</value>
++                </prop>
++                <prop oor:name="Properties" oor:type="xs:int">
++                    <value>1</value>
++		 </prop>
++            </node>
+         </node>
+ 	</node>
+ </oor:component-data>

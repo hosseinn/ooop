@@ -1,0 +1,69 @@
+Az OpenOffice.org Premium számos független hozzájáruló munkáján alapul. Minden tartalom és anyag LGPL vagy PDL vagy más szabad licensz alapján használható fel.
+
+1) Galéria / Képtár
+A következõk munkája került felhasználásra:
+* OO Extras - http://ooextras.sourceforge.net/ - LGPL
+* fr.openoffice.org team's Gallery - http://fr.openoffice.org/Documentation/Gallery/indexgal.html - LGPL
+* PrOOo-Box - http://www.prooo-box.org/ - LGPL/PDL
+* Cisco Icon Library - http://www.cisco.com/warp/public/503/2.html - Szabad
+* Daniel Carrera gyûjteménye - http://www.openoffice.org/ - PDL
+
+2) Sablonok
+A következõk munkája került felhasználásra:
+* OO Extras - http://ooextras.sourceforge.net/ - LGPL
+* OpenOffice.org Extra CD - http://www.openoffice.org/ - LGPL
+* PrOOo-Box - http://www.prooo-box.org/ - LGPL/PDL
+* Saját munkáim - http://hu.openoffice.org/ - LGPL
+* Mások munkái - http://hu.openoffice.org/ - LGPL vagy PDL vagy Szabad
+* Daniel Carrera gyûjteménye - http://www.openoffice.org/ - LGPL
+
+3) Szótárak
+A következõk munkája került felhasználásra:
+* http://lingucomponent.openoffice.org/download_dictionary.html - LGPL vagy PDL vagy Szabad
+
+4) Betûkészletek
+A következõk munkája került felhasználásra:
+* Larabie Fonts - http://www.larabiefonts.com/ - Szabad (a honlapon)
+
+5) Dokumentumok és Minták
+A következõk munkája került felhasználásra:
+* Mások munkái - http://hu.openoffice.org/ - PDL
+* OpenOffice.org a gyakorlatban - http://hu.openoffice.org/ - LGPL
+* Novell's contribution - http://www.novell.com/ -
+
+---
+
+LARABIE FONTS END-USER LICENSE AGREEMENT FOR SOFTWARE PRODUCTS
+SOFTWARE PRODUCT LICENSE
+
+The SOFTWARE PRODUCT is protected by copyright laws and International copyright treaties, as well as other intellectual property laws and treaties. The SOFTWARE PRODUCT is licensed, not sold.
+1. GRANT OF LICENSE. This document grants you the following rights:
+
+- Installation and Use. You may install and use an unlimited number of copies of the SOFTWARE PRODUCT. You may copy and distribute unlimited copies of the SOFTWARE PRODUCT as you receive them, in any medium, provided that you publish on each copy an appropriate copyright notice. Keep intact all the notices that refer to this License and give any other recipients of the fonts a copy of this License along with the fonts.
+2. DESCRIPTION OF OTHER RIGHTS AND LIMITATIONS.
+
+- You may modify your copy or copies of the SOFTWARE PRODUCT or any portion of it, provided that you also meet all of these rules:
+
+a) Do not alter in any way alphanumeric characters (A-Z, a-z, 1-9) contained in the font. An exception is converting between formats, here is allowed the nominal distortion that occurs during conversion from second order to third order quadratic curves (TrueType to Postscript) and vice versa.
+
+b) Extra characters may be added; here it is allowed to use curves (shapes) from alphanumeric characters in fonts under same license.
+
+c) It is allowed to modify and remove analpahbetics (punctuation, special characters, ligatures and symbols).
+
+d) The original font name must be retained but can be augmented. (ie. a Font named Blue Highway can be renamed Blue Highway Cyrillic or Blue Highway ANSI, etc.)
+
+e) Character mapping may be altered.
+
+f) If the kerning information is altered or discarded it must be stated in the user notes or documentation.
+
+g) All modifications must be released under this license.
+LIMITED WARRANTY NO WARRANTIES. Larabie Fonts expressly disclaims any warranty for the SOFTWARE PRODUCT. The SOFTWARE PRODUCT and any related documentation is provided "as is" without warranty of any kind, either express or implied, including, without limitation, the implied warranties or merchantability, fitness for a particular purpose, or non-infringement. The entire risk arising out of use or performance of the SOFTWARE PRODUCT remains with you.
+
+NO LIABILITY FOR CONSEQUENTIAL DAMAGES. In no event shall Larabie Fonts be liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use of or inability to use this product, even if Larabie Fonts has been advised of the possibility of such damages.
+3. MISCELLANEOUS
+
+Should you have any questions concerning this document, or if you desire to contact Larabie Fonts for any reason, please email www.larabiefonts.com/email.html. 
+
+---
+
+
