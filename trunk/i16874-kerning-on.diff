@@ -1,0 +1,12 @@
+diff -urN svx/inc/akrnitem.hxx.orig svx/inc/akrnitem.hxx
+--- svx/inc/akrnitem.hxx.orig	2004-10-31 20:21:18.000000000 +0100
++++ svx/inc/akrnitem.hxx	2004-10-31 20:27:06.000000000 +0100
+@@ -93,7 +93,7 @@
+ public:
+ 	TYPEINFO();
+ 
+-	SvxAutoKernItem( const BOOL bAutoKern = FALSE,
++	SvxAutoKernItem( const BOOL bAutoKern = TRUE,
+ 					 const USHORT nId = ITEMID_AUTOKERN );
+ 
+ 	// "pure virtual Methoden" vom SfxPoolItem

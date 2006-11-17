@@ -1,0 +1,204 @@
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SHAPES_POLYGONS				0	en-US	Shapes - polygons				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SHAPES_POLYGONS				0	fr	Formes – Polygones				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SHAPES_1				0	en-US	Shapes 1				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SHAPES_1				0	fr	Formes 1				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SHAPES_2				0	en-US	Shapes 2				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SHAPES_2				0	fr	Formes 3				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ANIMALS				0	en-US	Animals				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ANIMALS				0	fr	Animaux				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CARS				0	en-US	Cars				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CARS				0	fr	Voitures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_BUGS				0	en-US	Bugs				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_BUGS				0	fr	Bogues				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CISCO_OTHER				0	en-US	Cisco - Other				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CISCO_OTHER				0	fr	Cisco – Autres				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CISCO_MEDIA				0	en-US	Cisco - Media				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CISCO_MEDIA				0	fr	Cisco - Média				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CISCO_PRODUCTS				0	en-US	Cisco - Products				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CISCO_PRODUCTS				0	fr	Cisco – Produits				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CISCO_WAN_LAN				0	en-US	Cisco - WAN - LAN				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CISCO_WAN_LAN				0	fr	Cisco - WAN - LAN				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_DOMINO_USUAL				0	en-US	Domino - usual				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_DOMINO_USUAL				0	fr	Dominó – courants				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_DOMINO_NUMBERED				0	en-US	Domino - numbered				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_DOMINO_NUMBERED				0	fr	Dominó – numérotés				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_PARTS_1				0	en-US	Electronics - parts 1				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_PARTS_1				0	fr	Elektronika – partie 1				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_PARTS_2				0	en-US	Electronics - parts 2				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_PARTS_2				0	fr	Elektronika – partie 2				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_PARTS_3				0	en-US	Electronics - parts 3				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_PARTS_3				0	fr	Elektronika – partie 3				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_PARTS_4				0	en-US	Electronics - parts 4				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_PARTS_4				0	fr	Elektronika – partie 4				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_CIRCUIT				0	en-US	Electronics - circuit				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_CIRCUIT				0	fr	Elektronika – circuits				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_SIGNS				0	en-US	Electronics - signs				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_SIGNS				0	fr	Elektronika – signes				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_GAUGES				0	en-US	Electronics - gauges				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ELECTRONICS_GAUGES				0	fr	Elektronika – jauges				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PEOPLE_1				0	en-US	People				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PEOPLE_1				0	fr	Gens				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_OVERLAY				0	en-US	Architecture - overlay				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_OVERLAY				0	fr	Architecture – recouvrement				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_FURNITURES				0	en-US	Architecture - furnitures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_FURNITURES				0	fr	Architecture – meubles				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_BUILDINGS				0	en-US	Architecture - buildings				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_BUILDINGS				0	fr	Architecture – immeubles				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_BATHROOM_KITCHEN				0	en-US	Architecture - bathroom, kitchen				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_BATHROOM_KITCHEN				0	fr	Architecture – SDB, cuisine				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_KITCHEN				0	en-US	Architecture - kitchen				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_KITCHEN				0	fr	Architecture – cuisine				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_WINDOWS_DOORS				0	en-US	Architecture - windows, doors				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARCHITECTURE_WINDOWS_DOORS				0	fr	Architecture – fenêtres, portes				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FLOWCHARTS_1				0	en-US	Flowcharts				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FLOWCHARTS_1				0	fr	Diagrammes				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FLOWCHARTS_2				0	en-US	Flowcharts 2				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FLOWCHARTS_2				0	fr	Diagrammes 2				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FORALSTUDIOA				0	en-US	Foral-StudioA				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FORALSTUDIOA				0	fr	Foral-StudioA				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_FAUNA				0	en-US	Photos - Fauna				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_FAUNA				0	fr	Photos – Faune				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_BUILDINGS				0	en-US	Photos - Buildings				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_BUILDINGS				0	fr	Photos – Immeubles				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_PLANTS				0	en-US	Photos - Plants				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_PLANTS				0	fr	Photos – Plantes				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_STATUES				0	en-US	Photos - Statues				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_STATUES				0	fr	Photos - Statues				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_LANDSCAPES				0	en-US	Photos - Landscapes				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_LANDSCAPES				0	fr	Photos – Paysages				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_CITIES				0	en-US	Photos - Cities				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_CITIES				0	fr	Photos – Villes				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_FLOWERS				0	en-US	Photos - Flowers				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_FLOWERS				0	fr	Photos – Fleurs				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_THERAPEUTICS_GENERAL				0	en-US	Therapeutics - general				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_THERAPEUTICS_GENERAL				0	fr	Soins de santé – Divers				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_WEATHER				0	en-US	Weather				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_WEATHER				0	fr	Météo				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_VECHILES				0	en-US	Vehicles				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_VECHILES				0	fr	Véhicules				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SIGNS				0	en-US	Signs				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SIGNS				0	fr	Panneaux signalisation.				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_BLUE_MAN				0	en-US	Blue Man				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_BLUE_MAN				0	fr	Homme bleu				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CHEMISTRY_AMINO_ACIDS				0	en-US	Chemistry - Amino acids				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CHEMISTRY_AMINO_ACIDS				0	fr	Chimie – Acides aminés.				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_LOGICAL_SIGNS				0	en-US	Logical signs				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_LOGICAL_SIGNS				0	fr	Panneaux logiques				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_LOGICAL_GATES				0	en-US	Logical gates				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_LOGICAL_GATES				0	fr	Portes logiques.				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_LOGOS				0	en-US	Logos				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_LOGOS				0	fr	Logos				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SMILES				0	en-US	Smilies				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SMILES				0	fr	Emoticones				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARROWS_1				0	en-US	Arrows				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_ARROWS_1				0	fr	Flèches				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_01_CLOCK				0	en-US	Clock - 01 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_01_CLOCK				0	fr	Horloge – 1 heure				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_02_CLOCK				0	en-US	Clock - 02 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_02_CLOCK				0	fr	Horloge – 2 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_03_CLOCK				0	en-US	Clock - 03 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_03_CLOCK				0	fr	Horloge – 3 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_04_CLOCK				0	en-US	Clock - 04 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_04_CLOCK				0	fr	Horloge – 4 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_05_CLOCK				0	en-US	Clock - 05 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_05_CLOCK				0	fr	Horloge – 5 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_06_CLOCK				0	en-US	Clock - 06 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_06_CLOCK				0	fr	Horloge – 6 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_07_CLOCK				0	en-US	Clock - 07 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_07_CLOCK				0	fr	Horloge – 7 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_08_CLOCK				0	en-US	Clock - 08 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_08_CLOCK				0	fr	Horloge – 8 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_09_CLOCK				0	en-US	Clock - 09 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_09_CLOCK				0	fr	Horloge – 9 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_10_CLOCK				0	en-US	Clock - 10 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_10_CLOCK				0	fr	Horloge – 10 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_11_CLOCK				0	en-US	Clock - 11 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_11_CLOCK				0	fr	Horloge – 11 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_12_CLOCK				0	en-US	Clock - 12 clock				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CLOCK_12_CLOCK				0	fr	Horloge – 12 heures				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PNEUMATIC_PARTS				0	en-US	Pneumatic - parts				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PNEUMATIC_PARTS				0	fr	Pneus – Accessoires.				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_COMPUTER_GENERAL				0	en-US	Computer - general				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_COMPUTER_GENERAL				0	fr	Ordinateurs – Général.				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_COMPUTER_NETWORK				0	en-US	Computer - network				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_COMPUTER_NETWORK				0	fr	Ordinateurs – Réseau				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_COMPUTER_NETWORK_DEVICES				0	en-US	Computer - network devices				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_COMPUTER_NETWORK_DEVICES				0	fr	Ordinateurs – Elements réseau.				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_COMPUTER_WIFI				0	en-US	Computer - WIFI				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_COMPUTER_WIFI				0	fr	Ordinateurs – Wi-Fi				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_NUMBERS				0	en-US	Numbers				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_NUMBERS				0	fr	Nombres				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SIGNS_DANGER				0	en-US	Signs - danger				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SIGNS_DANGER				0	fr	Panneaux Danger				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_OBJECTS				0	en-US	Objects				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_OBJECTS				0	fr	Objets				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_AFRICA				0	en-US	Maps - Africa				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_AFRICA				0	fr	Cartes – Afrique				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_UNITED_STATES_OF_AMERICA				0	en-US	Maps - United States of America				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_UNITED_STATES_OF_AMERICA				0	fr	Cartes – USA				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_AUSTRALIA				0	en-US	Maps - Australia				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_AUSTRALIA				0	fr	Cartes – Australie				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_ASIA				0	en-US	Maps - Asia				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_ASIA				0	fr	Cartes – Asie				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_SOUTH_AMERICA				0	en-US	Maps - South America				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_SOUTH_AMERICA				0	fr	Cartes – Amérique Latine				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_EUROPE				0	en-US	Maps - Europe				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_EUROPE				0	fr	Cartes – Europe				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_EUROPE_1				0	en-US	Maps - Europe 1				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_EUROPE_1				0	fr	Cartes – Europe 1				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_FRANCE				0	en-US	Maps - France				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_FRANCE				0	fr	Cartes – France				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_FRANCE_COUNTRIES				0	en-US	Maps - France - countries				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_FRANCE_COUNTRIES				0	fr	Cartes – France – régions				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_SIGNS				0	en-US	Maps - signs				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_SIGNS				0	fr	Cartes – Panneaux				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_CANADA				0	en-US	Maps - Canada				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_CANADA				0	fr	Cartes – Canada				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_CONTINENTS				0	en-US	Maps - Continents				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_CONTINENTS				0	fr	Cartes – Continents				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_MIDDLE_EAST				0	en-US	Maps - Middle East				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_MIDDLE_EAST				0	fr	Cartes – Moyen-Orient				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_MIDDLE_AMERICA				0	en-US	Maps - Middle America				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_MIDDLE_AMERICA				0	fr	Cartes – Amérique Centrale				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_MIDDLE_AGES				0	en-US	Maps - Middle ages				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_MIDDLE_AGES				0	fr	Cartes – Moyen Age				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_MEXICO				0	en-US	Maps - Mexico				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_MEXICO				0	fr	Cartes – Mexique				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_ANCIENT_TIMES				0	en-US	Maps - Ancient times				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_ANCIENT_TIMES				0	fr	Cartes – Antiquité				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_SIMBOLS				0	en-US	Maps - simbols				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_SIMBOLS				0	fr	Cartes – Symboles				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_HISTORY_1900				0	en-US	Maps - history - 1900				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_HISTORY_1900				0	fr	Cartes – Histoire – 1900				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_WORLD				0	en-US	Maps - World				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MAPS_WORLD				0	fr	Cartes – Monde				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CROPS				0	en-US	Crops				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_CROPS				0	fr	Récoltes				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FRACTIONS				0	en-US	Fractions				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FRACTIONS				0	fr	Fractions				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FLAGS_1				0	en-US	Flags				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_FLAGS_1				0	fr	Drapeaux				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MUSIC_INSTRUMENTS				0	en-US	Music - instruments				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MUSIC_INSTRUMENTS				0	fr	Musique – Instruments				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MUSIC_SHEET_MUSIC				0	en-US	Music - sheet music				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_MUSIC_SHEET_MUSIC				0	fr	Musique – Partitions				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SPECIAL_PICTOGRAMM				0	en-US	Special Pictogramms				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_SPECIAL_PICTOGRAMM				0	fr	Pictogrammes Spéciaux				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_CELEBRATION				0	en-US	Photos - Celebration				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_CELEBRATION				0	fr	Photos – Fêtes				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_FOODSANDDRINKS				0	en-US	Photos - Foods and Drinks				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_FOODSANDDRINKS				0	fr	Photos – Alimentation				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_frMANS				0	en-US	Photos – Humans				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_frMANS				0	fr	Photos – Humains				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_OBJECTS				0	en-US	Photos - Objects				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_OBJECTS				0	fr	Photos – Objets				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_SPACE				0	en-US	Photos - Space				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_SPACE				0	fr	Photos – Espace				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_TRAVEL				0	en-US	Photos - Travel				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_TRAVEL				0	fr	Photos – Voyage				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_OPENOFFICEORG_LOGOS				0	en-US	OpenOffice.org logos				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_OPENOFFICEORG_LOGOS				0	fr	Logos OpenOffice.org				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_RELEGION				0	en-US	Relegion				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_RELEGION				0	fr	Relegion				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_BUILDINGS				0	en-US	Buildings				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_BUILDINGS				0	fr	Buildings				2006-07-06 12:12:12
