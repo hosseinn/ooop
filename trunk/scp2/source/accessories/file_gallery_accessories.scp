@@ -128,3 +128,9 @@ File gid_File_Extra_Gallery_Photos_Travel_KAMI
     ARCHIVE_TXT_FILE_BODY;
     Name = "kamigalleryphotostravel.zip";
 End
+
+File gid_File_Extra_Gallery_Elements_Bullets2_KAMI
+    Dir = gid_Dir_Gallery_Elements_Bullets2;
+    ARCHIVE_TXT_FILE_BODY;
+    Name = "kamigalleryelementsbullets2.zip";
+End

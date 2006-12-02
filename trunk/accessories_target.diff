@@ -1,6 +1,6 @@
 --- extras/util/target.orig	2005-09-09 00:22:16.000000000 +0200
 +++ extras/util/target.pmk	2005-12-30 10:29:41.754670700 +0100
-@@ -76,6 +76,36 @@
+@@ -76,6 +76,37 @@
  GALLERY_WWWBACK_TARGET          = gallwwwback
  GALLERY_WWWGRAF_TARGET          = gallwwwgraf
 
@@ -19,6 +19,7 @@
 +GALLERY_ACCESSORIES_PHOTOS_SPACE_TARGET = kamigalleryphotosspace
 +GALLERY_ACCESSORIES_PHOTOS_STATUES_TARGET = kamigalleryphotosstatues
 +GALLERY_ACCESSORIES_PHOTOS_TRAVEL_TARGET = kamigalleryphotostravel
++GALLERY_ACCESSORIES_ELEMENTS_BULLETS2_TARGET = kamigalleryelementsbullets2
 +
 +PREMIUM_TEMPLATES_LAYOUT_IMPRESS_TARGET     = kamitemplateslayout
 +PREMIUM_TEMPLATES_PRESNT_IMPRESS_TARGET     = kamitemplatespresent

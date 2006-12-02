@@ -115,6 +115,8 @@
 +#define GALLERY_THEME_OPENOFFICEORG_LOGOS            138
 +#define GALLERY_THEME_RELEGION            139
 +#define GALLERY_THEME_BUILDINGS            140
++#define GALLERY_THEME_WEBSITE            141
++#define GALLERY_THEME_ELEMENTSBULLETS2            142
 +
  
  // -------------------

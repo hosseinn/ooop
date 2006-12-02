@@ -1,6 +1,6 @@
 --- svx/source/gallery2/galtheme.src.orig	2006-10-16 16:39:54.093750000 +0200
 +++ svx/source/gallery2/galtheme.src	2006-10-16 16:39:20.390625000 +0200
-@@ -358,42 +358,1025 @@
+@@ -358,42 +358,1045 @@
  	Text = "Dummy 5";
  };
  
@@ -1025,4 +1025,24 @@
 +};
  
 +// ---------------------------------------------------------------------------+
- 
++
++String RID_GALLERYSTR_THEME_WEBSITE
++{
++Text [ en-US ] = "Website";
++Text [ de ] = "Website";
++Text [ hu ] = "Honlap";
++Text [ x-comment ] = " ";
++};
++
++// ---------------------------------------------------------------------------
++
++String RID_GALLERYSTR_THEME_ELEMENTSBULLETS2
++{
++Text [ en-US ] = "Bullets 2";
++Text [ de ] = "Bullets 2";
++Text [ hu ] = "Felsorolásjel";
++Text [ x-comment ] = " ";
++};
++
++// ---------------------------------------------------------------------------
+

@@ -1,6 +1,6 @@
 --- scp2/source/ooo/directory_ooo.scp.orig	2006-05-17 09:51:06.000000000 +0200
 +++ scp2/source/ooo/directory_ooo.scp	2006-07-31 13:16:27.500000000 +0200
-@@ -1555,3 +1555,127 @@
+@@ -1555,3 +1555,140 @@
  End
  
  #endif
@@ -128,3 +128,16 @@
 +    ParentID = gid_Dir_Basic;
 +    DosName = "OOoWikipedia";
 +End
++
++/* Elements */
++Directory gid_Dir_Gallery_Elements
++    ParentID = gid_Dir_Gallery;
++    DosName = "Elements";
++End
++
++/* Elements - Bullets 2 */
++Directory gid_Dir_Gallery_Elements_Bullets2
++    ParentID = gid_Dir_Gallery_Elements;
++    DosName = "Bullets2";
++End
++
