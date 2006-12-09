@@ -1,6 +1,6 @@
 --- extras/prj/build.lst.orig	2005-05-20 18:46:00.000000000 +0200
 +++ extras/prj/build.lst	2005-12-30 10:37:17.750718900 +0100
-@@ -13,6 +13,35 @@
+@@ -13,6 +13,8 @@
  er      extras\source\gallery\sounds                            nmake   -       all     er_gsnds NULL
  er      extras\source\gallery\www-back                          nmake   -       all     er_gwbck NULL
  er      extras\source\gallery\www-graf                          nmake   -       all     er_gwgrf NULL
@@ -32,6 +32,19 @@
 +er      extras\source\premium\samples\advertisement\lang        nmake   -       all     er_prsaad NULL
 +er      extras\source\premium\samples\documentation\lang        nmake   -       all     er_prsedo NULL
 +er      extras\source\premium\samples\lang                      nmake   -       all     er_prsamp NULL
++er      extras\source\premium\templates-nonfree\layout\lang             nmake   -       all     er_prtelanf NULL
++er      extras\source\premium\templates-nonfree\presnt\lang             nmake   -       all     er_prteprnf NULL
++er      extras\source\premium\templates-nonfree\educate\lang            nmake   -       all     er_prteednf NULL
++er      extras\source\premium\templates-nonfree\finance\lang            nmake   -       all     er_prtefinf NULL
++er      extras\source\premium\templates-nonfree\forms\lang              nmake   -       all     er_prtefonf NULL
++er      extras\source\premium\templates-nonfree\misc\lang               nmake   -       all     er_prteminf NULL
++er      extras\source\premium\templates-nonfree\officorr\lang           nmake   -       all     er_prteocnf NULL
++er      extras\source\premium\templates-nonfree\offimisc\lang           nmake   -       all     er_prteomnf NULL
++er      extras\source\premium\templates-nonfree\personal\lang           nmake   -       all     er_prtepenf NULL
++er      extras\source\premium\templates-nonfree\lang                    nmake   -       all     er_prtempnf NULL
++er      extras\source\premium\samples-nonfree\advertisement\lang        nmake   -       all     er_prsaadnf NULL
++er      extras\source\premium\samples-nonfree\documentation\lang        nmake   -       all     er_prsedonf NULL
++er      extras\source\premium\samples-nonfree\lang                      nmake   -       all     er_prsampnf NULL
 +er      extras\source\gallery\accessories\Elements\Bullets2          nmake   -       all     er_gaeb2 NULL
  er	extras\source\misc_config				nmake	-	all	er_mcnf NULL
  er      extras\source\misc_config\lang                          nmake   -       all     er_mcnfl er_mcnf NULL
