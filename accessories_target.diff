@@ -1,6 +1,6 @@
 --- extras/util/target.orig	2005-09-09 00:22:16.000000000 +0200
 +++ extras/util/target.pmk	2005-12-30 10:29:41.754670700 +0100
-@@ -76,6 +76,37 @@
+@@ -76,6 +76,51 @@
  GALLERY_WWWBACK_TARGET          = gallwwwback
  GALLERY_WWWGRAF_TARGET          = gallwwwgraf
 
@@ -34,6 +34,20 @@
 +PREMIUM_SAMPLES_ROOT_TARGET                 = kamisamples
 +PREMIUM_SAMPLES_DOCUMENTATION_TARGET        = kamisamplesdocumentation
 +PREMIUM_SAMPLES_ADVERTISEMENT_TARGET        = kamisamplesadvertisement
++
++PREMIUM_TEMPLATES_NONFREE_LAYOUT_IMPRESS_TARGET     = kamitemplatesnonfreelayout
++PREMIUM_TEMPLATES_NONFREE_PRESNT_IMPRESS_TARGET     = kamitemplatesnonfreepresent
++PREMIUM_TEMPLATES_NONFREE_EDUCATE_TARGET            = kamitemplatesnonfreeeducate
++PREMIUM_TEMPLATES_NONFREE_FINANCE_TARGET            = kamitemplatesnonfreefinance
++PREMIUM_TEMPLATES_NONFREE_FORMS_TARGET              = kamitemplatesnonfreeforms
++PREMIUM_TEMPLATES_NONFREE_MISC_TARGET               = kamitemplatesnonfreemisc
++PREMIUM_TEMPLATES_NONFREE_OFFICORR_TARGET           = kamitemplatesnonfreeofficorr
++PREMIUM_TEMPLATES_NONFREE_OFFIMISC_TARGET           = kamitemplatesnonfreeoffimisc
++PREMIUM_TEMPLATES_NONFREE_PERSONAL_TARGET           = kamitemplatesnonfreepersonal
++PREMIUM_TEMPLATES_NONFREE_ROOT_TARGET               = kamitemplatesnonfree
++PREMIUM_SAMPLES_NONFREE_ROOT_TARGET                 = kamisamplesnonfree
++PREMIUM_SAMPLES_NONFREE_DOCUMENTATION_TARGET        = kamisamplesnonfreedocumentation
++PREMIUM_SAMPLES_NONFREE_ADVERTISEMENT_TARGET        = kamisamplesnonfreeadvertisement
 +
  INSO_DUTCH_TARGET               = inso31
  INSO_ENGLISH_UK_TARGET          = inso44

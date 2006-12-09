@@ -59,3 +59,26 @@ File gid_File_Extra_Samples_Advertisement_KAMI
     Styles = (ARCHIVE, DONT_OVERWRITE);
     EXTRA_ALL_LANG(kamisamplesadvertisement);
 End
+
+/* ** Samples - NON FREE** */
+
+File gid_File_Extra_Samples_NONFREE_KAMI
+    Dir = gid_Dir_Samples_Language;
+    TXT_FILE_BODY;
+    Styles = (ARCHIVE, DONT_OVERWRITE);
+    EXTRA_ALL_LANG(kamisamplesnonfree);
+End
+
+File gid_File_Extra_Samples_NONFREE_Documentations_KAMI
+    Dir = gid_Dir_Samples_Documentations;
+    TXT_FILE_BODY;
+    Styles = (ARCHIVE, DONT_OVERWRITE);
+    EXTRA_ALL_LANG(kamisamplesnonfreedocumentation);
+End
+
+File gid_File_Extra_Samples_NONFREE_Advertisement_KAMI
+    Dir = gid_Dir_Samples_Advertisement;
+    TXT_FILE_BODY;
+    Styles = (ARCHIVE, DONT_OVERWRITE);
+    EXTRA_ALL_LANG(kamisamplesnonfreeadvertisement);
+End

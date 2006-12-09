@@ -49,7 +49,17 @@ Module gid_Module_Optional_Accessories_Templates
         gid_File_Extra_Templates_Misc_KAMI,
         gid_File_Extra_Templates_Officorr_KAMI,
         gid_File_Extra_Templates_Offimisc_KAMI,
-        gid_File_Extra_Templates_Personal_KAMI );
+        gid_File_Extra_Templates_Personal_KAMI
+        gid_File_Extra_Templates_NONFREE_KAMI,
+        gid_File_Extra_Templates_NONFREE_Layout_KAMI,
+        gid_File_Extra_Templates_NONFREE_Present_KAMI,
+        gid_File_Extra_Templates_NONFREE_Educate_KAMI,
+        gid_File_Extra_Templates_NONFREE_Finance_KAMI,
+        gid_File_Extra_Templates_NONFREE_Forms_KAMI,
+        gid_File_Extra_Templates_NONFREE_Misc_KAMI,
+        gid_File_Extra_Templates_NONFREE_Officorr_KAMI,
+        gid_File_Extra_Templates_NONFREE_Offimisc_KAMI,
+        gid_File_Extra_Templates_NONFREE_Personal_KAMI );
     Minimal = NO;
     Default = YES;
     Styles = ( );

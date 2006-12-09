@@ -40,7 +40,8 @@ Module gid_Module_Optional_Accessories_Samples
     MOD_NAME_DESC(MODULE_OPTIONAL_ACCESSORIES_SAMPLES);
     ParentID = gid_Module_Optional_Accessories;
     Files = (
-        gid_File_Extra_Samples_KAMI  );
+        gid_File_Extra_Samples_KAMI
+        gid_File_Extra_Samples_NONFREE_KAMI  );
     Minimal = NO;
     Default = YES;
     Styles = ( );
@@ -51,7 +52,9 @@ Module gid_Module_Optional_Accessories_Documentations
     ParentID = gid_Module_Optional_Accessories;
     Files = (
         gid_File_Extra_Samples_KAMI,
-        gid_File_Extra_Samples_Documentations_KAMI );
+        gid_File_Extra_Samples_Documentations_KAMI
+        gid_File_Extra_Samples_NONFREE_KAMI,
+        gid_File_Extra_Samples_NONFREE_Documentations_KAMI );
     Minimal = NO;
     Default = YES;
     Styles = ( );
@@ -62,7 +65,9 @@ Module gid_Module_Optional_Accessories_Advertisement
     ParentID = gid_Module_Optional_Accessories;
     Files = (
         gid_File_Extra_Samples_KAMI,
-        gid_File_Extra_Samples_Advertisement_KAMI );
+        gid_File_Extra_Samples_Advertisement_KAMI
+        gid_File_Extra_Samples_NONFREE_KAMI,
+        gid_File_Extra_Samples_NONFREE_Advertisement_KAMI );
     Minimal = NO;
     Default = YES;
     Styles = ( );
