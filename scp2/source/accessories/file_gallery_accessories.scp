@@ -134,3 +134,9 @@ File gid_File_Extra_Gallery_Elements_Bullets2_KAMI
     ARCHIVE_TXT_FILE_BODY;
     Name = "kamigalleryelementsbullets2.zip";
 End
+
+File gid_File_Extra_Gallery_NONFREE_KAMI
+    Dir = gid_Dir_Gallery;
+    ARCHIVE_TXT_FILE_BODY;
+    Name = "kamigallerynonfree.zip";
+End

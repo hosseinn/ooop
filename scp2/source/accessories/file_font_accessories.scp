@@ -1127,7 +1127,7 @@ STD_FONTWIN_FILE( gid_File_Fnt_zorque, zorque.ttf, Zorque )
 #endif 
 #endif
 
-/* Additioanl fonts for 2.0.3 */
+/* Additional fonts for 2.0.3 */
 
 /* -URW-Gothic L */ 
 #ifdef UNX 

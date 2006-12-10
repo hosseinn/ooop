@@ -1,6 +1,6 @@
 --- extras/prj/build.lst.orig	2005-05-20 18:46:00.000000000 +0200
 +++ extras/prj/build.lst	2005-12-30 10:37:17.750718900 +0100
-@@ -13,6 +13,8 @@
+@@ -13,6 +13,49 @@
  er      extras\source\gallery\sounds                            nmake   -       all     er_gsnds NULL
  er      extras\source\gallery\www-back                          nmake   -       all     er_gwbck NULL
  er      extras\source\gallery\www-graf                          nmake   -       all     er_gwgrf NULL
@@ -46,6 +46,7 @@
 +er      extras\source\premium\samples-nonfree\documentation\lang        nmake   -       all     er_prsedonf NULL
 +er      extras\source\premium\samples-nonfree\lang                      nmake   -       all     er_prsampnf NULL
 +er      extras\source\gallery\accessories\Elements\Bullets2          nmake   -       all     er_gaeb2 NULL
++er      extras\source\gallery\accessories-nonfree                       nmake   -       all     er_gaccenf NULL
  er	extras\source\misc_config				nmake	-	all	er_mcnf NULL
  er      extras\source\misc_config\lang                          nmake   -       all     er_mcnfl er_mcnf NULL
  er	extras\source\palettes\lang				nmake	-	all	er_pall er_mcnfl NULL

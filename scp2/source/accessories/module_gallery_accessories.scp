@@ -52,8 +52,10 @@ Module gid_Module_Optional_Accessories_Gallery
         gid_File_Extra_Gallery_Photos_Buildings_KAMI,
         gid_File_Extra_Gallery_Photos_Cities_KAMI,
         gid_File_Extra_Gallery_Photos_Space_KAMI,
-        gid_File_Extra_Gallery_Photos_Statues_KAMI );
+        gid_File_Extra_Gallery_Photos_Statues_KAMI
         gid_File_Extra_Gallery_Photos_Travel_KAMI,
+        gid_File_Extra_Gallery_Elements_Bullets2_KAMI,
+        gid_File_Extra_Gallery_NONFREE_KAMI );
     Minimal = NO;
     Default = YES;
     Styles = ( );
