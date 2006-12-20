@@ -1026,11 +1026,11 @@
  
 +// ---------------------------------------------------------------------------+
 +
-+String RID_GALLERYSTR_THEME_WEBSITE
++String RID_GALLERYSTR_THEME_WEBSITE2
 +{
-+Text [ en-US ] = "Website";
-+Text [ de ] = "Website";
-+Text [ hu ] = "Honlap";
++Text [ en-US ] = "Website 2";
++Text [ de ] = "Website 2";
++Text [ hu ] = "Honlap 2";
 +Text [ x-comment ] = " ";
 +};
 +
