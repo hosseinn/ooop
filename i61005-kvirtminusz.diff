@@ -1,0 +1,26 @@
+﻿--- svx/source/editeng/svxacorr.cxx.orig	2005-09-11 17:21:38.000000000 +0200
++++ svx/source/editeng/svxacorr.cxx	2005-10-15 19:37:29.462518100 +0200
+@@ -719,8 +719,12 @@
+ 		}
+ 	}
+ 
+-	// ersetze [A-z0-9]--[A-z0-9] durch "emDash"
+-	if( cEmDash && 4 <= nEndPos - nSttPos )
++    // Replace [A-z0-9]--[A-z0-9] double dash with "emDash" or "enDash".
++    // Finnish and Hungarian use enDash instead of emDash.
++    bool bEnDash = (((eLang == LANGUAGE_SYSTEM ? (eLang = GetAppLang()) :
++                    eLang) == LANGUAGE_HUNGARIAN) || eLang ==
++            LANGUAGE_FINNISH);
++	if( ((cEmDash && !bEnDash) || (cEnDash && bEnDash)) && 4 <= nEndPos - nSttPos )
+ 	{
+ 		String sTmp( rTxt.Copy( nSttPos, nEndPos - nSttPos ) );
+ 		xub_StrLen nFndPos = sTmp.SearchAscii( "--" );
+@@ -733,7 +737,7 @@
+ 		{
+ 			nSttPos = nSttPos + nFndPos;
+ 			rDoc.Delete( nSttPos, nSttPos + 2 );
+-			rDoc.Insert( nSttPos, cEmDash );
++			rDoc.Insert( nSttPos, (bEnDash ? cEnDash : cEmDash) );
+ 			bRet = TRUE;
+ 		}
+ 	}
