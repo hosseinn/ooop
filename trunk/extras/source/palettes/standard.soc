@@ -1,0 +1,2945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:color-table xmlns:office="http://openoffice.org/2000/office" xmlns:style="http://openoffice.org/2000/style" xmlns:text="http://openoffice.org/2000/text" xmlns:table="http://openoffice.org/2000/table" xmlns:draw="http://openoffice.org/2000/drawing" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="http://openoffice.org/2000/meta" xmlns:number="http://openoffice.org/2000/datastyle" xmlns:svg="http://www.w3.org/2000/svg" xmlns:chart="http://openoffice.org/2000/chart" xmlns:dr3d="http://openoffice.org/2000/dr3d" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="http://openoffice.org/2000/form" xmlns:script="http://openoffice.org/2000/script" xmlns:config="http://openoffice.org/2001/config">
+ <draw:color draw:name="Black" draw:color="#000000"/>
+ <draw:color draw:name="Blue" draw:color="#000080"/>
+ <draw:color draw:name="Green" draw:color="#008000"/>
+ <draw:color draw:name="Turquoise" draw:color="#008080"/>
+ <draw:color draw:name="Red" draw:color="#800000"/>
+ <draw:color draw:name="Magenta" draw:color="#800080"/>
+ <draw:color draw:name="Brown" draw:color="#808000"/>
+ <draw:color draw:name="Gray" draw:color="#808080"/>
+ <draw:color draw:name="Light gray" draw:color="#c0c0c0"/>
+ <draw:color draw:name="Light blue" draw:color="#0000ff"/>
+ <draw:color draw:name="Light green" draw:color="#00ff00"/>
+ <draw:color draw:name="Light cyan" draw:color="#00ffff"/>
+ <draw:color draw:name="Light red" draw:color="#ff0000"/>
+ <draw:color draw:name="Light magenta" draw:color="#ff00ff"/>
+ <draw:color draw:name="Yellow" draw:color="#ffff00"/>
+ <draw:color draw:name="White" draw:color="#ffffff"/>
+ <draw:color draw:name="Gray 80%" draw:color="#333333"/>
+ <draw:color draw:name="Gray 70%" draw:color="#4c4c4c"/>
+ <draw:color draw:name="Gray 60%" draw:color="#666666"/>
+ <draw:color draw:name="Gray 40%" draw:color="#999999"/>
+ <draw:color draw:name="Gray 30%" draw:color="#b3b3b3"/>
+ <draw:color draw:name="Gray 20%" draw:color="#cccccc"/>
+ <draw:color draw:name="Gray 10%" draw:color="#e6e6e6"/>
+ <draw:color draw:name="Blue gray" draw:color="#e6e6ff"/>
+ <draw:color draw:name="Red 1" draw:color="#ff3366"/>
+ <draw:color draw:name="Red 2" draw:color="#dc2300"/>
+ <draw:color draw:name="Red 3" draw:color="#b84700"/>
+ <draw:color draw:name="Red 4" draw:color="#ff3333"/>
+ <draw:color draw:name="Red 5" draw:color="#eb613d"/>
+ <draw:color draw:name="Red 6" draw:color="#b84747"/>
+ <draw:color draw:name="Red 7" draw:color="#b80047"/>
+ <draw:color draw:name="Red 8" draw:color="#99284c"/>
+ <draw:color draw:name="Magenta 1" draw:color="#94006b"/>
+ <draw:color draw:name="Magenta 2" draw:color="#94476b"/>
+ <draw:color draw:name="Magenta 3" draw:color="#944794"/>
+ <draw:color draw:name="Magenta 4" draw:color="#9966cc"/>
+ <draw:color draw:name="Magenta 5" draw:color="#6b4794"/>
+ <draw:color draw:name="Magenta 6" draw:color="#6b2394"/>
+ <draw:color draw:name="Magenta 7" draw:color="#6b0094"/>
+ <draw:color draw:name="Magenta 8" draw:color="#5e11a6"/>
+ <draw:color draw:name="Blue 1" draw:color="#280099"/>
+ <draw:color draw:name="Blue 2" draw:color="#4700b8"/>
+ <draw:color draw:name="Blue 3" draw:color="#2300dc"/>
+ <draw:color draw:name="Blue 4" draw:color="#2323dc"/>
+ <draw:color draw:name="Blue 5" draw:color="#0047ff"/>
+ <draw:color draw:name="Blue 6" draw:color="#0099ff"/>
+ <draw:color draw:name="Blue 7" draw:color="#00b8ff"/>
+ <draw:color draw:name="Blue 8" draw:color="#99ccff"/>
+ <draw:color draw:name="Turquoise 1" draw:color="#00dcff"/>
+ <draw:color draw:name="Turquoise 2" draw:color="#00cccc"/>
+ <draw:color draw:name="Turquoise 3" draw:color="#23b8dc"/>
+ <draw:color draw:name="Turquoise 4" draw:color="#47b8b8"/>
+ <draw:color draw:name="Turquoise 5" draw:color="#33a3a3"/>
+ <draw:color draw:name="Turquoise 6" draw:color="#198a8a"/>
+ <draw:color draw:name="Turquoise 7" draw:color="#006b6b"/>
+ <draw:color draw:name="Turquoise 8" draw:color="#004a4a"/>
+ <draw:color draw:name="Green 1" draw:color="#355e00"/>
+ <draw:color draw:name="Green 2" draw:color="#5c8526"/>
+ <draw:color draw:name="Green 3" draw:color="#7da647"/>
+ <draw:color draw:name="Green 4" draw:color="#94bd5e"/>
+ <draw:color draw:name="Green 5" draw:color="#00ae00"/>
+ <draw:color draw:name="Green 6" draw:color="#33cc66"/>
+ <draw:color draw:name="Green 7" draw:color="#3deb3d"/>
+ <draw:color draw:name="Green 8" draw:color="#23ff23"/>
+ <draw:color draw:name="Yellow 1" draw:color="#e6ff00"/>
+ <draw:color draw:name="Yellow 2" draw:color="#ffff99"/>
+ <draw:color draw:name="Yellow 3" draw:color="#ffff66"/>
+ <draw:color draw:name="Yellow 4" draw:color="#e6e64c"/>
+ <draw:color draw:name="Yellow 5" draw:color="#cccc00"/>
+ <draw:color draw:name="Yellow 6" draw:color="#b3b300"/>
+ <draw:color draw:name="Yellow 7" draw:color="#808019"/>
+ <draw:color draw:name="Yellow 8" draw:color="#666600"/>
+ <draw:color draw:name="Brown 1" draw:color="#4c1900"/>
+ <draw:color draw:name="Brown 2" draw:color="#663300"/>
+ <draw:color draw:name="Brown 3" draw:color="#804c19"/>
+ <draw:color draw:name="Brown 4" draw:color="#996633"/>
+ <draw:color draw:name="Orange 1" draw:color="#cc6633"/>
+ <draw:color draw:name="Orange 2" draw:color="#ff6633"/>
+ <draw:color draw:name="Orange 3" draw:color="#ff9966"/>
+ <draw:color draw:name="Orange 4" draw:color="#ffcc99"/>
+ <draw:color draw:name="Violet" draw:color="#9999ff"/>
+ <draw:color draw:name="Bordeaux" draw:color="#993366"/>
+ <draw:color draw:name="Pale yellow" draw:color="#ffffcc"/>
+ <draw:color draw:name="Pale green" draw:color="#ccffff"/>
+ <draw:color draw:name="Dark violet" draw:color="#660066"/>
+ <draw:color draw:name="Salmon" draw:color="#ff8080"/>
+ <draw:color draw:name="Sea blue" draw:color="#0066cc"/>
+ <draw:color draw:name="Sun 1" draw:color="#333366"/>
+ <draw:color draw:name="Sun 2" draw:color="#666699"/>
+ <draw:color draw:name="Sun 3" draw:color="#9999cc"/>
+ <draw:color draw:name="Sun 4" draw:color="#ccccff"/>
+
+ <draw:color draw:name="openSUSE light green" draw:color="#bddd8d"/>
+ <draw:color draw:name="openSUSE medium green" draw:color="#198533"/>
+ <draw:color draw:name="openSUSE dark green" draw:color="#0c5248"/>
+
+ <draw:color draw:name="Novell red" draw:color="#e00000"/>
+ <draw:color draw:name="Novell orange" draw:color="#e67814"/>
+ <draw:color draw:name="Novell yellow" draw:color="#ffdd00"/>
+ <draw:color draw:name="Novell green" draw:color="#629e1f"/>
+ <draw:color draw:name="Novell teal" draw:color="#6ea19b"/>
+ <draw:color draw:name="Novell blue" draw:color="#1c82b9"/>
+ <draw:color draw:name="Novell light gray" draw:color="#cccccd"/>
+ <draw:color draw:name="Novell medium gray" draw:color="#5a5a64"/>
+ <draw:color draw:name="Novell dark gray" draw:color="#3c3c41"/>
+
+<draw:color draw:name="Azure" draw:color="#99ffff"/>
+<draw:color draw:name="Beige" draw:color="#cc9966"/>
+<draw:color draw:name="Blue" draw:color="#6699cc"/>
+<draw:color draw:name="Bordeux" draw:color="#990033"/>
+<draw:color draw:name="Bottle Green" draw:color="#003333"/>
+<draw:color draw:name="Burnt Sienna" draw:color="#660000"/>
+<draw:color draw:name="Burnt Umber" draw:color="#330000"/>
+<draw:color draw:name="Cold Blue" draw:color="#336699"/>
+<draw:color draw:name="Crimson" draw:color="#cc0033"/>
+<draw:color draw:name="Dark Blue" draw:color="#003366"/>
+<draw:color draw:name="Dark Green" draw:color="#003300"/>
+<draw:color draw:name="Dark Turquoise" draw:color="#336666"/>
+<draw:color draw:name="Fir Green" draw:color="#336633"/>
+<draw:color draw:name="Gold Ochre" draw:color="#cc9900"/>
+<draw:color draw:name="Green" draw:color="#669966"/>
+<draw:color draw:name="Greenish Yellow" draw:color="#cccc33"/>
+<draw:color draw:name="Java Red" draw:color="#cc3333"/>
+<draw:color draw:name="Khaki" draw:color="#cccc99"/>
+<draw:color draw:name="Light Green" draw:color="#99cc99"/>
+<draw:color draw:name="Light Lemon Green" draw:color="#cccc66"/>
+<draw:color draw:name="Light Olive Green" draw:color="#999966"/>
+<draw:color draw:name="Light Red" draw:color="#ff6666"/>
+<draw:color draw:name="Light Turquoise" draw:color="#99cccc"/>
+<draw:color draw:name="Olive Green" draw:color="#666633"/>
+<draw:color draw:name="Orange" draw:color="#ff9900"/>
+<draw:color draw:name="Pale Green" draw:color="#ccffcc"/>
+<draw:color draw:name="Reddish Brown" draw:color="#993300"/>
+<draw:color draw:name="Rose" draw:color="#ff9999"/>
+<draw:color draw:name="Russet" draw:color="#990000"/>
+<draw:color draw:name="Sand" draw:color="#e1e1cc"/>
+<draw:color draw:name="Sienna" draw:color="#cc6600"/>
+<draw:color draw:name="Turquoise" draw:color="#669999"/>
+<draw:color draw:name="Umbra" draw:color="#333300"/>
+
+<draw:color draw:name="0-0-0-0" draw:color="#ffffff"/>
+<draw:color draw:name="0-0-0-10" draw:color="#e5e5e5"/>
+<draw:color draw:name="0-0-0-100" draw:color="#000000"/>
+<draw:color draw:name="0-0-0-20" draw:color="#cccccc"/>
+<draw:color draw:name="0-0-0-30" draw:color="#b2b2b2"/>
+<draw:color draw:name="0-0-0-40" draw:color="#999999"/>
+<draw:color draw:name="0-0-0-50" draw:color="#7f7f7f"/>
+<draw:color draw:name="0-0-0-60" draw:color="#666666"/>
+<draw:color draw:name="0-0-0-70" draw:color="#4c4c4c"/>
+<draw:color draw:name="0-0-0-80" draw:color="#333333"/>
+<draw:color draw:name="0-0-56-0" draw:color="#ffff70"/>
+<draw:color draw:name="0-100-65-0" draw:color="#ff0059"/>
+<draw:color draw:name="0-13-77-0" draw:color="#ffde3b"/>
+<draw:color draw:name="0-15-50-0" draw:color="#ffd97f"/>
+<draw:color draw:name="0-19-53-11" draw:color="#e3b35c"/>
+<draw:color draw:name="0-20-0-0" draw:color="#ffccff"/>
+<draw:color draw:name="0-20-100-0" draw:color="#ffcc00"/>
+<draw:color draw:name="0-3-7-0" draw:color="#fff7ed"/>
+<draw:color draw:name="0-3-85-0" draw:color="#fff726"/>
+<draw:color draw:name="0-31-84-0" draw:color="#ffb029"/>
+<draw:color draw:name="0-35-76-5" draw:color="#f29930"/>
+<draw:color draw:name="0-38-100-0" draw:color="#ff9e00"/>
+<draw:color draw:name="0-38-46-49" draw:color="#82210d"/>
+<draw:color draw:name="0-40-0-0" draw:color="#ff99ff"/>
+<draw:color draw:name="0-50-0-0" draw:color="#ff7fff"/>
+<draw:color draw:name="0-50-100-0" draw:color="#ff7f00"/>
+<draw:color draw:name="0-65-27-0" draw:color="#ff59ba"/>
+<draw:color draw:name="0-66-0-0" draw:color="#ff57ff"/>
+<draw:color draw:name="0-7-13-0" draw:color="#ffedde"/>
+<draw:color draw:name="0-9-28-3" draw:color="#f7e0b0"/>
+<draw:color draw:name="100-90-10-0" draw:color="#0019fc"/>
+<draw:color draw:name="11-5-0-0" draw:color="#e3f2ff"/>
+<draw:color draw:name="23-10-0-0" draw:color="#c4e5ff"/>
+<draw:color draw:name="23-10-0-27" draw:color="#7fa0ba"/>
+<draw:color draw:name="27-77-4-0" draw:color="#ba3bf5"/>
+<draw:color draw:name="28-17-0-0" draw:color="#b8d4ff"/>
+<draw:color draw:name="28-25-0-0" draw:color="#b8bfff"/>
+<draw:color draw:name="3-16-24-4" draw:color="#edccb8"/>
+<draw:color draw:name="3-6-14-4" draw:color="#ede6d1"/>
+<draw:color draw:name="38-0-42-0" draw:color="#9eff94"/>
+<draw:color draw:name="50-100-65-0" draw:color="#7f0059"/>
+<draw:color draw:name="51-68-100-5" draw:color="#6e4300"/>
+<draw:color draw:name="52-0-0-0" draw:color="#7affff"/>
+<draw:color draw:name="54-44-0-0" draw:color="#758fff"/>
+<draw:color draw:name="54-60-72-0" draw:color="#756647"/>
+<draw:color draw:name="54-88-11-0" draw:color="#751fe3"/>
+<draw:color draw:name="61-6-0-0" draw:color="#63f0ff"/>
+<draw:color draw:name="65-10-0-0" draw:color="#59e5ff"/>
+<draw:color draw:name="68-1-72-0" draw:color="#52fc47"/>
+<draw:color draw:name="68-1-72-50" draw:color="#007c00"/>
+<draw:color draw:name="70-11-64-2" draw:color="#47de57"/>
+<draw:color draw:name="70-50-0-0" draw:color="#4c7fff"/>
+<draw:color draw:name="70-50-0-50" draw:color="#00007f"/>
+<draw:color draw:name="72-23-54-8" draw:color="#33b061"/>
+<draw:color draw:name="76-25-0-0" draw:color="#3dbfff"/>
+<draw:color draw:name="79-45-0-25" draw:color="#004cbf"/>
+<draw:color draw:name="87-40-0-0" draw:color="#2199ff"/>
+<draw:color draw:name="9-13-16-12" draw:color="#c9bfb7"/>
+<draw:color draw:name="9-19-46-21" draw:color="#b27f54"/>
+<draw:color draw:name="9-20-24-15" draw:color="#c2a69c"/>
+<draw:color draw:name="93-100-13-0" draw:color="#1200de"/>
+
+<draw:color draw:name="Alice Blue" draw:color="#f0f8ff"/>
+<draw:color draw:name="Antique white" draw:color="#faebd7"/>
+<draw:color draw:name="Aquamarine" draw:color="#7fffd4"/>
+<draw:color draw:name="Azure" draw:color="#99ffff"/>
+<draw:color draw:name="Beige" draw:color="#cc9966"/>
+<draw:color draw:name="Bisque" draw:color="#ffe4c4"/>
+<draw:color draw:name="Blanched almond" draw:color="#ffebcd"/>
+<draw:color draw:name="Blue violet" draw:color="#8a2be2"/>
+<draw:color draw:name="Blue" draw:color="#6699cc"/>
+<draw:color draw:name="Brown A52A2A 165.42.42" draw:color="#a52a2a"/>
+<draw:color draw:name="Burlywood" draw:color="#deb887"/>
+<draw:color draw:name="Cadet blue" draw:color="#5f9ea0"/>
+<draw:color draw:name="Chartreuse" draw:color="#7fff00"/>
+<draw:color draw:name="Chocolate" draw:color="#d2691e"/>
+<draw:color draw:name="Coral" draw:color="#ff7f50"/>
+<draw:color draw:name="Cornflower blue" draw:color="#6495ed"/>
+<draw:color draw:name="Cornsilk" draw:color="#fff8dc"/>
+<draw:color draw:name="Crimson" draw:color="#cc0033"/>
+<draw:color draw:name="Dark blue 00008B 0.0.139" draw:color="#00008b"/>
+<draw:color draw:name="Dark Blue" draw:color="#003366"/>
+<draw:color draw:name="Dark cyan" draw:color="#008b8b"/>
+<draw:color draw:name="Dark goldenrod" draw:color="#b8860b"/>
+<draw:color draw:name="Dark Gray" draw:color="#a9a9a9"/>
+<draw:color draw:name="Dark Magenta" draw:color="#8b008b"/>
+<draw:color draw:name="Dark olive green" draw:color="#556b2f"/>
+<draw:color draw:name="Dark orange" draw:color="#ff8c00"/>
+<draw:color draw:name="Dark Orchid" draw:color="#9932cc"/>
+<draw:color draw:name="Dark red" draw:color="#8b0000"/>
+<draw:color draw:name="Dark salmon" draw:color="#e9967a"/>
+<draw:color draw:name="Dark Seagreen" draw:color="#8dbc8f"/>
+<draw:color draw:name="Dark slate blue" draw:color="#483d8b"/>
+<draw:color draw:name="Dark slate gray" draw:color="#2f4f4f"/>
+<draw:color draw:name="Dark turquoise" draw:color="#00ded1"/>
+<draw:color draw:name="Dark violet 1" draw:color="#9400d3"/>
+<draw:color draw:name="Deep pink" draw:color="#ff1493"/>
+<draw:color draw:name="Deep sky blue" draw:color="#00bfff"/>
+<draw:color draw:name="Dim gray" draw:color="#696097"/>
+<draw:color draw:name="Dodger blue" draw:color="#1e90ff"/>
+<draw:color draw:name="Firebrick" draw:color="#b22222"/>
+<draw:color draw:name="Floral white" draw:color="#fffaf0"/>
+<draw:color draw:name="Forest green" draw:color="#228b22"/>
+<draw:color draw:name="Gainsboro" draw:color="#dcdcdc"/>
+<draw:color draw:name="Ghost white" draw:color="#f8f8f8"/>
+<draw:color draw:name="Gold" draw:color="#ffd700"/>
+<draw:color draw:name="Goldenrod" draw:color="#daa520"/>
+<draw:color draw:name="Green yellow" draw:color="#adff2f"/>
+<draw:color draw:name="Green" draw:color="#669966"/>
+<draw:color draw:name="Green" draw:color="#669966"/>
+<draw:color draw:name="Honeydew" draw:color="#f0fff0"/>
+<draw:color draw:name="Hot pink" draw:color="#ff69b4"/>
+<draw:color draw:name="Indian red" draw:color="#cd5c5c"/>
+<draw:color draw:name="Indigo" draw:color="#4b0082"/>
+<draw:color draw:name="Ivory" draw:color="#fffff0"/>
+<draw:color draw:name="Khaki" draw:color="#cccc99"/>
+<draw:color draw:name="Lavender blush" draw:color="#fff0f5"/>
+<draw:color draw:name="Lavender" draw:color="#e6e6fa"/>
+<draw:color draw:name="Lawn green" draw:color="#7cfc00"/>
+<draw:color draw:name="Lemon chiffon" draw:color="#fffacd"/>
+<draw:color draw:name="Light blue" draw:color="#add8e6"/>
+<draw:color draw:name="Light coral" draw:color="#f08080"/>
+<draw:color draw:name="Light cyan" draw:color="#e0ffff"/>
+<draw:color draw:name="Light Golden Rod Yellow" draw:color="#fafad2"/>
+<draw:color draw:name="Light green 1" draw:color="#90ee90"/>
+<draw:color draw:name="Light grey" draw:color="#d3d3d3"/>
+<draw:color draw:name="Light pink" draw:color="#ffb6c1"/>
+<draw:color draw:name="Light salmon" draw:color="#ffa07a"/>
+<draw:color draw:name="Light sea green" draw:color="#20b2aa"/>
+<draw:color draw:name="Light sky blue 87CEFA 135.206.250" draw:color="#87cefa"/>
+<draw:color draw:name="Light slate gray 778899 119.136.153" draw:color="#778899"/>
+<draw:color draw:name="Light steel blue B0C4DE 176.196.222" draw:color="#b0c4de"/>
+<draw:color draw:name="Light yellow FFFFE0 255.255.224" draw:color="#ffffe0"/>
+<draw:color draw:name="Lime green 32CD32 50.205.50" draw:color="#32cd32"/>
+<draw:color draw:name="Linen FAF0E6 250.240.230" draw:color="#faf0e6"/>
+<draw:color draw:name="Medium aquamarine 66CDAA 102.205.170" draw:color="#66cdaa"/>
+<draw:color draw:name="Medium blue 0000CD 0.0.205" draw:color="#0000cd"/>
+<draw:color draw:name="Medium orchid BA55D3 186.85.211" draw:color="#ba55d3"/>
+<draw:color draw:name="Medium purple 9370DB 147.112.219" draw:color="#9370db"/>
+<draw:color draw:name="Medium sea green 3CB371 60.179.113" draw:color="#3cb371"/>
+<draw:color draw:name="Medium slate blue 7B68EE 123.104.238" draw:color="#7b68ee"/>
+<draw:color draw:name="Medium spring green 00FA9A 0.250.154" draw:color="#00fa9a"/>
+<draw:color draw:name="Medium turquoise 48D1CC 72.209.204" draw:color="#48d1cc"/>
+<draw:color draw:name="Medium violet red C71585 199.21.133" draw:color="#c71585"/>
+<draw:color draw:name="Midnight blue 191970 25.25.112" draw:color="#191970"/>
+<draw:color draw:name="Mint cream F5FFFA 245.255.250" draw:color="#f5fffa"/>
+<draw:color draw:name="Misty rose FFE4E1 255.228.225" draw:color="#ffe4e1"/>
+<draw:color draw:name="Moccasin FFE4B5 255.228.181" draw:color="#ffe4b5"/>
+<draw:color draw:name="Navajo white FFDEAD 255.222.173" draw:color="#ffdead"/>
+<draw:color draw:name="Old lace FDF5E6 253.245.230" draw:color="#fdf5e6"/>
+<draw:color draw:name="Olive drab 6B8E23 107.142.35" draw:color="#6b8e23"/>
+<draw:color draw:name="Orange FFA500 255.165.0" draw:color="#ffa500"/>
+<draw:color draw:name="Orange red FF4500 255.69.0" draw:color="#ff4200"/>
+<draw:color draw:name="Orchid DA70D6 218.112.214" draw:color="#da70d6"/>
+<draw:color draw:name="Pale goldenrod EEE8AA 238.232.170" draw:color="#eee8aa"/>
+<draw:color draw:name="Pale green 98FB98 152.251.152" draw:color="#98fb98"/>
+<draw:color draw:name="Pale turquoise AFEEEE 175.238.238" draw:color="#afeeee"/>
+<draw:color draw:name="Pale violetred DB7093 219.112.147" draw:color="#db7093"/>
+<draw:color draw:name="Papaya whip FFEFD5 255.239.213" draw:color="#ffefd5"/>
+<draw:color draw:name="Peachpuff FFDAB9 255.218.185" draw:color="#ffdab9"/>
+<draw:color draw:name="Peru CD853F 205.133.63" draw:color="#cd853f"/>
+<draw:color draw:name="Pink FFC0CB 255.192.203" draw:color="#ffc0cb"/>
+<draw:color draw:name="Plum DDA0DD 221.160.221" draw:color="#dda0dd"/>
+<draw:color draw:name="Powder blue B0E0E6 176.224.230" draw:color="#b0e0e6"/>
+<draw:color draw:name="Rosy brown BC8F8F 188.143.143" draw:color="#bc8f8f"/>
+<draw:color draw:name="Royal blue 4169E1 65.105.225" draw:color="#4169e1"/>
+<draw:color draw:name="Saddle brown 8B4513 139.69.19" draw:color="#8b4513"/>
+<draw:color draw:name="Salmon FA8072 250.128.114" draw:color="#fa8072"/>
+<draw:color draw:name="Sandy brown F4A460 244.164.96" draw:color="#f4a460"/>
+<draw:color draw:name="Sea green 2E8B57 46.139.87" draw:color="#2e8b57"/>
+<draw:color draw:name="Seashell FFF5EE 255.245.238" draw:color="#fff5ed"/>
+<draw:color draw:name="Sienna A0522D 160.82.45" draw:color="#a0522d"/>
+<draw:color draw:name="Sky blue 87CEEB 135.206.235" draw:color="#87ceeb"/>
+<draw:color draw:name="Slate blue 6A5ACD 106.90.205" draw:color="#6a5acd"/>
+<draw:color draw:name="Slate gray 708090 112.128.144" draw:color="#708090"/>
+<draw:color draw:name="Snow FFFAFA 255.250.250" draw:color="#fffafa"/>
+<draw:color draw:name="Spring green 00FF7F 0.255.127" draw:color="#00ff7f"/>
+<draw:color draw:name="Steel blue 4682B4 70.130.180" draw:color="#4682b4"/>
+<draw:color draw:name="Tan D2B48C 210.180.140" draw:color="#d2b48c"/>
+<draw:color draw:name="Thistle D8BFD8 216.191.216" draw:color="#d8bfd8"/>
+<draw:color draw:name="Tomato FF6347 255.99.71" draw:color="#ff6347"/>
+<draw:color draw:name="Turquoise 40E0D0 64.224.208" draw:color="#40e0d0"/>
+<draw:color draw:name="Violet EE82EE 238.130.238" draw:color="#ee82ee"/>
+<draw:color draw:name="Wheat F5DEB3 245.222.179" draw:color="#f5deb3"/>
+<draw:color draw:name="White smoke F5F5F5 245.245.245" draw:color="#f5f5f5"/>
+<draw:color draw:name="Yellow green/alice blue 9ACD32 154.205.50" draw:color="#9acd32"/>
+<draw:color draw:name="Gray0" draw:color="#150517"/>
+<draw:color draw:name="Gray18" draw:color="#250517"/>
+<draw:color draw:name="Gray21" draw:color="#2b1b17"/>
+<draw:color draw:name="Gray23" draw:color="#302217"/>
+<draw:color draw:name="Gray24" draw:color="#302226"/>
+<draw:color draw:name="Gray25" draw:color="#342826"/>
+<draw:color draw:name="Gray26" draw:color="#34282c"/>
+<draw:color draw:name="Gray27" draw:color="#382d2c"/>
+<draw:color draw:name="Gray28" draw:color="#3b3131"/>
+<draw:color draw:name="Gray29" draw:color="#3e3535"/>
+<draw:color draw:name="Gray30" draw:color="#413839"/>
+<draw:color draw:name="Gray31" draw:color="#41383c"/>
+<draw:color draw:name="Gray32" draw:color="#463e3f"/>
+<draw:color draw:name="Gray34" draw:color="#4a4344"/>
+<draw:color draw:name="Gray35" draw:color="#4c4646"/>
+<draw:color draw:name="Gray36" draw:color="#4e4848"/>
+<draw:color draw:name="Gray37" draw:color="#504a4b"/>
+<draw:color draw:name="Gray38" draw:color="#544e4f"/>
+<draw:color draw:name="Gray39" draw:color="#565051"/>
+<draw:color draw:name="Gray40" draw:color="#595454"/>
+<draw:color draw:name="Gray41" draw:color="#5c5858"/>
+<draw:color draw:name="Gray42" draw:color="#5f5a59"/>
+<draw:color draw:name="Gray43" draw:color="#625d5d"/>
+<draw:color draw:name="Gray44" draw:color="#646060"/>
+<draw:color draw:name="Gray45" draw:color="#666362"/>
+<draw:color draw:name="Gray46" draw:color="#696565"/>
+<draw:color draw:name="Gray47" draw:color="#6d6968"/>
+<draw:color draw:name="Gray48" draw:color="#6e6a6b"/>
+<draw:color draw:name="Gray49" draw:color="#726e6d"/>
+<draw:color draw:name="Gray50" draw:color="#747170"/>
+<draw:color draw:name="Slate Gray4" draw:color="#616d7e"/>
+<draw:color draw:name="Slate Gray" draw:color="#657383"/>
+<draw:color draw:name="Light Steel Blue4" draw:color="#646d7e"/>
+<draw:color draw:name="Light Slate Gray" draw:color="#6d7b8d"/>
+<draw:color draw:name="Cadet Blue4" draw:color="#4c787e"/>
+<draw:color draw:name="Dark Slate Gray4" draw:color="#4c7d7e"/>
+<draw:color draw:name="Thistle4" draw:color="#806d7e"/>
+<draw:color draw:name="Medium Slate Blue" draw:color="#5e5a80"/>
+<draw:color draw:name="Medium Purple4" draw:color="#4e387e"/>
+<draw:color draw:name="Midnight Blue" draw:color="#151b54"/>
+<draw:color draw:name="Dark Slate Blue" draw:color="#2b3856"/>
+<draw:color draw:name="Dark Slate Gray" draw:color="#25383c"/>
+<draw:color draw:name="Dim Gray" draw:color="#463e41"/>
+<draw:color draw:name="Cornflower Blue" draw:color="#151b8d"/>
+<draw:color draw:name="Royal Blue4" draw:color="#15317e"/>
+<draw:color draw:name="Slate Blue4" draw:color="#342d7e"/>
+<draw:color draw:name="Royal Blue" draw:color="#2b60de"/>
+<draw:color draw:name="Royal Blue1" draw:color="#306eff"/>
+<draw:color draw:name="Royal Blue2" draw:color="#2b65ec"/>
+<draw:color draw:name="Royal Blue3" draw:color="#2554c7"/>
+<draw:color draw:name="Deep Sky Blue" draw:color="#3bb9ff"/>
+<draw:color draw:name="Deep Sky Blue2" draw:color="#38acec"/>
+<draw:color draw:name="Deep Sky Blue3" draw:color="#3090c7"/>
+<draw:color draw:name="Deep Sky Blue4" draw:color="#25587e"/>
+<draw:color draw:name="Dodger Blue" draw:color="#1589ff"/>
+<draw:color draw:name="Dodger Blue2" draw:color="#157dec"/>
+<draw:color draw:name="Dodger Blue3" draw:color="#1569c7"/>
+<draw:color draw:name="Dodger Blue4" draw:color="#153e7e"/>
+<draw:color draw:name="Steel Blue4" draw:color="#2b547e"/>
+<draw:color draw:name="Steel Blue" draw:color="#4863a0"/>
+<draw:color draw:name="Slate Blue2" draw:color="#6960ec"/>
+<draw:color draw:name="Violet" draw:color="#8d38c9"/>
+<draw:color draw:name="Medium Purple3" draw:color="#7a5dc7"/>
+<draw:color draw:name="Medium Purple" draw:color="#8467d7"/>
+<draw:color draw:name="Medium Purple2" draw:color="#9172ec"/>
+<draw:color draw:name="Medium Purple1" draw:color="#9e7bff"/>
+<draw:color draw:name="Light Steel Blue" draw:color="#728fce"/>
+<draw:color draw:name="Steel Blue3" draw:color="#488ac7"/>
+<draw:color draw:name="Steel Blue2" draw:color="#56a5ec"/>
+<draw:color draw:name="Steel Blue1" draw:color="#5cb3ff"/>
+<draw:color draw:name="Sky Blue3" draw:color="#659ec7"/>
+<draw:color draw:name="Sky Blue4" draw:color="#41627e"/>
+<draw:color draw:name="Slate Gray3" draw:color="#98afc7"/>
+<draw:color draw:name="Violet Red" draw:color="#f6358a"/>
+<draw:color draw:name="Violet Red1" draw:color="#f6358a"/>
+<draw:color draw:name="Violet Red2" draw:color="#e4317f"/>
+<draw:color draw:name="Deep Pink" draw:color="#f52887"/>
+<draw:color draw:name="Deep Pink2" draw:color="#e4287c"/>
+<draw:color draw:name="Deep Pink3" draw:color="#c12267"/>
+<draw:color draw:name="Deep Pink4" draw:color="#7d053f"/>
+<draw:color draw:name="Medium Violet Red" draw:color="#ca226b"/>
+<draw:color draw:name="Violet Red3" draw:color="#c12869"/>
+<draw:color draw:name="Firebrick" draw:color="#b22222"/>
+<draw:color draw:name="Violet Red4" draw:color="#7d0541"/>
+<draw:color draw:name="Maroon4" draw:color="#7d0552"/>
+<draw:color draw:name="Maroon" draw:color="#810541"/>
+<draw:color draw:name="Maroon3" draw:color="#c12283"/>
+<draw:color draw:name="Maroon2" draw:color="#e3319d"/>
+<draw:color draw:name="Maroon1" draw:color="#f535aa"/>
+<draw:color draw:name="Magenta1" draw:color="#f433ff"/>
+<draw:color draw:name="Magenta2" draw:color="#e238ec"/>
+<draw:color draw:name="Magenta3" draw:color="#c031c7"/>
+<draw:color draw:name="Medium Orchid" draw:color="#b048b5"/>
+<draw:color draw:name="Medium Orchid1" draw:color="#d462ff"/>
+<draw:color draw:name="Medium Orchid2" draw:color="#c45aec"/>
+<draw:color draw:name="Medium Orchid3" draw:color="#a74ac7"/>
+<draw:color draw:name="Medium Orchid4" draw:color="#6a287e"/>
+<draw:color draw:name="Purple" draw:color="#8e35ef"/>
+<draw:color draw:name="Purple1" draw:color="#893bff"/>
+<draw:color draw:name="Purple2" draw:color="#7f38ec"/>
+<draw:color draw:name="Purple3" draw:color="#6c2dc7"/>
+<draw:color draw:name="Purple4" draw:color="#461b7e"/>
+<draw:color draw:name="Dark Orchid4" draw:color="#571b7e"/>
+<draw:color draw:name="Dark Orchid" draw:color="#9932cc"/>
+<draw:color draw:name="Dark Violet" draw:color="#842dce"/>
+<draw:color draw:name="Dark Orchid3" draw:color="#8b31c7"/>
+<draw:color draw:name="Dark Orchid2" draw:color="#a23bec"/>
+<draw:color draw:name="Dark Orchid1" draw:color="#b041ff"/>
+<draw:color draw:name="Plum4" draw:color="#7e587e"/>
+<draw:color draw:name="Pale Violet Red" draw:color="#d16587"/>
+<draw:color draw:name="Pale Violet Red1" draw:color="#f778a1"/>
+<draw:color draw:name="Pale Violet Red2" draw:color="#e56e94"/>
+<draw:color draw:name="Pale Violet Red3" draw:color="#c25a7c"/>
+<draw:color draw:name="Pale Violet Red4" draw:color="#7e354d"/>
+<draw:color draw:name="Plum" draw:color="#b93b8f"/>
+<draw:color draw:name="Plum1" draw:color="#f9b7ff"/>
+<draw:color draw:name="Plum2" draw:color="#e6a9ec"/>
+<draw:color draw:name="Plum3" draw:color="#c38ec7"/>
+<draw:color draw:name="Thistle" draw:color="#d2b9d3"/>
+<draw:color draw:name="Thistle3" draw:color="#c6aec7"/>
+<draw:color draw:name="Lavendar Blush2" draw:color="#ebdde2"/>
+<draw:color draw:name="Lavendar Blush3" draw:color="#c8bbbe"/>
+<draw:color draw:name="Thistle2" draw:color="#e9cfec"/>
+<draw:color draw:name="Thistle1" draw:color="#fcdfff"/>
+<draw:color draw:name="Lavendar" draw:color="#e3e4fa"/>
+<draw:color draw:name="Lavendar Blush" draw:color="#fdeef4"/>
+<draw:color draw:name="Light Steel Blue1" draw:color="#c6deff"/>
+<draw:color draw:name="Light Blue1" draw:color="#bdedff"/>
+<draw:color draw:name="Light Cyan" draw:color="#e0ffff"/>
+<draw:color draw:name="Slate Gray1" draw:color="#c2dfff"/>
+<draw:color draw:name="Slate Gray2" draw:color="#b4cfec"/>
+<draw:color draw:name="Light Steel Blue2" draw:color="#b7ceec"/>
+<draw:color draw:name="Turquoise1" draw:color="#52f3ff"/>
+<draw:color draw:name="Cyan1" draw:color="#57feff"/>
+<draw:color draw:name="Cyan2" draw:color="#50ebec"/>
+<draw:color draw:name="Turquoise2" draw:color="#4ee2ec"/>
+<draw:color draw:name="Medium Turquoise" draw:color="#48cccd"/>
+<draw:color draw:name="Turquoise" draw:color="#669999"/>
+<draw:color draw:name="Dark Slate Gray1" draw:color="#9afeff"/>
+<draw:color draw:name="Dark Slate Gray2" draw:color="#8eebec"/>
+<draw:color draw:name="Dark Slate Gray3" draw:color="#78c7c7"/>
+<draw:color draw:name="Cyan3" draw:color="#46c7c7"/>
+<draw:color draw:name="Turquoise3" draw:color="#43bfc7"/>
+<draw:color draw:name="Cadet Blue3" draw:color="#77bfc7"/>
+<draw:color draw:name="Pale Turquoise3" draw:color="#92c7c7"/>
+<draw:color draw:name="Light Blue2" draw:color="#afdcec"/>
+<draw:color draw:name="Dark Turquoise" draw:color="#336666"/>
+<draw:color draw:name="Cyan4" draw:color="#307d7e"/>
+<draw:color draw:name="Light Sea Green" draw:color="#3ea99f"/>
+<draw:color draw:name="Light Sky Blue" draw:color="#82cafa"/>
+<draw:color draw:name="Light Sky Blue2" draw:color="#a0cfec"/>
+<draw:color draw:name="Light Sky Blue3" draw:color="#87afc7"/>
+<draw:color draw:name="Sky Blue" draw:color="#82caff"/>
+<draw:color draw:name="Sky Blue2" draw:color="#79baec"/>
+<draw:color draw:name="Light Sky Blue4" draw:color="#566d7e"/>
+<draw:color draw:name="Sky Blue" draw:color="#82caff"/>
+<draw:color draw:name="Light Slate Blue" draw:color="#736aff"/>
+<draw:color draw:name="Light Cyan2" draw:color="#cfecec"/>
+<draw:color draw:name="Light Cyan3" draw:color="#afc7c7"/>
+<draw:color draw:name="Light Cyan4" draw:color="#717d7d"/>
+<draw:color draw:name="Light Blue3" draw:color="#95b9c7"/>
+<draw:color draw:name="Light Blue4" draw:color="#5e767e"/>
+<draw:color draw:name="Pale Turquoise4" draw:color="#5e7d7e"/>
+<draw:color draw:name="Dark Sea Green4" draw:color="#617c58"/>
+<draw:color draw:name="Medium Aquamarine" draw:color="#348781"/>
+<draw:color draw:name="Medium Sea Green" draw:color="#306754"/>
+<draw:color draw:name="Sea Green" draw:color="#4e8975"/>
+<draw:color draw:name="Dark Green" draw:color="#003300"/>
+<draw:color draw:name="Sea Green4" draw:color="#387c44"/>
+<draw:color draw:name="Forest Green" draw:color="#4e9258"/>
+<draw:color draw:name="Medium Forest Green" draw:color="#347235"/>
+<draw:color draw:name="Spring Green4" draw:color="#347c2c"/>
+<draw:color draw:name="Dark Olive Green4" draw:color="#667c26"/>
+<draw:color draw:name="Chartreuse4" draw:color="#437c17"/>
+<draw:color draw:name="Green4" draw:color="#347c17"/>
+<draw:color draw:name="Medium Spring Green" draw:color="#348017"/>
+<draw:color draw:name="Spring Green" draw:color="#4aa02c"/>
+<draw:color draw:name="Lime Green" draw:color="#41a317"/>
+<draw:color draw:name="Spring Green" draw:color="#4aa02c"/>
+<draw:color draw:name="Dark Sea Green" draw:color="#8bb381"/>
+<draw:color draw:name="Dark Sea Green3" draw:color="#99c68e"/>
+<draw:color draw:name="Green3" draw:color="#4cc417"/>
+<draw:color draw:name="Chartreuse3" draw:color="#6cc417"/>
+<draw:color draw:name="Yellow Green" draw:color="#52d017"/>
+<draw:color draw:name="Spring Green3" draw:color="#4cc552"/>
+<draw:color draw:name="Sea Green3" draw:color="#54c571"/>
+<draw:color draw:name="Spring Green2" draw:color="#57e964"/>
+<draw:color draw:name="Spring Green1" draw:color="#5efb6e"/>
+<draw:color draw:name="Sea Green2" draw:color="#64e986"/>
+<draw:color draw:name="Sea Green1" draw:color="#6afb92"/>
+<draw:color draw:name="Dark Sea Green2" draw:color="#b5eaaa"/>
+<draw:color draw:name="Dark Sea Green1" draw:color="#c3fdb8"/>
+<draw:color draw:name="Green" draw:color="#669966"/>
+<draw:color draw:name="Lawn Green" draw:color="#87f717"/>
+<draw:color draw:name="Green1" draw:color="#5ffb17"/>
+<draw:color draw:name="Green2" draw:color="#59e817"/>
+<draw:color draw:name="Chartreuse2" draw:color="#7fe817"/>
+<draw:color draw:name="Chartreuse" draw:color="#7fff00"/>
+<draw:color draw:name="Green Yellow" draw:color="#b1fb17"/>
+<draw:color draw:name="Dark Olive Green1" draw:color="#ccfb5d"/>
+<draw:color draw:name="Dark Olive Green2" draw:color="#bce954"/>
+<draw:color draw:name="Dark Olive Green3" draw:color="#a0c544"/>
+<draw:color draw:name="Yellow1" draw:color="#fffc17"/>
+<draw:color draw:name="Khaki1" draw:color="#fff380"/>
+<draw:color draw:name="Khaki2" draw:color="#ede275"/>
+<draw:color draw:name="Goldenrod" draw:color="#daa520"/>
+<draw:color draw:name="Gold2" draw:color="#eac117"/>
+<draw:color draw:name="Gold1" draw:color="#fdd017"/>
+<draw:color draw:name="Goldenrod1" draw:color="#fbb917"/>
+<draw:color draw:name="Goldenrod2" draw:color="#e9ab17"/>
+<draw:color draw:name="Gold" draw:color="#ffd700"/>
+<draw:color draw:name="Gold3" draw:color="#c7a317"/>
+<draw:color draw:name="Goldenrod3" draw:color="#c68e17"/>
+<draw:color draw:name="Dark Goldenrod" draw:color="#af7817"/>
+<draw:color draw:name="Khaki" draw:color="#cccc99"/>
+<draw:color draw:name="Khaki3" draw:color="#c9be62"/>
+<draw:color draw:name="Khaki4" draw:color="#827839"/>
+<draw:color draw:name="Dark Goldenrod1" draw:color="#fbb117"/>
+<draw:color draw:name="Dark Goldenrod2" draw:color="#e8a317"/>
+<draw:color draw:name="Dark Goldenrod3" draw:color="#c58917"/>
+<draw:color draw:name="Sienna1" draw:color="#f87431"/>
+<draw:color draw:name="Sienna2" draw:color="#e66c2c"/>
+<draw:color draw:name="Dark Orange" draw:color="#f88017"/>
+<draw:color draw:name="Dark Orange1" draw:color="#f87217"/>
+<draw:color draw:name="Dark Orange2" draw:color="#e56717"/>
+<draw:color draw:name="Dark Orange3" draw:color="#c35617"/>
+<draw:color draw:name="Sienna3" draw:color="#c35817"/>
+<draw:color draw:name="Sienna" draw:color="#cc6600"/>
+<draw:color draw:name="Sienna4" draw:color="#7e3517"/>
+<draw:color draw:name="Indian Red4" draw:color="#7e2217"/>
+<draw:color draw:name="Dark Orange3" draw:color="#c35617"/>
+<draw:color draw:name="Salmon4" draw:color="#7e3817"/>
+<draw:color draw:name="Dark Goldenrod4" draw:color="#7f5217"/>
+<draw:color draw:name="Gold4" draw:color="#806517"/>
+<draw:color draw:name="Goldenrod4" draw:color="#805817"/>
+<draw:color draw:name="Light Salmon4" draw:color="#7f462c"/>
+<draw:color draw:name="Chocolate" draw:color="#d2691e"/>
+<draw:color draw:name="Coral3" draw:color="#c34a2c"/>
+<draw:color draw:name="Coral2" draw:color="#e55b3c"/>
+<draw:color draw:name="Coral" draw:color="#ff7f50"/>
+<draw:color draw:name="Dark Salmon" draw:color="#e18b6b"/>
+<draw:color draw:name="Salmon1" draw:color="#f88158"/>
+<draw:color draw:name="Salmon2" draw:color="#e67451"/>
+<draw:color draw:name="Salmon3" draw:color="#c36241"/>
+<draw:color draw:name="Light Salmon3" draw:color="#c47451"/>
+<draw:color draw:name="Light Salmon2" draw:color="#e78a61"/>
+<draw:color draw:name="Light Salmon" draw:color="#f9966b"/>
+<draw:color draw:name="Sandy Brown" draw:color="#ee9a4d"/>
+<draw:color draw:name="Hot Pink" draw:color="#f660ab"/>
+<draw:color draw:name="Hot Pink1" draw:color="#f665ab"/>
+<draw:color draw:name="Hot Pink2" draw:color="#e45e9d"/>
+<draw:color draw:name="Hot Pink3" draw:color="#c25283"/>
+<draw:color draw:name="Hot Pink4" draw:color="#7d2252"/>
+<draw:color draw:name="Light Coral" draw:color="#e77471"/>
+<draw:color draw:name="Indian Red1" draw:color="#f75d59"/>
+<draw:color draw:name="Indian Red2" draw:color="#e55451"/>
+<draw:color draw:name="Indian Red3" draw:color="#c24641"/>
+<draw:color draw:name="Red1" draw:color="#f62217"/>
+<draw:color draw:name="Red2" draw:color="#e41b17"/>
+<draw:color draw:name="Firebrick1" draw:color="#f62817"/>
+<draw:color draw:name="Firebrick2" draw:color="#e42217"/>
+<draw:color draw:name="Firebrick3" draw:color="#c11b17"/>
+<draw:color draw:name="Pink" draw:color="#faafbe"/>
+<draw:color draw:name="Rosy Brown1" draw:color="#fbbbb9"/>
+<draw:color draw:name="Rosy Brown2" draw:color="#e8adaa"/>
+<draw:color draw:name="Pink2" draw:color="#e7a1b0"/>
+<draw:color draw:name="Light Pink" draw:color="#faafba"/>
+<draw:color draw:name="Light Pink1" draw:color="#f9a7b0"/>
+<draw:color draw:name="Light Pink2" draw:color="#e799a3"/>
+<draw:color draw:name="Pink3" draw:color="#c48793"/>
+<draw:color draw:name="Rosy Brown3" draw:color="#c5908e"/>
+<draw:color draw:name="Rosy Brown" draw:color="#b38481"/>
+<draw:color draw:name="Light Pink3" draw:color="#c48189"/>
+<draw:color draw:name="Rosy Brown4" draw:color="#7f5a58"/>
+<draw:color draw:name="Light Pink4" draw:color="#7f4e52"/>
+<draw:color draw:name="Pink4" draw:color="#7f525d"/>
+<draw:color draw:name="Lavendar Blush4" draw:color="#817679"/>
+<draw:color draw:name="Light Goldenrod4" draw:color="#817339"/>
+<draw:color draw:name="Lemon Chiffon4" draw:color="#827b60"/>
+<draw:color draw:name="Lemon Chiffon3" draw:color="#c9c299"/>
+<draw:color draw:name="Light Goldenrod3" draw:color="#c8b560"/>
+<draw:color draw:name="Light Golden2" draw:color="#ecd672"/>
+<draw:color draw:name="Light Goldenrod" draw:color="#ecd872"/>
+<draw:color draw:name="Light Goldenrod1" draw:color="#ffe87c"/>
+<draw:color draw:name="Lemon Chiffon2" draw:color="#ece5b6"/>
+<draw:color draw:name="Lemon Chiffon" draw:color="#fff8c6"/>
+<draw:color draw:name="Light Goldenrod Yellow" draw:color="#faf8cc"/>
+<draw:color draw:name="Turquoise" draw:color="#669999"/>
+<draw:color draw:name="Dark Blue" draw:color="#003366"/>
+<draw:color draw:name="Light Purple" draw:color="#ff0080"/>
+<draw:color draw:name="Pink" draw:color="#faafbe"/>
+<draw:color draw:name="Orange" draw:color="#ff9900"/>
+<draw:color draw:name="Forest Green" draw:color="#4e9258"/>
+<draw:color draw:name="Grass Green" draw:color="#408080"/>
+<draw:color draw:name="AliceBlue" draw:color="#f0f8ff"/>
+<draw:color draw:name="BlueViolet" draw:color="#8a2be2"/>
+<draw:color draw:name="CadetBlue" draw:color="#5f9ea0"/>
+<draw:color draw:name="CadetBlue1" draw:color="#98f5ff"/>
+<draw:color draw:name="CadetBlue2" draw:color="#8ee5ee"/>
+<draw:color draw:name="CadetBlue3" draw:color="#7ac5cd"/>
+<draw:color draw:name="CadetBlue4" draw:color="#53868b"/>
+<draw:color draw:name="CornflowerBlue" draw:color="#6495ed"/>
+<draw:color draw:name="DarkSlateBlue" draw:color="#483d8b"/>
+<draw:color draw:name="DarkTurquoise" draw:color="#00ced1"/>
+<draw:color draw:name="DeepSkyBlue" draw:color="#00bfff"/>
+<draw:color draw:name="DeepSkyBlue1" draw:color="#00bfff"/>
+<draw:color draw:name="DeepSkyBlue2" draw:color="#00b2ee"/>
+<draw:color draw:name="DeepSkyBlue3" draw:color="#009acd"/>
+<draw:color draw:name="DeepSkyBlue4" draw:color="#00688b"/>
+<draw:color draw:name="DodgerBlue" draw:color="#1e90ff"/>
+<draw:color draw:name="DodgerBlue1" draw:color="#1e90ff"/>
+<draw:color draw:name="DodgerBlue2" draw:color="#1c86ee"/>
+<draw:color draw:name="DodgerBlue3" draw:color="#1874cd"/>
+<draw:color draw:name="DodgerBlue4" draw:color="#104e8b"/>
+<draw:color draw:name="LightBlue" draw:color="#add8e6"/>
+<draw:color draw:name="LightBlue1" draw:color="#bfefff"/>
+<draw:color draw:name="LightBlue2" draw:color="#b2dfee"/>
+<draw:color draw:name="LightBlue3" draw:color="#9ac0cd"/>
+<draw:color draw:name="LightBlue4" draw:color="#68838b"/>
+<draw:color draw:name="LightCyan" draw:color="#e0ffff"/>
+<draw:color draw:name="LightCyan1" draw:color="#e0ffff"/>
+<draw:color draw:name="LightCyan2" draw:color="#d1eeee"/>
+<draw:color draw:name="LightCyan3" draw:color="#b4cdcd"/>
+<draw:color draw:name="LightCyan4" draw:color="#7a8b8b"/>
+<draw:color draw:name="LightSkyBlue" draw:color="#87cefa"/>
+<draw:color draw:name="LightSkyBlue1" draw:color="#b0e2ff"/>
+<draw:color draw:name="LightSkyBlue2" draw:color="#a4d3ee"/>
+<draw:color draw:name="LightSkyBlue3" draw:color="#8db6cd"/>
+<draw:color draw:name="LightSkyBlue4" draw:color="#607b8b"/>
+<draw:color draw:name="LightSlateBlue" draw:color="#8470ff"/>
+<draw:color draw:name="LightSteelBlue" draw:color="#b0c4de"/>
+<draw:color draw:name="LightSteelBlue1" draw:color="#cae1ff"/>
+<draw:color draw:name="LightSteelBlue2" draw:color="#bcd2ee"/>
+<draw:color draw:name="LightSteelBlue3" draw:color="#a2b5cd"/>
+<draw:color draw:name="LightSteelBlue4" draw:color="#6e7b8b"/>
+<draw:color draw:name="MediumAquamarine" draw:color="#66cdaa"/>
+<draw:color draw:name="MediumBlue" draw:color="#0000cd"/>
+<draw:color draw:name="MediumSlateBlue" draw:color="#7b68ee"/>
+<draw:color draw:name="MediumTurquoise" draw:color="#48d1cc"/>
+<draw:color draw:name="MidnightBlue" draw:color="#191970"/>
+<draw:color draw:name="PaleTurquoise" draw:color="#afeeee"/>
+<draw:color draw:name="PaleTurquoise1" draw:color="#bbffff"/>
+<draw:color draw:name="PaleTurquoise2" draw:color="#aeeeee"/>
+<draw:color draw:name="PaleTurquoise3" draw:color="#96cdcd"/>
+<draw:color draw:name="PaleTurquoise4" draw:color="#668b8b"/>
+<draw:color draw:name="PowderBlue" draw:color="#b0e0e6"/>
+<draw:color draw:name="RoyalBlue" draw:color="#4169e1"/>
+<draw:color draw:name="RoyalBlue1" draw:color="#4876ff"/>
+<draw:color draw:name="RoyalBlue2" draw:color="#436eee"/>
+<draw:color draw:name="RoyalBlue3" draw:color="#3a5fcd"/>
+<draw:color draw:name="RoyalBlue4" draw:color="#27408b"/>
+<draw:color draw:name="SkyBlue" draw:color="#87ceeb"/>
+<draw:color draw:name="SkyBlue1" draw:color="#87ceff"/>
+<draw:color draw:name="SkyBlue2" draw:color="#7ec0ee"/>
+<draw:color draw:name="SkyBlue3" draw:color="#6ca6cd"/>
+<draw:color draw:name="SkyBlue4" draw:color="#4a708b"/>
+<draw:color draw:name="SlateBlue" draw:color="#6a5acd"/>
+<draw:color draw:name="SlateBlue1" draw:color="#836fff"/>
+<draw:color draw:name="SlateBlue2" draw:color="#7a67ee"/>
+<draw:color draw:name="SlateBlue3" draw:color="#6959cd"/>
+<draw:color draw:name="SlateBlue4" draw:color="#473c8b"/>
+<draw:color draw:name="SteelBlue" draw:color="#4682b4"/>
+<draw:color draw:name="SteelBlue1" draw:color="#63b8ff"/>
+<draw:color draw:name="SteelBlue2" draw:color="#5cacee"/>
+<draw:color draw:name="SteelBlue3" draw:color="#4f94cd"/>
+<draw:color draw:name="SteelBlue4" draw:color="#36648b"/>
+<draw:color draw:name="Aquamarine" draw:color="#7fffd4"/>
+<draw:color draw:name="Aquamarine1" draw:color="#7fffd4"/>
+<draw:color draw:name="Aquamarine2" draw:color="#76eec6"/>
+<draw:color draw:name="Aquamarine3" draw:color="#66cdaa"/>
+<draw:color draw:name="Aquamarine4" draw:color="#458b74"/>
+<draw:color draw:name="Azure" draw:color="#99ffff"/>
+<draw:color draw:name="Azure1" draw:color="#f0ffff"/>
+<draw:color draw:name="Azure2" draw:color="#e0eeee"/>
+<draw:color draw:name="Azure3" draw:color="#c1cdcd"/>
+<draw:color draw:name="Azure4" draw:color="#838b8b"/>
+<draw:color draw:name="Blue" draw:color="#6699cc"/>
+<draw:color draw:name="Blue2" draw:color="#0000ee"/>
+<draw:color draw:name="Blue3" draw:color="#0000cd"/>
+<draw:color draw:name="Blue4" draw:color="#00008b"/>
+<draw:color draw:name="Cyan1" draw:color="#57feff"/>
+<draw:color draw:name="Cyan2" draw:color="#50ebec"/>
+<draw:color draw:name="Cyan3" draw:color="#46c7c7"/>
+<draw:color draw:name="Cyan4" draw:color="#307d7e"/>
+<draw:color draw:name="Turquoise" draw:color="#669999"/>
+<draw:color draw:name="Turquoise1" draw:color="#52f3ff"/>
+<draw:color draw:name="Turquoise2" draw:color="#4ee2ec"/>
+<draw:color draw:name="Turquoise3" draw:color="#43bfc7"/>
+<draw:color draw:name="Turquoise4" draw:color="#00868b"/>
+<draw:color draw:name="RosyBrown" draw:color="#bc8f8f"/>
+<draw:color draw:name="RosyBrown1" draw:color="#ffc1c1"/>
+<draw:color draw:name="RosyBrown2" draw:color="#eeb4b4"/>
+<draw:color draw:name="RosyBrown3" draw:color="#cd9b9b"/>
+<draw:color draw:name="RosyBrown4" draw:color="#8b6969"/>
+<draw:color draw:name="SaddleBrown" draw:color="#8b4513"/>
+<draw:color draw:name="SandyBrown" draw:color="#f4a460"/>
+<draw:color draw:name="Beige" draw:color="#cc9966"/>
+<draw:color draw:name="Brown1" draw:color="#ff4040"/>
+<draw:color draw:name="Brown2" draw:color="#ee3b3b"/>
+<draw:color draw:name="Brown3" draw:color="#cd3333"/>
+<draw:color draw:name="Brown4" draw:color="#8b2323"/>
+<draw:color draw:name="Burlywood" draw:color="#deb887"/>
+<draw:color draw:name="Burlywood1" draw:color="#ffd39b"/>
+<draw:color draw:name="Burlywood2" draw:color="#eec591"/>
+<draw:color draw:name="Burlywood3" draw:color="#cdaa7d"/>
+<draw:color draw:name="Burlywood4" draw:color="#8b7355"/>
+<draw:color draw:name="Chocolate" draw:color="#d2691e"/>
+<draw:color draw:name="Chocolate1" draw:color="#ff7f24"/>
+<draw:color draw:name="Chocolate2" draw:color="#ee7621"/>
+<draw:color draw:name="Chocolate3" draw:color="#cd661d"/>
+<draw:color draw:name="Chocolate4" draw:color="#8b4513"/>
+<draw:color draw:name="Peru" draw:color="#cd853f"/>
+<draw:color draw:name="Tan" draw:color="#d2b48c"/>
+<draw:color draw:name="Tan1" draw:color="#ffa54f"/>
+<draw:color draw:name="Tan2" draw:color="#ee9a49"/>
+<draw:color draw:name="Tan3" draw:color="#cd853f"/>
+<draw:color draw:name="Tan4" draw:color="#8b5a2b"/>
+<draw:color draw:name="DarkSlateGray" draw:color="#2f4f4f"/>
+<draw:color draw:name="DarkSlateGray1" draw:color="#97ffff"/>
+<draw:color draw:name="DarkSlateGray2" draw:color="#8deeee"/>
+<draw:color draw:name="DarkSlateGray3" draw:color="#79cdcd"/>
+<draw:color draw:name="DarkSlateGray4" draw:color="#528b8b"/>
+<draw:color draw:name="DarkSlateGrey" draw:color="#2f4f4f"/>
+<draw:color draw:name="DimGray" draw:color="#696969"/>
+<draw:color draw:name="DimGrey" draw:color="#696969"/>
+<draw:color draw:name="LightGray" draw:color="#d3d3d3"/>
+<draw:color draw:name="LightGrey" draw:color="#d3d3d3"/>
+<draw:color draw:name="LightSlateGray" draw:color="#778899"/>
+<draw:color draw:name="LightSlateGrey" draw:color="#778899"/>
+<draw:color draw:name="SlateGray" draw:color="#708090"/>
+<draw:color draw:name="SlateGray1" draw:color="#c6e2ff"/>
+<draw:color draw:name="SlateGray2" draw:color="#b9d3ee"/>
+<draw:color draw:name="SlateGray3" draw:color="#9fb6cd"/>
+<draw:color draw:name="SlateGray4" draw:color="#6c7b8b"/>
+<draw:color draw:name="SlateGrey" draw:color="#708090"/>
+<draw:color draw:name="DarkGreen" draw:color="#006400"/>
+<draw:color draw:name="DarkKhaki" draw:color="#bdb76b"/>
+<draw:color draw:name="DarkOliveGreen" draw:color="#556b2f"/>
+<draw:color draw:name="DarkOliveGreen1" draw:color="#caff70"/>
+<draw:color draw:name="DarkOliveGreen2" draw:color="#bcee68"/>
+<draw:color draw:name="DarkOliveGreen3" draw:color="#a2cd5a"/>
+<draw:color draw:name="DarkOliveGreen4" draw:color="#6e8b3d"/>
+<draw:color draw:name="DarkSeaGreen" draw:color="#8fbc8f"/>
+<draw:color draw:name="DarkSeaGreen1" draw:color="#c1ffc1"/>
+<draw:color draw:name="DarkSeaGreen2" draw:color="#b4eeb4"/>
+<draw:color draw:name="DarkSeaGreen3" draw:color="#9bcd9b"/>
+<draw:color draw:name="DarkSeaGreen4" draw:color="#698b69"/>
+<draw:color draw:name="ForestGreen" draw:color="#228b22"/>
+<draw:color draw:name="GreenYellow" draw:color="#adff2f"/>
+<draw:color draw:name="LawnGreen" draw:color="#7cfc00"/>
+<draw:color draw:name="LightSeaGreen" draw:color="#20b2aa"/>
+<draw:color draw:name="LimeGreen" draw:color="#32cd32"/>
+<draw:color draw:name="MediumSeaGreen" draw:color="#3cb371"/>
+<draw:color draw:name="MediumSpringGreen" draw:color="#00fa9a"/>
+<draw:color draw:name="MintCream" draw:color="#f5fffa"/>
+<draw:color draw:name="OliveDrab" draw:color="#6b8e23"/>
+<draw:color draw:name="OliveDrab1" draw:color="#c0ff3e"/>
+<draw:color draw:name="OliveDrab2" draw:color="#b3ee3a"/>
+<draw:color draw:name="OliveDrab3" draw:color="#9acd32"/>
+<draw:color draw:name="OliveDrab4" draw:color="#698b22"/>
+<draw:color draw:name="PaleGreen" draw:color="#98fb98"/>
+<draw:color draw:name="PaleGreen1" draw:color="#9aff9a"/>
+<draw:color draw:name="PaleGreen2" draw:color="#90ee90"/>
+<draw:color draw:name="PaleGreen3" draw:color="#7ccd7c"/>
+<draw:color draw:name="PaleGreen4" draw:color="#548b54"/>
+<draw:color draw:name="SeaGreen" draw:color="#2e8b57"/>
+<draw:color draw:name="SeaGreen1" draw:color="#54ff9f"/>
+<draw:color draw:name="SeaGreen2" draw:color="#4eee94"/>
+<draw:color draw:name="SeaGreen3" draw:color="#43cd80"/>
+<draw:color draw:name="SeaGreen4" draw:color="#2e8b57"/>
+<draw:color draw:name="SpringGreen" draw:color="#00ff7f"/>
+<draw:color draw:name="SpringGreen1" draw:color="#00ff7f"/>
+<draw:color draw:name="SpringGreen2" draw:color="#00ee76"/>
+<draw:color draw:name="SpringGreen3" draw:color="#00cd66"/>
+<draw:color draw:name="SpringGreen4" draw:color="#008b45"/>
+<draw:color draw:name="YellowGreen" draw:color="#9acd32"/>
+<draw:color draw:name="Chartreuse" draw:color="#7fff00"/>
+<draw:color draw:name="Chartreuse1" draw:color="#7fff00"/>
+<draw:color draw:name="Chartreuse2" draw:color="#7fe817"/>
+<draw:color draw:name="Chartreuse3" draw:color="#6cc417"/>
+<draw:color draw:name="Chartreuse4" draw:color="#437c17"/>
+<draw:color draw:name="Green" draw:color="#669966"/>
+<draw:color draw:name="Green1" draw:color="#5ffb17"/>
+<draw:color draw:name="Green2" draw:color="#59e817"/>
+<draw:color draw:name="Green3" draw:color="#4cc417"/>
+<draw:color draw:name="Green4" draw:color="#347c17"/>
+<draw:color draw:name="Khaki" draw:color="#cccc99"/>
+<draw:color draw:name="Khaki1" draw:color="#fff380"/>
+<draw:color draw:name="Khaki2" draw:color="#ede275"/>
+<draw:color draw:name="Khaki3" draw:color="#c9be62"/>
+<draw:color draw:name="Khaki4" draw:color="#827839"/>
+<draw:color draw:name="DarkOrange" draw:color="#ff8c00"/>
+<draw:color draw:name="DarkOrange1" draw:color="#ff7f00"/>
+<draw:color draw:name="DarkOrange2" draw:color="#ee7600"/>
+<draw:color draw:name="DarkOrange3" draw:color="#cd6600"/>
+<draw:color draw:name="DarkOrange4" draw:color="#8b4500"/>
+<draw:color draw:name="DarkSalmon" draw:color="#e9967a"/>
+<draw:color draw:name="LightCoral" draw:color="#f08080"/>
+<draw:color draw:name="LightSalmon" draw:color="#ffa07a"/>
+<draw:color draw:name="LightSalmon1" draw:color="#ffa07a"/>
+<draw:color draw:name="LightSalmon2" draw:color="#ee9572"/>
+<draw:color draw:name="LightSalmon3" draw:color="#cd8162"/>
+<draw:color draw:name="LightSalmon4" draw:color="#8b5742"/>
+<draw:color draw:name="PeachPuff" draw:color="#ffdab9"/>
+<draw:color draw:name="PeachPuff1" draw:color="#ffdab9"/>
+<draw:color draw:name="PeachPuff2" draw:color="#eecbad"/>
+<draw:color draw:name="PeachPuff3" draw:color="#cdaf95"/>
+<draw:color draw:name="PeachPuff4" draw:color="#8b7765"/>
+<draw:color draw:name="Bisque" draw:color="#ffe4c4"/>
+<draw:color draw:name="Bisque1" draw:color="#ffe4c4"/>
+<draw:color draw:name="Bisque2" draw:color="#eed5b7"/>
+<draw:color draw:name="Bisque3" draw:color="#cdb79e"/>
+<draw:color draw:name="Bisque4" draw:color="#8b7d6b"/>
+<draw:color draw:name="Coral" draw:color="#ff7f50"/>
+<draw:color draw:name="Coral1" draw:color="#ff7256"/>
+<draw:color draw:name="Coral2" draw:color="#e55b3c"/>
+<draw:color draw:name="Coral3" draw:color="#c34a2c"/>
+<draw:color draw:name="Coral4" draw:color="#8b3e2f"/>
+<draw:color draw:name="Honeydew" draw:color="#f0fff0"/>
+<draw:color draw:name="Honeydew1" draw:color="#f0fff0"/>
+<draw:color draw:name="Honeydew2" draw:color="#e0eee0"/>
+<draw:color draw:name="Honeydew3" draw:color="#c1cdc1"/>
+<draw:color draw:name="Honeydew4" draw:color="#838b83"/>
+<draw:color draw:name="Orange" draw:color="#ff9900"/>
+<draw:color draw:name="Orange1" draw:color="#ffa500"/>
+<draw:color draw:name="Orange2" draw:color="#ee9a00"/>
+<draw:color draw:name="Orange3" draw:color="#cd8500"/>
+<draw:color draw:name="Orange4" draw:color="#8b5a00"/>
+<draw:color draw:name="Salmon" draw:color="#fa8072"/>
+<draw:color draw:name="Salmon1" draw:color="#f88158"/>
+<draw:color draw:name="Salmon2" draw:color="#e67451"/>
+<draw:color draw:name="Salmon3" draw:color="#c36241"/>
+<draw:color draw:name="Salmon4" draw:color="#7e3817"/>
+<draw:color draw:name="Sienna" draw:color="#cc6600"/>
+<draw:color draw:name="Sienna1" draw:color="#f87431"/>
+<draw:color draw:name="Sienna2" draw:color="#e66c2c"/>
+<draw:color draw:name="Sienna3" draw:color="#c35817"/>
+<draw:color draw:name="Sienna4" draw:color="#7e3517"/>
+<draw:color draw:name="DeepPink" draw:color="#ff1493"/>
+<draw:color draw:name="DeepPink1" draw:color="#ff1493"/>
+<draw:color draw:name="DeepPink2" draw:color="#ee1289"/>
+<draw:color draw:name="DeepPink3" draw:color="#cd1076"/>
+<draw:color draw:name="DeepPink4" draw:color="#8b0a50"/>
+<draw:color draw:name="HotPink" draw:color="#ff69b4"/>
+<draw:color draw:name="HotPink1" draw:color="#ff6eb4"/>
+<draw:color draw:name="HotPink2" draw:color="#ee6aa7"/>
+<draw:color draw:name="HotPink3" draw:color="#cd6090"/>
+<draw:color draw:name="HotPink4" draw:color="#8b3a62"/>
+<draw:color draw:name="IndianRed" draw:color="#cd5c5c"/>
+<draw:color draw:name="IndianRed1" draw:color="#ff6a6a"/>
+<draw:color draw:name="IndianRed2" draw:color="#ee6363"/>
+<draw:color draw:name="IndianRed3" draw:color="#cd5555"/>
+<draw:color draw:name="IndianRed4" draw:color="#8b3a3a"/>
+<draw:color draw:name="LightPink" draw:color="#ffb6c1"/>
+<draw:color draw:name="LightPink1" draw:color="#ffaeb9"/>
+<draw:color draw:name="LightPink2" draw:color="#eea2ad"/>
+<draw:color draw:name="LightPink3" draw:color="#cd8c95"/>
+<draw:color draw:name="LightPink4" draw:color="#8b5f65"/>
+<draw:color draw:name="MediumVioletRed" draw:color="#c71585"/>
+<draw:color draw:name="MistyRose" draw:color="#ffe4e1"/>
+<draw:color draw:name="MistyRose1" draw:color="#ffe4e1"/>
+<draw:color draw:name="MistyRose2" draw:color="#eed5d2"/>
+<draw:color draw:name="MistyRose3" draw:color="#cdb7b5"/>
+<draw:color draw:name="MistyRose4" draw:color="#8b7d7b"/>
+<draw:color draw:name="OrangeRed" draw:color="#ff4500"/>
+<draw:color draw:name="OrangeRed1" draw:color="#ff4500"/>
+<draw:color draw:name="OrangeRed2" draw:color="#ee4000"/>
+<draw:color draw:name="OrangeRed3" draw:color="#cd3700"/>
+<draw:color draw:name="OrangeRed4" draw:color="#8b2500"/>
+<draw:color draw:name="PaleVioletRed" draw:color="#db7093"/>
+<draw:color draw:name="PaleVioletRed1" draw:color="#ff82ab"/>
+<draw:color draw:name="PaleVioletRed2" draw:color="#ee799f"/>
+<draw:color draw:name="PaleVioletRed3" draw:color="#cd6889"/>
+<draw:color draw:name="PaleVioletRed4" draw:color="#8b475d"/>
+<draw:color draw:name="VioletRed" draw:color="#d02090"/>
+<draw:color draw:name="VioletRed1" draw:color="#ff3e96"/>
+<draw:color draw:name="VioletRed2" draw:color="#ee3a8c"/>
+<draw:color draw:name="VioletRed3" draw:color="#cd3278"/>
+<draw:color draw:name="VioletRed4" draw:color="#8b2252"/>
+<draw:color draw:name="Firebrick" draw:color="#b22222"/>
+<draw:color draw:name="Firebrick1" draw:color="#f62817"/>
+<draw:color draw:name="Firebrick2" draw:color="#e42217"/>
+<draw:color draw:name="Firebrick3" draw:color="#c11b17"/>
+<draw:color draw:name="Firebrick4" draw:color="#8b1a1a"/>
+<draw:color draw:name="Pink" draw:color="#faafbe"/>
+<draw:color draw:name="Pink1" draw:color="#ffb5c5"/>
+<draw:color draw:name="Pink2" draw:color="#e7a1b0"/>
+<draw:color draw:name="Pink3" draw:color="#c48793"/>
+<draw:color draw:name="Pink4" draw:color="#7f525d"/>
+<draw:color draw:name="Red1" draw:color="#f62217"/>
+<draw:color draw:name="Red2" draw:color="#e41b17"/>
+<draw:color draw:name="Red3" draw:color="#cd0000"/>
+<draw:color draw:name="Red4" draw:color="#8b0000"/>
+<draw:color draw:name="Tomato" draw:color="#ff6347"/>
+<draw:color draw:name="Tomato1" draw:color="#ff6347"/>
+<draw:color draw:name="Tomato2" draw:color="#ee5c42"/>
+<draw:color draw:name="Tomato3" draw:color="#cd4f39"/>
+<draw:color draw:name="Tomato4" draw:color="#8b3626"/>
+<draw:color draw:name="DarkOrchid" draw:color="#9932cc"/>
+<draw:color draw:name="DarkOrchid1" draw:color="#bf3eff"/>
+<draw:color draw:name="DarkOrchid2" draw:color="#b23aee"/>
+<draw:color draw:name="DarkOrchid3" draw:color="#9a32cd"/>
+<draw:color draw:name="DarkOrchid4" draw:color="#68228b"/>
+<draw:color draw:name="DarkViolet" draw:color="#9400d3"/>
+<draw:color draw:name="LavenderBlush" draw:color="#fff0f5"/>
+<draw:color draw:name="LavenderBlush1" draw:color="#fff0f5"/>
+<draw:color draw:name="LavenderBlush2" draw:color="#eee0e5"/>
+<draw:color draw:name="LavenderBlush3" draw:color="#cdc1c5"/>
+<draw:color draw:name="LavenderBlush4" draw:color="#8b8386"/>
+<draw:color draw:name="MediumOrchid" draw:color="#ba55d3"/>
+<draw:color draw:name="MediumOrchid1" draw:color="#e066ff"/>
+<draw:color draw:name="MediumOrchid2" draw:color="#d15fee"/>
+<draw:color draw:name="MediumOrchid3" draw:color="#b452cd"/>
+<draw:color draw:name="MediumOrchid4" draw:color="#7a378b"/>
+<draw:color draw:name="MediumPurple" draw:color="#9370db"/>
+<draw:color draw:name="MediumPurple1" draw:color="#ab82ff"/>
+<draw:color draw:name="MediumPurple2" draw:color="#9f79ee"/>
+<draw:color draw:name="MediumPurple3" draw:color="#8968cd"/>
+<draw:color draw:name="MediumPurple4" draw:color="#5d478b"/>
+<draw:color draw:name="Lavender" draw:color="#e6e6fa"/>
+<draw:color draw:name="Magenta1" draw:color="#f433ff"/>
+<draw:color draw:name="Magenta2" draw:color="#e238ec"/>
+<draw:color draw:name="Magenta3" draw:color="#c031c7"/>
+<draw:color draw:name="Magenta4" draw:color="#8b008b"/>
+<draw:color draw:name="Maroon" draw:color="#810541"/>
+<draw:color draw:name="Maroon1" draw:color="#f535aa"/>
+<draw:color draw:name="Maroon2" draw:color="#e3319d"/>
+<draw:color draw:name="Maroon3" draw:color="#c12283"/>
+<draw:color draw:name="Maroon4" draw:color="#7d0552"/>
+<draw:color draw:name="Orchid" draw:color="#da70d6"/>
+<draw:color draw:name="Orchid1" draw:color="#ff83fa"/>
+<draw:color draw:name="Orchid2" draw:color="#ee7ae9"/>
+<draw:color draw:name="Orchid3" draw:color="#cd69c9"/>
+<draw:color draw:name="Orchid4" draw:color="#8b4789"/>
+<draw:color draw:name="Plum" draw:color="#b93b8f"/>
+<draw:color draw:name="Plum1" draw:color="#f9b7ff"/>
+<draw:color draw:name="Plum2" draw:color="#e6a9ec"/>
+<draw:color draw:name="Plum3" draw:color="#c38ec7"/>
+<draw:color draw:name="Plum4" draw:color="#7e587e"/>
+<draw:color draw:name="Purple" draw:color="#8e35ef"/>
+<draw:color draw:name="Purple1" draw:color="#893bff"/>
+<draw:color draw:name="Purple2" draw:color="#7f38ec"/>
+<draw:color draw:name="Purple3" draw:color="#6c2dc7"/>
+<draw:color draw:name="Purple4" draw:color="#461b7e"/>
+<draw:color draw:name="Thistle" draw:color="#d2b9d3"/>
+<draw:color draw:name="Thistle1" draw:color="#fcdfff"/>
+<draw:color draw:name="Thistle2" draw:color="#e9cfec"/>
+<draw:color draw:name="Thistle3" draw:color="#c6aec7"/>
+<draw:color draw:name="Thistle4" draw:color="#806d7e"/>
+<draw:color draw:name="Violet" draw:color="#8d38c9"/>
+<draw:color draw:name="AntiqueWhite" draw:color="#faebd7"/>
+<draw:color draw:name="AntiqueWhite1" draw:color="#ffefdb"/>
+<draw:color draw:name="AntiqueWhite2" draw:color="#eedfcc"/>
+<draw:color draw:name="AntiqueWhite3" draw:color="#cdc0b0"/>
+<draw:color draw:name="AntiqueWhite4" draw:color="#8b8378"/>
+<draw:color draw:name="FloralWhite" draw:color="#fffaf0"/>
+<draw:color draw:name="GhostWhite" draw:color="#f8f8ff"/>
+<draw:color draw:name="NavajoWhite" draw:color="#ffdead"/>
+<draw:color draw:name="NavajoWhite1" draw:color="#ffdead"/>
+<draw:color draw:name="NavajoWhite2" draw:color="#eecfa1"/>
+<draw:color draw:name="NavajoWhite3" draw:color="#cdb38b"/>
+<draw:color draw:name="NavajoWhite4" draw:color="#8b795e"/>
+<draw:color draw:name="OldLace" draw:color="#fdf5e6"/>
+<draw:color draw:name="WhiteSmoke" draw:color="#f5f5f5"/>
+<draw:color draw:name="Gainsboro" draw:color="#dcdcdc"/>
+<draw:color draw:name="Ivory" draw:color="#fffff0"/>
+<draw:color draw:name="Ivory1" draw:color="#fffff0"/>
+<draw:color draw:name="Ivory2" draw:color="#eeeee0"/>
+<draw:color draw:name="Ivory3" draw:color="#cdcdc1"/>
+<draw:color draw:name="Ivory4" draw:color="#8b8b83"/>
+<draw:color draw:name="Linen" draw:color="#faf0e6"/>
+<draw:color draw:name="Seashell" draw:color="#fff5ee"/>
+<draw:color draw:name="Seashell1" draw:color="#fff5ee"/>
+<draw:color draw:name="Seashell2" draw:color="#eee5de"/>
+<draw:color draw:name="Seashell3" draw:color="#cdc5bf"/>
+<draw:color draw:name="Seashell4" draw:color="#8b8682"/>
+<draw:color draw:name="Snow" draw:color="#fffafa"/>
+<draw:color draw:name="Snow1" draw:color="#fffafa"/>
+<draw:color draw:name="Snow2" draw:color="#eee9e9"/>
+<draw:color draw:name="Snow3" draw:color="#cdc9c9"/>
+<draw:color draw:name="Snow4" draw:color="#8b8989"/>
+<draw:color draw:name="Wheat" draw:color="#f5deb3"/>
+<draw:color draw:name="Wheat1" draw:color="#ffe7ba"/>
+<draw:color draw:name="Wheat2" draw:color="#eed8ae"/>
+<draw:color draw:name="Wheat3" draw:color="#cdba96"/>
+<draw:color draw:name="Wheat4" draw:color="#8b7e66"/>
+<draw:color draw:name="BlanchedAlmond" draw:color="#ffebcd"/>
+<draw:color draw:name="DarkGoldenrod" draw:color="#b8860b"/>
+<draw:color draw:name="DarkGoldenrod1" draw:color="#ffb90f"/>
+<draw:color draw:name="DarkGoldenrod2" draw:color="#eead0e"/>
+<draw:color draw:name="DarkGoldenrod3" draw:color="#cd950c"/>
+<draw:color draw:name="DarkGoldenrod4" draw:color="#8b6508"/>
+<draw:color draw:name="LemonChiffon" draw:color="#fffacd"/>
+<draw:color draw:name="LemonChiffon1" draw:color="#fffacd"/>
+<draw:color draw:name="LemonChiffon2" draw:color="#eee9bf"/>
+<draw:color draw:name="LemonChiffon3" draw:color="#cdc9a5"/>
+<draw:color draw:name="LemonChiffon4" draw:color="#8b8970"/>
+<draw:color draw:name="LightGoldenrod" draw:color="#eedd82"/>
+<draw:color draw:name="LightGoldenrod1" draw:color="#ffec8b"/>
+<draw:color draw:name="LightGoldenrod2" draw:color="#eedc82"/>
+<draw:color draw:name="LightGoldenrod3" draw:color="#cdbe70"/>
+<draw:color draw:name="LightGoldenrod4" draw:color="#8b814c"/>
+<draw:color draw:name="LightGoldenrodYellow" draw:color="#fafad2"/>
+<draw:color draw:name="LightYellow" draw:color="#ffffe0"/>
+<draw:color draw:name="LightYellow1" draw:color="#ffffe0"/>
+<draw:color draw:name="LightYellow2" draw:color="#eeeed1"/>
+<draw:color draw:name="LightYellow3" draw:color="#cdcdb4"/>
+<draw:color draw:name="LightYellow4" draw:color="#8b8b7a"/>
+<draw:color draw:name="PaleGoldenrod" draw:color="#eee8aa"/>
+<draw:color draw:name="PapayaWhip" draw:color="#ffefd5"/>
+<draw:color draw:name="Cornsilk" draw:color="#fff8dc"/>
+<draw:color draw:name="Cornsilk1" draw:color="#fff8dc"/>
+<draw:color draw:name="Cornsilk2" draw:color="#eee8cd"/>
+<draw:color draw:name="Cornsilk3" draw:color="#cdc8b1"/>
+<draw:color draw:name="Cornsilk4" draw:color="#8b8878"/>
+<draw:color draw:name="Gold" draw:color="#ffd700"/>
+<draw:color draw:name="Gold1" draw:color="#fdd017"/>
+<draw:color draw:name="Gold2" draw:color="#eac117"/>
+<draw:color draw:name="Gold3" draw:color="#c7a317"/>
+<draw:color draw:name="Gold4" draw:color="#806517"/>
+<draw:color draw:name="Goldenrod" draw:color="#daa520"/>
+<draw:color draw:name="Goldenrod1" draw:color="#fbb917"/>
+<draw:color draw:name="Goldenrod2" draw:color="#e9ab17"/>
+<draw:color draw:name="Goldenrod3" draw:color="#c68e17"/>
+<draw:color draw:name="Goldenrod4" draw:color="#805817"/>
+<draw:color draw:name="Moccasin" draw:color="#ffe4b5"/>
+<draw:color draw:name="Yellow1" draw:color="#fffc17"/>
+<draw:color draw:name="Yellow2" draw:color="#eeee00"/>
+<draw:color draw:name="Yellow3" draw:color="#cdcd00"/>
+<draw:color draw:name="Yellow4" draw:color="#8b8b00"/>
+<draw:color draw:name="Blue" draw:color="#6699cc"/>
+<draw:color draw:name="Green" draw:color="#669966"/>
+<draw:color draw:name="Maroon" draw:color="#810541"/>
+<draw:color draw:name="Purple" draw:color="#8e35ef"/>
+
+<draw:color draw:name="Netscape 16 aqua" draw:color="#00ffff"/>
+<draw:color draw:name="Netscape 16 black" draw:color="#000000"/>
+<draw:color draw:name="Netscape 16 blue" draw:color="#0000ff"/>
+<draw:color draw:name="Netscape 16 fuchsia" draw:color="#ff00ff"/>
+<draw:color draw:name="Netscape 16 gray" draw:color="#808080"/>
+<draw:color draw:name="Netscape 16 green" draw:color="#008000"/>
+<draw:color draw:name="Netscape 16 lime" draw:color="#00ff00"/>
+<draw:color draw:name="Netscape 16 maroon" draw:color="#800000"/>
+<draw:color draw:name="Netscape 16 navy" draw:color="#000080"/>
+<draw:color draw:name="Netscape 16 olive" draw:color="#808000"/>
+<draw:color draw:name="Netscape 16 purple" draw:color="#800080"/>
+<draw:color draw:name="Netscape 16 red" draw:color="#ff0000"/>
+<draw:color draw:name="Netscape 16 silver" draw:color="#c0c0c0"/>
+<draw:color draw:name="Netscape 16 teal" draw:color="#008080"/>
+<draw:color draw:name="Netscape 16 white" draw:color="#ffffff"/>
+<draw:color draw:name="Netscape 16 yellow" draw:color="#ffff00"/>
+<draw:color draw:name="Netscape 16" draw:color="#000000"/>
+
+<draw:color draw:name="Very websafe 22 F00" draw:color="#ff0000"/>
+<draw:color draw:name="Very websafe 22 003" draw:color="#000033"/>
+<draw:color draw:name="Very websafe 22 F03" draw:color="#ff0033"/>
+<draw:color draw:name="Very websafe 22 00F" draw:color="#0000ff"/>
+<draw:color draw:name="Very websafe 22 F0F" draw:color="#ff00ff"/>
+<draw:color draw:name="Very websafe 22 0F0" draw:color="#00ff00"/>
+<draw:color draw:name="Very websafe 22 6F0" draw:color="#66ff00"/>
+<draw:color draw:name="Very websafe 22 FF0" draw:color="#ffff00"/>
+<draw:color draw:name="Very websafe 22 3F3" draw:color="#33ff33"/>
+<draw:color draw:name="Very websafe 22 6F3" draw:color="#66ff33"/>
+<draw:color draw:name="Very websafe 22 FF3" draw:color="#ffff33"/>
+<draw:color draw:name="Very websafe 22 0F6" draw:color="#00ff66"/>
+<draw:color draw:name="Very websafe 22 3F6" draw:color="#33ff66"/>
+<draw:color draw:name="Very websafe 22 CF6" draw:color="#ccff66"/>
+<draw:color draw:name="Very websafe 22 FF6" draw:color="#ffff66"/>
+<draw:color draw:name="Very websafe 22 0FC" draw:color="#00ffcc"/>
+<draw:color draw:name="Very websafe 22 3FC" draw:color="#33ffcc"/>
+<draw:color draw:name="Very websafe 22 0FF" draw:color="#00ffff"/>
+<draw:color draw:name="Very websafe 22 3FF" draw:color="#33ffff"/>
+<draw:color draw:name="Very websafe 22 6FF" draw:color="#66ffff"/>
+<draw:color draw:name="Very websafe 22 FFF" draw:color="#ffffff"/>
+
+<draw:color draw:name="Websafe 216 000" draw:color="#000000"/>
+<draw:color draw:name="Websafe 216 300" draw:color="#330000"/>
+<draw:color draw:name="Websafe 216 600" draw:color="#660000"/>
+<draw:color draw:name="Websafe 216 900" draw:color="#990000"/>
+<draw:color draw:name="Websafe 216 C00" draw:color="#cc0000"/>
+<draw:color draw:name="Websafe 216 F00" draw:color="#ff0000"/>
+<draw:color draw:name="Websafe 216 003" draw:color="#000033"/>
+<draw:color draw:name="Websafe 216 303" draw:color="#330033"/>
+<draw:color draw:name="Websafe 216 603" draw:color="#660033"/>
+<draw:color draw:name="Websafe 216 903" draw:color="#990033"/>
+<draw:color draw:name="Websafe 216 C03" draw:color="#cc0033"/>
+<draw:color draw:name="Websafe 216 F03" draw:color="#ff0033"/>
+<draw:color draw:name="Websafe 216 006" draw:color="#000066"/>
+<draw:color draw:name="Websafe 216 306" draw:color="#330066"/>
+<draw:color draw:name="Websafe 216 606" draw:color="#660066"/>
+<draw:color draw:name="Websafe 216 906" draw:color="#990066"/>
+<draw:color draw:name="Websafe 216 C06" draw:color="#cc0066"/>
+<draw:color draw:name="Websafe 216 F06" draw:color="#ff0066"/>
+<draw:color draw:name="Websafe 216 009" draw:color="#000099"/>
+<draw:color draw:name="Websafe 216 309" draw:color="#330099"/>
+<draw:color draw:name="Websafe 216 609" draw:color="#660099"/>
+<draw:color draw:name="Websafe 216 909" draw:color="#990099"/>
+<draw:color draw:name="Websafe 216 C09" draw:color="#cc0099"/>
+<draw:color draw:name="Websafe 216 F09" draw:color="#ff0099"/>
+<draw:color draw:name="Websafe 216 00C" draw:color="#0000cc"/>
+<draw:color draw:name="Websafe 216 30C" draw:color="#3300cc"/>
+<draw:color draw:name="Websafe 216 60C" draw:color="#6600cc"/>
+<draw:color draw:name="Websafe 216 90C" draw:color="#9900cc"/>
+<draw:color draw:name="Websafe 216 C0C" draw:color="#cc00cc"/>
+<draw:color draw:name="Websafe 216 F0C" draw:color="#ff00cc"/>
+<draw:color draw:name="Websafe 216 00F" draw:color="#0000ff"/>
+<draw:color draw:name="Websafe 216 30F" draw:color="#3300ff"/>
+<draw:color draw:name="Websafe 216 60F" draw:color="#000000"/>
+<draw:color draw:name="Websafe 216 90F" draw:color="#9900ff"/>
+<draw:color draw:name="Websafe 216 C0F" draw:color="#cc00ff"/>
+<draw:color draw:name="Websafe 216 F0F" draw:color="#ff00ff"/>
+<draw:color draw:name="Websafe 216 030" draw:color="#003300"/>
+<draw:color draw:name="Websafe 216 330" draw:color="#333300"/>
+<draw:color draw:name="Websafe 216 630" draw:color="#663300"/>
+<draw:color draw:name="Websafe 216 930" draw:color="#993300"/>
+<draw:color draw:name="Websafe 216 C30" draw:color="#cc3300"/>
+<draw:color draw:name="Websafe 216 F30" draw:color="#ff3300"/>
+<draw:color draw:name="Websafe 216 033" draw:color="#003333"/>
+<draw:color draw:name="Websafe 216 333" draw:color="#333333"/>
+<draw:color draw:name="Websafe 216 633" draw:color="#663333"/>
+<draw:color draw:name="Websafe 216 933" draw:color="#993333"/>
+<draw:color draw:name="Websafe 216 C33" draw:color="#cc3333"/>
+<draw:color draw:name="Websafe 216 F33" draw:color="#ff3333"/>
+<draw:color draw:name="Websafe 216 036" draw:color="#003366"/>
+<draw:color draw:name="Websafe 216 336" draw:color="#333366"/>
+<draw:color draw:name="Websafe 216 636" draw:color="#663366"/>
+<draw:color draw:name="Websafe 216 936" draw:color="#993366"/>
+<draw:color draw:name="Websafe 216 C36" draw:color="#cc3366"/>
+<draw:color draw:name="Websafe 216 F36" draw:color="#ff3366"/>
+<draw:color draw:name="Websafe 216 039" draw:color="#003399"/>
+<draw:color draw:name="Websafe 216 339" draw:color="#333399"/>
+<draw:color draw:name="Websafe 216 639" draw:color="#663399"/>
+<draw:color draw:name="Websafe 216 939" draw:color="#993399"/>
+<draw:color draw:name="Websafe 216 C39" draw:color="#cc3399"/>
+<draw:color draw:name="Websafe 216 F39" draw:color="#ff3399"/>
+<draw:color draw:name="Websafe 216 03C" draw:color="#0033cc"/>
+<draw:color draw:name="Websafe 216 33C" draw:color="#3333cc"/>
+<draw:color draw:name="Websafe 216 63C" draw:color="#6633cc"/>
+<draw:color draw:name="Websafe 216 93C" draw:color="#9933cc"/>
+<draw:color draw:name="Websafe 216 C3C" draw:color="#cc33cc"/>
+<draw:color draw:name="Websafe 216 F3C" draw:color="#ff33cc"/>
+<draw:color draw:name="Websafe 216 03F" draw:color="#0033ff"/>
+<draw:color draw:name="Websafe 216 33F" draw:color="#3333ff"/>
+<draw:color draw:name="Websafe 216 63F" draw:color="#6633ff"/>
+<draw:color draw:name="Websafe 216 93F" draw:color="#9933ff"/>
+<draw:color draw:name="Websafe 216 C3F" draw:color="#cc33ff"/>
+<draw:color draw:name="Websafe 216 F3F" draw:color="#ff33ff"/>
+<draw:color draw:name="Websafe 216 060" draw:color="#006600"/>
+<draw:color draw:name="Websafe 216 360" draw:color="#336600"/>
+<draw:color draw:name="Websafe 216 660" draw:color="#666600"/>
+<draw:color draw:name="Websafe 216 960" draw:color="#996600"/>
+<draw:color draw:name="Websafe 216 C60" draw:color="#cc6600"/>
+<draw:color draw:name="Websafe 216 F60" draw:color="#ff6600"/>
+<draw:color draw:name="Websafe 216 063" draw:color="#006633"/>
+<draw:color draw:name="Websafe 216 363" draw:color="#336633"/>
+<draw:color draw:name="Websafe 216 663" draw:color="#666633"/>
+<draw:color draw:name="Websafe 216 963" draw:color="#996633"/>
+<draw:color draw:name="Websafe 216 C63" draw:color="#cc6633"/>
+<draw:color draw:name="Websafe 216 F63" draw:color="#ff6633"/>
+<draw:color draw:name="Websafe 216 066" draw:color="#006666"/>
+<draw:color draw:name="Websafe 216 366" draw:color="#336666"/>
+<draw:color draw:name="Websafe 216 666" draw:color="#666666"/>
+<draw:color draw:name="Websafe 216 966" draw:color="#996666"/>
+<draw:color draw:name="Websafe 216 C66" draw:color="#cc6666"/>
+<draw:color draw:name="Websafe 216 F66" draw:color="#ff6666"/>
+<draw:color draw:name="Websafe 216 069" draw:color="#006699"/>
+<draw:color draw:name="Websafe 216 369" draw:color="#336699"/>
+<draw:color draw:name="Websafe 216 669" draw:color="#666699"/>
+<draw:color draw:name="Websafe 216 969" draw:color="#996699"/>
+<draw:color draw:name="Websafe 216 C69" draw:color="#cc6699"/>
+<draw:color draw:name="Websafe 216 F69" draw:color="#ff6699"/>
+<draw:color draw:name="Websafe 216 06C" draw:color="#0066cc"/>
+<draw:color draw:name="Websafe 216 36C" draw:color="#3366cc"/>
+<draw:color draw:name="Websafe 216 66C" draw:color="#6666cc"/>
+<draw:color draw:name="Websafe 216 96C" draw:color="#9966cc"/>
+<draw:color draw:name="Websafe 216 C6C" draw:color="#cc66cc"/>
+<draw:color draw:name="Websafe 216 F6C" draw:color="#ff66cc"/>
+<draw:color draw:name="Websafe 216 06F" draw:color="#0066ff"/>
+<draw:color draw:name="Websafe 216 36F" draw:color="#3366ff"/>
+<draw:color draw:name="Websafe 216 66F" draw:color="#6666ff"/>
+<draw:color draw:name="Websafe 216 96F" draw:color="#9966ff"/>
+<draw:color draw:name="Websafe 216 C6F" draw:color="#cc66ff"/>
+<draw:color draw:name="Websafe 216 F6F" draw:color="#ff66ff"/>
+<draw:color draw:name="Websafe 216 090" draw:color="#009900"/>
+<draw:color draw:name="Websafe 216 390" draw:color="#339900"/>
+<draw:color draw:name="Websafe 216 690" draw:color="#669900"/>
+<draw:color draw:name="Websafe 216 990" draw:color="#999900"/>
+<draw:color draw:name="Websafe 216 C90" draw:color="#cc9900"/>
+<draw:color draw:name="Websafe 216 F90" draw:color="#ff9900"/>
+<draw:color draw:name="Websafe 216 093" draw:color="#009933"/>
+<draw:color draw:name="Websafe 216 393" draw:color="#339933"/>
+<draw:color draw:name="Websafe 216 693" draw:color="#669933"/>
+<draw:color draw:name="Websafe 216 993" draw:color="#999933"/>
+<draw:color draw:name="Websafe 216 C93" draw:color="#cc9933"/>
+<draw:color draw:name="Websafe 216 F93" draw:color="#ff9933"/>
+<draw:color draw:name="Websafe 216 096" draw:color="#009966"/>
+<draw:color draw:name="Websafe 216 396" draw:color="#339966"/>
+<draw:color draw:name="Websafe 216 696" draw:color="#669966"/>
+<draw:color draw:name="Websafe 216 996" draw:color="#999966"/>
+<draw:color draw:name="Websafe 216 C96" draw:color="#cc9966"/>
+<draw:color draw:name="Websafe 216 F96" draw:color="#ff9966"/>
+<draw:color draw:name="Websafe 216 099" draw:color="#009999"/>
+<draw:color draw:name="Websafe 216 399" draw:color="#339999"/>
+<draw:color draw:name="Websafe 216 699" draw:color="#669999"/>
+<draw:color draw:name="Websafe 216 999" draw:color="#999999"/>
+<draw:color draw:name="Websafe 216 C99" draw:color="#cc9999"/>
+<draw:color draw:name="Websafe 216 F99" draw:color="#ff9999"/>
+<draw:color draw:name="Websafe 216 09C" draw:color="#0099cc"/>
+<draw:color draw:name="Websafe 216 39C" draw:color="#3399cc"/>
+<draw:color draw:name="Websafe 216 69C" draw:color="#6699cc"/>
+<draw:color draw:name="Websafe 216 99C" draw:color="#9999cc"/>
+<draw:color draw:name="Websafe 216 C9C" draw:color="#cc99cc"/>
+<draw:color draw:name="Websafe 216 F9C" draw:color="#ff99cc"/>
+<draw:color draw:name="Websafe 216 09F" draw:color="#0099ff"/>
+<draw:color draw:name="Websafe 216 39F" draw:color="#3399ff"/>
+<draw:color draw:name="Websafe 216 69F" draw:color="#6699ff"/>
+<draw:color draw:name="Websafe 216 99F" draw:color="#9999ff"/>
+<draw:color draw:name="Websafe 216 C9F" draw:color="#cc99ff"/>
+<draw:color draw:name="Websafe 216 F9F" draw:color="#ff99ff"/>
+<draw:color draw:name="Websafe 216 0C0" draw:color="#00cc00"/>
+<draw:color draw:name="Websafe 216 3C0" draw:color="#33cc00"/>
+<draw:color draw:name="Websafe 216 6C0" draw:color="#66cc00"/>
+<draw:color draw:name="Websafe 216 9C0" draw:color="#99cc00"/>
+<draw:color draw:name="Websafe 216 CC0" draw:color="#cccc00"/>
+<draw:color draw:name="Websafe 216 FC0" draw:color="#ffcc00"/>
+<draw:color draw:name="Websafe 216 0C3" draw:color="#00cc33"/>
+<draw:color draw:name="Websafe 216 3C3" draw:color="#33cc33"/>
+<draw:color draw:name="Websafe 216 6C3" draw:color="#66cc33"/>
+<draw:color draw:name="Websafe 216 9C3" draw:color="#99cc33"/>
+<draw:color draw:name="Websafe 216 CC3" draw:color="#cccc33"/>
+<draw:color draw:name="Websafe 216 FC3" draw:color="#ffcc33"/>
+<draw:color draw:name="Websafe 216 0C6" draw:color="#00cc66"/>
+<draw:color draw:name="Websafe 216 3C6" draw:color="#33cc66"/>
+<draw:color draw:name="Websafe 216 6C6" draw:color="#66cc66"/>
+<draw:color draw:name="Websafe 216 9C6" draw:color="#99cc66"/>
+<draw:color draw:name="Websafe 216 CC6" draw:color="#cccc66"/>
+<draw:color draw:name="Websafe 216 FC6" draw:color="#ffcc66"/>
+<draw:color draw:name="Websafe 216 0C9" draw:color="#00cc99"/>
+<draw:color draw:name="Websafe 216 3C9" draw:color="#33cc99"/>
+<draw:color draw:name="Websafe 216 6C9" draw:color="#66cc99"/>
+<draw:color draw:name="Websafe 216 9C9" draw:color="#99cc99"/>
+<draw:color draw:name="Websafe 216 CC9" draw:color="#cccc99"/>
+<draw:color draw:name="Websafe 216 FC9" draw:color="#ffcc99"/>
+<draw:color draw:name="Websafe 216 0CC" draw:color="#00cccc"/>
+<draw:color draw:name="Websafe 216 3CC" draw:color="#33cccc"/>
+<draw:color draw:name="Websafe 216 6CC" draw:color="#66cccc"/>
+<draw:color draw:name="Websafe 216 9CC" draw:color="#99cccc"/>
+<draw:color draw:name="Websafe 216 CCC" draw:color="#cccccc"/>
+<draw:color draw:name="Websafe 216 FCC" draw:color="#ffcccc"/>
+<draw:color draw:name="Websafe 216 0CF" draw:color="#00ccff"/>
+<draw:color draw:name="Websafe 216 3CF" draw:color="#33ccff"/>
+<draw:color draw:name="Websafe 216 6CF" draw:color="#66ccff"/>
+<draw:color draw:name="Websafe 216 9CF" draw:color="#99ccff"/>
+<draw:color draw:name="Websafe 216 CCF" draw:color="#ccccff"/>
+<draw:color draw:name="Websafe 216 FCF" draw:color="#ffccff"/>
+<draw:color draw:name="Websafe 216 0F0" draw:color="#00ff00"/>
+<draw:color draw:name="Websafe 216 3F0" draw:color="#33ff00"/>
+<draw:color draw:name="Websafe 216 6F0" draw:color="#66ff00"/>
+<draw:color draw:name="Websafe 216 9F0" draw:color="#99ff00"/>
+<draw:color draw:name="Websafe 216 CF0" draw:color="#ccff00"/>
+<draw:color draw:name="Websafe 216 FF0" draw:color="#ffff00"/>
+<draw:color draw:name="Websafe 216 0F3" draw:color="#00ff33"/>
+<draw:color draw:name="Websafe 216 3F3" draw:color="#33ff33"/>
+<draw:color draw:name="Websafe 216 6F3" draw:color="#66ff33"/>
+<draw:color draw:name="Websafe 216 9F3" draw:color="#99ff33"/>
+<draw:color draw:name="Websafe 216 CF3" draw:color="#ccff33"/>
+<draw:color draw:name="Websafe 216 FF3" draw:color="#ccff33"/>
+<draw:color draw:name="Websafe 216 0F6" draw:color="#00ff66"/>
+<draw:color draw:name="Websafe 216 3F6" draw:color="#33ff66"/>
+<draw:color draw:name="Websafe 216 6F6" draw:color="#66ff66"/>
+<draw:color draw:name="Websafe 216 9F6" draw:color="#99ff66"/>
+<draw:color draw:name="Websafe 216 CF6" draw:color="#ccff66"/>
+<draw:color draw:name="Websafe 216 FF6" draw:color="#ffff66"/>
+<draw:color draw:name="Websafe 216 0F9" draw:color="#00ff99"/>
+<draw:color draw:name="Websafe 216 3F9" draw:color="#33ff99"/>
+<draw:color draw:name="Websafe 216 6F9" draw:color="#66ff99"/>
+<draw:color draw:name="Websafe 216 9F9" draw:color="#99ff99"/>
+<draw:color draw:name="Websafe 216 CF9" draw:color="#ccff99"/>
+<draw:color draw:name="Websafe 216 FF9" draw:color="#ffff99"/>
+<draw:color draw:name="Websafe 216 0FC" draw:color="#00ffcc"/>
+<draw:color draw:name="Websafe 216 3FC" draw:color="#33ffcc"/>
+<draw:color draw:name="Websafe 216 6FC" draw:color="#66ffcc"/>
+<draw:color draw:name="Websafe 216 9FC" draw:color="#99ffcc"/>
+<draw:color draw:name="Websafe 216 CFC" draw:color="#ccffcc"/>
+<draw:color draw:name="Websafe 216 FFC" draw:color="#ffffcc"/>
+<draw:color draw:name="Websafe 216 0FF" draw:color="#00ffff"/>
+<draw:color draw:name="Websafe 216 3FF" draw:color="#33ffff"/>
+<draw:color draw:name="Websafe 216 6FF" draw:color="#66ffff"/>
+<draw:color draw:name="Websafe 216 9FF" draw:color="#99ffff"/>
+<draw:color draw:name="Websafe 216 CFF" draw:color="#ccffff"/>
+<draw:color draw:name="Websafe 216 FFF" draw:color="#000000"/>
+
+<draw:color draw:name="3 BIT RGB black " draw:color="#ffffff"/>
+<draw:color draw:name="3 BIT RGB blue " draw:color="#6699CC"/>
+<draw:color draw:name="3 BIT RGB green " draw:color="#669966"/>
+<draw:color draw:name="3 BIT RGB cyan " draw:color="#00ffff"/>
+<draw:color draw:name="3 BIT RGB red " draw:color="#FF3333"/>
+<draw:color draw:name="3 BIT RGB magenta " draw:color="#8b008b"/>
+<draw:color draw:name="3 BIT RGB yellow " draw:color="#ffff00"/>
+<draw:color draw:name="3 BIT RGB white " draw:color="#000000"/>
+
+<draw:color draw:name="4 BIT RGB 0 - black " draw:color="#ffffff"/>
+<draw:color draw:name="4 BIT RGB 1 - blue " draw:color="#6699CC"/>
+<draw:color draw:name="4 BIT RGB 2 - green " draw:color="#669966"/>
+<draw:color draw:name="4 BIT RGB 3 - cyan " draw:color="#00ffff"/>
+<draw:color draw:name="4 BIT RGB 4 - red " draw:color="#FF3333"/>
+<draw:color draw:name="4 BIT RGB 5 - magenta " draw:color="#8b008b"/>
+<draw:color draw:name="4 BIT RGB 6 - brown " draw:color="#663300"/>
+<draw:color draw:name="4 BIT RGB 7 - white (light gray) " draw:color="#c0c0c0"/>
+<draw:color draw:name="4 BIT RGB 8 - (dark) gray " draw:color="# a9a9a9"/>
+<draw:color draw:name="4 BIT RGB 9 - bright blue " draw:color="# 4700b8"/>
+<draw:color draw:name="4 BIT RGB 10 - bright green " draw:color="#000000"/>
+<draw:color draw:name="4 BIT RGB 11 - bright cyan " draw:color="#aaaaaa"/>
+<draw:color draw:name="4 BIT RGB 12 - bright red " draw:color="#bbbbbb"/>
+<draw:color draw:name="4 BIT RGB 13 - bright magenta " draw:color="#cccccc"/>
+<draw:color draw:name="4 BIT RGB 14 - yellow " draw:color="#ffff00"/>
+<draw:color draw:name="4 BIT RGB 15 - bright white" draw:color="#000000"/>
+
+<draw:color draw:name="Major Red " draw:color="#FF3333"/>
+<draw:color draw:name="Major Turquoise " draw:color="#00ffff"/>
+<draw:color draw:name="Major Light Blue " draw:color="#99CCFF"/>
+<draw:color draw:name="Major Dark Blue " draw:color="#6699CC"/>
+<draw:color draw:name="Major Light Purple " draw:color="#ff0080"/>
+<draw:color draw:name="Major Dark Purple " draw:color="#800080"/>
+<draw:color draw:name="Major Yellow" draw:color="#ffff00"/>
+<draw:color draw:name="Major Pastel Green" draw:color="#00ff00"/>
+<draw:color draw:name="Major Pink" draw:color="#ff00ff"/>
+<draw:color draw:name="Major White " draw:color="#ffffff"/>
+<draw:color draw:name="Major Light Grey" draw:color="#c0c0c0"/>
+<draw:color draw:name="Major Dark Grey" draw:color="#a9a9a9"/>
+<draw:color draw:name="Major Black" draw:color="#000000"/>
+<draw:color draw:name="Major Orange " draw:color="#ff8040"/>
+<draw:color draw:name="Major Brown" draw:color="#804000"/>
+<draw:color draw:name="Major Burgundy" draw:color="#800000"/>
+<draw:color draw:name="Major Forest Green" draw:color="#228b22"/>
+<draw:color draw:name="Major Grass Green " draw:color="#408080"/>
+
+<draw:color draw:name="Thompson black" draw:color="#000000"/>
+<draw:color draw:name="Thompson white" draw:color="#FFFFFF"/>
+<draw:color draw:name="Thompson red" draw:color="#FF0000"/>
+<draw:color draw:name="Thompson green" draw:color="#00FF0"/>
+<draw:color draw:name="Thompson blue" draw:color="#0000FF"/>
+<draw:color draw:name="Thompson cyan" draw:color="#00FFFF"/>
+<draw:color draw:name="Thompson magenta" draw:color="#FF00D3"/>
+<draw:color draw:name="Thompson yellow" draw:color="#FFFF00"/>
+<draw:color draw:name="Thompson orange" draw:color="#FF8A00"/>
+<draw:color draw:name="Thompson green_yellow" draw:color="#9FD300"/>
+<draw:color draw:name="Thompson spring_green" draw:color="#00FF9F"/>
+<draw:color draw:name="Thompson sky_blue" draw:color="#008AFF"/>
+<draw:color draw:name="Thompson violet" draw:color="#9400D3"/>
+<draw:color draw:name="Thompson violet_red" draw:color="#FF0094"/>
+<draw:color draw:name="Thompson dim_gray" draw:color="#696969"/>
+<draw:color draw:name="Thompson gray" draw:color="#AEAEAE"/>
+<draw:color draw:name="Thompson grey" draw:color="#AEAEAE"/>
+<draw:color draw:name="Thompson light_grey" draw:color="#D3D3D3"/>
+<draw:color draw:name="Thompson light_gray" draw:color="#D3D3D3"/>
+<draw:color draw:name="Thompson dim_grey" draw:color="#696969"/>
+<draw:color draw:name="Thompson medium_violet_red" draw:color="#C71585"/>
+<draw:color draw:name="Thompson blue_violet" draw:color="#7221BC"/>
+<draw:color draw:name="Thompson orchid" draw:color="#DA6BD4"/>
+<draw:color draw:name="Thompson medium_orchid" draw:color="#AC4DA6"/>
+<draw:color draw:name="Thompson dark_orchid" draw:color="#6A2566"/>
+<draw:color draw:name="Thompson maroon" draw:color="#670748"/>
+<draw:color draw:name="Thompson plum" draw:color="#4C2E57"/>
+<draw:color draw:name="Thompson thistle" draw:color="#923E70"/>
+<draw:color draw:name="Thompson light_blue" draw:color="#ABC5FF"/>
+<draw:color draw:name="Thompson medium_blue" draw:color="#3D62D0"/>
+<draw:color draw:name="Thompson cornflower_blue" draw:color="#6495ED"/>
+<draw:color draw:name="Thompson navy_blue" draw:color="#00008E"/>
+<draw:color draw:name="Thompson navy" draw:color="#00008E"/>
+<draw:color draw:name="Thompson midnight_blue" draw:color="#0C3E63"/>
+<draw:color draw:name="Thompson turquoise" draw:color="#48D1CC"/>
+<draw:color draw:name="Thompson medium_turquoise" draw:color="#3EACB5"/>
+<draw:color draw:name="Thompson dark_turquoise" draw:color="#1D6F75"/>
+<draw:color draw:name="Thompson light_steel_blue" draw:color="#3498CA"/>
+<draw:color draw:name="Thompson steel_blue" draw:color="#377999"/>
+<draw:color draw:name="Thompson cadet_blue" draw:color="#7E7DA0"/>
+<draw:color draw:name="Thompson slate_blue" draw:color="#7586BE"/>
+<draw:color draw:name="Thompson medium_slate_blue" draw:color="#5F6D9A"/>
+<draw:color draw:name="Thompson dark_slate_blue" draw:color="#333E63"/>
+<draw:color draw:name="Thompson dark_slate_grey" draw:color="#3C404A"/>
+<draw:color draw:name="Thompson dark_slate_gray" draw:color="#3C404A"/>
+<draw:color draw:name="Thompson dark_green" draw:color="#005300"/>
+<draw:color draw:name="Thompson dark_olive_green" draw:color="#4F4F2F"/>
+<draw:color draw:name="Thompson forest_green" draw:color="#55C034"/>
+<draw:color draw:name="Thompson medium_forest_green" draw:color="#6B8E23"/>
+<draw:color draw:name="Thompson lime_green" draw:color="#2E9B1C"/>
+<draw:color draw:name="Thompson medium_spring_green" draw:color="#3C8D23"/>
+<draw:color draw:name="Thompson pale_green" draw:color="#98FF98"/>
+<draw:color draw:name="Thompson sea_green" draw:color="#2BA770"/>
+<draw:color draw:name="Thompson medium_sea_green" draw:color="#1B8656"/>
+<draw:color draw:name="Thompson aquamarine" draw:color="#29AB97"/>
+<draw:color draw:name="Thompson medium_aquamarine" draw:color="#158776"/>
+<draw:color draw:name="Thompson yellow_green" draw:color="#4BD300"/>
+<draw:color draw:name="Thompson gold" draw:color="#FEC544"/>
+<draw:color draw:name="Thompson medium_goldenrod" draw:color="#B886#B"/>
+<draw:color draw:name="Thompson goldenrod" draw:color="#DAA520"/>
+<draw:color draw:name="Thompson wheat" draw:color="#E5C775"/>
+<draw:color draw:name="Thompson khaki" draw:color="#BDA76B"/>
+<draw:color draw:name="Thompson tan" draw:color="#B09B7D"/>
+<draw:color draw:name="Thompson sandy_brown" draw:color="#B28F56"/>
+<draw:color draw:name="Thompson sienna" draw:color="#8E6B23"/>
+<draw:color draw:name="Thompson brown" draw:color="#674300"/>
+<draw:color draw:name="Thompson indian_red" draw:color="#652E2E"/>
+<draw:color draw:name="Thompson pink" draw:color="#FFAEB9"/>
+<draw:color draw:name="Thompson coral" draw:color="#F88975"/>
+<draw:color draw:name="Thompson salmon" draw:color="#F86D68"/>
+<draw:color draw:name="Thompson orange_red" draw:color="#E2412A"/>
+<draw:color draw:name="Thompson firebrick" draw:color="#88120D"/>
+<draw:color draw:name="Thompson gray 0" draw:color="#000000"/>
+<draw:color draw:name="Thompson gray 1" draw:color="#030303"/>
+<draw:color draw:name="Thompson gray 2" draw:color="#050505"/>
+<draw:color draw:name="Thompson gray 3" draw:color="#080808"/>
+<draw:color draw:name="Thompson gray 4" draw:color="#0A0A0A"/>
+<draw:color draw:name="Thompson gray 5" draw:color="#0D0D0D"/>
+<draw:color draw:name="Thompson gray 6" draw:color="#0F0F0F"/>
+<draw:color draw:name="Thompson gray 7" draw:color="#121212"/>
+<draw:color draw:name="Thompson gray 8" draw:color="#141414"/>
+<draw:color draw:name="Thompson gray 9" draw:color="#171717"/>
+<draw:color draw:name="Thompson gray 10" draw:color="#1A1A1A"/>
+<draw:color draw:name="Thompson gray 11" draw:color="#1C1C1C"/>
+<draw:color draw:name="Thompson gray 12" draw:color="#1F1F1F"/>
+<draw:color draw:name="Thompson gray 13" draw:color="#212121"/>
+<draw:color draw:name="Thompson gray 14" draw:color="#242424"/>
+<draw:color draw:name="Thompson gray 15" draw:color="#262626"/>
+<draw:color draw:name="Thompson gray 16" draw:color="#292929"/>
+<draw:color draw:name="Thompson gray 17" draw:color="#2B2B2B"/>
+<draw:color draw:name="Thompson gray 18" draw:color="#2E2E2E"/>
+<draw:color draw:name="Thompson gray 19" draw:color="#303030"/>
+<draw:color draw:name="Thompson gray 20" draw:color="#333333"/>
+<draw:color draw:name="Thompson gray 21" draw:color="#363636"/>
+<draw:color draw:name="Thompson gray 22" draw:color="#383838"/>
+<draw:color draw:name="Thompson gray 23" draw:color="#3B3B3B"/>
+<draw:color draw:name="Thompson gray 24" draw:color="#3D3D3D"/>
+<draw:color draw:name="Thompson gray 25" draw:color="#404040"/>
+<draw:color draw:name="Thompson gray 26" draw:color="#424242"/>
+<draw:color draw:name="Thompson gray 27" draw:color="#454545"/>
+<draw:color draw:name="Thompson gray 28" draw:color="#474747"/>
+<draw:color draw:name="Thompson gray 29" draw:color="#4A4A4A"/>
+<draw:color draw:name="Thompson gray 30" draw:color="#4D4D4D"/>
+<draw:color draw:name="Thompson gray 31" draw:color="#4F4F4F"/>
+<draw:color draw:name="Thompson gray 32" draw:color="#525252"/>
+<draw:color draw:name="Thompson gray 33" draw:color="#545454"/>
+<draw:color draw:name="Thompson gray 34" draw:color="#575757"/>
+<draw:color draw:name="Thompson gray 35" draw:color="#595959"/>
+<draw:color draw:name="Thompson gray 36" draw:color="#5C5C5C"/>
+<draw:color draw:name="Thompson gray 37" draw:color="#5E5E5E"/>
+<draw:color draw:name="Thompson gray 38" draw:color="#616161"/>
+<draw:color draw:name="Thompson gray 39" draw:color="#636363"/>
+<draw:color draw:name="Thompson gray 40" draw:color="#666666"/>
+<draw:color draw:name="Thompson gray 41" draw:color="#696969"/>
+<draw:color draw:name="Thompson gray 42" draw:color="#6B6B6B"/>
+<draw:color draw:name="Thompson gray 43" draw:color="#6E6E6E"/>
+<draw:color draw:name="Thompson gray 44" draw:color="#707070"/>
+<draw:color draw:name="Thompson gray 45" draw:color="#737373"/>
+<draw:color draw:name="Thompson gray 46" draw:color="#757575"/>
+<draw:color draw:name="Thompson gray 47" draw:color="#787878"/>
+<draw:color draw:name="Thompson gray 48" draw:color="#7A7A7A"/>
+<draw:color draw:name="Thompson gray 49" draw:color="#7D7D7D"/>
+<draw:color draw:name="Thompson gray 50" draw:color="#7F7F7F"/>
+<draw:color draw:name="Thompson gray 51" draw:color="#828282"/>
+<draw:color draw:name="Thompson gray 52" draw:color="#858585"/>
+<draw:color draw:name="Thompson gray 53" draw:color="#878787"/>
+<draw:color draw:name="Thompson gray 54" draw:color="#8A8A8A"/>
+<draw:color draw:name="Thompson gray 55" draw:color="#8C8C8C"/>
+<draw:color draw:name="Thompson gray 56" draw:color="#8F8F8F"/>
+<draw:color draw:name="Thompson gray 57" draw:color="#919191"/>
+<draw:color draw:name="Thompson gray 58" draw:color="#949494"/>
+<draw:color draw:name="Thompson gray 59" draw:color="#969696"/>
+<draw:color draw:name="Thompson gray 60" draw:color="#999999"/>
+<draw:color draw:name="Thompson gray 61" draw:color="#9C9C9C"/>
+<draw:color draw:name="Thompson gray 62" draw:color="#9E9E9E"/>
+<draw:color draw:name="Thompson gray 63" draw:color="#A1A1A1"/>
+<draw:color draw:name="Thompson gray 64" draw:color="#A3A3A3"/>
+<draw:color draw:name="Thompson gray 65" draw:color="#A6A6A6"/>
+<draw:color draw:name="Thompson gray 66" draw:color="#A8A8A8"/>
+<draw:color draw:name="Thompson gray 67" draw:color="#ABABAB"/>
+<draw:color draw:name="Thompson gray 68" draw:color="#ADADAD"/>
+<draw:color draw:name="Thompson gray 69" draw:color="#B0B0B0"/>
+<draw:color draw:name="Thompson gray 70" draw:color="#B3B3B3"/>
+<draw:color draw:name="Thompson gray 71" draw:color="#B5B5B5"/>
+<draw:color draw:name="Thompson gray 72" draw:color="#B8B8B8"/>
+<draw:color draw:name="Thompson gray 73" draw:color="#BABABA"/>
+<draw:color draw:name="Thompson gray 74" draw:color="#BDBDBD"/>
+<draw:color draw:name="Thompson gray 75" draw:color="#BFBFBF"/>
+<draw:color draw:name="Thompson gray 76" draw:color="#C2C2C2"/>
+<draw:color draw:name="Thompson gray 77" draw:color="#C4C4C4"/>
+<draw:color draw:name="Thompson gray 78" draw:color="#C7C7C7"/>
+<draw:color draw:name="Thompson gray 79" draw:color="#C9C9C9"/>
+<draw:color draw:name="Thompson gray 80" draw:color="#CCCCCC"/>
+<draw:color draw:name="Thompson gray 81" draw:color="#CFCFCF"/>
+<draw:color draw:name="Thompson gray 82" draw:color="#D1D1D1"/>
+<draw:color draw:name="Thompson gray 83" draw:color="#D4D4D4"/>
+<draw:color draw:name="Thompson gray 84" draw:color="#D6D6D6"/>
+<draw:color draw:name="Thompson gray 85" draw:color="#D9D9D9"/>
+<draw:color draw:name="Thompson gray 86" draw:color="#DBDBDB"/>
+<draw:color draw:name="Thompson gray 87" draw:color="#DEDEDE"/>
+<draw:color draw:name="Thompson gray 88" draw:color="#E0E0E0"/>
+<draw:color draw:name="Thompson gray 89" draw:color="#E3E3E3"/>
+<draw:color draw:name="Thompson gray 90" draw:color="#E5E5E5"/>
+<draw:color draw:name="Thompson gray 91" draw:color="#E8E8E8"/>
+<draw:color draw:name="Thompson gray 92" draw:color="#EBEBEB"/>
+<draw:color draw:name="Thompson gray 93" draw:color="#EDEDED"/>
+<draw:color draw:name="Thompson gray 94" draw:color="#F0F0F0"/>
+<draw:color draw:name="Thompson gray 95" draw:color="#F2F2F2"/>
+<draw:color draw:name="Thompson gray 96" draw:color="#F5F5F5"/>
+<draw:color draw:name="Thompson gray 97" draw:color="#F7F7F7"/>
+<draw:color draw:name="Thompson gray 98" draw:color="#FAFAFA"/>
+<draw:color draw:name="Thompson gray 99" draw:color="#FCFCFC"/>
+<draw:color draw:name="Thompson gray 100" draw:color="#FFFFFF"/>
+
+<draw:color draw:name="CIE Chromaticity  Reddish_orange" draw:color="#D87733"/>
+<draw:color draw:name="CIE Chromaticity  Orange_pink" draw:color="#F0CCA2"/>
+<draw:color draw:name="CIE Chromaticity  Orange" draw:color="#E4B81D"/>
+<draw:color draw:name="CIE Chromaticity  Yellowish_orange" draw:color="#E7E000"/>
+<draw:color draw:name="CIE Chromaticity  Yellow" draw:color="#EAE75E"/>
+<draw:color draw:name="CIE Chromaticity  Greenish_yellow" draw:color="#EBE900"/>
+<draw:color draw:name="CIE Chromaticity  Yellow green" draw:color="#B9D604"/>
+<draw:color draw:name="CIE Chromaticity  Yellowish_green" draw:color="#AAD13C"/>
+<draw:color draw:name="CIE Chromaticity  Green" draw:color="#00A347"/>
+<draw:color draw:name="CIE Chromaticity  Bluish_green" draw:color="#18A279"/>
+<draw:color draw:name="CIE Chromaticity  Bluegreen" draw:color="#5FA4BE"/>
+<draw:color draw:name="CIE Chromaticity  Greenish_blue" draw:color="#6EAFC7"/>
+<draw:color draw:name="CIE Chromaticity  Blue" draw:color="#5C8A00"/>
+
+<draw:color draw:name="Resene Paints  EnglishHolly" draw:color="#022D15"/>
+<draw:color draw:name="Resene Paints  CardinGreen" draw:color="#01361C"/>
+<draw:color draw:name="Resene Paints  BottleGreen" draw:color="#093624"/>
+<draw:color draw:name="Resene Paints  zydeco" draw:color="#02402C"/>
+<draw:color draw:name="Resene Paints  SherwoodGreen" draw:color="#02402C"/>
+<draw:color draw:name="Resene Paints  tarawera" draw:color="#073A50"/>
+<draw:color draw:name="Resene Paints  mosaic" draw:color="#123447"/>
+<draw:color draw:name="Resene Paints  elephant" draw:color="#123447"/>
+<draw:color draw:name="Resene Paints  firefly" draw:color="#0E2A30"/>
+<draw:color draw:name="Resene Paints  nordic" draw:color="#012731"/>
+<draw:color draw:name="Resene Paints  daintree" draw:color="#012731"/>
+<draw:color draw:name="Resene Paints  DeepTeal" draw:color="#003532"/>
+<draw:color draw:name="Resene Paints  TimberGreen" draw:color="#16322C"/>
+<draw:color draw:name="Resene Paints  greenstone" draw:color="#003E40"/>
+<draw:color draw:name="Resene Paints  cyprus" draw:color="#003E40"/>
+<draw:color draw:name="Resene Paints  tiber" draw:color="#063537"/>
+<draw:color draw:name="Resene Paints  GableGreen" draw:color="#163531"/>
+<draw:color draw:name="Resene Paints  everglade" draw:color="#1C402E"/>
+<draw:color draw:name="Resene Paints  scrub" draw:color="#2E3222"/>
+<draw:color draw:name="Resene Paints  rangitoto" draw:color="#2E3222"/>
+<draw:color draw:name="Resene Paints  HeavyMetal" draw:color="#2B3228"/>
+<draw:color draw:name="Resene Paints  GreenKelp" draw:color="#25311C"/>
+<draw:color draw:name="Resene Paints  LogCabin" draw:color="#242A1D"/>
+<draw:color draw:name="Resene Paints  celtic" draw:color="#163222"/>
+<draw:color draw:name="Resene Paints  burnham" draw:color="#002E20"/>
+<draw:color draw:name="Resene Paints  bush" draw:color="#0D2E1C"/>
+<draw:color draw:name="Resene Paints  PalmGreen" draw:color="#09230F"/>
+<draw:color draw:name="Resene Paints  holly" draw:color="#011D13"/>
+<draw:color draw:name="Resene Paints  swamp" draw:color="#001B1C"/>
+<draw:color draw:name="Resene Paints  aztec" draw:color="#0D1C19"/>
+<draw:color draw:name="Resene Paints  BlackForest" draw:color="#0B1304"/>
+<draw:color draw:name="Resene Paints  MidnightMoss" draw:color="#041004"/>
+<draw:color draw:name="Resene Paints  HunterGreen" draw:color="#161D10"/>
+<draw:color draw:name="Resene Paints  RacingGreen" draw:color="#0C1911"/>
+<draw:color draw:name="Resene Paints  BlackBean" draw:color="#081910"/>
+<draw:color draw:name="Resene Paints  RangoonGreen" draw:color="#1C1E13"/>
+<draw:color draw:name="Resene Paints  eternity" draw:color="#211A0E"/>
+<draw:color draw:name="Resene Paints  ElPaso" draw:color="#1E170B"/>
+<draw:color draw:name="Resene Paints  karaka" draw:color="#1E1609"/>
+<draw:color draw:name="Resene Paints  acadia" draw:color="#1B1404"/>
+<draw:color draw:name="Resene Paints  GreenWaterloo" draw:color="#101405"/>
+<draw:color draw:name="Resene Paints  GordonsGreen" draw:color="#0B1107"/>
+<draw:color draw:name="Resene Paints  marshland" draw:color="#0B0F08"/>
+<draw:color draw:name="Resene Paints  woodsmoke" draw:color="#0C0D0F"/>
+<draw:color draw:name="Resene Paints  CodGrey" draw:color="#0B0B0B"/>
+<draw:color draw:name="Resene Paints  gunmetal" draw:color="#020D15"/>
+<draw:color draw:name="Resene Paints  bunker" draw:color="#0D1117"/>
+<draw:color draw:name="Resene Paints  cinder" draw:color="#0E0E18"/>
+<draw:color draw:name="Resene Paints  BlackPepper" draw:color="#0E0E18"/>
+<draw:color draw:name="Resene Paints  jaguar" draw:color="#080110"/>
+<draw:color draw:name="Resene Paints  diesel" draw:color="#130000"/>
+<draw:color draw:name="Resene Paints  maire" draw:color="#130A06"/>
+<draw:color draw:name="Resene Paints  banjul" draw:color="#130A06"/>
+<draw:color draw:name="Resene Paints  asphalt" draw:color="#130A06"/>
+<draw:color draw:name="Resene Paints  creole" draw:color="#1E0F04"/>
+<draw:color draw:name="Resene Paints  crowshead" draw:color="#1C1208"/>
+<draw:color draw:name="Resene Paints  BokaraGrey" draw:color="#1C1208"/>
+<draw:color draw:name="Resene Paints  nero" draw:color="#140600"/>
+<draw:color draw:name="Resene Paints  WoodBark" draw:color="#261105"/>
+<draw:color draw:name="Resene Paints  blackwood" draw:color="#261105"/>
+<draw:color draw:name="Resene Paints  gondola" draw:color="#261414"/>
+<draw:color draw:name="Resene Paints  NightRider" draw:color="#1F120F"/>
+<draw:color draw:name="Resene Paints  graphite" draw:color="#251607"/>
+<draw:color draw:name="Resene Paints  CannonBlack" draw:color="#251706"/>
+<draw:color draw:name="Resene Paints  BlackMagic" draw:color="#251706"/>
+<draw:color draw:name="Resene Paints  oil" draw:color="#281E15"/>
+<draw:color draw:name="Resene Paints  JungleGreen" draw:color="#281E15"/>
+<draw:color draw:name="Resene Paints  mash" draw:color="#40291D"/>
+<draw:color draw:name="Resene Paints  cork" draw:color="#40291D"/>
+<draw:color draw:name="Resene Paints  treehouse" draw:color="#3B2820"/>
+<draw:color draw:name="Resene Paints  CocoaBrown" draw:color="#301F1E"/>
+<draw:color draw:name="Resene Paints  zeus" draw:color="#292319"/>
+<draw:color draw:name="Resene Paints  TouchWood" draw:color="#373021"/>
+<draw:color draw:name="Resene Paints  birch" draw:color="#373021"/>
+<draw:color draw:name="Resene Paints  tobago" draw:color="#3E2B23"/>
+<draw:color draw:name="Resene Paints  EnglishWalnut" draw:color="#3E2B23"/>
+<draw:color draw:name="Resene Paints  ShipGrey" draw:color="#3E3A44"/>
+<draw:color draw:name="Resene Paints  masala" draw:color="#403B38"/>
+<draw:color draw:name="Resene Paints  MineShaft" draw:color="#323232"/>
+<draw:color draw:name="Resene Paints  tuatara" draw:color="#363534"/>
+<draw:color draw:name="Resene Paints  dune" draw:color="#383533"/>
+<draw:color draw:name="Resene Paints  shark" draw:color="#25272C"/>
+<draw:color draw:name="Resene Paints  BalticSea" draw:color="#2A2630"/>
+<draw:color draw:name="Resene Paints  thunder" draw:color="#33292F"/>
+<draw:color draw:name="Resene Paints  WoodyBay" draw:color="#292130"/>
+<draw:color draw:name="Resene Paints  bastille" draw:color="#292130"/>
+<draw:color draw:name="Resene Paints  SteelGrey" draw:color="#262335"/>
+<draw:color draw:name="Resene Paints  blackcurrant" draw:color="#32293A"/>
+<draw:color draw:name="Resene Paints  EbonyClay" draw:color="#26283B"/>
+<draw:color draw:name="Resene Paints  charade" draw:color="#292937"/>
+<draw:color draw:name="Resene Paints  BigStone" draw:color="#162A40"/>
+<draw:color draw:name="Resene Paints  tuna" draw:color="#353542"/>
+<draw:color draw:name="Resene Paints  CloudBurst" draw:color="#202E54"/>
+<draw:color draw:name="Resene Paints  cello" draw:color="#1E385B"/>
+<draw:color draw:name="Resene Paints  AstronautBlue" draw:color="#013E62"/>
+<draw:color draw:name="Resene Paints  NileBlue" draw:color="#193751"/>
+<draw:color draw:name="Resene Paints  PrussianBlue" draw:color="#003153"/>
+<draw:color draw:name="Resene Paints  BlueWhale" draw:color="#042E4C"/>
+<draw:color draw:name="Resene Paints  BlueZodiac" draw:color="#13264D"/>
+<draw:color draw:name="Resene Paints  midnight" draw:color="#011635"/>
+<draw:color draw:name="Resene Paints  mirage" draw:color="#161928"/>
+<draw:color draw:name="Resene Paints  BlueCharcoal" draw:color="#010D1A"/>
+<draw:color draw:name="Resene Paints  vulcan" draw:color="#10121D"/>
+<draw:color draw:name="Resene Paints  BlueBark" draw:color="#041322"/>
+<draw:color draw:name="Resene Paints  BlackPearl" draw:color="#041322"/>
+<draw:color draw:name="Resene Paints  ebony" draw:color="#0C0B1D"/>
+<draw:color draw:name="Resene Paints  BlackRussian" draw:color="#0A001C"/>
+<draw:color draw:name="Resene Paints  GreenVogue" draw:color="#032B52"/>
+<draw:color draw:name="Resene Paints  RegalBlue" draw:color="#013F6A"/>
+<draw:color draw:name="Resene Paints  VeniceBlue" draw:color="#055989"/>
+<draw:color draw:name="Resene Paints  orient" draw:color="#015E85"/>
+<draw:color draw:name="Resene Paints  BahamaBlue" draw:color="#026395"/>
+<draw:color draw:name="Resene Paints  allports" draw:color="#0076A3"/>
+<draw:color draw:name="Resene Paints  SanMarino" draw:color="#456CAC"/>
+<draw:color draw:name="Resene Paints  matisse" draw:color="#1B659D"/>
+<draw:color draw:name="Resene Paints  azure" draw:color="#315BA1"/>
+<draw:color draw:name="Resene Paints  WaikawaGrey" draw:color="#5A6E9C"/>
+<draw:color draw:name="Resene Paints  StormGrey" draw:color="#717486"/>
+<draw:color draw:name="Resene Paints  PaleSky" draw:color="#6E7783"/>
+<draw:color draw:name="Resene Paints  KashmirBlue" draw:color="#507096"/>
+<draw:color draw:name="Resene Paints  ShuttleGrey" draw:color="#5F6672"/>
+<draw:color draw:name="Resene Paints  comet" draw:color="#5C5D75"/>
+<draw:color draw:name="Resene Paints  MidGrey" draw:color="#5F5F6E"/>
+<draw:color draw:name="Resene Paints  SaltBox" draw:color="#685E6E"/>
+<draw:color draw:name="Resene Paints  dolphin" draw:color="#646077"/>
+<draw:color draw:name="Resene Paints  smoky" draw:color="#605B73"/>
+<draw:color draw:name="Resene Paints  SanJuan" draw:color="#304B6A"/>
+<draw:color draw:name="Resene Paints  rhino" draw:color="#2E3F62"/>
+<draw:color draw:name="Resene Paints  GunPowder" draw:color="#414257"/>
+<draw:color draw:name="Resene Paints  BrightGrey" draw:color="#3C4151"/>
+<draw:color draw:name="Resene Paints  PickledBluewood" draw:color="#314459"/>
+<draw:color draw:name="Resene Paints  atomic" draw:color="#314459"/>
+<draw:color draw:name="Resene Paints  LimedSpruce" draw:color="#394851"/>
+<draw:color draw:name="Resene Paints  DarkSlate" draw:color="#394851"/>
+<draw:color draw:name="Resene Paints  OxfordBlue" draw:color="#384555"/>
+<draw:color draw:name="Resene Paints  mako" draw:color="#444954"/>
+<draw:color draw:name="Resene Paints  trout" draw:color="#4A4E5A"/>
+<draw:color draw:name="Resene Paints  RiverBed" draw:color="#434C59"/>
+<draw:color draw:name="Resene Paints  fiord" draw:color="#405169"/>
+<draw:color draw:name="Resene Paints  ScarpaFlow" draw:color="#585562"/>
+<draw:color draw:name="Resene Paints  DonJuan" draw:color="#5D4C51"/>
+<draw:color draw:name="Resene Paints  abbey" draw:color="#4C4F56"/>
+<draw:color draw:name="Resene Paints  CapeCod" draw:color="#3C4443"/>
+<draw:color draw:name="Resene Paints  mortar" draw:color="#504351"/>
+<draw:color draw:name="Resene Paints  gravel" draw:color="#4A444B"/>
+<draw:color draw:name="Resene Paints  emperor" draw:color="#514649"/>
+<draw:color draw:name="Resene Paints  tundora" draw:color="#4A4244"/>
+<draw:color draw:name="Resene Paints  matterhorn" draw:color="#4E3B41"/>
+<draw:color draw:name="Resene Paints  rock" draw:color="#4D3833"/>
+<draw:color draw:name="Resene Paints  JudgeGrey" draw:color="#544333"/>
+<draw:color draw:name="Resene Paints  mondo" draw:color="#4A3C30"/>
+<draw:color draw:name="Resene Paints  armadillo" draw:color="#433E37"/>
+<draw:color draw:name="Resene Paints  SmokeyAsh" draw:color="#413C37"/>
+<draw:color draw:name="Resene Paints  merlin" draw:color="#413C37"/>
+<draw:color draw:name="Resene Paints  FuscousGrey" draw:color="#54534D"/>
+<draw:color draw:name="Resene Paints  kabul" draw:color="#5E483E"/>
+<draw:color draw:name="Resene Paints  dorado" draw:color="#6B5755"/>
+<draw:color draw:name="Resene Paints  PineCone" draw:color="#6D5E54"/>
+<draw:color draw:name="Resene Paints  sandstone" draw:color="#796D62"/>
+<draw:color draw:name="Resene Paints  SandDune" draw:color="#826F65"/>
+<draw:color draw:name="Resene Paints  SpicyPink" draw:color="#816E71"/>
+<draw:color draw:name="Resene Paints  empress" draw:color="#817377"/>
+<draw:color draw:name="Resene Paints  fedora" draw:color="#796A78"/>
+<draw:color draw:name="Resene Paints  zambezi" draw:color="#685558"/>
+<draw:color draw:name="Resene Paints  scorpion" draw:color="#695F62"/>
+<draw:color draw:name="Resene Paints  chicago" draw:color="#5D5C58"/>
+<draw:color draw:name="Resene Paints  IronsideGrey" draw:color="#676662"/>
+<draw:color draw:name="Resene Paints  StormDust" draw:color="#646463"/>
+<draw:color draw:name="Resene Paints  nevada" draw:color="#646E75"/>
+<draw:color draw:name="Resene Paints  DoveGrey" draw:color="#6D6C6C"/>
+<draw:color draw:name="Resene Paints  flint" draw:color="#6F6A61"/>
+<draw:color draw:name="Resene Paints  pablo" draw:color="#776F61"/>
+<draw:color draw:name="Resene Paints  kokoda" draw:color="#6E6D57"/>
+<draw:color draw:name="Resene Paints  coffee" draw:color="#706555"/>
+<draw:color draw:name="Resene Paints  SoyaBean" draw:color="#6A6051"/>
+<draw:color draw:name="Resene Paints  siam" draw:color="#646A54"/>
+<draw:color draw:name="Resene Paints  WillowGrove" draw:color="#65745D"/>
+<draw:color draw:name="Resene Paints  corduroy" draw:color="#606E68"/>
+<draw:color draw:name="Resene Paints  oracle" draw:color="#377475"/>
+<draw:color draw:name="Resene Paints  jade" draw:color="#427977"/>
+<draw:color draw:name="Resene Paints  CuttySark" draw:color="#507672"/>
+<draw:color draw:name="Resene Paints  cactus" draw:color="#587156"/>
+<draw:color draw:name="Resene Paints  finlandia" draw:color="#556D56"/>
+<draw:color draw:name="Resene Paints  nandor" draw:color="#4B5D52"/>
+<draw:color draw:name="Resene Paints  PickledAspen" draw:color="#3F4C3A"/>
+<draw:color draw:name="Resene Paints  CabbagePont" draw:color="#3F4C3A"/>
+<draw:color draw:name="Resene Paints  LunarGreen" draw:color="#3C493A"/>
+<draw:color draw:name="Resene Paints  kelp" draw:color="#454936"/>
+<draw:color draw:name="Resene Paints  GreyGreen" draw:color="#454936"/>
+<draw:color draw:name="Resene Paints  TePapaGreen" draw:color="#1E433C"/>
+<draw:color draw:name="Resene Paints  plantation" draw:color="#27504B"/>
+<draw:color draw:name="Resene Paints  spectra" draw:color="#2F5A57"/>
+<draw:color draw:name="Resene Paints  mineral" draw:color="#3F5D53"/>
+<draw:color draw:name="Resene Paints  MineralGreen" draw:color="#3F5D53"/>
+<draw:color draw:name="Resene Paints  stromboli" draw:color="#325D52"/>
+<draw:color draw:name="Resene Paints  BlueDianne" draw:color="#204852"/>
+<draw:color draw:name="Resene Paints  SherpaBlue" draw:color="#004950"/>
+<draw:color draw:name="Resene Paints  TealBlue" draw:color="#044259"/>
+<draw:color draw:name="Resene Paints  ChathamsBlue" draw:color="#175579"/>
+<draw:color draw:name="Resene Paints  blumine" draw:color="#18587A"/>
+<draw:color draw:name="Resene Paints  william" draw:color="#3A686C"/>
+<draw:color draw:name="Resene Paints  casal" draw:color="#2F6168"/>
+<draw:color draw:name="Resene Paints  BlueBayoux" draw:color="#496679"/>
+<draw:color draw:name="Resene Paints  calypso" draw:color="#31728D"/>
+<draw:color draw:name="Resene Paints  astral" draw:color="#327DA0"/>
+<draw:color draw:name="Resene Paints  bismark" draw:color="#497183"/>
+<draw:color draw:name="Resene Paints  ming" draw:color="#36747D"/>
+<draw:color draw:name="Resene Paints  JellyBean" draw:color="#297B9A"/>
+<draw:color draw:name="Resene Paints  BlueLagoon" draw:color="#017987"/>
+<draw:color draw:name="Resene Paints  paradiso" draw:color="#317D82"/>
+<draw:color draw:name="Resene Paints  elm" draw:color="#1C7C7D"/>
+<draw:color draw:name="Resene Paints  SurfieGreen" draw:color="#0C7A79"/>
+<draw:color draw:name="Resene Paints  atoll" draw:color="#0A6F75"/>
+<draw:color draw:name="Resene Paints  mosque" draw:color="#036A6E"/>
+<draw:color draw:name="Resene Paints  BlueStone" draw:color="#016162"/>
+<draw:color draw:name="Resene Paints  SeaGreen" draw:color="#095859"/>
+<draw:color draw:name="Resene Paints  eden" draw:color="#105852"/>
+<draw:color draw:name="Resene Paints  EveningSea" draw:color="#024E46"/>
+<draw:color draw:name="Resene Paints  aquamarine" draw:color="#014B43"/>
+<draw:color draw:name="Resene Paints  GreenPea" draw:color="#1D6142"/>
+<draw:color draw:name="Resene Paints  como" draw:color="#517C66"/>
+<draw:color draw:name="Resene Paints  genoa" draw:color="#15736B"/>
+<draw:color draw:name="Resene Paints  watercourse" draw:color="#056F57"/>
+<draw:color draw:name="Resene Paints  DeepSea" draw:color="#01826B"/>
+<draw:color draw:name="Resene Paints  observatory" draw:color="#02866F"/>
+<draw:color draw:name="Resene Paints  ElfGreen" draw:color="#088370"/>
+<draw:color draw:name="Resene Paints  CuriousBlue" draw:color="#2596D1"/>
+<draw:color draw:name="Resene Paints  lochmara" draw:color="#007EC7"/>
+<draw:color draw:name="Resene Paints  danube" draw:color="#6093D1"/>
+<draw:color draw:name="Resene Paints  ShipCove" draw:color="#788BBA"/>
+<draw:color draw:name="Resene Paints  HavelockBlue" draw:color="#5590D9"/>
+<draw:color draw:name="Resene Paints  JordyBlue" draw:color="#8AB9F1"/>
+<draw:color draw:name="Resene Paints  shakespeare" draw:color="#4EABD1"/>
+<draw:color draw:name="Resene Paints  PictonBlue" draw:color="#45B1E8"/>
+<draw:color draw:name="Resene Paints  malibu" draw:color="#7DC8F7"/>
+<draw:color draw:name="Resene Paints  perano" draw:color="#A9BEF2"/>
+<draw:color draw:name="Resene Paints  MorningGlory" draw:color="#9EDEE0"/>
+<draw:color draw:name="Resene Paints  spray" draw:color="#79DEEC"/>
+<draw:color draw:name="Resene Paints  viking" draw:color="#64CCDB"/>
+<draw:color draw:name="Resene Paints  downy" draw:color="#6FD0C5"/>
+<draw:color draw:name="Resene Paints  bermuda" draw:color="#7DD8C6"/>
+<draw:color draw:name="Resene Paints  MonteCarlo" draw:color="#83D0C6"/>
+<draw:color draw:name="Resene Paints  WaterLeaf" draw:color="#A1E9DE"/>
+<draw:color draw:name="Resene Paints  riptide" draw:color="#8BE6D8"/>
+<draw:color draw:name="Resene Paints  padua" draw:color="#ADE6C4"/>
+<draw:color draw:name="Resene Paints  FringyFlower" draw:color="#B1E2C1"/>
+<draw:color draw:name="Resene Paints  VistaBlue" draw:color="#8FD6B4"/>
+<draw:color draw:name="Resene Paints  cruise" draw:color="#B5ECDF"/>
+<draw:color draw:name="Resene Paints  IceCold" draw:color="#B1F4E7"/>
+<draw:color draw:name="Resene Paints  AeroBlue" draw:color="#C9FFE5"/>
+<draw:color draw:name="Resene Paints  RiceFlower" draw:color="#EEFFE2"/>
+<draw:color draw:name="Resene Paints  HintOfGreen" draw:color="#E6FFE9"/>
+<draw:color draw:name="Resene Paints  feta" draw:color="#F0FCEA"/>
+<draw:color draw:name="Resene Paints  WhiteNectar" draw:color="#FCFFE7"/>
+<draw:color draw:name="Resene Paints  promenade" draw:color="#FCFFE7"/>
+<draw:color draw:name="Resene Paints  ChinaIvory" draw:color="#FCFFE7"/>
+<draw:color draw:name="Resene Paints  HintOfYellow" draw:color="#FAFDE4"/>
+<draw:color draw:name="Resene Paints  frost" draw:color="#EDF5DD"/>
+<draw:color draw:name="Resene Paints  loafer" draw:color="#EEF4DE"/>
+<draw:color draw:name="Resene Paints  ottoman" draw:color="#E9F8ED"/>
+<draw:color draw:name="Resene Paints  peppermint" draw:color="#E3F5E1"/>
+<draw:color draw:name="Resene Paints  frostee" draw:color="#E4F6E7"/>
+<draw:color draw:name="Resene Paints  tara" draw:color="#E1F6E8"/>
+<draw:color draw:name="Resene Paints  zanah" draw:color="#DAECD6"/>
+<draw:color draw:name="Resene Paints  WillowBrook" draw:color="#DFECDA"/>
+<draw:color draw:name="Resene Paints  kidnapper" draw:color="#E1EAD4"/>
+<draw:color draw:name="Resene Paints  edgewater" draw:color="#C8E3D7"/>
+<draw:color draw:name="Resene Paints  SurfCrest" draw:color="#CFE5D2"/>
+<draw:color draw:name="Resene Paints  PeaSoup" draw:color="#CFE5D2"/>
+<draw:color draw:name="Resene Paints  BlueRomance" draw:color="#D2F6DE"/>
+<draw:color draw:name="Resene Paints  GrannyApple" draw:color="#D5F6E3"/>
+<draw:color draw:name="Resene Paints  MintTulip" draw:color="#C4F4EB"/>
+<draw:color draw:name="Resene Paints  JaggedIce" draw:color="#C2E8E5"/>
+<draw:color draw:name="Resene Paints  skeptic" draw:color="#CAE6DA"/>
+<draw:color draw:name="Resene Paints  SwansDown" draw:color="#DCF0EA"/>
+<draw:color draw:name="Resene Paints  OysterBay" draw:color="#DAFAFF"/>
+<draw:color draw:name="Resene Paints  foam" draw:color="#D8FCFA"/>
+<draw:color draw:name="Resene Paints  WhiteIce" draw:color="#DDF9F1"/>
+<draw:color draw:name="Resene Paints  iceberg" draw:color="#DAF4F0"/>
+<draw:color draw:name="Resene Paints  polar" draw:color="#E5F9F6"/>
+<draw:color draw:name="Resene Paints  AppleGreen" draw:color="#E2F3EC"/>
+<draw:color draw:name="Resene Paints  harp" draw:color="#E6F2EA"/>
+<draw:color draw:name="Resene Paints  panache" draw:color="#EAF6EE"/>
+<draw:color draw:name="Resene Paints  narvik" draw:color="#EDF9F1"/>
+<draw:color draw:name="Resene Paints  OffGreen" draw:color="#E6F8F3"/>
+<draw:color draw:name="Resene Paints  AquaSpring" draw:color="#EAF9F5"/>
+<draw:color draw:name="Resene Paints  bubbles" draw:color="#E7FEFF"/>
+<draw:color draw:name="Resene Paints  tranquil" draw:color="#E6FFFF"/>
+<draw:color draw:name="Resene Paints  dew" draw:color="#EAFFFE"/>
+<draw:color draw:name="Resene Paints  ClearDay" draw:color="#E9FFFD"/>
+<draw:color draw:name="Resene Paints  scandal" draw:color="#CFFAF4"/>
+<draw:color draw:name="Resene Paints  HummingBird" draw:color="#CFF9F3"/>
+<draw:color draw:name="Resene Paints  FrostedMint" draw:color="#DBFFF8"/>
+<draw:color draw:name="Resene Paints  charlotte" draw:color="#BAEEF9"/>
+<draw:color draw:name="Resene Paints  FrenchPass" draw:color="#BDEDFD"/>
+<draw:color draw:name="Resene Paints  onahau" draw:color="#CDF4FF"/>
+<draw:color draw:name="Resene Paints  PattensBlue" draw:color="#DEF5FF"/>
+<draw:color draw:name="Resene Paints  mabel" draw:color="#D9F7FF"/>
+<draw:color draw:name="Resene Paints  LinkWater" draw:color="#D9E4F5"/>
+<draw:color draw:name="Resene Paints  HawkesBlue" draw:color="#D4E2FC"/>
+<draw:color draw:name="Resene Paints  BlueChalk" draw:color="#F1E9FF"/>
+<draw:color draw:name="Resene Paints  TitanWhite" draw:color="#F0EEFF"/>
+<draw:color draw:name="Resene Paints  WhitePointer" draw:color="#FEF8FF"/>
+<draw:color draw:name="Resene Paints  magnolia" draw:color="#F8F4FF"/>
+<draw:color draw:name="Resene Paints  selago" draw:color="#F0EEFD"/>
+<draw:color draw:name="Resene Paints  tutu" draw:color="#FFF1F9"/>
+<draw:color draw:name="Resene Paints  remy" draw:color="#FEEBF3"/>
+<draw:color draw:name="Resene Paints  SoftPeach" draw:color="#F5EDEF"/>
+<draw:color draw:name="Resene Paints  chardon" draw:color="#FFF3F1"/>
+<draw:color draw:name="Resene Paints  chablis" draw:color="#FFF4F3"/>
+<draw:color draw:name="Resene Paints  sauvignon" draw:color="#FFF5F3"/>
+<draw:color draw:name="Resene Paints  WispPink" draw:color="#FEF4F8"/>
+<draw:color draw:name="Resene Paints  RoseWhite" draw:color="#FFF6F5"/>
+<draw:color draw:name="Resene Paints  FairPink" draw:color="#FFEFEC"/>
+<draw:color draw:name="Resene Paints  ForgetMeNot" draw:color="#FFF1EE"/>
+<draw:color draw:name="Resene Paints  bridesmaid" draw:color="#FEF0EC"/>
+<draw:color draw:name="Resene Paints  ProvincialPink" draw:color="#FEF5F1"/>
+<draw:color draw:name="Resene Paints  BlackWhite" draw:color="#FFFEF6"/>
+<draw:color draw:name="Resene Paints  QuarterPearlLusta" draw:color="#FFFDF4"/>
+<draw:color draw:name="Resene Paints  OrchidWhite" draw:color="#FFFDF3"/>
+<draw:color draw:name="Resene Paints  bianca" draw:color="#FCFBF3"/>
+<draw:color draw:name="Resene Paints  BridalHeath" draw:color="#FFFAF4"/>
+<draw:color draw:name="Resene Paints  WhiteLinen" draw:color="#F8F0E8"/>
+<draw:color draw:name="Resene Paints  MilkWhite" draw:color="#F6F0E6"/>
+<draw:color draw:name="Resene Paints  merino" draw:color="#F6F0E6"/>
+<draw:color draw:name="Resene Paints  serenade" draw:color="#FFF4E8"/>
+<draw:color draw:name="Resene Paints  QuarterSpanishWhite" draw:color="#F7F2E1"/>
+<draw:color draw:name="Resene Paints  peach" draw:color="#FFF0DB"/>
+<draw:color draw:name="Resene Paints  EggSour" draw:color="#FFF4DD"/>
+<draw:color draw:name="Resene Paints  varden" draw:color="#FFF6DF"/>
+<draw:color draw:name="Resene Paints  sazerac" draw:color="#FFF4E0"/>
+<draw:color draw:name="Resene Paints  EarlyDawn" draw:color="#FFF9E6"/>
+<draw:color draw:name="Resene Paints  solitaire" draw:color="#FEF8E2"/>
+<draw:color draw:name="Resene Paints  GinFizz" draw:color="#FFF9E2"/>
+<draw:color draw:name="Resene Paints  OffYellow" draw:color="#FEF9E3"/>
+<draw:color draw:name="Resene Paints  travertine" draw:color="#FFFDE8"/>
+<draw:color draw:name="Resene Paints  ChileanHeath" draw:color="#FFFDE6"/>
+<draw:color draw:name="Resene Paints  ApricotWhite" draw:color="#FFFEEC"/>
+<draw:color draw:name="Resene Paints  HalfPearlLusta" draw:color="#FFFCEA"/>
+<draw:color draw:name="Resene Paints  ButteryWhite" draw:color="#FFFCEA"/>
+<draw:color draw:name="Resene Paints  RumSwizzle" draw:color="#F9F8E4"/>
+<draw:color draw:name="Resene Paints  joanna" draw:color="#F5F3E5"/>
+<draw:color draw:name="Resene Paints  EcruWhite" draw:color="#F5F3E5"/>
+<draw:color draw:name="Resene Paints  OrangeWhite" draw:color="#FEFCED"/>
+<draw:color draw:name="Resene Paints  RiceCake" draw:color="#FFFEF0"/>
+<draw:color draw:name="Resene Paints  IslandSpice" draw:color="#FFFCEE"/>
+<draw:color draw:name="Resene Paints  SugarCane" draw:color="#F9FFF6"/>
+<draw:color draw:name="Resene Paints  WanWhite" draw:color="#FCFFF9"/>
+<draw:color draw:name="Resene Paints  SeaFog" draw:color="#FCFFF9"/>
+<draw:color draw:name="Resene Paints  HintOfGrey" draw:color="#FCFFF9"/>
+<draw:color draw:name="Resene Paints  ceramic" draw:color="#FCFFF9"/>
+<draw:color draw:name="Resene Paints  SnowDrift" draw:color="#F7FAF7"/>
+<draw:color draw:name="Resene Paints  BlackSqueeze" draw:color="#F2FAFA"/>
+<draw:color draw:name="Resene Paints  TwilightBlue" draw:color="#EEFDFF"/>
+<draw:color draw:name="Resene Paints  zircon" draw:color="#F4F8FF"/>
+<draw:color draw:name="Resene Paints  WhiteLilac" draw:color="#F8F7FC"/>
+<draw:color draw:name="Resene Paints  soapstone" draw:color="#FFFBF9"/>
+<draw:color draw:name="Resene Paints  romance" draw:color="#FFFEFD"/>
+<draw:color draw:name="Resene Paints  RockSalt" draw:color="#FFFFFF"/>
+<draw:color draw:name="Resene Paints  alabaster" draw:color="#FFFFFF"/>
+<draw:color draw:name="Resene Paints  HintOfRed" draw:color="#F9F9F9"/>
+<draw:color draw:name="Resene Paints  DesertStorm" draw:color="#F8F8F7"/>
+<draw:color draw:name="Resene Paints  VistaWhite" draw:color="#FCF8F7"/>
+<draw:color draw:name="Resene Paints  fantasy" draw:color="#FAF3F0"/>
+<draw:color draw:name="Resene Paints  SpringWood" draw:color="#F8F6F1"/>
+<draw:color draw:name="Resene Paints  BlackHaze" draw:color="#F6F7F7"/>
+<draw:color draw:name="Resene Paints  WildSand" draw:color="#F4F4F4"/>
+<draw:color draw:name="Resene Paints  porcelain" draw:color="#EFF2F3"/>
+<draw:color draw:name="Resene Paints  seashell" draw:color="#F1F1F1"/>
+<draw:color draw:name="Resene Paints  concrete" draw:color="#F2F2F2"/>
+<draw:color draw:name="Resene Paints  gallery" draw:color="#EFEFEF"/>
+<draw:color draw:name="Resene Paints  AthensGrey" draw:color="#EEF0F3"/>
+<draw:color draw:name="Resene Paints  pampas" draw:color="#F4F2EE"/>
+<draw:color draw:name="Resene Paints  whisper" draw:color="#F7F5FA"/>
+<draw:color draw:name="Resene Paints  zumthor" draw:color="#EDF6FF"/>
+<draw:color draw:name="Resene Paints  solitude" draw:color="#EAF6FF"/>
+<draw:color draw:name="Resene Paints  LilyWhite" draw:color="#E7F8FF"/>
+<draw:color draw:name="Resene Paints  AquaSqueeze" draw:color="#E8F5F2"/>
+<draw:color draw:name="Resene Paints  CatskillWhite" draw:color="#EEF6F7"/>
+<draw:color draw:name="Resene Paints  AquaHaze" draw:color="#EDF5F5"/>
+<draw:color draw:name="Resene Paints  saltpan" draw:color="#F1F7F2"/>
+<draw:color draw:name="Resene Paints  gin" draw:color="#E8F2EB"/>
+<draw:color draw:name="Resene Paints  GreyNurse" draw:color="#E7ECE6"/>
+<draw:color draw:name="Resene Paints  mystic" draw:color="#E2EBED"/>
+<draw:color draw:name="Resene Paints  BonJour" draw:color="#E5E0E1"/>
+<draw:color draw:name="Resene Paints  ebb" draw:color="#E9E3E3"/>
+<draw:color draw:name="Resene Paints  mercury" draw:color="#E5E5E5"/>
+<draw:color draw:name="Resene Paints  geyser" draw:color="#D4DFE2"/>
+<draw:color draw:name="Resene Paints  PeriglacialBlue" draw:color="#E1E6D6"/>
+<draw:color draw:name="Resene Paints  GreenWhite" draw:color="#E8EBE0"/>
+<draw:color draw:name="Resene Paints  WhiteRock" draw:color="#EAE8D4"/>
+<draw:color draw:name="Resene Paints  linen" draw:color="#E6E4D4"/>
+<draw:color draw:name="Resene Paints  parchment" draw:color="#F1E9D2"/>
+<draw:color draw:name="Resene Paints  blanc" draw:color="#F5E9D3"/>
+<draw:color draw:name="Resene Paints  AlbescentWhite" draw:color="#F5E9D3"/>
+<draw:color draw:name="Resene Paints  cararra" draw:color="#EEEEE8"/>
+<draw:color draw:name="Resene Paints  PearlBush" draw:color="#E8E0D5"/>
+<draw:color draw:name="Resene Paints  bizarre" draw:color="#EEDEDA"/>
+<draw:color draw:name="Resene Paints  DawnPink" draw:color="#F3E9E5"/>
+<draw:color draw:name="Resene Paints  PotPourri" draw:color="#F5E7E2"/>
+<draw:color draw:name="Resene Paints  TuftBush" draw:color="#FFDDCD"/>
+<draw:color draw:name="Resene Paints  cinderella" draw:color="#FDE1DC"/>
+<draw:color draw:name="Resene Paints  amour" draw:color="#F9EAF3"/>
+<draw:color draw:name="Resene Paints  prim" draw:color="#F0E2EC"/>
+<draw:color draw:name="Resene Paints  lola" draw:color="#DFCFDB"/>
+<draw:color draw:name="Resene Paints  OysterPink" draw:color="#E9CECD"/>
+<draw:color draw:name="Resene Paints  DustStorm" draw:color="#E5CCC9"/>
+<draw:color draw:name="Resene Paints  bone" draw:color="#E4D1C0"/>
+<draw:color draw:name="Resene Paints  wafer" draw:color="#DECBC6"/>
+<draw:color draw:name="Resene Paints  westar" draw:color="#DCD9D2"/>
+<draw:color draw:name="Resene Paints  swirl" draw:color="#D3CDC5"/>
+<draw:color draw:name="Resene Paints  sisal" draw:color="#D3CBBA"/>
+<draw:color draw:name="Resene Paints  MoonMist" draw:color="#DCDDCC"/>
+<draw:color draw:name="Resene Paints  celeste" draw:color="#D1D2CA"/>
+<draw:color draw:name="Resene Paints  alto" draw:color="#DBDBDB"/>
+<draw:color draw:name="Resene Paints  iron" draw:color="#D4D7D9"/>
+<draw:color draw:name="Resene Paints  QuillGrey" draw:color="#D6D6D1"/>
+<draw:color draw:name="Resene Paints  SwissCoffee" draw:color="#DDD6D5"/>
+<draw:color draw:name="Resene Paints  mischka" draw:color="#D1D2DD"/>
+<draw:color draw:name="Resene Paints  tiara" draw:color="#C3D1D1"/>
+<draw:color draw:name="Resene Paints  pumice" draw:color="#C2CAC4"/>
+<draw:color draw:name="Resene Paints  submarine" draw:color="#BAC7C9"/>
+<draw:color draw:name="Resene Paints  loblolly" draw:color="#BDC9CE"/>
+<draw:color draw:name="Resene Paints  ghost" draw:color="#C7C9D5"/>
+<draw:color draw:name="Resene Paints  PaleSlate" draw:color="#C3BFC1"/>
+<draw:color draw:name="Resene Paints  SilverSand" draw:color="#BFC1C2"/>
+<draw:color draw:name="Resene Paints  FrenchGrey" draw:color="#BDBDC6"/>
+<draw:color draw:name="Resene Paints  MistGrey" draw:color="#C4C4BC"/>
+<draw:color draw:name="Resene Paints  kangaroo" draw:color="#C6C8BD"/>
+<draw:color draw:name="Resene Paints  ash" draw:color="#C6C3B5"/>
+<draw:color draw:name="Resene Paints  FoggyGrey" draw:color="#CBCAB6"/>
+<draw:color draw:name="Resene Paints  SoftAmber" draw:color="#D1C6B4"/>
+<draw:color draw:name="Resene Paints  GreyNickel" draw:color="#C3C3BD"/>
+<draw:color draw:name="Resene Paints  cloud" draw:color="#C7C4BF"/>
+<draw:color draw:name="Resene Paints  tea" draw:color="#C1BAB0"/>
+<draw:color draw:name="Resene Paints  CottonSeed" draw:color="#C2BDB6"/>
+<draw:color draw:name="Resene Paints  ColdTurkey" draw:color="#CEBABA"/>
+<draw:color draw:name="Resene Paints  BlueHaze" draw:color="#BFBED8"/>
+<draw:color draw:name="Resene Paints  GreySuit" draw:color="#C1BECD"/>
+<draw:color draw:name="Resene Paints  snuff" draw:color="#E2D8ED"/>
+<draw:color draw:name="Resene Paints  spindle" draw:color="#B6D1EA"/>
+<draw:color draw:name="Resene Paints  TropicalBlue" draw:color="#C3DDF9"/>
+<draw:color draw:name="Resene Paints  PigeonPost" draw:color="#AFBDD9"/>
+<draw:color draw:name="Resene Paints  EchoBlue" draw:color="#AFBDD9"/>
+<draw:color draw:name="Resene Paints  casper" draw:color="#ADBED1"/>
+<draw:color draw:name="Resene Paints  heather" draw:color="#B7C3D0"/>
+<draw:color draw:name="Resene Paints  sail" draw:color="#B8E0F9"/>
+<draw:color draw:name="Resene Paints  RegentStBlue" draw:color="#AAD6E6"/>
+<draw:color draw:name="Resene Paints  seagull" draw:color="#80CCEA"/>
+<draw:color draw:name="Resene Paints  anakiwa" draw:color="#9DE5FF"/>
+<draw:color draw:name="Resene Paints  opal" draw:color="#A9C6C2"/>
+<draw:color draw:name="Resene Paints  JungleMist" draw:color="#B4CFD3"/>
+<draw:color draw:name="Resene Paints  PowderBlue" draw:color="#BCC9C2"/>
+<draw:color draw:name="Resene Paints  JetStream" draw:color="#B5D2CE"/>
+<draw:color draw:name="Resene Paints  ziggurat" draw:color="#BFDBE2"/>
+<draw:color draw:name="Resene Paints  botticelli" draw:color="#C7DDE5"/>
+<draw:color draw:name="Resene Paints  nebula" draw:color="#CBDBD6"/>
+<draw:color draw:name="Resene Paints  conch" draw:color="#C9D9D2"/>
+<draw:color draw:name="Resene Paints  ParisWhite" draw:color="#CADCD4"/>
+<draw:color draw:name="Resene Paints  aqua" draw:color="#A1DAD7"/>
+<draw:color draw:name="Resene Paints  sinbad" draw:color="#9FD7D3"/>
+<draw:color draw:name="Resene Paints  GumLeaf" draw:color="#B6D3BF"/>
+<draw:color draw:name="Resene Paints  surf" draw:color="#BBD7C1"/>
+<draw:color draw:name="Resene Paints  sea" draw:color="#C5DBCA"/>
+<draw:color draw:name="Resene Paints  SeaMist" draw:color="#C5DBCA"/>
+<draw:color draw:name="Resene Paints  tasman" draw:color="#CFDCCF"/>
+<draw:color draw:name="Resene Paints  PaleLeaf" draw:color="#C0D3B9"/>
+<draw:color draw:name="Resene Paints  rainee" draw:color="#B9C8AC"/>
+<draw:color draw:name="Resene Paints  RobinsEggBlue" draw:color="#BDC8B3"/>
+<draw:color draw:name="Resene Paints  GreenSpring" draw:color="#B8C1B1"/>
+<draw:color draw:name="Resene Paints  SpringRain" draw:color="#ACCBB1"/>
+<draw:color draw:name="Resene Paints  SummerGreen" draw:color="#96BBAB"/>
+<draw:color draw:name="Resene Paints  eagle" draw:color="#B6BAA4"/>
+<draw:color draw:name="Resene Paints  bud" draw:color="#A8AE9C"/>
+<draw:color draw:name="Resene Paints  envy" draw:color="#8BA690"/>
+<draw:color draw:name="Resene Paints  SeaNymph" draw:color="#78A39C"/>
+<draw:color draw:name="Resene Paints  gumbo" draw:color="#7CA1A6"/>
+<draw:color draw:name="Resene Paints  GrannySmith" draw:color="#84A0A0"/>
+<draw:color draw:name="Resene Paints  pewter" draw:color="#96A8A1"/>
+<draw:color draw:name="Resene Paints  cascade" draw:color="#8BA9A5"/>
+<draw:color draw:name="Resene Paints  TowerGrey" draw:color="#A9BDBF"/>
+<draw:color draw:name="Resene Paints  ShadowGreen" draw:color="#9AC2B8"/>
+<draw:color draw:name="Resene Paints  GulfStream" draw:color="#80B3AE"/>
+<draw:color draw:name="Resene Paints  HalfBaked" draw:color="#85C4CC"/>
+<draw:color draw:name="Resene Paints  glacier" draw:color="#80B3C4"/>
+<draw:color draw:name="Resene Paints  neptune" draw:color="#7CB7BB"/>
+<draw:color draw:name="Resene Paints  BaliHai" draw:color="#859FAF"/>
+<draw:color draw:name="Resene Paints  RockBlue" draw:color="#9EB1CD"/>
+<draw:color draw:name="Resene Paints  GullGrey" draw:color="#9DACB7"/>
+<draw:color draw:name="Resene Paints  nepal" draw:color="#8EABC1"/>
+<draw:color draw:name="Resene Paints  PoloBlue" draw:color="#8DA8CC"/>
+<draw:color draw:name="Resene Paints  logan" draw:color="#AAA9CD"/>
+<draw:color draw:name="Resene Paints  wistful" draw:color="#A4A6D3"/>
+<draw:color draw:name="Resene Paints  SantasGrey" draw:color="#9FA0B1"/>
+<draw:color draw:name="Resene Paints  chatelle" draw:color="#BDB3C7"/>
+<draw:color draw:name="Resene Paints  PinkSwan" draw:color="#BEB5B7"/>
+<draw:color draw:name="Resene Paints  silk" draw:color="#BDB1A8"/>
+<draw:color draw:name="Resene Paints  tide" draw:color="#BFB8B0"/>
+<draw:color draw:name="Resene Paints  malta" draw:color="#BDB2A1"/>
+<draw:color draw:name="Resene Paints  nomad" draw:color="#BAB1A2"/>
+<draw:color draw:name="Resene Paints  BisonHide" draw:color="#C1B7A4"/>
+<draw:color draw:name="Resene Paints  nobel" draw:color="#B7B1B1"/>
+<draw:color draw:name="Resene Paints  SilverChalice" draw:color="#ACACAC"/>
+<draw:color draw:name="Resene Paints  bombay" draw:color="#AFB1B8"/>
+<draw:color draw:name="Resene Paints  SpunPearl" draw:color="#AAABB7"/>
+<draw:color draw:name="Resene Paints  aluminium" draw:color="#A9ACB6"/>
+<draw:color draw:name="Resene Paints  GreyChateau" draw:color="#A2AAB3"/>
+<draw:color draw:name="Resene Paints  HitGrey" draw:color="#A1ADB5"/>
+<draw:color draw:name="Resene Paints  edward" draw:color="#A2AEAB"/>
+<draw:color draw:name="Resene Paints  StarDust" draw:color="#9F9F9C"/>
+<draw:color draw:name="Resene Paints  LemonGrass" draw:color="#9B9E8F"/>
+<draw:color draw:name="Resene Paints  grey" draw:color="#A9A491"/>
+<draw:color draw:name="Resene Paints  GreyOlive" draw:color="#A9A491"/>
+<draw:color draw:name="Resene Paints  napa" draw:color="#ACA494"/>
+<draw:color draw:name="Resene Paints  bronco" draw:color="#ABA196"/>
+<draw:color draw:name="Resene Paints  cloudy" draw:color="#ACA59F"/>
+<draw:color draw:name="Resene Paints  delta" draw:color="#A4A49D"/>
+<draw:color draw:name="Resene Paints  dawn" draw:color="#A6A29A"/>
+<draw:color draw:name="Resene Paints  zorba" draw:color="#A59B91"/>
+<draw:color draw:name="Resene Paints  martini" draw:color="#AFA09E"/>
+<draw:color draw:name="Resene Paints  thatch" draw:color="#B69D98"/>
+<draw:color draw:name="Resene Paints  DelRio" draw:color="#B09A95"/>
+<draw:color draw:name="Resene Paints  DustyGrey" draw:color="#A8989B"/>
+<draw:color draw:name="Resene Paints  ShadyLady" draw:color="#AAA5A9"/>
+<draw:color draw:name="Resene Paints  venus" draw:color="#928590"/>
+<draw:color draw:name="Resene Paints  GraniteGreen" draw:color="#8D8974"/>
+<draw:color draw:name="Resene Paints  MountainMist" draw:color="#959396"/>
+<draw:color draw:name="Resene Paints  OsloGrey" draw:color="#878D91"/>
+<draw:color draw:name="Resene Paints  stack" draw:color="#8A8F8A"/>
+<draw:color draw:name="Resene Paints  gunsmoke" draw:color="#828685"/>
+<draw:color draw:name="Resene Paints  boulder" draw:color="#7A7A7A"/>
+<draw:color draw:name="Resene Paints  tapa" draw:color="#7B7874"/>
+<draw:color draw:name="Resene Paints  concord" draw:color="#7C7B7A"/>
+<draw:color draw:name="Resene Paints  jumbo" draw:color="#7C7B82"/>
+<draw:color draw:name="Resene Paints  RollingStone" draw:color="#747D83"/>
+<draw:color draw:name="Resene Paints  bandicoot" draw:color="#858470"/>
+<draw:color draw:name="Resene Paints  makara" draw:color="#897D6D"/>
+<draw:color draw:name="Resene Paints  OliveHaze" draw:color="#8B8470"/>
+<draw:color draw:name="Resene Paints  stonewall" draw:color="#928573"/>
+<draw:color draw:name="Resene Paints  schooner" draw:color="#8B847E"/>
+<draw:color draw:name="Resene Paints  FriarGrey" draw:color="#807E79"/>
+<draw:color draw:name="Resene Paints  americano" draw:color="#87756E"/>
+<draw:color draw:name="Resene Paints  squirrel" draw:color="#8F8176"/>
+<draw:color draw:name="Resene Paints  AlmondFrost" draw:color="#907B71"/>
+<draw:color draw:name="Resene Paints  hemp" draw:color="#907874"/>
+<draw:color draw:name="Resene Paints  hurricane" draw:color="#877C7B"/>
+<draw:color draw:name="Resene Paints  SuvaGrey" draw:color="#888387"/>
+<draw:color draw:name="Resene Paints  mamba" draw:color="#8E8190"/>
+<draw:color draw:name="Resene Paints  monsoon" draw:color="#8A8389"/>
+<draw:color draw:name="Resene Paints  mobster" draw:color="#7F7589"/>
+<draw:color draw:name="Resene Paints  Waterloo" draw:color="#7B7C94"/>
+<draw:color draw:name="Resene Paints  raincloud" draw:color="#7B7C94"/>
+<draw:color draw:name="Resene Paints  topaz" draw:color="#7C778A"/>
+<draw:color draw:name="Resene Paints  lynch" draw:color="#697E9A"/>
+<draw:color draw:name="Resene Paints  RegentGrey" draw:color="#86949F"/>
+<draw:color draw:name="Resene Paints  raven" draw:color="#727B89"/>
+<draw:color draw:name="Resene Paints  TaxBreak" draw:color="#51808F"/>
+<draw:color draw:name="Resene Paints  smalt" draw:color="#51808F"/>
+<draw:color draw:name="Resene Paints  SmaltBlue" draw:color="#51808F"/>
+<draw:color draw:name="Resene Paints  BermudaGrey" draw:color="#6B8BA2"/>
+<draw:color draw:name="Resene Paints  gothic" draw:color="#6D92A1"/>
+<draw:color draw:name="Resene Paints  wedgewood" draw:color="#4E7F9E"/>
+<draw:color draw:name="Resene Paints  hoki" draw:color="#65869F"/>
+<draw:color draw:name="Resene Paints  horizon" draw:color="#5A87A0"/>
+<draw:color draw:name="Resene Paints  BostonBlue" draw:color="#3B91B4"/>
+<draw:color draw:name="Resene Paints  HippieBlue" draw:color="#589AAF"/>
+<draw:color draw:name="Resene Paints  sirocco" draw:color="#718080"/>
+<draw:color draw:name="Resene Paints  BlueSmoke" draw:color="#748881"/>
+<draw:color draw:name="Resene Paints  juniper" draw:color="#6D9292"/>
+<draw:color draw:name="Resene Paints  laurel" draw:color="#749378"/>
+<draw:color draw:name="Resene Paints  amulet" draw:color="#7B9F80"/>
+<draw:color draw:name="Resene Paints  oxley" draw:color="#779E86"/>
+<draw:color draw:name="Resene Paints  SpanishGreen" draw:color="#819885"/>
+<draw:color draw:name="Resene Paints  mantle" draw:color="#8B9C90"/>
+<draw:color draw:name="Resene Paints  xanadu" draw:color="#738678"/>
+<draw:color draw:name="Resene Paints  bitter" draw:color="#868974"/>
+<draw:color draw:name="Resene Paints  ViridianGreen" draw:color="#678975"/>
+<draw:color draw:name="Resene Paints  lochinvar" draw:color="#2C8C84"/>
+<draw:color draw:name="Resene Paints  BreakerBay" draw:color="#5DA19F"/>
+<draw:color draw:name="Resene Paints  patina" draw:color="#639A8F"/>
+<draw:color draw:name="Resene Paints  BayLeaf" draw:color="#7DA98D"/>
+<draw:color draw:name="Resene Paints  SilverTree" draw:color="#66B58F"/>
+<draw:color draw:name="Resene Paints  tradewind" draw:color="#5FB3AC"/>
+<draw:color draw:name="Resene Paints  acapulco" draw:color="#7CB0A1"/>
+<draw:color draw:name="Resene Paints  FountainBlue" draw:color="#56B4BE"/>
+<draw:color draw:name="Resene Paints  scooter" draw:color="#2EBFD4"/>
+<draw:color draw:name="Resene Paints  pelorous" draw:color="#3EABBF"/>
+<draw:color draw:name="Resene Paints  EasternBlue" draw:color="#1E9AB0"/>
+<draw:color draw:name="Resene Paints  BlueChill" draw:color="#0C8990"/>
+<draw:color draw:name="Resene Paints  java" draw:color="#1FC2C2"/>
+<draw:color draw:name="Resene Paints  keppel" draw:color="#3AB09E"/>
+<draw:color draw:name="Resene Paints  PuertoRico" draw:color="#3FC1AA"/>
+<draw:color draw:name="Resene Paints  niagara" draw:color="#6	1	9"/>
+<draw:color draw:name="Resene Paints  gossamer" draw:color="#6	B	1"/>
+<draw:color draw:name="Resene Paints  eucalyptus" draw:color="#278A5B"/>
+<draw:color draw:name="Resene Paints  FruitSalad" draw:color="#4F9D5D"/>
+<draw:color draw:name="Resene Paints  ChateauGreen" draw:color="#40A860"/>
+<draw:color draw:name="Resene Paints  OceanGreen" draw:color="#41AA78"/>
+<draw:color draw:name="Resene Paints  DeYork" draw:color="#7AC488"/>
+<draw:color draw:name="Resene Paints  mantis" draw:color="#74C365"/>
+<draw:color draw:name="Resene Paints  apple" draw:color="#4FA83D"/>
+<draw:color draw:name="Resene Paints  wasabi" draw:color="#788A25"/>
+<draw:color draw:name="Resene Paints  ChelseaCucumber" draw:color="#83AA5D"/>
+<draw:color draw:name="Resene Paints  SpringGreen" draw:color="#578363"/>
+<draw:color draw:name="Resene Paints  GladeGreen" draw:color="#61845F"/>
+<draw:color draw:name="Resene Paints  highland" draw:color="#6F8E63"/>
+<draw:color draw:name="Resene Paints  LimedAsh" draw:color="#747D63"/>
+<draw:color draw:name="Resene Paints  flax" draw:color="#7B8265"/>
+<draw:color draw:name="Resene Paints  BattleshipGrey" draw:color="#828F72"/>
+<draw:color draw:name="Resene Paints  MalachiteGreen" draw:color="#888D65"/>
+<draw:color draw:name="Resene Paints  avocado" draw:color="#888D65"/>
+<draw:color draw:name="Resene Paints  RainForest" draw:color="#778120"/>
+<draw:color draw:name="Resene Paints  pacifika" draw:color="#778120"/>
+<draw:color draw:name="Resene Paints  sycamore" draw:color="#908D39"/>
+<draw:color draw:name="Resene Paints  highball" draw:color="#908D39"/>
+<draw:color draw:name="Resene Paints  LuxorGold" draw:color="#A7882C"/>
+<draw:color draw:name="Resene Paints  MuddyWaters" draw:color="#B78E5C"/>
+<draw:color draw:name="Resene Paints  LimedOak" draw:color="#AC8A56"/>
+<draw:color draw:name="Resene Paints  mckenzie" draw:color="#AF8751"/>
+<draw:color draw:name="Resene Paints  driftwood" draw:color="#AF8751"/>
+<draw:color draw:name="Resene Paints  cement" draw:color="#8D7662"/>
+<draw:color draw:name="Resene Paints  domino" draw:color="#8E775E"/>
+<draw:color draw:name="Resene Paints  ClayCreek" draw:color="#8A8360"/>
+<draw:color draw:name="Resene Paints  gurkha" draw:color="#9A9577"/>
+<draw:color draw:name="Resene Paints  PaleOyster" draw:color="#988D77"/>
+<draw:color draw:name="Resene Paints  arrowtown" draw:color="#948771"/>
+<draw:color draw:name="Resene Paints  DonkeyBrown" draw:color="#A69279"/>
+<draw:color draw:name="Resene Paints  sandrift" draw:color="#AB917A"/>
+<draw:color draw:name="Resene Paints  sandal" draw:color="#AA8D6F"/>
+<draw:color draw:name="Resene Paints  BarleyCorn" draw:color="#A68B5B"/>
+<draw:color draw:name="Resene Paints  muesli" draw:color="#AA8B5B"/>
+<draw:color draw:name="Resene Paints  teak" draw:color="#B19461"/>
+<draw:color draw:name="Resene Paints  mongoose" draw:color="#B5A27F"/>
+<draw:color draw:name="Resene Paints  tallow" draw:color="#A8A589"/>
+<draw:color draw:name="Resene Paints  canvas" draw:color="#A8A589"/>
+<draw:color draw:name="Resene Paints  NeutralGreen" draw:color="#ACA586"/>
+<draw:color draw:name="Resene Paints  hillary" draw:color="#ACA586"/>
+<draw:color draw:name="Resene Paints  TaupeGrey" draw:color="#B3AF95"/>
+<draw:color draw:name="Resene Paints  HeatheredGrey" draw:color="#B6B095"/>
+<draw:color draw:name="Resene Paints  RodeoDust" draw:color="#C9B29B"/>
+<draw:color draw:name="Resene Paints  tussock" draw:color="#C5994B"/>
+<draw:color draw:name="Resene Paints  roti" draw:color="#C6A84B"/>
+<draw:color draw:name="Resene Paints  sundance" draw:color="#C9B35B"/>
+<draw:color draw:name="Resene Paints  husk" draw:color="#B7A458"/>
+<draw:color draw:name="Resene Paints  laser" draw:color="#C8B568"/>
+<draw:color draw:name="Resene Paints  gimblet" draw:color="#B8B56A"/>
+<draw:color draw:name="Resene Paints  GreenSmoke" draw:color="#A4AF6E"/>
+<draw:color draw:name="Resene Paints  sage" draw:color="#9EA587"/>
+<draw:color draw:name="Resene Paints  schist" draw:color="#A9B497"/>
+<draw:color draw:name="Resene Paints  locust" draw:color="#A8AF8E"/>
+<draw:color draw:name="Resene Paints  norway" draw:color="#A8BD9F"/>
+<draw:color draw:name="Resene Paints  coriander" draw:color="#C4D0B0"/>
+<draw:color draw:name="Resene Paints  GreenMist" draw:color="#CBD3B0"/>
+<draw:color draw:name="Resene Paints  tana" draw:color="#D9DCC1"/>
+<draw:color draw:name="Resene Paints  PixieGreen" draw:color="#C0D8B6"/>
+<draw:color draw:name="Resene Paints  sprout" draw:color="#C1D7B0"/>
+<draw:color draw:name="Resene Paints  WinterHazel" draw:color="#D5D195"/>
+<draw:color draw:name="Resene Paints  PineGlade" draw:color="#C7CD90"/>
+<draw:color draw:name="Resene Paints  deco" draw:color="#D2DA97"/>
+<draw:color draw:name="Resene Paints  celery" draw:color="#B8C25D"/>
+<draw:color draw:name="Resene Paints  WildWillow" draw:color="#B9C46A"/>
+<draw:color draw:name="Resene Paints  tacha" draw:color="#D6C562"/>
+<draw:color draw:name="Resene Paints  chenin" draw:color="#DFCD6F"/>
+<draw:color draw:name="Resene Paints  putty" draw:color="#E7CD8C"/>
+<draw:color draw:name="Resene Paints  chalky" draw:color="#EED794"/>
+<draw:color draw:name="Resene Paints  GoldenSand" draw:color="#F0DB7D"/>
+<draw:color draw:name="Resene Paints  apache" draw:color="#DFBE6F"/>
+<draw:color draw:name="Resene Paints  equator" draw:color="#E1BC64"/>
+<draw:color draw:name="Resene Paints  RobRoy" draw:color="#EAC674"/>
+<draw:color draw:name="Resene Paints  grandis" draw:color="#FFD38C"/>
+<draw:color draw:name="Resene Paints  HarvestGold" draw:color="#E0B974"/>
+<draw:color draw:name="Resene Paints  brandy" draw:color="#DEC196"/>
+<draw:color draw:name="Resene Paints  calico" draw:color="#E0C095"/>
+<draw:color draw:name="Resene Paints  cameo" draw:color="#D9B99B"/>
+<draw:color draw:name="Resene Paints  vanilla" draw:color="#D1BEA8"/>
+<draw:color draw:name="Resene Paints  SourDough" draw:color="#D1BEA8"/>
+<draw:color draw:name="Resene Paints  akaroa" draw:color="#D4C4A8"/>
+<draw:color draw:name="Resene Paints  coral" draw:color="#C7BCA2"/>
+<draw:color draw:name="Resene Paints  thistle" draw:color="#CCCAA8"/>
+<draw:color draw:name="Resene Paints  chino" draw:color="#CEC7A7"/>
+<draw:color draw:name="Resene Paints  yuma" draw:color="#CEC291"/>
+<draw:color draw:name="Resene Paints  straw" draw:color="#D4BF8D"/>
+<draw:color draw:name="Resene Paints  SorrellBrown" draw:color="#CEB98F"/>
+<draw:color draw:name="Resene Paints  pavlova" draw:color="#D7C498"/>
+<draw:color draw:name="Resene Paints  sapling" draw:color="#DED4A4"/>
+<draw:color draw:name="Resene Paints  NewOrleans" draw:color="#F3D69D"/>
+<draw:color draw:name="Resene Paints  zombie" draw:color="#E4D69B"/>
+<draw:color draw:name="Resene Paints  hampton" draw:color="#E5D8AF"/>
+<draw:color draw:name="Resene Paints  DoubleSpanishWhite" draw:color="#E6D7B9"/>
+<draw:color draw:name="Resene Paints  GrainBrown" draw:color="#E4D5B7"/>
+<draw:color draw:name="Resene Paints  StarkWhite" draw:color="#E5D7BD"/>
+<draw:color draw:name="Resene Paints  raffia" draw:color="#EADAB8"/>
+<draw:color draw:name="Resene Paints  JustRight" draw:color="#ECCDB9"/>
+<draw:color draw:name="Resene Paints  pancho" draw:color="#EDCDAB"/>
+<draw:color draw:name="Resene Paints  manhattan" draw:color="#F5C999"/>
+<draw:color draw:name="Resene Paints  maize" draw:color="#F5D5A0"/>
+<draw:color draw:name="Resene Paints  corvette" draw:color="#FAD3A2"/>
+<draw:color draw:name="Resene Paints  frangipani" draw:color="#FFDEB3"/>
+<draw:color draw:name="Resene Paints  caramel" draw:color="#FFDDAF"/>
+<draw:color draw:name="Resene Paints  karry" draw:color="#FFEAD4"/>
+<draw:color draw:name="Resene Paints  tequila" draw:color="#FFE6C7"/>
+<draw:color draw:name="Resene Paints  negroni" draw:color="#FFE2C5"/>
+<draw:color draw:name="Resene Paints  givry" draw:color="#F8E4BF"/>
+<draw:color draw:name="Resene Paints  DairyCream" draw:color="#F9E4BC"/>
+<draw:color draw:name="Resene Paints  SandyBeach" draw:color="#FFEAC8"/>
+<draw:color draw:name="Resene Paints  champagne" draw:color="#FAECCC"/>
+<draw:color draw:name="Resene Paints  SpanishWhite" draw:color="#F4EBD3"/>
+<draw:color draw:name="Resene Paints  janna" draw:color="#F4EBD3"/>
+<draw:color draw:name="Resene Paints  AthsSpecial" draw:color="#ECEBCE"/>
+<draw:color draw:name="Resene Paints  wheatfield" draw:color="#F3EDCF"/>
+<draw:color draw:name="Resene Paints  DoubleColonialWhite" draw:color="#EEE3AD"/>
+<draw:color draw:name="Resene Paints  chamois" draw:color="#EDDCB1"/>
+<draw:color draw:name="Resene Paints  ColonialWhite" draw:color="#FFEDBC"/>
+<draw:color draw:name="Resene Paints  CapeHoney" draw:color="#FEE5AC"/>
+<draw:color draw:name="Resene Paints  astra" draw:color="#FAEAB9"/>
+<draw:color draw:name="Resene Paints  sidecar" draw:color="#F3E7BB"/>
+<draw:color draw:name="Resene Paints  splash" draw:color="#FFEFC1"/>
+<draw:color draw:name="Resene Paints  EggWhite" draw:color="#FFEFC1"/>
+<draw:color draw:name="Resene Paints  buttermilk" draw:color="#FFF1B5"/>
+<draw:color draw:name="Resene Paints  pipi" draw:color="#FEF4CC"/>
+<draw:color draw:name="Resene Paints  beeswax" draw:color="#FEF2C7"/>
+<draw:color draw:name="Resene Paints  DoublePearlLusta" draw:color="#FCF4D0"/>
+<draw:color draw:name="Resene Paints  BarleyWhite" draw:color="#FFF4CE"/>
+<draw:color draw:name="Resene Paints  MilkPunch" draw:color="#FFF6D4"/>
+<draw:color draw:name="Resene Paints  HalfColonialWhite" draw:color="#FDF6D3"/>
+<draw:color draw:name="Resene Paints  DutchWhite" draw:color="#FFF8D1"/>
+<draw:color draw:name="Resene Paints  BajaWhite" draw:color="#FFF8D1"/>
+<draw:color draw:name="Resene Paints  CitrineWhite" draw:color="#FAF7D6"/>
+<draw:color draw:name="Resene Paints  HalfDutchWhite" draw:color="#FEF7DE"/>
+<draw:color draw:name="Resene Paints  CoconutCream" draw:color="#F8F7DC"/>
+<draw:color draw:name="Resene Paints  HalfAndHalf" draw:color="#FFFEE1"/>
+<draw:color draw:name="Resene Paints  ScotchMist" draw:color="#FFFBDC"/>
+<draw:color draw:name="Resene Paints  PearlLusta" draw:color="#FCF4DC"/>
+<draw:color draw:name="Resene Paints  HalfSpanishWhite" draw:color="#FEF4DB"/>
+<draw:color draw:name="Resene Paints  BleachWhite" draw:color="#FEF3D8"/>
+<draw:color draw:name="Resene Paints  derby" draw:color="#FFEED8"/>
+<draw:color draw:name="Resene Paints  PinkLady" draw:color="#FFF1D8"/>
+<draw:color draw:name="Resene Paints  oasis" draw:color="#FEEFCE"/>
+<draw:color draw:name="Resene Paints  cherokee" draw:color="#FCDA98"/>
+<draw:color draw:name="Resene Paints  salomie" draw:color="#FEDB8D"/>
+<draw:color draw:name="Resene Paints  CreamBrulee" draw:color="#FFE5A0"/>
+<draw:color draw:name="Resene Paints  GoldenGlow" draw:color="#FDE295"/>
+<draw:color draw:name="Resene Paints  marzipan" draw:color="#F8DB9D"/>
+<draw:color draw:name="Resene Paints  PalePrim" draw:color="#FDFEB8"/>
+<draw:color draw:name="Resene Paints  shalimar" draw:color="#FBFFBA"/>
+<draw:color draw:name="Resene Paints  portafino" draw:color="#FFFFB4"/>
+<draw:color draw:name="Resene Paints  drover" draw:color="#FDF7AD"/>
+<draw:color draw:name="Resene Paints  sandwisp" draw:color="#F5E7A2"/>
+<draw:color draw:name="Resene Paints  WildRice" draw:color="#ECE090"/>
+<draw:color draw:name="Resene Paints  primrose" draw:color="#EDEA99"/>
+<draw:color draw:name="Resene Paints  VisVis" draw:color="#FFEFA1"/>
+<draw:color draw:name="Resene Paints  SweetCorn" draw:color="#FBEA8C"/>
+<draw:color draw:name="Resene Paints  picasso" draw:color="#FFF39D"/>
+<draw:color draw:name="Resene Paints  WitchHaze" draw:color="#FFFC99"/>
+<draw:color draw:name="Resene Paints  CremeDeBanane" draw:color="#FFFC99"/>
+<draw:color draw:name="Resene Paints  milan" draw:color="#FAFFA4"/>
+<draw:color draw:name="Resene Paints  texas" draw:color="#F8F99C"/>
+<draw:color draw:name="Resene Paints  tidal" draw:color="#F1FFAD"/>
+<draw:color draw:name="Resene Paints  chiffon" draw:color="#F1FFC8"/>
+<draw:color draw:name="Resene Paints  AustralianMint" draw:color="#F5FFBE"/>
+<draw:color draw:name="Resene Paints  tusk" draw:color="#EEF3C3"/>
+<draw:color draw:name="Resene Paints  caper" draw:color="#DCEDB4"/>
+<draw:color draw:name="Resene Paints  BerylGreen" draw:color="#DEE5C0"/>
+<draw:color draw:name="Resene Paints  ChromeWhite" draw:color="#E8F1D4"/>
+<draw:color draw:name="Resene Paints  MintJulep" draw:color="#F1EEC1"/>
+<draw:color draw:name="Resene Paints  TahunaSands" draw:color="#EEF0C8"/>
+<draw:color draw:name="Resene Paints  orinoco" draw:color="#F3FBD4"/>
+<draw:color draw:name="Resene Paints  CornField" draw:color="#F8FACD"/>
+<draw:color draw:name="Resene Paints  MoonGlow" draw:color="#FCFEDA"/>
+<draw:color draw:name="Resene Paints  cumulus" draw:color="#FDFFD5"/>
+<draw:color draw:name="Resene Paints  mimosa" draw:color="#F8FDD3"/>
+<draw:color draw:name="Resene Paints  SpringSun" draw:color="#F6FFDC"/>
+<draw:color draw:name="Resene Paints  carla" draw:color="#F3FFD8"/>
+<draw:color draw:name="Resene Paints  SnowFlurry" draw:color="#E4FFD1"/>
+<draw:color draw:name="Resene Paints  SnowyMint" draw:color="#D6FFDB"/>
+<draw:color draw:name="Resene Paints  gossip" draw:color="#D2F8B0"/>
+<draw:color draw:name="Resene Paints  madang" draw:color="#B7F0BE"/>
+<draw:color draw:name="Resene Paints  chinook" draw:color="#A8E3BD"/>
+<draw:color draw:name="Resene Paints  feijoa" draw:color="#9FDD8C"/>
+<draw:color draw:name="Resene Paints  sulu" draw:color="#C1F07C"/>
+<draw:color draw:name="Resene Paints  reef" draw:color="#C9FFA2"/>
+<draw:color draw:name="Resene Paints  jonquil" draw:color="#EEFF9A"/>
+<draw:color draw:name="Resene Paints  mindaro" draw:color="#E3F988"/>
+<draw:color draw:name="Resene Paints  honeysuckle" draw:color="#EDFC84"/>
+<draw:color draw:name="Resene Paints  canary" draw:color="#F3FB62"/>
+<draw:color draw:name="Resene Paints  conifer" draw:color="#ACDD4D"/>
+<draw:color draw:name="Resene Paints  atlantis" draw:color="#97CD2D"/>
+<draw:color draw:name="Resene Paints  bahia" draw:color="#A5CB0C"/>
+<draw:color draw:name="Resene Paints  RioGrande" draw:color="#BBD009"/>
+<draw:color draw:name="Resene Paints  lime" draw:color="#BFC921"/>
+<draw:color draw:name="Resene Paints  BitterLemon" draw:color="#CAE00D"/>
+<draw:color draw:name="Resene Paints  LasPalmas" draw:color="#C6E610"/>
+<draw:color draw:name="Resene Paints  fuego" draw:color="#BEDE0D"/>
+<draw:color draw:name="Resene Paints  starship" draw:color="#ECF245"/>
+<draw:color draw:name="Resene Paints  GoldenFizz" draw:color="#F5FB3D"/>
+<draw:color draw:name="Resene Paints  broom" draw:color="#FFEC13"/>
+<draw:color draw:name="Resene Paints  turbo" draw:color="#FAE600"/>
+<draw:color draw:name="Resene Paints  gorse" draw:color="#FFF14F"/>
+<draw:color draw:name="Resene Paints  ParisDaisy" draw:color="#FFF46E"/>
+<draw:color draw:name="Resene Paints  manz" draw:color="#EEEF78"/>
+<draw:color draw:name="Resene Paints  dolly" draw:color="#F9FF8B"/>
+<draw:color draw:name="Resene Paints  kournikova" draw:color="#FFE772"/>
+<draw:color draw:name="Resene Paints  festival" draw:color="#FBE96C"/>
+<draw:color draw:name="Resene Paints  portica" draw:color="#F9E663"/>
+<draw:color draw:name="Resene Paints  EnergyYellow" draw:color="#F8DD5C"/>
+<draw:color draw:name="Resene Paints  supernova" draw:color="#FFC901"/>
+<draw:color draw:name="Resene Paints  MoonYellow" draw:color="#FCD917"/>
+<draw:color draw:name="Resene Paints  candlelight" draw:color="#FCD917"/>
+<draw:color draw:name="Resene Paints  BrightSun" draw:color="#FED33C"/>
+<draw:color draw:name="Resene Paints  corn" draw:color="#E7BF05"/>
+<draw:color draw:name="Resene Paints  GoldTips" draw:color="#DEBA13"/>
+<draw:color draw:name="Resene Paints  LightningYellow" draw:color="#FCC01E"/>
+<draw:color draw:name="Resene Paints  TulipTree" draw:color="#EAB33B"/>
+<draw:color draw:name="Resene Paints  GoldenTainoi" draw:color="#FFCC5C"/>
+<draw:color draw:name="Resene Paints  CreamCan" draw:color="#F5C85C"/>
+<draw:color draw:name="Resene Paints  anzac" draw:color="#E0B646"/>
+<draw:color draw:name="Resene Paints  ronchi" draw:color="#ECC54E"/>
+<draw:color draw:name="Resene Paints  confetti" draw:color="#E9D75A"/>
+<draw:color draw:name="Resene Paints  wattle" draw:color="#DCD747"/>
+<draw:color draw:name="Resene Paints  BirdFlower" draw:color="#D4CD16"/>
+<draw:color draw:name="Resene Paints  sunflower" draw:color="#E4D422"/>
+<draw:color draw:name="Resene Paints  GoldenDream" draw:color="#F0D52D"/>
+<draw:color draw:name="Resene Paints  barberry" draw:color="#DED717"/>
+<draw:color draw:name="Resene Paints  lemon" draw:color="#F4D81C"/>
+<draw:color draw:name="Resene Paints  turmeric" draw:color="#CABB48"/>
+<draw:color draw:name="Resene Paints  LemonGinger" draw:color="#AC9E22"/>
+<draw:color draw:name="Resene Paints  lucky" draw:color="#AF9F1C"/>
+<draw:color draw:name="Resene Paints  sahara" draw:color="#B7A214"/>
+<draw:color draw:name="Resene Paints  EarlsGreen" draw:color="#C9B93B"/>
+<draw:color draw:name="Resene Paints  BuddhaGold" draw:color="#C1A004"/>
+<draw:color draw:name="Resene Paints  HokeyPokey" draw:color="#C8A528"/>
+<draw:color draw:name="Resene Paints  nugget" draw:color="#C59922"/>
+<draw:color draw:name="Resene Paints  galliano" draw:color="#DCB20C"/>
+<draw:color draw:name="Resene Paints  marigold" draw:color="#B98D28"/>
+<draw:color draw:name="Resene Paints  ButteredRum" draw:color="#A1750D"/>
+<draw:color draw:name="Resene Paints  ReefGold" draw:color="#9F821C"/>
+<draw:color draw:name="Resene Paints  hacienda" draw:color="#98811B"/>
+<draw:color draw:name="Resene Paints  alpine" draw:color="#AF8F2C"/>
+<draw:color draw:name="Resene Paints  TrendyGreen" draw:color="#7C881A"/>
+<draw:color draw:name="Resene Paints  LaRioja" draw:color="#B3C110"/>
+<draw:color draw:name="Resene Paints  citrus" draw:color="#A1C50a"/>
+<draw:color draw:name="Resene Paints  pistachio" draw:color="#9DC209"/>
+<draw:color draw:name="Resene Paints  limerick" draw:color="#9DC209"/>
+<draw:color draw:name="Resene Paints  citron" draw:color="#9EA91F"/>
+<draw:color draw:name="Resene Paints  sushi" draw:color="#87AB39"/>
+<draw:color draw:name="Resene Paints  VidaLoca" draw:color="#549019"/>
+<draw:color draw:name="Resene Paints  limeade" draw:color="#6F9D02"/>
+<draw:color draw:name="Resene Paints  christi" draw:color="#67A712"/>
+<draw:color draw:name="Resene Paints  lima" draw:color="#76BD17"/>
+<draw:color draw:name="Resene Paints  DeepFir" draw:color="#002900"/>
+<draw:color draw:name="Resene Paints  CountyGreen" draw:color="#01371A"/>
+<draw:color draw:name="Resene Paints  zuccini" draw:color="#044022"/>
+<draw:color draw:name="Resene Paints  KaitokeGreen" draw:color="#004620"/>
+<draw:color draw:name="Resene Paints  camarone" draw:color="#00581A"/>
+<draw:color draw:name="Resene Paints  FunGreen" draw:color="#016D39"/>
+<draw:color draw:name="Resene Paints  jewel" draw:color="#126B40"/>
+<draw:color draw:name="Resene Paints  salem" draw:color="#097F4B"/>
+<draw:color draw:name="Resene Paints  bilbao" draw:color="#327C14"/>
+<draw:color draw:name="Resene Paints  LaPalma" draw:color="#368716"/>
+<draw:color draw:name="Resene Paints  JapaneseLaurel" draw:color="#0Q6906"/>
+<draw:color draw:name="Resene Paints  SanFelix" draw:color="##B6207"/>
+<draw:color draw:name="Resene Paints  dell" draw:color="#396413"/>
+<draw:color draw:name="Resene Paints  GreenLeaf" draw:color="#436A0D"/>
+<draw:color draw:name="Resene Paints  ChaletGreen" draw:color="#516E3D"/>
+<draw:color draw:name="Resene Paints  HippieGreen" draw:color="#53824B"/>
+<draw:color draw:name="Resene Paints  goblin" draw:color="#3D7D52"/>
+<draw:color draw:name="Resene Paints  amazon" draw:color="#3B7A57"/>
+<draw:color draw:name="Resene Paints  killarney" draw:color="#3A6A47"/>
+<draw:color draw:name="Resene Paints  crusoe" draw:color="#004816"/>
+<draw:color draw:name="Resene Paints  parsley" draw:color="#134F19"/>
+<draw:color draw:name="Resene Paints  fern" draw:color="#0A480D"/>
+<draw:color draw:name="Resene Paints  GreenHouse" draw:color="#24500F"/>
+<draw:color draw:name="Resene Paints  clover" draw:color="#384910"/>
+<draw:color draw:name="Resene Paints  woodland" draw:color="#4D5328"/>
+<draw:color draw:name="Resene Paints  TomThumb" draw:color="#3F583B"/>
+<draw:color draw:name="Resene Paints  axolotl" draw:color="#4E6649"/>
+<draw:color draw:name="Resene Paints  verdigris" draw:color="#5D5E37"/>
+<draw:color draw:name="Resene Paints  hemlock" draw:color="#5E5D3B"/>
+<draw:color draw:name="Resene Paints  finch" draw:color="#626649"/>
+<draw:color draw:name="Resene Paints  dingley" draw:color="#5D7747"/>
+<draw:color draw:name="Resene Paints  planter" draw:color="#615D30"/>
+<draw:color draw:name="Resene Paints  CostaDelSol" draw:color="#615D30"/>
+<draw:color draw:name="Resene Paints  pesto" draw:color="#7C7631"/>
+<draw:color draw:name="Resene Paints  GrassHopper" draw:color="#7C7631"/>
+<draw:color draw:name="Resene Paints  FijiGreen" draw:color="#657220"/>
+<draw:color draw:name="Resene Paints  FernFrond" draw:color="#657220"/>
+<draw:color draw:name="Resene Paints  crete" draw:color="#737829"/>
+<draw:color draw:name="Resene Paints  olivetone" draw:color="#716E10"/>
+<draw:color draw:name="Resene Paints  VerdunGreen" draw:color="#495400"/>
+<draw:color draw:name="Resene Paints  saratoga" draw:color="#555B10"/>
+<draw:color draw:name="Resene Paints  BronzeOlive" draw:color="#4E420C"/>
+<draw:color draw:name="Resene Paints  WestCoast" draw:color="#625119"/>
+<draw:color draw:name="Resene Paints  HorsesNeck" draw:color="#604913"/>
+<draw:color draw:name="Resene Paints  mustard" draw:color="#74640D"/>
+<draw:color draw:name="Resene Paints  YukonGold" draw:color="#7B660B"/>
+<draw:color draw:name="Resene Paints  stinger" draw:color="#8B6B0B"/>
+<draw:color draw:name="Resene Paints  CornHarvest" draw:color="#8B6B0B"/>
+<draw:color draw:name="Resene Paints  kumera" draw:color="#886221"/>
+<draw:color draw:name="Resene Paints  HotCurry" draw:color="#886221"/>
+<draw:color draw:name="Resene Paints  brazil" draw:color="#886221"/>
+<draw:color draw:name="Resene Paints  himalaya" draw:color="#6A5D1B"/>
+<draw:color draw:name="Resene Paints  acorn" draw:color="#6A5D1B"/>
+<draw:color draw:name="Resene Paints  YellowMetal" draw:color="#716338"/>
+<draw:color draw:name="Resene Paints  crocodile" draw:color="#736D58"/>
+<draw:color draw:name="Resene Paints  peat" draw:color="#716B56"/>
+<draw:color draw:name="Resene Paints  GoBen" draw:color="#726D4E"/>
+<draw:color draw:name="Resene Paints  tobacco_brown" draw:color="#715D47"/>
+<draw:color draw:name="Resene Paints  roman_coffee" draw:color="#795D4C"/>
+<draw:color draw:name="Resene Paints  shingle_fawn" draw:color="#6B4E31"/>
+<draw:color draw:name="Resene Paints  bronzetone" draw:color="#4D400F"/>
+<draw:color draw:name="Resene Paints  punga" draw:color="#4D3D14"/>
+<draw:color draw:name="Resene Paints  millbrook" draw:color="#594433"/>
+<draw:color draw:name="Resene Paints  MetallicBronze" draw:color="#49371B"/>
+<draw:color draw:name="Resene Paints  SpaceShuttle" draw:color="#433120"/>
+<draw:color draw:name="Resene Paints  iroko" draw:color="#433120"/>
+<draw:color draw:name="Resene Paints  BlackMarlin" draw:color="#3E2C1C"/>
+<draw:color draw:name="Resene Paints  tumbleweed" draw:color="#37290E"/>
+<draw:color draw:name="Resene Paints  cola" draw:color="#3F2500"/>
+<draw:color draw:name="Resene Paints  DeepBronze" draw:color="#4A3004"/>
+<draw:color draw:name="Resene Paints  madras" draw:color="#3F3002"/>
+<draw:color draw:name="Resene Paints  ThatchGreen" draw:color="#403D19"/>
+<draw:color draw:name="Resene Paints  camouflage" draw:color="#3C3910"/>
+<draw:color draw:name="Resene Paints  woodrush" draw:color="#302A0F"/>
+<draw:color draw:name="Resene Paints  mikado" draw:color="#2D2510"/>
+<draw:color draw:name="Resene Paints  onion" draw:color="#2F270E"/>
+<draw:color draw:name="Resene Paints  panda" draw:color="#423921"/>
+<draw:color draw:name="Resene Paints  LisbonBrown" draw:color="#423921"/>
+<draw:color draw:name="Resene Paints  LimedGum" draw:color="#423921"/>
+<draw:color draw:name="Resene Paints  waiouru" draw:color="#363C0D"/>
+<draw:color draw:name="Resene Paints  TurtleGreen" draw:color="#2A380B"/>
+<draw:color draw:name="Resene Paints  mallard" draw:color="#233418"/>
+<draw:color draw:name="Resene Paints  palm" draw:color="#19330E"/>
+<draw:color draw:name="Resene Paints  PalmLeaf" draw:color="#19330E"/>
+<draw:color draw:name="Resene Paints  seaweed" draw:color="#1B2F11"/>
+<draw:color draw:name="Resene Paints  ForestGreen" draw:color="#182D09"/>
+<draw:color draw:name="Resene Paints  OliveGreen" draw:color="#242E16"/>
+<draw:color draw:name="Resene Paints  PineTree" draw:color="#171F04"/>
+<draw:color draw:name="Resene Paints  JackoBean" draw:color="#2E1905"/>
+<draw:color draw:name="Resene Paints  AshBrown" draw:color="#2E1905"/>
+<draw:color draw:name="Resene Paints  RenoSand" draw:color="#A86515"/>
+<draw:color draw:name="Resene Paints  ChelseaGem" draw:color="#9E5302"/>
+<draw:color draw:name="Resene Paints  pumpkin" draw:color="#B1610B"/>
+<draw:color draw:name="Resene Paints  MaiTai" draw:color="#B06608"/>
+<draw:color draw:name="Resene Paints  RichGold" draw:color="#A85307"/>
+<draw:color draw:name="Resene Paints  SaddleBrown" draw:color="#583401"/>
+<draw:color draw:name="Resene Paints  CarnabyTan" draw:color="#5C2E01"/>
+<draw:color draw:name="Resene Paints  CedarWoodFinish" draw:color="#711A00"/>
+<draw:color draw:name="Resene Paints  Bean" draw:color="#3D0C02"/>
+<draw:color draw:name="Resene Paints  rebel" draw:color="#3C1206"/>
+<draw:color draw:name="Resene Paints  RusticRed" draw:color="#480404"/>
+<draw:color draw:name="Resene Paints  maroon" draw:color="#420303"/>
+<draw:color draw:name="Resene Paints  BulgarianRose" draw:color="#480607"/>
+<draw:color draw:name="Resene Paints  heath" draw:color="#541012"/>
+<draw:color draw:name="Resene Paints  PersianRed" draw:color="#520C17"/>
+<draw:color draw:name="Resene Paints  mahogany" draw:color="#4E0506"/>
+<draw:color draw:name="Resene Paints  PersianPlum" draw:color="#701C1C"/>
+<draw:color draw:name="Resene Paints  moccaccino" draw:color="#6E1D14"/>
+<draw:color draw:name="Resene Paints  DarkTan" draw:color="#661010"/>
+<draw:color draw:name="Resene Paints  volcano" draw:color="#651A14"/>
+<draw:color draw:name="Resene Paints  cherrywood" draw:color="#651A14"/>
+<draw:color draw:name="Resene Paints  redwood" draw:color="#5D1E0F"/>
+<draw:color draw:name="Resene Paints  meranti" draw:color="#5D1E0F"/>
+<draw:color draw:name="Resene Paints  espresso" draw:color="#612718"/>
+<draw:color draw:name="Resene Paints  DarkOak" draw:color="#612718"/>
+<draw:color draw:name="Resene Paints  VanCleef" draw:color="#49170C"/>
+<draw:color draw:name="Resene Paints  BrownPod" draw:color="#401801"/>
+<draw:color draw:name="Resene Paints  IndianTan" draw:color="#4D1E01"/>
+<draw:color draw:name="Resene Paints  cioccolato" draw:color="#55280C"/>
+<draw:color draw:name="Resene Paints  jambalaya" draw:color="#5B3013"/>
+<draw:color draw:name="Resene Paints  BrownBramble" draw:color="#592804"/>
+<draw:color draw:name="Resene Paints  bracken" draw:color="#4A2A04"/>
+<draw:color draw:name="Resene Paints  MoroccoBrown" draw:color="#441D00"/>
+<draw:color draw:name="Resene Paints  bronze" draw:color="#3F2109"/>
+<draw:color draw:name="Resene Paints  slugger" draw:color="#412010"/>
+<draw:color draw:name="Resene Paints  DeepOak" draw:color="#412010"/>
+<draw:color draw:name="Resene Paints  DarkRum" draw:color="#412010"/>
+<draw:color draw:name="Resene Paints  woodburn" draw:color="#3C2005"/>
+<draw:color draw:name="Resene Paints  DarkEbony" draw:color="#3C2005"/>
+<draw:color draw:name="Resene Paints  clinker" draw:color="#371D09"/>
+<draw:color draw:name="Resene Paints  sambuca" draw:color="#3A2010"/>
+<draw:color draw:name="Resene Paints  cedar" draw:color="#3E1C14"/>
+<draw:color draw:name="Resene Paints  paco" draw:color="#411F10"/>
+<draw:color draw:name="Resene Paints  ironbark" draw:color="#411F10"/>
+<draw:color draw:name="Resene Paints  BrownDerby" draw:color="#492615"/>
+<draw:color draw:name="Resene Paints  saddle" draw:color="#4C3024"/>
+<draw:color draw:name="Resene Paints  quincy" draw:color="#623F2D"/>
+<draw:color draw:name="Resene Paints  IrishCoffee" draw:color="#5F3D26"/>
+<draw:color draw:name="Resene Paints  DarkRimu" draw:color="#5F3D26"/>
+<draw:color draw:name="Resene Paints  OldCopper" draw:color="#724A2F"/>
+<draw:color draw:name="Resene Paints  dallas" draw:color="#6E4B26"/>
+<draw:color draw:name="Resene Paints  PickledBean" draw:color="#6E4826"/>
+<draw:color draw:name="Resene Paints  spice" draw:color="#6A442E"/>
+<draw:color draw:name="Resene Paints  SpicyMix" draw:color="#885342"/>
+<draw:color draw:name="Resene Paints  leather" draw:color="#967059"/>
+<draw:color draw:name="Resene Paints  CapePalliser" draw:color="#A26645"/>
+<draw:color draw:name="Resene Paints  PottersClay" draw:color="#8C5738"/>
+<draw:color draw:name="Resene Paints  BullShot" draw:color="#864D1E"/>
+<draw:color draw:name="Resene Paints  rope" draw:color="#8E4D1E"/>
+<draw:color draw:name="Resene Paints  RustyNail" draw:color="#86560A"/>
+<draw:color draw:name="Resene Paints  natural" draw:color="#86560A"/>
+<draw:color draw:name="Resene Paints  AfghanTan" draw:color="#86560A"/>
+<draw:color draw:name="Resene Paints  AntiqueBrass" draw:color="#704A07"/>
+<draw:color draw:name="Resene Paints  CafeRoyale" draw:color="#6F440C"/>
+<draw:color draw:name="Resene Paints  walnut" draw:color="#773F1A"/>
+<draw:color draw:name="Resene Paints  cigar" draw:color="#773F1A"/>
+<draw:color draw:name="Resene Paints  NutmegWoodFinish" draw:color="#683600"/>
+<draw:color draw:name="Resene Paints  cinnamon" draw:color="#7B3F00"/>
+<draw:color draw:name="Resene Paints  PeruTan" draw:color="#7F3A02"/>
+<draw:color draw:name="Resene Paints  RedBeech" draw:color="#7B3801"/>
+<draw:color draw:name="Resene Paints  NewAmber" draw:color="#7B3801"/>
+<draw:color draw:name="Resene Paints  CopperCanyon" draw:color="#7E3A15"/>
+<draw:color draw:name="Resene Paints  pueblo" draw:color="#7D2C14"/>
+<draw:color draw:name="Resene Paints  oregon" draw:color="#9B4703"/>
+<draw:color draw:name="Resene Paints  AlertTan" draw:color="#9B4703"/>
+<draw:color draw:name="Resene Paints  korma" draw:color="#8F4B0E"/>
+<draw:color draw:name="Resene Paints  HawaiianTan" draw:color="#9D5616"/>
+<draw:color draw:name="Resene Paints  desert" draw:color="#AE6020"/>
+<draw:color draw:name="Resene Paints  FieryOrange" draw:color="#B35213"/>
+<draw:color draw:name="Resene Paints  paarl" draw:color="#A65529"/>
+<draw:color draw:name="Resene Paints  cumin" draw:color="#924321"/>
+<draw:color draw:name="Resene Paints  MuleFawn" draw:color="#8C472F"/>
+<draw:color draw:name="Resene Paints  matrix" draw:color="#B05D54"/>
+<draw:color draw:name="Resene Paints  CopperRust" draw:color="#944747"/>
+<draw:color draw:name="Resene Paints  tosca" draw:color="#8D3F3F"/>
+<draw:color draw:name="Resene Paints  lotus" draw:color="#863C3C"/>
+<draw:color draw:name="Resene Paints  SanguineBrown" draw:color="#8D3D38"/>
+<draw:color draw:name="Resene Paints  RedRobin" draw:color="#80341F"/>
+<draw:color draw:name="Resene Paints  el" draw:color="#8F3E33"/>
+<draw:color draw:name="Resene Paints  ElSalva" draw:color="#8F3E33"/>
+<draw:color draw:name="Resene Paints  nutmeg" draw:color="#81422C"/>
+<draw:color draw:name="Resene Paints  ironstone" draw:color="#86483C"/>
+<draw:color draw:name="Resene Paints  TeakWoodFinish" draw:color="#6B2A14"/>
+<draw:color draw:name="Resene Paints  HairyHeath" draw:color="#6B2A14"/>
+<draw:color draw:name="Resene Paints  peanut" draw:color="#782F16"/>
+<draw:color draw:name="Resene Paints  MetallicCopper" draw:color="#71291D"/>
+<draw:color draw:name="Resene Paints  mocha" draw:color="#782D19"/>
+<draw:color draw:name="Resene Paints  CrownOfThorns" draw:color="#771F1F"/>
+<draw:color draw:name="Resene Paints  merlot" draw:color="#831923"/>
+<draw:color draw:name="Resene Paints  OldBrick" draw:color="#901E1E"/>
+<draw:color draw:name="Resene Paints  pohutukawa" draw:color="#8F021C"/>
+<draw:color draw:name="Resene Paints  WesternRed" draw:color="#8B0723"/>
+<draw:color draw:name="Resene Paints  monarch" draw:color="#8B0723"/>
+<draw:color draw:name="Resene Paints  HotChile" draw:color="#8B0723"/>
+<draw:color draw:name="Resene Paints  paprika" draw:color="#8D0226"/>
+<draw:color draw:name="Resene Paints  stiletto" draw:color="#9C3336"/>
+<draw:color draw:name="Resene Paints  AppleBlossom" draw:color="#AF4D43"/>
+<draw:color draw:name="Resene Paints  crail" draw:color="#B95140"/>
+<draw:color draw:name="Resene Paints  WellRead" draw:color="#B43332"/>
+<draw:color draw:name="Resene Paints  cognac" draw:color="#9F381D"/>
+<draw:color draw:name="Resene Paints  RoofTerracotta" draw:color="#A62F20"/>
+<draw:color draw:name="Resene Paints  mojo" draw:color="#C04737"/>
+<draw:color draw:name="Resene Paints  OiledCedar" draw:color="#7C1C05"/>
+<draw:color draw:name="Resene Paints  KenyanCopper" draw:color="#7C1C05"/>
+<draw:color draw:name="Resene Paints  PrairieSand" draw:color="#9A3820"/>
+<draw:color draw:name="Resene Paints  tabasco" draw:color="#A02712"/>
+<draw:color draw:name="Resene Paints  embers" draw:color="#A02712"/>
+<draw:color draw:name="Resene Paints  CrabApple" draw:color="#A02712"/>
+<draw:color draw:name="Resene Paints  tamarillo" draw:color="#991613"/>
+<draw:color draw:name="Resene Paints  MexicanRed" draw:color="#A72525"/>
+<draw:color draw:name="Resene Paints  RedDevil" draw:color="#860111"/>
+<draw:color draw:name="Resene Paints  RedBerry" draw:color="#8E0000"/>
+<draw:color draw:name="Resene Paints  TotemPole" draw:color="#991B07"/>
+<draw:color draw:name="Resene Paints  lusty" draw:color="#991B07"/>
+<draw:color draw:name="Resene Paints  sangria" draw:color="#92000A"/>
+<draw:color draw:name="Resene Paints  scarlett" draw:color="#950015"/>
+<draw:color draw:name="Resene Paints  BrightRed" draw:color="#B10000"/>
+<draw:color draw:name="Resene Paints  monza" draw:color="#C7031E"/>
+<draw:color draw:name="Resene Paints  FlameRed" draw:color="#C7031E"/>
+<draw:color draw:name="Resene Paints  MilanoRed" draw:color="#B81104"/>
+<draw:color draw:name="Resene Paints  thunderbird" draw:color="#C02B18"/>
+<draw:color draw:name="Resene Paints  TallPoppy" draw:color="#B32D29"/>
+<draw:color draw:name="Resene Paints  shiraz" draw:color="#B20931"/>
+<draw:color draw:name="Resene Paints  VenetianRed" draw:color="#72010F"/>
+<draw:color draw:name="Resene Paints  lonestar" draw:color="#6D0101"/>
+<draw:color draw:name="Resene Paints  rosewood" draw:color="#65000B"/>
+<draw:color draw:name="Resene Paints  BurntCrimson" draw:color="#65000B"/>
+<draw:color draw:name="Resene Paints  RedOxide" draw:color="#6E0902"/>
+<draw:color draw:name="Resene Paints  burgundy" draw:color="#770F05"/>
+<draw:color draw:name="Resene Paints  jazz" draw:color="#780109"/>
+<draw:color draw:name="Resene Paints  JapaneseMaple" draw:color="#780109"/>
+<draw:color draw:name="Resene Paints  fire" draw:color="#AA4203"/>
+<draw:color draw:name="Resene Paints  vesuvius" draw:color="#B14A0B"/>
+<draw:color draw:name="Resene Paints  OrangeRoughy" draw:color="#C45719"/>
+<draw:color draw:name="Resene Paints  RoseOfSharon" draw:color="#BF5500"/>
+<draw:color draw:name="Resene Paints  RockSpray" draw:color="#BA450C"/>
+<draw:color draw:name="Resene Paints  TiaMaria" draw:color="#C1440E"/>
+<draw:color draw:name="Resene Paints  grenadier" draw:color="#D54600"/>
+<draw:color draw:name="Resene Paints  GuardsmanRed" draw:color="#BA0301"/>
+<draw:color draw:name="Resene Paints  trinidad" draw:color="#E64E03"/>
+<draw:color draw:name="Resene Paints  flamingo" draw:color="#F2552A"/>
+<draw:color draw:name="Resene Paints  tangerine" draw:color="#E96E00"/>
+<draw:color draw:name="Resene Paints  clementine" draw:color="#E96E00"/>
+<draw:color draw:name="Resene Paints  christine" draw:color="#E7730A"/>
+<draw:color draw:name="Resene Paints  RedStage" draw:color="#D05F04"/>
+<draw:color draw:name="Resene Paints  SmokeTree" draw:color="#DA6304"/>
+<draw:color draw:name="Resene Paints  bamboo" draw:color="#DA6304"/>
+<draw:color draw:name="Resene Paints  crusta" draw:color="#FD7B33"/>
+<draw:color draw:name="Resene Paints  ecstasy" draw:color="#FA7814"/>
+<draw:color draw:name="Resene Paints  tango" draw:color="#ED7A1C"/>
+<draw:color draw:name="Resene Paints  flamenco" draw:color="#FF7D07"/>
+<draw:color draw:name="Resene Paints  sorbus" draw:color="#FD7C07"/>
+<draw:color draw:name="Resene Paints  ChileanFire" draw:color="#F77703"/>
+<draw:color draw:name="Resene Paints  piper" draw:color="#C96323"/>
+<draw:color draw:name="Resene Paints  indochine" draw:color="#C26B03"/>
+<draw:color draw:name="Resene Paints  meteor" draw:color="#D07D12"/>
+<draw:color draw:name="Resene Paints  BrandyPunch" draw:color="#CD8429"/>
+<draw:color draw:name="Resene Paints  bourbon" draw:color="#BA6F1E"/>
+<draw:color draw:name="Resene Paints  mandalay" draw:color="#AD781B"/>
+<draw:color draw:name="Resene Paints  HotToddy" draw:color="#B38007"/>
+<draw:color draw:name="Resene Paints  PirateGold" draw:color="#BA7F03"/>
+<draw:color draw:name="Resene Paints  FuelYellow" draw:color="#ECA927"/>
+<draw:color draw:name="Resene Paints  pizza" draw:color="#C99415"/>
+<draw:color draw:name="Resene Paints  geebung" draw:color="#D18F1B"/>
+<draw:color draw:name="Resene Paints  dixie" draw:color="#E29418"/>
+<draw:color draw:name="Resene Paints  FireBush" draw:color="#E89928"/>
+<draw:color draw:name="Resene Paints  SeaBuckthorn" draw:color="#FBA129"/>
+<draw:color draw:name="Resene Paints  sunshade" draw:color="#FF9E2C"/>
+<draw:color draw:name="Resene Paints  GoldenBell" draw:color="#E28913"/>
+<draw:color draw:name="Resene Paints  zest" draw:color="#E5841B"/>
+<draw:color draw:name="Resene Paints  jaffa" draw:color="#EF863F"/>
+<draw:color draw:name="Resene Paints  TahitiGold" draw:color="#E97C07"/>
+<draw:color draw:name="Resene Paints  pizazz" draw:color="#FF9000"/>
+<draw:color draw:name="Resene Paints  WestSide" draw:color="#FF910F"/>
+<draw:color draw:name="Resene Paints  TreePoppy" draw:color="#FC9C1D"/>
+<draw:color draw:name="Resene Paints  california" draw:color="#FE9D04"/>
+<draw:color draw:name="Resene Paints  GoldDrop" draw:color="#F18200"/>
+<draw:color draw:name="Resene Paints  TexasRose" draw:color="#FFB555"/>
+<draw:color draw:name="Resene Paints  koromiko" draw:color="#FFBD5F"/>
+<draw:color draw:name="Resene Paints  casablanca" draw:color="#F8B853"/>
+<draw:color draw:name="Resene Paints  saffron" draw:color="#F9BF58"/>
+<draw:color draw:name="Resene Paints  buttercup" draw:color="#F3AD16"/>
+<draw:color draw:name="Resene Paints  YellowSea" draw:color="#FEA904"/>
+<draw:color draw:name="Resene Paints  sun" draw:color="#FBAC13"/>
+<draw:color draw:name="Resene Paints  MySin" draw:color="#FFB31F"/>
+<draw:color draw:name="Resene Paints  romantic" draw:color="#FFD2B7"/>
+<draw:color draw:name="Resene Paints  MandysPink" draw:color="#F2C3B2"/>
+<draw:color draw:name="Resene Paints  WaxFlower" draw:color="#FFC0A8"/>
+<draw:color draw:name="Resene Paints  cashmere" draw:color="#E6BEA5"/>
+<draw:color draw:name="Resene Paints  tacao" draw:color="#EDB381"/>
+<draw:color draw:name="Resene Paints  chardonnay" draw:color="#FFCD8C"/>
+<draw:color draw:name="Resene Paints  rajah" draw:color="#F7B668"/>
+<draw:color draw:name="Resene Paints  HitPink" draw:color="#FFAB81"/>
+<draw:color draw:name="Resene Paints  cornflower" draw:color="#FFB0AC"/>
+<draw:color draw:name="Resene Paints  RoseBud" draw:color="#FBB2A3"/>
+<draw:color draw:name="Resene Paints  SweetPink" draw:color="#FD9FA2"/>
+<draw:color draw:name="Resene Paints  MonaLisa" draw:color="#FFA194"/>
+<draw:color draw:name="Resene Paints  TonysPink" draw:color="#E79F8C"/>
+<draw:color draw:name="Resene Paints  PetiteOrchid" draw:color="#DB9690"/>
+<draw:color draw:name="Resene Paints  MyPink" draw:color="#D69188"/>
+<draw:color draw:name="Resene Paints  NewYorkPink" draw:color="#D7837F"/>
+<draw:color draw:name="Resene Paints  apricot" draw:color="#EB9373"/>
+<draw:color draw:name="Resene Paints  WhiskeySour" draw:color="#DB995E"/>
+<draw:color draw:name="Resene Paints  DiSerria" draw:color="#DB995E"/>
+<draw:color draw:name="Resene Paints  porsche" draw:color="#EAAE69"/>
+<draw:color draw:name="Resene Paints  twine" draw:color="#C2955D"/>
+<draw:color draw:name="Resene Paints  BurningSand" draw:color="#D99376"/>
+<draw:color draw:name="Resene Paints  whiskey" draw:color="#D59A6F"/>
+<draw:color draw:name="Resene Paints  toast" draw:color="#9A6E61"/>
+<draw:color draw:name="Resene Paints  tuscany" draw:color="#BD5E2E"/>
+<draw:color draw:name="Resene Paints  SantaFe" draw:color="#B16D52"/>
+<draw:color draw:name="Resene Paints  japonica" draw:color="#D87C63"/>
+<draw:color draw:name="Resene Paints  contessa" draw:color="#C6726B"/>
+<draw:color draw:name="Resene Paints  roman" draw:color="#DE6360"/>
+<draw:color draw:name="Resene Paints  sunglo" draw:color="#E16865"/>
+<draw:color draw:name="Resene Paints  froly" draw:color="#F57584"/>
+<draw:color draw:name="Resene Paints  geraldine" draw:color="#FB8989"/>
+<draw:color draw:name="Resene Paints  RedDamask" draw:color="#DA6A41"/>
+<draw:color draw:name="Resene Paints  FlamePea" draw:color="#DA5B38"/>
+<draw:color draw:name="Resene Paints  sunset" draw:color="#DC4333"/>
+<draw:color draw:name="Resene Paints  punch" draw:color="#DC4333"/>
+<draw:color draw:name="Resene Paints  valencia" draw:color="#D84437"/>
+<draw:color draw:name="Resene Paints  persimmon" draw:color="#FF6B53"/>
+<draw:color draw:name="Resene Paints  mandy" draw:color="#E25465"/>
+<draw:color draw:name="Resene Paints  cabaret" draw:color="#D94972"/>
+<draw:color draw:name="Resene Paints  hopbush" draw:color="#D06DA1"/>
+<draw:color draw:name="Resene Paints  carissma" draw:color="#EA88A8"/>
+<draw:color draw:name="Resene Paints  DeepBlush" draw:color="#E47698"/>
+<draw:color draw:name="Resene Paints  charm" draw:color="#D47494"/>
+<draw:color draw:name="Resene Paints  CoralTree" draw:color="#A86B6B"/>
+<draw:color draw:name="Resene Paints  TurkishRose" draw:color="#B57281"/>
+<draw:color draw:name="Resene Paints  bouquet" draw:color="#AE809E"/>
+<draw:color draw:name="Resene Paints  bazaar" draw:color="#98777B"/>
+<draw:color draw:name="Resene Paints  BrandyRose" draw:color="#BB8983"/>
+<draw:color draw:name="Resene Paints  pharlap" draw:color="#A3807B"/>
+<draw:color draw:name="Resene Paints  quicksand" draw:color="#BD978E"/>
+<draw:color draw:name="Resene Paints  OrientalPink" draw:color="#C69191"/>
+<draw:color draw:name="Resene Paints  CareysPink" draw:color="#D29EAA"/>
+<draw:color draw:name="Resene Paints  eunry" draw:color="#CFA39D"/>
+<draw:color draw:name="Resene Paints  lily" draw:color="#C8AABF"/>
+<draw:color draw:name="Resene Paints  LondonHue" draw:color="#BEA6C3"/>
+<draw:color draw:name="Resene Paints  AmethystSmoke" draw:color="#A397B4"/>
+<draw:color draw:name="Resene Paints  shocking" draw:color="#E292C0"/>
+<draw:color draw:name="Resene Paints  kobi" draw:color="#E79FC4"/>
+<draw:color draw:name="Resene Paints  CanCan" draw:color="#D591A4"/>
+<draw:color draw:name="Resene Paints  viola" draw:color="#CB8FA9"/>
+<draw:color draw:name="Resene Paints  SeaPink" draw:color="#ED989E"/>
+<draw:color draw:name="Resene Paints  wewak" draw:color="#F19BAB"/>
+<draw:color draw:name="Resene Paints  sundown" draw:color="#FFB1B3"/>
+<draw:color draw:name="Resene Paints  cupid" draw:color="#FBBEDA"/>
+<draw:color draw:name="Resene Paints  illusion" draw:color="#F6A4C9"/>
+<draw:color draw:name="Resene Paints  FrenchLilac" draw:color="#ECC7EE"/>
+<draw:color draw:name="Resene Paints  perfume" draw:color="#D0BEF8"/>
+<draw:color draw:name="Resene Paints  fog" draw:color="#D7D0FF"/>
+<draw:color draw:name="Resene Paints  MoonRaker" draw:color="#D6CEF6"/>
+<draw:color draw:name="Resene Paints  prelude" draw:color="#D0C0E5"/>
+<draw:color draw:name="Resene Paints  maverick" draw:color="#D8C2D5"/>
+<draw:color draw:name="Resene Paints  PinkFlare" draw:color="#E1C0C8"/>
+<draw:color draw:name="Resene Paints  blossom" draw:color="#DCB4BC"/>
+<draw:color draw:name="Resene Paints  ClamShell" draw:color="#D4B6AF"/>
+<draw:color draw:name="Resene Paints  rose" draw:color="#E7BCB4"/>
+<draw:color draw:name="Resene Paints  shilo" draw:color="#E8B9B3"/>
+<draw:color draw:name="Resene Paints  CavernPink" draw:color="#E3BEBE"/>
+<draw:color draw:name="Resene Paints  chantilly" draw:color="#F8C3DF"/>
+<draw:color draw:name="Resene Paints  azalea" draw:color="#F7C8DA"/>
+<draw:color draw:name="Resene Paints  ClassicRose" draw:color="#FBCCE7"/>
+<draw:color draw:name="Resene Paints  YourPink" draw:color="#FFC3C0"/>
+<draw:color draw:name="Resene Paints  BeautyBush" draw:color="#EEC1BE"/>
+<draw:color draw:name="Resene Paints  melanie" draw:color="#E4C2D5"/>
+<draw:color draw:name="Resene Paints  twilight" draw:color="#E4CFDE"/>
+<draw:color draw:name="Resene Paints  cherub" draw:color="#F8D9E9"/>
+<draw:color draw:name="Resene Paints  PinkLace" draw:color="#FFDDF4"/>
+<draw:color draw:name="Resene Paints  PaleRose" draw:color="#FFE1F2"/>
+<draw:color draw:name="Resene Paints  CarouselPink" draw:color="#F9E0ED"/>
+<draw:color draw:name="Resene Paints  WePeep" draw:color="#F7DBE6"/>
+<draw:color draw:name="Resene Paints  VanillaIce" draw:color="#F3D9DF"/>
+<draw:color draw:name="Resene Paints  PeachSchnapps" draw:color="#FFDCD6"/>
+<draw:color draw:name="Resene Paints  CoralCandy" draw:color="#FFDCD6"/>
+<draw:color draw:name="Resene Paints  pippin" draw:color="#FFE1DF"/>
+<draw:color draw:name="Resene Paints  watusi" draw:color="#FFDDCF"/>
+<draw:color draw:name="Resene Paints  cosmos" draw:color="#FFD8D9"/>
+<draw:color draw:name="Resene Paints  melrose" draw:color="#C7C1FF"/>
+<draw:color draw:name="Resene Paints  lavender" draw:color="#A899E6"/>
+<draw:color draw:name="Resene Paints  east" draw:color="#AC91CE"/>
+<draw:color draw:name="Resene Paints  EastSide" draw:color="#AC91CE"/>
+<draw:color draw:name="Resene Paints  BilobaFlower" draw:color="#B2A1EA"/>
+<draw:color draw:name="Resene Paints  ColdPurple" draw:color="#ABA0D9"/>
+<draw:color draw:name="Resene Paints  portage" draw:color="#8B9FEE"/>
+<draw:color draw:name="Resene Paints  ChetwodeBlue" draw:color="#8581D9"/>
+<draw:color draw:name="Resene Paints  wisteria" draw:color="#9771B5"/>
+<draw:color draw:name="Resene Paints  CeSoir" draw:color="#9771B5"/>
+<draw:color draw:name="Resene Paints  LilacBush" draw:color="#9874D3"/>
+<draw:color draw:name="Resene Paints  TrueV" draw:color="#8A73D6"/>
+<draw:color draw:name="Resene Paints  MoodyBlue" draw:color="#7F76D3"/>
+<draw:color draw:name="Resene Paints  studio" draw:color="#714AB2"/>
+<draw:color draw:name="Resene Paints  152" draw:color="#0	F	3"/>
+<draw:color draw:name="Resene Paints  seance" draw:color="#731E8F"/>
+<draw:color draw:name="Resene Paints  eminence" draw:color="#6C3082"/>
+<draw:color draw:name="Resene Paints  RoyalHeath" draw:color="#AB3472"/>
+<draw:color draw:name="Resene Paints  cardinal" draw:color="#8C5	E"/>
+<draw:color draw:name="Resene Paints  flirt" draw:color="#A20	D"/>
+<draw:color draw:name="Resene Paints  lipstick" draw:color="#AB5	3"/>
+<draw:color draw:name="Resene Paints  hibiscus" draw:color="#B6316C"/>
+<draw:color draw:name="Resene Paints  cranberry" draw:color="#B6316C"/>
+<draw:color draw:name="Resene Paints  NightShadz" draw:color="#AA375A"/>
+<draw:color draw:name="Resene Paints  blush" draw:color="#B44668"/>
+<draw:color draw:name="Resene Paints  rouge" draw:color="#A23B6C"/>
+<draw:color draw:name="Resene Paints  VinRouge" draw:color="#983D61"/>
+<draw:color draw:name="Resene Paints  HippiePink" draw:color="#AE4560"/>
+<draw:color draw:name="Resene Paints  cadillac" draw:color="#B04C6A"/>
+<draw:color draw:name="Resene Paints  claret" draw:color="#7F1734"/>
+<draw:color draw:name="Resene Paints  RoseBudCherry" draw:color="#80B	7"/>
+<draw:color draw:name="Resene Paints  disco" draw:color="#871550"/>
+<draw:color draw:name="Resene Paints  camelot" draw:color="#893456"/>
+<draw:color draw:name="Resene Paints  strikemaster" draw:color="#956387"/>
+<draw:color draw:name="Resene Paints  TrendyPink" draw:color="#8C6495"/>
+<draw:color draw:name="Resene Paints  CannonPink" draw:color="#894367"/>
+<draw:color draw:name="Resene Paints  finn" draw:color="#692D54"/>
+<draw:color draw:name="Resene Paints  cosmic" draw:color="#76395D"/>
+<draw:color draw:name="Resene Paints  TawnyPort" draw:color="#692545"/>
+<draw:color draw:name="Resene Paints  SolidPink" draw:color="#893843"/>
+<draw:color draw:name="Resene Paints  tapestry" draw:color="#B05E81"/>
+<draw:color draw:name="Resene Paints  AuChico" draw:color="#97605D"/>
+<draw:color draw:name="Resene Paints  falcon" draw:color="#7F626D"/>
+<draw:color draw:name="Resene Paints  opium" draw:color="#8E6F70"/>
+<draw:color draw:name="Resene Paints  russett" draw:color="#755A57"/>
+<draw:color draw:name="Resene Paints  ferra" draw:color="#704F50"/>
+<draw:color draw:name="Resene Paints  buccaneer" draw:color="#622F30"/>
+<draw:color draw:name="Resene Paints  CongoBrown" draw:color="#593737"/>
+<draw:color draw:name="Resene Paints  voodoo" draw:color="#533455"/>
+<draw:color draw:name="Resene Paints  MulledWine" draw:color="#4E4562"/>
+<draw:color draw:name="Resene Paints  rum" draw:color="#796989"/>
+<draw:color draw:name="Resene Paints  kimberly" draw:color="#736C9F"/>
+<draw:color draw:name="Resene Paints  deluge" draw:color="#7563A8"/>
+<draw:color draw:name="Resene Paints  scampi" draw:color="#675FA6"/>
+<draw:color draw:name="Resene Paints  FunBlue" draw:color="#1959A8"/>
+<draw:color draw:name="Resene Paints  mariner" draw:color="#286ACD"/>
+<draw:color draw:name="Resene Paints  BlueMarguerite" draw:color="#7666C6"/>
+<draw:color draw:name="Resene Paints  fuchsia" draw:color="#7A58C1"/>
+<draw:color draw:name="Resene Paints  ButterflyBush" draw:color="#624E9A"/>
+<draw:color draw:name="Resene Paints  gigas" draw:color="#523C94"/>
+<draw:color draw:name="Resene Paints  affair" draw:color="#714693"/>
+<draw:color draw:name="Resene Paints  victoria" draw:color="#534491"/>
+<draw:color draw:name="Resene Paints  <draw:color draw:name="Resene Paints  minsk" draw:color="#3F307F"/>
+<draw:color draw:name="Resene Paints  <draw:color draw:name="GovernorBay" draw:color="#2F3CB3"/>
+<draw:color draw:name="Resene Paints  ToryBlue" draw:color="#1450AA"/>
+<draw:color draw:name="Resene Paints  endeavour" draw:color="#0056A7"/>
+<draw:color draw:name="Resene Paints  BondiBlue" draw:color="#02478E"/>
+<draw:color draw:name="Resene Paints  astronaut" draw:color="#283A77"/>
+<draw:color draw:name="Resene Paints  BayOfMany" draw:color="#273A81"/>
+<draw:color draw:name="Resene Paints  sapphire" draw:color="#2F519E"/>
+<draw:color draw:name="Resene Paints  StTropaz" draw:color="#2D569B"/>
+<draw:color draw:name="Resene Paints  chambray" draw:color="#354E8C"/>
+<draw:color draw:name="Resene Paints  EastBay" draw:color="#414C7D"/>
+<draw:color draw:name="Resene Paints  biscay" draw:color="#1B3162"/>
+<draw:color draw:name="Resene Paints  valhalla" draw:color="#2B194F"/>
+<draw:color draw:name="Resene Paints  PortGore" draw:color="#251F4F"/>
+<draw:color draw:name="Resene Paints  bunting" draw:color="#151F4C"/>
+<draw:color draw:name="Resene Paints  madison" draw:color="#09255D"/>
+<draw:color draw:name="Resene Paints  licorice" draw:color="#092256"/>
+<draw:color draw:name="Resene Paints  downriver" draw:color="#092256"/>
+<draw:color draw:name="Resene Paints  cobalt" draw:color="#062A78"/>
+<draw:color draw:name="Resene Paints  CatalinaBlue" draw:color="#062A78"/>
+<draw:color draw:name="Resene Paints  capri" draw:color="#062A78"/>
+<draw:color draw:name="Resene Paints  ResolutionBlue" draw:color="#002387"/>
+<draw:color draw:name="Resene Paints  JacksonsPurple" draw:color="#20208D"/>
+<draw:color draw:name="Resene Paints  ToreaBay" draw:color="#0F2D9E"/>
+<draw:color draw:name="Resene Paints  meteorite" draw:color="#3C1F76"/>
+<draw:color draw:name="Resene Paints  jacarta" draw:color="#3A2A6A"/>
+<draw:color draw:name="Resene Paints  LuckyPoint" draw:color="#1A1A68"/>
+<draw:color draw:name="Resene Paints  grape" draw:color="#381A51"/>
+<draw:color draw:name="Resene Paints  jagger" draw:color="#350E57"/>
+<draw:color draw:name="Resene Paints  ScarletGum" draw:color="#431560"/>
+<draw:color draw:name="Resene Paints  CherryPie" draw:color="#2A0359"/>
+<draw:color draw:name="Resene Paints  violent" draw:color="#290C5E"/>
+<draw:color draw:name="Resene Paints  violet" draw:color="#240A40"/>
+<draw:color draw:name="Resene Paints  tolopea" draw:color="#1B0245"/>
+<draw:color draw:name="Resene Paints  arapawa" draw:color="#110C6C"/>
+<draw:color draw:name="Resene Paints  GulfBlue" draw:color="#051657"/>
+<draw:color draw:name="Resene Paints  CoveGrey" draw:color="#051657"/>
+<draw:color draw:name="Resene Paints  OuterSpace" draw:color="#051040"/>
+<draw:color draw:name="Resene Paints  DeepCove" draw:color="#051040"/>
+<draw:color draw:name="Resene Paints  tangaroa" draw:color="#03163C"/>
+<draw:color draw:name="Resene Paints  stratos" draw:color="#000741"/>
+<draw:color draw:name="Resene Paints  MidnightExpress" draw:color="#000741"/>
+<draw:color draw:name="Resene Paints  BlackRock" draw:color="#0D0332"/>
+<draw:color draw:name="Resene Paints  revolver" draw:color="#2C1632"/>
+<draw:color draw:name="Resene Paints  haiti" draw:color="#1B1035"/>
+<draw:color draw:name="Resene Paints  martinique" draw:color="#363050"/>
+<draw:color draw:name="Resene Paints  BleachedCedar" draw:color="#2C2133"/>
+<draw:color draw:name="Resene Paints  montana" draw:color="#291E30"/>
+<draw:color draw:name="Resene Paints  WoodyBrown" draw:color="#483131"/>
+<draw:color draw:name="Resene Paints  LividBrown" draw:color="#4D282E"/>
+<draw:color draw:name="Resene Paints  cowboy" draw:color="#4D282D"/>
+<draw:color draw:name="Resene Paints  CocoaBean" draw:color="#481C1C"/>
+<draw:color draw:name="Resene Paints  CraterBrown" draw:color="#462425"/>
+<draw:color draw:name="Resene Paints  jon" draw:color="#3B1F1F"/>
+<draw:color draw:name="Resene Paints  eclipse" draw:color="#311C17"/>
+<draw:color draw:name="Resene Paints  tamarind" draw:color="#341515"/>
+<draw:color draw:name="Resene Paints  jarrah" draw:color="#341515"/>
+<draw:color draw:name="Resene Paints  havana" draw:color="#341515"/>
+<draw:color draw:name="Resene Paints  marlin" draw:color="#2A140E"/>
+<draw:color draw:name="Resene Paints  CubanTan" draw:color="#2A140E"/>
+<draw:color draw:name="Resene Paints  coffee" draw:color="#2A140E"/>
+<draw:color draw:name="Resene Paints  CoffeeBean" draw:color="#2A140E"/>
+<draw:color draw:name="Resene Paints  kilamanjaro" draw:color="#240C02"/>
+<draw:color draw:name="Resene Paints  sepia" draw:color="#2B0202"/>
+<draw:color draw:name="Resene Paints  aubergine" draw:color="#3B0910"/>
+<draw:color draw:name="Resene Paints  temptress" draw:color="#3B000B"/>
+<draw:color draw:name="Resene Paints  chocolate" draw:color="#370202"/>
+<draw:color draw:name="Resene Paints  toledo" draw:color="#3A0020"/>
+<draw:color draw:name="Resene Paints  castro" draw:color="#52001F"/>
+<draw:color draw:name="Resene Paints  CabSav" draw:color="#4D0A18"/>
+<draw:color draw:name="Resene Paints  WineBerry" draw:color="#591D35"/>
+<draw:color draw:name="Resene Paints  blackberry" draw:color="#4D0135"/>
+<draw:color draw:name="Resene Paints  bossanova" draw:color="#4E2A5A"/>
+<draw:color draw:name="Resene Paints  loulou" draw:color="#460B41"/>
+<draw:color draw:name="Resene Paints  MardiGras" draw:color="#350036"/>
+<draw:color draw:name="Resene Paints  barossa" draw:color="#44012D"/>
+<draw:color draw:name="Resene Paints  melanzane" draw:color="#300529"/>
+<draw:color draw:name="Resene Paints  jacaranda" draw:color="#2E0329"/>
+<draw:color draw:name="Resene Paints  valentino" draw:color="#350E42"/>
+<draw:color draw:name="Resene Paints  ribbon" draw:color="#660045"/>
+<draw:color draw:name="Resene Paints  pompadour" draw:color="#660045"/>
+<draw:color draw:name="Resene Paints  nightclub" draw:color="#660045"/>
+<draw:color draw:name="Resene Paints  mulberry" draw:color="#5C0536"/>
+<draw:color draw:name="Resene Paints  siren" draw:color="#7A013A"/>
+<draw:color draw:name="Resene Paints  BlackRose" draw:color="#67032D"/>
+<draw:color draw:name="Resene Paints  bordeaux" draw:color="#5C0120"/>
+<draw:color draw:name="Resene Paints  plum" draw:color="#410356"/>
+<draw:color draw:name="Resene Paints  HotPurple" draw:color="#480656"/>
+<draw:color draw:name="Resene Paints  clairvoyant" draw:color="#480656"/>
+<draw:color draw:name="Resene Paints  HoneyFlower" draw:color="#4F1C70"/>
+<draw:color draw:name="Resene Paints  BlueBell" draw:color="#220878"/>
+<draw:color draw:name="Resene Paints  DeepKoamaru" draw:color="#1B127B"/>
+<draw:color draw:name="Resene Paints  christalle" draw:color="#33036B"/>
+<draw:color draw:name="Resene Paints  BlueDiamond" draw:color="#380474"/>
+<draw:color draw:name="Resene Paints  windsor" draw:color="#3C0878"/>
+<draw:color draw:name="Resene Paints  KingfisherDaisy" draw:color="#3E0480"/>
+<draw:color draw:name="Resene Paints  BlueGem" draw:color="#2C0E8C"/>
+<draw:color draw:name="Resene Paints  paua" draw:color="#260368"/>
+<draw:color draw:name="Resene Paints  ParisM" draw:color="#26056A"/>
+</office:color-table>
