@@ -1,5 +1,6 @@
 Hungarian hyphenation patterns with non-standard hyphenation patch
 ------------------------------------------------------------------
+Patch version: 2006-12-13
 
 Language: Hungarian (hu HU)
 Origin:   http://www.tipogral.hu/ 
