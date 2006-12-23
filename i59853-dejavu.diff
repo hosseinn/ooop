@@ -390,11 +390,11 @@
 @@ -374,8 +374,8 @@
  
      // fallback mechanism (either no configuration or no entry in configuration
- 
--    #define FALLBACKFONT_UI_SANS "Andale Sans UI;Tahoma;Arial Unicode MS;Arial;Bitstream Vera Sans;gnu-unifont;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
--    #define FALLBACKFONT_UI_SANS_LATIN2 "Andale Sans UI;Tahoma;Arial Unicode MS;Arial;Luxi Sans;Bitstream Vera Sans;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
-+    #define FALLBACKFONT_UI_SANS "Andale Sans UI;Tahoma;Arial Unicode MS;Arial;DejaVu Sans;Bitstream Vera Sans;gnu-unifont;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
-+    #define FALLBACKFONT_UI_SANS_LATIN2 "Andale Sans UI;Tahoma;Arial Unicode MS;Arial;DejaVu Sans;Luxi Sans;Bitstream Vera Sans;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
+
+-    #define FALLBACKFONT_UI_SANS "Andale Sans UI;Albany;Albany AMT;Tahoma;Arial Unicode MS;Arial;Nimbus Sans L;Bitstream Vera Sans;gnu-unifont;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
+-    #define FALLBACKFONT_UI_SANS_LATIN2 "Andale Sans UI;Albany;Albany AMT;Tahoma;Arial Unicode MS;Arial;Nimbus Sans L;Luxi Sans;Bitstream Vera Sans;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
++    #define FALLBACKFONT_UI_SANS "Andale Sans UI;Albany;Albany AMT;Tahoma;Arial Unicode MS;Arial;Nimbus Sans L;DejaVu Sans;Bitstream Vera Sans;gnu-unifont;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
++    #define FALLBACKFONT_UI_SANS_LATIN2 "Andale Sans UI;Albany;Albany AMT;Tahoma;Arial Unicode MS;Arial;Nimbus Sans L;Luxi Sans;DejaVu Sans;Bitstream Vera Sans;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
      #define FALLBACKFONT_UI_SANS_ARABIC "Tahoma;Traditional Arabic;Simplified Arabic;Lucidasans;Lucida Sans;Supplement;Andale Sans UI;clearlyU;Interface User;Arial Unicode MS;Lucida Sans Unicode;WarpSans;Geneva;MS Sans Serif;Helv;Dialog;Albany;Lucida;Helvetica;Charcoal;Chicago;Arial;Helmet;Interface System;Sans Serif"
      #define FALLBACKFONT_UI_SANS_THAI "OONaksit;Tahoma;Lucidasans;Arial Unicode MS"
      #define FALLBACKFONT_UI_SANS_KOREAN "SunGulim;BaekmukGulim;Gulim;Roundgothic;Arial Unicode MS;Lucida Sans Unicode;gnu-unifont;Andale Sans UI"
@@ -4963,14 +4963,14 @@ diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrastwhite.css helpconte
  				{
  					SCS :pserver:hr@so-cvs-tunnel.germany.sun.com:/cvs
  				}
---- solenv/config/ssrc680.ini.orig	2006-02-12 22:04:50.000000000 +0100
-+++ solenv/config/ssrc680.ini	2006-03-01 18:18:05.106604600 +0100
-@@ -95,7 +95,7 @@
+--- solenv/config/ssrc680.ini.orig	2006-11-01 12:12:03.000000000 +0100
++++ solenv/config/ssrc680.ini	2006-12-22 17:03:28.000000000 +0100
+@@ -93,7 +93,7 @@
+ 		{
  			BIG_SVX TRUE
- 			BIG_GOODIES TRUE
  			BMP_WRITES_FLAG TRUE
--            BUILD_TYPE SO OOo EXT BINFILTER BITSTREAM_VERA_FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG
-+            BUILD_TYPE SO OOo EXT BINFILTER FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG
+-            BUILD_TYPE SO OOo EXT BINFILTER BITSTREAM_VERA_FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG GTK
++            BUILD_TYPE SO OOo EXT BINFILTER FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG GTK
  			RES_ENUS TRUE
  			RES_GER TRUE
  			NO_REC_RES TRUE

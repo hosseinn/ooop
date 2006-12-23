@@ -1,8 +1,0 @@
---- setup_native/source/win32/msi-encodinglist.txt.orig	2006-08-25 11:11:55.000000000 +0200
-+++ setup_native/source/win32/msi-encodinglist.txt	2006-11-09 21:53:43.781250000 +0100
-@@ -109,3 +109,5 @@
- kn       0  1099   # Kannada
- ms       0  1086   # Malay (Malaysian)
- tg       0  1064   # Tajik
-+ka       0  1079   # Georgian
-+eo       0  1553

@@ -8,10 +8,10 @@ export CXX="/usr/bin/ccache /usr/bin/g++"
 PKGFMTS="rpm deb"
 
 # Ant home
-ANTHOME="/usr/local/apache-ant-1.6.2"
+ANTHOME="/usr/local/apache-ant-1.6.5"
 
 # Java home
-JAVAHOME="/usr/local/j2sdk1.4.2_10"
+JAVAHOME="/usr/local/jdk1.5.0-10"
 
 # Build number
 BUILDNUMBER="OxygenOffice Professional 2.1 Premium FSF.hu Build 1"
