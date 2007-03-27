@@ -6,7 +6,7 @@
  	Dir = gid_Dir_Program;
 -	Name = "jre-1_5_0_07-windows-i586-p.exe";
 -	Javaversion = "1.5.0_07";
-+	Name = "jre-1_5_0_10-windows-i586-p.exe";
-+	Javaversion = "1.5.0_10";
++	Name = "jre-1_5_0_11-windows-i586-p.exe";
++	Javaversion = "1.5.0_11";
  	Subdir = "java";
  End
