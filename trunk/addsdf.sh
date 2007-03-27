@@ -15,3 +15,5 @@ localize -m -l ka -f ka-premium.sdf
 localize -m -l tr -f tr-gallery.sdf
 localize -m -l tr -f tr-patches.sdf
 localize -m -l tr -f tr-premium.sdf
+localize -m -l hu -f ooopteam.sdf
+localize -m -l en-US -f ooopteam.sdf
