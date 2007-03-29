@@ -1,12 +1,12 @@
 patch -p0 -l -b -i accessories_build.diff
-patch -p0 -l -b -i accessories_target.diff 
+patch -p0 -l -b -i accessories_target.diff
 patch -p0 -l -b -i gallery_galtheme.diff
-patch -p0 -l -b -i gallery_inc_gallery.diff 
-patch -p0 -l -b -i gallery_inc_galtheme.diff 
-patch -p0 -l -b -i gallery_sepatared_resource_scp2.diff 
-patch -p0 -l -b -i helpdocument-genericcommand.diff 
-patch -p0 -l -b -i helpdocument-menubar.diff 
-patch -p0 -l -b -i i15456-html-export.diff 
+patch -p0 -l -b -i gallery_inc_gallery.diff
+patch -p0 -l -b -i gallery_inc_galtheme.diff
+patch -p0 -l -b -i gallery_sepatared_resource_scp2.diff
+patch -p0 -l -b -i helpdocument-genericcommand.diff
+patch -p0 -l -b -i helpdocument-menubar.diff
+patch -p0 -l -b -i i15456-html-export.diff
 patch -p0 -l -b -i i26565-sc-naturalsort.diff
 patch -p0 -l -b -i i27928-extended-tips-on.diff
 patch -p0 -l -b -i i35578-sc-autofilter-empty-nonempty.diff
@@ -18,7 +18,6 @@ patch -p0 -l -b -i i59853-dejavu.diff
 patch -p0 -l -b -i i61007-caption-hu.diff
 patch -p0 -l -b -i i61008-arvizturo2.diff
 patch -p0 -l -b -i i63864-sc-naturalsort-help.diff
-patch -p0 -l -b -i newjava.diff
 patch -p0 -l -b -i ooowikipedia_genericcommands.diff
 patch -p0 -l -b -i ooowikipedia_writer.diff
 patch -p0 -l -b -i ooo_vendor_new.diff
