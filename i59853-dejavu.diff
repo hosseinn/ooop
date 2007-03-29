@@ -1234,114 +1234,6 @@ diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrastwhite.css helpconte
 - { color: #000000; }
 \ No newline at end of file
 + { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/el/default.css helpcontent2/source/auxiliary/el/default.css
---- helpcontent2/source/auxiliary.orig/el/default.css	2005-09-05 13:44:11.000000000 +0200
-+++ helpcontent2/source/auxiliary/el/default.css	2006-01-16 17:37:47.241345300 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","MgOpen Moderna","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono",FreeMono,"Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/el/highcontrast1.css helpcontent2/source/auxiliary/el/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/el/highcontrast1.css	2005-09-05 13:44:26.000000000 +0200
-+++ helpcontent2/source/auxiliary/el/highcontrast1.css	2006-01-16 17:37:47.178844500 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","MgOpen Moderna","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono",FreeMono,"Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/el/highcontrast2.css helpcontent2/source/auxiliary/el/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/el/highcontrast2.css	2005-09-05 13:44:40.000000000 +0200
-+++ helpcontent2/source/auxiliary/el/highcontrast2.css	2006-01-16 17:37:47.100718500 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","MgOpen Moderna","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono",FreeMono,"Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/el/highcontrastblack.css helpcontent2/source/auxiliary/el/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/el/highcontrastblack.css	2005-09-05 13:44:54.000000000 +0200
-+++ helpcontent2/source/auxiliary/el/highcontrastblack.css	2006-01-16 17:37:47.006967300 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","MgOpen Moderna","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono",FreeMono,"Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/el/highcontrastwhite.css helpcontent2/source/auxiliary/el/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/el/highcontrastwhite.css	2005-09-05 13:45:19.000000000 +0200
-+++ helpcontent2/source/auxiliary/el/highcontrastwhite.css	2006-01-16 17:37:46.944466500 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","MgOpen Moderna","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono",FreeMono,"Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
 diff -Naur helpcontent2/source/auxiliary.orig/en-GB/default.css helpcontent2/source/auxiliary/en-GB/default.css
 --- helpcontent2/source/auxiliary.orig/en-GB/default.css	2005-06-24 13:53:22.000000000 +0200
 +++ helpcontent2/source/auxiliary/en-GB/default.css	2006-01-16 17:37:46.881965700 +0100
@@ -2078,114 +1970,6 @@ diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrastblack.css helpconte
 diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrastwhite.css helpcontent2/source/auxiliary/fr/highcontrastwhite.css
 --- helpcontent2/source/auxiliary.orig/fr/highcontrastwhite.css	2004-12-16 13:28:51.000000000 +0100
 +++ helpcontent2/source/auxiliary/fr/highcontrastwhite.css	2006-01-16 17:37:44.663187300 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/hi-IN/default.css helpcontent2/source/auxiliary/hi-IN/default.css
---- helpcontent2/source/auxiliary.orig/hi-IN/default.css	2005-11-15 20:47:36.000000000 +0100
-+++ helpcontent2/source/auxiliary/hi-IN/default.css	2006-01-16 17:37:44.600686500 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/hi-IN/highcontrast1.css helpcontent2/source/auxiliary/hi-IN/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/hi-IN/highcontrast1.css	2005-11-15 20:47:46.000000000 +0100
-+++ helpcontent2/source/auxiliary/hi-IN/highcontrast1.css	2006-01-16 17:37:44.538185700 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/hi-IN/highcontrast2.css helpcontent2/source/auxiliary/hi-IN/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/hi-IN/highcontrast2.css	2005-11-15 20:47:59.000000000 +0100
-+++ helpcontent2/source/auxiliary/hi-IN/highcontrast2.css	2006-01-16 17:37:44.475684900 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/hi-IN/highcontrastblack.css helpcontent2/source/auxiliary/hi-IN/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/hi-IN/highcontrastblack.css	2005-11-15 20:48:13.000000000 +0100
-+++ helpcontent2/source/auxiliary/hi-IN/highcontrastblack.css	2006-01-16 17:37:44.413184100 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/hi-IN/highcontrastwhite.css helpcontent2/source/auxiliary/hi-IN/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/hi-IN/highcontrastwhite.css	2005-11-15 20:48:23.000000000 +0100
-+++ helpcontent2/source/auxiliary/hi-IN/highcontrastwhite.css	2006-01-16 17:37:44.350683300 +0100
 @@ -10,10 +10,10 @@
  
  
@@ -4963,14 +4747,14 @@ diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrastwhite.css helpconte
  				{
  					SCS :pserver:hr@so-cvs-tunnel.germany.sun.com:/cvs
  				}
---- solenv/config/ssrc680.ini.orig	2006-11-01 12:12:03.000000000 +0100
-+++ solenv/config/ssrc680.ini	2006-12-22 17:03:28.000000000 +0100
+--- ./solenv/config/ssrc680.ini.orig	2007-01-17 06:49:47.000000000 +0100
++++ ./solenv/config/ssrc680.ini	2007-03-29 11:33:58.390625000 +0200
 @@ -93,7 +93,7 @@
  		{
  			BIG_SVX TRUE
  			BMP_WRITES_FLAG TRUE
--            BUILD_TYPE SO OOo EXT BINFILTER BITSTREAM_VERA_FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG GTK
-+            BUILD_TYPE SO OOo EXT BINFILTER FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG GTK
+-            BUILD_TYPE SO OOo EXT BINFILTER BITSTREAM_VERA_FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG GTK ICU
++            BUILD_TYPE SO OOo EXT BINFILTER FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG GTK ICU
  			RES_ENUS TRUE
  			RES_GER TRUE
  			NO_REC_RES TRUE
