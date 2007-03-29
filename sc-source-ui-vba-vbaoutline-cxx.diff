@@ -1,23 +1,25 @@
---- /dev/null	
-+++ sc/source/ui/vba/vbaoutline.cxx	
-@@ -0,0 +1,20 @@
-+#include "vbaoutline.hxx"
-+using namespace ::com::sun::star;
-+using namespace ::org::openoffice;
+--- sc/source/ui/vba//vbaoutline.cxx	
++++ sc/source/ui/vba//vbaoutline.cxx
+@@ -52,3 +52,22 @@ ScVbaOutline::ShowLevels( const uno::Any
+ 		}
+ 	}
+ }
 +
-+void
-+ScVbaOutline::ShowLevels( const uno::Any& RowLevels, const uno::Any& ColumnLevels ) throw (uno::RuntimeException) 
++rtl::OUString& 
++ScVbaOutline::getServiceImplName()
 +{
-+	sal_Int16 nLevel = 0;
-+	if (mxOutline.is()) 
++	static rtl::OUString sImplName( RTL_CONSTASCII_USTRINGPARAM("ScVbaOutline") );
++	return sImplName;
++}
++
++uno::Sequence< rtl::OUString > 
++ScVbaOutline::getServiceNames()
++{
++	static uno::Sequence< rtl::OUString > aServiceNames;
++	if ( aServiceNames.getLength() == 0 )
 +	{
-+		if (RowLevels >>= nLevel)
-+		{
-+			mxOutline->showLevel(nLevel, table::TableOrientation_ROWS);
-+		} 
-+		if (ColumnLevels >>= nLevel)
-+		{
-+			mxOutline->showLevel(nLevel,table::TableOrientation_COLUMNS);
-+		}
++		aServiceNames.realloc( 1 );
++		aServiceNames[ 0 ] = rtl::OUString( RTL_CONSTASCII_USTRINGPARAM("org.openoffice.excel.Outline" ) );
 +	}
++	return aServiceNames;
 +}
