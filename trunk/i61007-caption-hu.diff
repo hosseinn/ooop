@@ -40,8 +40,8 @@
          if(pType)
          {
              SwSetExpField aFld( (SwSetExpFieldType*)pType, aEmptyStr, SVX_NUM_ARABIC);
--            pNew->Insert( SwFmtFld( aFld ), nIdx, nIdx );
-+            pNew->Insert( SwFmtFld( aFld ), 0, 0 );
+-            pNew->InsertItem( SwFmtFld( aFld ), nIdx, nIdx );
++            pNew->InsertItem( SwFmtFld( aFld ), 0, 0 );
              if(rCharacterStyle.Len())
              {
                  SwCharFmt* pCharFmt = FindCharFmtByName( rCharacterStyle );
