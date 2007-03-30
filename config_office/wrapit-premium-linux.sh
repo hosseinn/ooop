@@ -14,7 +14,7 @@ ANTHOME="/usr/local/apache-ant-1.6.5"
 JAVAHOME="/usr/local/jdk1.5.0-10"
 
 # Build number
-BUILDNUMBER="OxygenOffice Professional 2.1 Premium FSF.hu Build 1"
+BUILDNUMBER="OxygenOffice Professional 2.2 - OxygenOffice Build 1"
 
 # desired languages
 MYLANGUAGES="hu de fr it tr ka"
