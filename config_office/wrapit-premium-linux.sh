@@ -20,6 +20,6 @@ BUILDNUMBER="OxygenOffice Professional 2.2 - OxygenOffice Build 1"
 MYLANGUAGES="hu de fr it tr ka"
 
 # Configure flags
-CONFIGUREFLAGS="--enable-kde --enable-gtk --enable-build-mozilla --with-system-nas"
+CONFIGUREFLAGS="--enable-kde --enable-gtk --enable-build-mozilla --with-system-nas  --enable-vba"
 
 ./configure --with-lang="${MYLANGUAGES}" --with-jdk-home=${JAVAHOME} --with-ant-home=${ANTHOME} --with-package-format="${PKGFMTS}" ${CONFIGUREFLAGS} --with-build-version="${BUILDNUMBER}"

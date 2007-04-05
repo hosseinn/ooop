@@ -22,7 +22,7 @@ setenv my_LANGUAGES "hu de fr it tr ka"
 
 setenv BUILDNUMBER "OxygenOffice Professional 2.2 - OxygenOffice Build 1"
 
-./configure --with-lang="$my_LANGUAGES" --with-mspdb-path="$myMSPDB_PATH" --with-frame-home="$myFWSDK_PATH" --with-jdk-home="$myJSDK_PATH" --with-use-shell=tcsh --with-psdk-home="$myPSDK_PATH" --with-directx-home="$myDX_PATH" --with-ant-home=$myANTHOME --with-cl-home="$myCLHOME" --with-nmake-path="$myNMAKE_PATH" --with-csc-path="$myCSCPATH" --with-nsis-path="$myNSISPATH"  --with-build-version="$BUILDNUMBER" --disable-build-mozilla
+./configure --with-lang="$my_LANGUAGES" --with-mspdb-path="$myMSPDB_PATH" --with-frame-home="$myFWSDK_PATH" --with-jdk-home="$myJSDK_PATH" --with-use-shell=tcsh --with-psdk-home="$myPSDK_PATH" --with-directx-home="$myDX_PATH" --with-ant-home=$myANTHOME --with-cl-home="$myCLHOME" --with-nmake-path="$myNMAKE_PATH" --with-csc-path="$myCSCPATH" --with-nsis-path="$myNSISPATH"  --with-build-version="$BUILDNUMBER" --disable-build-mozilla --enable-vba
 
 # supply temp dir
 echo setenv TEMP /tmp >>../winenv.set
