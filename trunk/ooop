@@ -38,3 +38,4 @@ patch -p0 -l -b -i scp2_makefile_accessories.diff
 patch -p0 -l -b -i svg-import-draw.diff
 patch -p0 -l -b -i svg-import-impress.diff
 patch -p0 -l -b -i svg-import-svg-type.diff
+patch -p0 -l -b -i newjava.diff
