@@ -1,0 +1,13 @@
+--- oovbaapi/org/openoffice/excel/makefile.mk	
++++ oovbaapi/org/openoffice/excel/makefile.mk
+@@ -241,6 +241,10 @@ OBJ_IDLFILES=XApplication.idl\
+ 	XBorders.idl \
+ 	XCharacters.idl \
+ 	XValidation.idl\
++	XOLEObject.idl\
++	XOLEObjects.idl\
++	XPane.idl\
++	Range.idl\
+ 
+ 
+ IDLFILES+=$(CONST_IDLFILES)
