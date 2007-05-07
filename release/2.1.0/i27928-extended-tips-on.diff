@@ -1,0 +1,11 @@
+--- officecfg/registry/schema/org/openoffice/Office/Common.xcs	2005-11-17 19:35:46.000000000 +0100
++++ officecfg/registry/schema/org/openoffice/Office/Common.xcs	2005-12-08 11:13:35.640625000 +0100
+@@ -3100,7 +3100,7 @@
+ 					<desc>Activates the Extended help.</desc>
+ 					<label>Extended Tips</label>
+ 				</info>
+-				<value>false</value>
++				<value>true</value>
+ 			</prop>
+ 			<prop oor:name="HelpStyleSheet" oor:type="xs:string">
+ 				<info>
