@@ -1,5 +1,8 @@
 #! /bin/sh
 
+localize -m -l fi -f fi-gallery.sdf
+localize -m -l fi -f fi-patches.sdf
+localize -m -l fi -f fi-premium.sdf
 localize -m -l fr -f fr-gallery.sdf
 localize -m -l fr -f fr-patches.sdf
 localize -m -l fr -f fr-premium.sdf
