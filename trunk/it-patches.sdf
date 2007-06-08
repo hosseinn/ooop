@@ -1,36 +1,36 @@
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	11			0	en-US	Contains				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	11			0	it	Contiene				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	11			0	it-IT	Contiene				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	12			0	en-US	Does not Contain				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	12			0	it	Non contiene				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	12			0	it-IT	Non contiene				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	13			0	en-US	Begins with				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	13			0	it	Inizia per				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	13			0	it-IT	Inizia con				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	14			0	en-US	Ends with				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	14			0	it	Finisce per				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	14			0	it-IT	Termina con				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	11			0	en-US	Contains				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	11			0	it	Contiene				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	11			0	it-IT	Contiene				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	12			0	en-US	Does not Contain				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	12			0	it	Non contiene				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	12			0	it-IT	Non contiene				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	13			0	en-US	Begins with				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	13			0	it	Inizia per				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	13			0	it-IT	Inizia con				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	14			0	en-US	Ends with				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	14			0	it	Finisce per				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	14			0	it-IT	Termina con				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	11			0	en-US	Contains				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	11			0	it	Contiene				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	11			0	it-IT	Contiene				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	12			0	en-US	Does not Contain				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	12			0	it	Non contiene				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	12			0	it-IT	Non contiene				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	13			0	en-US	Begins with				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	13			0	it	Inizia per				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	13			0	it-IT	Inizia con				20051112 14:45:13
 sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	14			0	en-US	Ends with				20051112 14:45:13
-sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	14			0	it	Finisce per				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	14			0	it-IT	Termina con				20051112 14:45:13
 sc	source\ui\src\popup.src	0	menuitem	RID_POPUP_PAGEBREAK	SID_INSERT_POSTIT	SID_INSERT_POSTIT		0	en-US	Insert Not~e				20051112 14:45:13
-sc	source\ui\src\popup.src	0	menuitem	RID_POPUP_PAGEBREAK	SID_INSERT_POSTIT	SID_INSERT_POSTIT		0	it	Inserisci Not~e				20051112 14:45:13
+sc	source\ui\src\popup.src	0	menuitem	RID_POPUP_PAGEBREAK	SID_INSERT_POSTIT	SID_INSERT_POSTIT		0	it-IT	Ins~erisci nota				20051112 14:45:13
 sc	source\ui\src\sortdlg.src	0	checkbox	RID_SCPAGE_SORT_OPTIONS	BTN_NATURALSORT			242	en-US	Enable ~natural sort				20060218 15:28:33
-sc	source\ui\src\sortdlg.src	0	checkbox	RID_SCPAGE_SORT_OPTIONS	BTN_NATURALSORT			242	it	Abilita ~ordinamento naturale				20060218 15:28:33 
+sc	source\ui\src\sortdlg.src	0	checkbox	RID_SCPAGE_SORT_OPTIONS	BTN_NATURALSORT			242	it-IT	Abilita ordinamento ~naturale				20060218 15:28:33 
 sd	source\ui\app\menuids_tmpl.src	0	menuitem	MN_SAVE_GRAPHIC		SID_SAVE_GRAPHIC	SID_SAVE_GRAPHIC	0	en-US	Save ~Graphic...				20051112 14:45:13
-sd	source\ui\app\menuids_tmpl.src	0	menuitem	MN_SAVE_GRAPHIC		SID_SAVE_GRAPHIC	SID_SAVE_GRAPHIC	0	it	Salva ~Grafica...				20051112 14:45:13
+sd	source\ui\app\menuids_tmpl.src	0	menuitem	MN_SAVE_GRAPHIC		SID_SAVE_GRAPHIC	SID_SAVE_GRAPHIC	0	it-IT	Salva ~Grafico...				20051112 14:45:13
 helpcontent2	source\text\scalc\01\12030200.xhp	0	help	bm_id3147228				0	en-US	\<bookmark_value\>sorting; options for database ranges\</bookmark_value\>\<bookmark_value\>sorting;Asian languages\</bookmark_value\>\<bookmark_value\>Asian languages;sorting\</bookmark_value\>\<bookmark_value\>phonebook sorting rules\</bookmark_value\>\<bookmark_value\>natural sort algorithm\</bookmark_value\>				20060208 23:29:45
-helpcontent2	source\text\scalc\01\12030200.xhp	0	help	bm_id3147228				0	it	\<bookmark_value\>ordinamento; opzioni per intervalli database\</bookmark_value\>\<bookmark_value\>ordinamento;Lingue Asiatiche\</bookmark_value\>\<bookmark_value\>Lingue Asiatiche;ordinamento\</bookmark_value\>\<bookmark_value\>rubrica regole di ordinamento\</bookmark_value\>\<bookmark_value\>algoritmo di ordinamento naturale\</bookmark_value\>				20060211 17:16:46
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	bm_id3147228				0	it-IT	\<bookmark_value\>ordinamento; opzioni per intervalli database\</bookmark_value\>\<bookmark_value\>ordinamento;Lingue asiatiche\</bookmark_value\>\<bookmark_value\>Lingue asiatiche;ordinamento\</bookmark_value\>\<bookmark_value\>regole di ordinamento rubrica\</bookmark_value\>\<bookmark_value\>algoritmo di ordinamento naturale\</bookmark_value\>				20060211 17:16:46
 helpcontent2	source\text\scalc\01\12030200.xhp	0	help	hd_id3147438				0	en-US	Enable natural sort				20060208 23:29:45
-helpcontent2	source\text\scalc\01\12030200.xhp	0	help	hd_id3147438				0	it	Abilita ordinamento naturale				20060211 17:16:46
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	hd_id3147438				0	it-IT	Abilita ordinamento naturale				20060211 17:16:46
 helpcontent2	source\text\scalc\01\12030200.xhp	0	help	par_id3149378				0	en-US	\<ahelp hid=\"SC:CHECKBOX:RID_SCPAGE_SORT_OPTIONS:BTN_NATURALSORT\"\>Natural sort is a sort algorithm that sorts string-prefixed numbers based on the value of the numerical element in each sorted number, instead of the traditional way of sorting them as ordinary strings.\</ahelp\> For instance, let's assume you have a series of values such as, A1, A2, A3, A4, A5, A6, ..., A19, A20, A21. When you put these values into a range of cells and run the sort, it will become A1, A11, A12, A13, ..., A19, A2, A20, A21, A3, A4, A5, ..., A9. While this sorting behavior may make sense to those who understand the underlying sorting mechanism, to the rest of the population it seems completely bizarre, if not outright inconvenient. With the natural sort feature enabled, values such as the ones in the above example get sorted "properly", which improves the convenience of sorting operations in general.				20060208 23:29:45
-helpcontent2	source\text\scalc\01\12030200.xhp	0	help	par_id3149378				0	it	\<ahelp hid=\"SC:CHECKBOX:RID_SCPAGE_SORT_OPTIONS:BTN_NATURALSORT\"\>L'Ordinamento Naturale è un algoritmo di ordinamento che ordina numeri preceduti da stringa basandosi sul valore dell'elemento numerico, anziché ordinarli in maniera tradizionale come semplici stringhe (in ordine alfabetico).\</ahelp\> Per esempio, assumiamo di avere una serie di valori come A1, A2, A3, A4, A5, A6, ..., A19, A20, A21. Quando questi valori vengono posti in un intervallo di celle e si avvia l'ordinamento tradizionale, la sequenza diviene A1, A11, A12, A13, ..., A19, A2, A20, A21, A3, A4, A5, ..., A9. Mentre questa modalità di ordinamento ha qualche senso per chi conosce il meccanismo di ordinamento, al resto della popolazione può sembrare quanto meno bizzarro, se non addirittura completamente errato. Con l'ausilio della funzionalità di ordinamento naturale, se abilitata, i valori come quelli dell'esempio appena riportato sono invece ordinati in modo „proprio”, cosa che migliora le operazioni di ordinamento in generale.				20060211 17:16:46
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	par_id3149378				0	it-IT	\<ahelp hid=\"SC:CHECKBOX:RID_SCPAGE_SORT_OPTIONS:BTN_NATURALSORT\"\>Ordinamento naturale è un algoritmo di ordinamento dei numeri prefissi da stringhe, basato sull'elemento numerico presente in ogni valore ordinato. Questo metodo di ordinamento è quindi differente dal tradizionale e ordinario ordinamento alfabetico di strighe.\</ahelp\> Per esempio, assumiamo di avere una serie di valori, come A1, A2, A3, A4, A5, A6, ..., A19, A20, A21. Se inseriamo questi valori in un intervallo di celle e avviamo l'ordinamento alfabetico, la lista ordinata risulterà: A1, A11, A12, A13, ..., A19, A2, A20, A21, A3, A4, A5, ..., A9. Nonostante l'ordinamento alfabetico ordinario possa avere senso per coloro che ne comprendono il meccanismo di base, alla restante parte della popolazione potrà sembrare alquanto strano, o completamente bizzarro, se non del tutto sconveniente. Abilitando invece la funzionalità di ordinamento naturale, l'elenco dei valori presentato nell'esempio precedente verrebbe ordinato "propriamente”, fatto che aumenta la convenienza delle operazioni di ordinamento in genere.				20060211 17:16:46
