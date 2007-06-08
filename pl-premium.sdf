@@ -1,0 +1,34 @@
+scp2	source\accessories\module_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES				0	en-US	Accessories				20051221 23:33:07
+scp2	source\accessories\module_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES				0	pl	Akcesoria				20051221 23:33:07
+scp2	source\accessories\module_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES				0	en-US	Useful %PRODUCTNAME accessories including various Galleries, Templates, Sample documents and Fonts.				20051221 23:33:07
+scp2	source\accessories\module_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES				0	pl	%PRODUCTNAME-użyteczne akcesoria,w tym różne galeria, Szablony, Przykładowe dokumenti i czcionki.				20051221 23:33:07
+scp2	source\accessories\module_gallery_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_GALLERY				0	en-US	Gallery				20051221 23:33:07
+scp2	source\accessories\module_gallery_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_GALLERY				0	pl	Galeria				20051221 23:33:07
+scp2	source\accessories\module_gallery_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_GALLERY				0	en-US	The %PRODUCTNAME Gallery contains more than 2900 element in various themes.				20051221 23:33:07
+scp2	source\accessories\module_gallery_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_GALLERY				0	pl	Galeria %PRODUCTNAME zawiera ponad 2900 elementów w zróżnicowanych szablonach.				20051221 23:33:07
+scp2	source\accessories\module_templates_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_TEMPLATES				0	en-US	Templates				20051221 23:33:07
+scp2	source\accessories\module_templates_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_TEMPLATES				0	pl	Szablony				20051221 23:33:07
+scp2	source\accessories\module_templates_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_TEMPLATES				0	en-US	Create perfect documents within seconds with document templates.				20051221 23:33:07
+scp2	source\accessories\module_templates_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_TEMPLATES				0	pl	Twórz idealne dokumenty w kilka sekund używając szablonów dokumentów.				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_SAMPLES				0	en-US	Sample documents				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_SAMPLES				0	pl	Przykładowe dokumenty				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_SAMPLES				0	en-US	Sample documents are good for learning.				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_SAMPLES				0	pl	Przykładowe dokumenty są dobre do uczenia się.				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_DOCUMENTATIONS				0	en-US	Documentations				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_DOCUMENTATIONS				0	pl	Dokumentacja				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_DOCUMENTATIONS				0	en-US	%PRODUCTNAME documentations.				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_DOCUMENTATIONS				0	pl	Dokumentacja %PRODUCTNAME				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_ADVERTISEMENT				0	en-US	Advertisement				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_ADVERTISEMENT				0	pl	Reklama				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_ADVERTISEMENT				0	en-US	%PRODUCTNAME advertisement materials.				20051221 23:33:07
+scp2	source\accessories\module_samples_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_ADVERTISEMENT				0	pl	Materiały relkamowe %PRODUCTNAME				20051221 23:33:07
+scp2	source\accessories\module_font_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_FONTS				0	en-US	Fonts				20051221 23:33:07
+scp2	source\accessories\module_font_accessories.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_ACCESSORIES_FONTS				0	pl	Czcionki				20051221 23:33:07
+scp2	source\accessories\module_font_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_FONTS				0	en-US	Additional fonts for %PRODUCTNAME and other applications.				20051221 23:33:07
+scp2	source\accessories\module_font_accessories.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_ACCESSORIES_FONTS				0	pl	Dodatkowe czcionki dla %PRODUCTNAME i innych aplikacji.				20051221 23:33:07
+scp2	source\javafilter\module_javafilter.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_JAVAFILTER_SVGIMPORT				0	en-US	SVG Import				20051112 14:45:13
+scp2	source\javafilter\module_javafilter.ulf	0	LngText	STR_NAME_MODULE_OPTIONAL_JAVAFILTER_SVGIMPORT				0	pl	Import SVG				20051112 14:45:13
+scp2	source\javafilter\module_javafilter.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_JAVAFILTER_SVGIMPORT				0	en-US	Support for SVG Import				20051112 14:45:13
+scp2	source\javafilter\module_javafilter.ulf	0	LngText	STR_DESC_MODULE_OPTIONAL_JAVAFILTER_SVGIMPORT				0	pl	Wsparcie dla Importu SVG				20051112 14:45:13
+officecfg	registry\data\org\openoffice\Office\UI\GenericCommands.xcu	0	value	.GenericCommands.UserInterface.Commands.macro:///Premium.OOoHelpDocumentation.OpenHelpDocument	Label			0	en-US	User's manual				20050706 14:45:13
+officecfg	registry\data\org\openoffice\Office\UI\GenericCommands.xcu	0	value	.GenericCommands.UserInterface.Commands.macro:///Premium.OOoHelpDocumentation.OpenHelpDocument	Label			0	pl	Instrukcja obsługi				20060706 14:45:13

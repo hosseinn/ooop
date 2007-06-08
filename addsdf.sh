@@ -17,6 +17,9 @@ localize -m -l ka -f GSI_ka.sdf
 localize -m -l ka -f ka-gallery.sdf
 localize -m -l ka -f ka-patches.sdf
 localize -m -l ka -f ka-premium.sdf
+localize -m -l pl -f pl-gallery.sdf
+localize -m -l pl -f pl-patches.sdf
+localize -m -l pl -f pl-premium.sdf
 localize -m -l tr -f tr-gallery.sdf
 localize -m -l tr -f tr-patches.sdf
 localize -m -l tr -f tr-premium.sdf
