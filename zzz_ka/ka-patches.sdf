@@ -1,0 +1,36 @@
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	11			0	en-US	Contains				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	11			0	ka	შეიცავს				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	12			0	en-US	Does not Contain				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	12			0	ka	არ შეიცავს				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	13			0	en-US	Begins with				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	13			0	ka	იწყება				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	14			0	en-US	Ends with				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND1	14			0	ka	მთავრდება				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	11			0	en-US	Contains				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	11			0	ka	შეიცავს				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	12			0	en-US	Does not Contain				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	12			0	ka	არ შეიცავს				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	13			0	en-US	Begins with				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	13			0	ka	იწყება				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	14			0	en-US	Ends with				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND2	14			0	ka	მთავრდება				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	11			0	en-US	Contains				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	11			0	ka	შეიცავს				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	12			0	en-US	Does not Contain				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	12			0	ka	არ შეიცავს				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	13			0	en-US	Begins with				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	13			0	ka	იწყება				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	14			0	en-US	Ends with				20051112 14:45:13
+sc	source\ui\src\filter.src	0	stringlist	RID_SCDLG_FILTER.LB_COND3	14			0	ka	მთავრდება				20051112 14:45:13
+sc	source\ui\src\popup.src	0	menuitem	RID_POPUP_PAGEBREAK	SID_INSERT_POSTIT	SID_INSERT_POSTIT		0	en-US	Insert Not~e				20051112 14:45:13
+sc	source\ui\src\popup.src	0	menuitem	RID_POPUP_PAGEBREAK	SID_INSERT_POSTIT	SID_INSERT_POSTIT		0	ka	~შენიშვნის ჩამატება				20051112 14:45:13
+sc	source\ui\src\sortdlg.src	0	checkbox	RID_SCPAGE_SORT_OPTIONS	BTN_NATURALSORT			242	en-US	Enable ~natural sort				20060218 15:28:33
+sc	source\ui\src\sortdlg.src	0	checkbox	RID_SCPAGE_SORT_OPTIONS	BTN_NATURALSORT			242	ka	~ბუნებრივი სორტირების ჩართვა				20060218 15:28:33 
+sd	source\ui\app\menuids_tmpl.src	0	menuitem	MN_SAVE_GRAPHIC		SID_SAVE_GRAPHIC	SID_SAVE_GRAPHIC	0	en-US	Save ~Graphic...				20051112 14:45:13
+sd	source\ui\app\menuids_tmpl.src	0	menuitem	MN_SAVE_GRAPHIC		SID_SAVE_GRAPHIC	SID_SAVE_GRAPHIC	0	ka	~გრაფიკის შენახვა...				20051112 14:45:13
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	bm_id3147228				0	en-US	\<bookmark_value\>sorting; options for database ranges\</bookmark_value\>\<bookmark_value\>sorting;Asian languages\</bookmark_value\>\<bookmark_value\>Asian languages;sorting\</bookmark_value\>\<bookmark_value\>phonebook sorting rules\</bookmark_value\>\<bookmark_value\>natural sort algorithm\</bookmark_value\>				20060208 23:29:45
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	bm_id3147228				0	ka	\<bookmark_value\>სორტირება; მონაცემთა ბაზის რანგის პარამეტრები\</bookmark_value\>\<bookmark_value\>სორტირება;აზიური ენები\</bookmark_value\>\<bookmark_value\>აზიური ენები;სორტირება\</bookmark_value\>\<bookmark_value\>სატელეფონო წიგნის სორტირების წესები\</bookmark_value\>\<bookmark_value\>ბუნებრივი სორტირების ალგორითმი\</bookmark_value\>				20060211 17:16:46
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	hd_id3147438				0	en-US	Enable natural sort				20060208 23:29:45
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	hd_id3147438				0	ka	ბუნებრივი სორტირების ჩართვა				20060211 17:16:46
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	par_id3149378				0	en-US	\<ahelp hid=\"SC:CHECKBOX:RID_SCPAGE_SORT_OPTIONS:BTN_NATURALSORT\"\>Natural sort is a sort algorithm that sorts string-prefixed numbers based on the value of the numerical element in each sorted number, instead of the traditional way of sorting them as ordinary strings.\</ahelp\> For instance, let's assume you have a series of values such as, A1, A2, A3, A4, A5, A6, ..., A19, A20, A21. When you put these values into a range of cells and run the sort, it will become A1, A11, A12, A13, ..., A19, A2, A20, A21, A3, A4, A5, ..., A9. While this sorting behavior may make sense to those who understand the underlying sorting mechanism, to the rest of the population it seems completely bizarre, if not outright inconvenient. With the natural sort feature enabled, values such as the ones in the above example get sorted "properly", which improves the convenience of sorting operations in general.				20060208 23:29:45
+helpcontent2	source\text\scalc\01\12030200.xhp	0	help	par_id3149378				0	ka	\<ahelp hid=\"SC:CHECKBOX:RID_SCPAGE_SORT_OPTIONS:BTN_NATURALSORT\"\>ბუნებრივი სორტირება ხდება ალგორითმით, რომელიც რომელიც ტექსტურ პრეფიქსიანი რიცხვების სორტირებას აწარმოებს თითოეულ სორტირებულ რიცხვში რიცხვითი ელემენტის მნიშვნელობის მიხედვით, ნაცვლად ჩვეულებრივი სტრიქონების სორტირების ტრადიციული წესისა.\</ahelp\> მაგალითად, დავუშვათ გაქვთ მნიშვნელობათა სერია A1, A2, A3, A4, A5, A6, ..., A19, A20, A21. ამ მნიშვნელობების უჯრათა რანგში ჩასმისას და სორტირებისას იგი გარდაიქმნება შემდეგნაირად, A1, A11, A12, A13, ..., A19, A2, A20, A21, A3, A4, A5, ..., A9. მათთვის, ვინც სორტიერების შიდა მექანიზმს ხვდება, ეს წესი სავსებით მისაღებია, მაშინ როცა უმრავლესობისთვის სრულიად უცნაური, თუ მიუღებელი არა. ბუნებრივი სორტირების ჩართვისას, ზემოთ მოყვანილი მნიშვნელობები "მართებულად" დალაგდება, რაც ზოგადად აუმჯობესებს და მოსახერხებელს ხდის სორტირებას.				20060211 17:16:46
