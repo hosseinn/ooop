@@ -198,8 +198,8 @@ svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_TRAVEL				
 svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_PHOTOS_TRAVEL				0	ka	ფოტოები - მოგზაურობა				2006-07-06 12:12:12
 svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_OPENOFFICEORG_LOGOS				0	en-US	OpenOffice.org logos				2006-07-06 12:12:12
 svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_OPENOFFICEORG_LOGOS				0	ka	OpenOffice.org ლოგოები				2006-07-06 12:12:12
-svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_RELEGION				0	en-US	Relegion				2006-07-06 12:12:12
-svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_RELEGION				0	ka	რელიგია				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_RELIGION				0	en-US	Religion				2006-07-06 12:12:12
+svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_RELIGION				0	ka	რელიგია				2006-07-06 12:12:12
 svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_BUILDINGS				0	en-US	Buildings				2006-07-06 12:12:12
 svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_BUILDINGS				0	ka	შენობები				2006-07-06 12:12:12
 svx	source\gallery2\galtheme.src	0	string	RID_GALLERYSTR_THEME_HOMEPAGE2				0	en-US	Homepage 2				2006-07-06 12:12:12

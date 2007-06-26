@@ -1006,9 +1006,9 @@
 +
 +// ---------------------------------------------------------------------------
 +
-+String RID_GALLERYSTR_THEME_RELEGION
++String RID_GALLERYSTR_THEME_RELIGION
 +{
-+Text [ en-US ] = "Relegion";
++Text [ en-US ] = "Religion";
 +Text [ de ] = "Religion";
 +Text [ hu ] = "Vallás";
 +Text [ x-comment ] = " ";
