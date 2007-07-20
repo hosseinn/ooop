@@ -25,11 +25,12 @@ do
     do
 
       echo [+] Processing $templates folder, $languages language...
-      if [ $mode="unified" ];
-      then
+      if [ $mode == "unified" ]; then
+      echo [.] UNIFIED mode
       mkdir -p ./_TEMP_/template/$templates
       cp -f ../../extras/source/premium/$folder/$templates/lang/$languages/*.* ./_TEMP_/template/$templates/
       else
+      echo [.] SEPARTATED  mode
       mkdir -p ./_TEMP_/template/$languages/$templates/
       cp -f ../../extras/source/premium/$folder/$templates/lang/$languages/*.* ./_TEMP_/template/$languages/$templates/
       fi
@@ -58,7 +59,7 @@ do
     rm -f ../output/OOOP-$folder-$mode-$languages-$version.oxt
 
     echo [+] Creating empty OOOP-$folder-$mode-$languages-$version.oxt...
-    if [ $mode="unified" ];
+    if [ $mode == "unified" ];
     then
     cp -f TemplatePackage.oxt ../output/OOOP-$folder-$mode-$languages-$version.oxt
     else
@@ -96,7 +97,7 @@ do
   rm -f ../output/OOOP-$folder-$mode-all-$version.oxt
 
   echo [+] Creating empty OOOP-$folder-$mode-all-$version.oxt...
-    if [ $mode="unified" ];
+    if [ $mode == "unified" ];
     then
     cp -f TemplatePackage.oxt ../output/OOOP-$folder-$mode-all-$version.oxt
     else
