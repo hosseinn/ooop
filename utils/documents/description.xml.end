@@ -4,7 +4,7 @@
     </dependencies>
 
     <update-information>
-      <src xlink:href="http://extensions.openoffice.org/testarea/desktop/license/update/lic3.update.xml" />
+      <src xlink:href="http://ooop.sourceforge.net/update/extensions.xml" />
     </update-information>
 
     <registration>
