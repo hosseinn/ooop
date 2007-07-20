@@ -7,4 +7,4 @@ DEL OOOP-ml-templates-all.oxt
 ECHO [+] Creating empty COLLECTOR OOOP-ml-templates-all.oxt...
 COPY MultiLanguageTemplatePackage.oxt OOOP-ml-templates-all.oxt 
 
-FOR %%L IN (hu de en-US) DO CALL cretemex-ml.bat %%L
+FOR %%L IN (hu de en-US fr it) DO CALL cretemex-ml.bat %%L
