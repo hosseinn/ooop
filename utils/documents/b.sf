@@ -1,0 +1,6 @@
+#!/bin/bash
+version=2.3.0.1
+languages=gondolom
+
+echo "   <identifier value=\""net.sf.ooop.oxygenoffice.gallery.free.$languages"\" />" > description.xml.middle
+echo "   <version value=\""$version"\" />" >> description.xml.middle
