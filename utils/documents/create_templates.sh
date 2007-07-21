@@ -1,5 +1,5 @@
 #!/bin/bash
-version=2.3.0.1
+version=2.3.0.2
 echo [+] START...
 mkdir -p ../output
 
@@ -28,15 +28,19 @@ do
       if [ $mode == "unified" ]; then
       echo [.] UNIFIED mode
       mkdir -p ./_TEMP_/template/$templates
-      cp -f ../../extras/source/premium/$folder/$templates/lang/$languages/*.* ./_TEMP_/template/$templates/
+      cp -f ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$templates/
       else
       echo [.] SEPARTATED  mode
       mkdir -p ./_TEMP_/template/$languages/$templates/
-      cp -f ../../extras/source/premium/$folder/$templates/lang/$languages/*.* ./_TEMP_/template/$languages/$templates/
+      cp -f ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$languages/$templates/
       fi
       #  /EXCLUDE:cretwork.exc
 
     done
+    rm -fr ./_TEMP_/*/.svn/*
+    rm -fr ./_TEMP_/*makefile.mk
+    rm -fr ./_TEMP_/*delzip
+    rm -fr ./_TEMP_/*dummy.txt
 
     cp -fr ./_TEMP_/* ./_TEMP_ML_/
   
@@ -49,7 +53,7 @@ do
     cp -f ../../documents/license/extension/readme_*.txt ./_TEMP_/readmes/
 
     echo [+] Adding description information...
-    echo "   <identifier value=\""net.sf.ooop.oxygenoffice.gallery.free.$languages.$mode"\" />" > description.xml.middle
+    echo "   <identifier value=\""net.sf.ooop.oxygenoffice.$folder.$languages.$mode"\" />" > description.xml.middle
     echo "   <version value=\""$version"\" />" >> description.xml.middle
 
     cat description.xml.begin > ./_TEMP_/description.xml & cat description.xml.middle >> ./_TEMP_/description.xml & cat description.xml.end >> ./_TEMP_/description.xml
