@@ -36,8 +36,10 @@ do
       fi
 
     done
-
+# Separated mode creates the perfect all in one template package. Unified module will overwrite files in different langusges but with same name
+    if [ $mode == "separated" ]; then
     cp -fr ./_TEMP_/* ./_TEMP_ML_/
+    fi
   
     echo [+] Adding licensing information...
     mkdir -p ./_TEMP_/licenses
@@ -48,10 +50,12 @@ do
     cp -f ../../documents/license/extension/readme_*.txt ./_TEMP_/readmes/
 
     echo [+] Adding description information...
-    echo "   <identifier value=\""net.sf.ooop.oxygenoffice.$folder.$languages.$mode"\" />" > description.xml.middle
-    echo "   <version value=\""$version"\" />" >> description.xml.middle
+    echo "   <identifier value=\""net.sf.ooop.oxygenoffice.$folder.$languages.$mode"\" />" > ./description.xml.middle
+    echo "   <version value=\""$version"\" />" >> ./description.xml.middle
 
-    cat description.xml.begin > ./_TEMP_/description.xml & cat description.xml.middle >> ./_TEMP_/description.xml & cat description.xml.end >> ./_TEMP_/description.xml
+    cat ./description.xml.begin > ./_TEMP_/description.xml
+    cat ./description.xml.middle >> ./_TEMP_/description.xml
+    cat ./description.xml.end >> ./_TEMP_/description.xml
     rm -f description.xml.middle
 
     echo [+] Remove OOOP-$folder-$mode-$languages-$version.oxt
@@ -76,7 +80,10 @@ do
     echo ===============================================
 
   done
-
+# Separated mode creates the perfect all in one template package. Unified module will overwrite files in different langusges but with same name
+# no unified-all
+  if [ $mode == "separated" ]; then
+  
   echo [+] Adding licensing information...
   mkdir -p ./_TEMP_ML_/licenses
   cp -f ../../documents/license/extension/license_*.txt ./_TEMP_ML_/licenses/
@@ -86,7 +93,7 @@ do
   cp -f ../../documents/license/extension/readme_*.txt ./_TEMP_ML_/readmes/
 
   echo [+] Adding description information...
-  echo "   <identifier value=\""net.sf.ooop.oxygenoffice.gallery.free.multi_language.$mode"\" />" > description.xml.middle
+  echo "   <identifier value=\""net.sf.ooop.oxygenoffice.$folder.multi_language.$mode"\" />" > description.xml.middle
   echo "   <version value=\""$version"\" />" >> description.xml.middle
 
   cat description.xml.begin > ./_TEMP_ML_/description.xml & cat description.xml.middle >> ./_TEMP_ML_/description.xml & cat description.xml.end >> ./_TEMP_ML_/description.xml
@@ -106,7 +113,8 @@ do
   cd ./_TEMP_ML_
   zip -r -9 ../../output/OOOP-$folder-$mode-all-$version.oxt *
   cd ..
-
+# no unified-all
+  fi
   rm -fr ./_TEMP_ML_
 
 done
