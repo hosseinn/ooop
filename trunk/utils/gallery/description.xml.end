@@ -1,0 +1,17 @@
+
+    <dependencies>
+         <OpenOffice.org-minimal-version value="2.0" d:name="OpenOffice.org 2.0"/>
+    </dependencies>
+
+    <update-information>
+      <src xlink:href="http://ooop.sourceforge.net/update/extensions.xml" />
+    </update-information>
+
+    <registration>
+        <simple-license  accept-by="user" default-license-id="en-US" suppress-on-update="true" >
+            <license-text xlink:href="licenses/license_de-DE.txt" lang="de-DE" />
+            <license-text xlink:href="licenses/license_hu-HU.txt" lang="hu-HU" />
+            <license-text xlink:href="licenses/license_en-US.txt" lang="en-US" />
+        </simple-license>
+    </registration>
+</description>
