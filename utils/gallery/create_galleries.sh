@@ -16,13 +16,7 @@ do
 
       echo [+] Processing $folder galleries...
       mkdir -p ./_TEMP_/gallery/
-      rsync -avuz --exclude-from=exclude.exc ../../extras/source/gallery/$folder/* ./_TEMP_/gallery/
-      #  /EXCLUDE:cretwork.exc
-
-    rm -fr ./_TEMP_/*.svn*
-    rm -fr ./_TEMP_/*makefile.mk
-    rm -fr ./_TEMP_/*delzip
-    rm -fr ./_TEMP_/*dummy.txt
+      rsync -avv --progress --human-readable --exclude-from=exclude.exc ../../extras/source/gallery/$folder/* ./_TEMP_/gallery/
 
     echo [+] Adding licensing information...
     mkdir -p ./_TEMP_/licenses
@@ -51,7 +45,7 @@ do
     cd ..
 
     echo [+] Remove TEMP...
-  rem   rm -fr ./_TEMP_
+    rm -fr ./_TEMP_
 
     echo ===============================================
 

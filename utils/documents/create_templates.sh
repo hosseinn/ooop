@@ -26,21 +26,16 @@ do
 
       echo [+] Processing $templates folder, $languages language...
       if [ $mode == "unified" ]; then
-      echo [.] UNIFIED mode
+      echo [.] UNIFIED mode.
       mkdir -p ./_TEMP_/template/$templates
-      crsync -avz --exclude-from=exclude.exc ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$templates/
+      rsync -avv --progress --human-readable --exclude-from=exclude.exc ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$templates/
       else
-      echo [.] SEPARTATED  mode
+      echo [.] SEPARTATED  mode.
       mkdir -p ./_TEMP_/template/$languages/$templates/
-      rsync -avz --exclude-from=exclude.exc ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$languages/$templates/
+      rsync -avv --progress --human-readable --exclude-from=exclude.exc ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$languages/$templates/
       fi
-      #  /EXCLUDE:cretwork.exc
 
     done
-    rm -fr ./_TEMP_/*/.svn/*
-    rm -fr ./_TEMP_/*makefile.mk
-    rm -fr ./_TEMP_/*delzip
-    rm -fr ./_TEMP_/*dummy.txt
 
     cp -fr ./_TEMP_/* ./_TEMP_ML_/
   
