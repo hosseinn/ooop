@@ -28,11 +28,11 @@ do
       if [ $mode == "unified" ]; then
       echo [.] UNIFIED mode
       mkdir -p ./_TEMP_/template/$templates
-      cp -f ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$templates/
+      crsync -avz --exclude-from=exclude.exc ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$templates/
       else
       echo [.] SEPARTATED  mode
       mkdir -p ./_TEMP_/template/$languages/$templates/
-      cp -f ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$languages/$templates/
+      rsync -avz --exclude-from=exclude.exc ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$languages/$templates/
       fi
       #  /EXCLUDE:cretwork.exc
 
