@@ -30,7 +30,9 @@ do
     echo "   <identifier value=\""net.sf.ooop.oxygenoffice.$folder"\" />" > description.xml.middle
     echo "   <version value=\""$version"\" />" >> description.xml.middle
 
-    cat description.xml.begin > ./_TEMP_/description.xml & cat description.xml.middle >> ./_TEMP_/description.xml & cat description.xml.end >> ./_TEMP_/description.xml
+    cat ./description.xml.begin > ./_TEMP_/description.xml
+    cat ./description.xml.middle >> ./_TEMP_/description.xml
+    cat ./description.xml.end >> ./_TEMP_/description.xml
     rm -f description.xml.middle
 
     echo [+] Remove OOOP-$folder-$version.oxt
