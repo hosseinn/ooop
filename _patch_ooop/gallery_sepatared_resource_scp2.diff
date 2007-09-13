@@ -1,19 +1,38 @@
---- scp2/source/ooo/module_hidden_ooo.scp.orig	2006-05-17 09:51:07.000000000 +0200
-+++ scp2/source/ooo/module_hidden_ooo.scp	2006-07-05 07:22:38.703125000 +0200
-@@ -901,6 +901,16 @@
- 	gid_File_Res_Eme);
+--- scp2/source/ooo/module_hidden_ooo.scp.orig	2007-09-12 15:16:03.208211200 +0200
++++ scp2/source/ooo/module_hidden_ooo.scp	2007-09-12 15:16:19.739672800 +0200
+@@ -1063,15 +1063,25 @@
+ 	Default = YES;
+ 	Styles = (HIDDEN_ROOT);
+ 	Files = (gid_File_Fnt_Opensymb,
+-	gid_File_Fnt_Vera,
+-	gid_File_Fnt_Verabd,
+-	gid_File_Fnt_Verabi,
+-	gid_File_Fnt_Verait,
+-	gid_File_Fnt_Veramobd,
+-	gid_File_Fnt_Veramobi,
+-	gid_File_Fnt_Veramoit,
+-	gid_File_Fnt_Veramono,
+-	gid_File_Fnt_Verase,
+-	gid_File_Fnt_Verasebd );
++	gid_File_Fnt_DejaVuSans-Bold,
++	gid_File_Fnt_DejaVuSans-BoldOblique,
++	gid_File_Fnt_DejaVuSans-Oblique,
++	gid_File_Fnt_DejaVuSans,
++	gid_File_Fnt_DejaVuSansCondensed-Bold,
++	gid_File_Fnt_DejaVuSansCondensed-BoldOblique,
++	gid_File_Fnt_DejaVuSansCondensed-Oblique,
++	gid_File_Fnt_DejaVuSansCondensed,
++	gid_File_Fnt_DejaVuSansMono-Bold,
++	gid_File_Fnt_DejaVuSansMono-BoldOblique,
++	gid_File_Fnt_DejaVuSansMono-Oblique,
++	gid_File_Fnt_DejaVuSansMono,
++	gid_File_Fnt_DejaVuSerif-Bold,
++	gid_File_Fnt_DejaVuSerif-BoldOblique,
++	gid_File_Fnt_DejaVuSerif-Oblique,
++	gid_File_Fnt_DejaVuSerif,
++	gid_File_Fnt_DejaVuSerifCondensed-Bold,
++	gid_File_Fnt_DejaVuSerifCondensed-BoldOblique,
++	gid_File_Fnt_DejaVuSerifCondensed-Oblique,
++	gid_File_Fnt_DejaVuSerifCondensed );
  End
- 
-+
-+Module gid_Module_Root_Files_8_Lang_Res
-+	ParentID = gid_Module_Root_Files_8;
-+        Description = "gid_Module_Root_Files_8";
-+	Default = YES;
-+	Styles = (HIDDEN_ROOT);
-+	Files = (gid_File_Res_Gal);
-+End
-+
-+
- Module gid_Module_Root_Files_9
- 	ParentID = gid_Module_Root;
- 	Name = "gid_Module_Root_Files_9";
+ #endif
