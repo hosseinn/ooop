@@ -1,33 +1,32 @@
---- readlicense_oo/html/THIRDPARTYLICENSEREADME.html.orig	2006-05-17 09:48:46.000000000 +0200
-+++ readlicense_oo/html/THIRDPARTYLICENSEREADME.html	2006-06-16 06:35:27.093750000 +0200
-@@ -205,7 +205,24 @@
-       <li><a href="#mozTocId509736">WordNet 2.1 </a></li>
+--- readlicense_oo/html/THIRDPARTYLICENSEREADME.html.orig	2007-08-30 19:14:11.000000000 +0200
++++ readlicense_oo/html/THIRDPARTYLICENSEREADME.html	2007-09-13 13:11:03.751875400 +0200
+@@ -402,6 +402,23 @@
+       <li><a href="#mozTocId196487">Mozilla Address Book
+         </a></li>
      </ul>
++
++   <li><a href="#mozTocId52000">Premium content</a>
++   <li><a href="#mozTocId52005">Larabie</a>
++     <ul>
++       <li><a href="#mozTocId509737">Free fonts</a></li>
++     </ul>
++   </li>
++   <li><a href="#mozTocId52015">Gallery</a></li>
++   <li><a href="#mozTocId52016">Templates</a></li>
++   <li><a href="#mozTocId52017">Dictionaries</a></li>
++   <li><a href="#mozTocId52018">Fonts</a></li>
++   <li><a href="#mozTocId52019">Documents and Samples</a></li>
++  </ul>
++ </ul>
++
++
++
    </li>
-+  <li><a href="#mozTocId52000">Premium content</a>
-+  <li><a href="#mozTocId52005">Larabie</a>
-+    <ul>
-+      <li><a href="#mozTocId509737">Free fonts</a></li>
-+    </ul>
-+  </li>
-+  <li><a href="#mozTocId52015">Gallery</a></li>
-+  <li><a href="#mozTocId52016">Templates</a></li>
-+  <li><a href="#mozTocId52017">Dictionaries</a></li>
-+  <li><a href="#mozTocId52018">Fonts</a></li>
-+  <li><a href="#mozTocId52019">Documents and Samples</a></li>
  </ul>
-+</ul>
-+
-+
-+
-+
-+
- <hr style="width: 100%; height: 2px;">The following software may be
- included in this product: Mozilla Address Book: Use of any of this
- software
-@@ -4355,5 +4372,48 @@
- associated documentation shall at all times remain with Princeton
- University and LICENSEE agrees to preserve same. <br>
+ <br>
+@@ -6060,5 +6077,54 @@
+ <br>
+ END OF TERMS AND CONDITIONS
  <br>
 +<h2><a class="mozTocH2" name="mozTocId52000"></a>Premium content
 +<br>
@@ -49,6 +48,9 @@
 +<li>Cisco Icon Library - http://www.cisco.com/warp/public/503/2.html - Free</li>
 +<li>Daniel Carrera's Colletion - http://www.openoffice.org/ - PDL</li>
 +
++<b><p>The full list of resources and licenses are available here:<br>
++<a href="http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Gallery.ods">Gallery.ods</a></p></b>
++
 +<h2><a class="mozTocH2" name="mozTocId52016"></a>Templates</h2>
 +I have used the work of
 +<li>OO Extras - http://ooextras.sourceforge.net/ - LGP</li>L
@@ -57,6 +59,9 @@
 +<li>My own works - http://hu.openoffice.org/ - LGPL</li>
 +<li>Others' works - http://hu.openoffice.org/ - LGPL or PDL or Free</li>
 +<li>Daniel Carrera's Colletion - http://www.openoffice.org/ - LGPL</li>
++
++<b><p>The full list of resources and licenses are available here:<br>
++<a href="http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Template.ods">Template.ods</a></p></b>
 +
 +<h2><a class="mozTocH2" name="mozTocId52017"></a>Dictionaries</h2>
 +I have used the work of

@@ -1,30 +1,30 @@
---- svx/source/dialog/fntctrl.cxx.orig	2005-09-11 17:21:06.000000000 +0200
-+++ svx/source/dialog/fntctrl.cxx	2005-10-15 19:33:41.915643100 +0200
+--- svx/source/dialog/fntctrl.cxx.orig	2007-08-10 19:17:12.000000000 +0200
++++ svx/source/dialog/fntctrl.cxx	2007-09-13 12:42:59.641416100 +0200
 @@ -84,7 +84,7 @@
  
- #include "fntctrl.hxx"
- #include "dialogs.hrc"
+ #include <svx/fntctrl.hxx>
+ #include <svx/dialogs.hrc>
 -#define TEXT_WIDTH	20
 +#define TEXT_WIDTH	50
  
  using namespace ::com::sun::star::uno;
  using namespace ::com::sun::star::lang;
-@@ -613,6 +613,8 @@
- {
- 	Printer* pPrinter = pImpl->pPrinter;
- 	SvxFont& rFont = pImpl->aFont;
-+	static sal_Char *str_fontpreview="külvízen úszó szárazjégtörő kisjármű";
-+	UniString str_fontpreview_utf=UniString(ByteString(str_fontpreview),RTL_TEXTENCODING_UTF8);
+@@ -641,6 +641,9 @@
+ 	SvxFont& rCJKFont = pImpl->aCJKFont;
+ 	// TODO: SvxFont& rCTLFont = pImpl->aCTLFont;
  
++        static sal_Char *str_fontpreview="külvízen úszó szárazjégtörő kisjármű";
++        UniString str_fontpreview_utf=UniString(ByteString(str_fontpreview),RTL_TEXTENCODING_UTF8);
++
      if ( pImpl->bUseResText )
  		pImpl->aText = GetText();
-@@ -629,7 +631,7 @@
- 		}
+ 	else if ( !pImpl->bSelection )
+@@ -657,7 +660,7 @@
  
  		if ( !pImpl->bSelection )
+         {
 -			pImpl->aText = rFont.GetName();
 +			pImpl->aText = str_fontpreview_utf;
- 
- 		if ( !pImpl->aText.Len() )
- 			pImpl->aText = GetText();
-
+             if( pImpl->bIsCJKUI )
+                 pImpl->aText += rCJKFont.GetName();
+             //TODO bIsCTLUI

@@ -1,15 +1,15 @@
---- config_office/configure.orig	2005-10-25 16:42:08.000000000 +0200
-+++ config_office/configure	2006-01-16 17:20:56.884662900 +0100
-@@ -990,7 +990,7 @@
-   --with-firefox          Use Firefox instead of Mozilla Suite for building.
-                           Only honoured with --with-system-mozilla
+--- config_office/configure.orig	2007-08-24 20:53:19.000000000 +0200
++++ config_office/configure	2007-09-12 15:16:06.895758400 +0200
+@@ -1039,7 +1039,7 @@
+                           Usage: --with-package-format="builtin" or
+                                  --with-package-format="extsn"
  
 -  --without-fonts         Removes Bitstream Vera fonts from
 +  --without-fonts         Removes DejaVu fonts from
                            openoffice.org installation set, for people building
                            for specific distributions where the fonts are known
                            to be already available
-@@ -18517,13 +18517,13 @@
+@@ -23422,13 +23422,13 @@
    SCPDEFS="$SCPDEFS -DWITHOUT_MATHMLDTD"
  fi
  
@@ -26,18 +26,18 @@
  else
    echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6
---- config_office/configure.in.orig	2005-10-25 13:23:57.000000000 +0200
-+++ config_office/configure.in	2006-01-16 17:20:13.274729700 +0100
-@@ -47,7 +47,7 @@
-                           Only honoured with --with-system-mozilla
- ],,)
+--- config_office/configure.in.orig	2007-08-24 20:53:19.000000000 +0200
++++ config_office/configure.in	2007-09-12 15:16:07.614517600 +0200
+@@ -68,7 +68,7 @@
+                           version, use this option.
+ ],,enable_mozilla="yes")
  AC_ARG_WITH(fonts,
 -[  --without-fonts         Removes Bitstream Vera fonts from
 +[  --without-fonts         Removes DejaVu fonts from
                            openoffice.org installation set, for people building
                            for specific distributions where the fonts are known 
                            to be already available
-@@ -3995,11 +3995,11 @@
+@@ -5016,11 +5016,11 @@
  dnl ===================================================================
  dnl Test whether to include fonts
  dnl ===================================================================
@@ -51,175 +51,139 @@
  else
    AC_MSG_RESULT([no])
    WITH_FONTS=NO
---- ./scp2/source/ooo/file_font_ooo.scp.org	2005-12-28 15:38:56.600431400 +0100
-+++ ./scp2/source/ooo/file_font_ooo.scp	2005-12-28 15:43:13.839745300 +0100
-@@ -42,112 +42,223 @@
- STD_FONTWIN_FILE( gid_File_Fnt_Opensymb, opens___.ttf, OpenSymbol)
+--- scp2/source/ooo/file_font_ooo.scp.orig	2007-08-10 19:15:32.000000000 +0200
++++ ./scp2/source/ooo/file_font_ooo.scp	2007-09-12 15:16:07.692643600 +0200
+@@ -44,110 +44,221 @@
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-SETUP_FONTUNX_FILE( gid_File_Fnt_Vera, Vera.ttf, Vera Sans)
++STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSans-Bold, DejaVuSans-Bold.ttf, DejaVu Sans Bold) 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-SETUP_FONTWIN_FILE( gid_File_Fnt_Vera, Vera.ttf, Vera Sans)
++STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSans-Bold, DejaVuSans-Bold.ttf, DejaVu Sans Bold) 
+ #endif
  #endif
  
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--SETUP_FONTUNX_FILE( gid_File_Fnt_Vera, Vera.ttf, Vera Sans)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--SETUP_FONTWIN_FILE( gid_File_Fnt_Vera, Vera.ttf, Vera Sans)
--#endif
--#endif
--
--#ifdef UNX
--#ifndef WITHOUT_FONTS
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
 -STD_FONTUNX_FILE( gid_File_Fnt_Verabd, VeraBd.ttf, Vera Sans Bold)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Verabd, VeraBd.ttf, Vera Sans Bold)
--#endif
--#endif
--
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--STD_FONTUNX_FILE( gid_File_Fnt_Verabi, VeraBI.ttf, Vera Sans Bold Oblique)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Verabi, VeraBI.ttf, Vera Sans Bold Italic)
--#endif
--#endif
--
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--STD_FONTUNX_FILE( gid_File_Fnt_Verait, VeraIt.ttf, Vera Sans Oblique)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Verait, VeraIt.ttf, Vera Sans Italic)
--#endif
--#endif
--
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--STD_FONTUNX_FILE( gid_File_Fnt_Veramobd, VeraMoBd.ttf, Vera Sans Mono Bold)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Veramobd, VeraMoBd.ttf, Vera Sans Mono Bold)
--#endif
--#endif
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
-+STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSans-Bold, DejaVuSans-Bold.ttf, DejaVu Sans Bold) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
-+STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSans-Bold, DejaVuSans-Bold.ttf, DejaVu Sans Bold) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSans-BoldOblique, DejaVuSans-BoldOblique.ttf, DejaVu Sans Bold Oblique) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Verabd, VeraBd.ttf, Vera Sans Bold)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSans-BoldOblique, DejaVuSans-BoldOblique.ttf, DejaVu Sans Bold Oblique) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-STD_FONTUNX_FILE( gid_File_Fnt_Verabi, VeraBI.ttf, Vera Sans Bold Oblique)
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSans-Oblique, DejaVuSans-Oblique.ttf, DejaVu Sans Oblique) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Verabi, VeraBI.ttf, Vera Sans Bold Italic)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSans-Oblique, DejaVuSans-Oblique.ttf, DejaVu Sans Oblique) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-STD_FONTUNX_FILE( gid_File_Fnt_Verait, VeraIt.ttf, Vera Sans Oblique)
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSans, DejaVuSans.ttf, DejaVu Sans) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Verait, VeraIt.ttf, Vera Sans Italic)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSans, DejaVuSans.ttf, DejaVu Sans) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-STD_FONTUNX_FILE( gid_File_Fnt_Veramobd, VeraMoBd.ttf, Vera Sans Mono Bold)
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSansCondensed-Bold, DejaVuSansCondensed-Bold.ttf, DejaVu Sans Condensed Bold) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Veramobd, VeraMoBd.ttf, Vera Sans Mono Bold)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSansCondensed-Bold, DejaVuSansCondensed-Bold.ttf, DejaVu Sans Condensed Bold) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-STD_FONTUNX_FILE( gid_File_Fnt_Veramobi, VeraMoBI.ttf, Vera Sans Mono Bold Oblique)
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSansCondensed-BoldOblique, DejaVuSansCondensed-BoldOblique.ttf, DejaVu Sans Condensed Bold Oblique) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Veramobi, VeraMoBI.ttf, Vera Sans Mono Bold Italic)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSansCondensed-BoldOblique, DejaVuSansCondensed-BoldOblique.ttf, DejaVu Sans Condensed Bold Oblique) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-STD_FONTUNX_FILE( gid_File_Fnt_Veramoit, VeraMoIt.ttf, Vera Sans Mono Oblique)
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSansCondensed-Oblique, DejaVuSansCondensed-Oblique.ttf, DejaVu Sans Condensed Oblique) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Veramoit, VeraMoIt.ttf, Vera Sans Mono Italic)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSansCondensed-Oblique, DejaVuSansCondensed-Oblique.ttf, DejaVu Sans Condensed Oblique) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-STD_FONTUNX_FILE( gid_File_Fnt_Veramono, VeraMono.ttf, Vera Sans Mono)
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSansCondensed, DejaVuSansCondensed.ttf, DejaVu Sans Condensed) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Veramono, VeraMono.ttf, Vera Sans Mono)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSansCondensed, DejaVuSansCondensed.ttf, DejaVu Sans Condensed) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-STD_FONTUNX_FILE( gid_File_Fnt_Verase, VeraSe.ttf, Vera Serif)
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSansMono-Bold, DejaVuSansMono-Bold.ttf, DejaVu Sans Mono Bold) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Verase, VeraSe.ttf, Vera Serif)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSansMono-Bold, DejaVuSansMono-Bold.ttf, DejaVu Sans Mono Bold) 
-+#endif 
-+#endif 
-+
-+#ifdef UNX 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ 
+ #ifdef UNX
+ #ifndef WITHOUT_FONTS
+-STD_FONTUNX_FILE( gid_File_Fnt_Verasebd, VeraSeBd.ttf, Vera Serif Bold)
 +STD_FONTUNX_FILE( gid_File_Fnt_DejaVuSansMono-BoldOblique, DejaVuSansMono-BoldOblique.ttf, DejaVu Sans Mono Bold Oblique) 
-+#endif 
-+#endif 
-+#ifdef WNT 
-+#ifndef WITHOUT_FONTS 
+ #endif
+ #endif
+ #ifdef WNT
+ #ifndef WITHOUT_FONTS
+-STD_FONTWIN_FILE( gid_File_Fnt_Verasebd, VeraSeBd.ttf, Vera Serif Bold)
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSansMono-BoldOblique, DejaVuSansMono-BoldOblique.ttf, DejaVu Sans Mono Bold Oblique) 
-+#endif 
-+#endif
+ #endif
+ #endif
 +
 +#ifdef UNX 
 +#ifndef WITHOUT_FONTS 
@@ -330,67 +294,13 @@
 +STD_FONTWIN_FILE( gid_File_Fnt_DejaVuSerifCondensed, DejaVuSerifCondensed.ttf, DejaVu Serif Condensed) 
 +#endif 
 +#endif 
- 
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--STD_FONTUNX_FILE( gid_File_Fnt_Veramobi, VeraMoBI.ttf, Vera Sans Mono Bold Oblique)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Veramobi, VeraMoBI.ttf, Vera Sans Mono Bold Italic)
--#endif
--#endif
--
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--STD_FONTUNX_FILE( gid_File_Fnt_Veramoit, VeraMoIt.ttf, Vera Sans Mono Oblique)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Veramoit, VeraMoIt.ttf, Vera Sans Mono Italic)
--#endif
--#endif
--
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--STD_FONTUNX_FILE( gid_File_Fnt_Veramono, VeraMono.ttf, Vera Sans Mono)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Veramono, VeraMono.ttf, Vera Sans Mono)
--#endif
--#endif
--
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--STD_FONTUNX_FILE( gid_File_Fnt_Verase, VeraSe.ttf, Vera Serif)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Verase, VeraSe.ttf, Vera Serif)
--#endif
--#endif
--
--#ifdef UNX
--#ifndef WITHOUT_FONTS
--STD_FONTUNX_FILE( gid_File_Fnt_Verasebd, VeraSeBd.ttf, Vera Serif Bold)
--#endif
--#endif
--#ifdef WNT
--#ifndef WITHOUT_FONTS
--STD_FONTWIN_FILE( gid_File_Fnt_Verasebd, VeraSeBd.ttf, Vera Serif Bold)
--#endif
--#endif
---- vcl/source/gdi/fontcfg.cxx.orig	2005-09-09 13:57:35.000000000 +0200
-+++ vcl/source/gdi/fontcfg.cxx	2006-01-16 17:29:32.906892900 +0100
-@@ -374,8 +374,8 @@
++
+--- vcl/source/gdi/fontcfg.cxx.orig	2007-08-10 19:18:48.000000000 +0200
++++ vcl/source/gdi/fontcfg.cxx	2007-09-12 15:16:07.833270400 +0200
+@@ -303,8 +303,8 @@
  
      // fallback mechanism (either no configuration or no entry in configuration
-
+ 
 -    #define FALLBACKFONT_UI_SANS "Andale Sans UI;Albany;Albany AMT;Tahoma;Arial Unicode MS;Arial;Nimbus Sans L;Bitstream Vera Sans;gnu-unifont;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
 -    #define FALLBACKFONT_UI_SANS_LATIN2 "Andale Sans UI;Albany;Albany AMT;Tahoma;Arial Unicode MS;Arial;Nimbus Sans L;Luxi Sans;Bitstream Vera Sans;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
 +    #define FALLBACKFONT_UI_SANS "Andale Sans UI;Albany;Albany AMT;Tahoma;Arial Unicode MS;Arial;Nimbus Sans L;DejaVu Sans;Bitstream Vera Sans;gnu-unifont;Interface User;Geneva;WarpSans;Dialog;Swiss;Lucida;Helvetica;Charcoal;Chicago;MS Sans Serif;Helv;Times;Times New Roman;Interface System"
@@ -398,117 +308,8 @@
      #define FALLBACKFONT_UI_SANS_ARABIC "Tahoma;Traditional Arabic;Simplified Arabic;Lucidasans;Lucida Sans;Supplement;Andale Sans UI;clearlyU;Interface User;Arial Unicode MS;Lucida Sans Unicode;WarpSans;Geneva;MS Sans Serif;Helv;Dialog;Albany;Lucida;Helvetica;Charcoal;Chicago;Arial;Helmet;Interface System;Sans Serif"
      #define FALLBACKFONT_UI_SANS_THAI "OONaksit;Tahoma;Lucidasans;Arial Unicode MS"
      #define FALLBACKFONT_UI_SANS_KOREAN "SunGulim;BaekmukGulim;Gulim;Roundgothic;Arial Unicode MS;Lucida Sans Unicode;gnu-unifont;Andale Sans UI"
-diff -Naur helpcontent2/source/auxiliary.orig/af/default.css helpcontent2/source/auxiliary/af/default.css
---- helpcontent2/source/auxiliary.orig/af/default.css	2005-11-15 20:33:53.000000000 +0100
-+++ helpcontent2/source/auxiliary/af/default.css	2006-01-16 17:37:49.850753700 +0100
-@@ -10,10 +10,10 @@
- 
-
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/af/highcontrast1.css helpcontent2/source/auxiliary/af/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/af/highcontrast1.css	2005-11-15 20:34:08.000000000 +0100
-+++ helpcontent2/source/auxiliary/af/highcontrast1.css	2006-01-16 17:37:49.772627700 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/af/highcontrast2.css helpcontent2/source/auxiliary/af/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/af/highcontrast2.css	2005-11-15 20:34:21.000000000 +0100
-+++ helpcontent2/source/auxiliary/af/highcontrast2.css	2006-01-16 17:37:49.710126900 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/af/highcontrastblack.css helpcontent2/source/auxiliary/af/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/af/highcontrastblack.css	2005-11-15 20:35:10.000000000 +0100
-+++ helpcontent2/source/auxiliary/af/highcontrastblack.css	2006-01-16 17:37:49.647626100 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/af/highcontrastwhite.css helpcontent2/source/auxiliary/af/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/af/highcontrastwhite.css	2005-11-15 20:35:21.000000000 +0100
-+++ helpcontent2/source/auxiliary/af/highcontrastwhite.css	2006-01-16 17:37:49.585125300 +0100
-@@ -10,10 +10,10 @@
- 
- 
- body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
--	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
-+	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
- 
- .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
--	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
-+	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
- 
- .acronym 
- 	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/be-BY/default.css helpcontent2/source/auxiliary/be-BY/default.css
---- helpcontent2/source/auxiliary.orig/be-BY/default.css	2005-11-15 20:37:03.000000000 +0100
-+++ helpcontent2/source/auxiliary/be-BY/default.css	2006-01-16 17:37:49.522624500 +0100
+--- helpcontent2/source/auxiliary/af/default.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/af/default.css	2007-09-12 15:16:07.942646800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -522,9 +323,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/be-BY/default.css helpcontent2/sou
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/be-BY/highcontrast1.css helpcontent2/source/auxiliary/be-BY/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/be-BY/highcontrast1.css	2005-11-15 20:37:16.000000000 +0100
-+++ helpcontent2/source/auxiliary/be-BY/highcontrast1.css	2006-01-16 17:37:49.460123700 +0100
+--- helpcontent2/source/auxiliary/af/highcontrast1.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/af/highcontrast1.css	2007-09-12 15:16:07.958272000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -538,16 +338,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/be-BY/highcontrast1.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/be-BY/highcontrast2.css helpcontent2/source/auxiliary/be-BY/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/be-BY/highcontrast2.css	2005-11-15 20:37:28.000000000 +0100
-+++ helpcontent2/source/auxiliary/be-BY/highcontrast2.css	2006-01-16 17:37:49.397622900 +0100
+--- helpcontent2/source/auxiliary/af/highcontrast2.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/af/highcontrast2.css	2007-09-12 15:16:07.973897200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -561,16 +353,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/be-BY/highcontrast2.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/be-BY/highcontrastblack.css helpcontent2/source/auxiliary/be-BY/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/be-BY/highcontrastblack.css	2005-11-15 20:37:39.000000000 +0100
-+++ helpcontent2/source/auxiliary/be-BY/highcontrastblack.css	2006-01-16 17:37:49.319496900 +0100
+--- helpcontent2/source/auxiliary/af/highcontrastblack.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/af/highcontrastblack.css	2007-09-12 15:16:08.005147600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -584,16 +368,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/be-BY/highcontrastblack.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/be-BY/highcontrastwhite.css helpcontent2/source/auxiliary/be-BY/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/be-BY/highcontrastwhite.css	2005-11-15 20:37:51.000000000 +0100
-+++ helpcontent2/source/auxiliary/be-BY/highcontrastwhite.css	2006-01-16 17:37:49.241370900 +0100
+--- helpcontent2/source/auxiliary/af/highcontrastwhite.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/af/highcontrastwhite.css	2007-09-12 15:16:08.020772800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -607,16 +383,83 @@ diff -Naur helpcontent2/source/auxiliary.orig/be-BY/highcontrastwhite.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
+--- helpcontent2/source/auxiliary/be-BY/default.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/be-BY/default.css	2007-09-12 15:16:08.036398000 +0200
+@@ -10,10 +10,10 @@
  
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/bg/default.css helpcontent2/source/auxiliary/bg/default.css
---- helpcontent2/source/auxiliary.orig/bg/default.css	2005-06-24 13:50:54.000000000 +0200
-+++ helpcontent2/source/auxiliary/bg/default.css	2006-01-16 17:37:49.178870100 +0100
+ 
+ body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
+-	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
++	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
+ 
+ .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
+-	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
++	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
+ 
+ .acronym 
+ 	{ font-weight: bold; }
+--- helpcontent2/source/auxiliary/be-BY/highcontrast1.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/be-BY/highcontrast1.css	2007-09-12 15:16:08.052023200 +0200
+@@ -10,10 +10,10 @@
+ 
+ 
+ body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
+-	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
++	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
+ 
+ .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
+-	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
++	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
+ 
+ .acronym 
+ 	{ font-weight: bold;}
+--- helpcontent2/source/auxiliary/be-BY/highcontrast2.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/be-BY/highcontrast2.css	2007-09-12 15:16:08.067648400 +0200
+@@ -10,10 +10,10 @@
+ 
+ 
+ body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
+-	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
++	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
+ 
+ .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
+-	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
++	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
+ 
+ .acronym 
+ 	{ font-weight: bold;}
+--- helpcontent2/source/auxiliary/be-BY/highcontrastblack.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/be-BY/highcontrastblack.css	2007-09-12 15:16:08.083273600 +0200
+@@ -10,10 +10,10 @@
+ 
+ 
+ body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
+-	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
++	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
+ 
+ .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
+-	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
++	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
+ 
+ .acronym 
+ 	{ font-weight: bold;}
+--- helpcontent2/source/auxiliary/be-BY/highcontrastwhite.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/be-BY/highcontrastwhite.css	2007-09-12 15:16:08.114524000 +0200
+@@ -10,10 +10,10 @@
+ 
+ 
+ body, p, h1, h2, h3, h4, h5, h6, .listitem, .listitemintable, .tablecontent, .tablecontentintable
+-	{ font-family: "Bitstream Vera Sans",Arial,Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
++	{ font-family: Arial,"DejaVu Sans","Bitstream Vera Sans",Helvetica,Lucida,Geneva,Helmet,sans-serif,"Andale Sans UI","Arial Unicode MS","Lucida Sans Unicode",Tahoma; }
+ 
+ .code, .codeintable, .example, .exampleintable, .literal, .literalintable, .path, .pathintable
+-	{ font-family: "Bitstream Vera Sans Mono",Cumberland,"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
++	{ font-family: "Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",Cumberland,Courier,"Lucida Sans Typewriter","Lucida Typewriter",Monaco,Monospaced; margin-top: 1pt; margin-bottom: 1pt;}
+ 
+ .acronym 
+ 	{ font-weight: bold;}
+--- helpcontent2/source/auxiliary/bg/default.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bg/default.css	2007-09-12 15:16:08.130149200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -630,9 +473,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bg/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/bg/highcontrast1.css helpcontent2/source/auxiliary/bg/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/bg/highcontrast1.css	2005-06-24 13:51:05.000000000 +0200
-+++ helpcontent2/source/auxiliary/bg/highcontrast1.css	2006-01-16 17:37:49.116369300 +0100
+--- helpcontent2/source/auxiliary/bg/highcontrast1.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bg/highcontrast1.css	2007-09-12 15:16:08.145774400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -646,9 +488,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bg/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-diff -Naur helpcontent2/source/auxiliary.orig/bg/highcontrast2.css helpcontent2/source/auxiliary/bg/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/bg/highcontrast2.css	2005-06-24 13:51:19.000000000 +0200
-+++ helpcontent2/source/auxiliary/bg/highcontrast2.css	2006-01-16 17:37:49.053868500 +0100
+--- helpcontent2/source/auxiliary/bg/highcontrast2.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bg/highcontrast2.css	2007-09-12 15:16:08.177024800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -662,9 +503,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bg/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-diff -Naur helpcontent2/source/auxiliary.orig/bg/highcontrastblack.css helpcontent2/source/auxiliary/bg/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/bg/highcontrastblack.css	2005-06-24 13:51:36.000000000 +0200
-+++ helpcontent2/source/auxiliary/bg/highcontrastblack.css	2006-01-16 17:37:48.991367700 +0100
+--- helpcontent2/source/auxiliary/bg/highcontrastblack.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bg/highcontrastblack.css	2007-09-12 15:16:08.192650000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -678,9 +518,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bg/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-diff -Naur helpcontent2/source/auxiliary.orig/bg/highcontrastwhite.css helpcontent2/source/auxiliary/bg/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/bg/highcontrastwhite.css	2005-06-24 13:51:47.000000000 +0200
-+++ helpcontent2/source/auxiliary/bg/highcontrastwhite.css	2006-01-16 17:37:48.928866900 +0100
+--- helpcontent2/source/auxiliary/bg/highcontrastwhite.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bg/highcontrastwhite.css	2007-09-12 15:16:08.208275200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -694,9 +533,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bg/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-diff -Naur helpcontent2/source/auxiliary.orig/bn/default.css helpcontent2/source/auxiliary/bn/default.css
---- helpcontent2/source/auxiliary.orig/bn/default.css	2005-11-15 20:40:01.000000000 +0100
-+++ helpcontent2/source/auxiliary/bn/default.css	2006-01-16 17:37:48.866366100 +0100
+--- helpcontent2/source/auxiliary/bn/default.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bn/default.css	2007-09-12 15:16:08.223900400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -710,9 +548,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bn/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/bn/highcontrast1.css helpcontent2/source/auxiliary/bn/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/bn/highcontrast1.css	2005-11-15 20:40:14.000000000 +0100
-+++ helpcontent2/source/auxiliary/bn/highcontrast1.css	2006-01-16 17:37:48.803865300 +0100
+--- helpcontent2/source/auxiliary/bn/highcontrast1.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bn/highcontrast1.css	2007-09-12 15:16:08.239525600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -726,16 +563,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bn/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/bn/highcontrast2.css helpcontent2/source/auxiliary/bn/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/bn/highcontrast2.css	2005-11-15 20:40:26.000000000 +0100
-+++ helpcontent2/source/auxiliary/bn/highcontrast2.css	2006-01-16 17:37:48.725739300 +0100
+--- helpcontent2/source/auxiliary/bn/highcontrast2.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bn/highcontrast2.css	2007-09-12 15:16:08.255150800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -749,16 +578,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bn/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/bn/highcontrastblack.css helpcontent2/source/auxiliary/bn/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/bn/highcontrastblack.css	2005-11-15 20:40:38.000000000 +0100
-+++ helpcontent2/source/auxiliary/bn/highcontrastblack.css	2006-01-16 17:37:48.663238500 +0100
+--- helpcontent2/source/auxiliary/bn/highcontrastblack.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bn/highcontrastblack.css	2007-09-12 15:16:08.286401200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -772,16 +593,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bn/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/bn/highcontrastwhite.css helpcontent2/source/auxiliary/bn/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/bn/highcontrastwhite.css	2005-11-15 20:40:49.000000000 +0100
-+++ helpcontent2/source/auxiliary/bn/highcontrastwhite.css	2006-01-16 17:37:48.600737700 +0100
+--- helpcontent2/source/auxiliary/bn/highcontrastwhite.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bn/highcontrastwhite.css	2007-09-12 15:16:08.302026400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -795,16 +608,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bn/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/bs/default.css helpcontent2/source/auxiliary/bs/default.css
---- helpcontent2/source/auxiliary.orig/bs/default.css	2005-11-15 20:42:34.000000000 +0100
-+++ helpcontent2/source/auxiliary/bs/default.css	2006-01-16 17:37:48.538236900 +0100
+--- helpcontent2/source/auxiliary/bs/default.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bs/default.css	2007-09-12 15:16:08.317651600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -818,9 +623,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bs/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/bs/highcontrast1.css helpcontent2/source/auxiliary/bs/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/bs/highcontrast1.css	2005-11-15 20:42:45.000000000 +0100
-+++ helpcontent2/source/auxiliary/bs/highcontrast1.css	2006-01-16 17:37:48.475736100 +0100
+--- helpcontent2/source/auxiliary/bs/highcontrast1.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bs/highcontrast1.css	2007-09-12 15:16:08.333276800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -834,16 +638,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bs/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/bs/highcontrast2.css helpcontent2/source/auxiliary/bs/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/bs/highcontrast2.css	2005-11-15 20:42:59.000000000 +0100
-+++ helpcontent2/source/auxiliary/bs/highcontrast2.css	2006-01-16 17:37:48.413235300 +0100
+--- helpcontent2/source/auxiliary/bs/highcontrast2.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bs/highcontrast2.css	2007-09-12 15:16:08.348902000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -857,16 +653,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bs/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/bs/highcontrastblack.css helpcontent2/source/auxiliary/bs/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/bs/highcontrastblack.css	2005-11-15 20:43:12.000000000 +0100
-+++ helpcontent2/source/auxiliary/bs/highcontrastblack.css	2006-01-16 17:37:48.350734500 +0100
+--- helpcontent2/source/auxiliary/bs/highcontrastblack.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bs/highcontrastblack.css	2007-09-12 15:16:08.364527200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -880,16 +668,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bs/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/bs/highcontrastwhite.css helpcontent2/source/auxiliary/bs/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/bs/highcontrastwhite.css	2005-11-15 20:43:25.000000000 +0100
-+++ helpcontent2/source/auxiliary/bs/highcontrastwhite.css	2006-01-16 17:37:48.272608500 +0100
+--- helpcontent2/source/auxiliary/bs/highcontrastwhite.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/bs/highcontrastwhite.css	2007-09-12 15:16:08.395777600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -903,16 +683,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/bs/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/cy/default.css helpcontent2/source/auxiliary/cy/default.css
---- helpcontent2/source/auxiliary.orig/cy/default.css	2005-09-05 13:37:49.000000000 +0200
-+++ helpcontent2/source/auxiliary/cy/default.css	2006-01-16 17:37:48.210107700 +0100
+--- helpcontent2/source/auxiliary/cy/default.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/cy/default.css	2007-09-12 15:16:08.427028000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -926,9 +698,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/cy/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/cy/highcontrast1.css helpcontent2/source/auxiliary/cy/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/cy/highcontrast1.css	2005-09-05 13:38:04.000000000 +0200
-+++ helpcontent2/source/auxiliary/cy/highcontrast1.css	2006-01-16 17:37:48.147606900 +0100
+--- helpcontent2/source/auxiliary/cy/highcontrast1.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/cy/highcontrast1.css	2007-09-12 15:16:08.442653200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -942,16 +713,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/cy/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/cy/highcontrast2.css helpcontent2/source/auxiliary/cy/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/cy/highcontrast2.css	2005-09-05 13:38:17.000000000 +0200
-+++ helpcontent2/source/auxiliary/cy/highcontrast2.css	2006-01-16 17:37:48.085106100 +0100
+--- helpcontent2/source/auxiliary/cy/highcontrast2.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/cy/highcontrast2.css	2007-09-12 15:16:08.473903600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -965,16 +728,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/cy/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/cy/highcontrastblack.css helpcontent2/source/auxiliary/cy/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/cy/highcontrastblack.css	2005-09-05 13:38:33.000000000 +0200
-+++ helpcontent2/source/auxiliary/cy/highcontrastblack.css	2006-01-16 17:37:48.022605300 +0100
+--- helpcontent2/source/auxiliary/cy/highcontrastblack.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/cy/highcontrastblack.css	2007-09-12 15:16:08.489528800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -988,16 +743,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/cy/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/cy/highcontrastwhite.css helpcontent2/source/auxiliary/cy/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/cy/highcontrastwhite.css	2005-09-05 13:38:57.000000000 +0200
-+++ helpcontent2/source/auxiliary/cy/highcontrastwhite.css	2006-01-16 17:37:47.944479300 +0100
+--- helpcontent2/source/auxiliary/cy/highcontrastwhite.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/cy/highcontrastwhite.css	2007-09-12 15:16:08.505154000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1011,16 +758,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/cy/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/da/default.css helpcontent2/source/auxiliary/da/default.css
---- helpcontent2/source/auxiliary.orig/da/default.css	2005-09-05 13:40:57.000000000 +0200
-+++ helpcontent2/source/auxiliary/da/default.css	2006-01-16 17:37:47.881978500 +0100
+--- helpcontent2/source/auxiliary/da/default.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/da/default.css	2007-09-12 15:16:08.520779200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1034,9 +773,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/da/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/da/highcontrast1.css helpcontent2/source/auxiliary/da/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/da/highcontrast1.css	2005-09-05 13:41:12.000000000 +0200
-+++ helpcontent2/source/auxiliary/da/highcontrast1.css	2006-01-16 17:37:47.819477700 +0100
+--- helpcontent2/source/auxiliary/da/highcontrast1.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/da/highcontrast1.css	2007-09-12 15:16:08.536404400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1050,16 +788,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/da/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/da/highcontrast2.css helpcontent2/source/auxiliary/da/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/da/highcontrast2.css	2005-09-05 13:41:26.000000000 +0200
-+++ helpcontent2/source/auxiliary/da/highcontrast2.css	2006-01-16 17:37:47.756976900 +0100
+--- helpcontent2/source/auxiliary/da/highcontrast2.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/da/highcontrast2.css	2007-09-12 15:16:08.692656400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1073,16 +803,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/da/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/da/highcontrastblack.css helpcontent2/source/auxiliary/da/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/da/highcontrastblack.css	2005-09-05 13:41:40.000000000 +0200
-+++ helpcontent2/source/auxiliary/da/highcontrastblack.css	2006-01-16 17:37:47.694476100 +0100
+--- helpcontent2/source/auxiliary/da/highcontrastblack.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/da/highcontrastblack.css	2007-09-12 15:16:08.708281600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1096,16 +818,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/da/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/da/highcontrastwhite.css helpcontent2/source/auxiliary/da/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/da/highcontrastwhite.css	2005-09-05 13:41:56.000000000 +0200
-+++ helpcontent2/source/auxiliary/da/highcontrastwhite.css	2006-01-16 17:37:47.631975300 +0100
+--- helpcontent2/source/auxiliary/da/highcontrastwhite.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/da/highcontrastwhite.css	2007-09-12 15:16:08.786407600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1119,16 +833,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/da/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/de/default.css helpcontent2/source/auxiliary/de/default.css
---- helpcontent2/source/auxiliary.orig/de/default.css	2005-01-28 10:31:28.000000000 +0100
-+++ helpcontent2/source/auxiliary/de/default.css	2006-01-16 17:37:47.569474500 +0100
+--- helpcontent2/source/auxiliary/de/default.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/de/default.css	2007-09-12 15:16:09.005160400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1142,9 +848,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/de/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrast1.css helpcontent2/source/auxiliary/de/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/de/highcontrast1.css	2004-12-16 13:21:12.000000000 +0100
-+++ helpcontent2/source/auxiliary/de/highcontrast1.css	2006-01-16 17:37:47.506973700 +0100
+--- helpcontent2/source/auxiliary/de/highcontrast1.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/de/highcontrast1.css	2007-09-12 15:16:09.020785600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1158,16 +863,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrast2.css helpcontent2/source/auxiliary/de/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/de/highcontrast2.css	2004-12-16 13:21:27.000000000 +0100
-+++ helpcontent2/source/auxiliary/de/highcontrast2.css	2006-01-16 17:37:47.444472900 +0100
+--- helpcontent2/source/auxiliary/de/highcontrast2.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/de/highcontrast2.css	2007-09-12 15:16:09.255163600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1181,16 +878,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrastblack.css helpcontent2/source/auxiliary/de/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/de/highcontrastblack.css	2004-12-16 13:21:38.000000000 +0100
-+++ helpcontent2/source/auxiliary/de/highcontrastblack.css	2006-01-16 17:37:47.381972100 +0100
+--- helpcontent2/source/auxiliary/de/highcontrastblack.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/de/highcontrastblack.css	2007-09-12 15:16:09.270788800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1204,16 +893,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrastwhite.css helpcontent2/source/auxiliary/de/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/de/highcontrastwhite.css	2004-12-16 13:21:50.000000000 +0100
-+++ helpcontent2/source/auxiliary/de/highcontrastwhite.css	2006-01-16 17:37:47.303846100 +0100
+--- helpcontent2/source/auxiliary/de/highcontrastwhite.css.orig	2007-08-10 19:09:26.000000000 +0200
++++ helpcontent2/source/auxiliary/de/highcontrastwhite.css	2007-09-12 15:16:09.286414000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1227,16 +908,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/de/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-GB/default.css helpcontent2/source/auxiliary/en-GB/default.css
---- helpcontent2/source/auxiliary.orig/en-GB/default.css	2005-06-24 13:53:22.000000000 +0200
-+++ helpcontent2/source/auxiliary/en-GB/default.css	2006-01-16 17:37:46.881965700 +0100
+--- helpcontent2/source/auxiliary/en-GB/default.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-GB/default.css	2007-09-12 15:16:09.880171600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1250,9 +923,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-GB/default.css helpcontent2/sou
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-GB/highcontrast1.css helpcontent2/source/auxiliary/en-GB/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/en-GB/highcontrast1.css	2005-06-24 13:53:32.000000000 +0200
-+++ helpcontent2/source/auxiliary/en-GB/highcontrast1.css	2006-01-16 17:37:46.819464900 +0100
+--- helpcontent2/source/auxiliary/en-GB/highcontrast1.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-GB/highcontrast1.css	2007-09-12 15:16:09.911422000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1266,16 +938,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-GB/highcontrast1.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-GB/highcontrast2.css helpcontent2/source/auxiliary/en-GB/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/en-GB/highcontrast2.css	2005-06-24 13:53:44.000000000 +0200
-+++ helpcontent2/source/auxiliary/en-GB/highcontrast2.css	2006-01-16 17:37:46.756964100 +0100
+--- helpcontent2/source/auxiliary/en-GB/highcontrast2.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-GB/highcontrast2.css	2007-09-12 15:16:10.333302400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1289,16 +953,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-GB/highcontrast2.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-GB/highcontrastblack.css helpcontent2/source/auxiliary/en-GB/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/en-GB/highcontrastblack.css	2005-06-24 13:53:55.000000000 +0200
-+++ helpcontent2/source/auxiliary/en-GB/highcontrastblack.css	2006-01-16 17:37:46.694463300 +0100
+--- helpcontent2/source/auxiliary/en-GB/highcontrastblack.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-GB/highcontrastblack.css	2007-09-12 15:16:10.692682000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1312,16 +968,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-GB/highcontrastblack.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-GB/highcontrastwhite.css helpcontent2/source/auxiliary/en-GB/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/en-GB/highcontrastwhite.css	2005-06-24 13:54:06.000000000 +0200
-+++ helpcontent2/source/auxiliary/en-GB/highcontrastwhite.css	2006-01-16 17:37:46.631962500 +0100
+--- helpcontent2/source/auxiliary/en-GB/highcontrastwhite.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-GB/highcontrastwhite.css	2007-09-12 15:16:10.723932400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1335,16 +983,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-GB/highcontrastwhite.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-US/default.css helpcontent2/source/auxiliary/en-US/default.css
---- helpcontent2/source/auxiliary.orig/en-US/default.css	2005-01-28 10:33:02.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-US/default.css	2006-01-16 17:37:46.553836500 +0100
+--- helpcontent2/source/auxiliary/en-US/default.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-US/default.css	2007-09-12 15:16:10.739557600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1358,9 +998,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-US/default.css helpcontent2/sou
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-US/highcontrast1.css helpcontent2/source/auxiliary/en-US/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/en-US/highcontrast1.css	2004-12-16 13:23:25.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-US/highcontrast1.css	2006-01-16 17:37:46.491335700 +0100
+--- helpcontent2/source/auxiliary/en-US/highcontrast1.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-US/highcontrast1.css	2007-09-12 15:16:10.770808000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1374,16 +1013,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-US/highcontrast1.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-US/highcontrast2.css helpcontent2/source/auxiliary/en-US/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/en-US/highcontrast2.css	2004-12-16 13:23:39.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-US/highcontrast2.css	2006-01-16 17:37:46.428834900 +0100
+--- helpcontent2/source/auxiliary/en-US/highcontrast2.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-US/highcontrast2.css	2007-09-12 15:16:10.786433200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1397,16 +1028,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-US/highcontrast2.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-US/highcontrastblack.css helpcontent2/source/auxiliary/en-US/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/en-US/highcontrastblack.css	2004-12-16 13:23:52.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-US/highcontrastblack.css	2006-01-16 17:37:46.366334100 +0100
+--- helpcontent2/source/auxiliary/en-US/highcontrastblack.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-US/highcontrastblack.css	2007-09-12 15:16:10.802058400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1420,16 +1043,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-US/highcontrastblack.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-US/highcontrastwhite.css helpcontent2/source/auxiliary/en-US/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/en-US/highcontrastwhite.css	2004-12-16 13:24:07.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-US/highcontrastwhite.css	2006-01-16 17:37:46.288208100 +0100
+--- helpcontent2/source/auxiliary/en-US/highcontrastwhite.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-US/highcontrastwhite.css	2007-09-12 15:16:10.817683600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1443,16 +1058,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-US/highcontrastwhite.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/default.css helpcontent2/source/auxiliary/en-ZA/default.css
---- helpcontent2/source/auxiliary.orig/en-ZA/default.css	2005-11-15 20:45:10.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-ZA/default.css	2006-01-16 17:37:46.225707300 +0100
+--- helpcontent2/source/auxiliary/en-ZA/default.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-ZA/default.css	2007-09-12 15:16:10.848934000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1466,9 +1073,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/default.css helpcontent2/sou
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/highcontrast1.css helpcontent2/source/auxiliary/en-ZA/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/en-ZA/highcontrast1.css	2005-11-15 20:45:24.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-ZA/highcontrast1.css	2006-01-16 17:37:46.163206500 +0100
+--- helpcontent2/source/auxiliary/en-ZA/highcontrast1.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-ZA/highcontrast1.css	2007-09-12 15:16:10.864559200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1482,16 +1088,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/highcontrast1.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/highcontrast2.css helpcontent2/source/auxiliary/en-ZA/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/en-ZA/highcontrast2.css	2005-11-15 20:45:35.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-ZA/highcontrast2.css	2006-01-16 17:37:46.100705700 +0100
+--- helpcontent2/source/auxiliary/en-ZA/highcontrast2.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-ZA/highcontrast2.css	2007-09-12 15:16:10.880184400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1505,16 +1103,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/highcontrast2.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/highcontrastblack.css helpcontent2/source/auxiliary/en-ZA/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/en-ZA/highcontrastblack.css	2005-11-15 20:45:52.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-ZA/highcontrastblack.css	2006-01-16 17:37:46.038204900 +0100
+--- helpcontent2/source/auxiliary/en-ZA/highcontrastblack.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-ZA/highcontrastblack.css	2007-09-12 15:16:10.911434800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1528,16 +1118,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/highcontrastblack.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/highcontrastwhite.css helpcontent2/source/auxiliary/en-ZA/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/en-ZA/highcontrastwhite.css	2005-11-15 20:46:04.000000000 +0100
-+++ helpcontent2/source/auxiliary/en-ZA/highcontrastwhite.css	2006-01-16 17:37:45.975704100 +0100
+--- helpcontent2/source/auxiliary/en-ZA/highcontrastwhite.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/en-ZA/highcontrastwhite.css	2007-09-12 15:16:10.927060000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1551,16 +1133,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/en-ZA/highcontrastwhite.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/es/default.css helpcontent2/source/auxiliary/es/default.css
---- helpcontent2/source/auxiliary.orig/es/default.css	2005-01-28 10:35:21.000000000 +0100
-+++ helpcontent2/source/auxiliary/es/default.css	2006-01-16 17:37:45.913203300 +0100
+--- helpcontent2/source/auxiliary/es/default.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/es/default.css	2007-09-12 15:16:10.942685200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1574,9 +1148,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/es/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/es/highcontrast1.css helpcontent2/source/auxiliary/es/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/es/highcontrast1.css	2004-12-16 13:25:38.000000000 +0100
-+++ helpcontent2/source/auxiliary/es/highcontrast1.css	2006-01-16 17:37:45.850702500 +0100
+--- helpcontent2/source/auxiliary/es/highcontrast1.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/es/highcontrast1.css	2007-09-12 15:16:10.958310400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1590,16 +1163,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/es/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/es/highcontrast2.css helpcontent2/source/auxiliary/es/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/es/highcontrast2.css	2004-12-16 13:25:52.000000000 +0100
-+++ helpcontent2/source/auxiliary/es/highcontrast2.css	2006-01-16 17:37:45.788201700 +0100
+--- helpcontent2/source/auxiliary/es/highcontrast2.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/es/highcontrast2.css	2007-09-12 15:16:10.973935600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1613,16 +1178,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/es/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/es/highcontrastblack.css helpcontent2/source/auxiliary/es/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/es/highcontrastblack.css	2004-12-16 13:26:06.000000000 +0100
-+++ helpcontent2/source/auxiliary/es/highcontrastblack.css	2006-01-16 17:37:45.725700900 +0100
+--- helpcontent2/source/auxiliary/es/highcontrastblack.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/es/highcontrastblack.css	2007-09-12 15:16:11.005186000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1636,16 +1193,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/es/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/es/highcontrastwhite.css helpcontent2/source/auxiliary/es/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/es/highcontrastwhite.css	2004-12-16 13:26:19.000000000 +0100
-+++ helpcontent2/source/auxiliary/es/highcontrastwhite.css	2006-01-16 17:37:45.663200100 +0100
+--- helpcontent2/source/auxiliary/es/highcontrastwhite.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/es/highcontrastwhite.css	2007-09-12 15:16:11.020811200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1659,16 +1208,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/es/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/et/default.css helpcontent2/source/auxiliary/et/default.css
---- helpcontent2/source/auxiliary.orig/et/default.css	2005-04-29 11:17:23.000000000 +0200
-+++ helpcontent2/source/auxiliary/et/default.css	2006-01-16 17:37:45.585074100 +0100
+--- helpcontent2/source/auxiliary/et/default.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/et/default.css	2007-09-12 15:16:11.036436400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1682,9 +1223,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/et/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/et/highcontrast1.css helpcontent2/source/auxiliary/et/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/et/highcontrast1.css	2005-04-29 11:17:43.000000000 +0200
-+++ helpcontent2/source/auxiliary/et/highcontrast1.css	2006-01-16 17:37:45.522573300 +0100
+--- helpcontent2/source/auxiliary/et/highcontrast1.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/et/highcontrast1.css	2007-09-12 15:16:11.052061600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1698,16 +1238,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/et/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/et/highcontrast2.css helpcontent2/source/auxiliary/et/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/et/highcontrast2.css	2005-04-29 11:17:55.000000000 +0200
-+++ helpcontent2/source/auxiliary/et/highcontrast2.css	2006-01-16 17:37:45.460072500 +0100
+--- helpcontent2/source/auxiliary/et/highcontrast2.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/et/highcontrast2.css	2007-09-12 15:16:11.067686800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1721,16 +1253,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/et/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/et/highcontrastblack.css helpcontent2/source/auxiliary/et/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/et/highcontrastblack.css	2005-04-29 11:18:11.000000000 +0200
-+++ helpcontent2/source/auxiliary/et/highcontrastblack.css	2006-01-16 17:37:45.397571700 +0100
+--- helpcontent2/source/auxiliary/et/highcontrastblack.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/et/highcontrastblack.css	2007-09-12 15:16:11.098937200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1744,16 +1268,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/et/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/et/highcontrastwhite.css helpcontent2/source/auxiliary/et/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/et/highcontrastwhite.css	2005-04-29 11:18:24.000000000 +0200
-+++ helpcontent2/source/auxiliary/et/highcontrastwhite.css	2006-01-16 17:37:45.335070900 +0100
+--- helpcontent2/source/auxiliary/et/highcontrastwhite.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/et/highcontrastwhite.css	2007-09-12 15:16:11.114562400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1767,16 +1283,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/et/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/fi/default.css helpcontent2/source/auxiliary/fi/default.css
---- helpcontent2/source/auxiliary.orig/fi/default.css	2005-09-05 13:48:28.000000000 +0200
-+++ helpcontent2/source/auxiliary/fi/default.css	2006-01-16 17:37:45.256944900 +0100
+--- helpcontent2/source/auxiliary/fi/default.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fi/default.css	2007-09-12 15:16:11.145812800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1790,9 +1298,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fi/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/fi/highcontrast1.css helpcontent2/source/auxiliary/fi/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/fi/highcontrast1.css	2005-09-05 13:48:41.000000000 +0200
-+++ helpcontent2/source/auxiliary/fi/highcontrast1.css	2006-01-16 17:37:45.194444100 +0100
+--- helpcontent2/source/auxiliary/fi/highcontrast1.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fi/highcontrast1.css	2007-09-12 15:16:11.161438000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1806,16 +1313,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fi/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/fi/highcontrast2.css helpcontent2/source/auxiliary/fi/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/fi/highcontrast2.css	2005-09-05 13:48:53.000000000 +0200
-+++ helpcontent2/source/auxiliary/fi/highcontrast2.css	2006-01-16 17:37:45.131943300 +0100
+--- helpcontent2/source/auxiliary/fi/highcontrast2.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fi/highcontrast2.css	2007-09-12 15:16:11.192688400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1829,16 +1328,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fi/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/fi/highcontrastblack.css helpcontent2/source/auxiliary/fi/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/fi/highcontrastblack.css	2005-09-05 13:49:06.000000000 +0200
-+++ helpcontent2/source/auxiliary/fi/highcontrastblack.css	2006-01-16 17:37:45.069442500 +0100
+--- helpcontent2/source/auxiliary/fi/highcontrastblack.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fi/highcontrastblack.css	2007-09-12 15:16:11.208313600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1852,16 +1343,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fi/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/fi/highcontrastwhite.css helpcontent2/source/auxiliary/fi/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/fi/highcontrastwhite.css	2005-09-05 13:49:25.000000000 +0200
-+++ helpcontent2/source/auxiliary/fi/highcontrastwhite.css	2006-01-16 17:37:44.991316500 +0100
+--- helpcontent2/source/auxiliary/fi/highcontrastwhite.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fi/highcontrastwhite.css	2007-09-12 15:16:11.223938800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1875,16 +1358,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fi/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/fr/default.css helpcontent2/source/auxiliary/fr/default.css
---- helpcontent2/source/auxiliary.orig/fr/default.css	2005-01-28 10:37:03.000000000 +0100
-+++ helpcontent2/source/auxiliary/fr/default.css	2006-01-16 17:37:44.928815700 +0100
+--- helpcontent2/source/auxiliary/fr/default.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fr/default.css	2007-09-12 15:16:11.255189200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1898,9 +1373,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fr/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrast1.css helpcontent2/source/auxiliary/fr/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/fr/highcontrast1.css	2004-12-16 13:28:13.000000000 +0100
-+++ helpcontent2/source/auxiliary/fr/highcontrast1.css	2006-01-16 17:37:44.866314900 +0100
+--- helpcontent2/source/auxiliary/fr/highcontrast1.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fr/highcontrast1.css	2007-09-12 15:16:11.286439600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1914,16 +1388,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrast2.css helpcontent2/source/auxiliary/fr/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/fr/highcontrast2.css	2004-12-16 13:28:25.000000000 +0100
-+++ helpcontent2/source/auxiliary/fr/highcontrast2.css	2006-01-16 17:37:44.803814100 +0100
+--- helpcontent2/source/auxiliary/fr/highcontrast2.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fr/highcontrast2.css	2007-09-12 15:16:11.427066400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1937,16 +1403,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrastblack.css helpcontent2/source/auxiliary/fr/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/fr/highcontrastblack.css	2004-12-16 13:28:39.000000000 +0100
-+++ helpcontent2/source/auxiliary/fr/highcontrastblack.css	2006-01-16 17:37:44.741313300 +0100
+--- helpcontent2/source/auxiliary/fr/highcontrastblack.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fr/highcontrastblack.css	2007-09-12 15:16:11.489567200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1960,16 +1418,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrastwhite.css helpcontent2/source/auxiliary/fr/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/fr/highcontrastwhite.css	2004-12-16 13:28:51.000000000 +0100
-+++ helpcontent2/source/auxiliary/fr/highcontrastwhite.css	2006-01-16 17:37:44.663187300 +0100
+--- helpcontent2/source/auxiliary/fr/highcontrastwhite.css.orig	2007-08-10 19:09:27.000000000 +0200
++++ helpcontent2/source/auxiliary/fr/highcontrastwhite.css	2007-09-12 15:16:11.505192400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -1983,16 +1433,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/fr/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/hr/default.css helpcontent2/source/auxiliary/hr/default.css
---- helpcontent2/source/auxiliary.orig/hr/default.css	2005-09-05 13:51:09.000000000 +0200
-+++ helpcontent2/source/auxiliary/hr/default.css	2006-01-16 17:37:44.272557300 +0100
+--- helpcontent2/source/auxiliary/hr/default.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hr/default.css	2007-09-12 15:16:11.833321600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2006,9 +1448,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hr/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/hr/highcontrast1.css helpcontent2/source/auxiliary/hr/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/hr/highcontrast1.css	2005-09-05 13:51:21.000000000 +0200
-+++ helpcontent2/source/auxiliary/hr/highcontrast1.css	2006-01-16 17:37:44.210056500 +0100
+--- helpcontent2/source/auxiliary/hr/highcontrast1.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hr/highcontrast1.css	2007-09-12 15:16:12.005198800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2022,16 +1463,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hr/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/hr/highcontrast2.css helpcontent2/source/auxiliary/hr/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/hr/highcontrast2.css	2005-09-05 13:51:37.000000000 +0200
-+++ helpcontent2/source/auxiliary/hr/highcontrast2.css	2006-01-16 17:37:44.147555700 +0100
+--- helpcontent2/source/auxiliary/hr/highcontrast2.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hr/highcontrast2.css	2007-09-12 15:16:12.020824000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2045,16 +1478,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hr/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/hr/highcontrastblack.css helpcontent2/source/auxiliary/hr/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/hr/highcontrastblack.css	2005-09-05 13:52:02.000000000 +0200
-+++ helpcontent2/source/auxiliary/hr/highcontrastblack.css	2006-01-16 17:37:44.085054900 +0100
+--- helpcontent2/source/auxiliary/hr/highcontrastblack.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hr/highcontrastblack.css	2007-09-12 15:16:12.614581600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2068,16 +1493,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hr/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/hr/highcontrastwhite.css helpcontent2/source/auxiliary/hr/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/hr/highcontrastwhite.css	2005-09-05 13:52:16.000000000 +0200
-+++ helpcontent2/source/auxiliary/hr/highcontrastwhite.css	2006-01-16 17:37:44.006928900 +0100
+--- helpcontent2/source/auxiliary/hr/highcontrastwhite.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hr/highcontrastwhite.css	2007-09-12 15:16:13.036462000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2091,16 +1508,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hr/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/hu/default.css helpcontent2/source/auxiliary/hu/default.css
---- helpcontent2/source/auxiliary.orig/hu/default.css	2005-10-28 12:12:08.000000000 +0200
-+++ helpcontent2/source/auxiliary/hu/default.css	2006-01-16 17:37:43.944428100 +0100
+--- helpcontent2/source/auxiliary/hu/default.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hu/default.css	2007-09-12 15:16:13.067712400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2114,9 +1523,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hu/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/hu/highcontrast1.css helpcontent2/source/auxiliary/hu/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/hu/highcontrast1.css	2005-10-28 12:12:18.000000000 +0200
-+++ helpcontent2/source/auxiliary/hu/highcontrast1.css	2006-01-16 17:37:43.881927300 +0100
+--- helpcontent2/source/auxiliary/hu/highcontrast1.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hu/highcontrast1.css	2007-09-12 15:16:13.395841600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2130,16 +1538,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hu/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/hu/highcontrast2.css helpcontent2/source/auxiliary/hu/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/hu/highcontrast2.css	2005-10-28 12:12:33.000000000 +0200
-+++ helpcontent2/source/auxiliary/hu/highcontrast2.css	2006-01-16 17:37:43.819426500 +0100
+--- helpcontent2/source/auxiliary/hu/highcontrast2.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hu/highcontrast2.css	2007-09-12 15:16:13.411466800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2153,16 +1553,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hu/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/hu/highcontrastblack.css helpcontent2/source/auxiliary/hu/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/hu/highcontrastblack.css	2005-10-28 12:12:44.000000000 +0200
-+++ helpcontent2/source/auxiliary/hu/highcontrastblack.css	2006-01-16 17:37:43.756925700 +0100
+--- helpcontent2/source/auxiliary/hu/highcontrastblack.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hu/highcontrastblack.css	2007-09-12 15:16:13.427092000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2176,16 +1568,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hu/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/hu/highcontrastwhite.css helpcontent2/source/auxiliary/hu/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/hu/highcontrastwhite.css	2005-10-28 12:12:55.000000000 +0200
-+++ helpcontent2/source/auxiliary/hu/highcontrastwhite.css	2006-01-16 17:37:43.600673700 +0100
+--- helpcontent2/source/auxiliary/hu/highcontrastwhite.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/hu/highcontrastwhite.css	2007-09-12 15:16:13.442717200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2199,16 +1583,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/hu/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/it/default.css helpcontent2/source/auxiliary/it/default.css
---- helpcontent2/source/auxiliary.orig/it/default.css	2005-01-28 10:38:47.000000000 +0100
-+++ helpcontent2/source/auxiliary/it/default.css	2006-01-16 17:37:43.538172900 +0100
+--- helpcontent2/source/auxiliary/it/default.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/it/default.css	2007-09-12 15:16:13.458342400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2222,9 +1598,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/it/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/it/highcontrast1.css helpcontent2/source/auxiliary/it/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/it/highcontrast1.css	2004-12-16 13:30:22.000000000 +0100
-+++ helpcontent2/source/auxiliary/it/highcontrast1.css	2006-01-16 17:37:43.475672100 +0100
+--- helpcontent2/source/auxiliary/it/highcontrast1.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/it/highcontrast1.css	2007-09-12 15:16:13.473967600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2238,16 +1613,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/it/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/it/highcontrast2.css helpcontent2/source/auxiliary/it/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/it/highcontrast2.css	2004-12-16 13:30:35.000000000 +0100
-+++ helpcontent2/source/auxiliary/it/highcontrast2.css	2006-01-16 17:37:43.397546100 +0100
+--- helpcontent2/source/auxiliary/it/highcontrast2.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/it/highcontrast2.css	2007-09-12 15:16:13.505218000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2261,16 +1628,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/it/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/it/highcontrastblack.css helpcontent2/source/auxiliary/it/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/it/highcontrastblack.css	2004-12-16 13:30:49.000000000 +0100
-+++ helpcontent2/source/auxiliary/it/highcontrastblack.css	2006-01-16 17:37:43.335045300 +0100
+--- helpcontent2/source/auxiliary/it/highcontrastblack.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/it/highcontrastblack.css	2007-09-12 15:16:13.520843200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2284,16 +1643,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/it/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/it/highcontrastwhite.css helpcontent2/source/auxiliary/it/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/it/highcontrastwhite.css	2004-12-16 13:31:03.000000000 +0100
-+++ helpcontent2/source/auxiliary/it/highcontrastwhite.css	2006-01-16 17:37:43.256919300 +0100
+--- helpcontent2/source/auxiliary/it/highcontrastwhite.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/it/highcontrastwhite.css	2007-09-12 15:16:13.536468400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2307,16 +1658,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/it/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/lt/default.css helpcontent2/source/auxiliary/lt/default.css
---- helpcontent2/source/auxiliary.orig/lt/default.css	2005-11-15 20:49:57.000000000 +0100
-+++ helpcontent2/source/auxiliary/lt/default.css	2006-01-16 17:37:43.194418500 +0100
+--- helpcontent2/source/auxiliary/lt/default.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/lt/default.css	2007-09-12 15:16:13.552093600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2330,9 +1673,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/lt/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/lt/highcontrast1.css helpcontent2/source/auxiliary/lt/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/lt/highcontrast1.css	2005-11-15 20:50:09.000000000 +0100
-+++ helpcontent2/source/auxiliary/lt/highcontrast1.css	2006-01-16 17:37:43.131917700 +0100
+--- helpcontent2/source/auxiliary/lt/highcontrast1.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/lt/highcontrast1.css	2007-09-12 15:16:13.567718800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2346,16 +1688,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/lt/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/lt/highcontrast2.css helpcontent2/source/auxiliary/lt/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/lt/highcontrast2.css	2005-11-15 20:50:25.000000000 +0100
-+++ helpcontent2/source/auxiliary/lt/highcontrast2.css	2006-01-16 17:37:43.069416900 +0100
+--- helpcontent2/source/auxiliary/lt/highcontrast2.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/lt/highcontrast2.css	2007-09-12 15:16:13.583344000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2369,16 +1703,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/lt/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/lt/highcontrastblack.css helpcontent2/source/auxiliary/lt/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/lt/highcontrastblack.css	2005-11-15 20:50:36.000000000 +0100
-+++ helpcontent2/source/auxiliary/lt/highcontrastblack.css	2006-01-16 17:37:43.006916100 +0100
+--- helpcontent2/source/auxiliary/lt/highcontrastblack.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/lt/highcontrastblack.css	2007-09-12 15:16:13.598969200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2392,16 +1718,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/lt/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/lt/highcontrastwhite.css helpcontent2/source/auxiliary/lt/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/lt/highcontrastwhite.css	2005-11-15 20:50:49.000000000 +0100
-+++ helpcontent2/source/auxiliary/lt/highcontrastwhite.css	2006-01-16 17:37:42.944415300 +0100
+--- helpcontent2/source/auxiliary/lt/highcontrastwhite.css.orig	2007-08-10 19:09:28.000000000 +0200
++++ helpcontent2/source/auxiliary/lt/highcontrastwhite.css	2007-09-12 15:16:13.614594400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2415,16 +1733,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/lt/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/nb/default.css helpcontent2/source/auxiliary/nb/default.css
---- helpcontent2/source/auxiliary.orig/nb/default.css	2005-09-05 13:56:45.000000000 +0200
-+++ helpcontent2/source/auxiliary/nb/default.css	2006-01-16 17:37:42.881914500 +0100
+--- helpcontent2/source/auxiliary/nb/default.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nb/default.css	2007-09-12 15:16:13.661470000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2438,9 +1748,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nb/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/nb/highcontrast1.css helpcontent2/source/auxiliary/nb/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/nb/highcontrast1.css	2005-09-05 13:56:56.000000000 +0200
-+++ helpcontent2/source/auxiliary/nb/highcontrast1.css	2006-01-16 17:37:42.819413700 +0100
+--- helpcontent2/source/auxiliary/nb/highcontrast1.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nb/highcontrast1.css	2007-09-12 15:16:13.692720400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2454,16 +1763,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nb/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/nb/highcontrast2.css helpcontent2/source/auxiliary/nb/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/nb/highcontrast2.css	2005-09-05 13:57:08.000000000 +0200
-+++ helpcontent2/source/auxiliary/nb/highcontrast2.css	2006-01-16 17:37:42.741287700 +0100
+--- helpcontent2/source/auxiliary/nb/highcontrast2.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nb/highcontrast2.css	2007-09-12 15:16:13.708345600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2477,16 +1778,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nb/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/nb/highcontrastblack.css helpcontent2/source/auxiliary/nb/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/nb/highcontrastblack.css	2005-09-05 13:57:21.000000000 +0200
-+++ helpcontent2/source/auxiliary/nb/highcontrastblack.css	2006-01-16 17:37:42.678786900 +0100
+--- helpcontent2/source/auxiliary/nb/highcontrastblack.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nb/highcontrastblack.css	2007-09-12 15:16:13.723970800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2500,16 +1793,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nb/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/nb/highcontrastwhite.css helpcontent2/source/auxiliary/nb/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/nb/highcontrastwhite.css	2005-09-05 13:57:34.000000000 +0200
-+++ helpcontent2/source/auxiliary/nb/highcontrastwhite.css	2006-01-16 17:37:42.616286100 +0100
+--- helpcontent2/source/auxiliary/nb/highcontrastwhite.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nb/highcontrastwhite.css	2007-09-12 15:16:13.739596000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2523,16 +1808,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nb/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/nl/default.css helpcontent2/source/auxiliary/nl/default.css
---- helpcontent2/source/auxiliary.orig/nl/default.css	2005-01-27 16:08:09.000000000 +0100
-+++ helpcontent2/source/auxiliary/nl/default.css	2006-01-16 17:37:42.553785300 +0100
+--- helpcontent2/source/auxiliary/nl/default.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nl/default.css	2007-09-12 15:16:13.770846400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2546,9 +1823,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nl/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/nn/default.css helpcontent2/source/auxiliary/nn/default.css
---- helpcontent2/source/auxiliary.orig/nn/default.css	2005-11-15 20:54:05.000000000 +0100
-+++ helpcontent2/source/auxiliary/nn/default.css	2006-01-16 17:37:42.491284500 +0100
+--- helpcontent2/source/auxiliary/nn/default.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nn/default.css	2007-09-12 15:16:13.786471600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2562,9 +1838,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nn/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/nn/highcontrast1.css helpcontent2/source/auxiliary/nn/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/nn/highcontrast1.css	2005-11-15 20:54:20.000000000 +0100
-+++ helpcontent2/source/auxiliary/nn/highcontrast1.css	2006-01-16 17:37:42.428783700 +0100
+--- helpcontent2/source/auxiliary/nn/highcontrast1.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nn/highcontrast1.css	2007-09-12 15:16:13.802096800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2578,16 +1853,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nn/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/nn/highcontrast2.css helpcontent2/source/auxiliary/nn/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/nn/highcontrast2.css	2005-11-15 20:54:34.000000000 +0100
-+++ helpcontent2/source/auxiliary/nn/highcontrast2.css	2006-01-16 17:37:42.366282900 +0100
+--- helpcontent2/source/auxiliary/nn/highcontrast2.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nn/highcontrast2.css	2007-09-12 15:16:13.833347200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2601,16 +1868,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nn/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/nn/highcontrastblack.css helpcontent2/source/auxiliary/nn/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/nn/highcontrastblack.css	2005-11-15 20:54:46.000000000 +0100
-+++ helpcontent2/source/auxiliary/nn/highcontrastblack.css	2006-01-16 17:37:42.288156900 +0100
+--- helpcontent2/source/auxiliary/nn/highcontrastblack.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nn/highcontrastblack.css	2007-09-12 15:16:13.848972400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2624,16 +1883,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nn/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/nn/highcontrastwhite.css helpcontent2/source/auxiliary/nn/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/nn/highcontrastwhite.css	2005-11-15 20:54:59.000000000 +0100
-+++ helpcontent2/source/auxiliary/nn/highcontrastwhite.css	2006-01-16 17:37:42.225656100 +0100
+--- helpcontent2/source/auxiliary/nn/highcontrastwhite.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nn/highcontrastwhite.css	2007-09-12 15:16:13.864597600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2647,16 +1898,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nn/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/nr/default.css helpcontent2/source/auxiliary/nr/default.css
---- helpcontent2/source/auxiliary.orig/nr/default.css	2005-11-15 20:56:35.000000000 +0100
-+++ helpcontent2/source/auxiliary/nr/default.css	2006-01-16 17:37:42.163155300 +0100
+--- helpcontent2/source/auxiliary/nr/default.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nr/default.css	2007-09-12 15:16:13.880222800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2670,9 +1913,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nr/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/nr/highcontrast1.css helpcontent2/source/auxiliary/nr/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/nr/highcontrast1.css	2005-11-15 20:56:49.000000000 +0100
-+++ helpcontent2/source/auxiliary/nr/highcontrast1.css	2006-01-16 17:37:42.100654500 +0100
+--- helpcontent2/source/auxiliary/nr/highcontrast1.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nr/highcontrast1.css	2007-09-12 15:16:13.895848000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2686,16 +1928,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nr/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/nr/highcontrast2.css helpcontent2/source/auxiliary/nr/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/nr/highcontrast2.css	2005-11-15 20:57:02.000000000 +0100
-+++ helpcontent2/source/auxiliary/nr/highcontrast2.css	2006-01-16 17:37:42.038153700 +0100
+--- helpcontent2/source/auxiliary/nr/highcontrast2.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nr/highcontrast2.css	2007-09-12 15:16:13.911473200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2709,16 +1943,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nr/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/nr/highcontrastblack.css helpcontent2/source/auxiliary/nr/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/nr/highcontrastblack.css	2005-11-15 20:57:13.000000000 +0100
-+++ helpcontent2/source/auxiliary/nr/highcontrastblack.css	2006-01-16 17:37:41.960027700 +0100
+--- helpcontent2/source/auxiliary/nr/highcontrastblack.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nr/highcontrastblack.css	2007-09-12 15:16:13.942723600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2732,16 +1958,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nr/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/nr/highcontrastwhite.css helpcontent2/source/auxiliary/nr/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/nr/highcontrastwhite.css	2005-11-15 20:57:24.000000000 +0100
-+++ helpcontent2/source/auxiliary/nr/highcontrastwhite.css	2006-01-16 17:37:41.897526900 +0100
+--- helpcontent2/source/auxiliary/nr/highcontrastwhite.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/nr/highcontrastwhite.css	2007-09-12 15:16:13.958348800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2755,16 +1973,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/nr/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/ns/default.css helpcontent2/source/auxiliary/ns/default.css
---- helpcontent2/source/auxiliary.orig/ns/default.css	2005-11-15 20:59:00.000000000 +0100
-+++ helpcontent2/source/auxiliary/ns/default.css	2006-01-16 17:37:41.835026100 +0100
+--- helpcontent2/source/auxiliary/ns/default.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/ns/default.css	2007-09-12 15:16:13.989599200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2778,9 +1988,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ns/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/ns/highcontrast1.css helpcontent2/source/auxiliary/ns/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/ns/highcontrast1.css	2005-11-15 20:59:15.000000000 +0100
-+++ helpcontent2/source/auxiliary/ns/highcontrast1.css	2006-01-16 17:37:41.772525300 +0100
+--- helpcontent2/source/auxiliary/ns/highcontrast1.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/ns/highcontrast1.css	2007-09-12 15:16:14.005224400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2794,16 +2003,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ns/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/ns/highcontrast2.css helpcontent2/source/auxiliary/ns/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/ns/highcontrast2.css	2005-11-15 20:59:25.000000000 +0100
-+++ helpcontent2/source/auxiliary/ns/highcontrast2.css	2006-01-16 17:37:41.694399300 +0100
+--- helpcontent2/source/auxiliary/ns/highcontrast2.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/ns/highcontrast2.css	2007-09-12 15:16:14.020849600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2817,16 +2018,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ns/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/ns/highcontrastblack.css helpcontent2/source/auxiliary/ns/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/ns/highcontrastblack.css	2005-11-15 20:59:40.000000000 +0100
-+++ helpcontent2/source/auxiliary/ns/highcontrastblack.css	2006-01-16 17:37:41.631898500 +0100
+--- helpcontent2/source/auxiliary/ns/highcontrastblack.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/ns/highcontrastblack.css	2007-09-12 15:16:14.036474800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2840,16 +2033,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ns/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/ns/highcontrastwhite.css helpcontent2/source/auxiliary/ns/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/ns/highcontrastwhite.css	2005-11-15 20:59:56.000000000 +0100
-+++ helpcontent2/source/auxiliary/ns/highcontrastwhite.css	2006-01-16 17:37:41.569397700 +0100
+--- helpcontent2/source/auxiliary/ns/highcontrastwhite.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/ns/highcontrastwhite.css	2007-09-12 15:16:14.067725200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2863,16 +2048,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ns/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/pl/default.css helpcontent2/source/auxiliary/pl/default.css
---- helpcontent2/source/auxiliary.orig/pl/default.css	2005-09-05 13:59:16.000000000 +0200
-+++ helpcontent2/source/auxiliary/pl/default.css	2006-01-16 17:37:41.506896900 +0100
+--- helpcontent2/source/auxiliary/pl/default.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/pl/default.css	2007-09-12 15:16:14.083350400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2886,9 +2063,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pl/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/pl/highcontrast1.css helpcontent2/source/auxiliary/pl/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/pl/highcontrast1.css	2005-09-05 13:59:28.000000000 +0200
-+++ helpcontent2/source/auxiliary/pl/highcontrast1.css	2006-01-16 17:37:41.428770900 +0100
+--- helpcontent2/source/auxiliary/pl/highcontrast1.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/pl/highcontrast1.css	2007-09-12 15:16:14.098975600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2902,16 +2078,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pl/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/pl/highcontrast2.css helpcontent2/source/auxiliary/pl/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/pl/highcontrast2.css	2005-09-05 13:59:39.000000000 +0200
-+++ helpcontent2/source/auxiliary/pl/highcontrast2.css	2006-01-16 17:37:41.366270100 +0100
+--- helpcontent2/source/auxiliary/pl/highcontrast2.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/pl/highcontrast2.css	2007-09-12 15:16:14.114600800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2925,16 +2093,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pl/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/pl/highcontrastblack.css helpcontent2/source/auxiliary/pl/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/pl/highcontrastblack.css	2005-09-05 13:59:50.000000000 +0200
-+++ helpcontent2/source/auxiliary/pl/highcontrastblack.css	2006-01-16 17:37:41.288144100 +0100
+--- helpcontent2/source/auxiliary/pl/highcontrastblack.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/pl/highcontrastblack.css	2007-09-12 15:16:14.130226000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2948,16 +2108,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pl/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/pl/highcontrastwhite.css helpcontent2/source/auxiliary/pl/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/pl/highcontrastwhite.css	2005-09-05 14:00:03.000000000 +0200
-+++ helpcontent2/source/auxiliary/pl/highcontrastwhite.css	2006-01-16 17:37:41.225643300 +0100
+--- helpcontent2/source/auxiliary/pl/highcontrastwhite.css.orig	2007-08-10 19:09:29.000000000 +0200
++++ helpcontent2/source/auxiliary/pl/highcontrastwhite.css	2007-09-12 15:16:14.145851200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2971,16 +2123,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pl/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/default.css helpcontent2/source/auxiliary/pt-BR/default.css
---- helpcontent2/source/auxiliary.orig/pt-BR/default.css	2005-01-28 10:41:19.000000000 +0100
-+++ helpcontent2/source/auxiliary/pt-BR/default.css	2006-01-16 17:37:41.163142500 +0100
+--- helpcontent2/source/auxiliary/pt-BR/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/pt-BR/default.css	2007-09-12 15:16:14.161476400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -2994,9 +2138,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/default.css helpcontent2/sou
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/highcontrast1.css helpcontent2/source/auxiliary/pt-BR/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/pt-BR/highcontrast1.css	2004-12-16 13:39:21.000000000 +0100
-+++ helpcontent2/source/auxiliary/pt-BR/highcontrast1.css	2006-01-16 17:37:41.085016500 +0100
+--- helpcontent2/source/auxiliary/pt-BR/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/pt-BR/highcontrast1.css	2007-09-12 15:16:14.192726800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3010,16 +2153,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/highcontrast1.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/highcontrast2.css helpcontent2/source/auxiliary/pt-BR/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/pt-BR/highcontrast2.css	2004-12-16 13:39:35.000000000 +0100
-+++ helpcontent2/source/auxiliary/pt-BR/highcontrast2.css	2006-01-16 17:37:41.022515700 +0100
+--- helpcontent2/source/auxiliary/pt-BR/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/pt-BR/highcontrast2.css	2007-09-12 15:16:14.208352000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3033,16 +2168,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/highcontrast2.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/highcontrastblack.css helpcontent2/source/auxiliary/pt-BR/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/pt-BR/highcontrastblack.css	2004-12-16 13:39:49.000000000 +0100
-+++ helpcontent2/source/auxiliary/pt-BR/highcontrastblack.css	2006-01-16 17:37:40.960014900 +0100
+--- helpcontent2/source/auxiliary/pt-BR/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/pt-BR/highcontrastblack.css	2007-09-12 15:16:14.536481200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3056,16 +2183,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/highcontrastblack.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/highcontrastwhite.css helpcontent2/source/auxiliary/pt-BR/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/pt-BR/highcontrastwhite.css	2004-12-16 13:40:03.000000000 +0100
-+++ helpcontent2/source/auxiliary/pt-BR/highcontrastwhite.css	2006-01-16 17:37:40.897514100 +0100
+--- helpcontent2/source/auxiliary/pt-BR/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/pt-BR/highcontrastwhite.css	2007-09-12 15:16:14.723983600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3079,16 +2198,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/pt-BR/highcontrastwhite.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/ru/default.css helpcontent2/source/auxiliary/ru/default.css
---- helpcontent2/source/auxiliary.orig/ru/default.css	2005-09-05 14:01:33.000000000 +0200
-+++ helpcontent2/source/auxiliary/ru/default.css	2006-01-16 17:37:40.835013300 +0100
+--- helpcontent2/source/auxiliary/ru/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ru/default.css	2007-09-12 15:16:15.317741200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3102,9 +2213,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ru/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/ru/highcontrast1.css helpcontent2/source/auxiliary/ru/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/ru/highcontrast1.css	2005-09-05 14:01:45.000000000 +0200
-+++ helpcontent2/source/auxiliary/ru/highcontrast1.css	2006-01-16 17:37:40.772512500 +0100
+--- helpcontent2/source/auxiliary/ru/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ru/highcontrast1.css	2007-09-12 15:16:15.786497200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3118,16 +2228,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ru/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/ru/highcontrast2.css helpcontent2/source/auxiliary/ru/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/ru/highcontrast2.css	2005-09-05 14:01:59.000000000 +0200
-+++ helpcontent2/source/auxiliary/ru/highcontrast2.css	2006-01-16 17:37:40.694386500 +0100
+--- helpcontent2/source/auxiliary/ru/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ru/highcontrast2.css	2007-09-12 15:16:15.802122400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3141,16 +2243,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ru/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/ru/highcontrastblack.css helpcontent2/source/auxiliary/ru/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/ru/highcontrastblack.css	2005-09-05 14:02:10.000000000 +0200
-+++ helpcontent2/source/auxiliary/ru/highcontrastblack.css	2006-01-16 17:37:40.631885700 +0100
+--- helpcontent2/source/auxiliary/ru/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ru/highcontrastblack.css	2007-09-12 15:16:16.145876800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3164,16 +2258,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ru/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/ru/highcontrastwhite.css helpcontent2/source/auxiliary/ru/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/ru/highcontrastwhite.css	2005-09-05 14:02:21.000000000 +0200
-+++ helpcontent2/source/auxiliary/ru/highcontrastwhite.css	2006-01-16 17:37:40.569384900 +0100
+--- helpcontent2/source/auxiliary/ru/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ru/highcontrastwhite.css	2007-09-12 15:16:16.177127200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3187,16 +2273,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ru/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/rw/default.css helpcontent2/source/auxiliary/rw/default.css
---- helpcontent2/source/auxiliary.orig/rw/default.css	2005-09-05 14:04:16.000000000 +0200
-+++ helpcontent2/source/auxiliary/rw/default.css	2006-01-16 17:37:40.506884100 +0100
+--- helpcontent2/source/auxiliary/rw/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/rw/default.css	2007-09-12 15:16:16.208377600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3210,9 +2288,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/rw/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/rw/highcontrast1.css helpcontent2/source/auxiliary/rw/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/rw/highcontrast1.css	2005-09-05 14:04:30.000000000 +0200
-+++ helpcontent2/source/auxiliary/rw/highcontrast1.css	2006-01-16 17:37:40.444383300 +0100
+--- helpcontent2/source/auxiliary/rw/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/rw/highcontrast1.css	2007-09-12 15:16:16.239628000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3226,16 +2303,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/rw/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/rw/highcontrast2.css helpcontent2/source/auxiliary/rw/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/rw/highcontrast2.css	2005-09-05 14:04:42.000000000 +0200
-+++ helpcontent2/source/auxiliary/rw/highcontrast2.css	2006-01-16 17:37:40.381882500 +0100
+--- helpcontent2/source/auxiliary/rw/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/rw/highcontrast2.css	2007-09-12 15:16:16.255253200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3249,16 +2318,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/rw/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/rw/highcontrastblack.css helpcontent2/source/auxiliary/rw/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/rw/highcontrastblack.css	2005-09-05 14:04:55.000000000 +0200
-+++ helpcontent2/source/auxiliary/rw/highcontrastblack.css	2006-01-16 17:37:40.319381700 +0100
+--- helpcontent2/source/auxiliary/rw/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/rw/highcontrastblack.css	2007-09-12 15:16:16.270878400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3272,16 +2333,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/rw/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/rw/highcontrastwhite.css helpcontent2/source/auxiliary/rw/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/rw/highcontrastwhite.css	2005-09-05 14:05:10.000000000 +0200
-+++ helpcontent2/source/auxiliary/rw/highcontrastwhite.css	2006-01-16 17:37:40.241255700 +0100
+--- helpcontent2/source/auxiliary/rw/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/rw/highcontrastwhite.css	2007-09-12 15:16:16.395880000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3295,16 +2348,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/rw/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/default.css helpcontent2/source/auxiliary/sh-YU/default.css
---- helpcontent2/source/auxiliary.orig/sh-YU/default.css	2005-09-05 14:06:51.000000000 +0200
-+++ helpcontent2/source/auxiliary/sh-YU/default.css	2006-01-16 17:37:40.178754900 +0100
+--- helpcontent2/source/auxiliary/sh-YU/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sh-YU/default.css	2007-09-12 15:16:16.427130400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3318,9 +2363,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/default.css helpcontent2/sou
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/highcontrast1.css helpcontent2/source/auxiliary/sh-YU/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/sh-YU/highcontrast1.css	2005-09-05 14:07:11.000000000 +0200
-+++ helpcontent2/source/auxiliary/sh-YU/highcontrast1.css	2006-01-16 17:37:40.100628900 +0100
+--- helpcontent2/source/auxiliary/sh-YU/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sh-YU/highcontrast1.css	2007-09-12 15:16:16.442755600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3334,16 +2378,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/highcontrast1.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/highcontrast2.css helpcontent2/source/auxiliary/sh-YU/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/sh-YU/highcontrast2.css	2005-09-05 14:07:22.000000000 +0200
-+++ helpcontent2/source/auxiliary/sh-YU/highcontrast2.css	2006-01-16 17:37:40.038128100 +0100
+--- helpcontent2/source/auxiliary/sh-YU/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sh-YU/highcontrast2.css	2007-09-12 15:16:16.458380800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3357,16 +2393,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/highcontrast2.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/highcontrastblack.css helpcontent2/source/auxiliary/sh-YU/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/sh-YU/highcontrastblack.css	2005-09-05 14:07:35.000000000 +0200
-+++ helpcontent2/source/auxiliary/sh-YU/highcontrastblack.css	2006-01-16 17:37:39.975627300 +0100
+--- helpcontent2/source/auxiliary/sh-YU/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sh-YU/highcontrastblack.css	2007-09-12 15:16:16.474006000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3380,16 +2408,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/highcontrastblack.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/highcontrastwhite.css helpcontent2/source/auxiliary/sh-YU/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/sh-YU/highcontrastwhite.css	2005-09-05 14:07:48.000000000 +0200
-+++ helpcontent2/source/auxiliary/sh-YU/highcontrastwhite.css	2006-01-16 17:37:39.913126500 +0100
+--- helpcontent2/source/auxiliary/sh-YU/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sh-YU/highcontrastwhite.css	2007-09-12 15:16:16.489631200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3403,16 +2423,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sh-YU/highcontrastwhite.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/sk/highcontrast1.css helpcontent2/source/auxiliary/sk/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/sk/highcontrast1.css	2005-09-05 14:09:34.000000000 +0200
-+++ helpcontent2/source/auxiliary/sk/highcontrast1.css	2006-01-16 17:37:39.850625700 +0100
+--- helpcontent2/source/auxiliary/sk/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sk/highcontrast1.css	2007-09-12 15:16:16.520881600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3426,16 +2438,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sk/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sk/highcontrast2.css helpcontent2/source/auxiliary/sk/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/sk/highcontrast2.css	2005-09-05 14:09:51.000000000 +0200
-+++ helpcontent2/source/auxiliary/sk/highcontrast2.css	2006-01-16 17:37:39.788124900 +0100
+--- helpcontent2/source/auxiliary/sk/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sk/highcontrast2.css	2007-09-12 15:16:16.536506800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3449,16 +2453,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sk/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sk/highcontrastblack.css helpcontent2/source/auxiliary/sk/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/sk/highcontrastblack.css	2005-09-05 14:10:04.000000000 +0200
-+++ helpcontent2/source/auxiliary/sk/highcontrastblack.css	2006-01-16 17:37:39.725624100 +0100
+--- helpcontent2/source/auxiliary/sk/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sk/highcontrastblack.css	2007-09-12 15:16:16.552132000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3472,16 +2468,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sk/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/sk/highcontrastwhite.css helpcontent2/source/auxiliary/sk/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/sk/highcontrastwhite.css	2005-09-05 14:10:15.000000000 +0200
-+++ helpcontent2/source/auxiliary/sk/highcontrastwhite.css	2006-01-16 17:37:39.663123300 +0100
+--- helpcontent2/source/auxiliary/sk/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sk/highcontrastwhite.css	2007-09-12 15:16:16.583382400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3495,16 +2483,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sk/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/sl/default.css helpcontent2/source/auxiliary/sl/default.css
---- helpcontent2/source/auxiliary.orig/sl/default.css	2005-11-15 21:01:45.000000000 +0100
-+++ helpcontent2/source/auxiliary/sl/default.css	2006-01-16 17:37:39.584997300 +0100
+--- helpcontent2/source/auxiliary/sl/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sl/default.css	2007-09-12 15:16:16.599007600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3518,9 +2498,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sl/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/sl/highcontrast1.css helpcontent2/source/auxiliary/sl/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/sl/highcontrast1.css	2005-11-15 21:02:01.000000000 +0100
-+++ helpcontent2/source/auxiliary/sl/highcontrast1.css	2006-01-16 17:37:39.506871300 +0100
+--- helpcontent2/source/auxiliary/sl/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sl/highcontrast1.css	2007-09-12 15:16:16.614632800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3534,16 +2513,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sl/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sl/highcontrast2.css helpcontent2/source/auxiliary/sl/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/sl/highcontrast2.css	2005-11-15 21:02:13.000000000 +0100
-+++ helpcontent2/source/auxiliary/sl/highcontrast2.css	2006-01-16 17:37:39.444370500 +0100
+--- helpcontent2/source/auxiliary/sl/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sl/highcontrast2.css	2007-09-12 15:16:16.630258000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3557,16 +2528,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sl/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sl/highcontrastblack.css helpcontent2/source/auxiliary/sl/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/sl/highcontrastblack.css	2005-11-15 21:02:25.000000000 +0100
-+++ helpcontent2/source/auxiliary/sl/highcontrastblack.css	2006-01-16 17:37:39.381869700 +0100
+--- helpcontent2/source/auxiliary/sl/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sl/highcontrastblack.css	2007-09-12 15:16:16.645883200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3580,16 +2543,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sl/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/sl/highcontrastwhite.css helpcontent2/source/auxiliary/sl/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/sl/highcontrastwhite.css	2005-11-15 21:02:37.000000000 +0100
-+++ helpcontent2/source/auxiliary/sl/highcontrastwhite.css	2006-01-16 17:37:39.288118500 +0100
+--- helpcontent2/source/auxiliary/sl/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sl/highcontrastwhite.css	2007-09-12 15:16:16.661508400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3603,16 +2558,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sl/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/default.css helpcontent2/source/auxiliary/sr-CS/default.css
---- helpcontent2/source/auxiliary.orig/sr-CS/default.css	2005-09-05 14:11:58.000000000 +0200
-+++ helpcontent2/source/auxiliary/sr-CS/default.css	2006-01-16 17:37:39.225617700 +0100
+--- helpcontent2/source/auxiliary/sr-CS/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sr-CS/default.css	2007-09-12 15:16:16.692758800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3626,9 +2573,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/default.css helpcontent2/sou
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/highcontrast1.css helpcontent2/source/auxiliary/sr-CS/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/sr-CS/highcontrast1.css	2005-09-05 14:12:10.000000000 +0200
-+++ helpcontent2/source/auxiliary/sr-CS/highcontrast1.css	2006-01-16 17:37:39.163116900 +0100
+--- helpcontent2/source/auxiliary/sr-CS/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sr-CS/highcontrast1.css	2007-09-12 15:16:16.708384000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3642,16 +2588,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/highcontrast1.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/highcontrast2.css helpcontent2/source/auxiliary/sr-CS/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/sr-CS/highcontrast2.css	2005-09-05 14:12:24.000000000 +0200
-+++ helpcontent2/source/auxiliary/sr-CS/highcontrast2.css	2006-01-16 17:37:39.100616100 +0100
+--- helpcontent2/source/auxiliary/sr-CS/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sr-CS/highcontrast2.css	2007-09-12 15:16:16.724009200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3665,16 +2603,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/highcontrast2.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/highcontrastblack.css helpcontent2/source/auxiliary/sr-CS/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/sr-CS/highcontrastblack.css	2005-09-05 14:12:35.000000000 +0200
-+++ helpcontent2/source/auxiliary/sr-CS/highcontrastblack.css	2006-01-16 17:37:39.022490100 +0100
+--- helpcontent2/source/auxiliary/sr-CS/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sr-CS/highcontrastblack.css	2007-09-12 15:16:16.755259600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3688,16 +2618,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/highcontrastblack.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/highcontrastwhite.css helpcontent2/source/auxiliary/sr-CS/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/sr-CS/highcontrastwhite.css	2005-09-05 14:12:50.000000000 +0200
-+++ helpcontent2/source/auxiliary/sr-CS/highcontrastwhite.css	2006-01-16 17:37:38.959989300 +0100
+--- helpcontent2/source/auxiliary/sr-CS/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sr-CS/highcontrastwhite.css	2007-09-12 15:16:16.770884800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3711,16 +2633,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sr-CS/highcontrastwhite.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/st/default.css helpcontent2/source/auxiliary/st/default.css
---- helpcontent2/source/auxiliary.orig/st/default.css	2005-11-15 21:04:20.000000000 +0100
-+++ helpcontent2/source/auxiliary/st/default.css	2006-01-16 17:37:38.897488500 +0100
+--- helpcontent2/source/auxiliary/st/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/st/default.css	2007-09-12 15:16:16.817760400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3734,9 +2648,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/st/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/st/highcontrast1.css helpcontent2/source/auxiliary/st/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/st/highcontrast1.css	2005-11-15 21:04:34.000000000 +0100
-+++ helpcontent2/source/auxiliary/st/highcontrast1.css	2006-01-16 17:37:38.834987700 +0100
+--- helpcontent2/source/auxiliary/st/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/st/highcontrast1.css	2007-09-12 15:16:16.895886400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3750,16 +2663,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/st/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/st/highcontrast2.css helpcontent2/source/auxiliary/st/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/st/highcontrast2.css	2005-11-15 21:04:45.000000000 +0100
-+++ helpcontent2/source/auxiliary/st/highcontrast2.css	2006-01-16 17:37:38.756861700 +0100
+--- helpcontent2/source/auxiliary/st/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/st/highcontrast2.css	2007-09-12 15:16:16.927136800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3773,16 +2678,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/st/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/st/highcontrastblack.css helpcontent2/source/auxiliary/st/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/st/highcontrastblack.css	2005-11-15 21:04:57.000000000 +0100
-+++ helpcontent2/source/auxiliary/st/highcontrastblack.css	2006-01-16 17:37:38.694360900 +0100
+--- helpcontent2/source/auxiliary/st/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/st/highcontrastblack.css	2007-09-12 15:16:17.239640800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3796,16 +2693,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/st/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/st/highcontrastwhite.css helpcontent2/source/auxiliary/st/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/st/highcontrastwhite.css	2005-11-15 21:05:08.000000000 +0100
-+++ helpcontent2/source/auxiliary/st/highcontrastwhite.css	2006-01-16 17:37:38.631860100 +0100
+--- helpcontent2/source/auxiliary/st/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/st/highcontrastwhite.css	2007-09-12 15:16:17.427143200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3819,16 +2708,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/st/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/sv/default.css helpcontent2/source/auxiliary/sv/default.css
---- helpcontent2/source/auxiliary.orig/sv/default.css	2005-01-28 10:42:40.000000000 +0100
-+++ helpcontent2/source/auxiliary/sv/default.css	2006-01-16 17:37:38.569359300 +0100
+--- helpcontent2/source/auxiliary/sv/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sv/default.css	2007-09-12 15:16:17.442768400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3842,9 +2723,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sv/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/sv/highcontrast1.css helpcontent2/source/auxiliary/sv/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/sv/highcontrast1.css	2004-12-16 13:41:35.000000000 +0100
-+++ helpcontent2/source/auxiliary/sv/highcontrast1.css	2006-01-16 17:37:38.506858500 +0100
+--- helpcontent2/source/auxiliary/sv/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sv/highcontrast1.css	2007-09-12 15:16:18.036526000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3858,16 +2738,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sv/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sv/highcontrast2.css helpcontent2/source/auxiliary/sv/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/sv/highcontrast2.css	2004-12-16 13:41:48.000000000 +0100
-+++ helpcontent2/source/auxiliary/sv/highcontrast2.css	2006-01-16 17:37:38.444357700 +0100
+--- helpcontent2/source/auxiliary/sv/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sv/highcontrast2.css	2007-09-12 15:16:18.505282000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3881,16 +2753,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sv/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sv/highcontrastblack.css helpcontent2/source/auxiliary/sv/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/sv/highcontrastblack.css	2004-12-16 13:42:00.000000000 +0100
-+++ helpcontent2/source/auxiliary/sv/highcontrastblack.css	2006-01-16 17:37:38.366231700 +0100
+--- helpcontent2/source/auxiliary/sv/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sv/highcontrastblack.css	2007-09-12 15:16:18.520907200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3904,16 +2768,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sv/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/sv/highcontrastwhite.css helpcontent2/source/auxiliary/sv/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/sv/highcontrastwhite.css	2004-12-16 13:42:14.000000000 +0100
-+++ helpcontent2/source/auxiliary/sv/highcontrastwhite.css	2006-01-16 17:37:38.303730900 +0100
+--- helpcontent2/source/auxiliary/sv/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sv/highcontrastwhite.css	2007-09-12 15:16:18.552157600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3927,16 +2783,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sv/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/default.css helpcontent2/source/auxiliary/sw-TZ/default.css
---- helpcontent2/source/auxiliary.orig/sw-TZ/default.css	2005-09-05 14:14:39.000000000 +0200
-+++ helpcontent2/source/auxiliary/sw-TZ/default.css	2006-01-16 17:37:38.241230100 +0100
+--- helpcontent2/source/auxiliary/sw-TZ/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sw-TZ/default.css	2007-09-12 15:16:18.880286800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3950,9 +2798,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/default.css helpcontent2/sou
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/highcontrast1.css helpcontent2/source/auxiliary/sw-TZ/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/sw-TZ/highcontrast1.css	2005-09-05 14:14:52.000000000 +0200
-+++ helpcontent2/source/auxiliary/sw-TZ/highcontrast1.css	2006-01-16 17:37:38.163104100 +0100
+--- helpcontent2/source/auxiliary/sw-TZ/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sw-TZ/highcontrast1.css	2007-09-12 15:16:18.911537200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3966,16 +2813,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/highcontrast1.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/highcontrast2.css helpcontent2/source/auxiliary/sw-TZ/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/sw-TZ/highcontrast2.css	2005-09-05 14:15:05.000000000 +0200
-+++ helpcontent2/source/auxiliary/sw-TZ/highcontrast2.css	2006-01-16 17:37:38.053727700 +0100
+--- helpcontent2/source/auxiliary/sw-TZ/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sw-TZ/highcontrast2.css	2007-09-12 15:16:18.958412800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -3989,16 +2828,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/highcontrast2.css helpconten
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/highcontrastblack.css helpcontent2/source/auxiliary/sw-TZ/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/sw-TZ/highcontrastblack.css	2005-09-05 14:15:24.000000000 +0200
-+++ helpcontent2/source/auxiliary/sw-TZ/highcontrastblack.css	2006-01-16 17:37:37.975601700 +0100
+--- helpcontent2/source/auxiliary/sw-TZ/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sw-TZ/highcontrastblack.css	2007-09-12 15:16:18.989663200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4012,16 +2843,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/highcontrastblack.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/highcontrastwhite.css helpcontent2/source/auxiliary/sw-TZ/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/sw-TZ/highcontrastwhite.css	2005-09-05 14:15:37.000000000 +0200
-+++ helpcontent2/source/auxiliary/sw-TZ/highcontrastwhite.css	2006-01-16 17:37:37.913100900 +0100
+--- helpcontent2/source/auxiliary/sw-TZ/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/sw-TZ/highcontrastwhite.css	2007-09-12 15:16:19.099039600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4035,16 +2858,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/sw-TZ/highcontrastwhite.css helpco
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/th/default.css helpcontent2/source/auxiliary/th/default.css
---- helpcontent2/source/auxiliary.orig/th/default.css	2005-11-15 21:06:48.000000000 +0100
-+++ helpcontent2/source/auxiliary/th/default.css	2006-01-16 17:37:37.850600100 +0100
+--- helpcontent2/source/auxiliary/th/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/th/default.css	2007-09-12 15:16:19.130290000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4058,9 +2873,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/th/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/th/highcontrast1.css helpcontent2/source/auxiliary/th/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/th/highcontrast1.css	2005-11-15 21:06:57.000000000 +0100
-+++ helpcontent2/source/auxiliary/th/highcontrast1.css	2006-01-16 17:37:37.788099300 +0100
+--- helpcontent2/source/auxiliary/th/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/th/highcontrast1.css	2007-09-12 15:16:19.145915200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4074,16 +2888,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/th/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/th/highcontrast2.css helpcontent2/source/auxiliary/th/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/th/highcontrast2.css	2005-11-15 21:07:09.000000000 +0100
-+++ helpcontent2/source/auxiliary/th/highcontrast2.css	2006-01-16 17:37:37.709973300 +0100
+--- helpcontent2/source/auxiliary/th/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/th/highcontrast2.css	2007-09-12 15:16:19.161540400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4097,16 +2903,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/th/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/th/highcontrastblack.css helpcontent2/source/auxiliary/th/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/th/highcontrastblack.css	2005-11-15 21:07:20.000000000 +0100
-+++ helpcontent2/source/auxiliary/th/highcontrastblack.css	2006-01-16 17:37:37.647472500 +0100
+--- helpcontent2/source/auxiliary/th/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/th/highcontrastblack.css	2007-09-12 15:16:19.192790800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4120,16 +2918,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/th/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/th/highcontrastwhite.css helpcontent2/source/auxiliary/th/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/th/highcontrastwhite.css	2005-11-15 21:07:32.000000000 +0100
-+++ helpcontent2/source/auxiliary/th/highcontrastwhite.css	2006-01-16 17:37:37.584971700 +0100
+--- helpcontent2/source/auxiliary/th/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/th/highcontrastwhite.css	2007-09-12 15:16:19.208416000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4143,16 +2933,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/th/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/tn/default.css helpcontent2/source/auxiliary/tn/default.css
---- helpcontent2/source/auxiliary.orig/tn/default.css	2005-11-15 21:09:12.000000000 +0100
-+++ helpcontent2/source/auxiliary/tn/default.css	2006-01-16 17:37:37.522470900 +0100
+--- helpcontent2/source/auxiliary/tn/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tn/default.css	2007-09-12 15:16:19.224041200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4166,9 +2948,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tn/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/tn/highcontrast1.css helpcontent2/source/auxiliary/tn/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/tn/highcontrast1.css	2005-11-15 21:09:24.000000000 +0100
-+++ helpcontent2/source/auxiliary/tn/highcontrast1.css	2006-01-16 17:37:37.459970100 +0100
+--- helpcontent2/source/auxiliary/tn/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tn/highcontrast1.css	2007-09-12 15:16:19.239666400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4182,16 +2963,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tn/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/tn/highcontrast2.css helpcontent2/source/auxiliary/tn/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/tn/highcontrast2.css	2005-11-15 21:09:34.000000000 +0100
-+++ helpcontent2/source/auxiliary/tn/highcontrast2.css	2006-01-16 17:37:37.381844100 +0100
+--- helpcontent2/source/auxiliary/tn/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tn/highcontrast2.css	2007-09-12 15:16:19.270916800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4205,16 +2978,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tn/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/tn/highcontrastblack.css helpcontent2/source/auxiliary/tn/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/tn/highcontrastblack.css	2005-11-15 21:09:44.000000000 +0100
-+++ helpcontent2/source/auxiliary/tn/highcontrastblack.css	2006-01-16 17:37:37.319343300 +0100
+--- helpcontent2/source/auxiliary/tn/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tn/highcontrastblack.css	2007-09-12 15:16:19.286542000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4228,16 +2993,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tn/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/tn/highcontrastwhite.css helpcontent2/source/auxiliary/tn/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/tn/highcontrastwhite.css	2005-11-15 21:09:55.000000000 +0100
-+++ helpcontent2/source/auxiliary/tn/highcontrastwhite.css	2006-01-16 17:37:37.256842500 +0100
+--- helpcontent2/source/auxiliary/tn/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tn/highcontrastwhite.css	2007-09-12 15:16:19.317792400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4251,16 +3008,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tn/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/tr/default.css helpcontent2/source/auxiliary/tr/default.css
---- helpcontent2/source/auxiliary.orig/tr/default.css	2005-09-05 14:17:28.000000000 +0200
-+++ helpcontent2/source/auxiliary/tr/default.css	2006-01-16 17:37:37.194341700 +0100
+--- helpcontent2/source/auxiliary/tr/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tr/default.css	2007-09-12 15:16:19.333417600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4274,9 +3023,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tr/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/tr/highcontrast1.css helpcontent2/source/auxiliary/tr/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/tr/highcontrast1.css	2005-09-05 14:17:46.000000000 +0200
-+++ helpcontent2/source/auxiliary/tr/highcontrast1.css	2006-01-16 17:37:37.116215700 +0100
+--- helpcontent2/source/auxiliary/tr/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tr/highcontrast1.css	2007-09-12 15:16:19.349042800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4290,16 +3038,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tr/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/tr/highcontrast2.css helpcontent2/source/auxiliary/tr/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/tr/highcontrast2.css	2005-09-05 14:17:58.000000000 +0200
-+++ helpcontent2/source/auxiliary/tr/highcontrast2.css	2006-01-16 17:37:37.053714900 +0100
+--- helpcontent2/source/auxiliary/tr/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tr/highcontrast2.css	2007-09-12 15:16:19.364668000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4313,16 +3053,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tr/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/tr/highcontrastblack.css helpcontent2/source/auxiliary/tr/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/tr/highcontrastblack.css	2005-09-05 14:18:13.000000000 +0200
-+++ helpcontent2/source/auxiliary/tr/highcontrastblack.css	2006-01-16 17:37:36.991214100 +0100
+--- helpcontent2/source/auxiliary/tr/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tr/highcontrastblack.css	2007-09-12 15:16:19.380293200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4336,16 +3068,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tr/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/tr/highcontrastwhite.css helpcontent2/source/auxiliary/tr/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/tr/highcontrastwhite.css	2005-09-05 14:18:25.000000000 +0200
-+++ helpcontent2/source/auxiliary/tr/highcontrastwhite.css	2006-01-16 17:37:36.928713300 +0100
+--- helpcontent2/source/auxiliary/tr/highcontrastwhite.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/tr/highcontrastwhite.css	2007-09-12 15:16:19.395918400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4359,16 +3083,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/tr/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/ts/default.css helpcontent2/source/auxiliary/ts/default.css
---- helpcontent2/source/auxiliary.orig/ts/default.css	2005-11-15 21:11:37.000000000 +0100
-+++ helpcontent2/source/auxiliary/ts/default.css	2006-01-16 17:37:36.866212500 +0100
+--- helpcontent2/source/auxiliary/ts/default.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ts/default.css	2007-09-12 15:16:19.427168800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4382,9 +3098,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ts/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/ts/highcontrast1.css helpcontent2/source/auxiliary/ts/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/ts/highcontrast1.css	2005-11-15 21:11:48.000000000 +0100
-+++ helpcontent2/source/auxiliary/ts/highcontrast1.css	2006-01-16 17:37:36.803711700 +0100
+--- helpcontent2/source/auxiliary/ts/highcontrast1.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ts/highcontrast1.css	2007-09-12 15:16:19.458419200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4398,16 +3113,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ts/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/ts/highcontrast2.css helpcontent2/source/auxiliary/ts/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/ts/highcontrast2.css	2005-11-15 21:11:59.000000000 +0100
-+++ helpcontent2/source/auxiliary/ts/highcontrast2.css	2006-01-16 17:37:36.741210900 +0100
+--- helpcontent2/source/auxiliary/ts/highcontrast2.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ts/highcontrast2.css	2007-09-12 15:16:19.474044400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4421,16 +3128,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ts/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/ts/highcontrastblack.css helpcontent2/source/auxiliary/ts/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/ts/highcontrastblack.css	2005-11-15 21:12:11.000000000 +0100
-+++ helpcontent2/source/auxiliary/ts/highcontrastblack.css	2006-01-16 17:37:36.678710100 +0100
+--- helpcontent2/source/auxiliary/ts/highcontrastblack.css.orig	2007-08-10 19:09:30.000000000 +0200
++++ helpcontent2/source/auxiliary/ts/highcontrastblack.css	2007-09-12 15:16:19.489669600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4444,16 +3143,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ts/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/ts/highcontrastwhite.css helpcontent2/source/auxiliary/ts/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/ts/highcontrastwhite.css	2005-11-15 21:12:23.000000000 +0100
-+++ helpcontent2/source/auxiliary/ts/highcontrastwhite.css	2006-01-16 17:37:36.616209300 +0100
+--- helpcontent2/source/auxiliary/ts/highcontrastwhite.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/ts/highcontrastwhite.css	2007-09-12 15:16:19.505294800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4467,16 +3158,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/ts/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/vi/default.css helpcontent2/source/auxiliary/vi/default.css
---- helpcontent2/source/auxiliary.orig/vi/default.css	2005-09-05 14:20:18.000000000 +0200
-+++ helpcontent2/source/auxiliary/vi/default.css	2006-01-16 17:37:36.553708500 +0100
+--- helpcontent2/source/auxiliary/vi/default.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/vi/default.css	2007-09-12 15:16:19.520920000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4490,9 +3173,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/vi/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/vi/highcontrast1.css helpcontent2/source/auxiliary/vi/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/vi/highcontrast1.css	2005-09-05 14:20:32.000000000 +0200
-+++ helpcontent2/source/auxiliary/vi/highcontrast1.css	2006-01-16 17:37:36.506832900 +0100
+--- helpcontent2/source/auxiliary/vi/highcontrast1.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/vi/highcontrast1.css	2007-09-12 15:16:19.536545200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4506,16 +3188,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/vi/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/vi/highcontrast2.css helpcontent2/source/auxiliary/vi/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/vi/highcontrast2.css	2005-09-05 14:20:49.000000000 +0200
-+++ helpcontent2/source/auxiliary/vi/highcontrast2.css	2006-01-16 17:37:36.444332100 +0100
+--- helpcontent2/source/auxiliary/vi/highcontrast2.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/vi/highcontrast2.css	2007-09-12 15:16:19.552170400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4529,16 +3203,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/vi/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/vi/highcontrastblack.css helpcontent2/source/auxiliary/vi/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/vi/highcontrastblack.css	2005-09-05 14:21:02.000000000 +0200
-+++ helpcontent2/source/auxiliary/vi/highcontrastblack.css	2006-01-16 17:37:36.381831300 +0100
+--- helpcontent2/source/auxiliary/vi/highcontrastblack.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/vi/highcontrastblack.css	2007-09-12 15:16:19.583420800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4552,16 +3218,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/vi/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/vi/highcontrastwhite.css helpcontent2/source/auxiliary/vi/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/vi/highcontrastwhite.css	2005-09-05 14:21:14.000000000 +0200
-+++ helpcontent2/source/auxiliary/vi/highcontrastwhite.css	2006-01-16 17:37:36.334955700 +0100
+--- helpcontent2/source/auxiliary/vi/highcontrastwhite.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/vi/highcontrastwhite.css	2007-09-12 15:16:19.599046000 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4575,16 +3233,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/vi/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
-diff -Naur helpcontent2/source/auxiliary.orig/zu/default.css helpcontent2/source/auxiliary/zu/default.css
---- helpcontent2/source/auxiliary.orig/zu/default.css	2005-11-15 21:14:06.000000000 +0100
-+++ helpcontent2/source/auxiliary/zu/default.css	2006-01-16 17:37:36.272454900 +0100
+--- helpcontent2/source/auxiliary/zu/default.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/zu/default.css	2007-09-12 15:16:19.630296400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4598,9 +3248,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/zu/default.css helpcontent2/source
  
  .acronym 
  	{ font-weight: bold; }
-diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrast1.css helpcontent2/source/auxiliary/zu/highcontrast1.css
---- helpcontent2/source/auxiliary.orig/zu/highcontrast1.css	2005-11-15 21:14:19.000000000 +0100
-+++ helpcontent2/source/auxiliary/zu/highcontrast1.css	2006-01-16 17:37:36.178703700 +0100
+--- helpcontent2/source/auxiliary/zu/highcontrast1.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/zu/highcontrast1.css	2007-09-12 15:16:19.661546800 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4614,16 +3263,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrast1.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFF00; }
-\ No newline at end of file
-+ { color: #FFFF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrast2.css helpcontent2/source/auxiliary/zu/highcontrast2.css
---- helpcontent2/source/auxiliary.orig/zu/highcontrast2.css	2005-11-15 21:14:34.000000000 +0100
-+++ helpcontent2/source/auxiliary/zu/highcontrast2.css	2006-01-16 17:37:36.116202900 +0100
+--- helpcontent2/source/auxiliary/zu/highcontrast2.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/zu/highcontrast2.css	2007-09-12 15:16:19.692797200 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4637,16 +3278,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrast2.css helpcontent2/
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #00FF00; }
-\ No newline at end of file
-+ { color: #00FF00; }
-diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrastblack.css helpcontent2/source/auxiliary/zu/highcontrastblack.css
---- helpcontent2/source/auxiliary.orig/zu/highcontrastblack.css	2005-11-15 21:14:52.000000000 +0100
-+++ helpcontent2/source/auxiliary/zu/highcontrastblack.css	2006-01-16 17:37:36.022451700 +0100
+--- helpcontent2/source/auxiliary/zu/highcontrastblack.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/zu/highcontrastblack.css	2007-09-12 15:16:19.708422400 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4660,16 +3293,8 @@ diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrastblack.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #FFFFFF; }
-\ No newline at end of file
-+ { color: #FFFFFF; }
-diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrastwhite.css helpcontent2/source/auxiliary/zu/highcontrastwhite.css
---- helpcontent2/source/auxiliary.orig/zu/highcontrastwhite.css	2005-11-15 21:15:08.000000000 +0100
-+++ helpcontent2/source/auxiliary/zu/highcontrastwhite.css	2006-01-16 17:37:36.069327300 +0100
+--- helpcontent2/source/auxiliary/zu/highcontrastwhite.css.orig	2007-08-10 19:09:31.000000000 +0200
++++ helpcontent2/source/auxiliary/zu/highcontrastwhite.css	2007-09-12 15:16:19.724047600 +0200
 @@ -10,10 +10,10 @@
  
  
@@ -4683,16 +3308,9 @@ diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrastwhite.css helpconte
  
  .acronym 
  	{ font-weight: bold;}
-@@ -88,4 +88,4 @@
- 	{ border: 1px solid red; padding: 3px; display: none;}
- 
- a
-- { color: #000000; }
-\ No newline at end of file
-+ { color: #000000; }
---- ./scp2/source/ooo/module_hidden_ooo.scp.org	2005-11-11 15:27:10.000000000 +0100
-+++ ./scp2/source/ooo/module_hidden_ooo.scp	2005-12-28 15:49:28.956322400 +0100
-@@ -933,15 +933,25 @@
+--- scp2/source/ooo/module_hidden_ooo.scp.orig	2007-09-12 15:16:03.208211200 +0200
++++ scp2/source/ooo/module_hidden_ooo.scp	2007-09-12 15:16:19.739672800 +0200
+@@ -1063,15 +1063,25 @@
  	Default = YES;
  	Styles = (HIDDEN_ROOT);
  	Files = (gid_File_Fnt_Opensymb,
@@ -4728,53 +3346,25 @@ diff -Naur helpcontent2/source/auxiliary.orig/zu/highcontrastwhite.css helpconte
 +	gid_File_Fnt_DejaVuSerifCondensed );
  End
  #endif
---- postprocess/prj/build.lst.orig	2006-02-12 20:30:54.000000000 +0100
-+++ postprocess/prj/build.lst	2006-03-02 09:18:56.189045300 +0100
-@@ -1,4 +1,4 @@
--po	postprocess	::	accessibility automation basctl bean fondu BINFILTER:binfilter chart2 configmgr CRASHREP:crashrep dbaccess desktop dtrans embeddedobj embedserv EPM:epm eventattacher extensions extras fileaccess filter forms fpicker helpcontent2 hwpfilter io lingucomponent MATHMLDTD:MathMLDTD MSFONTEXTRACT:msfontextract ODK:odk officecfg package padmin psprint_config remotebridges sc scaddins scp2 scripting sd ODK:sdk_oo setup_native slideshow starmath sw sysui testshl2 testtools ucb UnoControls unoxml ure wizards xmerge xmlsecurity BITSTREAM_VERA_FONTS:bitstream_vera_fonts DICTIONARIES:dictionaries OOo:pyuno OOo:readlicense_oo SO:top unodevtools NULL
-+po	postprocess	::	accessibility automation basctl bean fondu BINFILTER:binfilter chart2 configmgr CRASHREP:crashrep dbaccess desktop dtrans embeddedobj embedserv EPM:epm eventattacher extensions extras fileaccess filter forms fpicker helpcontent2 hwpfilter io lingucomponent MATHMLDTD:MathMLDTD MSFONTEXTRACT:msfontextract ODK:odk officecfg package padmin psprint_config remotebridges sc scaddins scp2 scripting sd ODK:sdk_oo setup_native slideshow starmath sw sysui testshl2 testtools ucb UnoControls unoxml ure wizards xmerge xmlsecurity FONTS:fonts DICTIONARIES:dictionaries OOo:pyuno OOo:readlicense_oo SO:top unodevtools NULL
- po	postprocess			    	usr1	-	all	po_mkout NULL
- po	postprocess\checkxml		nmake	-	all	po_checkxml NULL
- po	postprocess\checkdeliver	nmake	-	all	po_checkdlv NULL
---- solenv/config/default.lst.orig	2004-03-26 15:21:43.000000000 +0100
-+++ solenv/config/default.lst	2006-01-16 17:26:34.763987700 +0100
-@@ -119,7 +119,7 @@
- 					Switch -jdk14
- 					SCS :pserver:hr@so-cvs-tunnel.germany.sun.com:/cvs
- 				}
--				bitstream_vera_fonts
-+				fonts
- 				{
- 					SCS :pserver:hr@so-cvs-tunnel.germany.sun.com:/cvs
- 				}
---- ./solenv/config/ssrc680.ini.orig	2007-01-17 06:49:47.000000000 +0100
-+++ ./solenv/config/ssrc680.ini	2007-03-29 11:33:58.390625000 +0200
-@@ -93,7 +93,7 @@
+--- solenv/config/ssrc680.ini.orig	2007-08-10 19:16:33.000000000 +0200
++++ solenv/config/ssrc680.ini	2007-09-13 11:57:49.073749200 +0200
+@@ -97,7 +97,7 @@
  		{
  			BIG_SVX TRUE
  			BMP_WRITES_FLAG TRUE
--            BUILD_TYPE SO OOo EXT BINFILTER BITSTREAM_VERA_FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG GTK ICU
-+            BUILD_TYPE SO OOo EXT BINFILTER FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB SABLOT XALAN SUN AGG GTK ICU
+-            BUILD_TYPE SO OOo EXT BINFILTER BITSTREAM_VERA_FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB LIBXSLT XALAN SUN AGG GTK ICU SYSTRAY_GTK JAVAINSTALLER2 VIGRA
++            BUILD_TYPE SO OOo EXT BINFILTER FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB LIBXSLT XALAN SUN AGG GTK ICU SYSTRAY_GTK JAVAINSTALLER2 VIGRA
  			RES_ENUS TRUE
  			RES_GER TRUE
  			NO_REC_RES TRUE
---- solenv/config/stand.lst.orig	2006-02-12 22:04:50.000000000 +0100
-+++ solenv/config/stand.lst	2006-03-02 09:21:46.865289500 +0100
-@@ -227,7 +227,7 @@
- 					Switch -jdk14
- 					SCS :pserver:hr@so-cvs-tunnel.germany.sun.com:/cvs
- 				}
--				bitstream_vera_fonts
-+				fonts
- 				{
- 					SCS :pserver:hr@so-cvs-tunnel.germany.sun.com:/cvs
- 				}
-@@ -1120,7 +1120,7 @@
- 					Switch -jdk14
- 					SCS :pserver:hr@so-cvs-tunnel.germany.sun.com:/cvs
- 				}
--				bitstream_vera_fonts
-+				fonts
- 				{
- 					SCS :pserver:hr@so-cvs-tunnel.germany.sun.com:/cvs
- 				}
+--- solenv/config/soog680.ini.orig	2007-09-03 19:43:09.000000000 +0200
++++ solenv/config/soog680.ini	2007-09-13 11:59:18.294212200 +0200
+@@ -97,7 +97,7 @@
+ 		{
+ 			BIG_SVX TRUE
+ 			BMP_WRITES_FLAG TRUE
+-            BUILD_TYPE SO OOo EXT BINFILTER BITSTREAM_VERA_FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB LIBXSLT XALAN SUN AGG GTK ICU SYSTRAY_GTK JAVAINSTALLER2 VIGRA
++            BUILD_TYPE SO OOo EXT BINFILTER FONTS BSH CURL DICTIONARIES FREETYPE HSQLDB JPEG LIBXML2 LIBXMLSEC MOZ NAS NEON TWAIN PYTHON ZLIB SNDFILE PORTAUDIO SANE UNIXODBC X11_EXTENSIONS LIBWPD EPM QADEVOOO ODK MSFONTEXTRACT MATHMLDTD BOOST EXPAT CRASHREP BERKELEYDB LIBXSLT XALAN SUN AGG GTK ICU SYSTRAY_GTK JAVAINSTALLER2 VIGRA
+ 			RES_ENUS TRUE
+ 			RES_GER TRUE
+ 			NO_REC_RES TRUE

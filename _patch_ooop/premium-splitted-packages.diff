@@ -1,6 +1,6 @@
---- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig	2006-05-17 09:51:39.000000000 +0200
-+++ instsetoo_native/inc_openoffice/unix/packagelist.txt	2006-07-04 20:55:38.765625000 +0200
-@@ -416,3 +416,86 @@
+--- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig	2007-08-10 19:12:10.000000000 +0200
++++ instsetoo_native/inc_openoffice/unix/packagelist.txt	2007-09-12 15:16:21.942826000 +0200
+@@ -487,3 +487,86 @@
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
  destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
  End
