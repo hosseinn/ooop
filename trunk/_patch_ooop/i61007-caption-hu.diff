@@ -1,6 +1,6 @@
---- sw/source/ui/frmdlg/cption.cxx.orig	2005-09-11 17:24:55.000000000 +0200
-+++ sw/source/ui/frmdlg/cption.cxx	2005-10-21 19:49:24.187500000 +0200
-@@ -427,11 +427,6 @@
+--- sw/source/ui/frmdlg/cption.cxx.orig	2007-08-10 19:18:00.000000000 +0200
++++ sw/source/ui/frmdlg/cption.cxx	2007-09-12 15:16:20.114677600 +0200
+@@ -422,11 +422,6 @@
                                          aFormatBox.GetSelectEntryPos() );
          if( SVX_NUM_NUMBER_NONE != nNumFmt )
          {
@@ -12,7 +12,7 @@
              SwWrtShell &rSh = rView.GetWrtShell();
              String sFldTypeName( aCategoryBox.GetText() );
              SwSetExpFieldType* pFldType = (SwSetExpFieldType*)rSh.GetFldType(
-@@ -460,6 +455,10 @@
+@@ -455,6 +450,10 @@
              //case ARABIC:
              default:                    aStr += '1'; break;
              }
@@ -23,9 +23,9 @@
          }
  
          aStr += aSepEdit.GetText();
---- sw/source/core/doc/doclay.cxx.orig	2005-09-11 17:23:48.000000000 +0200
-+++ sw/source/core/doc/doclay.cxx	2005-10-21 20:07:02.078125000 +0200
-@@ -1566,8 +1566,9 @@
+--- sw/source/core/doc/doclay.cxx.orig	2007-08-10 19:17:40.000000000 +0200
++++ sw/source/core/doc/doclay.cxx	2007-09-12 15:16:20.192803600 +0200
+@@ -1571,8 +1571,9 @@
          String aTxt;
          if(pType)
          {
@@ -36,7 +36,7 @@
          }
  		xub_StrLen nIdx = aTxt.Len();
          aTxt += rSeparator;
-@@ -1584,7 +1584,7 @@
+@@ -1588,7 +1589,7 @@
          if(pType)
          {
              SwSetExpField aFld( (SwSetExpFieldType*)pType, aEmptyStr, SVX_NUM_ARABIC);
@@ -45,9 +45,9 @@
              if(rCharacterStyle.Len())
              {
                  SwCharFmt* pCharFmt = FindCharFmtByName( rCharacterStyle );
---- sw/source/ui/config/optload.cxx.orig	2005-11-12 18:59:30.000000000 +0100
-+++ sw/source/ui/config/optload.cxx	2005-11-12 21:08:42.000000000 +0100
-@@ -905,9 +905,6 @@
+--- sw/source/ui/config/optload.cxx.orig	2007-08-10 19:17:55.000000000 +0200
++++ sw/source/ui/config/optload.cxx	2007-09-12 15:16:20.270929600 +0200
+@@ -889,9 +889,6 @@
                                          aFormatBox.GetSelectEntryPos() );
          if( SVX_NUM_NUMBER_NONE != nNumFmt )
          {
@@ -57,7 +57,7 @@
  
              SwWrtShell *pSh = ::GetActiveWrtShell();
              String sFldTypeName( aCategoryBox.GetText() );
-@@ -940,6 +937,10 @@
+@@ -924,6 +921,10 @@
                  //case ARABIC:
                  default:                    aStr += '1'; break;
              }

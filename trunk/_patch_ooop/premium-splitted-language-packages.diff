@@ -1,8 +1,8 @@
---- instsetoo_native/inc_openoffice/unix/packagelist_language.txt.orig	2006-05-17 09:51:39.000000000 +0200
-+++ instsetoo_native/inc_openoffice/unix/packagelist_language.txt	2006-06-07 22:58:54.263875000 +0200
-@@ -71,3 +71,38 @@
+--- instsetoo_native/inc_openoffice/unix/packagelist_language.txt.orig	2007-08-10 19:12:10.000000000 +0200
++++ instsetoo_native/inc_openoffice/unix/packagelist_language.txt	2007-09-12 15:16:21.864700000 +0200
+@@ -75,3 +75,38 @@
  description = "Language help module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
- destpath = "/opt/openoffice.org%PRODUCTVERSION"
+ destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
  End
 +
 +# Package definitions for OpenOffice.org Premium - Language Packs

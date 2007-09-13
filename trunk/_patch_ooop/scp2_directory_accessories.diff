@@ -1,6 +1,6 @@
---- scp2/source/ooo/directory_ooo.scp.orig	2006-05-17 09:51:06.000000000 +0200
-+++ scp2/source/ooo/directory_ooo.scp	2006-07-31 13:16:27.500000000 +0200
-@@ -1555,3 +1555,139 @@
+--- scp2/source/ooo/directory_ooo.scp.orig	2007-08-10 19:15:32.000000000 +0200
++++ scp2/source/ooo/directory_ooo.scp	2007-09-12 15:16:23.052215200 +0200
+@@ -1595,3 +1595,139 @@
  End
  
  #endif
@@ -140,4 +140,3 @@
 +    ParentID = gid_Dir_Gallery_Elements;
 +    DosName = "Bullets2";
 +End
-+

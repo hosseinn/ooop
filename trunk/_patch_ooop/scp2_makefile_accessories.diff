@@ -1,6 +1,6 @@
---- scp2/util/makefile.mk.orig	2005-11-15 14:11:50.000000000 +0100
-+++ scp2/util/makefile.mk	2005-12-19 22:37:56.000000000 +0100
-@@ -89,7 +89,18 @@
+--- scp2/util/makefile.mk.orig	2007-08-10 19:15:34.000000000 +0200
++++ scp2/util/makefile.mk	2007-09-12 15:16:23.177216800 +0200
+@@ -90,7 +90,18 @@
               module_python_mailmerge.par   \
               file_python.par               \
               profileitem_python.par        \
@@ -17,10 +17,10 @@
 +             file_samples_accessories.par  \
 +             file_templates_accessories.par
 +
-
+ 
  .IF "$(SOLAR_JAVA)"!=""
  SCP1FILES +=                               \
-@@ -195,7 +199,18 @@
+@@ -223,7 +234,18 @@
               module_python.par             \
               module_python_mailmerge.par   \
               file_python.par               \
