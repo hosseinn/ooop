@@ -7,7 +7,7 @@ patch -p0 -l -b -i ./_patch_ooop/gallery_sepatared_resource_scp2.diff
 patch -p0 -l -b -i ./_patch_ooop/helpdocument-genericcommand.diff
 patch -p0 -l -b -i ./_patch_ooop/helpdocument-menubar.diff
 patch -p0 -l -b -i ./_patch_ooop/i15456-html-export.diff
-patch -p0 -l -b -i ./_patch_ooop/i26565-sc-naturalsort.diff
+patch -p0 -l -b -i ./_patch_ooop/i26565-sc-natural-sort.diff
 patch -p0 -l -b -i ./_patch_ooop/i27928-extended-tips-on.diff
 patch -p0 -l -b -i ./_patch_ooop/i35578-sc-autofilter-empty-nonempty.diff
 patch -p0 -l -b -i ./_patch_ooop/i35579-sc-standard-filter-options.diff

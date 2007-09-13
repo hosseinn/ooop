@@ -1,6 +1,6 @@
---- svtools/source/svhtml/htmlout.cxx.orig	2005-10-20 21:35:08.515625000 +0200
-+++ svtools/source/svhtml/htmlout.cxx	2005-10-21 19:07:09.062500000 +0200
-@@ -315,6 +315,47 @@
+--- svtools/source/svhtml/htmlout.cxx.orig	2007-08-10 19:16:55.000000000 +0200
++++ svtools/source/svhtml/htmlout.cxx	2007-09-12 15:16:04.630104400 +0200
+@@ -313,6 +313,47 @@
  	case 9830:		pStr = sHTML_S_diams;	break;
  	}
  
