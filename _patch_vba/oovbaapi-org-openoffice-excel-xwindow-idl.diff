@@ -1,24 +1,10 @@
---- oovbaapi/org/openoffice/excel/XWindow.idl	
-+++ oovbaapi/org/openoffice/excel/XWindow.idl
-@@ -5,14 +5,20 @@
- #include <com/sun/star/uno/XInterface.idl>
- #endif
- 
-+#ifndef __org_openoffice_vba_XHelperInterface_idl__
-+#include <org/openoffice/vba/XHelperInterface.idl>
-+#endif
-+
- //=============================================================================
- 
- module org {  module openoffice {  module excel { 
- 
- //=============================================================================
- 
--interface XWindow: com::sun::star::uno::XInterface
-+interface XWindow
+--- oovbaapi/org/openoffice/excel/XWindow.idl	2007-09-11 19:51:34.000000000 +0100
++++ oovbaapi/org/openoffice/excel/XWindow.idl	2007-09-12 12:50:55.000000000 +0100
+@@ -53,6 +53,7 @@ interface XWindow
  {
-+	interface ::org::openoffice::vba::XHelperInterface;
-+
+ 	interface ::org::openoffice::vba::XHelperInterface;
+ 
++	[attribute] boolean DisplayGridlines; 
  	[attribute] any Caption;
  	[attribute] any ScrollRow;
  	[attribute] any ScrollColumn;
