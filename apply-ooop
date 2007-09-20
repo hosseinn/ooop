@@ -1,3 +1,7 @@
+patch -p0 -l -b -i ./_patch_ooop/cws-wpsimport01.diff
+patch -p0 -l -b -i ./_patch_ooop/cws-t602import01.diff
+patch -p0 -l -b -i ./_patch_ooop/libwpg.diff
+patch -p0 -l -b -i ./_patch_ooop/wpgimporter.diff
 patch -p0 -l -b -i ./_patch_ooop/accessories_build.diff
 patch -p0 -l -b -i ./_patch_ooop/accessories_target.diff
 patch -p0 -l -b -i ./_patch_ooop/gallery_galtheme.diff
@@ -35,6 +39,7 @@ patch -p0 -l -b -i ./_patch_ooop/premium_macro_target.diff
 patch -p0 -l -b -i ./_patch_ooop/scp2_build_accessories.diff
 patch -p0 -l -b -i ./_patch_ooop/scp2_directory_accessories.diff
 patch -p0 -l -b -i ./_patch_ooop/scp2_makefile_accessories.diff
-patch -p0 -l -b -i ./_patch_ooop/svg-import-draw.diff
-patch -p0 -l -b -i ./_patch_ooop/svg-import-impress.diff
-patch -p0 -l -b -i ./_patch_ooop/svg-import-svg-type.diff
+patch -p0 -l -b -i ./_patch_ooop/svg-import.diff
+patch -p0 -l -b -i ./_patch_ooop/svg-import-text.diff
+patch -p0 -l -b -i ./_patch_ooop/libsvg-module.diff
+patch -p0 -l -b -i ./_patch_ooop/update-URL.diff
