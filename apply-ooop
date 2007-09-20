@@ -2,6 +2,7 @@ patch -p0 -l -b -i ./_patch_ooop/cws-wpsimport01.diff
 patch -p0 -l -b -i ./_patch_ooop/cws-t602import01.diff
 patch -p0 -l -b -i ./_patch_ooop/libwpg.diff
 patch -p0 -l -b -i ./_patch_ooop/wpgimporter.diff
+patch -p0 -l -b -i ./_patch_ooop/lwp-filter-component.diff
 patch -p0 -l -b -i ./_patch_ooop/accessories_build.diff
 patch -p0 -l -b -i ./_patch_ooop/accessories_target.diff
 patch -p0 -l -b -i ./_patch_ooop/gallery_galtheme.diff
