@@ -1,0 +1,9 @@
+patch -p0 -l -b -i ./_patch_ooobuild/cws-wpsimport01.diff
+patch -p0 -l -b -i ./_patch_ooobuild/cws-t602import01.diff
+patch -p0 -l -b -i ./_patch_ooobuild/libwpg.diff
+patch -p0 -l -b -i ./_patch_ooobuild/wpgimporter.diff
+patch -p0 -l -b -i ./_patch_ooobuild/lwp-filter-component.diff
+patch -p0 -l -b -i ./_patch_ooobuild/svg-import.diff
+patch -p0 -l -b -i ./_patch_ooobuild/svg-import-text.diff
+patch -p0 -l -b -i ./_patch_ooobuild/libsvg-module.diff
+
