@@ -11,7 +11,7 @@ PKGFMTS="rpm deb"
 ANTHOME="/usr/local/apache-ant-1.6.5"
 
 # Java home
-JAVAHOME="/usr/local/jdk1.5.0-10"
+JAVAHOME="/usr/lib/jvm/java-1.5.0-sun-1.5.0.11/"
 
 # Build number
 BUILDNUMBER="OxygenOffice Professional 2.3.0 - OxygenOffice Build 1"
@@ -23,6 +23,6 @@ BUILDER="OxygenOffice Professional Team"
 MYLANGUAGES="hu de fr it tr ka fi pl"
 
 # Configure flags
-CONFIGUREFLAGS="--enable-kde --enable-gtk --enable-build-mozilla --with-system-nas  --enable-vba --enable-evolution2 --enable-dbus --enable-lockdown"
+CONFIGUREFLAGS="--enable-kde --enable-gtk --enable-build-mozilla --with-system-nas  --enable-vba --enable-evolution2 --enable-lockdown --enable-cairo"
 
 ./configure --with-lang="${MYLANGUAGES}" --with-jdk-home=${JAVAHOME} --with-ant-home=${ANTHOME} --with-package-format="${PKGFMTS}" ${CONFIGUREFLAGS} --with-build-version="${BUILDNUMBER}" --with-vendor="${BUILDER}"
