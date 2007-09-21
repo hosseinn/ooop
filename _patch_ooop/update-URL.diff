@@ -1,5 +1,5 @@
---- ooo_SRC680_m163_src/scp2/source/ooo/profileitem_ooo.scp~	2006-04-13 19:07:19.000000000 +0200
-+++ ooo_SRC680_m163_src/scp2/source/ooo/profileitem_ooo.scp	2006-04-13 19:07:19.000000000 +0200
+--- scp2/source/ooo/profileitem_ooo.scp~	2006-04-13 19:07:19.000000000 +0200
++++ scp2/source/ooo/profileitem_ooo.scp	2006-04-13 19:07:19.000000000 +0200
 @@ -213,7 +213,7 @@
    #if defined(BUILD_SPECIAL)
      Value = "${UPDATEURL}";
@@ -8,9 +8,9 @@
 +    Value = "http://ooop.sourceforge.net/update/ooop.php";
    #endif
  End
- 
---- ooo_OOD680_m3_src.orig/scp2/util/makefile.mk	2006-09-08 12:05:19.000000000 +0200
-+++ ooo_OOD680_m3_src/scp2/util/makefile.mk	2006-09-08 12:06:07.000000000 +0200
+
+--- scp2/util/makefile.mk	2006-09-08 12:05:19.000000000 +0200
++++ scp2/util/makefile.mk	2006-09-08 12:06:07.000000000 +0200
 @@ -161,11 +161,9 @@
  SCP1FILES += cairocanvas.par
  .ENDIF
