@@ -1,12 +1,12 @@
 --- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig	2007-08-10 19:12:10.000000000 +0200
 +++ instsetoo_native/inc_openoffice/unix/packagelist.txt	2007-09-12 15:16:21.942826000 +0200
-@@ -487,3 +487,86 @@
+@@ -487,3 +487,70 @@
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
  destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
  End
 +
 +# Package definitions for OpenOffice.org Premium
-+# 1/5 Gallery
++# 1/4 Gallery
 +
 +Start
 +module = "gid_Module_Optional_Accessories_Gallery"
@@ -16,13 +16,13 @@
 +linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-premium-gallery"
 +freebsdrequires = "%UNIXPRODUCTNAME-core01"
 +requires = "%UNIXPRODUCTNAME-core01"
-+copyright = "1999-2006 by OpenOffice.org"
++copyright = "1999-2007 by OpenOffice.org"
 +vendor = "OpenOffice.org"
 +description = "Premium gallery for %PRODUCTNAME %PRODUCTVERSION"
 +destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +End
 +
-+# 2/5 Fonts
++# 2/4 Fonts
 +
 +Start
 +module = "gid_Module_Optional_Accessories_Fonts"
@@ -32,13 +32,13 @@
 +linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-premium-fonts"
 +freebsdrequires = "%UNIXPRODUCTNAME-core01"
 +requires = "%UNIXPRODUCTNAME-core01"
-+copyright = "1999-2006 by OpenOffice.org"
++copyright = "1999-2007 by OpenOffice.org"
 +vendor = "OpenOffice.org"
 +description = "Premium fonts for %PRODUCTNAME %PRODUCTVERSION"
 +destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +End
 +
-+# 3/5 Templates
++# 3/4 Templates
 +
 +Start
 +module = "gid_Module_Optional_Accessories_Templates"
@@ -48,13 +48,13 @@
 +linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-premium-templates"
 +freebsdrequires = "%UNIXPRODUCTNAME-core01"
 +requires = "%UNIXPRODUCTNAME-core01"
-+copyright = "1999-2006 by OpenOffice.org"
++copyright = "1999-2007 by OpenOffice.org"
 +vendor = "OpenOffice.org"
 +description = "Premium templates for %PRODUCTNAME %PRODUCTVERSION"
 +destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +End
 +
-+# 4/5 Samples
++# 4/4 Samples
 +
 +Start
 +module = "gid_Module_Optional_Accessories_Samples"
@@ -64,25 +64,9 @@
 +linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-premium-samples"
 +freebsdrequires = "%UNIXPRODUCTNAME-core01"
 +requires = "%UNIXPRODUCTNAME-core01"
-+copyright = "1999-2006 by OpenOffice.org"
++copyright = "1999-2007 by OpenOffice.org"
 +vendor = "OpenOffice.org"
 +description = "Premium samples for %PRODUCTNAME %PRODUCTVERSION"
-+destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
-+End
-+
-+# 5/5 Changed resource files
-+
-+Start
-+module = "gid_Module_Root_Files_8_Lang_Res"
-+solarispackagename = "%WITHOUTDOTUNIXPRODUCTNAME-premium-resources"
-+solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
-+packagename = "%UNIXPRODUCTNAME-premium-resources"
-+linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-premium-resources"
-+freebsdrequires = "%UNIXPRODUCTNAME-core01"
-+requires = "%UNIXPRODUCTNAME-core01"
-+copyright = "1999-2006 by OpenOffice.org"
-+vendor = "OpenOffice.org"
-+description = "Premium resources for %PRODUCTNAME %PRODUCTVERSION"
 +destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +End
 +
