@@ -39,9 +39,7 @@ TARGET=premium
 
 # --- Settings -----------------------------------------------------
 
-.INCLUDE :  svpre.mk
 .INCLUDE :  settings.mk
-.INCLUDE :  sv.mk
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
 # --- Files --------------------------------------------------------
