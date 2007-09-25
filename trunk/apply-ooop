@@ -15,6 +15,7 @@ patch -p0 -l -b -i ./_patch_ooop/i45245-sc-sheet-double-click-rename.diff
 patch -p0 -l -b -i ./_patch_ooop/i49491-sc-enable-navigator.diff
 patch -p0 -l -b -i ./_patch_ooop/i54709-default-impress-ruler.diff
 patch -p0 -l -b -i ./_patch_ooop/i59853-dejavu.diff
+patch -p0 -l -b -i ./_patch_ooop/i59853-dejavu-postprocess.diff
 patch -p0 -l -b -i ./_patch_ooop/i61007-caption-hu.diff
 patch -p0 -l -b -i ./_patch_ooop/i61008-arvizturo2.diff
 patch -p0 -l -b -i ./_patch_ooop/i63864-sc-naturalsort-help.diff
