@@ -2,6 +2,8 @@
 
 localize -m -l de -f de-gallery.sdf
 localize -m -l de -f de-patches.sdf
+localize -m -l pt-BR -f pt-BR-gallery.sdf
+localize -m -l pt-BR -f pt-BR-patches.sdf
 localize -m -l fi -f fi-gallery.sdf
 localize -m -l fi -f fi-patches.sdf
 localize -m -l fr -f fr-gallery.sdf
