@@ -14,13 +14,13 @@ ANTHOME="/usr/local/apache-ant-1.6.5"
 JAVAHOME="/usr/lib/jvm/java-1.5.0-sun-1.5.0.11/"
 
 # Build number
-BUILDNUMBER="OxygenOffice Professional 2.3.0 - OxygenOffice Build 1"
+BUILDNUMBER="OxygenOffice Professional 2.3.0 - OxygenOffice Build 2"
 
 # Builder name
 BUILDER="OxygenOffice Professional Team"
 
 # desired languages
-MYLANGUAGES="hu de fr it tr ka fi pl nl"
+MYLANGUAGES="hu de fr it tr ka fi pl nl pt-BR"
 
 # Configure flags
 CONFIGUREFLAGS="--enable-kde --enable-gtk --enable-build-mozilla --with-system-nas  --enable-vba --enable-evolution2 --enable-lockdown --enable-cairo"

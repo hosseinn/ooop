@@ -18,9 +18,9 @@ setenv myNSISPATH "/cygdrive/c/Program Files/NSIS"
 setenv PATH "${PATH}:${myIDE_PATH}"
 
 # desired languages
-setenv my_LANGUAGES "hu de fr it tr ka fi pl nl"
+setenv my_LANGUAGES "hu de fr it tr ka fi pl nl pt-BR"
 
-setenv BUILDNUMBER "OxygenOffice Professional 2.3.0 - OxygenOffice Build 1"
+setenv BUILDNUMBER "OxygenOffice Professional 2.3.0 - OxygenOffice Build 2"
 
 setenv BUILDER "OxygenOffice Professional Team"
 
