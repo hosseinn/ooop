@@ -2,8 +2,8 @@
 
 localize -m -l de -f de-gallery.sdf
 localize -m -l de -f de-patches.sdf
-localize -m -l pt-BR -f pt-BR-gallery.sdf
-localize -m -l pt-BR -f pt-BR-patches.sdf
+localize -m -l es -f es-gallery.sdf
+localize -m -l es -f es-patches.sdf
 localize -m -l fi -f fi-gallery.sdf
 localize -m -l fi -f fi-patches.sdf
 localize -m -l fr -f fr-gallery.sdf
@@ -20,6 +20,8 @@ localize -m -l nl -f nl-gallery.sdf
 localize -m -l nl -f nl-patches.sdf
 localize -m -l pl -f pl-gallery.sdf
 localize -m -l pl -f pl-patches.sdf
+localize -m -l pt-BR -f pt-BR-gallery.sdf
+localize -m -l pt-BR -f pt-BR-patches.sdf
 localize -m -l tr -f tr-gallery.sdf
 localize -m -l tr -f tr-patches.sdf
 localize -m -l en-US -f ooopteam.sdf
