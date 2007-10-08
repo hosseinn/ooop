@@ -11,6 +11,7 @@
         <simple-license  accept-by="user" default-license-id="en-US" suppress-on-update="true" >
             <license-text xlink:href="licenses/license_de-DE.txt" lang="de-DE" />
             <license-text xlink:href="licenses/license_hu-HU.txt" lang="hu-HU" />
+            <license-text xlink:href="licenses/license_nl-NL.txt" lang="nl-NL" />
             <license-text xlink:href="licenses/license_en-US.txt" lang="en-US" license-id="en-US" />
         </simple-license>
     </registration>
