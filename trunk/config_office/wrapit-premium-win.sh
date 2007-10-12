@@ -25,7 +25,7 @@ BUILDNUMBER="OxygenOffice Professional 2.3.0 - OxygenOffice Build 2"
 
 BUILDER="OxygenOffice Professional Team"
 
-./configure --with-lang="$my_LANGUAGES" --with-mspdb-path="$myMSPDB_PATH" --with-frame-home="$myFWSDK_PATH" --with-jdk-home="$myJSDK_PATH" --with-use-shell=bash --with-psdk-home="$myPSDK_PATH" --with-directx-home="$myDX_PATH" --with-ant-home=$myANTHOME --with-cl-home="$myCLHOME" --with-nmake-path="$myNMAKE_PATH" --with-csc-path="$myCSCPATH" --with-nsis-path="$myNSISPATH"  --with-build-version="$BUILDNUMBER" --with-vendor="$BUILDER" --disable-build-mozilla --enable-vba
+./configure --with-lang="$my_LANGUAGES" --with-mspdb-path="$myMSPDB_PATH" --with-frame-home="$myFWSDK_PATH" --with-jdk-home="$myJSDK_PATH" --with-use-shell=bash --with-psdk-home="$myPSDK_PATH" --with-directx-home="$myDX_PATH" --with-ant-home=$myANTHOME --with-cl-home="$myCLHOME" --with-nmake-path="$myNMAKE_PATH" --with-csc-path="$myCSCPATH" --with-nsis-path="$myNSISPATH"  --with-build-version="$BUILDNUMBER" --with-vendor="$BUILDER" --disable-build-mozilla --enable-vba --with-vba-package-format="builtin"
 
 # supply temp dir
 echo setenv TEMP /tmp >>../winenv.set
