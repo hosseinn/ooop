@@ -3,7 +3,6 @@ patch -p0 -l -b -i ./_patch_ooop/accessories_target.diff
 patch -p0 -l -b -i ./_patch_ooop/gallery_galtheme.diff
 patch -p0 -l -b -i ./_patch_ooop/gallery_inc_gallery.diff
 patch -p0 -l -b -i ./_patch_ooop/gallery_inc_galtheme.diff
-patch -p0 -l -b -i ./_patch_ooop/gallery_sepatared_resource_scp2.diff
 patch -p0 -l -b -i ./_patch_ooop/helpdocument-genericcommand.diff
 patch -p0 -l -b -i ./_patch_ooop/helpdocument-menubar.diff
 patch -p0 -l -b -i ./_patch_ooop/i15456-html-export.diff
