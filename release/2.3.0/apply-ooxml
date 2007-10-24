@@ -1,0 +1,13 @@
+patch -p0 -l -b -i ./_patch_ooxml/common-filter.diff
+patch -p0 -l -b -i ./_patch_ooxml/common-scp2.diff
+patch -p0 -l -b -i ./_patch_ooxml/common-svx.diff
+patch -p0 -l -b -i ./_patch_ooxml/writerfilter-comphelper.diff
+patch -p0 -l -b -i ./_patch_ooxml/writerfilter-postprocess.diff
+patch -p0 -l -b -i ./_patch_ooxml/writerfilter-writerfilter.diff
+patch -p0 -l -b -i ./_patch_ooxml/xmlfilter-offapi.diff
+patch -p0 -l -b -i ./_patch_ooxml/xmlfilter-sal.diff
+patch -p0 -l -b -i ./_patch_ooxml/xmlfilter-sax.diff
+patch -p0 -l -b -i ./_patch_ooxml/xmlfilter-sc.diff
+patch -p0 -l -b -i ./_patch_ooxml/xmlfilter-sd.diff
+patch -p0 -l -b -i ./_patch_ooxml/xmlfilter-solenv.diff
+patch -p0 -l -b -i ./_patch_ooxml/xmlfilter-toolkit.diff

@@ -1,0 +1,29 @@
+OxygenOffice kiegészítõk OpenOffice.org kiterjesztésként
+
+Ez a kiterjesztés - a csomagot tekintve - a GNU Lesser General Public License (LGPL) licenc szabályai szerint terjeszthetõ. Az LGPL licenc szöveg elolvasható a következõ internet-oldalon:
+http://www.gnu.org/licenses/lgpl.html
+
+ ***
+
+A fõ projekt - OxygenOffice Professional - és ez a kiterjesztés több hozzájáruló munkáján alapul. A kiterjesztésbe csomagolt egyedi elemek licencelése eltérõ lehet. A - non free - jelõlésû kiterjesztések még korlátozóbb licencelésû elemeket is tartalmazhatnak.
+További információkért tekintse meg az alábbi táblázatokat:
+-- sablonok esetén:
+http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Template.ods
+-- képtárak esetén:
+http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Gallery.ods
+
+ ***
+
+SEGÍTSE MUNKÁNKAT!
+Hozzon létre professzionális sablonokat és küldje el nekünk.
+Rajzoljon fantasztikus clipartokat és küldje el nekünk.
+Ha sablont akarna lefordítani egy másik nyelvre, lépjen kapcsolatba velünk.
+Ha van egy jó ötlete, küldje be a fórumonkunk keresztül.
+
+
+OxygenOffice Professional Csapat
+http://ooop.sf.net/
+
+
+ -----
+license_hu-HU document V1.0.1

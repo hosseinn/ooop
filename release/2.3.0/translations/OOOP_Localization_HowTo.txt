@@ -1,0 +1,134 @@
+﻿===========================================================
+=                                                         =
+= How to localize OpenOffice.org Premium to your language =
+=                                                         =
+===========================================================
+
+
+
+I. User Interface elements of OxygenOffice Professional
+-------------------------------------------------------
+
+
+1) Download the most currenct localization for OpenOffice.org Premium from here:
+   http://sourceforge.net/project/showfiles.php?group_id=170021&package_id=202806
+
+2) Unpack it into your workdir
+
+3) Edit the OpenOffice.org Calc files (ODS) with Calc or if you are expert you can
+   edit SDF files directly with a good UTF-8 capable editor
+
+4) You have to edit two files:
+
+   * master-gallery.ods
+   * master-patches.ods
+   * premium-master.ods
+
+5) The basic rules of edition:
+
+   a) Every files have English (en-US) lines do NOT tuch them... 
+   b) You can translate every second line where J column = "[YourLangID]" (without quotes).
+   c) You can simply search and replace [YourLangID] string to yout language ID for example hu, de, en-UK, etc.
+   d) Translate the K column to your language from english text
+
+6) Rename the files
+
+   * master-gallery.ods to <yourlanguageID>-gallery.ods
+   * master-patches.ods to <yourlanguageID>-patches.ods
+
+   NOTE: "<yourlanguageID>" (without quotes) is your language ID for example hu, de, en-UK, etc.
+
+7) Save your files as csv file (Files -> Save as -> Filetype: Text CSV (.csv)
+
+   * Enable "Edit filter settings" option
+   
+   a) Character set   : Unicode (UTF-8)
+   b) Field delimiter : {Tab}
+   c) Text Delimiter  : (none) [Delete the current settings]
+   d) Disable "Save cell settings as shown" option
+
+8) Rename the files
+
+   * master-gallery.csv to <yourlanguageID>-gallery.sdf
+   * master-patches.csv to <yourlanguageID>-patches.sdf
+
+9) Send your fully translated (ods and sdf) files to me.
+
+
+
+II. Translated templates for OxygenOffice Professional
+------------------------------------------------------
+
+
+Afrer you have successfully translated the additional UI elements of OxygenOffice Professional you can collect templates for your language. Professional, easy to use and correct templates will extend the user exparience of OxygenOffice Professional. Se these alaments are assential for OxygenOffice professional. You can create new templates or translate templates from other languages. Also you can collect templates in your language around you. One important thing is they should be licensed under free license like PDL, PD, LGPL, CC.
+
+If you have good templates in your language (or gallery elements) under free license please send it to me.
+
+To make my work easier please follow the next rules:
+
+1) Please collect OpenOffice.org license compatible templates in your language and short them into these categories...
+
+officorr -> "Business Correspondence"
+offimisc -> "Other Business Documents"
+personal -> "Personal Correspondence and Documents"
+forms -> "Forms and Contracts"
+finance -> "Finances"
+educate -> "Education"
+layout -> "Presentation Backgrounds"
+presnt -> "Presentations"
+misc -> "Miscellaneous"
+
+NOTE: layout for Impress backgrounds, presnt for Impress prewritten presentations
+
+2) Then zip (or 7zip) it and send it to me.
+
+
+III. General rules of template editing
+--------------------------------------
+
+This section is based on this official document:
+http://l10n.openoffice.org/localization/extras/How-To_Manual_OOo-Extras.odt
+
+
+!!!BIG FAT WARNING !!!
+! 
+! Do not double-click on templates to open.
+! If you do so, a new document will be created.
+! Instead of this right-click the
+! regarding template and choose “Open”.
+!
+!!!!!!!!!!!!!!!!!!!!!!
+
+
+* The cursor position in a document must be on the top of the first page.
+* The document must have a zoom factor of 100%, presentations and drawings should be scaled to “Entire page”.
+* The language of the document (Tools - Options - Language Settings - Default languages of documents.) and characters must be set correctly - paragraph style “Default”:
+Open “Styles and Formatting”: right-click on style “Default” – Modify... – Font - Language 
+* Set title and description in File – Properties
+* Contents
+* Contents of second page in Writer templates, if necessary - To check this, insert a manual page break at the bottom of the first page (ctrl+enter).
+* Custom paragraph styles, if existent - “Styles and Formatting” - Default view is “Automatic”. To save time please set the view to “Custom Styles”.
+* Names of tables, frames, graphics, etc. - “Navigator”
+* Notes - “Navigator”
+* Contents of fields (double click on a field), e.g. <Placeholders>
+
+
+
+Notes for Impress templates:
+
+OpenOffice.org Impress Layout Templates
+* They are in “...\share\template\en-US\layout”
+* You only have to translate title and description of these files. Do not forget to set the document language in Tools - Options - Language Settings - Default languages of documents.
+
+
+OpenOffice.org Impress Presentation Templates
+* They are in “...\share\template\en-US\presnt”
+* Do not forget to translate the slide names.
+
+
+
+
+Thank you for your attention!
+
+
+KAMI

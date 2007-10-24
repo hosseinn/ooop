@@ -1,0 +1,24 @@
+diff -rup scp2/source/ooo/file_library_ooo.scp scp2/source/ooo/file_library_ooo.scp
+--- scp2/source/ooo/file_library_ooo.scp	2007-02-11 08:10:05.000000000 +0000
++++ scp2/source/ooo/file_library_ooo.scp	2007-02-12 10:56:04.000000000 +0000
+@@ -95,6 +95,20 @@ File gid_File_Lib_Basprov
+   #endif
+ End
+ 
++#ifdef ENABLE_VBA
++File gid_File_Lib_Vbaevent
++    TXT_FILE_BODY;
++    Styles = (PACKED,UNO_COMPONENT);
++    RegistryID = gid_Starregistry_Services_Rdb;
++    Dir = gid_Dir_Program;
++  #ifdef UNX
++    Name = STRING(CONCAT5(vbaevents,OFFICEUPD,DLLPOSTFIX,.uno,UNXSUFFIX));
++  #else
++    Name = STRING(CONCAT5(vbaevents,OFFICEUPD,DLLPOSTFIX,.uno,.dll));
++  #endif
++End
++#endif // ENABLE_VBA
++
+ STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Bib , bib)
+ 
+ File gid_File_Lib_Brdgfctr
