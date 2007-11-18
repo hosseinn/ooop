@@ -13,6 +13,8 @@ localize -m -l hu -f hu-gallery.sdf
 localize -m -l hu -f hu-patches.sdf
 localize -m -l it -f it-gallery.sdf
 localize -m -l it -f it-patches.sdf
+localize -m -l ja -f ja-gallery.sdf
+localize -m -l ja -f ja-patches.sdf
 localize -m -l ka -f GSI_ka.sdf
 localize -m -l ka -f ka-gallery.sdf
 localize -m -l ka -f ka-patches.sdf
