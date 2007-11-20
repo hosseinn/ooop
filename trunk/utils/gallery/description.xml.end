@@ -13,7 +13,7 @@
             <license-text xlink:href="licenses/license_hu-HU.txt" lang="hu-HU" />
             <license-text xlink:href="licenses/license_nl-NL.txt" lang="nl-NL" />
             <license-text xlink:href="licenses/license_tr-TR.txt" lang="tr-TR" />
-            <license-text xlink:href="licenses/license_ja-JA.txt" lang="ja-JA" />
+            <license-text xlink:href="licenses/license_ja-JA.txt" lang="ja-JP" />
             <license-text xlink:href="licenses/license_en-US.txt" lang="en-US" license-id="en-US" />
         </simple-license>
     </registration>
