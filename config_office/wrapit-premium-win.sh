@@ -19,7 +19,7 @@ myNSISPATH="/cygdrive/c/Program Files/NSIS"
 PATH "${PATH}:${myIDE_PATH}"
 
 # desired languages
-my_LANGUAGES="hu de fr it tr ka fi pl nl pt-BR es"
+my_LANGUAGES="hu de fr it tr ka fi pl nl pt-BR es ja"
 
 BUILDNUMBER="OxygenOffice Professional 2.3.0 - OxygenOffice Build 2"
 
