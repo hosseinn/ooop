@@ -1,8 +1,8 @@
-﻿===========================================================
-=                                                         =
-= How to localize OpenOffice.org Premium to your language =
-=                                                         =
-===========================================================
+﻿==============================================================
+=                                                            =
+= How to localize OxygenOffice Professional to your language =
+=                                                            =
+==============================================================
 
 
 
@@ -22,7 +22,6 @@ I. User Interface elements of OxygenOffice Professional
 
    * master-gallery.ods
    * master-patches.ods
-   * premium-master.ods
 
 5) The basic rules of edition:
 
