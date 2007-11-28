@@ -20,7 +20,7 @@ BUILDNUMBER="OxygenOffice Professional 2.3.0 - OxygenOffice Build 2"
 BUILDER="OxygenOffice Professional Team"
 
 # desired languages
-MYLANGUAGES="hu de fr it tr ka fi pl nl pt-BR es ja"
+MYLANGUAGES="hu de fr it tr ka fi pl nl pt-BR es ja zh-CN"
 
 # Configure flags
 CONFIGUREFLAGS="--enable-kde --enable-gtk --enable-build-mozilla --with-system-nas  --enable-vba --with-vba-package-format=builtin --enable-evolution2 --enable-lockdown --enable-cairo"
