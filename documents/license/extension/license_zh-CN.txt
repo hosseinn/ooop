@@ -1,0 +1,29 @@
+OxygenOffice Extras (OpenOffice.org扩展功能)
+
+此份扩展 -本身- 采用GNU次通用公共授权 (LGPL)，你可以访问以下链接查看授权许可：
+http://www.gnu.org/licenses/lgpl.html
+
+ ***
+
+主项目 - OxygenOffice专业版 - 和相关扩展功能 源于几位贡献者的工作。这份扩展在基于个体基础上的许可可能会有不同。在 -非免费- 扩展项目上包含更加严厉的许可。更多许可信息请查阅我们的许可表单：
+-- 模板项目：
+http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Template.ods
+-- 图库项目：
+http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Gallery.ods
+
+ ***
+
+我们需要你！
+如果你能创建专业的模板，请将它发送给我们。
+如果你能绘制酷图片，请将它发送给我们。
+如果你能翻译模板，请与我们取得联系。
+如果你有什么好的建议，请到我们的论坛上发布。
+
+
+OxygenOffice 专业团队
+http://ooop.sf.net/
+
+
+ -----
+license_zh-CN document V1.0.1
+

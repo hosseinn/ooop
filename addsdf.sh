@@ -26,4 +26,6 @@ localize -m -l pt-BR -f pt-BR-gallery.sdf
 localize -m -l pt-BR -f pt-BR-patches.sdf
 localize -m -l tr -f tr-gallery.sdf
 localize -m -l tr -f tr-patches.sdf
+localize -m -l zh-CN -f zh-CN-gallery.sdf
+localize -m -l zh-CN -f zh-CN-patches.sdf
 localize -m -l en-US -f ooopteam.sdf
