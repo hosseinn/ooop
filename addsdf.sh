@@ -24,6 +24,8 @@ localize -m -l pl -f pl-gallery.sdf
 localize -m -l pl -f pl-patches.sdf
 localize -m -l pt-BR -f pt-BR-gallery.sdf
 localize -m -l pt-BR -f pt-BR-patches.sdf
+localize -m -l sv -f sv-gallery.sdf
+localize -m -l sv -f sv-patches.sdf
 localize -m -l tr -f tr-gallery.sdf
 localize -m -l tr -f tr-patches.sdf
 localize -m -l zh-CN -f zh-CN-gallery.sdf
