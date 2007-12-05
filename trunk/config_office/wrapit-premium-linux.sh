@@ -14,7 +14,7 @@ ANTHOME="/usr/local/apache-ant-1.6.5"
 JAVAHOME="/usr/lib/jvm/java-1.5.0-sun-1.5.0.11/"
 
 # Build number
-BUILDNUMBER="OxygenOffice Professional 2.3.0 - OxygenOffice Build 2"
+BUILDNUMBER="OxygenOffice Professional 2.3.1 - OxygenOffice Build 1"
 
 # Builder name
 BUILDER="OxygenOffice Professional Team"
