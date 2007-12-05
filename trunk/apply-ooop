@@ -36,4 +36,4 @@ patch -p0 -l -b -i ./_patch_ooop/scp2_build_accessories.diff
 patch -p0 -l -b -i ./_patch_ooop/scp2_directory_accessories.diff
 patch -p0 -l -b -i ./_patch_ooop/scp2_makefile_accessories.diff
 patch -p0 -l -b -i ./_patch_ooop/update-URL.diff
-patch -p0 -l -b -i ./_patch_ooop/win32-use-short-tmp.diff
+patch -p0 -l -b -i ./_patch_ooop/win32-use_relative_path_in_ddf_files.diff
