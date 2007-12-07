@@ -23,6 +23,6 @@ BUILDER="OxygenOffice Professional Team"
 MYLANGUAGES="hu de fr it tr ka fi pl nl pt-BR es ja zh-CN sv"
 
 # Configure flags
-CONFIGUREFLAGS="--enable-kde --enable-gtk --enable-build-mozilla --with-system-nas  --enable-vba --with-vba-package-format=builtin --enable-evolution2 --enable-lockdown --enable-cairo"
+CONFIGUREFLAGS="--enable-kde --enable-gtk --enable-build-mozilla --with-system-nas  --enable-vba --with-vba-package-format=builtin --enable-evolution2 --enable-lockdown --enable-cairo --with-system-freetype"
 
 ./configure --with-lang="${MYLANGUAGES}" --with-jdk-home=${JAVAHOME} --with-ant-home=${ANTHOME} --with-package-format="${PKGFMTS}" ${CONFIGUREFLAGS} --with-build-version="${BUILDNUMBER}" --with-vendor="${BUILDER}"
