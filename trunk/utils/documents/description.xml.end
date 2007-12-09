@@ -10,6 +10,7 @@
     <registration>
         <simple-license  accept-by="user" default-license-id="en-US" suppress-on-update="true" >
             <license-text xlink:href="licenses/license_de-DE.txt" lang="de-DE" />
+            <license-text xlink:href="licenses/license_es-ES.txt" lang="es-ES" />
             <license-text xlink:href="licenses/license_hu-HU.txt" lang="hu-HU" />
             <license-text xlink:href="licenses/license_nl-NL.txt" lang="nl-NL" />
             <license-text xlink:href="licenses/license_tr-TR.txt" lang="tr-TR" />
