@@ -1,5 +1,5 @@
 #!/bin/bash
-version=2.3.1.1
+version=2.3.1.2
 echo [+] START...
 mkdir -p ../output
 
@@ -12,7 +12,7 @@ do
   rm -fr ./_TEMP_ML_/
   mkdir -p ./_TEMP_ML_/
 
-  for languages in hu de en-US it fr
+  for languages in hu de en-US es fi fr it ja ka nl pl pt-BR sv tr zh-CN
   do
     
     echo ---------------------------------
