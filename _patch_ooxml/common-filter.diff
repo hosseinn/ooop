@@ -94,25 +94,47 @@ diff -u -b -I $Revision.*$ -I $Author.*$ -r1.7 -r1.7.224.3
  
  # -----------------------------------------------
  # count = 0
---- filter/source/config/fragments/fcfg_writer.mk	13 Jul 2006 09:12:35 -0000	1.9
-+++ filter/source/config/fragments/fcfg_writer.mk	12 Jul 2007 13:28:44 -0000
-@@ -57,6 +57,7 @@
+--- filter/source/config/fragments/fcfg_writer.mk.orig	2007-12-10 10:25:14.089496000 +0100
++++ filter/source/config/fragments/fcfg_writer.mk	2007-12-10 22:47:58.014464000 +0100
+@@ -28,7 +28,7 @@
+ .ENDIF
+ 
+ # -----------------------------------------------
+-# count = 39
++# count = 44
+ T4_WRITER = \
+     writer_web_HTML \
+     writer_Lotus_1_2_3_10_DOS_StarWriter \
+@@ -60,12 +60,13 @@
      writer8_template\
      writer8 \
      writer_MS_Word_2003_XML \
 +    writer_MS_Word_2007_XML \
+     MediaWiki_File \
  	LaTeX \
  	BibTeX
  
-@@ -90,6 +91,7 @@
- 	writer8\
- 	writer8_template \
+ # -----------------------------------------------
+-# count = 39
++# count = 43
+ F4_WRITER = \
+ 	HTML__StarWriter_ \
+ 	Lotus_1_2_3_1_0__DOS___StarWriter_ \
+@@ -99,11 +100,12 @@
+     writer_MediaWiki_File \
+     writer_web_MediaWiki_File \
      MS_Word_2003_XML \
 +    MS_Word_2007_XML \
  	LaTeX_Writer \
  	BibTeX_Writer
  
-@@ -109,7 +111,8 @@
+ # -----------------------------------------------
+-# count = 14
++# count = 15
+ F4_UI_WRITER = \
+ 	HTML__StarWriter__ui \
+ 	MS_Word_95_Vorlage_ui \
+@@ -118,7 +120,8 @@
  	writer_StarOffice_XML_Writer_Template_ui \
  	writer8_ui \
  	writer8_template_ui \
