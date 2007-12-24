@@ -1,5 +1,7 @@
 patch -p0 -l -b -i ./_patch_ooop/accessories_build.diff
 patch -p0 -l -b -i ./_patch_ooop/accessories_target.diff
+patch -p0 -l -b -i ./_patch_ooop/extras_configure.diff
+patch -p0 -l -b -i ./_patch_ooop/extras_solenv.diff
 patch -p0 -l -b -i ./_patch_ooop/gallery_galtheme.diff
 patch -p0 -l -b -i ./_patch_ooop/gallery_inc_gallery.diff
 patch -p0 -l -b -i ./_patch_ooop/gallery_inc_galtheme.diff
