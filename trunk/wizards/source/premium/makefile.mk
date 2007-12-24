@@ -42,10 +42,14 @@ TARGET=premium
 .INCLUDE :  settings.mk
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
+.IF "$(WITH_EXTRA_ACCESSORY)" == "YES"
+
 # --- Files --------------------------------------------------------
 
 ZIP1TARGET      = $(PREMIUM_ALL_TARGET)
 ZIP1LIST        = *.xdl *.xba *.xlb
+
+.ENDIF
 
 # --- Targets ------------------------------------------------------
 
