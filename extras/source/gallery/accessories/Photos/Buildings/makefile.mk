@@ -44,12 +44,14 @@ TARGET=galleryaccessoriesphotosbuildings
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
 
+.IF "$(WITH_EXTRA_GALLERY)" == "YES"
 
 ZIP1TARGET      = $(GALLERY_ACCESSORIES_PHOTOS_BUILDINGS_TARGET)
 
 ZIP1LIST        = * -x makefile.*
 
 
+.ENDIF
 
 .INCLUDE : target.mk
 

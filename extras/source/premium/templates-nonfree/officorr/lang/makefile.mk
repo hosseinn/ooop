@@ -43,6 +43,7 @@ TARGET=premiumtemplatesnonfreeofficorr
 
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
+.IF "$(WITH_EXTRA_TEMPLATE)" == "YES"
 
 
 ZIP1TARGET      = $(PREMIUM_TEMPLATES_NONFREE_OFFICORR_TARGET)
@@ -50,6 +51,7 @@ ZIP1TARGET      = $(PREMIUM_TEMPLATES_NONFREE_OFFICORR_TARGET)
 ZIP1LIST	= $(LANGDIR)$/*
 
 
+.ENDIF
 
 .INCLUDE : target.mk
 

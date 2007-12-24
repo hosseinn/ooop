@@ -43,6 +43,7 @@ TARGET=premiumsamplesadvertisement
 
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
+.IF "$(WITH_EXTRA_SAMPLE)" == "YES"
 
 
 ZIP1TARGET      = $(PREMIUM_SAMPLES_ADVERTISEMENT_TARGET)
@@ -50,6 +51,7 @@ ZIP1TARGET      = $(PREMIUM_SAMPLES_ADVERTISEMENT_TARGET)
 ZIP1LIST	= $(LANGDIR)$/*
 
 
+.ENDIF
 
 .INCLUDE : target.mk
 
