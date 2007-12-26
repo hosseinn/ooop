@@ -43,7 +43,7 @@ TARGET=galleryaccessoriesdrawspeople
 
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
-.IF "$(WITH_EXTRA_GALLERY)" == "YES"
+.IF "$(WITH_EXTRA_GALLERY)" != "NO"
 
 
 ZIP1TARGET      = $(GALLERY_ACCESSORIES_DRAWS_PEOPLE_TARGET)

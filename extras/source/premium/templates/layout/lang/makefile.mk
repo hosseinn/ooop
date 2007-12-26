@@ -43,7 +43,7 @@ TARGET=premiumtemplateslayout
 
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
-.IF "$(WITH_EXTRA_TEMPLATE)" == "YES"
+.IF "$(WITH_EXTRA_TEMPLATE)" != "NO"
 
 
 ZIP1TARGET      = $(PREMIUM_TEMPLATES_LAYOUT_IMPRESS_TARGET)

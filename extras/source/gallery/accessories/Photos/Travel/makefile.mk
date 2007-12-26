@@ -43,7 +43,7 @@ TARGET=galleryaccessoriesphotostravel
 
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
-.IF "$(WITH_EXTRA_GALLERY)" == "YES"
+.IF "$(WITH_EXTRA_GALLERY)" != "NO"
 
 
 ZIP1TARGET      = $(GALLERY_ACCESSORIES_PHOTOS_TRAVEL_TARGET)

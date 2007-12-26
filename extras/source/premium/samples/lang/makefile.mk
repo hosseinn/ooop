@@ -43,7 +43,7 @@ TARGET=premiumsamplesgeneral
 
 .INCLUDE : $(PRJ)$/util$/target.pmk
 
-.IF "$(WITH_EXTRA_SAMPLE)" == "YES"
+.IF "$(WITH_EXTRA_SAMPLE)" != "NO"
 
 
 ZIP1TARGET      = $(PREMIUM_SAMPLES_ROOT_TARGET)
