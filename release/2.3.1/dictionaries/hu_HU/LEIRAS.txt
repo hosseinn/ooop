@@ -1,0 +1,20 @@
+Magyar Ispell 1.2.1-es szótárállományok (http://magyarispell.sourceforge.net)
+
+Telepítés az FSF.hu Alapítvány által kiadott magyar OpenOffice.org-ban:
+
+A Fájl–>Tündérek–>Új szótárak telepítése menüpont kiválasztása és a
+DicOOo tündér indítása után jelöljük be a Helyi gépen lévő nyelvi
+állományok telepítése jelölőnégyzetet, majd adjuk meg a letöltött
+csomag útvonalát. A következő két oldalon (helyesírási és elválasztási
+szótárak) jelöljük ki a Hungarian (Hungary) elemeket a párbeszédablak
+bal oldalán, és a telepítés után indítsuk újra az OpenOffice.org-ot a
+változtatások életbelépéséhez. Ellenőrizzük a helyesírási szótár
+sikeres telepítését pl. a himba szó beírásával.
+
+A szótár következő nyílt forráskódú licencek bármelyike alapján
+szabadon felhasználható, de mindenféle garancia nélkül:
+
+GNU GPL 3, GNU GPL 2.0, GNU LGPL 2.1 vagy MPL 1.1
+
+Németh László 
+nemeth@OOo
