@@ -6,29 +6,25 @@ mkdir -p ../output
 rm -fr ./_TEMP_
 for folder in templates templates-nonfree
 do
-      
-      mkdir -p ./_TEMP_/templates/premium/$folder
+      mkdir -p ./_TEMP_/templates/premium/$folder/
       rsync -avv --progress --human-readable --exclude-from=exclude.exc ../../extras/source/premium/$folder/* ./_TEMP_/templates/premium/$folder/
 done
 
 for folder in samples samples-nonfree
 do
-      
-      mkdir -p ./_TEMP_/samples/premium/$folder
+      mkdir -p ./_TEMP_/samples/premium/$folder/
       rsync -avv --progress --human-readable --exclude-from=exclude.exc ../../extras/source/premium/$folder/* ./_TEMP_/samples/premium/$folder/
 done
 
 for folder in gallery
 do
-      
-      mkdir -p ./_TEMP_/gallery/premium/$folder
+      mkdir -p ./_TEMP_/gallery/$folder/
       rsync -avv --progress --human-readable --exclude-from=exclude.exc ../../extras/source/$folder/* ./_TEMP_/gallery/$folder/
 done
 
 for folder in truetype
 do
-      
-      mkdir -p ./_TEMP_/fonts/premium/$folder
+      mkdir -p ./_TEMP_/fonts/$folder/
       rsync -avv --progress --human-readable --exclude-from=exclude.exc ../../extras/source/$folder/* ./_TEMP_/fonts/$folder/
 done
 
