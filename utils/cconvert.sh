@@ -1,6 +1,6 @@
 #!/bin/bash
-export lcl="tr"
-export lco="TR"
+export lcl="cs"
+export lco="CZ"
 for file in *.ot?
 do
 mkdir -p ./work/"$file"
