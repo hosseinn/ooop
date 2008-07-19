@@ -76,6 +76,7 @@ educate -> "Education"
 layout -> "Presentation Backgrounds"
 presnt -> "Presentations"
 misc -> "Miscellaneous"
+labels -> "Labels"
 
 NOTE: layout for Impress backgrounds, presnt for Impress prewritten presentations
 
