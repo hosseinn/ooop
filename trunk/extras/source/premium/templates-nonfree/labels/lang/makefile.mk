@@ -37,7 +37,7 @@ PRJ=..$/..$/..$/..$/..
 
 
 PRJNAME=extras
-TARGET=premiumtemplateslabels
+TARGET=premiumtemplatesnonfreelabels
 
 .INCLUDE : settings.mk
 
@@ -46,7 +46,7 @@ TARGET=premiumtemplateslabels
 .IF "$(WITH_EXTRA_TEMPLATE)" != "NO"
 
 
-ZIP1TARGET      = $(PREMIUM_TEMPLATES_LABELS_TARGET)
+ZIP1TARGET      = $(PREMIUM_TEMPLATES_NONFREE_LABELS_TARGET)
 
 ZIP1LIST	= $(LANGDIR)$/*
 
