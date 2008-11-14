@@ -3,4 +3,8 @@
 <manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
     <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
                          manifest:full-path ="Paths.xcu"/>
+<manifest:file-entry manifest:media-type="application/vnd.sun.star.package-bundle-description"
+                     manifest:full-path="license/lgpl_en.txt" />
+<manifest:file-entry manifest:media-type="application/vnd.sun.star.package-bundle-description;locale=de"
+                     manifest:full-path="license/lgpl_de.txt" />
 </manifest:manifest>

@@ -3,19 +3,22 @@
              xmlns:xlink="http://www.w3.org/1999/xlink">
     <identifier value="org.openoffice.smileyman" />
     <version value="0.1" />
-    <registration>
-	    <simple-license  accept-by="admin" default-license-id="en-US" suppress-on-update="true" >
+    <display-name>
+        <name lang="en">Icon talk</name>
+        <name lang="de">Icon talk</name>
+    </display-name>    <registration>
+        <simple-license  accept-by="admin" default-license-id="en-US" suppress-on-update="true" >
             <license-text xlink:href="license/lgpl_de.txt" lang="de" license-id="de-DE" />
             <license-text xlink:href="license/lgpl_en.txt" lang="en" license-id="en-US" />
     	</simple-license>
-  	</registration >
-	
-	<publisher>
-		<name xlink:href="http://ooop.sf.net/" lang="en">Smileyman & OxygenOffice Professional Team</name>
-	</publisher>
-	
-	<icon>
-		<default xlink:href="droppedImage_11.png" />
-	</icon>
+    </registration >
+
+    <publisher>
+        <name xlink:href="http://ooop.sf.net/" lang="en">Smileyman and OxygenOffice Professional Team</name>
+    </publisher>
+
+    <icon>
+	<default xlink:href="droppedImage_11.png" />
+    </icon>
 </description>
 
