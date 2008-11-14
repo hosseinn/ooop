@@ -1,20 +1,4 @@
-Der Urheber dieser Extension ist
-	André Schnabel (andreschnabel@openoffice.org)
-Copyright 2007. Einige Rechte vorbehalten.
-
-Für Copyright und Lizenzinformationen der enthaltenen Emoticons, siehe:
-http://www.kde-look.org/content/show.php/EmotiKons+0.2+for+Kopete?content=9483
-
-
-Diese Extension und die enthaltenen Emotiocons sind freie Software. Sie stehen unter der GNU LGPL Lizenz Version 2.1 und dürfen entsprechend dieser verwendet, bearbeitet und verbreitet werden.
-
-Die Vorlagen werden in der Hoffnung verteilt, dass sie Nutzen für den Anwender bringt, aber OHNE JEDE GARANTIE. Es bestehen weder Gewährleistungsansprüche irgendwelcher Art noch die Zusicherung irgendwelcher Eigenschaften. Bitte lesen Sie den Lizenztext der GNU LGPL für detailierte Informationen.
-
-Eine unverbindliche deutsche Übersetzung des Lizenztextes finden Sie unter http://www.gnu.de/documents/lgpl-2.1.de.html.
-
----------------------------------------------------------------------------
-
-GNU LESSER GENERAL PUBLIC LICENSE
+﻿GNU LESSER GENERAL PUBLIC LICENSE
                Version 2.1, February 1999
 
  Copyright (C) 1991, 1999 Free Software Foundation, Inc.

@@ -1,18 +1,4 @@
-The author of this extension is:
-	André Schnabel (andreschnabel@openoffice.org)
-Copyright 2007. Some Rights reserverd.
-
-For Copyright and License information for the contained emoticons see
-http://www.kde-look.org/content/show.php/EmotiKons+0.2+for+Kopete?content=9483
-
-This extension and the contained emoticons are free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License version 2.1, as published by the Free Software Foundation.
-
-This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
-
-
----------------------------------------------------------------------------
-
-GNU LESSER GENERAL PUBLIC LICENSE
+﻿GNU LESSER GENERAL PUBLIC LICENSE
                Version 2.1, February 1999
 
  Copyright (C) 1991, 1999 Free Software Foundation, Inc.
