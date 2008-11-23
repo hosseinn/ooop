@@ -1,0 +1,5 @@
+OxygenOffice Extras (OpenOffice.org扩展功能)
+
+此份扩展包含了OxygenOffice项目的一些部分，这个项目创建和收集OpenOffice.org的模板、图库以及其他有用的附加资源，并把它们做成易于安装的扩展功能包，您也可以下载基于OpenOffce.org的包含了所有增强附加功能的OxygenOffice专业版捆绑安装包。
+
+

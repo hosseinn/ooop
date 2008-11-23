@@ -21,6 +21,30 @@
         </simple-license>
     </registration>
 
+    <extension-description>
+	    <src xlink:href="description/description_en.txt" lang="en" />
+            <src xlink:href="description/description_de.txt" lang="de" />
+            <src xlink:href="description/description_es.txt" lang="es" />
+            <src xlink:href="description/description_hu.txt" lang="hu" />
+            <src xlink:href="description/description_nl.txt" lang="nl" />
+            <src xlink:href="description/description_sv.txt" lang="sv" />
+            <src xlink:href="description/description_tr.txt" lang="tr" />
+            <src xlink:href="description/description_ja.txt" lang="ja" />
+            <src xlink:href="description/description_zh-CN.txt" lang="zh-CN" />
+    </extension-description>
+
+    <release-notes>
+	    <src xlink:href="readme/readme_en.txt" lang="en" />
+            <src xlink:href="readme/readme_de.txt" lang="de" />
+            <src xlink:href="readme/readme_es.txt" lang="es" />
+            <src xlink:href="readme/readme_hu.txt" lang="hu" />
+            <src xlink:href="readme/readme_nl.txt" lang="nl" />
+            <src xlink:href="readme/readme_sv.txt" lang="sv" />
+            <src xlink:href="readme/readme_tr.txt" lang="tr" />
+            <src xlink:href="readme/readme_ja.txt" lang="ja" />
+            <src xlink:href="readme/readme_zh-CN.txt" lang="zh-CN" />
+    </release-notes>
+
 	<publisher>
 		<name xlink:href="http://ooop.sf.net/" lang="en">OxygenOffice Professional Team</name>
 	</publisher>
@@ -29,4 +53,4 @@
 		<default xlink:href="Mail4_0_1.png" />
 	</icon>
 
-</description>
+</readme>

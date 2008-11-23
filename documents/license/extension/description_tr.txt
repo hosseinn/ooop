@@ -1,0 +1,5 @@
+OpenOffice.org Eklentisi olarak OxygenOffice Ekstralarý
+
+This Eklenti, OxygenOffice Projesi'nin bazý kýsýmlarýný içermektedir. Bu proje; OpenOffice.org için þablonlar, galeriler ve diðer kullanýþlý malzemeleri oluþturur ve toplar ve bunlarý kurulumu kolay Eklenti paketleri halinde daðýtýr. Ayrýca kullanýlabilir tüm ekstalarla birleþtirilmiþ bir OpenOffice.org kurulumu olan OxygenOffice Professional ürününü de indirebilirsiniz.
+
+
