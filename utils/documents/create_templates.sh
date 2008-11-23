@@ -25,7 +25,7 @@ do
     do
 
       echo [+] Processing $templates folder, $languages language...
-      if [ "$mode" == "unified" ]; then
+      if [ "$mode" = "unified" ]; then
       echo [.] UNIFIED mode.
       mkdir -p ./_TEMP_/template/$templates
       rsync -avv --progress --human-readable --exclude-from=exclude.exc ../../extras/source/premium/$folder/$templates/lang/$languages/* ./_TEMP_/template/$templates/
@@ -37,7 +37,7 @@ do
 
     done
 # Separated mode creates the perfect all in one template package. Unified module will overwrite files in different langusges but with same name
-    if [ "$mode" == "separated" ]; then
+    if [ "$mode" = "separated" ]; then
     cp -fr ./_TEMP_/* ./_TEMP_ML_/
     fi
   
@@ -66,7 +66,7 @@ do
     rm -f ../output/OOOP-$folder-$mode-$languages-$version.oxt
 
     echo [+] Creating empty OOOP-$folder-$mode-$languages-$version.oxt...
-    if [ "$mode" == "unified" ];
+    if [ "$mode" = "unified" ];
     then
     cp -f TemplatePackage.oxt ../output/OOOP-$folder-$mode-$languages-$version.oxt
     else
@@ -86,7 +86,7 @@ do
   done
 # Separated mode creates the perfect all in one template package. Unified module will overwrite files in different langusges but with same name
 # no unified-all
-  if [ "$mode" == "separated" ]; then
+  if [ "$mode" = "separated" ]; then
   
   echo [+] Adding licensing information...
   mkdir -p ./_TEMP_ML_/licenses
@@ -107,7 +107,7 @@ do
   rm -f ../output/OOOP-$folder-$mode-all-$version.oxt
 
   echo [+] Creating empty OOOP-$folder-$mode-all-$version.oxt...
-    if [ "$mode" == "unified" ];
+    if [ "$mode" = "unified" ];
     then
     cp -f TemplatePackage.oxt ../output/OOOP-$folder-$mode-all-$version.oxt
     else
