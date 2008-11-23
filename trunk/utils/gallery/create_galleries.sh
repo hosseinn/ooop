@@ -1,5 +1,5 @@
 #!/bin/bash
-version=2.6.0.1
+version=2.6.0.2
 echo [+] START...
 mkdir -p ../output
 
@@ -25,6 +25,10 @@ do
     echo [+] Adding readme information...
     mkdir -p ./_TEMP_/readmes
     cp -f ../../documents/license/extension/readme_*.txt ./_TEMP_/readmes/
+
+    echo [+] Adding description information...
+    mkdir -p ./_TEMP_/description
+    cp -f ../../documents/license/extension/description_*.txt ./_TEMP_/description/
 
     echo [+] Adding description information...
     echo "   <identifier value=\""net.sf.ooop.oxygenoffice.$folder"\" />" > description.xml.middle

@@ -1,0 +1,4 @@
+OxygenOffice Extras (OpenOffice.org拡張機能)
+
+この拡張機能はOxygenOfficeプロジェクトの一部を含んでいます。このプロジェクトはOpenOffice.org用のテンプレートやギャラリ、その他の便利なオプションを作成・収集し、簡単にインストールできる拡張機能パッケージとしてリリースしています。全てのオプションをOpenOffice.orgのインストーラに含んだOxygenOffice Professionalをダウンロードすることもできます。
+

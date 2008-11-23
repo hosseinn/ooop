@@ -1,0 +1,5 @@
+OxygenOffice Extras as OpenOffice.org Extension
+
+This Extension contains parts of OxygenOffice Project. This project creates and collects templates, galleries and other useful extras for OpenOffice.org and release them as easy-to-install Extension packages. Also you can download OxygenOffice Professional product which is a bundled Openoffice.org installer with all available extras.
+
+

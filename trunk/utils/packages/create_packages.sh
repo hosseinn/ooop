@@ -1,5 +1,5 @@
 #!/bin/bash
-version=2.6.0.0
+version=2.6.0.2
 echo [+] START...
 mkdir -p ../output
 

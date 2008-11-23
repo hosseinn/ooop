@@ -1,0 +1,5 @@
+OxygenOffice kiegészítõk OpenOffice.org kiterjesztésként
+
+Ez a kiterjesztés az OxygenOffice Projektből származó anyagokat tartalmaz. Ez a projekt azért jött létre, hogy sablonokat, képtárakat és más hasznos kiegészítéseket hozzon létre és gyűjtsön össze az OpenOffice.org számára, hogy azok kiadhatók legyenek egy könnyen telepíthető OpenOffice.org kiterjesztése formában. Továbbá letöltheti az OxygenOffice Professional terméket, amely ezeket a kiegészítőket tartalmazza az OpenOffice.org-hoz csomagolt telepítő formájában.
+
+

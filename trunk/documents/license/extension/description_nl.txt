@@ -1,0 +1,4 @@
+OxygenOffice Extras als OpenOffice.org-extensie
+
+Deze extensie bevat delen van het OxygenOffice-project. Dit project maakt en verzamelt sjablonen, galerijen en andere handige extra's voor OpenOffice.org en geeft die uit als eenvoudig te installeren extensie-pakketten. U kunt ook het product OxygenOffice Professional downloaden dat een bundeling is van een Openoffice.org-installatie met alle beschikbare extra's.
+

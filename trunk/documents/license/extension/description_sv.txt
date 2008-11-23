@@ -1,0 +1,5 @@
+OxygenOffice Extra som OpenOffice.org-tillägg
+
+Detta tillägg innehåller delar av OxygenOffice-projektet. Projektet skapar och samlar mallar, bildgallerier och andra användbara resurser för OpenOffice.org och ger ut dem som lättinstallerade tilläggspaket. Du kan även hämta OxygenOffice Professional i sin helhet som komplett program.
+
+
