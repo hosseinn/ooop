@@ -55,8 +55,8 @@ EXTENSION_ZIPNAME:=dict-de
 COMPONENT_FILES= \
     $(EXTENSIONDIR)$/COPYING \
     $(EXTENSIONDIR)$/Copyright \
-    $(EXTENSIONDIR)$/de_DE.aff \
-    $(EXTENSIONDIR)$/de_DE.dic \
+    $(EXTENSIONDIR)$/de_DE_frami.aff \
+    $(EXTENSIONDIR)$/de_DE_frami.dic \
     $(EXTENSIONDIR)$/hyph_de_DE.dic \
     $(EXTENSIONDIR)$/downloadplaces.txt \
     $(EXTENSIONDIR)$/INSTALL_de.txt \

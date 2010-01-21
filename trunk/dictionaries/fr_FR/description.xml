@@ -2,13 +2,13 @@
 <description xmlns="http://openoffice.org/extensions/description/2006" xmlns:d="http://openoffice.org/extensions/description/2006"  xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- http://wiki.services.openoffice.org/wiki/Extension_Dictionaries -->
     
-    <version value="3.2.0" />
+    <version value="3.4.1" />
     
     <identifier value="french.classic-and-reform1990-dictionary.from.Dicollecte.by.OlivierR" />
     
     <display-name>
-        <name lang="en">French "Classic and Reform 1990" spelling, thesaurus and hyphenation.</name>
-        <name lang="fr">Français: Orthographe "Classique et Réforme 1990", Synonymes et Césures.</name>
+        <name lang="en">French “Classic and Reform 1990” spelling, thesaurus and hyphenation.</name>
+        <name lang="fr">Français: Orthographe «Classique et Réforme 1990», Synonymes et Césures.</name>
     </display-name>
     
     <platform value="all" />
@@ -18,7 +18,7 @@
     </dependencies>
     
     <publisher>
-        <name xlink:href="http://dico.savant.free.fr/index.php" lang="fr">Dicollecte</name>
+        <name xlink:href="http://www.dicollecte.org/home.php?prj=fr" lang="fr">Dicollecte</name>
     </publisher>
     
 </description>
