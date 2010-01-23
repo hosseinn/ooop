@@ -76,7 +76,7 @@ CUSTOM_LICENSE=COPYING
 # override default license destination
 PACKLICS= $(EXTENSIONDIR)$/$(CUSTOM_LICENSE)
 
-COMPONENT_UNZIP_FILES= \ 
+COMPONENT_UNZIP_FILES= \
     $(EXTENSIONDIR)$/th_de_CH_v2.idx
 
 # add own targets to packing dependencies (need to be done before

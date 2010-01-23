@@ -55,8 +55,8 @@ EXTENSION_ZIPNAME:=dict-fr
 COMPONENT_FILES= \
     $(EXTENSIONDIR)$/hyph_fr.dic \
     $(EXTENSIONDIR)$/README_hyph_fr.txt \
-    $(EXTENSIONDIR)$/fr.aff \
-    $(EXTENSIONDIR)$/fr.dic \
+    $(EXTENSIONDIR)$/fr_FR.aff \
+    $(EXTENSIONDIR)$/fr_FR.dic \
     $(EXTENSIONDIR)$/th_fr_v2.dat \
     $(EXTENSIONDIR)$/README_th_fr_v2.txt \
     $(EXTENSIONDIR)$/LICENCES-fr.txt \
@@ -85,5 +85,7 @@ EXTENSION_PACKDEPS=$(COMPONENT_FILES) $(COMPONENT_UNZIP_FILES)
 # global targets for extension packing
 .INCLUDE : extension_post.mk
 
+
 $(EXTENSIONDIR)$/th_fr_v2.idx : "$(EXTENSIONDIR)$/th_fr_v2.dat"
         $(PERL) $(PRJ)$/util$/th_gen_idx.pl -o $(EXTENSIONDIR)$/th_fr_v2.idx <$(EXTENSIONDIR)$/th_fr_v2.dat
+

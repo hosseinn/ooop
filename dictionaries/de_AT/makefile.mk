@@ -77,7 +77,7 @@ CUSTOM_LICENSE=COPYING
 PACKLICS= $(EXTENSIONDIR)$/$(CUSTOM_LICENSE)
 
 COMPONENT_UNZIP_FILES= \
-    $(EXTENSIONDIR)$/th_cs_CZ_v2.idx
+    $(EXTENSIONDIR)$/th_de_AT_v2.idx
 
 # add own targets to packing dependencies (need to be done before
 # packing the xtension
