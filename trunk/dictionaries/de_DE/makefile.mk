@@ -54,17 +54,12 @@ EXTENSION_ZIPNAME:=dict-de
 # just copy:
 COMPONENT_FILES= \
     $(EXTENSIONDIR)$/COPYING \
-    $(EXTENSIONDIR)$/Copyright \
     $(EXTENSIONDIR)$/de_DE_frami.aff \
     $(EXTENSIONDIR)$/de_DE_frami.dic \
     $(EXTENSIONDIR)$/hyph_de_DE.dic \
-    $(EXTENSIONDIR)$/downloadplaces.txt \
-    $(EXTENSIONDIR)$/INSTALL_de.txt \
-    $(EXTENSIONDIR)$/README_de_DE.txt \
     $(EXTENSIONDIR)$/README_hyph_de_DE.txt \
     $(EXTENSIONDIR)$/README_th_de_DE_v2.txt \
-    $(EXTENSIONDIR)$/th_de_DE_v2.dat \
-    $(EXTENSIONDIR)$/VERSION
+    $(EXTENSIONDIR)$/th_de_DE_v2.dat
 
 COMPONENT_CONFIGDEST=.
 COMPONENT_XCU= \
@@ -91,3 +86,4 @@ EXTENSION_PACKDEPS=$(COMPONENT_UNZIP_FILES) $(COMPONENT_FILES)
 
 $(EXTENSIONDIR)$/th_de_DE_v2.idx : "$(EXTENSIONDIR)$/th_de_DE_v2.dat"
         $(PERL) $(PRJ)$/util$/th_gen_idx.pl -o $(EXTENSIONDIR)$/th_de_DE_v2.idx <$(EXTENSIONDIR)$/th_de_DE_v2.dat
+

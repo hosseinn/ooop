@@ -59,15 +59,14 @@ COMPONENT_FILES= \
     $(EXTENSIONDIR)$/th_ro_RO_v2.dat \
     $(EXTENSIONDIR)$/COPYING.GPL \
     $(EXTENSIONDIR)$/COPYING.LGPL \
-    $(EXTENSIONDIR)$/COPYING.MPL \
-    $(EXTENSIONDIR)$/README_RO.txt
+    $(EXTENSIONDIR)$/COPYING.MPL
 
 COMPONENT_CONFIGDEST=.
 COMPONENT_XCU= \
     $(EXTENSIONDIR)$/dictionaries.xcu
 
 # disable fetching default OOo license text
-CUSTOM_LICENSE=README_EN.txt
+CUSTOM_LICENSE=README_RO.txt
 # override default license destination
 PACKLICS= $(EXTENSIONDIR)$/$(CUSTOM_LICENSE)
 
@@ -77,8 +76,7 @@ COMPONENT_UNZIP_FILES= \
 # add own targets to packing dependencies (need to be done before
 # packing the xtension
 # EXTENSION_PACKDEPS=makefile.mk $(CUSTOM_LICENSE)
-    EXTENSION_PACKDEPS=$(COMPONENT_UNZIP_FILES) $(COMPONENT_FILES)
-
+EXTENSION_PACKDEPS=$(COMPONENT_UNZIP_FILES) $(COMPONENT_FILES)
 
 # global settings for extension packing
 .INCLUDE : extension_pre.mk
@@ -87,6 +85,6 @@ COMPONENT_UNZIP_FILES= \
 .INCLUDE : extension_post.mk
 
 
-    $(EXTENSIONDIR)$/th_ro_RO_v2.idx : "$(EXTENSIONDIR)$/th_ro_RO_v2.dat"
-            $(PERL) $(PRJ)$/util$/th_gen_idx.pl -o $(EXTENSIONDIR)$/th_ro_RO_v2.idx <$(EXTENSIONDIR)$/th_ro_RO_v2.dat
+$(EXTENSIONDIR)$/th_ro_RO_v2.idx : "$(EXTENSIONDIR)$/th_ro_RO_v2.dat"
+       $(PERL) $(PRJ)$/util$/th_gen_idx.pl -o $(EXTENSIONDIR)$/th_ro_RO_v2.idx <$(EXTENSIONDIR)$/th_ro_RO_v2.dat
 
