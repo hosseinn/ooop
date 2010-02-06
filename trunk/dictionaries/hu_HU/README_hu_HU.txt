@@ -1,22 +1,6 @@
-Magyar Ispell helyesírási szótár – 1.5-ös szótárállományok morfológiai 
-adatokkal
+Hungarian Hunspell dictionaries version 1.6 with morphological data
 
-Követelmény: Hunspell helyesírás-ellenőrző 1.1.3 vagy újabb változata
-
-A következő nyílt forráskódú licencek bármelyike alapján
-szabadon felhasználható, de mindenféle garancia nélkül:
-
-GNU GPL 2.0, GNU LGPL 2.1 vagy MPL 1.1 
-
-2009 © Németh László és Godó Ferenc
-
-Honlap: http://magyarispell.sf.net
-
-------------------------------------------------------------------------------
-
-Hungarian Hunspell dictionaries version 1.5 with morphological data
-
-Requirements: Hunspell 1.1.3 or newer
+Requirements: Hunspell 1.2.8 or newer
 
 License
 
@@ -33,6 +17,6 @@ Software distributed under these licenses is distributed on an "AS IS" basis,
 WITHOUT WARRANTY OF ANY KIND, either express or implied. See the licences
 for the specific language governing rights and limitations under the licenses.
 
-2009 © László Németh & Ferenc Godó
+2010 (c) László Németh & Ferenc Godó
 
 Home: http://magyarispell.sf.net
