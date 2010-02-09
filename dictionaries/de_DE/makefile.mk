@@ -44,8 +44,8 @@ TARGET=dict-de-de
 # --- Files --------------------------------------------------------
 
 # name for uniq directory
-EXTENSIONNAME:=dict-de
-EXTENSION_ZIPNAME:=dict-de
+EXTENSIONNAME:=dict-de-DE
+EXTENSION_ZIPNAME:=dict-de-DE
 
 # some other targets to be done
 
