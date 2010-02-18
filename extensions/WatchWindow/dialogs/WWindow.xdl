@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="WWindow" dlg:left="155" dlg:top="95" dlg:width="200" dlg:height="85" dlg:help-text="&amp;34.WWindow.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;35.WWindow.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xcccccc" dlg:border="none"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:button dlg:id="removeCell" dlg:tab-index="1" dlg:left="120" dlg:top="0" dlg:width="80" dlg:height="13" dlg:help-text="&amp;36.WWindow.removeCell.HelpText" dlg:value="&amp;37.WWindow.removeCell.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:removeCell" script:language="UNO"/>
+  </dlg:button>
+  <dlg:menulist dlg:id="ListBox1" dlg:tab-index="2" dlg:left="1" dlg:top="22" dlg:width="198" dlg:height="60" dlg:help-text="&amp;38.WWindow.ListBox1.HelpText"/>
+  <dlg:menulist dlg:style-id="0" dlg:id="FixListBox" dlg:tab-index="3" dlg:left="1" dlg:top="13" dlg:width="198" dlg:height="9" dlg:help-text="&amp;39.WWindow.FixListBox.HelpText" dlg:tabstop="false" dlg:readonly="true"/>
+  <dlg:button dlg:id="addCell" dlg:tab-index="0" dlg:left="0" dlg:top="0" dlg:width="80" dlg:height="13" dlg:help-text="&amp;40.WWindow.addCell.HelpText" dlg:value="&amp;41.WWindow.addCell.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:addCell" script:language="UNO"/>
+  </dlg:button>
+  <dlg:text dlg:id="Title1" dlg:tab-index="4" dlg:disabled="true" dlg:left="155" dlg:top="-11" dlg:width="10" dlg:height="10" dlg:help-text="&amp;42.WWindow.Title1.HelpText" dlg:value="&amp;43.WWindow.Title1.Label"/>
+  <dlg:text dlg:id="Message1" dlg:tab-index="5" dlg:disabled="true" dlg:left="170" dlg:top="-11" dlg:width="10" dlg:height="10" dlg:help-text="&amp;44.WWindow.Message1.HelpText" dlg:value="&amp;45.WWindow.Message1.Label" dlg:multiline="true"/>
+  <dlg:text dlg:id="Title0" dlg:tab-index="6" dlg:disabled="true" dlg:left="125" dlg:top="-11" dlg:width="10" dlg:height="10" dlg:help-text="&amp;46.WWindow.Title0.HelpText" dlg:value="&amp;47.WWindow.Title0.Label"/>
+  <dlg:text dlg:id="Message0" dlg:tab-index="7" dlg:disabled="true" dlg:left="140" dlg:top="-11" dlg:width="10" dlg:height="10" dlg:help-text="&amp;48.WWindow.Message0.HelpText" dlg:value="&amp;49.WWindow.Message0.Label"/>
+  <dlg:text dlg:id="Formula" dlg:tab-index="11" dlg:disabled="true" dlg:left="110" dlg:top="-11" dlg:width="10" dlg:height="10" dlg:help-text="&amp;50.WWindow.Formula.HelpText" dlg:value="&amp;51.WWindow.Formula.Label"/>
+  <dlg:text dlg:id="Value" dlg:tab-index="10" dlg:disabled="true" dlg:left="95" dlg:top="-11" dlg:width="10" dlg:height="10" dlg:help-text="&amp;52.WWindow.Value.HelpText" dlg:value="&amp;53.WWindow.Value.Label"/>
+  <dlg:text dlg:id="Cell" dlg:tab-index="9" dlg:disabled="true" dlg:left="80" dlg:top="-11" dlg:width="10" dlg:height="10" dlg:help-text="&amp;54.WWindow.Cell.HelpText" dlg:value="&amp;55.WWindow.Cell.Label"/>
+  <dlg:text dlg:id="Sheet" dlg:tab-index="8" dlg:disabled="true" dlg:left="65" dlg:top="-11" dlg:width="10" dlg:height="10" dlg:help-text="&amp;56.WWindow.Sheet.HelpText" dlg:value="&amp;57.WWindow.Sheet.Label"/>
+  <dlg:button dlg:id="decrease" dlg:tab-index="12" dlg:left="80" dlg:top="0" dlg:width="10" dlg:height="13" dlg:help-text="&amp;58.WWindow.decrease.HelpText" dlg:value="&amp;59.WWindow.decrease.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:decrease" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="increase" dlg:tab-index="13" dlg:left="110" dlg:top="0" dlg:width="10" dlg:height="13" dlg:help-text="&amp;60.WWindow.increase.HelpText" dlg:value="&amp;61.WWindow.increase.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:increase" script:language="UNO"/>
+  </dlg:button>
+  <dlg:text dlg:id="sizeLabel" dlg:tab-index="14" dlg:left="90" dlg:top="1" dlg:width="20" dlg:height="10" dlg:help-text="&amp;62.WWindow.sizeLabel.HelpText" dlg:value="&amp;63.WWindow.sizeLabel.Label" dlg:align="center"/>
+  <dlg:text dlg:id="Label1" dlg:tab-index="15" dlg:left="311" dlg:top="-22" dlg:width="0" dlg:height="0" dlg:help-text="&amp;64.WWindow.Label1.HelpText" dlg:value="&amp;65.WWindow.Label1.Label"/>
+ </dlg:bulletinboard>
+</dlg:window>
