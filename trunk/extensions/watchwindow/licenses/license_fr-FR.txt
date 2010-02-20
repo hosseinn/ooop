@@ -1,0 +1,27 @@
+OxygenOffice Extras comme extension OpenOffice.org 
+
+Cette extension - elle-même - a été placée sous les termes du contrat de licence GNU Lesser General Public License (LGPL). Vous pouvez lire et comprendre cette licence LGPL ici :
+http://www.gnu.org/licenses/lgpl.html
+
+ ***
+Le projet principal - OxygenOffice Professional - et cette extension basée sur le travail de plusieurs contributeurs. La licence individuelle des éléments de cette extension peut être différente. Les éléments dans l'extension - non libre - peuvent avoir une licence plus restrictive. Pour plus d'informations, veuillez vous référer à la feuille de licence :
+-- pour les éléments de modèle:
+http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Template.ods
+-- pour les objets de la Gallery:
+http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Gallery.ods
+
+ ***
+
+NOUS AVONS BESOIN DE VOUS !
+Si vous créez des modèles professionnels, vous pouvez nous les envoyer.
+Si vous dessinez de beaux dessins, vous pouvez nous les envoyer.
+Si vous voulez traduire des modèles, vous pouvez nous contacter.
+Si vous avez de bonnes idées, vous pouvez les poster sur le forum.
+
+
+OxygenOffice Professional Team
+http://ooop.sf.net/
+
+
+ -----
+license_fr-FR document V1.0.1

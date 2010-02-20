@@ -1,0 +1,1 @@
+Watch Window -lisäosalla voidaan lisätä Watch Window -ikkuna, jossa tarkkailtavan solun arvo näkyy näytöllä tehtävistä muutoksista riippumatta.

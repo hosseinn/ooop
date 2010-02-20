@@ -1,0 +1,1 @@
+Avec l'extension Watch Window, vous pouvez ajoutez une fenêtre de surveillance qui garde la valeur de la cellule surveillée à l'écran, peu importe où a lieu la modification.

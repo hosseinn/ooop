@@ -1,0 +1,20 @@
+Watch Window (Figyelőablak) kiterjesztés
+
+The Watch Window (Figyelőablak) kiterjesztés a GNU Lesser General Public License (LGPL) licenc alapján került kiadásra. Az LGPL licenc megtekinthető a következő helyen:
+http://www.gnu.org/licenses/lgpl.html
+
+A kiterjesztést készítette:
+
+Hornyák Tibor
+
+és
+
+* Szegedi Tudományegyetem, Magyarország - http://www.u-szeged.hu/
+* OxygenOffice Professional Csapat - http://ooop.sf.net/
+
+Támogatók:
+
+* Free Software Foundation Hungary Alapítvány a Szabad Szoftverek Magyarországi Népszerűsítéséért és Honosításáért - http://www.fsf.hu/
+
+ -----
+license_hu document V1.1.0
