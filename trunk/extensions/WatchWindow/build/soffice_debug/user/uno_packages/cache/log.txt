@@ -1,4 +1,0 @@
-###### Progress log entry 2010-01-18 14:11:20 ######
-Copying: WatchWindow.oxt
-ERROR: (com.sun.star.ucb.CommandFailedException) { { Message = "Error while adding: org.openoffice.extensions.watchwindow.WatchWindow", Context = (com.sun.star.uno.XInterface) @2b99f68 }, Reason = (any) { (com.sun.star.deployment.InstallException) { { Message = "Extension org.openoffice.extensions.watchwindow.WatchWindow is about to be installed.", Context = (com.sun.star.uno.XInterface) @2b99f68 }, New = (com.sun.star.deployment.XPackage) @5f4ef24 } } }
-###### Progress log entry 2010-01-18 14:11:25 ######
