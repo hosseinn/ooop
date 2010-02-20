@@ -1,0 +1,29 @@
+OxygenOffice-täydennykset OpenOffice.orgin lisäosana
+
+Tämä lisäosa - itsenään - on lisensoitu  GNU LGPL (vähemmän yleinen julkinen lisenssi) -ehtojen mukaisesti. LGPL lisenssin ehdot ovat luettavissa englanniksi linkistä:
+http://www.gnu.org/licenses/lgpl.html
+
+ ***
+
+Pääprojekti - OxygenOffice Professional - ja tämä lisäosa ovat useiden avustajien työn tulos. Tämän lisäosan yksittäisten osatekijöiden lisenssit voivat olla erilaisia. Ei-vapaiden lisäosien osioitten lisenssit voivat olla rajoittavampia. Lisätietoja löytyy lisenssisivuiltamme:
+-- malliosioista:
+http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Template.ods
+-- kuvagalleriakohteista:
+http://ooop.svn.sourceforge.net/viewvc/*checkout*/ooop/trunk/documents/license/Gallery.ods
+
+ ***
+
+TARVITSEMME SINUA!
+Jos osaat luoda ammattimaisia malleja, voit lähettää niitä meille.
+Jos osaat piirtää näyttäviä kuvia, voit lähettää niitä meille.
+Jos haluat suomentaa malleja, voit ottaa meihin yhteyttä.
+Jos sinulla on hyvä idea, voit lähettää sen keskustelupalstalle.
+
+
+
+OxygenOffice Professional Team
+http://ooop.sf.net/
+
+
+ -----
+license_fi-asiakirja V1.0.1

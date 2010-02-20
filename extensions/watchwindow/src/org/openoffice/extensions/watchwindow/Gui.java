@@ -4,6 +4,7 @@ import com.sun.star.awt.Rectangle;
 import com.sun.star.awt.WindowAttribute;
 import com.sun.star.awt.WindowClass;
 import com.sun.star.awt.WindowDescriptor;
+import com.sun.star.awt.XControl;
 import com.sun.star.awt.XControlContainer;
 import com.sun.star.awt.XDialog;
 import com.sun.star.awt.XDialogEventHandler;
@@ -15,7 +16,9 @@ import com.sun.star.awt.XTopWindow;
 import com.sun.star.awt.XTopWindowListener;
 import com.sun.star.awt.XWindow;
 import com.sun.star.awt.XWindowPeer;
+import com.sun.star.beans.Property;
 import com.sun.star.beans.PropertyValue;
+import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.NoSuchElementException;
 import com.sun.star.container.XNameAccess;
 import com.sun.star.deployment.XPackageInformationProvider;
@@ -25,12 +28,16 @@ import com.sun.star.lang.EventObject;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.XMultiComponentFactory;
+import com.sun.star.lang.XServiceInfo;
+import com.sun.star.lang.XTypeProvider;
 import com.sun.star.resource.StringResourceWithLocation;
 import com.sun.star.resource.XStringResourceWithLocation;
 import com.sun.star.sheet.RangeSelectionEvent;
 import com.sun.star.sheet.XRangeSelection;
 import com.sun.star.sheet.XRangeSelectionListener;
+import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.Exception;
+import com.sun.star.uno.Type;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
 
@@ -45,14 +52,24 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
     private XToolkit               m_xToolkit          = null;
     private XWindow                m_xWindow           = null;
     private XTopWindow             m_xTopWindow        = null;
+    private XControl               m_xControl          = null;
     private XRangeSelection        m_xRangeSelection   = null;
     private XListBox               m_xFixListBox       = null;
     private XListBox               m_xListBox          = null;
+    private String                 m_selectAreaName    = "";
+    //methods of dialog
     private String                 m_sHandlerMethod1   = "addCell";
     private String                 m_sHandlerMethod2   = "removeCell";
-    private String                 m_selectAreaName    = ""; 
+    private String                 m_sHandlerMethod3   = "decrease";
+    private String                 m_sHandlerMethod4   = "increase";
+    //size of window
+    private final int              WIDTH               = 203; //200 + 3
+    private final int              HEIGHT              = 85;
+    //width is resizeable
+    private int                    m_iWidth;
 
     Gui(Controller controller, XComponentContext xContext, XModel xModel) throws Exception {
+       m_iWidth = WIDTH;
        m_Controller = controller;
        m_xContext = xContext;
        m_xModel = xModel;
@@ -72,6 +89,41 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
         }
         m_xWindow.setVisible(bool);  
     }
+
+    /*
+    //we can test the objects
+    public void test(Object o){
+        if(o!=null){
+            XServiceInfo xServiceInfo = null;
+            XTypeProvider xTypeProvider = null;
+            XPropertySet xPS = null;
+            System.out.println("the test class: "+o.toString()+"----"+o.getClass()+"------------");
+            System.out.println("----------------------ServiceTest----------------------");
+            xServiceInfo = ( XServiceInfo ) UnoRuntime.queryInterface( XServiceInfo.class, o );
+            if(xServiceInfo != null){
+                String[] s = xServiceInfo.getSupportedServiceNames();
+                for(int i=0;i<s.length;i++)
+                System.out.println(s[i]);
+            }
+            System.out.println("----------------------InterfaceTest--------------------");
+            xTypeProvider = ( XTypeProvider ) UnoRuntime.queryInterface( XTypeProvider.class, o );
+            if(xServiceInfo != null){
+                Type[] t = xTypeProvider.getTypes();
+                for(int i=0;i<t.length;i++)
+                    System.out.println(t[i].getTypeName());
+            }
+            System.out.println("-----------------------PropertyTest------------------------");
+            xPS =  (XPropertySet)UnoRuntime.queryInterface(XPropertySet.class, o);
+            if(xPS == null){
+                System.out.println("nincs tulajdonsÃ¡g");
+            }else{
+                Property[] p = xPS.getPropertySetInfo().getProperties();
+                for(int i=0;i<p.length;i++)
+                   System.out.println(p[i].Name+" "+p[i].Type);
+            }
+        }
+    }
+    */
     
     public void createWatchWindow(){
         try {
@@ -79,11 +131,22 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
             String sDialogURL = sPackageURL + "/dialogs/WWindow.xdl";
             XDialogProvider2 xDialogProv = getDialogProvider();
             XDialog xDialog = xDialogProv.createDialogWithHandler(sDialogURL, this);
+            
             if (xDialog != null) {
                 m_xWindow = (XWindow) UnoRuntime.queryInterface(XWindow.class, xDialog);
+                m_xControl = (XControl) UnoRuntime.queryInterface(XControl.class, xDialog);
+                //    This hasn't yet worked to make dialog window resizable.
+                //    Short flags = (WindowAttribute.BORDER | WindowAttribute.MOVEABLE | WindowAttribute.SIZEABLE | WindowAttribute.CLOSEABLE);
+                //    Rectangle posSize = xWindow.getPosSize()
+                //    m_xWindow.setPosSize(posSize.X, posSize.Y, posSize.Width, posSize.Height, flags);
                 m_xTopWindow = (XTopWindow) UnoRuntime.queryInterface(XTopWindow.class, m_xWindow);
                 m_xTopWindow.addTopWindowListener(this);
             }
+
+            XPropertySet xPS = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, m_xControl.getModel());
+            xPS.setPropertyValue("Width", WIDTH);
+            xPS.setPropertyValue("Height",new Integer(HEIGHT));
+            
             XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, xDialog);
             Object oListBox = xControlContainer.getControl("FixListBox");
             m_xFixListBox = (XListBox) UnoRuntime.queryInterface(XListBox.class, oListBox);
@@ -155,16 +218,19 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
             String m_resRootUrl = getPackageLocation() + "/dialogs/";
             XStringResourceWithLocation xResources = StringResourceWithLocation.create(m_xContext, m_resRootUrl, true, getController().getLocation(), "WWindow", "", null);
             String[] ids = xResources.getResourceIDs();
+      
             for (int i = 0; i < ids.length; i++) {
                 if(ids[i].contains(name))
                     result = xResources.resolveString(ids[i]);
             }
+
         } catch (IllegalArgumentException ex) {
             ex.printStackTrace();
         }
         return result;
     }
-    
+
+    //there is two possible warning message in watchwindow ( num = 0 | 1 )
     public void showMessageBox(int num) {
         String title = getDialogPropertyValue("WWindow.Title" +num +".Label");
         String message = getDialogPropertyValue("WWindow.Message" +num +".Label");    
@@ -202,7 +268,7 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
     public void cellSelection(String cellName) {
         m_xRangeSelection = (XRangeSelection)UnoRuntime.queryInterface(XRangeSelection.class, m_xModel.getCurrentController());
         m_xRangeSelection.addRangeSelectionListener(this); 
-        String title = getController().getLocation().Language.equals("hu")?"Cella kiválasztása":"Select cell";
+        String title = getController().getLocation().Language.equals("hu")?"Cella kivÃ¡lasztÃ¡sa":"Select cell";
         PropertyValue[] args = new PropertyValue[3];
         args[0] = new PropertyValue();
         args[0].Name = "Title";
@@ -219,24 +285,72 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
     
     //com.sun.star.awt.XDialogEventHandler: (2)
     public boolean callHandlerMethod(XDialog arg0, Object arg1, String MethodName) {
+
+        //add cell into WatchWindow
         if(MethodName.equals(m_sHandlerMethod1)){
             getController().addCell();
             return true;
         }
+
+        //remove cell into WatchWindow
         if(MethodName.equals(m_sHandlerMethod2)){
             getController().removeCell();
             return true;
         }
+
+        //decrease the window
+        if(MethodName.equals(m_sHandlerMethod3)){
+            if(m_iWidth > WIDTH)
+                modifyWidth(-10);
+            return true;
+        }
+
+        //increase the window
+        if(MethodName.equals(m_sHandlerMethod4)){
+            if(m_iWidth < 360)
+                modifyWidth(10);
+            return true;
+        }
+
         return false;
     }
 
     public String[] getSupportedMethodNames() {
-        String[] aMethods = new String[2];
-        aMethods[0] = m_sHandlerMethod1;
-        aMethods[1] = m_sHandlerMethod2;
-        return aMethods; 
+
+        String[] aMethods = new String[4];
+        aMethods[0] = m_sHandlerMethod1;     //add cell into WatchWindow
+        aMethods[1] = m_sHandlerMethod2;     //remove cell into WatchWindow
+        aMethods[2] = m_sHandlerMethod3;     //decrease the window
+        aMethods[3] = m_sHandlerMethod4;     //increase the window
+        return aMethods;
+
     }
-    
+
+    // modify the width of the window
+    public void modifyWidth(int w){
+        try {
+            XControl xControl = (XControl) UnoRuntime.queryInterface(XControl.class, m_xFixListBox);
+            XPropertySet xPS = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
+            int width = AnyConverter.toInt(xPS.getPropertyValue("Width"));
+            width += w;
+            xPS.setPropertyValue("Width", width);
+
+            xControl = (XControl) UnoRuntime.queryInterface(XControl.class, m_xListBox);
+            xPS = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
+            width = AnyConverter.toInt(xPS.getPropertyValue("Width"));
+            width += w;
+            xPS.setPropertyValue("Width", width);
+
+            xPS = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, m_xControl.getModel());
+            m_iWidth += w;
+            xPS.setPropertyValue("Width", m_iWidth);
+            xPS.setPropertyValue("Height",new Integer(HEIGHT));
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
     //com.sun.star.sheet.XRangeSelectionListener: (2)
     public void done(RangeSelectionEvent event) {
          try {

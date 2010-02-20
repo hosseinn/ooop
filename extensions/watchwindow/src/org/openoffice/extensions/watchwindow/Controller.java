@@ -1,25 +1,27 @@
 package org.openoffice.extensions.watchwindow;
 
-import com.sun.star.awt.Point;
-import com.sun.star.container.XNamed;
+import com.sun.star.beans.UnknownPropertyException;
+import com.sun.star.container.XIndexAccess;
 import com.sun.star.frame.XController;
+import com.sun.star.frame.XDesktop;
 import com.sun.star.frame.XFrame;
 import com.sun.star.frame.XModel;
-import com.sun.star.lang.IndexOutOfBoundsException;
+import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.Locale;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.XLocalizable;
 import com.sun.star.lang.XMultiComponentFactory;
+import com.sun.star.lang.XMultiServiceFactory;
+import com.sun.star.sheet.XFormulaParser;
+import com.sun.star.sheet.FormulaToken;
+import com.sun.star.sheet.ReferenceFlags;
+import com.sun.star.sheet.SingleReference;
 import com.sun.star.sheet.XCellAddressable;
 import com.sun.star.sheet.XSpreadsheet;
 import com.sun.star.sheet.XSpreadsheetDocument;
 import com.sun.star.sheet.XSpreadsheetView;
-import com.sun.star.sheet.XSpreadsheets;
 import com.sun.star.table.CellAddress;
 import com.sun.star.table.XCell;
-import com.sun.star.table.XCellRange;
-import com.sun.star.table.XColumnRowRange;
-import com.sun.star.table.XTableColumns;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
@@ -30,29 +32,96 @@ public class Controller {
     private   XComponentContext      m_xContext          = null;
     private   XFrame                 m_xFrame            = null;
     private   XController            m_xController       = null;
-    private   Gui                    m_Gui               = null;
+    protected   Gui                    m_Gui               = null;
     private   DataModel              m_DataModel         = null;
     private   XModel                 m_xModel            = null;
     private   XMultiComponentFactory m_xServiceManager   = null;
     private   XSpreadsheetDocument   m_xDocument         = null;
-    private   String                 m_selectedCellName  = null;
-    private   String                 m_selectedSheetName = null;
+    private   XFormulaParser         m_xFormulaParser    = null;
+    private   FormulaToken           m_selectedCellPos   = null;
     private   XSpreadsheet           m_xValidSheet       = null;
     private static short             _numer              = 0;
+
+    //members of constants group AddressConvention, have not yet used
+    //private static final short      OOO                  = 0;
+    //private static final short      XL_A1                = 1;
+    //private static final short      XL_R1C1              = 2;
+    //private static final short      XL_OOX               = 3;
+    //private static final short      LOTUS_A1             = 4;
+
+
    
-    public Controller(XComponentContext xContext, XFrame xFrame){
+    public Controller(XComponentContext xContext, XFrame xFrame) throws UnknownPropertyException, WrappedTargetException, IllegalArgumentException{
         m_xContext = xContext;
         m_xFrame = xFrame;
         m_xController = m_xFrame.getController();
         m_xModel = m_xController.getModel();
         m_xServiceManager = m_xContext.getServiceManager();
-        m_xDocument = (XSpreadsheetDocument) UnoRuntime.queryInterface(XSpreadsheetDocument.class, m_xModel);      
+        m_xDocument = (XSpreadsheetDocument) UnoRuntime.queryInterface(XSpreadsheetDocument.class, m_xModel);
     }
-    
+
+    public XFormulaParser getFormulaParser() {
+        if (m_xFormulaParser == null) {
+            try {
+                // We need to get a service factory from the desktop instance
+                // in order to instantiate the formula parser.
+                Object oDesktop = m_xServiceManager.createInstanceWithContext("com.sun.star.frame.Desktop", m_xContext);
+                XDesktop xDesktop = (XDesktop)UnoRuntime.queryInterface(XDesktop.class, oDesktop);
+                XMultiServiceFactory xSrvMgr = (XMultiServiceFactory)UnoRuntime.queryInterface(XMultiServiceFactory.class, xDesktop.getCurrentComponent());
+                Object oParser = xSrvMgr.createInstance("com.sun.star.sheet.FormulaParser");
+                m_xFormulaParser = (XFormulaParser)UnoRuntime.queryInterface(XFormulaParser.class, oParser);
+                
+                //adjust the style of referencia with AddressConvention constants group
+                //XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, m_xFormulaParser);
+                //xProp.setPropertyValue("FormulaConvention", OOO);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return m_xFormulaParser;
+    }
+
+    protected FormulaToken getRefToken(XCell xCell) {
+        XCellAddressable xCellAddr =  (XCellAddressable)UnoRuntime.queryInterface(XCellAddressable.class, xCell);
+        CellAddress addr = xCellAddr.getCellAddress();
+        SingleReference ref = new SingleReference();
+        ref.Column = addr.Column;
+        ref.Row    = addr.Row;
+        ref.Sheet  = addr.Sheet;
+        ref.Flags = ReferenceFlags.SHEET_3D;
+        FormulaToken token = new FormulaToken();
+        token.OpCode = 0;
+        token.Data = ref;
+        return token;
+    }
+
+    protected XSpreadsheet getSheetByIndex(int index) {
+        if (m_xDocument == null)
+            return null;
+
+        XIndexAccess xIA = (XIndexAccess)UnoRuntime.queryInterface(XIndexAccess.class, m_xDocument.getSheets());
+        if (index >= xIA.getCount()) {
+            return null;
+        }
+        try {
+            XSpreadsheet xSheet = (XSpreadsheet)UnoRuntime.queryInterface(XSpreadsheet.class, xIA.getByIndex(index));
+            return xSheet;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+
+    public XComponentContext getContext(){
+        return m_xContext;
+    }
+
     public XSpreadsheetDocument getDocument(){
         return m_xDocument;
     }
-    
+ 
     public XModel getModel(){
         return m_xModel;
     }
@@ -83,7 +152,7 @@ public class Controller {
     
     public void displayWatchWindow() throws Exception{
         if(m_Gui == null){
-           m_Gui = new Gui(this, m_xContext, getModel());
+           m_Gui = new Gui(this, m_xContext, m_xModel);
         }
         m_Gui.setVisible(true);          
     }
@@ -110,55 +179,26 @@ public class Controller {
         Object obj = m_xModel.getCurrentSelection();
         return (XCell)UnoRuntime.queryInterface(XCell.class, obj);
     } 
-    
-    public String getSheetName(XSpreadsheet xSheet){
-        XNamed xNamed = (XNamed)UnoRuntime.queryInterface(XNamed.class, xSheet);
-        return xNamed.getName();
-    } 
-    
-    public String getCellNameWithDollars(XCell xCell) throws Exception{
-        String cellName ="";
-        Point address = getCellAdress(xCell);
-        cellName = "$" + convertColumnIndexToName(address.X);
-        cellName += "$" + (address.Y+1);
-        return cellName;
-    }
-    
-    public Point getCellAdress(XCell xCell) throws Exception {
-        XCellAddressable xCellAddress =  (XCellAddressable)UnoRuntime.queryInterface(XCellAddressable.class, xCell);
-        CellAddress aAddress = xCellAddress.getCellAddress();
-        Point point =  new Point(aAddress.Column,aAddress.Row);
-        return point;
-    }
-    
-    public String convertColumnIndexToName(int columnPos) throws IndexOutOfBoundsException, WrappedTargetException, IndexOutOfBoundsException {   
-        XCellRange xCellRange = getActiveSheet().getCellRangeByPosition(columnPos, 0, columnPos, 0);           
-        XColumnRowRange xColumnRowRange =(XColumnRowRange)UnoRuntime.queryInterface(XColumnRowRange.class, xCellRange);
-        XTableColumns xTableColumns = xColumnRowRange.getColumns();              
-        Object oColumnName = xTableColumns.getByIndex(0);
-        XNamed xNamed = (XNamed)UnoRuntime.queryInterface(XNamed.class, oColumnName);
-        return xNamed.getName();    
-    } 
-    
+ 
     public String createStringWithSpace(String s, int max){
         char c;
         int n;
         double dn = s.length()*2;
-        for(int i=0; i<s.length();i++){
+for(int i=0; i<s.length();i++){
             c = s.charAt(i);
             if(c=='W')
                 dn += 1.3333;
-            if(c=='w'||c=='Q'||c=='O'||c=='Ó'||c=='Ö'||c=='Õ'||c=='m'||c=='M')
+            if(c=='w'||c=='Q'||c=='O'||c=='Ã“'||c=='Ã–'||c=='Å'||c=='m'||c=='M')
                 dn += 0.6666;
-            if(c=='A'||c=='R'||c=='U'||c=='Ú'||c=='Ü'||c=='Á'||c=='D'||c=='G'||c=='H'||c=='Û'||c=='N'||c=='C')
+            if(c=='A'||c=='R'||c=='U'||c=='Ãš'||c=='Ãœ'||c=='Ã'||c=='D'||c=='G'||c=='H'||c=='Å°'||c=='N'||c=='C')
                 dn += 0.3333;
             if(c=='z'||c=='J'||c=='L'||c=='k'||c=='s'||c=='c')
                 dn -= 0.3333;
-            if(c=='I'||c=='Í'||c=='t'||c=='r'||c=='f')
+            if(c=='I'||c=='Ã'||c=='t'||c=='r'||c=='f')
                 dn -= 0.6666;
             if(c==' '||c=='j')
                 dn -= 1.0;
-            if(c=='i'||c=='l'||c=='í'||c=='|'||c=='\'')
+            if(c=='i'||c=='l'||c=='Ã­'||c=='|'||c=='\'')
                 dn -= 1.3333;
         }
         n = (int)Math.round(dn);
@@ -168,70 +208,42 @@ public class Controller {
         }
         return s;
     }
-    
+
+    //check the input of user and adjust m_xValidSheet, m_selectedCellPos members
     public boolean isValidSelectedName(String selectAreaName){
-        int length = selectAreaName.length();
-        if(length>5){
-            m_selectedCellName  = "";
-            m_selectedSheetName = "";
-            short index = 0;
-            short m = 0;
-            char[] selectedCellCharName = selectAreaName.toCharArray();
-            if(index>=length || selectedCellCharName[index++]!='$')
-                return false;
-            while(index<length && selectedCellCharName[index]!='.' ){
-                m_selectedSheetName += selectedCellCharName[index];
-                m++;
-                index++;
-            }  
-            if(m==0 || index>=length || selectedCellCharName[index++]!='.')
-                return false;
-            if(index>=length || selectedCellCharName[index++]!='$')
-                return false;
-            m = 0;
-            while(index<length && selectedCellCharName[index]!='$' && (int)selectedCellCharName[index]>64 && (int)selectedCellCharName[index]<91) {
-                m_selectedCellName += selectedCellCharName[index];
-                m++;
-                index++;
-            }
-            if(m==0 || index>=length || selectedCellCharName[index++]!='$')
-                return false;
-            m = 0;
-            while(index<length && (int)selectedCellCharName[index]>47 && (int)selectedCellCharName[index]<58 ) {
-                m_selectedCellName += selectedCellCharName[index];
-                m++;
-                index++;
-            }
-            if(m==0)
-                return false;
-            Object oSheet = null;
-            try{
-                XSpreadsheets xSpreadsheets = m_xDocument.getSheets();
-                oSheet = xSpreadsheets.getByName(m_selectedSheetName);
-                if(oSheet == null )
-                    return false; 
-            }catch(Exception ex){
-                ex.printStackTrace();
-                return false;
-            }  
-            m_xValidSheet = (XSpreadsheet)UnoRuntime.queryInterface(XSpreadsheet.class, oSheet);
-             if(m_xValidSheet != null )
-                 return true;
-        }
-        return false;
+        XFormulaParser xParser = getFormulaParser();
+        CellAddress origin = new CellAddress();
+        FormulaToken[] tokens = xParser.parseFormula(selectAreaName, origin);
+        if (tokens.length == 0)
+            return false;
+
+        FormulaToken token = tokens[0];
+        if (token.OpCode != 0)
+            // This is undocumented, but a reference token has an opcode of 0.
+            // This may change in the future, to probably a named constant
+            // value.
+            return false;
+
+        if (SingleReference.class != token.Data.getClass())
+            // this must be a single cell reference.
+            return false;
+
+        SingleReference ref = (SingleReference)token.Data;
+        m_xValidSheet = getSheetByIndex(ref.Sheet);
+        if (m_xValidSheet == null)
+            return false;
+
+        m_selectedCellPos = token;
+
+        return true;
     }
-    
+
     public void addCell() {
-        try {
-            String cellName = "";
-            XSpreadsheet activeSheet = getActiveSheet();
-            XCell activeCell = getActiveCell();
-            cellName = "$" + getSheetName(activeSheet) + "." + getCellNameWithDollars(activeCell);
-            m_Gui.cellSelection(cellName);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-          
+        //default feature: user can choose the active cell in active sheet
+        FormulaToken token = getRefToken(getActiveCell());
+        FormulaToken[] tokens = { token };
+        String cellName = getFormulaParser().printFormula(tokens, new CellAddress());
+        m_Gui.cellSelection(cellName);
     }
     
     public void removeCell()  {
@@ -248,15 +260,15 @@ public class Controller {
     }
 
     public void done(String selectAreaName) throws Exception {
-            if(isValidSelectedName(selectAreaName)){
-                if(m_DataModel == null)
-                    m_DataModel = new DataModel(this);
-                m_DataModel.addToDataList( m_xValidSheet, m_selectedSheetName, m_selectedCellName);
-                m_Gui.setVisible(true);
-            }else{
-                m_Gui.setVisible(true);
-                m_Gui.showMessageBox(0);
-            }         
+            if (isValidSelectedName(selectAreaName)) {
+            if(m_DataModel == null)
+                m_DataModel = new DataModel(this);
+            m_DataModel.addToDataList( m_xValidSheet, m_selectedCellPos);
+            m_Gui.setVisible(true);
+        } else {
+            m_Gui.setVisible(true);
+            m_Gui.showMessageBox(0);
+        }
     }
     
 }

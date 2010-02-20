@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.7.0
-Created-By: 10.0-b23 (Sun Microsystems Inc.)
+Ant-Version: Apache Ant 1.7.1
+Created-By: 16.0-b13 (Sun Microsystems Inc.)
 UNO-Type-Path: 
 RegistrationClassName: org.openoffice.extensions.watchwindow.CentralRe
  gistrationClass

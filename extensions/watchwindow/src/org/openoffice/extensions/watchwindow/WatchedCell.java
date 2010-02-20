@@ -6,13 +6,16 @@ import com.sun.star.document.XEventListener;
 import com.sun.star.frame.XModel;
 import com.sun.star.lang.EventObject;
 import com.sun.star.lang.IndexOutOfBoundsException;
-import com.sun.star.sheet.XCellRangeAddressable;
+import com.sun.star.sheet.ComplexReference;
+import com.sun.star.sheet.FormulaToken;
+import com.sun.star.sheet.SingleReference;
+import com.sun.star.sheet.XFormulaParser;
+import com.sun.star.sheet.XFormulaTokens;
 import com.sun.star.sheet.XSpreadsheet;
 import com.sun.star.sheet.XSpreadsheetDocument;
 import com.sun.star.sheet.XSpreadsheetView;
-import com.sun.star.table.CellRangeAddress;
+import com.sun.star.table.CellAddress;
 import com.sun.star.table.XCell;
-import com.sun.star.table.XCellRange;
 import com.sun.star.text.XText;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.util.XModifyBroadcaster;
@@ -27,6 +30,7 @@ public class WatchedCell implements XModifyListener, XEventListener{
     private String               m_value                   = "";
     private String               m_formula                 = "";
     private XSpreadsheet         m_xSpreadsheet            = null;
+    private FormulaToken         m_cellPos                 = null;
     private XCell                m_xCell                   = null ;
     private short                m_num                     = 0;
     private static int           _counter                  = 0;
@@ -36,28 +40,36 @@ public class WatchedCell implements XModifyListener, XEventListener{
     private XEventBroadcaster    m_xEventBroadcaster       = null;
     private String               m_modifySheetName         = "";
    
-    public WatchedCell(Controller controller, XSpreadsheet xSpreadsheet, String sheetName, String cellName, short numer) {
+ 
+    public WatchedCell(Controller controller, XSpreadsheet xSpreadsheet, String sheetName, FormulaToken cellPos, String selectedCellName, short numer) {
         try {
+
             m_Controller = controller;
             m_xSpreadsheet = xSpreadsheet;
             m_sheetName = m_modifySheetName = sheetName;
-            m_cellName = cellName;
+            m_cellPos = cellPos;
+            m_cellName = selectedCellName;
             m_num = numer;
+
             init();
             adjustCounter();
             getController().addToListBox(this.toString(), m_num);
+
         } catch (IndexOutOfBoundsException ex) {
             ex.printStackTrace();
         }
     }
     
     public void init() throws IndexOutOfBoundsException {
-        XCellRange xCellRange = m_xSpreadsheet.getCellRangeByName(getCellName());
-        XCellRangeAddressable xRangeAddr = (XCellRangeAddressable)UnoRuntime.queryInterface(XCellRangeAddressable.class, xCellRange);
-        CellRangeAddress cellAddress = xRangeAddr.getRangeAddress();
-        m_xCell = m_xSpreadsheet.getCellByPosition(cellAddress.StartColumn, cellAddress.StartRow);
+
+        //m_xCell is the basic of WatchedCell objects. This won't be changed!
+        SingleReference ref = (SingleReference) m_cellPos.Data;
+        m_xCell = m_xSpreadsheet.getCellByPosition(ref.Column, ref.Row);
+
         setValue();
-        setFormula(); 
+        setFormula();
+
+        //add listeners
         m_xDocument = getController().getDocument(); 
         m_xDocModifyBroadcaster = (XModifyBroadcaster) UnoRuntime.queryInterface(XModifyBroadcaster.class, m_xDocument);  
         m_xDocModifyBroadcaster.addModifyListener(this);
@@ -65,98 +77,117 @@ public class WatchedCell implements XModifyListener, XEventListener{
         m_xEventBroadcaster.addEventListener(this);
         m_xCellModifyBroadcaster = (XModifyBroadcaster)UnoRuntime.queryInterface(XModifyBroadcaster.class, m_xCell );
         m_xCellModifyBroadcaster.addModifyListener(this);
+
     }
 
     public Controller getController(){
         return m_Controller;
     }
-    
+
     public int countSheets(){
         return m_xDocument.getSheets().getElementNames().length;
     }
-    
+
     public void adjustCounter(){
         _counter = m_xDocument.getSheets().getElementNames().length;
     }
-    
+
     public void refresh(){
+
+        setCellName();
         setSheetName();
         setValue();
         setFormula();
+
         if(m_num>=0){
             getController().removeFromListBox(m_num, (short)1);
             getController().addToListBox(this.toString(), m_num);
-        }   
+        }
     }
-    
-    public short getNum(){
-        return m_num;
+
+    public void setCellName(){
+        m_cellPos = getController().getRefToken(m_xCell);
+        SingleReference ref = (SingleReference)m_cellPos.Data;
+        // We don't want to display the sheet name, and the cell position should be absolute, not relative.
+        ref.Flags = 0;
+        FormulaToken[] tokens = { m_cellPos };
+        XFormulaParser xParser = m_Controller.getFormulaParser();
+        m_cellName = xParser.printFormula(tokens, new CellAddress());
     }
-    
-    public void setNum(short n){
-        m_num = n;
-    }
-    
-    public String getSheetName(){
-        return m_sheetName;
-    }
-    
-    public void setSheetName(){
-       XNamed xNamed = (XNamed)UnoRuntime.queryInterface(XNamed.class, m_xSpreadsheet);
-       m_sheetName = xNamed.getName();
-    }
-    
-    public void setSheetName(String sheetName){
-        m_sheetName = sheetName;
-    }
-    
-    public String getSheetNameWithSpaces(){
-        return getController().createStringWithSpace(getSheetName(), 27);
-    }
-    public String getCellName(){
+   
+    public String getCellName(){   
         return m_cellName;
     }
-    
+
     public String getCellNameWithSpaces(){
         return getController().createStringWithSpace(getCellName(), 15);
     }
-    
-    public void setCellName(String cellName){
-        m_cellName = cellName;
+
+    public void setSheetName(){
+        SingleReference ref = (SingleReference)m_cellPos.Data;
+        XSpreadsheet sheet = m_Controller.getSheetByIndex(ref.Sheet);
+        XNamed xNamed = (XNamed)UnoRuntime.queryInterface(XNamed.class, sheet);
+        m_sheetName = xNamed.getName();
     }
-    
-    public void setValue() { 
+
+    public String getSheetName(){
+        return m_sheetName;
+    }
+
+    public String getSheetNameWithSpaces(){
+        return getController().createStringWithSpace(getSheetName(), 27);
+    }
+
+    public void setValue() {
         XText xText = (XText)UnoRuntime.queryInterface(XText.class, m_xCell);
         m_value = xText.getString();
     }
-    
-    public void setValue(String value) {
-        m_value = value;
-    }
-    
+
     public String getValue(){
         return m_value;
     }
-    
+
     public String getValueWithSpaces(){
         return getController().createStringWithSpace(getValue(), 26);
     }
-    public void setFormula(){
-        m_formula = m_xCell.getFormula();
-        if(!m_formula.equals("")){
-            if(m_formula.charAt(0) != '='){
-                m_formula ="";
+
+    public void setFormula() {
+        XFormulaTokens xTokens = (XFormulaTokens) UnoRuntime.queryInterface(XFormulaTokens.class, m_xCell);
+        FormulaToken[] tokens = xTokens.getTokens();
+        for(int i=0;i<tokens.length;i++){
+            if(tokens[i].Data.toString().startsWith("com.sun.star.sheet.ComplexReference")){
+                ComplexReference ref = (ComplexReference) (tokens[i].Data);
+                ref.Reference1.Flags = ref.Reference2.Flags = 0;
+            }
+            if(tokens[i].Data.toString().startsWith("com.sun.star.sheet.SingleReference")){
+                SingleReference ref = (SingleReference)(tokens[i].Data);
+                ref.Flags = 0;
             }
         }
+
+        m_formula = m_Controller.getFormulaParser().printFormula(tokens, new CellAddress());
+        if (!m_formula.isEmpty()) {
+            m_formula = "=" + m_formula;
+        }    
     }
-    
-    public void setFormula(String formula){
-        m_formula = formula;
-    }
+
+
     public String getFormula(){
         return m_formula;
     }
-    
+
+    public FormulaToken getCellPos(){
+        return m_cellPos;
+    }
+
+    public void setNum(short n){
+        m_num = n;
+    }
+
+    public short getNum(){
+        return m_num;
+    }
+
     @Override
     public String toString(){
         return getSheetNameWithSpaces()+getCellNameWithSpaces()+getValueWithSpaces()+getFormula();
@@ -164,6 +195,7 @@ public class WatchedCell implements XModifyListener, XEventListener{
     
     //com.sun.star.util.XModifyListener:(2)
     public void modified(EventObject event){
+
         if(_counter-1 == countSheets()){
             if(m_modifySheetName.equals(getSheetName())){
                 getController().removeSheetItemsFromDataList(getSheetName());
@@ -172,7 +204,9 @@ public class WatchedCell implements XModifyListener, XEventListener{
         }else{
             adjustCounter();
         }
+        
         refresh();
+
     }
     
     public void disposing(EventObject event) { 

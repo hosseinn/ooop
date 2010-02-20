@@ -1,0 +1,1 @@
+A Watch Window (Figyelőablak) egy különálló kis ablak, amely mindig az előtérben marad, és lehetővé teszi a kijelölt cellák megfigyelését.
