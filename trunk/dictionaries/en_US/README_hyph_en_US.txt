@@ -1,12 +1,16 @@
 hyph_en_US.dic - American English hyphenation patterns for OpenOffice.org
 
-version 2008-01-23
+version 2010-03-16
 
 Changes
 
+- forbid hyphenation at 1-character distances from dashes (eg. ad=d-on)
+  and at the dashes (fix for OpenOffice.org 3.2)
 - set correct LEFTHYPHENMIN = 2, RIGHTHYPHENMIN = 3
 - handle apostrophes (forbid *o'=clock etc.)
 - set COMPOUNDLEFTHYPHENMIN, COMPOUNDRIGHTHYPHENMIN values
+- UTF-8 encoding
+- Unicode ligature support
 
 License
 

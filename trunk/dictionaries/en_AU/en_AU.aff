@@ -3,7 +3,7 @@
 #Modifications by David Wilson 1/10/2008
 # Added the PHONEtic transformation rules from the en_US OPenOffice dictionary -
 ##   PHONEtic_english.h - #PHONEtic transformation rules for use with #PHONEtic.c
-##   Copyright (C) 2000 Bjˆrn Jacke (see details below)
+##   Copyright (C) 2000 Bj√∂rn Jacke (see details below)
 # Merged the replacement (REP) options from  en_US OPenOffice dictionary
 # added 'REP gotten got'
 #
@@ -16,7 +16,12 @@
 # Built from scratch for MySpell. Released under LGPL.
 # David Bartlett, Andrew Brown.
 
-
+# 2010-03-09 (nemeth AT OOo)
+#  - UTF-8 encoded dictionary:
+#       - fix em-dash problem of OOo 3.2 by BREAK
+#       - suggesting words with typographical apostrophes
+#       - recognizing words with Unicode f ligatures
+#  - add phonetic suggestion (Copyright (C) 2000 Bj√∂rn Jacke, see the end of the file)
 
 ########################################################
 # DNW 1/10/2008
@@ -24,8 +29,8 @@ MIDWORD '-
 BAD ~
 ########################################################
 
-SET ISO8859-1
-TRY esiaÈnrtolcdugmfphbyvkw-'.zqjxSNRTLCGDMFPHBEAUYOIVKWÛˆ‚ÙZQJX≈ÁËÓÍ‡Ô¸‰Ò
+SET UTF-8
+TRY esia√©nrtolcdugmfphbyvkw-'.zqjxSNRTLCGDMFPHBEAUYOIVKW√≥√∂√¢√¥ZQJX√Ö√ß√®√Æ√™√†√Ø√º√§√±
 NOSUGGEST !
 # ordinal numbers
 COMPOUNDMIN 1
@@ -37,7 +42,7 @@ ONLYINCOMPOUND _
 COMPOUNDRULE 2
 COMPOUNDRULE #*0{
 COMPOUNDRULE #*@}
-WORDCHARS 0123456789
+WORDCHARS 0123456789'.-‚Äô
 REP 114
 REP a ei
 REP a ey
@@ -1270,12 +1275,28 @@ SFX 3 0 ist's [aeioubp]y
 SFX 3 o ist's o 
 SFX 3 0 ist's [^eoy] 
 
+BREAK 3
+BREAK ‚Äî
+BREAK ‚Äì
+BREAK -
+
+ICONV 6
+ICONV ‚Äô '
+ICONV Ô¨É ffi
+ICONV Ô¨Ñ ffl
+ICONV Ô¨Ä ff
+ICONV Ô¨Å fi
+ICONV Ô¨Ç fl
+
+OCONV 1
+OCONV ' ‚Äô
+
 #   PHONEtic_english.h - #PHONEtic transformation rules for use with #PHONEtic.c
-#   Copyright (C) 2000 Bjˆrn Jacke
+#   Copyright (C) 2000 Bj√∂rn Jacke
 #
 #   This rule set is based on Lawrence Phillips original metaPHONE 
 #   algorithm with modifications made by Michael Kuhn in his
-#   C implantation, more modifications by Bjˆrn Jacke when
+#   C implantation, more modifications by Bj√∂rn Jacke when
 #   converting the algorithm to a rule set and minor 
 #   touch ups by Kevin Atkinson
 #
@@ -1292,11 +1313,11 @@ SFX 3 0 ist's [^eoy]
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
-#   Bjˆrn Jacke may be reached by email at bjoern.jacke@gmx.de
+#   Bj√∂rn Jacke may be reached by email at bjoern.jacke@gmx.de
 #
 #   Changelog:
 #
-#   2000-01-05  Bjˆrn Jacke <bjoern.jacke@gmx.de>
+#   2000-01-05  Bj√∂rn Jacke <bjoern.jacke@gmx.de>
 #               - first version with translation rules derived from
 #                 metaPHONE.cc distributed with aspell 0.28.3
 #               - "TH" is now representated as "@" because "0" is a
@@ -1317,11 +1338,15 @@ SFX 3 0 ist's [^eoy]
 #   2007-08-23  L√°szl√≥ N√©meth <nemeth AT OOo>
 #               Add PHONE header and #PHONE keywords
 #
+#   2010-03-09  L√°szl√≥ N√©meth <nemeth AT OOo>
+#               Temporarily removing acuted character √â
+#               because of the missing UTF-8 support
+#
 # version 1.1
 
 # Documentation: http://aspell.net/man-html/PHONEtic-Code.html
 
-PHONE 105
+PHONE 104
 PHONE AH(AEIOUY)-^         *H
 PHONE AR(AEIOUY)-^         *R
 PHONE A(HR)^               *
@@ -1342,7 +1367,6 @@ PHONE C                    K
 PHONE DG(EIY)              K
 PHONE DD-                  _
 PHONE D                    T
-PHONE …<                   E
 PHONE EH(AEIOUY)-^         *H
 PHONE ER(AEIOUY)-^         *R
 PHONE E(HR)^               *
@@ -1524,3 +1548,4 @@ PHONE Z                    S
 #          Y      if followed by a vowel
 # 
 #  Z --> S
+

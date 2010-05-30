@@ -1,4 +1,4 @@
-# verzia: 2.01-2, 2009-03-21
+# verzia: 2.03-1, 2009-12-19
 SET UTF-8
 TRY aoeintsvrlkmdpuhjzácbyčžíšýúťéľôďgfňäóŕxĺwěřqůAOEINTSVRLKMDPUHJZÁCBYČŽÍŠÝÚŤÉĽÔĎGFŇÄÓŔXĹWĚŘQŮ
 
@@ -538,38 +538,187 @@ SFX A   0           tách       .
 SFX A   0           ťom        .
 SFX A   0           tami       .
 
-SFX C Y 135
-SFX C   ec          covia      otec
-SFX C   0           ovia       [gh]
-SFX C   0           ovia       [ey]n
-SFX C   0           via        o
-SFX C   or          rovia      [gk]or
-SFX C   0           ovia       č[ei]k
-SFX C   ok          kovia      ok
-SFX C   0           ovia       duch
-SFX C   0           ovia       ach
-SFX C   0           ovia       nc
-SFX C   ec          ci         [^o]tec
-SFX C   ec          ci         [^t]ec
-SFX C   0           ia         rodič
-SFX C   0           i          [^r]odič
+SFX c Y 153 # vzor pre živ. pod.mená. ak N plurál je -ia
+SFX c   0           ovia       [éi]	# kuli, abbé
+SFX c   0           ho         [éi]
+SFX c   0           ov         [éi]
+SFX c   0           mu         [éi]
+SFX c   0           om         [éi]
+SFX c   0           m          [éi]
+SFX c   0           och        [éi]
+SFX c   0           ami        [éi]
+SFX c   us          a          [^ú]..us	# génius
+SFX c   us          ovi        [^ú]..us
+SFX c   us          om         [^ú]..us
+SFX c   us          ovia       [^ú]..us
+SFX c   us          ov         [^ú]..us
+SFX c   us          och        [^ú]..us
+SFX c   us          ami        [^ú]..us
+SFX c   0           a          úlius	# Július
+SFX c   0           ovi        úlius
+SFX c   0           om         úlius
+SFX c   0           ovia       úlius
+SFX c   0           ov         úlius
+SFX c   0           och        úlius
+SFX c   0           ami        úlius
+SFX c   as          a          [^el]as	# Pytagoras
+SFX c   as          ovi        [^el]as
+SFX c   as          om         [^el]as
+SFX c   as          ovia       [^el]as
+SFX c   as          ov         [^el]as
+SFX c   as          och        [^el]as
+SFX c   as          ami        [^el]as
+SFX c   0           a          [el]as	#Atlas, Eneas
+SFX c   0           ovi        [el]as
+SFX c   0           om         [el]as
+SFX c   0           ovia       [el]as
+SFX c   0           ov         [el]as
+SFX c   0           och        [el]as
+SFX c   0           ami        [el]as
+SFX c   es          a          [^hxz]es	# herkules - inak ten má dvojtvar
+SFX c   es          ovi        [^hxz]es
+SFX c   es          om         [^hxz]es
+SFX c   es          ovia       [^hxz]es
+SFX c   es          ov         [^hxz]es
+SFX c   es          och        [^hxz]es
+SFX c   0           a          [hxz]es	# Ramzes
+SFX c   0           ovi        [hxz]es
+SFX c   0           om         [hxz]es
+SFX c   0           ovia       [hxz]es
+SFX c   0           ov         [hxz]es
+SFX c   0           och        [hxz]es
+SFX c   0           mi         [hxz]es
+SFX c   0           a          [^h]os	#bos, Eros
+SFX c   0           ovi        [^h]os
+SFX c   0           om         [^h]os
+SFX c   0           ovia       [^h]os
+SFX c   0           ov         [^h]os
+SFX c   0           och        [^h]os
+SFX c   0           mi         [^h]os
+SFX c   os          a          hos	#Pyrrhos
+SFX c   os          ovi        hos
+SFX c   os          om         hos
+SFX c   os          ovia       hos
+SFX c   os          ov         hos
+SFX c   os          och        hos
+SFX c   os          mi         hos
+SFX c   0           a          is	#Denis
+SFX c   0           ovi        is
+SFX c   0           om         is
+SFX c   0           ovia       is
+SFX c   0           ov         is
+SFX c   0           och        is
+SFX c   0           mi         is
+SFX c   ec          ca         ec	# skontrolovať odtiaľto
+SFX c   ec          cov        ec
+SFX c   ec          covi       ec
+SFX c   ec          com        ec
+SFX c   ec          covia      ec
+SFX c   ec          coch       ec
+SFX c   ec          cami       ec
+SFX c   ec          če         ec	# s5 (otče)
+SFX c   ec          cu         ec	# s5 (otcu)
+SFX c   0           a          [^e]c
+SFX c   on          ni         zon
+SFX c   on          na         zon
+SFX c   on          nov        zon
+SFX c   on          novi       zon
+SFX c   on          novia      zon
+SFX c   on          nom        zon
+SFX c   on          noch       zon
+SFX c   on          nami       zon
+SFX c   o           a          o
+SFX c   0           v          o
+SFX c   0           vi         o
+SFX c   0           via        o
+SFX c   0           ch         o
+SFX c   0           m          o
+SFX c   o           ami        o
+SFX c   0           a          [inp]er
+SFX c   0           ov         [inp]er
+SFX c   0           ovi        [inp]er
+SFX c   0           ovia       [inp]er
+SFX c   0           om         [inp]er
+SFX c   0           och        [inp]er
+SFX c   0           mi         [inp]er
+SFX c   er          ra         [^inp]er
+SFX c   er          rov        [^inp]er
+SFX c   er          rovi       [^inp]er
+SFX c   er          rovia      [^inp]er
+SFX c   er          rom        [^inp]er
+SFX c   er          roch       [^inp]er
+SFX c   er          rami       [^inp]er
+SFX c   or          ra         [bg]or
+SFX c   or          rov        [bg]or
+SFX c   or          rovi       [bg]or
+SFX c   or          rovia      [bg]or
+SFX c   or          rom        [bg]or
+SFX c   or          roch       [bg]or
+SFX c   or          rami       [bg]or
+SFX c   0           a          [^bg]or
+SFX c   0           ov         [^bg]or
+SFX c   0           ovi        [^bg]or
+SFX c   0           ovia       [^bg]or
+SFX c   0           om         [^bg]or
+SFX c   0           och        [^bg]or
+SFX c   0           ami        [^bg]or
+SFX c   0           a          [^eo][cr]
+SFX c   0           ov         [^eo][cr]
+SFX c   0           ovi        [^eo][cr]
+SFX c   0           ovia       [^eo][cr]
+SFX c   0           om         [^eo][cr]
+SFX c   0           och        [^eo][cr]
+SFX c   0           mi         [^eon][cr]
+SFX c   0           ami        nc
+SFX c   0           ovia       nc
+SFX c   0           a          [^céior]
+SFX c   0           ov         [^céior]
+SFX c   0           ovi        [^céior]
+SFX c   0           ovia       [^cčéior]
+SFX c   0           om         [^céior]
+SFX c   0           och        [^céior]
+SFX c   0           mi         [^céior]
+SFX c   0           ovia       [ey]n
+SFX c   0           via        o
+SFX c   or          rovia      [gk]or
+SFX c   0           ovia       č[ei]k
+SFX c   ok          kovia      ok
+SFX c   0           ovia       duch
+SFX c   0           ovia       ach
+SFX c   0           ovia       ť
+SFX c   0           ia         dič	# rodič
+SFX c   0           i          dedič	# dedičia sú dvojtvar
+SFX c   0           ia         žel
+SFX c   ľ           lia        ľ
+SFX c   n           nia        čan
+SFX c   0           ia         brat
+
+SFX C Y 83 # vzor pre živ. pod.mená. ak N plurál je -i okrem hosť
+SFX C   0           i          [^acéhiklľnortť]
 SFX C   0           i          [^o]dič
 SFX C   0           i          [^d]ič
 SFX C   0           i          [^i]č
-SFX C   ch          si         ích
+SFX C   0           i          [ln]
+SFX C   ch          si         ch
 SFX C   k           ci         k
+SFX C   ec          ci         ec
 SFX C   0           i          jel
-SFX C   el          li         zel
-SFX C   0           ia         žel
-SFX C   ľ           lia        ľ
-SFX C   n           nia        čan
+SFX C   el          li         el
+SFX C   ľ           li         [áeo]ľ
 SFX C   0           i          lan
-SFX C   0           ia         brat
 SFX C   0           i          [^b]rat
 SFX C   0           i          [^r]at
 SFX C   0           i          [^a]t
-SFX C   0           i          [^acéhiklľnortť]
-SFX C   0           ovia       ť
+SFX C   ť           tia        ť
+SFX C   on          ni         zon
+SFX C   0           vi         o
+SFX C   0           i          [inp]er
+SFX C   er          ri         [^inp]er
+SFX C   or          ri         bor	# obor
+SFX C   0           i          [^b]or
+SFX C   0           i          [^eo][cr]
+SFX C   ť           tí         ť
+SFX C   0           ami        ť
 SFX C   ec          ca         ec
 SFX C   ec          cov        ec
 SFX C   ec          covi       ec
@@ -585,39 +734,32 @@ SFX C   on          noch       zon
 SFX C   on          nami       zon
 SFX C   o           a          o
 SFX C   0           v          o
-SFX C   0           vi         o
 SFX C   0           ch         o
 SFX C   0           m          o
 SFX C   o           ami        o
-SFX C   0           i          [inp]er
-SFX C   0           a          [inp]er
 SFX C   0           ov         [inp]er
 SFX C   0           ovi        [inp]er
 SFX C   0           om         [inp]er
 SFX C   0           och        [inp]er
 SFX C   0           mi         [inp]er
-SFX C   er          ri         [^inp]er
 SFX C   er          ra         [^inp]er
 SFX C   er          rov        [^inp]er
 SFX C   er          rovi       [^inp]er
 SFX C   er          rom        [^inp]er
 SFX C   er          roch       [^inp]er
 SFX C   er          rami       [^inp]er
-SFX C   or          ri         bor
 SFX C   or          ra         [bg]or
 SFX C   or          rov        [bg]or
 SFX C   or          rovi       [bg]or
 SFX C   or          rom        [bg]or
 SFX C   or          roch       [bg]or
 SFX C   or          rami       [bg]or
-SFX C   0           i          [^bg]or
 SFX C   0           a          [^bg]or
 SFX C   0           ov         [^bg]or
 SFX C   0           ovi        [^bg]or
 SFX C   0           om         [^bg]or
 SFX C   0           och        [^bg]or
 SFX C   0           ami        [^bg]or
-SFX C   0           i          [^eon][cr]
 SFX C   0           a          [^eo][cr]
 SFX C   0           ov         [^eo][cr]
 SFX C   0           ovi        [^eo][cr]
@@ -630,50 +772,11 @@ SFX C   0           ov         [^céior]
 SFX C   0           ovi        [^céior]
 SFX C   0           om         [^céior]
 SFX C   0           och        [^céior]
-SFX C   0           mi         [^céior]
-SFX C   0           ovia       [éi]
-SFX C   0           ho         [éi]
-SFX C   0           ov         [éi]
-SFX C   0           mu         [éi]
-SFX C   0           om         [éi]
-SFX C   0           m          [éi]
-SFX C   0           och        [éi]
-SFX C   0           ami        [éi]
-SFX C   us          a          us
-SFX C   us          ovi        us
-SFX C   us          om         us
-SFX C   us          ovia       us
-SFX C   us          ov         us
-SFX C   us          och        us
-SFX C   us          ami        us
-SFX C   as          a          as
-SFX C   as          ovi        as
-SFX C   as          om         as
-SFX C   as          ovia       as
-SFX C   as          ov         as
-SFX C   as          och        as
-SFX C   as          ami        as
-SFX C   es          a          es
-SFX C   es          ovi        es
-SFX C   es          om         es
-SFX C   es          ovia       es
-SFX C   es          ov         es
-SFX C   es          och        es
-SFX C   es          ami        es
-SFX C   os          a          os
-SFX C   os          ovi        os
-SFX C   os          om         os
-SFX C   os          ovia       os
-SFX C   os          ov         os
-SFX C   os          och        os
-SFX C   os          ami        os
-SFX C   is          a          is
-SFX C   is          ovi        is
-SFX C   is          om         is
-SFX C   is          ovia       is
-SFX C   is          ov         is
-SFX C   is          och        is
-SFX C   is          ami        is
+SFX C   0           mi         [^céiorť]
+SFX C   i           ov         ovci
+SFX C   i           om         ovci
+SFX C   i           och        ovci
+SFX C   i           ami        ovci
 
 SFX H Y 8
 SFX H   a           u          a
@@ -2010,7 +2113,7 @@ SFX T   ť           la         ť
 SFX T   ť           lo         ť
 SFX T   ť           li         ť
 
-SFX R Y 389
+SFX R Y 399
 SFX R   rať         riem       [aeiou]rať
 SFX R   rať         rieš       [aeiou]rať
 SFX R   rať         rie        [aeiou]rať
@@ -2386,20 +2489,30 @@ SFX R   ť           ol         [^i]ezť
 SFX R   ť           la         [^i]ezť
 SFX R   ť           lo         [^i]ezť
 SFX R   ť           li         [^i]ezť
-SFX R   ť           iem        [^e]zť
-SFX R   ť           ieš        [^e]zť
-SFX R   ť           ie         [^e]zť
-SFX R   ť           ieme       [^e]zť
-SFX R   ť           iete       [^e]zť
-SFX R   ť           ú          [^e]zť
-SFX R   ť           úc         [^e]zť
-SFX R   zť          z          [^e]zť
-SFX R   ť           me         [^e]zť
-SFX R   ť           te         [^e]zť
+SFX R   ť           iem        [^eý]zť
+SFX R   ť           ieš        [^eý]zť
+SFX R   ť           ie         [^eý]zť
+SFX R   ť           ieme       [^eý]zť
+SFX R   ť           iete       [^eý]zť
+SFX R   ť           ú          [^eý]zť
+SFX R   ť           úc         [^eý]zť
+SFX R   zť          z          [^eý]zť
+SFX R   ť           me         [^eý]zť
+SFX R   ť           te         [^eý]zť
 SFX R   ť           ol         [^e]zť
 SFX R   ť           la         [^e]zť
 SFX R   ť           lo         [^e]zť
 SFX R   ť           li         [^e]zť
+SFX R   ýzť         yziem      ýzť
+SFX R   ýzť         yzieš      ýzť
+SFX R   ýzť         yzie       ýzť
+SFX R   ýzť         yzieme     ýzť
+SFX R   ýzť         yziete     ýzť
+SFX R   ýzť         yzú        ýzť
+SFX R   ýzť         yzúc       ýzť
+SFX R   ýzť         yz         ýzť
+SFX R   ýzť         yzme       ýzť
+SFX R   ýzť         yzte       ýzť
 
 SFX b Y 6  # v testovaní: pred podst. mena vzoru dub s -u v G a -e L
 SFX b   0           u          [klr]
