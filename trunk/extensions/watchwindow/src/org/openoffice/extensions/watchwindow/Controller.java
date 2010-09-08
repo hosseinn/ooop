@@ -29,26 +29,18 @@ import com.sun.star.uno.XComponentContext;
 
 public class Controller {
 
-    private   XComponentContext      m_xContext          = null;
-    private   XFrame                 m_xFrame            = null;
-    private   XController            m_xController       = null;
-    protected   Gui                    m_Gui               = null;
-    private   DataModel              m_DataModel         = null;
-    private   XModel                 m_xModel            = null;
-    private   XMultiComponentFactory m_xServiceManager   = null;
-    private   XSpreadsheetDocument   m_xDocument         = null;
-    private   XFormulaParser         m_xFormulaParser    = null;
-    private   FormulaToken           m_selectedCellPos   = null;
-    private   XSpreadsheet           m_xValidSheet       = null;
-    private static short             _numer              = 0;
-
-    //members of constants group AddressConvention, have not yet used
-    //private static final short      OOO                  = 0;
-    //private static final short      XL_A1                = 1;
-    //private static final short      XL_R1C1              = 2;
-    //private static final short      XL_OOX               = 3;
-    //private static final short      LOTUS_A1             = 4;
-
+    private     XComponentContext       m_xContext          = null;
+    private     XFrame                  m_xFrame            = null;
+    private     XController             m_xController       = null;
+    protected   Gui                     m_Gui               = null;
+    private     DataModel               m_DataModel         = null;
+    private     XModel                  m_xModel            = null;
+    private     XMultiComponentFactory  m_xServiceManager   = null;
+    private     XSpreadsheetDocument    m_xDocument         = null;
+    private     XFormulaParser          m_xFormulaParser    = null;
+    private     FormulaToken            m_selectedCellToken = null;
+    private     XSpreadsheet            m_xValidSheet       = null;
+    private static short                _numer              = 0;
 
    
     public Controller(XComponentContext xContext, XFrame xFrame) throws UnknownPropertyException, WrappedTargetException, IllegalArgumentException{
@@ -73,7 +65,8 @@ public class Controller {
                 
                 //adjust the style of referencia with AddressConvention constants group
                 //XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, m_xFormulaParser);
-                //xProp.setPropertyValue("FormulaConvention", OOO);
+                //members of constants group AddressConvention, have not yet used
+                //xProp.setPropertyValue("FormulaConvention", AddressConvention.OOO);
 
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -165,8 +158,9 @@ public class Controller {
         m_Gui.removeFromListBox(num, n);
     }
     
-    public void removeSheetItemsFromDataList(String sheetName) { 
-        m_DataModel.removeSheetItemsFromDataList(sheetName);
+    public void removeSheetItemsFromDataList(String sheetName) {
+        if(m_DataModel != null)
+            m_DataModel.removeSheetItemsFromDataList(sheetName);
     }
     
     public XSpreadsheet getActiveSheet(){
@@ -183,8 +177,8 @@ public class Controller {
     public String createStringWithSpace(String s, int max){
         char c;
         int n;
-        double dn = s.length()*2;
-for(int i=0; i<s.length();i++){
+        double dn = s.length()*2;     
+        for(int i=0; i<s.length();i++){
             c = s.charAt(i);
             if(c=='W')
                 dn += 1.3333;
@@ -233,16 +227,19 @@ for(int i=0; i<s.length();i++){
         if (m_xValidSheet == null)
             return false;
 
-        m_selectedCellPos = token;
+        m_selectedCellToken = token;
 
         return true;
     }
 
     public void addCell() {
         //default feature: user can choose the active cell in active sheet
-        FormulaToken token = getRefToken(getActiveCell());
+        XCell activeXCell = getActiveCell();
+        FormulaToken token = getRefToken( activeXCell );
         FormulaToken[] tokens = { token };
-        String cellName = getFormulaParser().printFormula(tokens, new CellAddress());
+        XCellAddressable xCellAddr =  (XCellAddressable)UnoRuntime.queryInterface(XCellAddressable.class, activeXCell);
+        CellAddress addr = xCellAddr.getCellAddress();
+        String cellName = getFormulaParser().printFormula(tokens, addr);
         m_Gui.cellSelection(cellName);
     }
     
@@ -263,7 +260,7 @@ for(int i=0; i<s.length();i++){
             if (isValidSelectedName(selectAreaName)) {
             if(m_DataModel == null)
                 m_DataModel = new DataModel(this);
-            m_DataModel.addToDataList( m_xValidSheet, m_selectedCellPos);
+            m_DataModel.addToDataList( m_xValidSheet, m_selectedCellToken);
             m_Gui.setVisible(true);
         } else {
             m_Gui.setVisible(true);

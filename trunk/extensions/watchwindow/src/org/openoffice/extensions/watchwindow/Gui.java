@@ -230,7 +230,7 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
         return result;
     }
 
-    //there is two possible warning message in watchwindow ( num = 0 | 1 )
+    //there are two possible warning message in watchwindow ( num = 0 | 1 )
     public void showMessageBox(int num) {
         String title = getDialogPropertyValue("WWindow.Title" +num +".Label");
         String message = getDialogPropertyValue("WWindow.Message" +num +".Label");    
@@ -268,7 +268,7 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
     public void cellSelection(String cellName) {
         m_xRangeSelection = (XRangeSelection)UnoRuntime.queryInterface(XRangeSelection.class, m_xModel.getCurrentController());
         m_xRangeSelection.addRangeSelectionListener(this); 
-        String title = getController().getLocation().Language.equals("hu")?"Cella kiválasztása":"Select cell";
+        String title = getController().getLocation().Language.equals("hu") ? "Cella" : "Cell";
         PropertyValue[] args = new PropertyValue[3];
         args[0] = new PropertyValue();
         args[0].Name = "Title";
