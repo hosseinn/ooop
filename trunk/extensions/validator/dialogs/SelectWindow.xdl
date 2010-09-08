@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="SelectWindow" dlg:left="0" dlg:top="0" dlg:width="160" dlg:height="96" dlg:help-text="&amp;2.SelectWindow.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;3.SelectWindow.Title">
+ <dlg:bulletinboard>
+  <dlg:button dlg:id="allButton" dlg:tab-index="0" dlg:left="0" dlg:top="0" dlg:width="80" dlg:height="13" dlg:help-text="&amp;4.SelectWindow.allButton.HelpText" dlg:value="&amp;5.SelectWindow.allButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:signAll" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="claarButton" dlg:tab-index="1" dlg:left="80" dlg:top="0" dlg:width="80" dlg:height="13" dlg:help-text="&amp;6.SelectWindow.claarButton.HelpText" dlg:value="&amp;7.SelectWindow.claarButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:clearAll" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="okButton" dlg:tab-index="6" dlg:left="0" dlg:top="82" dlg:width="160" dlg:height="13" dlg:help-text="&amp;8.SelectWindow.okButton.HelpText" dlg:value="&amp;9.SelectWindow.okButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:ok" script:language="UNO"/>
+  </dlg:button>
+  <dlg:checkbox dlg:id="checkBox1" dlg:tab-index="2" dlg:left="5" dlg:top="20" dlg:width="150" dlg:height="10" dlg:help-text="&amp;10.SelectWindow.checkBox1.HelpText" dlg:value="&amp;11.SelectWindow.checkBox1.Label" dlg:checked="true">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifiedCheckBox1" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:checkbox dlg:id="checkBox2" dlg:tab-index="3" dlg:left="5" dlg:top="35" dlg:width="150" dlg:height="10" dlg:help-text="&amp;12.SelectWindow.checkBox2.HelpText" dlg:value="&amp;13.SelectWindow.checkBox2.Label" dlg:checked="true">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifiedCheckBox2" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:checkbox dlg:id="checkBox3" dlg:tab-index="4" dlg:left="5" dlg:top="50" dlg:width="150" dlg:height="10" dlg:help-text="&amp;14.SelectWindow.checkBox3.HelpText" dlg:value="&amp;15.SelectWindow.checkBox3.Label" dlg:checked="true">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifiedCheckBox3" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:checkbox dlg:id="checkBox4" dlg:tab-index="5" dlg:left="5" dlg:top="65" dlg:width="150" dlg:height="10" dlg:help-text="&amp;16.SelectWindow.checkBox4.HelpText" dlg:value="&amp;17.SelectWindow.checkBox4.Label" dlg:checked="true">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifiedCheckBox4" script:language="UNO"/>
+  </dlg:checkbox>
+ </dlg:bulletinboard>
+</dlg:window>
