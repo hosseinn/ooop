@@ -1,1 +1,2 @@
-A Watch Window (Figyelőablak) egy különálló kis ablak, amely mindig az előtérben marad, és lehetővé teszi a kijelölt cellák megfigyelését.
+A Watch Window (Figyelőablak) egy különálló kis ablak, amely mindig az előtérben marad, és lehetővé teszi a kijelölt cellák megfigyelését. Ez egy OpenOffice.org Calc kiterjesztés.
+Calc-ból: válassza ki az Eszközök → Detektív → Figyelőablak megjelenítése lehetőséget.
