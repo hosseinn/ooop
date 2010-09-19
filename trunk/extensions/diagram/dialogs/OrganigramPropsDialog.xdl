@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="OrganigramPropsDialog" dlg:left="122" dlg:top="52" dlg:width="138" dlg:height="190" dlg:help-text="&amp;74.OrganigramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;75.OrganigramPropsDialog.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:background-color="0x99ccff" dlg:border="simple"/>
+  <dlg:style dlg:style-id="1" dlg:background-color="0xff0000"/>
+  <dlg:style dlg:style-id="2" dlg:background-color="0x800000"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:titledbox dlg:id="FrameControl1" dlg:tab-index="0" dlg:left="6" dlg:top="8" dlg:width="126" dlg:height="26" dlg:help-text="&amp;76.OrganigramPropsDialog.FrameControl1.HelpText">
+   <dlg:title dlg:value="&amp;77.OrganigramPropsDialog.FrameControl1.Label"/>
+  </dlg:titledbox>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="selectedShapeOptionButton" dlg:tab-index="2" dlg:left="60" dlg:top="18" dlg:width="70" dlg:height="10" dlg:help-text="&amp;78.OrganigramPropsDialog.selectedShapeOptionButton.HelpText" dlg:value="&amp;79.OrganigramPropsDialog.selectedShapeOptionButton.Label" dlg:group-name="Area">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="diagramOptionButton" dlg:tab-index="1" dlg:left="14" dlg:top="18" dlg:width="40" dlg:height="10" dlg:help-text="&amp;80.OrganigramPropsDialog.diagramOptionButton.HelpText" dlg:value="&amp;81.OrganigramPropsDialog.diagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:titledbox dlg:id="FrameControl2" dlg:tab-index="11" dlg:left="6" dlg:top="42" dlg:width="126" dlg:height="48" dlg:help-text="&amp;82.OrganigramPropsDialog.FrameControl2.HelpText">
+   <dlg:title dlg:value="&amp;83.OrganigramPropsDialog.FrameControl2.Label"/>
+  </dlg:titledbox>
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="4" dlg:left="28" dlg:top="64" dlg:width="15" dlg:height="10" dlg:help-text="&amp;84.OrganigramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="gradientsOptionButton" dlg:tab-index="5" dlg:left="60" dlg:top="52" dlg:width="45" dlg:height="10" dlg:help-text="&amp;85.OrganigramPropsDialog.gradientsOptionButton.HelpText" dlg:value="&amp;86.OrganigramPropsDialog.gradientsOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setGradients" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:text dlg:id="Label0" dlg:tab-index="12" dlg:disabled="true" dlg:left="70" dlg:top="64" dlg:width="35" dlg:height="10" dlg:help-text="&amp;87.OrganigramPropsDialog.Label2.HelpText" dlg:value="&amp;88.OrganigramPropsDialog.Label2.Label"/>
+  <dlg:text dlg:id="Label1" dlg:tab-index="13" dlg:disabled="true" dlg:left="70" dlg:top="74" dlg:width="35" dlg:height="10" dlg:help-text="&amp;89.OrganigramPropsDialog.Label3.HelpText" dlg:value="&amp;90.OrganigramPropsDialog.Label3.Label"/>
+  <dlg:img dlg:style-id="1" dlg:id="startColorImageControl" dlg:tab-index="14" dlg:visible="false" dlg:left="105" dlg:top="64" dlg:width="15" dlg:height="10" dlg:help-text="&amp;91.OrganigramPropsDialog.startColorImageControl.HelpText">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:style-id="2" dlg:id="endColorImageControl" dlg:tab-index="15" dlg:visible="false" dlg:left="105" dlg:top="74" dlg:width="15" dlg:height="10" dlg:help-text="&amp;92.OrganigramPropsDialog.endColorImageControl.HelpText">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:titledbox dlg:id="FrameControl3" dlg:tab-index="16" dlg:left="6" dlg:top="98" dlg:width="126" dlg:height="26" dlg:help-text="&amp;93.OrganigramPropsDialog.FrameControl3.HelpText">
+   <dlg:title dlg:value="&amp;94.OrganigramPropsDialog.FrameControl3.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="FrameControl4" dlg:tab-index="17" dlg:left="6" dlg:top="134" dlg:width="126" dlg:height="26" dlg:help-text="&amp;95.OrganigramPropsDialog.FrameControl4.HelpText">
+   <dlg:title dlg:value="&amp;96.OrganigramPropsDialog.FrameControl4.Label"/>
+  </dlg:titledbox>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="3" dlg:left="14" dlg:top="52" dlg:width="25" dlg:height="10" dlg:help-text="&amp;97.OrganigramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;98.OrganigramPropsDialog.colorOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColor" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="noRoundedOptionButton" dlg:tab-index="6" dlg:left="14" dlg:top="108" dlg:width="30" dlg:height="10" dlg:help-text="&amp;99.OrganigramPropsDialog.noRoundedOptionButton.HelpText" dlg:value="&amp;100.OrganigramPropsDialog.noRoundedOptionButton.Label" dlg:group-name="Rounded" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setNoRounded" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="mediumRoundedOptionButton" dlg:tab-index="7" dlg:left="46" dlg:top="108" dlg:width="32" dlg:height="10" dlg:help-text="&amp;101.OrganigramPropsDialog.mediumRoundedOptionButton.HelpText" dlg:value="&amp;102.OrganigramPropsDialog.mediumRoundedOptionButton.Label" dlg:group-name="Rounded">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMediumRounded" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="extraRoundedOptionButton" dlg:tab-index="8" dlg:left="86" dlg:top="108" dlg:width="32" dlg:height="10" dlg:help-text="&amp;103.OrganigramPropsDialog.extraRoundedOptionButton.HelpText" dlg:value="&amp;104.OrganigramPropsDialog.extraRoundedOptionButton.Label" dlg:group-name="Rounded">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setExtraRounded" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="yesMonographicOptionButton" dlg:tab-index="9" dlg:left="14" dlg:top="144" dlg:width="30" dlg:height="10" dlg:help-text="&amp;105.OrganigramPropsDialog.yesMonographicOptionButton.HelpText" dlg:value="&amp;106.OrganigramPropsDialog.yesMonographicOptionButton.Label" dlg:group-name="Monographic" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMonographicYes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="noMonographicOptionButton" dlg:tab-index="10" dlg:left="60" dlg:top="144" dlg:width="30" dlg:height="10" dlg:help-text="&amp;107.OrganigramPropsDialog.noMonographicOptionButton.HelpText" dlg:value="&amp;108.OrganigramPropsDialog.noMonographicOptionButton.Label" dlg:group-name="Monographic">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMonographicNo" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="18" dlg:left="6" dlg:top="170" dlg:width="126" dlg:height="12" dlg:help-text="&amp;109.OrganigramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;110.OrganigramPropsDialog.okCommandButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setOrganigramProps" script:language="UNO"/>
+  </dlg:button>
+ </dlg:bulletinboard>
+</dlg:window>
