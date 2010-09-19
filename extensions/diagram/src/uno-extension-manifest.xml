@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.uno-component;type=Java"
+                       manifest:full-path="Diagrams.jar"/>
   <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
                        manifest:full-path="registry/data/org/openoffice/Office/ProtocolHandler.xcu"/>
   <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
                        manifest:full-path="registry/data/org/openoffice/Office/Addons.xcu"/>
-  <manifest:file-entry manifest:media-type="application/vnd.sun.star.uno-component;type=Java"
-                       manifest:full-path="VennDiagram.jar"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/org/openoffice/Office/UI/CalcWindowState.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/org/openoffice/Office/UI/DrawWindowState.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/org/openoffice/Office/UI/MathWindowState.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/org/openoffice/Office/UI/BaseWindowState.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/org/openoffice/Office/UI/StartModuleWindowState.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/org/openoffice/Office/UI/ImpressWindowState.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/org/openoffice/Office/UI/BasicIDEWindowState.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/org/openoffice/Office/UI/WriterWindowState.xcu"/>
 </manifest:manifest>

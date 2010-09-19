@@ -3,7 +3,7 @@
 ***   AUTOMATICALLY GENERATED - DO NOT EDIT   ***
 ***         EDIT ../build.xml INSTEAD         ***
 -->
-<project name="VennDiagramuno-impl" default="netbeans" basedir="..">
+<project name="Diagramsuno-impl" default="netbeans" basedir="..">
     <description>Builds, tests, and runs an UNO project.</description>
 
     <import file="build-impl.xml"/>
@@ -12,7 +12,7 @@
 
     <target name="-uno-project-init" depends="-do-init">
         <property file="nbproject/project-uno.properties"/>
-        <property name="build.uno.version" value="2.0.0"/>
+        <property name="build.uno.version" value="2.0.6"/>
       
         <!-- set variablers from SDK and Office -->
         <echo message="setting up UNO environment ..."/>
@@ -333,13 +333,24 @@
     </target>
 
     <target name="-license-exists">
-        <available file="${project.dir}/licenses" type="dir" property="do.license"/>
+        <available file="${project.dir}/${licenses.dir}" type="dir" property="do.license"/>
     </target>
     
     <!-- test for licenses dir is necessary because zipfileset fails if dir not there -->
     <target name="-uno-package-with-license" depends="-license-exists" if="do.license">
         <zip update="true" destfile="${uno.package.name}">
-            <zipfileset dir="${project.dir}/licenses" includes="**" casesensitive="yes" prefix="licenses"/>
+            <zipfileset dir="${project.dir}/${licenses.dir}" includes="**" casesensitive="yes" prefix="${licenses.dir}"/>
+        </zip>
+    </target>
+
+    <target name="-description-exists">
+        <available file="${project.dir}/${description.dir}" type="dir" property="do.description"/>
+    </target>
+    
+    <!-- test for description dir is necessary because zipfileset fails if dir not there -->
+    <target name="-uno-package-with-description" depends="-description-exists" if="do.description">
+        <zip update="true" destfile="${uno.package.name}">
+            <zipfileset dir="${project.dir}/${description.dir}" includes="**" casesensitive="yes" prefix="${description.dir}"/>
         </zip>
     </target>
 
@@ -350,7 +361,7 @@
     <!-- test for help dir is necessary because zipfileset fails if dir not there -->
     <target name="-uno-package-with-help" depends="-help-exists" if="do.help">
         <zip update="true" destfile="${uno.package.name}">
-            <zipfileset dir="${help.dir}" includes="**/*.xhp" prefix="${help.dir}"/>
+            <zipfileset dir="${help.dir}" includes="${help.content.extensions}" prefix="${help.dir}"/>
         </zip>
     </target>    
  
@@ -361,11 +372,11 @@
     <!-- test for dialogs dir is necessary because zipfileset fails if dir not there -->
     <target name="-uno-package-with-dialogs" depends="-dialogs-exists" if="do.dialogs">
         <zip update="true" destfile="${uno.package.name}">
-            <zipfileset dir="${dialogs.dir}" includes="**/*.xdl,**/*.properties,**/*.default,**/*.png" prefix="dialogs"/>            
+            <zipfileset dir="${dialogs.dir}" includes="${dialog.content.extensions}" prefix="dialogs"/>
         </zip>
     </target>   
     
-    <target name="-do-uno-package" description="Creates UNO extension pacakge" depends="-uno-package-with-license,-uno-package-with-help,-uno-package-with-dialogs">
+    <target name="-do-uno-package" description="Creates UNO extension pacakge" depends="-uno-package-with-license,-uno-package-with-help,-uno-package-with-dialogs,-uno-package-with-description">
         <echo message="creating UNO extension package ..."/>
         <zip update="true" destfile="${uno.package.name}">
             <fileset dir="${src.dir}" includes="${manifest.package.extensions}" casesensitive="yes"/>

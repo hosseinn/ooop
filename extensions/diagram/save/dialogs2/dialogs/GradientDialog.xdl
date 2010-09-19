@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="GradientDialog" dlg:left="155" dlg:top="86" dlg:width="102" dlg:height="47" dlg:help-text="&amp;33.GradientDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;34.GradientDialog.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xe96e00"/>
+  <dlg:style dlg:style-id="1" dlg:background-color="0x800000"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:img dlg:style-id="0" dlg:id="startColor" dlg:tab-index="0" dlg:left="2" dlg:top="8" dlg:width="48" dlg:height="20" dlg:help-text="&amp;36.GradientDialog.startColor.HelpText">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:setStartColor" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:style-id="1" dlg:id="endColor" dlg:tab-index="1" dlg:left="52" dlg:top="8" dlg:width="48" dlg:height="20" dlg:help-text="&amp;38.GradientDialog.endColor.HelpText">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:setEndColor" script:language="UNO"/>
+  </dlg:img>
+  <dlg:text dlg:id="Label1" dlg:tab-index="2" dlg:left="4" dlg:top="0" dlg:width="45" dlg:height="8" dlg:help-text="&amp;40.GradientDialog.Label1.HelpText" dlg:value="&amp;41.GradientDialog.Label1.Label"/>
+  <dlg:text dlg:id="Label2" dlg:tab-index="3" dlg:left="54" dlg:top="0" dlg:width="45" dlg:height="8" dlg:help-text="&amp;44.GradientDialog.Label2.HelpText" dlg:value="&amp;45.GradientDialog.Label2.Label"/>
+  <dlg:button dlg:id="setColorsButton" dlg:tab-index="4" dlg:left="2" dlg:top="32" dlg:width="98" dlg:height="12" dlg:help-text="&amp;48.GradientDialog.setColorsButton.HelpText" dlg:value="&amp;49.GradientDialog.setColorsButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setColors" script:language="UNO"/>
+  </dlg:button>
+ </dlg:bulletinboard>
+</dlg:window>

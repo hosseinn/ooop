@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="ControlDialog1" dlg:left="20" dlg:top="20" dlg:width="210" dlg:height="13" dlg:help-text="&amp;121.ControlDialog1.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;122.ControlDialog1.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xff00"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:img dlg:style-id="0" dlg:id="ImageControl" dlg:tab-index="0" dlg:left="2" dlg:top="2" dlg:width="15" dlg:height="9" dlg:help-text="&amp;123.ControlDialog1.ImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:text dlg:id="Text" dlg:tab-index="4" dlg:disabled="true" dlg:left="70" dlg:top="-11" dlg:width="40" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;124.ControlDialog1.Text.HelpText" dlg:value="&amp;125.ControlDialog1.Text.Label"/>
+  <dlg:button dlg:id="addShapeButton" dlg:tab-index="1" dlg:left="20" dlg:top="0" dlg:width="65" dlg:height="12" dlg:help-text="&amp;126.ControlDialog1.addShapeButton.HelpText" dlg:value="&amp;127.ControlDialog1.addShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:addShape" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="removeShapeButton" dlg:tab-index="2" dlg:left="85" dlg:top="0" dlg:width="65" dlg:height="12" dlg:help-text="&amp;128.ControlDialog1.removeShapeButton.HelpText" dlg:value="&amp;129.ControlDialog1.removeShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:removeShape" script:language="UNO"/>
+  </dlg:button>
+  <dlg:combobox dlg:id="StyleComboBox" dlg:tab-index="3" dlg:left="150" dlg:top="0" dlg:width="60" dlg:height="12" dlg:help-text="&amp;130.ControlDialog1.StyleComboBox.HelpText" dlg:value="&amp;135.ControlDialog1.StyleComboBox.Text" dlg:hide-inactive-selection="false" dlg:spin="true" dlg:maxlength="30" dlg:linecount="4">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;131.StyleComboBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;132.StyleComboBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;133.StyleComboBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;134.StyleComboBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedStyle" script:language="UNO"/>
+  </dlg:combobox>
+ </dlg:bulletinboard>
+</dlg:window>
