@@ -1,0 +1,2 @@
+A Diagram kiterjesztés egy OpenOffice.org Draw vagy Impress programból használható kiterjesztés, amellyel néhány kattintással létrehozhatja kedvenc diagramjait.
+Draw-ból vagy Impress-ből: Válassza ki a Beszúrás → Diagram lehetőséget vagy a Diagram eszköztárat engedélyezve kattintson a Diagram gombra.

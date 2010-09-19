@@ -1,0 +1,2 @@
+Diagram is an OpenOffice.org Draw and Impress extension that creates your favorite diagrams with few clicks.
+From Draw or Impress: Select Insert → Diagram or enable Diagram Toolbar then click on Diagram button.

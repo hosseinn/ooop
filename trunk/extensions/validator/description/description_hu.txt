@@ -1,0 +1,2 @@
+A Validator egy OpenOffice.org Calc kiterjesztés, amely a megadott szabályok szerint ellenőrzi a cellákat-
+Calc-ból: válassza ki az Eszközök → Detektív → Validator lehetőséget.
