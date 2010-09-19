@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="CycleDiagramPropsDialog" dlg:left="122" dlg:top="52" dlg:width="138" dlg:height="182" dlg:help-text="&amp;180.CycleDiagramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;181.CycleDiagramPropsDialog.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="CycleDiagramPropsDialog" dlg:left="122" dlg:top="52" dlg:width="139" dlg:height="182" dlg:help-text="&amp;156.CycleDiagramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;157.CycleDiagramPropsDialog.Title">
  <dlg:styles>
   <dlg:style dlg:style-id="0" dlg:background-color="0x99ccff" dlg:border="simple"/>
  </dlg:styles>
  <dlg:bulletinboard>
-  <dlg:titledbox dlg:id="FrameControl1" dlg:tab-index="10" dlg:left="6" dlg:top="8" dlg:width="126" dlg:height="26" dlg:help-text="&amp;218.CycleDiagramPropsDialog.FrameControl1.HelpText">
-   <dlg:title dlg:value="&amp;219.CycleDiagramPropsDialog.FrameControl1.Label"/>
+  <dlg:titledbox dlg:id="FrameControl1" dlg:tab-index="10" dlg:left="6" dlg:top="8" dlg:width="126" dlg:height="26" dlg:help-text="&amp;158.CycleDiagramPropsDialog.FrameControl1.HelpText">
+   <dlg:title dlg:value="&amp;159.CycleDiagramPropsDialog.FrameControl1.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="FrameControl2" dlg:tab-index="11" dlg:left="6" dlg:top="42" dlg:width="126" dlg:height="38" dlg:help-text="&amp;224.CycleDiagramPropsDialog.FrameControl2.HelpText">
-   <dlg:title dlg:value="&amp;225.CycleDiagramPropsDialog.FrameControl2.Label"/>
+  <dlg:titledbox dlg:id="FrameControl2" dlg:tab-index="11" dlg:left="6" dlg:top="42" dlg:width="126" dlg:height="38" dlg:help-text="&amp;160.CycleDiagramPropsDialog.FrameControl2.HelpText">
+   <dlg:title dlg:value="&amp;161.CycleDiagramPropsDialog.FrameControl2.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="FrameControl3" dlg:tab-index="12" dlg:left="6" dlg:top="88" dlg:width="126" dlg:height="26" dlg:help-text="&amp;241.CycleDiagramPropsDialog.FrameControl3.HelpText">
-   <dlg:title dlg:value="&amp;242.CycleDiagramPropsDialog.FrameControl3.Label"/>
+  <dlg:titledbox dlg:id="FrameControl3" dlg:tab-index="12" dlg:left="6" dlg:top="88" dlg:width="126" dlg:height="26" dlg:help-text="&amp;162.CycleDiagramPropsDialog.FrameControl3.HelpText">
+   <dlg:title dlg:value="&amp;163.CycleDiagramPropsDialog.FrameControl3.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="FrameControl4" dlg:tab-index="13" dlg:left="6" dlg:top="124" dlg:width="126" dlg:height="26" dlg:help-text="&amp;249.CycleDiagramPropsDialog.FrameControl4.HelpText">
-   <dlg:title dlg:value="&amp;250.CycleDiagramPropsDialog.FrameControl4.Label"/>
+  <dlg:titledbox dlg:id="FrameControl4" dlg:tab-index="13" dlg:left="6" dlg:top="124" dlg:width="126" dlg:height="26" dlg:help-text="&amp;164.CycleDiagramPropsDialog.FrameControl4.HelpText">
+   <dlg:title dlg:value="&amp;165.CycleDiagramPropsDialog.FrameControl4.Label"/>
   </dlg:titledbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="frameOptionButtonYes" dlg:tab-index="7" dlg:left="14" dlg:top="134" dlg:width="41" dlg:height="10" dlg:help-text="&amp;255.CycleDiagramPropsDialog.frameOptionButtonYes.HelpText" dlg:value="&amp;256.CycleDiagramPropsDialog.frameOptionButtonYes.Label" dlg:group-name="Frame" dlg:checked="true">
+   <dlg:radio dlg:id="frameOptionButtonYes" dlg:tab-index="7" dlg:left="14" dlg:top="134" dlg:width="50" dlg:height="10" dlg:help-text="&amp;166.CycleDiagramPropsDialog.frameOptionButtonYes.HelpText" dlg:value="&amp;167.CycleDiagramPropsDialog.frameOptionButtonYes.Label" dlg:group-name="Frame" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFrameNo" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="frameOptionButtonNo" dlg:tab-index="8" dlg:left="60" dlg:top="134" dlg:width="46" dlg:height="10" dlg:help-text="&amp;257.CycleDiagramPropsDialog.frameOptionButtonNo.HelpText" dlg:value="&amp;258.CycleDiagramPropsDialog.frameOptionButtonNo.Label" dlg:group-name="Frame">
+   <dlg:radio dlg:id="frameOptionButtonNo" dlg:tab-index="8" dlg:left="70" dlg:top="134" dlg:width="50" dlg:height="10" dlg:help-text="&amp;168.CycleDiagramPropsDialog.frameOptionButtonNo.HelpText" dlg:value="&amp;169.CycleDiagramPropsDialog.frameOptionButtonNo.Label" dlg:group-name="Frame">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFrameYes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="diagramOptionButton" dlg:tab-index="0" dlg:left="14" dlg:top="18" dlg:width="40" dlg:height="10" dlg:help-text="&amp;259.CycleDiagramPropsDialog.diagramOptionButton.HelpText" dlg:value="&amp;260.CycleDiagramPropsDialog.diagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+   <dlg:radio dlg:id="diagramOptionButton" dlg:tab-index="0" dlg:left="14" dlg:top="18" dlg:width="40" dlg:height="10" dlg:help-text="&amp;170.CycleDiagramPropsDialog.diagramOptionButton.HelpText" dlg:value="&amp;171.CycleDiagramPropsDialog.diagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="selectedShapeOptionButton" dlg:tab-index="1" dlg:left="60" dlg:top="19" dlg:width="70" dlg:height="10" dlg:help-text="&amp;261.CycleDiagramPropsDialog.selectedShapeOptionButton.HelpText" dlg:value="&amp;262.CycleDiagramPropsDialog.selectedShapeOptionButton.Label" dlg:group-name="Area">
+   <dlg:radio dlg:id="selectedShapeOptionButton" dlg:tab-index="1" dlg:left="60" dlg:top="19" dlg:width="70" dlg:height="10" dlg:help-text="&amp;172.CycleDiagramPropsDialog.selectedShapeOptionButton.HelpText" dlg:value="&amp;173.CycleDiagramPropsDialog.selectedShapeOptionButton.Label" dlg:group-name="Area">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="2" dlg:left="14" dlg:top="52" dlg:width="25" dlg:height="10" dlg:help-text="&amp;263.CycleDiagramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;264.CycleDiagramPropsDialog.colorOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
+   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="2" dlg:left="14" dlg:top="52" dlg:width="50" dlg:height="10" dlg:help-text="&amp;174.CycleDiagramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;175.CycleDiagramPropsDialog.colorOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColor" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="3" dlg:left="44" dlg:top="51" dlg:width="15" dlg:height="10" dlg:help-text="&amp;265.CycleDiagramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="3" dlg:left="70" dlg:top="52" dlg:width="15" dlg:height="10" dlg:help-text="&amp;176.CycleDiagramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="baseColorOptionButton" dlg:tab-index="4" dlg:left="14" dlg:top="66" dlg:width="110" dlg:height="10" dlg:help-text="&amp;266.CycleDiagramPropsDialog.baseColorOptionButton.HelpText" dlg:value="&amp;267.CycleDiagramPropsDialog.baseColorOptionButton.Label" dlg:group-name="Color">
+   <dlg:radio dlg:id="baseColorOptionButton" dlg:tab-index="4" dlg:left="14" dlg:top="66" dlg:width="110" dlg:height="10" dlg:help-text="&amp;177.CycleDiagramPropsDialog.baseColorOptionButton.HelpText" dlg:value="&amp;178.CycleDiagramPropsDialog.baseColorOptionButton.Label" dlg:group-name="Color">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setBaseColor" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="monographicOptionButtonYes" dlg:tab-index="5" dlg:left="14" dlg:top="98" dlg:width="30" dlg:height="10" dlg:help-text="&amp;268.CycleDiagramPropsDialog.monographicOptionButtonYes.HelpText" dlg:value="&amp;269.CycleDiagramPropsDialog.monographicOptionButtonYes.Label" dlg:group-name="Monographic" dlg:checked="true">
+   <dlg:radio dlg:id="monographicOptionButtonYes" dlg:tab-index="5" dlg:left="70" dlg:top="98" dlg:width="50" dlg:height="10" dlg:help-text="&amp;179.CycleDiagramPropsDialog.monographicOptionButtonYes.HelpText" dlg:value="&amp;180.CycleDiagramPropsDialog.monographicOptionButtonYes.Label" dlg:group-name="Monographic" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMonographicYes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="monographicOptionButtonNo" dlg:tab-index="6" dlg:left="60" dlg:top="98" dlg:width="30" dlg:height="10" dlg:help-text="&amp;270.CycleDiagramPropsDialog.monographicOptionButtonNo.HelpText" dlg:value="&amp;271.CycleDiagramPropsDialog.monographicOptionButtonNo.Label" dlg:group-name="Monographic">
+   <dlg:radio dlg:id="monographicOptionButtonNo" dlg:tab-index="6" dlg:left="14" dlg:top="98" dlg:width="50" dlg:height="10" dlg:help-text="&amp;181.CycleDiagramPropsDialog.monographicOptionButtonNo.HelpText" dlg:value="&amp;182.CycleDiagramPropsDialog.monographicOptionButtonNo.Label" dlg:group-name="Monographic">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMonographicNo" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:button dlg:id="okCommandButton" dlg:tab-index="9" dlg:left="6" dlg:top="161" dlg:width="126" dlg:height="12" dlg:help-text="&amp;272.CycleDiagramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;273.CycleDiagramPropsDialog.okCommandButton.Label">
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="9" dlg:left="6" dlg:top="161" dlg:width="126" dlg:height="14" dlg:help-text="&amp;183.CycleDiagramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;184.CycleDiagramPropsDialog.okCommandButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setOrganigramProps" script:language="UNO"/>
   </dlg:button>
  </dlg:bulletinboard>
