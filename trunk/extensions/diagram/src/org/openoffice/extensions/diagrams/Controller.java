@@ -27,6 +27,7 @@ import org.openoffice.extensions.diagrams.diagram.venndiagram.VennDiagram;
 
 public class Controller implements XSelectionChangeListener {
 
+    private         Diagrams            m_Diagrams              = null;
     private         XComponentContext   m_xContext              = null;
     private         XFrame              m_xFrame                = null;
     private         XController         m_xController           = null;
@@ -46,7 +47,8 @@ public class Controller implements XSelectionChangeListener {
     protected static final short        CYCLEDIAGRAM            = 4;
 
 
-    Controller( XComponentContext xContext, XFrame xFrame ){
+    Controller( Diagrams diagrams, XComponentContext xContext, XFrame xFrame ){
+        m_Diagrams = diagrams;
         m_xContext  = xContext;
         m_xFrame    = xFrame;
         m_xController = m_xFrame.getController();
@@ -54,6 +56,10 @@ public class Controller implements XSelectionChangeListener {
         addSelectionListener();
     }
 
+    public Diagrams getDiagrams(){
+        return m_Diagrams;
+    }
+    
     public Diagram getDiagram(){
         return m_Diagram;
     }

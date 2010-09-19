@@ -4,6 +4,8 @@ import com.sun.star.awt.Point;
 import com.sun.star.awt.Size;
 import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.drawing.XShape;
+//import com.sun.star.text.XText;
+//import com.sun.star.uno.UnoRuntime;
 
 
 // TreeItems represent the rectangles of the diagram
@@ -97,7 +99,6 @@ public class TreeItem{
     }
 
     public void setPosNum(short pos){
-
         m_PosNum = pos;
         //XText xText = (XText) UnoRuntime.queryInterface(XText.class, m_xRectangleShape);
         //xText.setString(m_Level +":"+m_PosNum);
@@ -109,6 +110,9 @@ public class TreeItem{
                 _level2MaxPos = m_PosNum;
         if(_maxPos < m_PosNum)
             _maxPos = m_PosNum;
+        if(m_Level > 3)
+            if(_level2MaxPos < (m_PosNum - 1))
+                _level2MaxPos = (short)(m_PosNum - 1);
     }
 
     public short getPosNum(){
@@ -160,18 +164,15 @@ public class TreeItem{
             if(firstChildLevel == 1)
                 if(_level1MaxPos > -1)
                     firstChildNum = (short)(_level1MaxPos + 2);
-            if(firstChildLevel == 2){
-                if(_level2MaxPos == -1)
-                    firstChildNum = _level1MaxPos;
+            if(firstChildLevel == 2)
                 if(_level2MaxPos > -1)
                     firstChildNum = (short)(_level2MaxPos + 2);
-            }
-            if(firstChildLevel == 3){
+            if(firstChildLevel == 3)
                 firstChildNum = (short)(_level2MaxPos + 1);
-            }
-            if(firstChildLevel > 3){
-                firstChildNum = (short)(++_level2MaxPos + 1);
-            }
+            if(firstChildLevel > 3)
+                firstChildNum = (short)(getPosNum() + 1);
+                //firstChildNum = (short)(++_level2MaxPos + 1);
+                
             m_FirstChild = new TreeItem(getDiagramTree(), xFirstChildShape, this, firstChildLevel , firstChildNum);
             m_FirstChild.initTreeItems();
         }
@@ -191,6 +192,7 @@ public class TreeItem{
             }
         }
 
+
         XShape xFirstSiblingShape = getDiagramTree().getFirstSiblingShape(m_xRectangleShape, m_Dad);
         if(xFirstSiblingShape != null){
             short firstSiblingLevel = m_Level;
@@ -206,10 +208,10 @@ public class TreeItem{
                 firstSiblingNum = getPosNum();
                 firstSiblingLevel = (short)(m_Level + getNumberOfItemsInBranch(this));
             }
+
             m_FirstSibling = new TreeItem(getDiagramTree(), xFirstSiblingShape, m_Dad, firstSiblingLevel , firstSiblingNum);
             m_FirstSibling.initTreeItems();
         }
-
     }
 
     public void printTree(){
@@ -221,27 +223,23 @@ public class TreeItem{
     }
 
     public void setPositionsOfItems(){
-
         if(m_FirstChild != null){
             short firstChildLevel = (short)(m_Level + 1);
             short firstChildNum = (short)0;
             if(firstChildLevel == 1)
                 if(_level1MaxPos > -1)
                     firstChildNum = (short)(_level1MaxPos + 2);
-            if(firstChildLevel == 2){
-                if(_level2MaxPos == -1)
-                    firstChildNum = _level1MaxPos;
+            if(firstChildLevel == 2)
                 if(_level2MaxPos > -1)
                     firstChildNum = (short)(_level2MaxPos + 2);
-            }
             if(firstChildLevel == 3)
                 firstChildNum = (short)(_level2MaxPos + 1);
             if(firstChildLevel > 3)
-                firstChildNum = (short)(++_level2MaxPos + 1);
-
+                firstChildNum = (short)( getPosNum() + 1);
+                //firstChildNum = (short)(++_level2MaxPos + 1);
+           
             m_FirstChild.setLevel(firstChildLevel);
             m_FirstChild.setPosNum(firstChildNum);
-
             m_FirstChild.setPositionsOfItems();
 
             TreeItem lastChildItem = getDiagramTree().getTreeItem(getDiagramTree().getLastChildShape(m_xRectangleShape));
@@ -257,7 +255,7 @@ public class TreeItem{
                 }
             }
         }
-        
+
         if(m_FirstSibling != null){
  
             short firstSiblingLevel = m_Level;
@@ -281,7 +279,6 @@ public class TreeItem{
             m_FirstSibling.setPositionsOfItems();
 
         }
-
     }
 
     public void searchItem(XShape xShape){
@@ -387,13 +384,26 @@ public class TreeItem{
         setOptimicPosOfRect();
         if(m_FirstSibling != null)
             m_FirstSibling.display();
+
+        if(m_DiagramTree.getRootItem().equals(this))
+            getDiagramTree().getOrganigram().getController().getDiagrams().addEventListener();
+
     }
 
     public void setOptimicPosOfRect(){
 
         int shapeWidth  = _shapeWidth;
         int shapeHeight = _shapeHeight;
-        int xCoord = _borderLeft + getPosNum() * _horUnit;//(shapeWidth + _horSpace) / 2;
+        int xCoord;
+        if(getLevel() == 0){
+            double dFirstChildPos = (double)getFirstChild().getPosNum();
+            double dLevel1MaxPos = (double)_level1MaxPos;
+            double dPos = dFirstChildPos + ( (dLevel1MaxPos - dFirstChildPos) / 2 );
+            //System.out.println(dPos);
+            xCoord = (int)(_borderLeft + dPos * _horUnit);
+        }
+        else
+            xCoord = _borderLeft + getPosNum() * _horUnit;//(shapeWidth + _horSpace) / 2;
         int yCoord = _borderTop + m_Level * ( shapeHeight + _verSpace );
 
         setPosition(new Point(xCoord, yCoord));

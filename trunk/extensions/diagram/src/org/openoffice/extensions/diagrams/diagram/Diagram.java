@@ -80,9 +80,6 @@ public class Diagram {
         setGroupSize();
     }
 
-
-    
-
     public void setSelectedDiagramProps(boolean bool){
         m_IsSelectAllShape = bool;
     }

@@ -10,7 +10,7 @@ import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
 import com.sun.star.drawing.FillStyle;
 import com.sun.star.drawing.LineStyle;
-import com.sun.star.drawing.TextFitToSizeType;
+//import com.sun.star.drawing.TextFitToSizeType;
 import com.sun.star.drawing.XShape;
 import com.sun.star.drawing.XShapes;
 import com.sun.star.frame.XFrame;
@@ -779,8 +779,8 @@ public class PyramidDiagram extends Diagram {
 
     public void setTextAndTextFitToSize(XShape xShape){
         try {
-            XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
-            xPropText.setPropertyValue("TextFitToSize", TextFitToSizeType.AUTOFIT);
+            //XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
+            //xPropText.setPropertyValue("TextFitToSize", TextFitToSizeType.AUTOFIT);
             XText xText = (XText) UnoRuntime.queryInterface(XText.class, xShape);
             xText.setString(getGui().getDialogPropertyValue( "ControlDialog1", "ControlDialog1.Text.Label" ) );
         } catch (Exception ex) {
