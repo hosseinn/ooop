@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="VennDiagramPropsDialog" dlg:left="122" dlg:top="52" dlg:width="138" dlg:height="244" dlg:help-text="&amp;274.VennDiagramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;275.VennDiagramPropsDialog.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="VennDiagramPropsDialog" dlg:left="122" dlg:top="52" dlg:width="139" dlg:height="244" dlg:help-text="&amp;255.VennDiagramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;256.VennDiagramPropsDialog.Title">
  <dlg:styles>
   <dlg:style dlg:style-id="0" dlg:background-color="0x99ccff" dlg:border="simple"/>
  </dlg:styles>
  <dlg:bulletinboard>
-  <dlg:titledbox dlg:id="FrameControl1" dlg:tab-index="14" dlg:left="6" dlg:top="8" dlg:width="126" dlg:height="26" dlg:help-text="&amp;324.VennDiagramPropsDialog.FrameControl1.HelpText">
-   <dlg:title dlg:value="&amp;325.VennDiagramPropsDialog.FrameControl1.Label"/>
+  <dlg:titledbox dlg:id="FrameControl1" dlg:tab-index="14" dlg:left="6" dlg:top="8" dlg:width="126" dlg:height="26" dlg:help-text="&amp;257.VennDiagramPropsDialog.FrameControl1.HelpText">
+   <dlg:title dlg:value="&amp;258.VennDiagramPropsDialog.FrameControl1.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="FrameControl2" dlg:tab-index="15" dlg:left="6" dlg:top="42" dlg:width="126" dlg:height="36" dlg:help-text="&amp;326.VennDiagramPropsDialog.FrameControl2.HelpText">
-   <dlg:title dlg:value="&amp;327.VennDiagramPropsDialog.FrameControl2.Label"/>
+  <dlg:titledbox dlg:id="FrameControl2" dlg:tab-index="15" dlg:left="6" dlg:top="42" dlg:width="126" dlg:height="36" dlg:help-text="&amp;259.VennDiagramPropsDialog.FrameControl2.HelpText">
+   <dlg:title dlg:value="&amp;260.VennDiagramPropsDialog.FrameControl2.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="FrameControl3" dlg:tab-index="16" dlg:left="5" dlg:top="120" dlg:width="126" dlg:height="26" dlg:help-text="&amp;328.VennDiagramPropsDialog.FrameControl3.HelpText">
-   <dlg:title dlg:value="&amp;329.VennDiagramPropsDialog.FrameControl3.Label"/>
+  <dlg:titledbox dlg:id="FrameControl3" dlg:tab-index="16" dlg:left="5" dlg:top="120" dlg:width="126" dlg:height="26" dlg:help-text="&amp;261.VennDiagramPropsDialog.FrameControl3.HelpText">
+   <dlg:title dlg:value="&amp;262.VennDiagramPropsDialog.FrameControl3.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="FrameControl4" dlg:tab-index="17" dlg:left="5" dlg:top="154" dlg:width="126" dlg:height="26" dlg:help-text="&amp;330.VennDiagramPropsDialog.FrameControl4.HelpText">
-   <dlg:title dlg:value="&amp;331.VennDiagramPropsDialog.FrameControl4.Label"/>
+  <dlg:titledbox dlg:id="FrameControl4" dlg:tab-index="17" dlg:left="5" dlg:top="154" dlg:width="126" dlg:height="26" dlg:help-text="&amp;263.VennDiagramPropsDialog.FrameControl4.HelpText">
+   <dlg:title dlg:value="&amp;264.VennDiagramPropsDialog.FrameControl4.Label"/>
   </dlg:titledbox>
-  <dlg:button dlg:id="CommandButton1" dlg:tab-index="13" dlg:left="4" dlg:top="224" dlg:width="126" dlg:height="12" dlg:help-text="&amp;332.VennDiagramPropsDialog.CommandButton1.HelpText" dlg:value="&amp;333.VennDiagramPropsDialog.CommandButton1.Label">
+  <dlg:button dlg:id="CommandButton1" dlg:tab-index="13" dlg:left="4" dlg:top="224" dlg:width="126" dlg:height="14" dlg:help-text="&amp;265.VennDiagramPropsDialog.CommandButton1.HelpText" dlg:value="&amp;266.VennDiagramPropsDialog.CommandButton1.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setOrganigramProps" script:language="UNO"/>
   </dlg:button>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="diagramOptionButton" dlg:tab-index="0" dlg:left="14" dlg:top="18" dlg:width="40" dlg:height="10" dlg:help-text="&amp;334.VennDiagramPropsDialog.diagramOptionButton.HelpText" dlg:value="&amp;335.VennDiagramPropsDialog.diagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+   <dlg:radio dlg:id="diagramOptionButton" dlg:tab-index="0" dlg:left="14" dlg:top="18" dlg:width="40" dlg:height="10" dlg:help-text="&amp;267.VennDiagramPropsDialog.diagramOptionButton.HelpText" dlg:value="&amp;268.VennDiagramPropsDialog.diagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="1" dlg:left="60" dlg:top="18" dlg:width="70" dlg:height="10" dlg:help-text="&amp;336.VennDiagramPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;337.VennDiagramPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
+   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="1" dlg:left="60" dlg:top="18" dlg:width="70" dlg:height="10" dlg:help-text="&amp;269.VennDiagramPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;270.VennDiagramPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:titledbox dlg:id="FrameControl5" dlg:tab-index="18" dlg:left="6" dlg:top="86" dlg:width="126" dlg:height="26" dlg:help-text="&amp;340.VennDiagramPropsDialog.FrameControl5.HelpText">
-   <dlg:title dlg:value="&amp;341.VennDiagramPropsDialog.FrameControl5.Label"/>
+  <dlg:titledbox dlg:id="FrameControl5" dlg:tab-index="18" dlg:left="6" dlg:top="86" dlg:width="126" dlg:height="26" dlg:help-text="&amp;271.VennDiagramPropsDialog.FrameControl5.HelpText">
+   <dlg:title dlg:value="&amp;272.VennDiagramPropsDialog.FrameControl5.Label"/>
   </dlg:titledbox>
-  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="3" dlg:visible="false" dlg:left="25" dlg:top="63" dlg:width="15" dlg:height="10" dlg:help-text="&amp;350.VennDiagramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="3" dlg:visible="false" dlg:left="25" dlg:top="63" dlg:width="15" dlg:height="10" dlg:help-text="&amp;273.VennDiagramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="noTransparencyOptionButton" dlg:tab-index="4" dlg:left="14" dlg:top="96" dlg:width="30" dlg:height="10" dlg:help-text="&amp;353.VennDiagramPropsDialog.noTransparencyOptionButton.HelpText" dlg:value="&amp;354.VennDiagramPropsDialog.noTransparencyOptionButton.Label" dlg:group-name="Transparency">
+   <dlg:radio dlg:id="noTransparencyOptionButton" dlg:tab-index="4" dlg:left="14" dlg:top="96" dlg:width="30" dlg:height="10" dlg:help-text="&amp;274.VennDiagramPropsDialog.noTransparencyOptionButton.HelpText" dlg:value="&amp;275.VennDiagramPropsDialog.noTransparencyOptionButton.Label" dlg:group-name="Transparency">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setNoTransparency" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="mediuamTransparencyOptionButton" dlg:tab-index="5" dlg:left="46" dlg:top="96" dlg:width="32" dlg:height="10" dlg:help-text="&amp;355.VennDiagramPropsDialog.mediuamTransparencyOptionButton.HelpText" dlg:value="&amp;356.VennDiagramPropsDialog.mediuamTransparencyOptionButton.Label" dlg:group-name="Transparency" dlg:checked="true">
+   <dlg:radio dlg:id="mediuamTransparencyOptionButton" dlg:tab-index="5" dlg:left="46" dlg:top="96" dlg:width="32" dlg:height="10" dlg:help-text="&amp;276.VennDiagramPropsDialog.mediuamTransparencyOptionButton.HelpText" dlg:value="&amp;277.VennDiagramPropsDialog.mediuamTransparencyOptionButton.Label" dlg:group-name="Transparency" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMediumTransparency" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="extraTransparencyOptionButton" dlg:tab-index="6" dlg:left="86" dlg:top="96" dlg:width="32" dlg:height="10" dlg:help-text="&amp;357.VennDiagramPropsDialog.extraTransparencyOptionButton.HelpText" dlg:value="&amp;358.VennDiagramPropsDialog.extraTransparencyOptionButton.Label" dlg:group-name="Transparency">
+   <dlg:radio dlg:id="extraTransparencyOptionButton" dlg:tab-index="6" dlg:left="86" dlg:top="96" dlg:width="32" dlg:height="10" dlg:help-text="&amp;278.VennDiagramPropsDialog.extraTransparencyOptionButton.HelpText" dlg:value="&amp;279.VennDiagramPropsDialog.extraTransparencyOptionButton.Label" dlg:group-name="Transparency">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setExtraTransparency" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="monographicOptionButtonYes" dlg:tab-index="8" dlg:left="60" dlg:top="130" dlg:width="30" dlg:height="10" dlg:help-text="&amp;359.VennDiagramPropsDialog.monographicOptionButtonYes.HelpText" dlg:value="&amp;360.VennDiagramPropsDialog.monographicOptionButtonYes.Label" dlg:group-name="Monographic">
+   <dlg:radio dlg:id="monographicOptionButtonYes" dlg:tab-index="8" dlg:left="70" dlg:top="130" dlg:width="50" dlg:height="10" dlg:help-text="&amp;280.VennDiagramPropsDialog.monographicOptionButtonYes.HelpText" dlg:value="&amp;281.VennDiagramPropsDialog.monographicOptionButtonYes.Label" dlg:group-name="Monographic">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMonographicYes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="monographicOptionButtonNo" dlg:tab-index="7" dlg:left="14" dlg:top="130" dlg:width="30" dlg:height="10" dlg:help-text="&amp;361.VennDiagramPropsDialog.monographicOptionButtonNo.HelpText" dlg:value="&amp;362.VennDiagramPropsDialog.monographicOptionButtonNo.Label" dlg:group-name="Monographic" dlg:checked="true">
+   <dlg:radio dlg:id="monographicOptionButtonNo" dlg:tab-index="7" dlg:left="14" dlg:top="130" dlg:width="50" dlg:height="10" dlg:help-text="&amp;282.VennDiagramPropsDialog.monographicOptionButtonNo.HelpText" dlg:value="&amp;283.VennDiagramPropsDialog.monographicOptionButtonNo.Label" dlg:group-name="Monographic" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMonographicNo" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="frameOptionButtonNo" dlg:tab-index="10" dlg:left="60" dlg:top="164" dlg:width="30" dlg:height="10" dlg:help-text="&amp;369.VennDiagramPropsDialog.frameOptionButtonNo.HelpText" dlg:value="&amp;370.VennDiagramPropsDialog.frameOptionButtonNo.Label" dlg:group-name="Frame">
+   <dlg:radio dlg:id="frameOptionButtonNo" dlg:tab-index="10" dlg:left="14" dlg:top="164" dlg:width="50" dlg:height="10" dlg:help-text="&amp;284.VennDiagramPropsDialog.frameOptionButtonNo.HelpText" dlg:value="&amp;285.VennDiagramPropsDialog.frameOptionButtonNo.Label" dlg:group-name="Frame">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFrameNo" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="frameOptionButtonYes" dlg:tab-index="9" dlg:left="14" dlg:top="164" dlg:width="30" dlg:height="10" dlg:help-text="&amp;371.VennDiagramPropsDialog.frameOptionButtonYes.HelpText" dlg:value="&amp;372.VennDiagramPropsDialog.frameOptionButtonYes.Label" dlg:group-name="Frame" dlg:checked="true">
+   <dlg:radio dlg:id="frameOptionButtonYes" dlg:tab-index="9" dlg:left="70" dlg:top="164" dlg:width="50" dlg:height="10" dlg:help-text="&amp;286.VennDiagramPropsDialog.frameOptionButtonYes.HelpText" dlg:value="&amp;287.VennDiagramPropsDialog.frameOptionButtonYes.Label" dlg:group-name="Frame" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFrameYes" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:titledbox dlg:id="FrameControl6" dlg:tab-index="19" dlg:left="5" dlg:top="188" dlg:width="126" dlg:height="26" dlg:help-text="&amp;373.VennDiagramPropsDialog.FrameControl6.HelpText">
-   <dlg:title dlg:value="&amp;374.VennDiagramPropsDialog.FrameControl6.Label"/>
+  <dlg:titledbox dlg:id="FrameControl6" dlg:tab-index="19" dlg:left="5" dlg:top="188" dlg:width="126" dlg:height="26" dlg:help-text="&amp;288.VennDiagramPropsDialog.FrameControl6.HelpText">
+   <dlg:title dlg:value="&amp;289.VennDiagramPropsDialog.FrameControl6.Label"/>
   </dlg:titledbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="frameRoundedOptionButtonNo" dlg:tab-index="11" dlg:left="14" dlg:top="198" dlg:width="30" dlg:height="10" dlg:help-text="&amp;379.VennDiagramPropsDialog.frameRoundedOptionButtonNo.HelpText" dlg:value="&amp;380.VennDiagramPropsDialog.frameRoundedOptionButtonNo.Label" dlg:group-name="RoundedTextFrame" dlg:checked="true">
+   <dlg:radio dlg:id="frameRoundedOptionButtonNo" dlg:tab-index="11" dlg:left="14" dlg:top="198" dlg:width="50" dlg:height="10" dlg:help-text="&amp;290.VennDiagramPropsDialog.frameRoundedOptionButtonNo.HelpText" dlg:value="&amp;291.VennDiagramPropsDialog.frameRoundedOptionButtonNo.Label" dlg:group-name="RoundedTextFrame" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFrameRoundedNo" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="frameRoundedOptionButtonYes" dlg:tab-index="12" dlg:left="60" dlg:top="198" dlg:width="30" dlg:height="10" dlg:help-text="&amp;381.VennDiagramPropsDialog.frameRoundedOptionButtonYes.HelpText" dlg:value="&amp;382.VennDiagramPropsDialog.frameRoundedOptionButtonYes.Label" dlg:group-name="RoundedTextFrame">
+   <dlg:radio dlg:id="frameRoundedOptionButtonYes" dlg:tab-index="12" dlg:left="70" dlg:top="198" dlg:width="50" dlg:height="10" dlg:help-text="&amp;292.VennDiagramPropsDialog.frameRoundedOptionButtonYes.HelpText" dlg:value="&amp;293.VennDiagramPropsDialog.frameRoundedOptionButtonYes.Label" dlg:group-name="RoundedTextFrame">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFrameRoundedYes" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:checkbox dlg:id="colorOptionButton" dlg:tab-index="2" dlg:disabled="true" dlg:left="14" dlg:top="52" dlg:width="110" dlg:height="10" dlg:help-text="&amp;387.VennDiagramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;388.VennDiagramPropsDialog.colorOptionButton.Label" dlg:checked="false"/>
+  <dlg:checkbox dlg:id="colorOptionButton" dlg:tab-index="2" dlg:disabled="true" dlg:left="14" dlg:top="52" dlg:width="110" dlg:height="10" dlg:help-text="&amp;294.VennDiagramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;295.VennDiagramPropsDialog.colorOptionButton.Label" dlg:checked="false"/>
  </dlg:bulletinboard>
 </dlg:window>
