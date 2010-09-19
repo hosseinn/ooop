@@ -63,10 +63,25 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         return aMethods;
     }
 
-     // XDialogEventHandler
+    // XDialogEventHandler
     @Override
     public boolean callHandlerMethod(XDialog xDialog, Object eventObject, String methodName) throws WrappedTargetException {
-        // SelectDialog
+        getController().getDiagrams().removeEventListener();
+        boolean returnValue = callHandlerMethod2(xDialog, eventObject, methodName);
+        if(getController().getDiagramType() != Controller.ORGANIGRAM || !(methodName.equals("addShape") || methodName.equals("removeShape")))
+            getController().getDiagrams().addEventListener();
+        return returnValue;
+    }
+
+
+    // XDialogEventHandler
+    //@Override
+    public boolean callHandlerMethod2(XDialog xDialog, Object eventObject, String methodName) throws WrappedTargetException {
+        
+        //if(getController().getDiagramType() == Controller.ORGANIGRAM && (methodName.equals("addShape") || methodName.equals("removeShape")))
+        //    getController().getDiagrams().removeEventListener();
+
+            // SelectDialog
         if(methodName.equals("Organigram")){
             getController().setDiagramType(Controller.ORGANIGRAM);
             getGui().setSelectDialogText();

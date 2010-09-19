@@ -1,14 +1,21 @@
 package org.openoffice.extensions.diagrams;
 
+import com.sun.star.beans.Property;
+import com.sun.star.beans.XPropertySet;
+import com.sun.star.document.XEventBroadcaster;
+import com.sun.star.document.XEventListener;
 import com.sun.star.frame.FrameActionEvent;
 import com.sun.star.frame.XFrameActionListener;
 import com.sun.star.lang.EventObject;
+import com.sun.star.lang.XServiceInfo;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
 import com.sun.star.lib.uno.helper.Factory;
 import com.sun.star.lang.XSingleComponentFactory;
+import com.sun.star.lang.XTypeProvider;
 import com.sun.star.registry.XRegistryKey;
 import com.sun.star.lib.uno.helper.WeakBase;
+import com.sun.star.uno.Type;
 import java.util.ArrayList;
 
 
@@ -21,7 +28,7 @@ public final class Diagrams extends WeakBase
               com.sun.star.frame.XDispatch,
               com.sun.star.lang.XServiceInfo,
               com.sun.star.frame.XDispatchProvider,
-              XFrameActionListener
+              XFrameActionListener, XEventListener
 {
     private final XComponentContext m_xContext;
     private com.sun.star.frame.XFrame m_xFrame;
@@ -29,8 +36,11 @@ public final class Diagrams extends WeakBase
     private static final String[] m_serviceNames = {"com.sun.star.frame.ProtocolHandler" };
     private Controller m_Controller = null;
 
+    private XEventBroadcaster m_xEventBroadcaster = null;
+    private boolean           isAliveDocumentEventListener = false;
     // store every frame with its Controller object
     private static  ArrayList<FrameObject>   _frameObjectList = null;
+
 
     /**
      *
@@ -90,9 +100,12 @@ public final class Diagrams extends WeakBase
                         isNewFrame = false;
             }
             if(isNewFrame){
-                m_xFrame.addFrameActionListener(this);
+                m_xFrame.addFrameActionListener(this);     
+                m_xEventBroadcaster = (XEventBroadcaster) UnoRuntime.queryInterface(XEventBroadcaster.class, m_xFrame.getController().getModel());
+                addEventListener();
+
                 if(m_Controller == null)
-                    m_Controller = new Controller( m_xContext, m_xFrame );
+                    m_Controller = new Controller( this, m_xContext, m_xFrame );
                 // when the frame is closed we have to remove FrameObject item into the list
                 _frameObjectList.add(new FrameObject(m_xFrame, m_Controller));
                 
@@ -104,6 +117,19 @@ public final class Diagrams extends WeakBase
         }
     }
 
+    public void addEventListener(){
+        if(!isAliveDocumentEventListener){
+            m_xEventBroadcaster.addEventListener(this);
+            isAliveDocumentEventListener = true;
+        }
+    }
+
+    public void removeEventListener(){
+        if(isAliveDocumentEventListener){
+            m_xEventBroadcaster.removeEventListener(this);
+            isAliveDocumentEventListener = false;
+        }
+    }
     // com.sun.star.frame.XDispatch:
     /**
      *
@@ -228,19 +254,67 @@ public final class Diagrams extends WeakBase
         return seqDispatcher;
     }
 
-    @Override
-    public void frameAction(FrameActionEvent event) {
-        
-    }
+  
 
     // XFrameActionListener
     @Override
     public void disposing(EventObject event) {
+        //System.out.println("disposing");
         // when the frame is closed we have to remove FrameObject item into the list
         if( event.Source.equals(m_xFrame) && _frameObjectList != null){
             for(FrameObject frameObj : _frameObjectList)
                if(m_xFrame.equals(frameObj.getXFrame()))
                     _frameObjectList.remove(frameObj);
+        }
+    }
+
+    @Override
+    public void frameAction(FrameActionEvent arg0) {
+       
+    }
+
+    @Override
+    public void notifyEvent(com.sun.star.document.EventObject docEvent) {
+        if(docEvent.EventName.equals("OnViewClosed")){
+            //System.out.println("notifyEvent");
+            removeEventListener();
+            m_Controller.getGui().closeControlDialog();
+            for(FrameObject frameObj : _frameObjectList)
+              if(m_xFrame.equals(frameObj.getXFrame()))
+                    _frameObjectList.remove(frameObj);
+        }
+    }
+
+    //we can test the objects
+    public void test(Object o){
+        if(o!=null){
+            XServiceInfo xServiceInfo = null;
+            XTypeProvider xTypeProvider = null;
+            XPropertySet xPS = null;
+            System.out.println("the test class: "+o.toString()+"----"+o.getClass()+"------------");
+            System.out.println("----------------------ServiceTest----------------------");
+            xServiceInfo = ( XServiceInfo ) UnoRuntime.queryInterface( XServiceInfo.class, o );
+            if(xServiceInfo != null){
+                String[] s = xServiceInfo.getSupportedServiceNames();
+                for(int i=0;i<s.length;i++)
+                System.out.println(s[i]);
+            }
+            System.out.println("----------------------InterfaceTest--------------------");
+            xTypeProvider = ( XTypeProvider ) UnoRuntime.queryInterface( XTypeProvider.class, o );
+            if(xServiceInfo != null){
+                Type[] t = xTypeProvider.getTypes();
+                for(int i=0;i<t.length;i++)
+                    System.out.println(t[i].getTypeName());
+            }
+            System.out.println("-----------------------PropertyTest------------------------");
+            xPS =  (XPropertySet)UnoRuntime.queryInterface(XPropertySet.class, o);
+            if(xPS == null){
+                System.out.println("nincs tulajdonság");
+            }else{
+                Property[] p = xPS.getPropertySetInfo().getProperties();
+                for(int i=0;i<p.length;i++)
+                   System.out.println(p[i].Name+" "+p[i].Type);
+            }
         }
     }
 

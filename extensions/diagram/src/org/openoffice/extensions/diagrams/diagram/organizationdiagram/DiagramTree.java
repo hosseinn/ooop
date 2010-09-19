@@ -37,6 +37,10 @@ public class DiagramTree {
         return m_Organigram;
     }
 
+    public TreeItem getRootItem(){
+        return m_RootItem;
+    }
+
     public void clear(){
         if(rectangleList != null)
             rectangleList.clear();
@@ -376,7 +380,8 @@ public class DiagramTree {
     }
 
     public void refresh(){
-        TreeItem._maxLevel = 0; TreeItem._maxPos = TreeItem._level1MaxPos = TreeItem._level2MaxPos = -1;
+        TreeItem._maxLevel = 0;
+        TreeItem._maxPos = TreeItem._level1MaxPos = TreeItem._level2MaxPos = -1;
         m_RootItem.setPositionsOfItems();
         m_RootItem.setProps();
         m_RootItem.display();

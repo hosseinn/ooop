@@ -125,7 +125,16 @@ public class Gui {
     public XWindow getControlDialogWindow(){
         return m_xControlDialogWindow;
     }
-
+    
+    public void closeControlDialog(){
+        if(m_xControlDialogWindow != null)
+            m_xControlDialogWindow.setVisible(false);
+        if(m_xControlDialogTopWindow != null)
+            m_xControlDialogTopWindow.removeTopWindowListener(m_oListener);
+        m_xControlDialogTopWindow = null;
+        m_xControlDialogWindow = null;
+        m_xControlDialog = null;
+    }
 
     public void setVisibleControlDialog(boolean bool){
 
