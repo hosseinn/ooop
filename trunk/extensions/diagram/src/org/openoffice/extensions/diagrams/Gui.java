@@ -226,18 +226,18 @@ public class Gui {
             if(getController().getDiagramType() == Controller.CYCLEDIAGRAM){
                 setImageColorOfControlDialog(10079487);
                 xComboBox.removeItems((short)1, (short)3);
-                String[] newStyles = { getDialogPropertyValue("ControlDialog1", "CycleStyleComboBox1"),
-                                       getDialogPropertyValue("ControlDialog1", "CycleStyleComboBox2"),
-                                       getDialogPropertyValue("ControlDialog1", "CycleStyleComboBox3")
+                String[] newStyles = { getDialogPropertyValue("Strings", "CycleStyleComboBox1"),
+                                       getDialogPropertyValue("Strings", "CycleStyleComboBox2"),
+                                       getDialogPropertyValue("Strings", "CycleStyleComboBox3")
                                      };
                 xComboBox.addItems(newStyles, (short)1);
             }
             if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM){
                 setImageColorOfControlDialog(10079487);
                 xComboBox.removeItems((short)1, (short)3);
-                String[] newStyles = { getDialogPropertyValue("ControlDialog1", "PyramidStyleComboBox1"),
-                                       getDialogPropertyValue("ControlDialog1", "PyramidStyleComboBox2"),
-                                       getDialogPropertyValue("ControlDialog1", "PyramidStyleComboBox3")
+                String[] newStyles = { getDialogPropertyValue("Strings", "PyramidStyleComboBox1"),
+                                       getDialogPropertyValue("Strings", "PyramidStyleComboBox2"),
+                                       getDialogPropertyValue("Strings", "PyramidStyleComboBox3")
                                      };
                 xComboBox.addItems(newStyles, (short)1);
             }
@@ -500,10 +500,19 @@ public class Gui {
     }
 
     public void setSelectDialogText(){
-        String diagramNameProperty = "DiagramGallery.diagramName_0" + getController().getDiagramType() + "_Label.Label";
-        String diagramDescProperty = "DiagramGallery.diagramDescription_0" + getController().getDiagramType() + "_Label.Label";
-        m_XDiagramNameText.setText(getDialogPropertyValue("DiagramGallery", diagramNameProperty));
-        m_XDiagramDescriptionText.setText(getDialogPropertyValue("DiagramGallery", diagramDescProperty));
+        String sType = "";
+        if(getController().getDiagramType() == Controller.ORGANIGRAM )
+            sType = "Organigram";
+        if(getController().getDiagramType() == Controller.VENNDIAGRAM )
+            sType = "Venndiagram";
+        if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM )
+            sType = "Pyramiddiagram";
+        if(getController().getDiagramType() == Controller.CYCLEDIAGRAM )
+            sType = "Cyclediagram";
+        String diagramNameProperty = "Strings." + sType + ".Label";
+        String diagramDescProperty = "Strings." + sType + "Description.Label";
+        m_XDiagramNameText.setText(getDialogPropertyValue("Strings", diagramNameProperty));
+        m_XDiagramDescriptionText.setText(getDialogPropertyValue("Strings", diagramDescProperty));
     }
 
     public String getDialogPropertyValue(String dialogName, String propertyName){
