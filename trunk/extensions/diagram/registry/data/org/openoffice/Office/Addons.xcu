@@ -5,7 +5,7 @@
     <node oor:name="AddonUI">
 
         <node oor:name="OfficeMenuBarMerging" oor:node-type="MergeMenuItems">
-            <node oor:name="org.openoffice.extensions.venndiagram" oor:op="replace">
+            <node oor:name="org.openoffice.extensions.diagrams" oor:op="replace">
                 <node oor:name="S1" oor:op="replace">
                     <prop oor:name="MergePoint" oor:type="xs:string">
                         <value>.uno:InsertMenu\.uno:InsertObjectChart</value>
@@ -36,7 +36,7 @@
                             </prop>
                             <prop oor:name="Title" oor:type="xs:string">
                                 <value xml:lang="en">Diagrams</value>
-                                <value xml:lang="hu">Diagrammok</value>
+                                <value xml:lang="hu">Diagramok</value>
                             </prop>
                         </node>
                     </node>
@@ -58,7 +58,7 @@
                     </prop>
                     <prop oor:name="Title" oor:type="xs:string">
                         <value xml:lang="en">Diagrams</value>
-                        <value xml:lang="hu">Diagrammok</value>
+                        <value xml:lang="hu">Diagramok</value>
                     </prop>
                     <prop oor:name="ControlType" oor:type="xs:string">
                         <value>ImageButton</value>
@@ -71,7 +71,7 @@
 	</node>
 
         <node oor:name="Images">
-            <node oor:name="org.openoffice.extensions.diagrams.diagrams.diagrams.images" oor:op="replace">
+            <node oor:name="org.openoffice.extensions.diagrams.images" oor:op="replace">
                 <prop oor:name="URL" oor:type="xs:string">
                     <value>org.openoffice.extensions.diagrams.diagrams:Diagrams</value>
                 </prop>
