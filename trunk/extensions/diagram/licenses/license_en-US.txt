@@ -1,6 +1,6 @@
 Diagram Extension
 
-The Watch Window Extension has been licensed under term of GNU Lesser General Public License (LGPL). You can read and understand LGPL license here:
+The Diagram Extension has been licensed under term of GNU Lesser General Public License (LGPL). You can read and understand LGPL license here:
 http://www.gnu.org/licenses/lgpl.html
 
 This extension is created by:
