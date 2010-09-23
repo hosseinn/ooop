@@ -26,14 +26,14 @@ import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.NoSuchElementException;
 import com.sun.star.container.XNameAccess;
 import com.sun.star.deployment.XPackageInformationProvider;
+import com.sun.star.document.XEventBroadcaster;
+import com.sun.star.document.XEventListener;
 import com.sun.star.frame.XFrame;
 import com.sun.star.frame.XModel;
 import com.sun.star.lang.EventObject;
 import com.sun.star.lang.IllegalArgumentException;
-import com.sun.star.lang.Locale;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.XComponent;
-import com.sun.star.lang.XLocalizable;
 import com.sun.star.lang.XMultiComponentFactory;
 import com.sun.star.resource.StringResourceWithLocation;
 import com.sun.star.resource.XStringResourceWithLocation;
@@ -54,7 +54,7 @@ import java.util.ArrayList;
 
 
 
-public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowListener {
+public class Gui implements XModifyListener, XEventListener, XDialogEventHandler, XTopWindowListener {
 
     private     Controller              m_Controller            = null;
     private     XComponentContext       m_xContext              = null;
@@ -76,7 +76,7 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
 */
     protected   boolean                 m_errorType1            = true; // empty cell references
     protected   boolean                 m_errorType2            = true; // string cell rererences
-    protected   boolean                 m_errorType3            = true; // single references ( e.g.: =A1)
+    protected   boolean                 m_errorType3            = true; // single references ( e.g.: 456)
     protected   boolean                 m_errorType503          = true; // division by zero
 /*
     protected   boolean                 m_errorType5            = true;
@@ -96,7 +96,8 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
     private     XListBox                m_xListBox              = null;
     private     XFixedText              m_xFixedText            = null;
     private     XTextComponent          m_xTextComponent        = null;
-    
+
+    private     XEventBroadcaster       m_xDocEventBroadcaster  = null;
     private     XModifyBroadcaster      m_xDocModifyBroadcaster = null;
     private     int                     m_counter               = 0;
 
@@ -108,7 +109,7 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
     private     boolean                 m_correctProcessRunning = false;
 
 
-    Gui( Controller controller, XComponentContext xContext, XFrame xFrame,XSpreadsheetDocument document ) {
+    Gui( Controller controller, XComponentContext xContext, XFrame xFrame, XSpreadsheetDocument document ) {
 
         m_Controller            = controller;
         m_xContext              = xContext;
@@ -116,6 +117,8 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
         m_xDocument             = document;
         m_xDocModifyBroadcaster = (XModifyBroadcaster) UnoRuntime.queryInterface(XModifyBroadcaster.class, m_xDocument);
         m_xDocModifyBroadcaster.addModifyListener(this);
+        m_xDocEventBroadcaster = (XEventBroadcaster) UnoRuntime.queryInterface(XEventBroadcaster.class, m_xDocument);
+        m_xDocEventBroadcaster.addEventListener(this);
         adjustCounter();
     }
 
@@ -194,8 +197,8 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
 
             Object oListBox = xControlContainer.getControl("fixListBox");
             XListBox xFixListBox = (XListBox) UnoRuntime.queryInterface(XListBox.class, oListBox);
-            String cellHeader = createStringWithSpace(getDialogPropertyValue("Validator.cellLabel.Label"), 22);
-            String descHeader = getDialogPropertyValue("Validator.errorLabel.Label");
+            String cellHeader = createStringWithSpace(getDialogPropertyValue("Validator", "Validator.cellLabel.Label"), 22);
+            String descHeader = getDialogPropertyValue("Validator", "Validator.errorLabel.Label");
             String label = cellHeader + descHeader;
             xFixListBox.addItem(label, (short) 0);
 
@@ -267,12 +270,12 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
         return xDialogProv;
     }
 
-    public String getDialogPropertyValue(String name){
+    public String getDialogPropertyValue( String sDialog, String name){
         String result = null;
         String m_resRootUrl = getPackageLocation() + "/dialogs/";
         XStringResourceWithLocation xResources = null;
         try {
-            xResources = StringResourceWithLocation.create(m_xContext, m_resRootUrl, true, getLocation(), "Validator", "", null);
+            xResources = StringResourceWithLocation.create(m_xContext, m_resRootUrl, true, getController().getLocation(), sDialog, "", null);
         } catch (IllegalArgumentException ex) {
               ex.printStackTrace();
         }
@@ -285,19 +288,6 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
             }
         }
         return result;
-    }
-
-    public Locale getLocation() {
-        Locale locale = null;
-        try {
-            XMultiComponentFactory  xMCF = m_xContext.getServiceManager();
-            Object oConfigurationProvider = xMCF.createInstanceWithContext("com.sun.star.configuration.ConfigurationProvider", m_xContext);
-            XLocalizable xLocalizable = (XLocalizable) UnoRuntime.queryInterface(XLocalizable.class, oConfigurationProvider);
-            locale = xLocalizable.getLocale();
-        } catch (Exception ex) {
-            System.err.println("Exception in Gui.getLocation(). Message:\n" + ex.getLocalizedMessage());
-        }
-        return locale;
     }
 
     public String createStringWithSpace(String s, int max){
@@ -415,6 +405,10 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
         m_xListBox.selectItemPos( selectedItemPos, true );
     }
 
+    public void removeSelectionInListBox(){
+        m_xListBox.selectItemPos( getSelectedItemPosFromListBox(), false );
+    }
+
     public boolean isCorrectProcessRunning(){
         return m_correctProcessRunning;
     }
@@ -525,12 +519,12 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
             XCell xCurrCell = currCell.getXCell();
             if( currCell.getErrorType() == 3 ) {
                 currCell.setPrecedentsCells();
-                m_xFixedText.setText( getDialogPropertyValue( "Validator.valueLabel.Label" ) );
+                m_xFixedText.setText( getDialogPropertyValue("Strings", "Strings.valueLabel.Label" ) );
                 XText xText = (XText)UnoRuntime.queryInterface( XText.class, xCurrCell );
                 setTextComp( xText.getString() );
             } else {
                 setCurrCellNewColor( xCurrCell ); // it is yellow except in case of errorType3
-                m_xFixedText.setText( getDialogPropertyValue( "Validator.formulaLabel.Label") );
+                m_xFixedText.setText( getDialogPropertyValue("Validator", "Validator.formulaLabel.Label") );
                 setTextComp( getController().getFormula(xCurrCell) );
             }
             if(currCell.getErrorType() >= 0)
@@ -601,7 +595,7 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
 
         if( !newFormula.equals("") && ( newFormulaPrecedents == null || newFormulaPrecedents.isEmpty() ) ) {
             String sFormula = getController().getFormula( currCell.getXCell());
-            showMessageBox( getDialogPropertyValue( "Validator.errorWindowTitle.Label" ), newFormula + " - " + getDialogPropertyValue( "Validator.invalidFormula.Label" ) + " " +sFormula);
+            showMessageBox( getDialogPropertyValue("Strings", "Strings.errorWindowTitle.Label" ), newFormula + " - " + getDialogPropertyValue("Strings", "Strings.invalidFormula.Label" ) + " " +sFormula);
             setTextComp( sFormula );
         } else {
             XCell currXCell = currCell.getXCell();
@@ -625,10 +619,10 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
                     currXCell.setFormula( oldFormula );
                     if( sValid == 532 )
                         sValid = 503;
-                    String message = getDialogPropertyValue( "Validator.errorMessage" + sValid + ".Label" );
+                    String message = getDialogPropertyValue("Strings", "Strings.errorMessage" + sValid + ".Label" );
                     if( message == null )
                         message = "error:" + sValid;
-                    showMessageBox( getDialogPropertyValue( "Validator.errorWindowTitle.Label" ), newFormula + " - " + message );
+                    showMessageBox( getDialogPropertyValue("Strings", "Strings.errorWindowTitle.Label" ), newFormula + " - " + message );
                     setTextComp( getController().getFormula( currXCell ) );
                 }else{
                     currCell.stop();
@@ -643,12 +637,71 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
             }
         }
     }
-
+/*
+    public void correctErrorType( Cell currCell, short itemPos ) {
+        String normalFormula = currCell.getXCell().getFormula();
+        System.out.println("normalFormula : " + normalFormula);
+        String oldFormula = getController().getFormula( currCell.getXCell() );
+        System.out.println("oldFormula : " + oldFormula);
+        String oldUSFormula = getController().conversSpecificFNameToOriginalFName(oldFormula);
+        System.out.println("oldUSFormula : " + oldUSFormula);
+        String newFormula = m_xTextComponent.getText(); // newFormula can be special languages formula
+        System.out.println("newFormula : " + newFormula);
+        String newUSFormula = getController().conversSpecificFNameToOriginalFName(newFormula);
+        System.out.println("newUSFormula : " + newUSFormula);
+        ArrayList<XCell> newFormulaPrecedents = null;
+        if( !newFormula.equals("") )
+            newFormulaPrecedents = getController().getPrecedentCellsOfFormula( newFormula );
+       
+        if( !newFormula.equals("") && ( newFormulaPrecedents == null || newFormulaPrecedents.isEmpty() ) ) {
+            showMessageBox( getDialogPropertyValue("Strings", "Strings.errorWindowTitle.Label" ), newFormula + " - " + getDialogPropertyValue("Strings", "Strings.invalidFormula.Label" ) + " " + oldFormula);
+            setTextComp( oldFormula );
+        }else {
+            XCell currXCell = currCell.getXCell();
+            if( newFormula.equals("") ) {
+                currCell.stop();
+                currCell.clearErrorType();
+                clearArrows();
+                currXCell.setFormula( newFormula );
+                currCell.setFormula( getController().getFormula( currXCell ) );
+                currCell.refreshItemInListBoxAndSelect(itemPos);
+            }else {
+                //oldFormula = getController().conversSpecificFNameToOriginalFName(oldFormula);
+                short sValid = getController().parseXCells( newFormulaPrecedents );
+                // if( sValid == 0 || sValid == 2 ) { allow correct strings arguments to strings also
+                if( sValid == 0 ) {
+                    currXCell.setFormula( newUSFormula );
+                    sValid = (short)currXCell.getError();
+                }
+                //if( sValid == 0 || sValid > 2) {
+                if( sValid > 0 ) {
+                    currXCell.setFormula( oldUSFormula );
+                    if( sValid == 532 )
+                        sValid = 503;
+                    String message = getDialogPropertyValue("Strings", "Strings.errorMessage" + sValid + ".Label" );
+                    if( message == null )
+                        message = "error:" + sValid;
+                    showMessageBox( getDialogPropertyValue("Strings", "Strings.errorWindowTitle.Label" ), newFormula + " - " + message );
+                    setTextComp( getController().getFormula( currXCell ) );
+                }else{
+                    currCell.stop();
+                    clearArrows();
+                    currCell.removeListener();
+                    currCell.setFormula( getController().getFormula(currXCell) );
+                    currCell.setPrecedentsCells();
+                    currCell.clearErrorType();
+                    currCell.refreshItemInListBoxAndSelect(itemPos);
+                    setTextComp( getController().getFormula(currXCell) );
+                }
+            }
+        }
+    }
+*/
     public void correctErrorType3( Cell currCell, short itemPos ) {
 
         String newValue = m_xTextComponent.getText();
         if( !newValue.equals( "" ) )
-            showMessageBox2( getDialogPropertyValue( "Validator.errorMessage3.Label" ), getDialogPropertyValue( "Validator.infoBoxMessage.Label" ) );
+            showMessageBox2( getDialogPropertyValue("Strings", "Strings.errorMessage3.Label" ), getDialogPropertyValue("Strings", "Strings.infoBoxMessage.Label" ) );
         if( newValue.equals( "" ) || m_infoBoxOk == 1 ) {
             currCell.stop();
             currCell.clearPrecedentsCellsAndType();
@@ -698,8 +751,17 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
     }
 
     public void clearArrows(){
-        XSheetAuditing xSheetAuditing = (XSheetAuditing) UnoRuntime.queryInterface( XSheetAuditing.class, getController().getActiveSheet() );
-        xSheetAuditing.clearArrows();
+        XSheetAuditing xSheetAuditing = null;
+        xSheetAuditing = (XSheetAuditing) UnoRuntime.queryInterface( XSheetAuditing.class, getController().getActiveSheet() );
+        if(xSheetAuditing != null)
+            xSheetAuditing.clearArrows();
+    }
+
+    public void clearArrowsOfClosingSheet(){
+        XSheetAuditing xSheetAuditing = null;
+        xSheetAuditing = (XSheetAuditing) UnoRuntime.queryInterface( XSheetAuditing.class, getController().getClosingActiveSheet() );
+        if(xSheetAuditing != null)
+            xSheetAuditing.clearArrows();
     }
 
     public CellAddress getListBoxSelectedItemAddress(){
@@ -817,7 +879,8 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
     }
 
     @Override
-    public void disposing(EventObject arg0) {
+    public void disposing(EventObject event) {
+        m_xDocModifyBroadcaster.removeModifyListener(this);
         closeAndClearValidator();
         if( m_xSelectDialog != null )
             m_xSelectDialog = null;
@@ -825,10 +888,11 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
 
     public void closeAndClearValidator(){
         removeItemsFromLists();
-        clearArrows();
-        m_xWindow.setVisible(false);
-        if(m_xWindow != null)
+        clearArrowsOfClosingSheet();
+        if(m_xWindow != null){
+            m_xWindow.setVisible(false);
             m_xWindow = null;
+        }
         if(m_xDialog != null)
             m_xDialog = null;
     }
@@ -869,5 +933,16 @@ public class Gui implements XModifyListener, XDialogEventHandler, XTopWindowList
     @Override
     public void windowDeactivated(EventObject arg0) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void notifyEvent(com.sun.star.document.EventObject event) {
+        if(event.EventName.equals("OnPrepareViewClosing")){
+            getController().getModel().stop();
+            setBackLastCellColor();
+            removeSelectionInListBox();
+        }
+        if(event.EventName.equals("OnViewClosed"))
+            m_xDocEventBroadcaster.removeEventListener(this); 
     }
 }

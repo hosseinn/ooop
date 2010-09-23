@@ -3,7 +3,6 @@ package org.openoffice.extensions.watchwindow;
 import com.sun.star.container.XNamed;
 import com.sun.star.sheet.FormulaToken;
 import com.sun.star.sheet.SingleReference;
-import com.sun.star.sheet.XCellAddressable;
 import com.sun.star.sheet.XFormulaParser;
 import com.sun.star.sheet.XSpreadsheet;
 import com.sun.star.table.CellAddress;

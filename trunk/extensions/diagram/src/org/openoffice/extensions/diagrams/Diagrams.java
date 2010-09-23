@@ -259,7 +259,6 @@ public final class Diagrams extends WeakBase
     // XFrameActionListener
     @Override
     public void disposing(EventObject event) {
-        //System.out.println("disposing");
         // when the frame is closed we have to remove FrameObject item into the list
         if( event.Source.equals(m_xFrame) && _frameObjectList != null){
             for(FrameObject frameObj : _frameObjectList)
@@ -284,7 +283,7 @@ public final class Diagrams extends WeakBase
                     _frameObjectList.remove(frameObj);
         }
     }
-
+/*
     //we can test the objects
     public void test(Object o){
         if(o!=null){
@@ -317,5 +316,6 @@ public final class Diagrams extends WeakBase
             }
         }
     }
-
+*/
+    
 }

@@ -33,6 +33,10 @@ import com.sun.star.uno.XComponentContext;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import com.sun.star.lang.Locale;
+import com.sun.star.lang.XLocalizable;
+import com.sun.star.lang.XMultiComponentFactory;
+import com.sun.star.text.XText;
 
 public class Controller {
 
@@ -87,6 +91,10 @@ public class Controller {
         return m_xSpreadsheet;
     }
 
+    public XSpreadsheet getClosingActiveSheet() {
+        return m_xSpreadsheet;
+    }
+
     public String getActiveSheetName(){
         XNamed xNamed = (XNamed)UnoRuntime.queryInterface(XNamed.class, getActiveSheet());
         return xNamed.getName();
@@ -131,6 +139,7 @@ public class Controller {
             while ( xFormulaEnum.hasMoreElements() ) {
                 formulaCell = xFormulaEnum.nextElement();
                 XCell xCell = (XCell)UnoRuntime.queryInterface( XCell.class, formulaCell );
+                //XText xText = (XText)UnoRuntime.queryInterface(XText.class, xCell);
                 //System.out.println("XCellName: " + getCellName( xCell ) + " XCellFormula: " + xCell.getFormula() +" XCellType: " + xCell.getType().getValue() + " XCellError: " + xCell.getError());
 
                 // if it is not usual (predefinied) error
@@ -181,6 +190,8 @@ public class Controller {
                 valueCell = xValueEnum.nextElement();
                 XCell xValueCell = (XCell) UnoRuntime.queryInterface( XCell.class, valueCell );
                 String currValueCellName = getCellName(xValueCell);
+                //XText xText = (XText)UnoRuntime.queryInterface(XText.class, xValueCell);
+                //System.out.println("XCellName: " + currValueCellName + " XCellFormula: " + xValueCell.getFormula() +" XCellType: " + xValueCell.getType().getValue() + " XCellError: " + xValueCell.getError() +" text: " + xText.getString());
                 if( !allPrecedentNames.isEmpty() )
                     for (String cellName : allPrecedentNames)
                         if (cellName.equals(currValueCellName))
@@ -240,12 +251,70 @@ public class Controller {
     }
 
     public ArrayList<XCell> getError503List( XCell xCell ){
-        if( xCell.getError() == 503 || xCell.getError() == 532 )
-            return getPrecedentCellsOfFormulaCell(xCell);
-        else
+        if( xCell.getError() == 503 || xCell.getError() == 532 ){
+            ArrayList<XCell> list = getPrecedentCellsOfFormulaCell(xCell);
+            if(list == null){
+                list = new ArrayList<XCell>();
+                list.add(xCell);
+            }
+            return list;
+        }else
             return null;
     }
 
+    public Locale getLocation() {
+        Locale locale = null;
+        try {
+            XMultiComponentFactory  xMCF = m_xContext.getServiceManager();
+            Object oConfigurationProvider = xMCF.createInstanceWithContext("com.sun.star.configuration.ConfigurationProvider", m_xContext);
+            XLocalizable xLocalizable = (XLocalizable) UnoRuntime.queryInterface(XLocalizable.class, oConfigurationProvider);
+            locale = xLocalizable.getLocale();
+        } catch (Exception ex) {
+            System.err.println("Exception in Gui.getLocation(). Message:\n" + ex.getLocalizedMessage());
+        }
+        return locale;
+    }
+/*
+    public String conversSpecificFNameToOriginalFName(String formula){
+        String newformula = formula.toUpperCase();
+        String lang = getLocation().Language;
+
+        if(!lang.equals("en")){
+
+            String[] aFunctionNames = null;
+
+            if(lang.equals("hu"))
+               aFunctionNames = huFunctionNames;
+
+            for(int i = 0; i < aFunctionNames.length; i++)
+                if(!aFunctionNames[i].equals(""))
+                    if(newformula.contains(aFunctionNames[i]))
+                        newformula = newformula.replaceAll(aFunctionNames[i], enFunctionNames[i]);
+
+        }
+        return newformula;
+    }
+
+    public String conversOriginalMNameToSpecificMName(String methodName){
+        String newMethodName = methodName.toUpperCase();
+        String lang = getLocation().Language;
+        System.out.println(lang);
+
+        if(!lang.equals("en")){
+
+            String[] aFunctionNames = null;
+            if(lang.equals("hu"))
+               aFunctionNames = huFunctionNames;
+
+            for(int i = 0; i < enFunctionNames.length; i++)
+                if(newMethodName.contains(enFunctionNames[i]))
+                    if(!aFunctionNames[i].equals(""))
+                        newMethodName = newMethodName.replaceAll(enFunctionNames[i], aFunctionNames[i]);
+
+        }
+        return newMethodName;
+    }
+*/
     public HashSet<String> getPrecedentOfAllFormulas(){
 
         HashSet<String> precedentNames = new HashSet<String>();
@@ -260,10 +329,13 @@ public class Controller {
             try {
                 formulaCell = xFormulaEnum.nextElement();
                 XCell xCell = (XCell)UnoRuntime.queryInterface( XCell.class, formulaCell );
-                ArrayList<XCell> lPrecedentsCells = getPrecedentCellsOfFormulaCell(xCell);
-                if( lPrecedentsCells != null )
-                    for(XCell currXCell : lPrecedentsCells)
-                        precedentNames.add( getCellName( currXCell ) );
+                XText xText = (XText)UnoRuntime.queryInterface( XText.class, xCell );
+                if(!(xCell.getError() == 524  && xText.getString().equals("#REF!"))){
+                    ArrayList<XCell> lPrecedentsCells = getPrecedentCellsOfFormulaCell(xCell);
+                    if( lPrecedentsCells != null )
+                        for(XCell currXCell : lPrecedentsCells)
+                            precedentNames.add( getCellName( currXCell ) );
+                }
             } catch (Exception ex) {
                 System.err.println("Exception in Gui.setErrorCells(). Message:\n" + ex.getLocalizedMessage());
             }

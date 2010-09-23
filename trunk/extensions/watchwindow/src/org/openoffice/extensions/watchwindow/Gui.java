@@ -1,5 +1,6 @@
 package org.openoffice.extensions.watchwindow;
 
+import com.sun.star.awt.ItemEvent;
 import com.sun.star.awt.Rectangle;
 import com.sun.star.awt.WindowAttribute;
 import com.sun.star.awt.WindowClass;
@@ -9,6 +10,7 @@ import com.sun.star.awt.XControlContainer;
 import com.sun.star.awt.XDialog;
 import com.sun.star.awt.XDialogEventHandler;
 import com.sun.star.awt.XDialogProvider2;
+import com.sun.star.awt.XItemListener;
 import com.sun.star.awt.XListBox;
 import com.sun.star.awt.XMessageBox;
 import com.sun.star.awt.XToolkit;
@@ -18,12 +20,16 @@ import com.sun.star.awt.XWindow;
 import com.sun.star.awt.XWindowPeer;
 import com.sun.star.beans.Property;
 import com.sun.star.beans.PropertyValue;
+import com.sun.star.beans.PropertyVetoException;
+import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.NoSuchElementException;
 import com.sun.star.container.XNameAccess;
 import com.sun.star.deployment.XPackageInformationProvider;
+import com.sun.star.frame.XController;
 import com.sun.star.frame.XFrame;
 import com.sun.star.frame.XModel;
+import com.sun.star.frame.XTitle;
 import com.sun.star.lang.EventObject;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.WrappedTargetException;
@@ -40,33 +46,36 @@ import com.sun.star.uno.Exception;
 import com.sun.star.uno.Type;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
-public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelectionListener{
+public class Gui implements XItemListener, XTopWindowListener, XDialogEventHandler, XRangeSelectionListener{
     
-    private Controller             m_Controller        = null;
-    private XComponentContext      m_xContext          = null;
-    private XFrame                 m_xFrame            = null;
-    private XModel                 m_xModel            = null;
-    private XMultiComponentFactory m_xServiceManager   = null;
-    private XToolkit               m_xToolkit          = null;
-    private XWindow                m_xWindow           = null;
-    private XTopWindow             m_xTopWindow        = null;
-    private XControl               m_xControl          = null;
-    private XRangeSelection        m_xRangeSelection   = null;
-    private XListBox               m_xFixListBox       = null;
-    private XListBox               m_xListBox          = null;
-    private String                 m_selectAreaName    = "";
+    private Controller              m_Controller        = null;
+    private XComponentContext       m_xContext          = null;
+    private XFrame                  m_xFrame            = null;
+    private XModel                  m_xModel            = null;
+    private XMultiComponentFactory  m_xServiceManager   = null;
+    private XToolkit                m_xToolkit          = null;
+    private XWindow                 m_xWindow           = null;
+    private XTopWindow              m_xTopWindow        = null;
+    private XControl                m_xButtonControl    = null;
+    private XControl                m_xControl          = null;
+    private XRangeSelection         m_xRangeSelection   = null;
+    private XListBox                m_xFixListBox       = null;
+    private XListBox                m_xListBox          = null;
+    private String                  m_selectAreaName    = "";
     //methods of dialog
-    private String                 m_sHandlerMethod1   = "addCell";
-    private String                 m_sHandlerMethod2   = "removeCell";
-    private String                 m_sHandlerMethod3   = "decrease";
-    private String                 m_sHandlerMethod4   = "increase";
+    private String                  m_sHandlerMethod1   = "addCell";
+    private String                  m_sHandlerMethod2   = "removeCell";
+    private String                  m_sHandlerMethod3   = "decrease";
+    private String                  m_sHandlerMethod4   = "increase";
     //size of window
-    private final int              WIDTH               = 203; //200 + 3
-    private final int              HEIGHT              = 85;
+    private final int               WIDTH               = 203; //200 + 3
+    private final int               HEIGHT              = 85;
     //width is resizeable
-    private int                    m_iWidth;
+    private int                     m_iWidth;
 
     Gui(Controller controller, XComponentContext xContext, XModel xModel) throws Exception {
        m_iWidth = WIDTH;
@@ -90,7 +99,7 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
         m_xWindow.setVisible(bool);  
     }
 
-    /*
+
     //we can test the objects
     public void test(Object o){
         if(o!=null){
@@ -118,27 +127,37 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
                 System.out.println("nincs tulajdonság");
             }else{
                 Property[] p = xPS.getPropertySetInfo().getProperties();
-                for(int i=0;i<p.length;i++)
-                   System.out.println(p[i].Name+" "+p[i].Type);
+                for(int i=0;i<p.length;i++){
+                    try {
+                        System.out.println(p[i].Name + " " + p[i].Type.toString());
+                        if (p[i].Type.toString().equals("Type[boolean]")) 
+                            xPS.setPropertyValue(p[i].Name, new Boolean(false));
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    } 
+                }
             }
         }
     }
-    */
-    
+
+
     public void createWatchWindow(){
         try {
             String sPackageURL = getPackageLocation();
             String sDialogURL = sPackageURL + "/dialogs/WWindow.xdl";
             XDialogProvider2 xDialogProv = getDialogProvider();
             XDialog xDialog = xDialogProv.createDialogWithHandler(sDialogURL, this);
-            
+
             if (xDialog != null) {
-                m_xWindow = (XWindow) UnoRuntime.queryInterface(XWindow.class, xDialog);
+                m_xWindow = (XWindow) UnoRuntime.queryInterface(XWindow.class, xDialog);     
                 m_xControl = (XControl) UnoRuntime.queryInterface(XControl.class, xDialog);
-                //    This hasn't yet worked to make dialog window resizable.
-                //    Short flags = (WindowAttribute.BORDER | WindowAttribute.MOVEABLE | WindowAttribute.SIZEABLE | WindowAttribute.CLOSEABLE);
-                //    Rectangle posSize = xWindow.getPosSize()
-                //    m_xWindow.setPosSize(posSize.X, posSize.Y, posSize.Width, posSize.Height, flags);
+                //  This hasn't yet worked to make dialog window resizable.
+                //  XPropertySet xPropImage = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, m_xControl.getModel());
+                //  xPropImage.setPropertyValue("Sizeable", new Boolean(true));
+                //  Short flags = (WindowAttribute.BORDER | WindowAttribute.MOVEABLE | WindowAttribute.SIZEABLE | WindowAttribute.CLOSEABLE);
+                //  flags = (WindowAttribute.SIZEABLE);
+                //  Rectangle posSize = m_xWindow.getPosSize();
+                //  m_xWindow.setPosSize(posSize.X, posSize.Y, posSize.Width, posSize.Height, flags);
                 m_xTopWindow = (XTopWindow) UnoRuntime.queryInterface(XTopWindow.class, m_xWindow);
                 m_xTopWindow.addTopWindowListener(this);
             }
@@ -158,6 +177,10 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
             m_xFixListBox.addItem(label, (short) 0);
             oListBox = xControlContainer.getControl("ListBox1");
             m_xListBox = (XListBox) UnoRuntime.queryInterface(XListBox.class, oListBox);
+            m_xListBox.addItemListener(this);
+
+            m_xButtonControl = xControlContainer.getControl("removeCell");
+            enableControl(m_xButtonControl, false);
             
         } catch (IllegalArgumentException ex) {
             ex.printStackTrace();
@@ -165,12 +188,37 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
             ex.printStackTrace();
         }
     }
+
+    public void disposeWatchWindow(){
+        setVisible(false);
+        m_xWindow = null;
+        m_xTopWindow = null;
+    }
+
+    public void enableControl(XControl xControl, boolean bool){
+        if(xControl != null){
+            try {
+                XPropertySet xPropImage = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
+                xPropImage.setPropertyValue("Enabled", new Boolean(bool));
+            } catch (UnknownPropertyException ex) {
+                System.err.println("UnknownPropertyException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+            } catch (PropertyVetoException ex) {
+                System.err.println("PropertyVetoException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+            } catch (IllegalArgumentException ex) {
+                System.err.println("IllegalArgumentException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+            } catch (WrappedTargetException ex) {
+                System.err.println("WrappedTargetException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+            }
+        }
+    }
     
     public void addToListBox(String s, short n){
+        enableControl(m_xButtonControl, false);
         m_xListBox.addItem( s, n );
     }
     
     public void removeFromListBox(short num, short n){
+        enableControl(m_xButtonControl, false);
         m_xListBox.removeItems( num, n);
     }
     
@@ -267,18 +315,17 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
     
     public void cellSelection(String cellName) {
         m_xRangeSelection = (XRangeSelection)UnoRuntime.queryInterface(XRangeSelection.class, m_xModel.getCurrentController());
-        m_xRangeSelection.addRangeSelectionListener(this); 
-        String title = getController().getLocation().Language.equals("hu") ? "Cella" : "Cell";
-        PropertyValue[] args = new PropertyValue[3];
+        m_xRangeSelection.addRangeSelectionListener(this);
+        
+        String title = getDialogPropertyValue("WWindow.Sheet.Label").substring(1) + " ";
+  
+        PropertyValue[] args = new PropertyValue[2];
         args[0] = new PropertyValue();
         args[0].Name = "Title";
         args[0].Value = title;
         args[1] = new PropertyValue();
-        args[1].Name = "SingleCellMode";
-        args[1].Value = true;
-        args[2] = new PropertyValue();
-        args[2].Name = "InitialValue";
-        args[2].Value = cellName;
+        args[1].Name = "InitialValue";
+        args[1].Value = cellName;
         setVisible(false);
         m_xRangeSelection.startRangeSelection(args);  
     }
@@ -372,32 +419,22 @@ public class Gui implements XTopWindowListener, XDialogEventHandler, XRangeSelec
         m_xWindow.setVisible(false);
     }
 
-    public void windowOpened(EventObject event) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void windowOpened(EventObject event) { }
+
+    public void windowClosed(EventObject event) { }
+
+    public void windowMinimized(EventObject event) { }
+
+    public void windowNormalized(EventObject event) { }
+
+    public void windowActivated(EventObject event) { }
+
+    public void windowDeactivated(EventObject event) { }
+
+    public void disposing(EventObject event) { }
+
+    public void itemStateChanged(ItemEvent event) {
+        enableControl(m_xButtonControl, true);
     }
 
-    public void windowClosed(EventObject event) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void windowMinimized(EventObject event) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void windowNormalized(EventObject event) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void windowActivated(EventObject event) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void windowDeactivated(EventObject event) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void disposing(EventObject event) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
 } 
