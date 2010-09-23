@@ -6,41 +6,52 @@ import com.sun.star.frame.XController;
 import com.sun.star.frame.XDesktop;
 import com.sun.star.frame.XFrame;
 import com.sun.star.frame.XModel;
+import com.sun.star.lang.EventObject;
 import com.sun.star.lang.IllegalArgumentException;
+import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.Locale;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.XLocalizable;
 import com.sun.star.lang.XMultiComponentFactory;
 import com.sun.star.lang.XMultiServiceFactory;
+import com.sun.star.sheet.ComplexReference;
 import com.sun.star.sheet.XFormulaParser;
 import com.sun.star.sheet.FormulaToken;
 import com.sun.star.sheet.ReferenceFlags;
 import com.sun.star.sheet.SingleReference;
 import com.sun.star.sheet.XCellAddressable;
+import com.sun.star.sheet.XCellRangeAddressable;
+import com.sun.star.sheet.XSheetCellRangeContainer;
 import com.sun.star.sheet.XSpreadsheet;
 import com.sun.star.sheet.XSpreadsheetDocument;
 import com.sun.star.sheet.XSpreadsheetView;
 import com.sun.star.table.CellAddress;
+import com.sun.star.table.CellRangeAddress;
 import com.sun.star.table.XCell;
+import com.sun.star.table.XCellRange;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
+import com.sun.star.util.XModifyBroadcaster;
+import com.sun.star.util.XModifyListener;
 
 
-public class Controller {
 
-    private     XComponentContext       m_xContext          = null;
-    private     XFrame                  m_xFrame            = null;
-    private     XController             m_xController       = null;
-    protected   Gui                     m_Gui               = null;
-    private     DataModel               m_DataModel         = null;
-    private     XModel                  m_xModel            = null;
-    private     XMultiComponentFactory  m_xServiceManager   = null;
-    private     XSpreadsheetDocument    m_xDocument         = null;
-    private     XFormulaParser          m_xFormulaParser    = null;
-    private     FormulaToken            m_selectedCellToken = null;
-    private     XSpreadsheet            m_xValidSheet       = null;
-    private static short                _numer              = 0;
+public class Controller implements XModifyListener{
+
+    private     XComponentContext       m_xContext              = null;
+    private     XFrame                  m_xFrame                = null;
+    private     XController             m_xController           = null;
+    protected   Gui                     m_Gui                   = null;
+    private     DataModel               m_DataModel             = null;
+    private     XModel                  m_xModel                = null;
+    private     XMultiComponentFactory  m_xServiceManager       = null;
+    private     XSpreadsheetDocument    m_xDocument             = null;
+    private     XModifyBroadcaster      m_xDocModifyBroadcaster = null;
+    private     XFormulaParser          m_xFormulaParser        = null;
+    private     FormulaToken[]          m_selectedCellToken     = null;
+    private     XSpreadsheet            m_xValidSheet           = null;
+    private static short                _numer                  = 0;
 
    
     public Controller(XComponentContext xContext, XFrame xFrame) throws UnknownPropertyException, WrappedTargetException, IllegalArgumentException{
@@ -50,6 +61,8 @@ public class Controller {
         m_xModel = m_xController.getModel();
         m_xServiceManager = m_xContext.getServiceManager();
         m_xDocument = (XSpreadsheetDocument) UnoRuntime.queryInterface(XSpreadsheetDocument.class, m_xModel);
+        m_xDocModifyBroadcaster = (XModifyBroadcaster) UnoRuntime.queryInterface(XModifyBroadcaster.class, m_xDocument);
+        m_xDocModifyBroadcaster.addModifyListener(this);
     }
 
     public XFormulaParser getFormulaParser() {
@@ -168,7 +181,28 @@ public class Controller {
         XSpreadsheetView xView = (XSpreadsheetView)UnoRuntime.queryInterface(XSpreadsheetView.class, xController); 
         return xView.getActiveSheet();  
     } 
-    
+
+    public XCell[] getActiveCells(){
+        XCell[] xCells = null;
+        try {
+            Object obj = m_xModel.getCurrentSelection();
+            m_Gui.test(obj);
+            XCellRangeAddressable xCellRangeAddressable = (XCellRangeAddressable) UnoRuntime.queryInterface(XCellRangeAddressable.class, obj);
+            CellRangeAddress cellRangeAddress = xCellRangeAddressable.getRangeAddress();
+            int n = cellRangeAddress.EndColumn - cellRangeAddress.StartColumn + 1;
+            int m = cellRangeAddress.EndRow - cellRangeAddress.StartRow + 1;
+            xCells = new XCell[n*m];
+            XCellRange xCellRange = getSheetByIndex(cellRangeAddress.Sheet).getCellRangeByPosition(cellRangeAddress.StartColumn, cellRangeAddress.StartRow, cellRangeAddress.EndColumn, cellRangeAddress.EndRow);
+            int ii = 0;
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < m; j++)
+                     xCells[ii++] = xCellRange.getCellByPosition(i, j);
+        } catch (IndexOutOfBoundsException ex) {
+            ex.printStackTrace();
+        }
+        return xCells;
+    }
+
     public XCell getActiveCell(){
         Object obj = m_xModel.getCurrentSelection();
         return (XCell)UnoRuntime.queryInterface(XCell.class, obj);
@@ -211,36 +245,80 @@ public class Controller {
         if (tokens.length == 0)
             return false;
 
+        for(int i = 0 ; i < tokens.length; i++)
+            if (tokens[i].OpCode != 0)
+                return false;
+
         FormulaToken token = tokens[0];
-        if (token.OpCode != 0)
-            // This is undocumented, but a reference token has an opcode of 0.
-            // This may change in the future, to probably a named constant
-            // value.
-            return false;
 
-        if (SingleReference.class != token.Data.getClass())
-            // this must be a single cell reference.
-            return false;
+        if (SingleReference.class == token.Data.getClass()){
 
-        SingleReference ref = (SingleReference)token.Data;
-        m_xValidSheet = getSheetByIndex(ref.Sheet);
-        if (m_xValidSheet == null)
-            return false;
+            SingleReference ref = (SingleReference)token.Data;
+            m_xValidSheet = getSheetByIndex(ref.Sheet);
+            if (m_xValidSheet == null)
+                return false;
+            m_selectedCellToken = new FormulaToken[1];
+            m_selectedCellToken[0] = token;
 
-        m_selectedCellToken = token;
+        }else{
+            try {
+                ComplexReference ref = (ComplexReference) token.Data;
+                m_xValidSheet = getSheetByIndex(ref.Reference1.Sheet);
+                if (m_xValidSheet == null)
+                    return false;
+
+                int n = ref.Reference2.Column - ref.Reference1.Column + 1;
+                int m = ref.Reference2.Row - ref.Reference1.Row + 1;
+                m_selectedCellToken = new FormulaToken[n*m];
+                XCellRange xCellRange = m_xValidSheet.getCellRangeByPosition(ref.Reference1.Column, ref.Reference1.Row, ref.Reference2.Column, ref.Reference2.Row);
+                int ii = 0;
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < m; j++)
+                        m_selectedCellToken[ii++] = getRefToken(xCellRange.getCellByPosition(i, j));
+
+            }catch (IndexOutOfBoundsException ex) {
+                ex.printStackTrace();
+            }
+        }
 
         return true;
     }
 
     public void addCell() {
-        //default feature: user can choose the active cell in active sheet
-        XCell activeXCell = getActiveCell();
-        FormulaToken token = getRefToken( activeXCell );
+        Object obj = m_xModel.getCurrentSelection();
+        XCellRangeAddressable xCellRangeAddr =  (XCellRangeAddressable)UnoRuntime.queryInterface(XCellRangeAddressable.class, obj);
+        if(xCellRangeAddr == null){
+            try {
+                XSheetCellRangeContainer xSheetCellRangeContainer = (XSheetCellRangeContainer) UnoRuntime.queryInterface(XSheetCellRangeContainer.class, obj);
+                Object oRange = xSheetCellRangeContainer.getByIndex(0);
+                xCellRangeAddr = (XCellRangeAddressable) UnoRuntime.queryInterface(XCellRangeAddressable.class, oRange);
+            } catch (IndexOutOfBoundsException ex) {
+                ex.printStackTrace();
+            } catch (WrappedTargetException ex) {
+                ex.printStackTrace();
+            }
+        }
+        CellRangeAddress rangeAddr = xCellRangeAddr.getRangeAddress();
+        ComplexReference ref = new ComplexReference();
+        ref.Reference1.Column = rangeAddr.StartColumn;
+        ref.Reference1.Row    = rangeAddr.StartRow;
+        ref.Reference1.Sheet  = rangeAddr.Sheet;
+        ref.Reference1.Flags = ReferenceFlags.SHEET_3D;
+        ref.Reference2.Column = rangeAddr.EndColumn;
+        ref.Reference2.Row    = rangeAddr.EndRow;
+        ref.Reference2.Sheet  = rangeAddr.Sheet;
+        ref.Reference2.Flags = ReferenceFlags.SHEET_DELETED;
+        FormulaToken token = new FormulaToken();
+        token.OpCode = 0;
+        token.Data = ref;
         FormulaToken[] tokens = { token };
-        XCellAddressable xCellAddr =  (XCellAddressable)UnoRuntime.queryInterface(XCellAddressable.class, activeXCell);
-        CellAddress addr = xCellAddr.getCellAddress();
-        String cellName = getFormulaParser().printFormula(tokens, addr);
-        m_Gui.cellSelection(cellName);
+        String rangeName = getFormulaParser().printFormula(tokens, new CellAddress());
+        String[] sCells = rangeName.split(":", 2);
+        if(sCells[0].endsWith(sCells[1]))
+            rangeName = sCells[0];
+        else
+            rangeName = sCells[0] + ":" + sCells[1];
+        m_Gui.cellSelection(rangeName);
     }
     
     public void removeCell()  {
@@ -257,15 +335,24 @@ public class Controller {
     }
 
     public void done(String selectAreaName) throws Exception {
-            if (isValidSelectedName(selectAreaName)) {
+        if (isValidSelectedName(selectAreaName)) {
             if(m_DataModel == null)
                 m_DataModel = new DataModel(this);
-            m_DataModel.addToDataList( m_xValidSheet, m_selectedCellToken);
+            for(int i=0; i< m_selectedCellToken.length; i++)
+                m_DataModel.addToDataList( m_xValidSheet, m_selectedCellToken[i]);
             m_Gui.setVisible(true);
         } else {
             m_Gui.setVisible(true);
             m_Gui.showMessageBox(0);
         }
+    }
+
+    //XModifyListener
+    public void modified(EventObject event) { }
+
+    public void disposing(EventObject event) {
+        m_xDocModifyBroadcaster.removeModifyListener(this);
+        m_Gui.disposeWatchWindow();
     }
     
 }

@@ -22,10 +22,18 @@ public class Model {
         m_list.add(cell);
     }
 
+    public void stop(){
+        if(m_list.size() > 0)
+            for(int i = 0; i< m_list.size(); i++)
+                m_list.get(i).stop();
+    }
+
     public void clearList(){
         if(m_list.size() > 0) {
-            for(int i = 0; i< m_list.size(); i++)
+            for(int i = 0; i< m_list.size(); i++){
+                m_list.get(i).stop();
                 m_list.get(i).removeListener();
+            }
             m_list.clear();
         }
     }
@@ -40,35 +48,5 @@ public class Model {
             m_list.get(i).decreaseNumber();
         m_list.remove(itemPos);
     }
-
-/*
-    // need to listen error3 cell always becouse there are cells not formulas without listeners
-    // runCorrectedError3 is a semaphor to close other functions in Gui.callHandlerMethod() itemchanged component
-    public void refreshError3Cells(){
-        for(int i = 0; i< m_list.size(); i++){
-            Cell cell = m_list.get(i);
-            if( cell.getErrorType() == 3 ) {
-                cell.setPrecedentsCells();
-                if(cell.getNotValidPrecCells() == null || cell.getNotValidPrecCells().isEmpty() )
-                        cell.clearPrecedentsCellsAndType();
-                if( cell.getErrorType() == 0 ){
-                    short itemPos = getController().getGui().getSelectedItemPosFromListBox();
-                    short cellNum = cell.getNumber();
-                    if( itemPos != cellNum ){
-                        getController().getGui().runCorrectedError3 = true;
-                        getController().getGui().removeItemFromListBox( cellNum );
-                        getController().getGui().addItemToListBox( cell.toString(), cellNum );
-                        getController().getGui().selectItemPosInListBox( itemPos );
-                        getController().getGui().runCorrectedError3 = false;
-                    }
-                }
-            }
-        }
-    }
-
-    public List<Cell> getList(){
-        return m_list;
-    }  
- */
 
 }

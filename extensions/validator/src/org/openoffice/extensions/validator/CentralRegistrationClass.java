@@ -1,9 +1,3 @@
-/*
- * CentralRegistrationClass.java
- *
- * Created on 2010.02.25 - 17:07:29
- *
- */
 package org.openoffice.extensions.validator;
 
 import com.sun.star.lang.XSingleComponentFactory;
@@ -18,10 +12,7 @@ import java.util.StringTokenizer;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
-/**
- *
- * @author tibi
- */
+
 public class CentralRegistrationClass {
     
     public static XSingleComponentFactory __getComponentFactory( String sImplementationName ) {

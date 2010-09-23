@@ -71,7 +71,7 @@ public class Cell implements  XModifyListener, Runnable {
     }
 
     public void setErrorMessage(){
-        m_sErrorMessage = getGui().getDialogPropertyValue("Validator.errorMessage" + ( m_ErrorType ) + ".Label");
+        m_sErrorMessage = getGui().getDialogPropertyValue("Strings", "Strings.errorMessage" + ( m_ErrorType ) + ".Label");
     }
 
     public String getErrorMessage(){
@@ -176,11 +176,16 @@ public class Cell implements  XModifyListener, Runnable {
     
     public void setPrecedentsNewColor(){
         try {
+            int color = 0xFF0000;
+            if( m_ErrorType == ERRORTYPE2 )
+                color = 0xFFA500;
+            if( m_ErrorType == ERRORTYPE3 )
+                color = 0x800000;
             if( m_isRunning && m_lNotValidPrecCells != null && !m_lNotValidPrecCells.isEmpty()){
                 TableBorder border = getGui().getTableBorder( new Integer(0x0000FF), (short)75 );
                 if( m_vProps != null && !m_vProps.isEmpty() && m_vColors != null && !m_vColors.isEmpty() && m_vBorders != null && !m_vBorders.isEmpty()){
                     for(int i = 0; i < m_vProps.size(); i++){
-                        m_vProps.get(i).setPropertyValue( "CellBackColor", new Integer( 0xFF0000 ) );
+                        m_vProps.get(i).setPropertyValue( "CellBackColor", new Integer( color ) );
                         m_vProps.get(i).setPropertyValue( "TableBorder", border );
                     }
                 }
@@ -219,7 +224,7 @@ public class Cell implements  XModifyListener, Runnable {
 
     public void removeListener(){
         if( m_xCellModifyBroadcaster != null )
-        m_xCellModifyBroadcaster.removeModifyListener(this);
+            m_xCellModifyBroadcaster.removeModifyListener(this);
     }
 
     public short getErrorType(){
@@ -239,7 +244,7 @@ public class Cell implements  XModifyListener, Runnable {
         itemValue += getErrorMessage(); // get errorXXX original message, it independent even if the formula had been corrected
 
         if( m_ErrorType == 0 ) {
-            itemValue += " - " + getGui().getDialogPropertyValue("Validator.correctedLabel.Label");
+            itemValue += " - " + getGui().getDialogPropertyValue("Strings", "Strings.correctedLabel.Label");
         } else {
             if( m_ErrorType != 3 ){
                 String sCells = "";
@@ -252,7 +257,7 @@ public class Cell implements  XModifyListener, Runnable {
                         sCells += " " + currCellName;
                     }
                 }
-                itemValue += " - " + getGui().getDialogPropertyValue( "Validator.cellName.Label" );
+                itemValue += " - " + getGui().getDialogPropertyValue("Strings", "Strings.cellName.Label" );
                 itemValue += sCells;
             }
         }
@@ -385,4 +390,5 @@ public class Cell implements  XModifyListener, Runnable {
         m_isRunning = false;
         setBackPrecedentsColors();
     }
+
 }
