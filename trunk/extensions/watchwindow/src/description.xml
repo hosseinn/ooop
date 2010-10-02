@@ -8,6 +8,8 @@
         <src lang="fi" xlink:href="description/description_fi.txt"/>
         <src lang="fr" xlink:href="description/description_fr.txt"/>
         <src lang="hu" xlink:href="description/description_hu.txt"/>
+        <src lang="sr" xlink:href="description/description_sr.txt"/>
+        <src lang="sh" xlink:href="description/description_sh.txt"/>
     </extension-description>
     <display-name>
         <name lang="en">WatchWindow</name>
@@ -20,6 +22,8 @@
         <name lang="fr" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
         <name lang="fi" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
         <name lang="hu" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Csapat</name>
+        <name lang="sr" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
+        <name lang="sh" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
     </publisher>
     <registration>
         <simple-license accept-by="admin" default-license-id="en">
@@ -27,6 +31,8 @@
             <license-text lang="fi" xlink:href="licenses/license_fi.txt"/>
             <license-text lang="fr" xlink:href="licenses/license_fr-FR.txt"/>
             <license-text lang="hu" xlink:href="licenses/license_hu.txt"/>
+            <license-text lang="sr" xlink:href="licenses/license_sr.txt"/>
+            <license-text lang="sh" xlink:href="licenses/license_sh.txt"/>
         </simple-license>
     </registration>
     <icon>

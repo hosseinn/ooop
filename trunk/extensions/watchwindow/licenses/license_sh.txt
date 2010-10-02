@@ -1,0 +1,20 @@
+Watch Window Extension
+
+The Watch Window Extension has been licensed under term of GNU Lesser General Public License (LGPL). You can read and understand LGPL license here:
+http://www.gnu.org/licenses/lgpl.html
+
+This extension is created by:
+
+Tibor Hornyák
+
+and
+
+* University of Szeged, Hungary - http://www.u-szeged.hu/english/
+* OxygenOffice Professional Team - http://ooop.sf.net/
+
+Supporters:
+
+* FSF.hu Foundation for Promoting and Localizing Free Software in Hungary - http://www.fsf.hu/
+
+ -----
+license_en-US document V1.1.0
