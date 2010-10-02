@@ -1,0 +1,2 @@
+With Watch Window Extension, you can add a Watch Window, which keeps the value of the monitored cell on the screen, no matter where the change is made. This is an OpenOffice.org Calc extension.
+From Calc: Select Tools → Detective → Display watch window.
