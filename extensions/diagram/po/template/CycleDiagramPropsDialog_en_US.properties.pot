@@ -1,0 +1,150 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/diagram/dialogs/CycleDiagramPropsDialog_en_US.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # CycleDiagramPropsDialog strings
+#: 156.CycleDiagramPropsDialog.HelpText
+msgctxt "156.CycleDiagramPropsDialog.HelpText"
+"156.CycleDiagramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 157.CycleDiagramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr ""
+
+#: 158.CycleDiagramPropsDialog.FrameControl1.HelpText
+msgctxt "158.CycleDiagramPropsDialog.FrameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 159.CycleDiagramPropsDialog.FrameControl1.Label
+msgid "Scope"
+msgstr ""
+
+#: 160.CycleDiagramPropsDialog.FrameControl2.HelpText
+msgctxt "160.CycleDiagramPropsDialog.FrameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 161.CycleDiagramPropsDialog.FrameControl2.Label
+msgid "Colors"
+msgstr ""
+
+#: 162.CycleDiagramPropsDialog.FrameControl3.HelpText
+msgctxt "162.CycleDiagramPropsDialog.FrameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 163.CycleDiagramPropsDialog.FrameControl3.Label
+msgid "Outline"
+msgstr ""
+
+#: 164.CycleDiagramPropsDialog.FrameControl4.HelpText
+msgctxt "164.CycleDiagramPropsDialog.FrameControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 165.CycleDiagramPropsDialog.FrameControl4.Label
+msgid "Text frame"
+msgstr ""
+
+#: 166.CycleDiagramPropsDialog.frameOptionButtonYes.HelpText
+msgctxt "166.CycleDiagramPropsDialog.frameOptionButtonYes.HelpText"
+msgid ""
+msgstr ""
+
+#: 167.CycleDiagramPropsDialog.frameOptionButtonYes.Label
+msgctxt "167.CycleDiagramPropsDialog.frameOptionButtonYes.Label"
+msgid "No"
+msgstr ""
+
+#: 168.CycleDiagramPropsDialog.frameOptionButtonNo.HelpText
+msgctxt "168.CycleDiagramPropsDialog.frameOptionButtonNo.HelpText"
+msgid ""
+msgstr ""
+
+#: 169.CycleDiagramPropsDialog.frameOptionButtonNo.Label
+msgctxt "169.CycleDiagramPropsDialog.frameOptionButtonNo.Label"
+msgid "Yes"
+msgstr ""
+
+#: 170.CycleDiagramPropsDialog.diagramOptionButton.HelpText
+msgctxt "170.CycleDiagramPropsDialog.diagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 171.CycleDiagramPropsDialog.diagramOptionButton.Label
+msgid "Diagram"
+msgstr ""
+
+#: 172.CycleDiagramPropsDialog.selectedShapeOptionButton.HelpText
+msgctxt "172.CycleDiagramPropsDialog.selectedShapeOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 173.CycleDiagramPropsDialog.selectedShapeOptionButton.Label
+msgid "Selected item(s)"
+msgstr ""
+
+#: 174.CycleDiagramPropsDialog.colorOptionButton.HelpText
+msgctxt "174.CycleDiagramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 175.CycleDiagramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr ""
+
+#: 176.CycleDiagramPropsDialog.colorImageControl.HelpText
+msgid "Color of item"
+msgstr ""
+
+#: 177.CycleDiagramPropsDialog.baseColorOptionButton.HelpText
+msgctxt "177.CycleDiagramPropsDialog.baseColorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 178.CycleDiagramPropsDialog.baseColorOptionButton.Label
+msgid "Base colors"
+msgstr ""
+
+#: 179.CycleDiagramPropsDialog.monographicOptionButtonYes.HelpText
+msgctxt "179.CycleDiagramPropsDialog.monographicOptionButtonYes.HelpText"
+msgid ""
+msgstr ""
+
+#: 180.CycleDiagramPropsDialog.monographicOptionButtonYes.Label
+msgctxt "180.CycleDiagramPropsDialog.monographicOptionButtonYes.Label"
+msgid "Yes"
+msgstr ""
+
+#: 181.CycleDiagramPropsDialog.monographicOptionButtonNo.HelpText
+msgctxt "181.CycleDiagramPropsDialog.monographicOptionButtonNo.HelpText"
+msgid ""
+msgstr ""
+
+#: 182.CycleDiagramPropsDialog.monographicOptionButtonNo.Label
+msgctxt "182.CycleDiagramPropsDialog.monographicOptionButtonNo.Label"
+msgid "No"
+msgstr ""
+
+#: 183.CycleDiagramPropsDialog.okCommandButton.HelpText
+msgctxt "183.CycleDiagramPropsDialog.okCommandButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 184.CycleDiagramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr ""

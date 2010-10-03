@@ -1,0 +1,186 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/diagram/temp/template/OrganigramPropsDialog_fr_FR.properties, /home/kami/svn/ooop/trunk/extensions/diagram/dialogs/OrganigramPropsDialog_fr_FR.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # OrganigramPropsDialog strings
+#: 185.OrganigramPropsDialog.HelpText
+msgctxt "185.OrganigramPropsDialog.HelpText"
+"185.OrganigramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 186.OrganigramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Properties of diagram"
+
+#: 187.OrganigramPropsDialog.FrameControl1.HelpText
+msgctxt "187.OrganigramPropsDialog.FrameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 188.OrganigramPropsDialog.FrameControl1.Label
+msgid "Scope"
+msgstr "Area"
+
+#: 189.OrganigramPropsDialog.selectedShapeOptionButton.HelpText
+msgctxt "189.OrganigramPropsDialog.selectedShapeOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 190.OrganigramPropsDialog.selectedShapeOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Selected item(s)"
+
+#: 191.OrganigramPropsDialog.diagramOptionButton.HelpText
+msgctxt "191.OrganigramPropsDialog.diagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 192.OrganigramPropsDialog.diagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagram"
+
+#: 193.OrganigramPropsDialog.FrameControl2.HelpText
+msgctxt "193.OrganigramPropsDialog.FrameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 194.OrganigramPropsDialog.FrameControl2.Label
+msgid "Colors"
+msgstr "Colors"
+
+#: 195.OrganigramPropsDialog.colorImageControl.HelpText
+msgctxt "195.OrganigramPropsDialog.colorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 196.OrganigramPropsDialog.gradientsOptionButton.HelpText
+msgctxt "196.OrganigramPropsDialog.gradientsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 197.OrganigramPropsDialog.gradientsOptionButton.Label
+msgid "Gradients"
+msgstr "Gradients"
+
+#: 198.OrganigramPropsDialog.Label0.HelpText
+msgctxt "198.OrganigramPropsDialog.Label0.HelpText"
+msgid ""
+msgstr ""
+
+#: 199.OrganigramPropsDialog.Label0.Label
+msgid "Start color:"
+msgstr "Start color:"
+
+#: 200.OrganigramPropsDialog.Label1.HelpText
+msgctxt "200.OrganigramPropsDialog.Label1.HelpText"
+msgid ""
+msgstr ""
+
+#: 201.OrganigramPropsDialog.Label1.Label
+msgid "End color:"
+msgstr "End color:"
+
+#: 202.OrganigramPropsDialog.startColorImageControl.HelpText
+msgctxt "202.OrganigramPropsDialog.startColorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 203.OrganigramPropsDialog.endColorImageControl.HelpText
+msgctxt "203.OrganigramPropsDialog.endColorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 204.OrganigramPropsDialog.FrameControl3.HelpText
+msgctxt "204.OrganigramPropsDialog.FrameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 205.OrganigramPropsDialog.FrameControl3.Label
+msgid "Rounded"
+msgstr "Rounded"
+
+#: 206.OrganigramPropsDialog.FrameControl4.HelpText
+msgctxt "206.OrganigramPropsDialog.FrameControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 207.OrganigramPropsDialog.FrameControl4.Label
+msgid "Outline"
+msgstr "Monographic"
+
+#: 208.OrganigramPropsDialog.colorOptionButton.HelpText
+msgctxt "208.OrganigramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 209.OrganigramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Color:"
+
+#: 210.OrganigramPropsDialog.noRoundedOptionButton.HelpText
+msgctxt "210.OrganigramPropsDialog.noRoundedOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 211.OrganigramPropsDialog.noRoundedOptionButton.Label
+msgctxt "211.OrganigramPropsDialog.noRoundedOptionButton.Label"
+msgid "No"
+msgstr "No"
+
+#: 212.OrganigramPropsDialog.mediumRoundedOptionButton.HelpText
+msgctxt "212.OrganigramPropsDialog.mediumRoundedOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 213.OrganigramPropsDialog.mediumRoundedOptionButton.Label
+msgid "Medium"
+msgstr "Medium"
+
+#: 214.OrganigramPropsDialog.extraRoundedOptionButton.HelpText
+msgctxt "214.OrganigramPropsDialog.extraRoundedOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 215.OrganigramPropsDialog.extraRoundedOptionButton.Label
+msgid "Extra"
+msgstr "Extra"
+
+#: 216.OrganigramPropsDialog.yesMonographicOptionButton.HelpText
+msgctxt "216.OrganigramPropsDialog.yesMonographicOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 217.OrganigramPropsDialog.yesMonographicOptionButton.Label
+msgid "Yes"
+msgstr "Yes"
+
+#: 218.OrganigramPropsDialog.noMonographicOptionButton.HelpText
+msgctxt "218.OrganigramPropsDialog.noMonographicOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 219.OrganigramPropsDialog.noMonographicOptionButton.Label
+msgctxt "219.OrganigramPropsDialog.noMonographicOptionButton.Label"
+msgid "No"
+msgstr "No"
+
+#: 220.OrganigramPropsDialog.okCommandButton.HelpText
+msgctxt "220.OrganigramPropsDialog.okCommandButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 221.OrganigramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "OK"

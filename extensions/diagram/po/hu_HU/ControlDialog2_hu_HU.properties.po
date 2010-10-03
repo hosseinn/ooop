@@ -1,0 +1,106 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/diagram/temp/template/ControlDialog2_hu_HU.properties, /home/kami/svn/ooop/trunk/extensions/diagram/dialogs/ControlDialog2_hu_HU.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # ControlDialog2 strings
+#: 110.ControlDialog2.HelpText
+msgctxt "110.ControlDialog2.HelpText"
+"110.ControlDialog2.HelpText"
+msgid ""
+msgstr ""
+
+#: 111.ControlDialog2.Title
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: 112.ControlDialog2.ImageControl.HelpText
+msgid "Color of next item"
+msgstr "Következő elem színe"
+
+#: 113.ControlDialog2.Text.HelpText
+msgctxt "113.ControlDialog2.Text.HelpText"
+msgid ""
+msgstr ""
+
+#: 114.ControlDialog2.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+"Ide\n"
+"írhat"
+
+#: 115.ControlDialog2.addShapeButton.HelpText
+msgid "Add a shape to the diagram"
+msgstr "Elem hozzáadása a diagramhoz"
+
+#: 116.ControlDialog2.addShapeButton.Label
+msgid "Add shape"
+msgstr "Alakzat hozzáadása"
+
+#: 117.ControlDialog2.removeShapeButton.HelpText
+msgid "Remove the selected shapes from the diagram"
+msgstr "Eltávolítja a kijelölt elemeket a diagramból"
+
+#: 118.ControlDialog2.removeShapeButton.Label
+msgid "Remove shape"
+msgstr "Alakzat törlése"
+
+#: 119.ControlDialog2.StyleComboBox.HelpText
+msgid "Style of item"
+msgstr "Megjelenítési stílusok"
+
+#: 120.StyleComboBox.StringItemList
+msgctxt "120.StyleComboBox.StringItemList"
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: 121.StyleComboBox.StringItemList
+msgid "Without outline"
+msgstr "Körvonal nélkül"
+
+#: 122.StyleComboBox.StringItemList
+msgid "Rounded"
+msgstr "Kerekített"
+
+#: 123.StyleComboBox.StringItemList
+msgid "Gradients"
+msgstr "Színátmenettel"
+
+#: 124.StyleComboBox.StringItemList
+msgid "User define"
+msgstr "Felhasználói"
+
+#: 125.ControlDialog2.StyleComboBox.Text
+msgctxt "125.ControlDialog2.StyleComboBox.Text"
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: 126.ControlDialog2.addPropComboBox.HelpText
+msgid "Select relation between selected and new shape"
+msgstr "Adja meg az összefüggést a kiválasztott és az új elem között"
+
+#: 127.addPropComboBox.StringItemList
+msgctxt "127.addPropComboBox.StringItemList"
+msgid "Underling"
+msgstr "Beosztott"
+
+#: 128.addPropComboBox.StringItemList
+msgid "Associate"
+msgstr "Munkatárs"
+
+#: 129.ControlDialog2.addPropComboBox.Text
+msgctxt "129.ControlDialog2.addPropComboBox.Text"
+msgid "Underling"
+msgstr "Beosztott"

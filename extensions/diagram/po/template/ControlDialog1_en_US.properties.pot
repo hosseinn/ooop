@@ -1,0 +1,86 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/diagram/dialogs/ControlDialog1_en_US.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # ControlDialog1 strings
+#: 94.ControlDialog1.HelpText
+msgctxt "94.ControlDialog1.HelpText"
+"94.ControlDialog1.HelpText"
+msgid ""
+msgstr ""
+
+#: 95.ControlDialog1.Title
+msgid "Edit"
+msgstr ""
+
+#: 96.ControlDialog1.ImageControl.HelpText
+msgid "Color of next item"
+msgstr ""
+
+#: 97.ControlDialog1.Text.HelpText
+msgctxt "97.ControlDialog1.Text.HelpText"
+msgid ""
+msgstr ""
+
+#: 98.ControlDialog1.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+
+#: 99.ControlDialog1.addShapeButton.HelpText
+msgid "Add a shape to the diagram"
+msgstr ""
+
+#: 100.ControlDialog1.addShapeButton.Label
+msgid "Add shape"
+msgstr ""
+
+#: 101.ControlDialog1.removeShapeButton.HelpText
+msgid "Remove the selected shapes from the diagram"
+msgstr ""
+
+#: 102.ControlDialog1.removeShapeButton.Label
+msgid "Remove shape"
+msgstr ""
+
+#: 103.ControlDialog1.StyleComboBox.HelpText
+msgid "Style of item"
+msgstr ""
+
+#: 104.StyleComboBox.StringItemList
+msgctxt "104.StyleComboBox.StringItemList"
+msgid "Default"
+msgstr ""
+
+#: 105.StyleComboBox.StringItemList
+msgid "Outline"
+msgstr ""
+
+#: 106.StyleComboBox.StringItemList
+msgid "Rounded"
+msgstr ""
+
+#: 107.StyleComboBox.StringItemList
+msgid "Without frame"
+msgstr ""
+
+#: 108.StyleComboBox.StringItemList
+msgid "User Define"
+msgstr ""
+
+#: 109.ControlDialog1.StyleComboBox.Text
+msgctxt "109.ControlDialog1.StyleComboBox.Text"
+msgid "Default"
+msgstr ""
