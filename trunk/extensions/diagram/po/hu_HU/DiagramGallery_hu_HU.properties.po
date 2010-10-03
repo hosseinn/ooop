@@ -1,0 +1,91 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/diagram/temp/template/DiagramGallery_hu_HU.properties, /home/kami/svn/ooop/trunk/extensions/diagram/dialogs/DiagramGallery_hu_HU.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # DiagramGallery strings
+#: 130.DiagramGallery.HelpText
+msgctxt "130.DiagramGallery.HelpText"
+"130.DiagramGallery.HelpText"
+msgid ""
+msgstr ""
+
+#: 131.DiagramGallery.Title
+msgid "Diagram gallery"
+msgstr "Diagramgyűjtemény"
+
+#: 132.DiagramGallery.OrganigramButton.HelpText
+msgctxt "132.DiagramGallery.OrganigramButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 133.DiagramGallery.OrganigramButton.Label
+msgctxt "133.DiagramGallery.OrganigramButton.Label"
+msgid ""
+msgstr ""
+
+#: 134.DiagramGallery.VennDiagramButton.HelpText
+msgctxt "134.DiagramGallery.VennDiagramButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 135.DiagramGallery.VennDiagramButton.Label
+msgctxt "135.DiagramGallery.VennDiagramButton.Label"
+msgid ""
+msgstr ""
+
+#: 136.DiagramGallery.OkButton.HelpText
+msgid "Create new diagram"
+msgstr "Új diagram létrehozása"
+
+#: 137.DiagramGallery.OkButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 138.DiagramGallery.PyramidDiagramButton.HelpText
+msgctxt "138.DiagramGallery.PyramidDiagramButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 139.DiagramGallery.PyramidDiagramButton.Label
+msgctxt "139.DiagramGallery.PyramidDiagramButton.Label"
+msgid ""
+msgstr ""
+
+#: 140.DiagramGallery.CycleDiagramButton.HelpText
+msgctxt "140.DiagramGallery.CycleDiagramButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 141.DiagramGallery.CycleDiagramButton.Label
+msgctxt "141.DiagramGallery.CycleDiagramButton.Label"
+msgid ""
+msgstr ""
+
+#: 142.DiagramGallery.diagramNameLabel.HelpText
+msgctxt "142.DiagramGallery.diagramNameLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 143.DiagramGallery.diagramNameLabel.Label
+msgid "Organization Chart"
+msgstr "Szervezeti diagram"
+
+#: 144.DiagramGallery.diagramDescriptionLabel.HelpText
+msgctxt "144.DiagramGallery.diagramDescriptionLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 145.DiagramGallery.diagramDescriptionLabel.Label
+msgid "Illustrates hierarchical relationships"
+msgstr "Hierarchikus kapcsolatok szemléltetésére használható"

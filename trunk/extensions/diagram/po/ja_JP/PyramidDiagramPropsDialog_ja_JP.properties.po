@@ -1,0 +1,166 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/diagram/temp/template/PyramidDiagramPropsDialog_ja_JP.properties, /home/kami/svn/ooop/trunk/extensions/diagram/dialogs/PyramidDiagramPropsDialog_ja_JP.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # PyramidDiagramPropsDialog strings
+#: 222.PyramidDiagramPropsDialog.HelpText
+msgctxt "222.PyramidDiagramPropsDialog.HelpText"
+"222.PyramidDiagramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 223.PyramidDiagramPropsDialog.Title
+msgid "Properties of dialog"
+msgstr "Properties of dialog"
+
+#: 224.PyramidDiagramPropsDialog.FrameControl1.HelpText
+msgctxt "224.PyramidDiagramPropsDialog.FrameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 225.PyramidDiagramPropsDialog.FrameControl1.Label
+msgid "Scope"
+msgstr "Area"
+
+#: 226.PyramidDiagramPropsDialog.diagramOptionButton.HelpText
+msgctxt "226.PyramidDiagramPropsDialog.diagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 227.PyramidDiagramPropsDialog.diagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagram"
+
+#: 228.PyramidDiagramPropsDialog.selectedItemsOptionButton.HelpText
+msgctxt "228.PyramidDiagramPropsDialog.selectedItemsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 229.PyramidDiagramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Selected item(s)"
+
+#: 230.PyramidDiagramPropsDialog.FrameControl2.HelpText
+msgctxt "230.PyramidDiagramPropsDialog.FrameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 231.PyramidDiagramPropsDialog.FrameControl2.Label
+msgid "Colors"
+msgstr "Colors"
+
+#: 232.PyramidDiagramPropsDialog.colorOptionButton.HelpText
+msgctxt "232.PyramidDiagramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 233.PyramidDiagramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Color:"
+
+#: 234.PyramidDiagramPropsDialog.gradientsOptionButton.HelpText
+msgctxt "234.PyramidDiagramPropsDialog.gradientsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 235.PyramidDiagramPropsDialog.gradientsOptionButton.Label
+msgid "Gradients"
+msgstr "Gradients"
+
+#: 236.PyramidDiagramPropsDialog.Label2.HelpText
+msgctxt "236.PyramidDiagramPropsDialog.Label2.HelpText"
+msgid ""
+msgstr ""
+
+#: 237.PyramidDiagramPropsDialog.Label2.Label
+msgid "End color:"
+msgstr "End color:"
+
+#: 238.PyramidDiagramPropsDialog.baseColorOptionButton.HelpText
+msgctxt "238.PyramidDiagramPropsDialog.baseColorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 239.PyramidDiagramPropsDialog.baseColorOptionButton.Label
+msgid "Base colors"
+msgstr "Base colors (in Diagram function)"
+
+#: 240.PyramidDiagramPropsDialog.gradientsCheckBox.HelpText
+msgctxt "240.PyramidDiagramPropsDialog.gradientsCheckBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 241.PyramidDiagramPropsDialog.gradientsCheckBox.Label
+msgid "With gradients"
+msgstr "With gradients"
+
+#: 242.PyramidDiagramPropsDialog.FrameControl3.HelpText
+msgctxt "242.PyramidDiagramPropsDialog.FrameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 243.PyramidDiagramPropsDialog.FrameControl3.Label
+msgid "Outline"
+msgstr "Monographic (in Diagram function)"
+
+#: 244.PyramidDiagramPropsDialog.okCommandButton.HelpText
+msgctxt "244.PyramidDiagramPropsDialog.okCommandButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 245.PyramidDiagramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 246.PyramidDiagramPropsDialog.monographicOptionButtonNo.HelpText
+msgctxt "246.PyramidDiagramPropsDialog.monographicOptionButtonNo.HelpText"
+msgid ""
+msgstr ""
+
+#: 247.PyramidDiagramPropsDialog.monographicOptionButtonNo.Label
+msgid "No"
+msgstr "No"
+
+#: 248.PyramidDiagramPropsDialog.monographicOptionButtonYes.HelpText
+msgctxt "248.PyramidDiagramPropsDialog.monographicOptionButtonYes.HelpText"
+msgid ""
+msgstr ""
+
+#: 249.PyramidDiagramPropsDialog.monographicOptionButtonYes.Label
+msgid "Yes"
+msgstr "Yes"
+
+#: 250.PyramidDiagramPropsDialog.Label0.HelpText
+msgctxt "250.PyramidDiagramPropsDialog.Label0.HelpText"
+msgid ""
+msgstr ""
+
+#: 251.PyramidDiagramPropsDialog.Label0.Label
+msgid "Start color:"
+msgstr "Start color:"
+
+#: 252.PyramidDiagramPropsDialog.colorImageControl.HelpText
+msgctxt "252.PyramidDiagramPropsDialog.colorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 253.PyramidDiagramPropsDialog.startColorImageControl.HelpText
+msgctxt "253.PyramidDiagramPropsDialog.startColorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 254.PyramidDiagramPropsDialog.endColorImageControl.HelpText
+msgctxt "254.PyramidDiagramPropsDialog.endColorImageControl.HelpText"
+msgid ""
+msgstr ""

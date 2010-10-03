@@ -1,0 +1,59 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/validator/temp/template/Strings_fr_FR.properties, /home/kami/svn/ooop/trunk/extensions/validator/dialogs/Strings_fr_FR.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. #Strings strings
+#: 1.Strings.errorMessage1.Label
+msgid "Empty cell reference"
+msgstr "Empty cell reference"
+
+#: 2.Strings.errorMessage2.Label
+msgid "String cell reference"
+msgstr "String cell reference"
+
+#: 3.Strings.errorMessage3.Label
+msgid "Value cell that not used in any formulas"
+msgstr "Value cell that not used in any formulas"
+
+#: 4.Strings.errorMessage503.Label
+msgid "Division by zero"
+msgstr "Division by zero"
+
+#: 5.Strings.correctedLabel.Label
+msgid "Corrected"
+msgstr "Corrected"
+
+#: 6.Strings.cellName.Label
+msgid "Cells:"
+msgstr "Cells:"
+
+#: 7.Strings.errorWindowTitle.Label
+msgid "Error in formula"
+msgstr "Error in formula"
+
+#: 8.Strings.invalidFormula.Label
+msgid "is not valid formula, it will restore to the following:"
+msgstr "is not valid formula, it will restore to the following:"
+
+#: 9.Strings.valueLabel.Label
+msgid "Value :"
+msgstr "Value :"
+
+#: 10.Strings.infoBoxMessage.Label
+msgid ""
+"During the correction the value of cell will lost. Are you really want to "
+"correct the cell?"
+msgstr ""
+"During the correction the value of cell will lost. Are you really want to "
+"correct the cell?"

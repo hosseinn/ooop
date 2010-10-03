@@ -1,0 +1,171 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/watchwindow/temp/template/WWindow_fr_FR.properties, /home/kami/svn/ooop/trunk/extensions/watchwindow/dialogs/WWindow_fr_FR.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # WWindow strings
+#: 296.WWindow.HelpText
+msgctxt "296.WWindow.HelpText"
+"296.WWindow.HelpText"
+msgid ""
+msgstr ""
+
+#: 297.WWindow.Title
+msgid "Watch window"
+msgstr "FenÃªtre TÃ©moin"
+
+#: 298.WWindow.removeCell.HelpText
+msgid "Remove a cell from the WatchWindow"
+msgstr ""
+
+#: 299.WWindow.removeCell.Label
+msgid "Remove cell"
+msgstr "Supprimer une cellule"
+
+#: 300.WWindow.ListBox1.HelpText
+msgctxt "300.WWindow.ListBox1.HelpText"
+msgid ""
+msgstr ""
+
+#: 301.WWindow.FixListBox.HelpText
+msgctxt "301.WWindow.FixListBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 302.WWindow.addCell.HelpText
+msgid "Add a cell to the WatchWindow"
+msgstr ""
+
+#: 303.WWindow.addCell.Label
+msgid "Add cell"
+msgstr "Ajouter une cellule"
+
+#: 304.WWindow.Title1.HelpText
+msgctxt "304.WWindow.Title1.HelpText"
+msgid ""
+msgstr ""
+
+#: 305.WWindow.Title1.Label
+msgid "Item has not been selected"
+msgstr "L'Ã©lÃ©ment n'a pas Ã©tÃ© sÃ©lectionnÃ©"
+
+#: 306.WWindow.Message1.HelpText
+msgctxt "306.WWindow.Message1.HelpText"
+msgid ""
+msgstr ""
+
+#: 307.WWindow.Message1.Label
+msgid ""
+"Select an item within watchwindow and press remove.\n"
+"\n"
+msgstr ""
+"SÃ©lectionnez un Ã©lÃ©ment dans la fenÃªtre TÃ©moin et appuyez sur supprimer "
+"!\n"
+"\n"
+
+#: 308.WWindow.Title0.HelpText
+msgctxt "308.WWindow.Title0.HelpText"
+msgid ""
+msgstr ""
+
+#: 309.WWindow.Title0.Label
+msgid "Not valid reference"
+msgstr "La rÃ©fÃ©rence n'est pas valide"
+
+#: 310.WWindow.Message0.HelpText
+msgctxt "310.WWindow.Message0.HelpText"
+msgid ""
+msgstr ""
+
+#: 311.WWindow.Message0.Label
+msgid ""
+"Please select a cell, a cell range or write the reference\n"
+"then press the Add cell button.\n"
+"\n"
+"\n"
+msgstr ""
+"Veuillez sÃ©lectionner la cellule ou saisir la rÃ©fÃ©rence\n"
+"et appuyer sur le bouton RÃ©duire !\n"
+"\n"
+"\n"
+
+#: 312.WWindow.Formula.HelpText
+msgctxt "312.WWindow.Formula.HelpText"
+msgid ""
+msgstr ""
+
+#: 313.WWindow.Formula.Label
+msgid "|Formula"
+msgstr "|Formule"
+
+#: 314.WWindow.Value.HelpText
+msgctxt "314.WWindow.Value.HelpText"
+msgid ""
+msgstr ""
+
+#: 315.WWindow.Value.Label
+msgid "|Value"
+msgstr "|Valeur"
+
+#: 316.WWindow.Cell.HelpText
+msgctxt "316.WWindow.Cell.HelpText"
+msgid ""
+msgstr ""
+
+#: 317.WWindow.Cell.Label
+msgid "|Cell"
+msgstr "|Cellule"
+
+#: 318.WWindow.Sheet.HelpText
+msgctxt "318.WWindow.Sheet.HelpText"
+msgid ""
+msgstr ""
+
+#: 319.WWindow.Sheet.Label
+msgid "|Sheet"
+msgstr "|Feuille"
+
+#: 320.WWindow.decrease.HelpText
+msgid "Decrease the size of WatchWindow"
+msgstr ""
+
+#: 321.WWindow.decrease.Label
+msgid "-"
+msgstr "-"
+
+#: 322.WWindow.increase.HelpText
+msgid "Increase the size of WatchWindow"
+msgstr ""
+
+#: 323.WWindow.increase.Label
+msgid "+"
+msgstr "+"
+
+#: 324.WWindow.sizeLabel.HelpText
+msgctxt "324.WWindow.sizeLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 325.WWindow.sizeLabel.Label
+msgid "size"
+msgstr "size"
+
+#: 326.WWindow.Label1.HelpText
+msgctxt "326.WWindow.Label1.HelpText"
+msgid ""
+msgstr ""
+
+#: 327.WWindow.Label1.Label
+msgctxt "327.WWindow.Label1.Label"
+msgid ""
+msgstr ""

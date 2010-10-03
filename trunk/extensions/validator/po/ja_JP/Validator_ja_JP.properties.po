@@ -1,0 +1,172 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/validator/temp/template/Validator_ja_JP.properties, /home/kami/svn/ooop/trunk/extensions/validator/dialogs/Validator_ja_JP.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # Validator strings
+#: 344.Validator.HelpText
+msgctxt "344.Validator.HelpText"
+"344.Validator.HelpText"
+msgid ""
+msgstr ""
+
+#: 345.Validator.Title
+msgid "Validator"
+msgstr "Validator"
+
+#: 346.Validator.runButton.HelpText
+msgctxt "346.Validator.runButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 347.Validator.runButton.Label
+msgid "Refresh"
+msgstr "Refresh"
+
+#: 348.Validator.correctButton.HelpText
+msgctxt "348.Validator.correctButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 349.Validator.correctButton.Label
+msgid "Correct"
+msgstr "Correct"
+
+#: 350.Validator.formulaField.HelpText
+msgctxt "350.Validator.formulaField.HelpText"
+msgid ""
+msgstr ""
+
+#: 351.Validator.formulaField.Text
+msgctxt "351.Validator.formulaField.Text"
+msgid ""
+msgstr ""
+
+#: 352.Validator.formulaLabel.HelpText
+msgctxt "352.Validator.formulaLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 353.Validator.formulaLabel.Label
+msgid "Formula:"
+msgstr "Formula:"
+
+#: 354.Validator.listBox.HelpText
+msgctxt "354.Validator.listBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 355.Validator.checkBox1.HelpText
+msgid "Show precedents in the list"
+msgstr "Show precedents in the list"
+
+#: 356.Validator.checkBox1.Label
+msgid "Show precedents"
+msgstr "Show precedents"
+
+#: 357.Validator.fixListBox.HelpText
+msgctxt "357.Validator.fixListBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 358.Validator.checkBox2.HelpText
+msgid "Visualize dependencies between cells in the sheet"
+msgstr "Visualize dependencies between cells in the sheet"
+
+#: 359.Validator.checkBox2.Label
+msgid "Show dependencies"
+msgstr "Show dependencies"
+
+#: 360.Validator.FrameControl.HelpText
+msgctxt "360.Validator.FrameControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 361.Validator.FrameControl.Label
+msgctxt "361.Validator.FrameControl.Label"
+msgid ""
+msgstr ""
+
+#: 362.Validator.errorLabel.HelpText
+msgid "Detailed description of error"
+msgstr ""
+
+#: 363.Validator.errorLabel.Label
+msgid "|Name of error"
+msgstr "|Name of error"
+
+#: 364.Validator.cellLabel.HelpText
+msgctxt "364.Validator.cellLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 365.Validator.cellLabel.Label
+msgid "|Cell"
+msgstr "|Cell"
+
+#: 366.Validator.taskManagerButton.HelpText
+msgid "You can select the check tasks"
+msgstr ""
+
+#: 367.Validator.taskManagerButton.Label
+msgid "Task manager"
+msgstr "Task manager"
+
+#: 368.Validator.sheetLabel.HelpText
+msgctxt "368.Validator.sheetLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 369.Validator.sheetLabel.Label
+msgid "Sheet:"
+msgstr "Sheet:"
+
+#: 370.Validator.FixedLine1.HelpText
+msgctxt "370.Validator.FixedLine1.HelpText"
+msgid ""
+msgstr ""
+
+#: 371.Validator.FixedLine1.Label
+msgctxt "371.Validator.FixedLine1.Label"
+msgid ""
+msgstr ""
+
+#: 372.Validator.FixedLine2.HelpText
+msgctxt "372.Validator.FixedLine2.HelpText"
+msgid ""
+msgstr ""
+
+#: 373.Validator.FixedLine2.Label
+msgctxt "373.Validator.FixedLine2.Label"
+msgid ""
+msgstr ""
+
+#: 374.Validator.FixedLine3.HelpText
+msgctxt "374.Validator.FixedLine3.HelpText"
+msgid ""
+msgstr ""
+
+#: 375.Validator.FixedLine3.Label
+msgctxt "375.Validator.FixedLine3.Label"
+msgid ""
+msgstr ""
+
+#: 376.Validator.sheetNameLabel.HelpText
+msgctxt "376.Validator.sheetNameLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 377.Validator.sheetNameLabel.Label
+msgctxt "377.Validator.sheetNameLabel.Label"
+msgid ""
+msgstr ""

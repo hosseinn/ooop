@@ -1,0 +1,82 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/validator/dialogs/SelectWindow_en_US.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # SelectWindow strings
+#: 328.SelectWindow.HelpText
+msgctxt "328.SelectWindow.HelpText"
+"328.SelectWindow.HelpText"
+msgid ""
+msgstr ""
+
+#: 329.SelectWindow.Title
+msgid "Validator - task manager"
+msgstr ""
+
+#: 330.SelectWindow.allButton.HelpText
+msgid "Select all Validator check tasks"
+msgstr ""
+
+#: 331.SelectWindow.allButton.Label
+msgid "Select all"
+msgstr ""
+
+#: 332.SelectWindow.claarButton.HelpText
+msgid "Deselect all Validator check tasks"
+msgstr ""
+
+#: 333.SelectWindow.claarButton.Label
+msgid "Deselect all"
+msgstr ""
+
+#: 334.SelectWindow.okButton.HelpText
+msgctxt "334.SelectWindow.okButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 335.SelectWindow.okButton.Label
+msgid "OK"
+msgstr ""
+
+#: 336.SelectWindow.checkBox1.HelpText
+msgid "Show such formulas where the formula reference to empty cell"
+msgstr ""
+
+#: 337.SelectWindow.checkBox1.Label
+msgid "Empty cell references"
+msgstr ""
+
+#: 338.SelectWindow.checkBox2.HelpText
+msgid "Show such formulas where the formula reference to string type cell"
+msgstr ""
+
+#: 339.SelectWindow.checkBox2.Label
+msgid "String cell references"
+msgstr ""
+
+#: 340.SelectWindow.checkBox3.HelpText
+msgid "Show such value cells that not used in any formulas"
+msgstr ""
+
+#: 341.SelectWindow.checkBox3.Label
+msgid "Value cells that not used in any formulas"
+msgstr ""
+
+#: 342.SelectWindow.checkBox4.HelpText
+msgid "Show such formulas where the formula try to divide by zero value"
+msgstr ""
+
+#: 343.SelectWindow.checkBox4.Label
+msgid "Division by zero in formulas"
+msgstr ""

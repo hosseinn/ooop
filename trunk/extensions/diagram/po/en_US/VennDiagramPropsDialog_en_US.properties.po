@@ -1,0 +1,208 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/diagram/temp/template/VennDiagramPropsDialog_en_US.properties, /home/kami/svn/ooop/trunk/extensions/diagram/dialogs/VennDiagramPropsDialog_en_US.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-03 03:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # VennDiagramPropsDialog strings
+#: 255.VennDiagramPropsDialog.HelpText
+msgctxt "255.VennDiagramPropsDialog.HelpText"
+"255.VennDiagramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 256.VennDiagramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Properties of diagram"
+
+#: 257.VennDiagramPropsDialog.FrameControl1.HelpText
+msgctxt "257.VennDiagramPropsDialog.FrameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 258.VennDiagramPropsDialog.FrameControl1.Label
+msgid "Scope"
+msgstr "Scope"
+
+#: 259.VennDiagramPropsDialog.FrameControl2.HelpText
+msgctxt "259.VennDiagramPropsDialog.FrameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 260.VennDiagramPropsDialog.FrameControl2.Label
+msgid "Colors"
+msgstr "Colors"
+
+#: 261.VennDiagramPropsDialog.FrameControl3.HelpText
+msgctxt "261.VennDiagramPropsDialog.FrameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 262.VennDiagramPropsDialog.FrameControl3.Label
+msgid "Outline"
+msgstr "Outline"
+
+#: 263.VennDiagramPropsDialog.FrameControl4.HelpText
+msgctxt "263.VennDiagramPropsDialog.FrameControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 264.VennDiagramPropsDialog.FrameControl4.Label
+msgid "Text frame"
+msgstr "Text frame"
+
+#: 265.VennDiagramPropsDialog.CommandButton1.HelpText
+msgctxt "265.VennDiagramPropsDialog.CommandButton1.HelpText"
+msgid ""
+msgstr ""
+
+#: 266.VennDiagramPropsDialog.CommandButton1.Label
+msgid "OK"
+msgstr "OK"
+
+#: 267.VennDiagramPropsDialog.diagramOptionButton.HelpText
+msgctxt "267.VennDiagramPropsDialog.diagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 268.VennDiagramPropsDialog.diagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagram"
+
+#: 269.VennDiagramPropsDialog.selectedItemsOptionButton.HelpText
+msgctxt "269.VennDiagramPropsDialog.selectedItemsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 270.VennDiagramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item"
+msgstr "Selected item"
+
+#: 271.VennDiagramPropsDialog.FrameControl5.HelpText
+msgctxt "271.VennDiagramPropsDialog.FrameControl5.HelpText"
+msgid ""
+msgstr ""
+
+#: 272.VennDiagramPropsDialog.FrameControl5.Label
+msgid "Transparency"
+msgstr "Transparency"
+
+#: 273.VennDiagramPropsDialog.colorImageControl.HelpText
+msgctxt "273.VennDiagramPropsDialog.colorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 274.VennDiagramPropsDialog.noTransparencyOptionButton.HelpText
+msgctxt "274.VennDiagramPropsDialog.noTransparencyOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 275.VennDiagramPropsDialog.noTransparencyOptionButton.Label
+msgctxt "275.VennDiagramPropsDialog.noTransparencyOptionButton.Label"
+msgid "No"
+msgstr "No"
+
+#: 276.VennDiagramPropsDialog.mediuamTransparencyOptionButton.HelpText
+msgctxt "276.VennDiagramPropsDialog.mediuamTransparencyOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 277.VennDiagramPropsDialog.mediuamTransparencyOptionButton.Label
+msgid "Medium"
+msgstr "Medium"
+
+#: 278.VennDiagramPropsDialog.extraTransparencyOptionButton.HelpText
+msgctxt "278.VennDiagramPropsDialog.extraTransparencyOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 279.VennDiagramPropsDialog.extraTransparencyOptionButton.Label
+msgid "Extra"
+msgstr "Extra"
+
+#: 280.VennDiagramPropsDialog.monographicOptionButtonYes.HelpText
+msgctxt "280.VennDiagramPropsDialog.monographicOptionButtonYes.HelpText"
+msgid ""
+msgstr ""
+
+#: 281.VennDiagramPropsDialog.monographicOptionButtonYes.Label
+msgctxt "281.VennDiagramPropsDialog.monographicOptionButtonYes.Label"
+msgid "Yes"
+msgstr "Yes"
+
+#: 282.VennDiagramPropsDialog.monographicOptionButtonNo.HelpText
+msgctxt "282.VennDiagramPropsDialog.monographicOptionButtonNo.HelpText"
+msgid ""
+msgstr ""
+
+#: 283.VennDiagramPropsDialog.monographicOptionButtonNo.Label
+msgctxt "283.VennDiagramPropsDialog.monographicOptionButtonNo.Label"
+msgid "No"
+msgstr "No"
+
+#: 284.VennDiagramPropsDialog.frameOptionButtonNo.HelpText
+msgctxt "284.VennDiagramPropsDialog.frameOptionButtonNo.HelpText"
+msgid ""
+msgstr ""
+
+#: 285.VennDiagramPropsDialog.frameOptionButtonNo.Label
+msgctxt "285.VennDiagramPropsDialog.frameOptionButtonNo.Label"
+msgid "No"
+msgstr "No"
+
+#: 286.VennDiagramPropsDialog.frameOptionButtonYes.HelpText
+msgctxt "286.VennDiagramPropsDialog.frameOptionButtonYes.HelpText"
+msgid ""
+msgstr ""
+
+#: 287.VennDiagramPropsDialog.frameOptionButtonYes.Label
+msgctxt "287.VennDiagramPropsDialog.frameOptionButtonYes.Label"
+msgid "Yes"
+msgstr "Yes"
+
+#: 288.VennDiagramPropsDialog.FrameControl6.HelpText
+msgctxt "288.VennDiagramPropsDialog.FrameControl6.HelpText"
+msgid ""
+msgstr ""
+
+#: 289.VennDiagramPropsDialog.FrameControl6.Label
+msgid "Rounded text area"
+msgstr "Rounded text area"
+
+#: 290.VennDiagramPropsDialog.frameRoundedOptionButtonNo.HelpText
+msgctxt "290.VennDiagramPropsDialog.frameRoundedOptionButtonNo.HelpText"
+msgid ""
+msgstr ""
+
+#: 291.VennDiagramPropsDialog.frameRoundedOptionButtonNo.Label
+msgctxt "291.VennDiagramPropsDialog.frameRoundedOptionButtonNo.Label"
+msgid "No"
+msgstr "No"
+
+#: 292.VennDiagramPropsDialog.frameRoundedOptionButtonYes.HelpText
+msgctxt "292.VennDiagramPropsDialog.frameRoundedOptionButtonYes.HelpText"
+msgid ""
+msgstr ""
+
+#: 293.VennDiagramPropsDialog.frameRoundedOptionButtonYes.Label
+msgctxt "293.VennDiagramPropsDialog.frameRoundedOptionButtonYes.Label"
+msgid "Yes"
+msgstr "Yes"
+
+#: 294.VennDiagramPropsDialog.colorOptionButton.HelpText
+msgctxt "294.VennDiagramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 295.VennDiagramPropsDialog.colorOptionButton.Label
+msgid "Color (Selected item properties):"
+msgstr "Color (Selected item properties):"
