@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-03 03:30+0200\n"
+"POT-Creation-Date: 2010-10-03 10:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,8 @@ msgstr ""
 
 #. # ControlDialog1 strings
 #: 94.ControlDialog1.HelpText
-msgctxt "94.ControlDialog1.HelpText94.ControlDialog1.HelpText"
+msgctxt "94.ControlDialog1.HelpText"
+"94.ControlDialog1.HelpText"
 msgid ""
 msgstr ""
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-03 03:33+0200\n"
+"POT-Creation-Date: 2010-10-03 10:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,8 @@ msgstr ""
 
 #. # SelectWindow strings
 #: 328.SelectWindow.HelpText
-msgctxt "328.SelectWindow.HelpText328.SelectWindow.HelpText"
+msgctxt "328.SelectWindow.HelpText"
+"328.SelectWindow.HelpText"
 msgid ""
 msgstr ""
 
@@ -58,8 +59,7 @@ msgstr "Poziv na praznu ćeliju"
 
 #: 338.SelectWindow.checkBox2.HelpText
 msgid "Show such formulas where the formula reference to string type cell"
-msgstr ""
-"Prikazuje formule gde se formula poziva na ćeliju formatiranu kao tekst"
+msgstr "Prikazuje formule gde se formula poziva na ćeliju formatiranu kao tekst"
 
 #: 339.SelectWindow.checkBox2.Label
 msgid "String cell references"
