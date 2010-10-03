@@ -15,8 +15,8 @@ msgstr ""
 
 #. # PyramidDiagramPropsDialog strings
 #: 222.PyramidDiagramPropsDialog.HelpText
-msgctxt "222.PyramidDiagramPropsDialog.HelpText"
-"222.PyramidDiagramPropsDialog.HelpText"
+msgctxt ""
+"222.PyramidDiagramPropsDialog.HelpText222.PyramidDiagramPropsDialog.HelpText"
 msgid ""
 msgstr ""
 

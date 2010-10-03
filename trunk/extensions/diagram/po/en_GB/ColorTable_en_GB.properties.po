@@ -15,8 +15,7 @@ msgstr ""
 
 #. # ColorTable strings
 #: 0.ColorTable.HelpText
-msgctxt "0.ColorTable.HelpText"
-"0.ColorTable.HelpText"
+msgctxt "0.ColorTable.HelpText0.ColorTable.HelpText"
 msgid ""
 msgstr ""
 

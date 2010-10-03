@@ -15,8 +15,7 @@ msgstr ""
 
 #. # ControlDialog1 strings
 #: 94.ControlDialog1.HelpText
-msgctxt "94.ControlDialog1.HelpText"
-"94.ControlDialog1.HelpText"
+msgctxt "94.ControlDialog1.HelpText94.ControlDialog1.HelpText"
 msgid ""
 msgstr ""
 

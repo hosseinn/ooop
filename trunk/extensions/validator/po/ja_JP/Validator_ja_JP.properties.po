@@ -15,8 +15,7 @@ msgstr ""
 
 #. # Validator strings
 #: 344.Validator.HelpText
-msgctxt "344.Validator.HelpText"
-"344.Validator.HelpText"
+msgctxt "344.Validator.HelpText344.Validator.HelpText"
 msgid ""
 msgstr ""
 
