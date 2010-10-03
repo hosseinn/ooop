@@ -15,8 +15,7 @@ msgstr ""
 
 #. # WWindow strings
 #: 296.WWindow.HelpText
-msgctxt "296.WWindow.HelpText"
-"296.WWindow.HelpText"
+msgctxt "296.WWindow.HelpText296.WWindow.HelpText"
 msgid ""
 msgstr ""
 
@@ -69,8 +68,7 @@ msgid ""
 "Select an item within watchwindow and press remove.\n"
 "\n"
 msgstr ""
-"watchwindow ã®ä¸­ã®ã¢ã¤ãã ãé¸ã³ãåé¤ãæ¼ãã¦ãã ãã "
-"!\n"
+"watchwindow ã®ä¸­ã®ã¢ã¤ãã ãé¸ã³ãåé¤ãæ¼ãã¦ãã ãã !\n"
 "\n"
 
 #: 308.WWindow.Title0.HelpText

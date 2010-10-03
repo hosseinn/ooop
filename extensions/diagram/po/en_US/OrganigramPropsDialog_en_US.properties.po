@@ -15,8 +15,7 @@ msgstr ""
 
 #. # OrganigramPropsDialog strings
 #: 185.OrganigramPropsDialog.HelpText
-msgctxt "185.OrganigramPropsDialog.HelpText"
-"185.OrganigramPropsDialog.HelpText"
+msgctxt "185.OrganigramPropsDialog.HelpText185.OrganigramPropsDialog.HelpText"
 msgid ""
 msgstr ""
 

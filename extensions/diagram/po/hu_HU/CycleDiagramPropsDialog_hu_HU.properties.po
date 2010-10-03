@@ -15,8 +15,8 @@ msgstr ""
 
 #. # CycleDiagramPropsDialog strings
 #: 156.CycleDiagramPropsDialog.HelpText
-msgctxt "156.CycleDiagramPropsDialog.HelpText"
-"156.CycleDiagramPropsDialog.HelpText"
+msgctxt ""
+"156.CycleDiagramPropsDialog.HelpText156.CycleDiagramPropsDialog.HelpText"
 msgid ""
 msgstr ""
 
