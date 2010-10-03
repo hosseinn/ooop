@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-03 03:33+0200\n"
+"POT-Creation-Date: 2010-10-03 10:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,8 @@ msgstr ""
 
 #. # WWindow strings
 #: 296.WWindow.HelpText
-msgctxt "296.WWindow.HelpText296.WWindow.HelpText"
+msgctxt "296.WWindow.HelpText"
+"296.WWindow.HelpText"
 msgid ""
 msgstr ""
 
