@@ -1,0 +1,2 @@
+Con Watch Window Extension puede añadir una ventana de inspección, que mantiene en pantalla el valor de la celda supervisada, independientemente de donde se realice el cambio. Es una extensión de OpenOffice.org Calc.
+Desde Calc: seleccione Herramientas>Detective>Mostrar ventana de inspección.

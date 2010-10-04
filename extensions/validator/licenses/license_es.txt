@@ -1,0 +1,19 @@
+Validator Extension
+
+La extensión Validator Extension ha sido autorizada bajo los términos de la Licencia Pública General Reducida de GNU  (Lesser General Public License [LGPL]). Puede leer y comprender la licencia LGPL aquí:
+http://www.gnu.org/licenses/lgpl.html
+
+Esta extensión está creada por:
+
+Tibor HornyÃ¡k
+
+y
+
+*el equipo de profesionales de OxygenOffice - http://ooop.sf.net/
+
+Con el soporte de:
+
+*la Fundación para la Promoción y la Localización de Software Libre de Hungría FSF.hu  - http://www.fsf.hu/
+
+ -----
+license_es document V1.1.0

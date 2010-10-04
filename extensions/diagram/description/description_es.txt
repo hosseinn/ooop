@@ -1,0 +1,2 @@
+Diagram es una extensión para OpenOffice.org Draw e Impress que crea sus diagramas favoritos en un par de clics.
+Desde Draw o Impress: seleccione Insertar un diagrama o habilite la Barra de herramientas Diagrama, y a continuación haga clic en el botón Diagrama.
