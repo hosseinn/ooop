@@ -6,6 +6,7 @@
     <extension-description>
         <src lang="en" xlink:href="description/description_en.txt"/>
         <src lang="hu" xlink:href="description/description_hu.txt"/>
+        <src lang="es" xlink:href="description/description_es.txt"/>
     </extension-description>
     <display-name>
         <name lang="en">Diagrams</name>
@@ -15,12 +16,14 @@
         <name lang="en" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
         <name lang="fr" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
         <name lang="fi" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
+        <name lang="es" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
         <name lang="hu" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Csapat</name>
     </publisher>
     <registration>
         <simple-license accept-by="admin" default-license-id="en">
             <license-text lang="en" license-id="en" xlink:href="licenses/license_en-US.txt"/>
             <license-text lang="hu" xlink:href="licenses/license_hu.txt"/>
+            <license-text lang="es" xlink:href="licenses/license_es.txt"/>
         </simple-license>
     </registration>
     <icon>
