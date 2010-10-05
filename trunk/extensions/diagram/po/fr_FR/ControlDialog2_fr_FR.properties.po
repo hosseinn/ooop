@@ -15,8 +15,7 @@ msgstr ""
 
 #. # ControlDialog2 strings
 #: 110.ControlDialog2.HelpText
-msgctxt "110.ControlDialog2.HelpText"
-"110.ControlDialog2.HelpText"
+msgctxt "110.ControlDialog2.HelpText110.ControlDialog2.HelpText"
 msgid ""
 msgstr ""
 

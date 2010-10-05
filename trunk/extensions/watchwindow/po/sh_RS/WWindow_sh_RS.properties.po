@@ -15,8 +15,7 @@ msgstr ""
 
 #. # WWindow strings
 #: 296.WWindow.HelpText
-msgctxt "296.WWindow.HelpText"
-"296.WWindow.HelpText"
+msgctxt "296.WWindow.HelpText296.WWindow.HelpText"
 msgid ""
 msgstr ""
 

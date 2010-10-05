@@ -37,6 +37,7 @@
                             <prop oor:name="Title" oor:type="xs:string">
                                 <value xml:lang="en">Diagrams</value>
                                 <value xml:lang="hu">Diagramok</value>
+                                <value xml:lang="es">Diagram</value>
                             </prop>
                         </node>
                     </node>

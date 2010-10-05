@@ -15,8 +15,7 @@ msgstr ""
 
 #. # GuiPanel strings
 #: 178.GuiPanel.HelpText
-msgctxt "178.GuiPanel.HelpText"
-"178.GuiPanel.HelpText"
+msgctxt "178.GuiPanel.HelpText178.GuiPanel.HelpText"
 msgid ""
 msgstr ""
 

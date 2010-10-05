@@ -15,8 +15,7 @@ msgstr ""
 
 #. # GradientDialog strings
 #: 146.GradientDialog.HelpText
-msgctxt "146.GradientDialog.HelpText"
-"146.GradientDialog.HelpText"
+msgctxt "146.GradientDialog.HelpText146.GradientDialog.HelpText"
 msgid ""
 msgstr ""
 
