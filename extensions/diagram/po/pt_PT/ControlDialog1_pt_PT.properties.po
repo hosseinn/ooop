@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 95.ControlDialog1.Title
+msgid "Edit"
+msgstr "Editar"
+
+#: 96.ControlDialog1.ImageControl.HelpText
+msgid "Color of next item"
+msgstr "Cor do próximo item"
+
+#: 98.ControlDialog1.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+"Grupo\n"
+"nome"
+
+#: 99.ControlDialog1.addShapeButton.HelpText
+msgid "Add a shape to the diagram"
+msgstr "Adicionar uma forma ao diagrama"
+
+#: 100.ControlDialog1.addShapeButton.Label
+msgid "Add shape"
+msgstr "Adicionar forma"
+
+#: 101.ControlDialog1.removeShapeButton.HelpText
+msgid "Remove the selected shapes from the diagram"
+msgstr "Apaga a forma selecionada do diagrama"
+
+#: 102.ControlDialog1.removeShapeButton.Label
+msgid "Remove shape"
+msgstr "Apaga forma"
+
+#: 103.ControlDialog1.StyleComboBox.HelpText
+msgid "Style of item"
+msgstr "Estilo do item"
+
+#: 104.StyleComboBox.StringItemList
+msgctxt "104.StyleComboBox.StringItemList"
+msgid "Default"
+msgstr "Defeito"
+
+#: 105.StyleComboBox.StringItemList
+msgid "Outline"
+msgstr "Contorno"
+
+#: 106.StyleComboBox.StringItemList
+msgid "Rounded"
+msgstr "Arredondado"
+
+#: 107.StyleComboBox.StringItemList
+msgid "Without frame"
+msgstr "Sem frame"
+
+#: 108.StyleComboBox.StringItemList
+msgid "User Define"
+msgstr "Definido pelo utilizador"
+
+#: 109.ControlDialog1.StyleComboBox.Text
+msgctxt "109.ControlDialog1.StyleComboBox.Text"
+msgid "Default"
+msgstr "Defeito"
+

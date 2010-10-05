@@ -32,6 +32,7 @@
                 <value xml:lang="es">~Validator</value>
                 <value xml:lang="sr">~Validator</value>
                 <value xml:lang="sh">~Validator</value>
+                <value xml:lang="pt">~Validator</value>
               </prop>
               <prop oor:name="Context" oor:type="xs:string">
                 <value>com.sun.star.sheet.SpreadsheetDocument</value>

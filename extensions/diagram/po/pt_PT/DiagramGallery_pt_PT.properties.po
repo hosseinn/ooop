@@ -1,0 +1,31 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 131.DiagramGallery.Title
+msgid "Diagram gallery"
+msgstr "Galeria de Diagramas"
+
+#: 136.DiagramGallery.OkButton.HelpText
+msgid "Create new diagram"
+msgstr "Criar novo diagrama"
+
+#: 137.DiagramGallery.OkButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 143.DiagramGallery.diagramNameLabel.Label
+msgid "Organization Chart"
+msgstr "Organograma"
+
+#: 145.DiagramGallery.diagramDescriptionLabel.Label
+msgid "Illustrates hierarchical relationships"
+msgstr "Ilustra as relações hierárquicas"
+

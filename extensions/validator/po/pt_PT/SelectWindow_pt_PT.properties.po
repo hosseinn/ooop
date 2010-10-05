@@ -1,0 +1,67 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 329.SelectWindow.Title
+msgid "Validator - task manager"
+msgstr "Validator -gestor de tarefas"
+
+#: 330.SelectWindow.allButton.HelpText
+msgid "Select all Validator check tasks"
+msgstr "Selecione todas as tarefas aferidas do Validator"
+
+#: 331.SelectWindow.allButton.Label
+msgid "Select all"
+msgstr "Selecione todos"
+
+#: 332.SelectWindow.claarButton.HelpText
+msgid "Deselect all Validator check tasks"
+msgstr "Desmarque todas as tarefas aferidas do Validator"
+
+#: 333.SelectWindow.claarButton.Label
+msgid "Deselect all"
+msgstr "Desmarque todas"
+
+#: 335.SelectWindow.okButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 336.SelectWindow.checkBox1.HelpText
+msgid "Show such formulas where the formula reference to empty cell"
+msgstr "Mostrar as fórmulas, onde a formula refere-se a célula vazia"
+
+#: 337.SelectWindow.checkBox1.Label
+msgid "Empty cell references"
+msgstr "Esvazie as referências de célula"
+
+#: 338.SelectWindow.checkBox2.HelpText
+msgid "Show such formulas where the formula reference to string type cell"
+msgstr "Mostrar as fórmulas, onde a fórmula se refere a célula do tipo texto"
+
+#: 339.SelectWindow.checkBox2.Label
+msgid "String cell references"
+msgstr "Referências de célula texto"
+
+#: 340.SelectWindow.checkBox3.HelpText
+msgid "Show such value cells that not used in any formulas"
+msgstr "Mosta as células valor que não são usadas em nenhuma fórmula"
+
+#: 341.SelectWindow.checkBox3.Label
+msgid "Value cells that not used in any formulas"
+msgstr "Células valor que não são usadas em nenhuma fórmula"
+
+#: 342.SelectWindow.checkBox4.HelpText
+msgid "Show such formulas where the formula try to divide by zero value"
+msgstr "Mostrar as fórmulas, onde a fórmula tenta dividir o valor por zero"
+
+#: 343.SelectWindow.checkBox4.Label
+msgid "Division by zero in formulas"
+msgstr "Divisão por zero em fórmulas"
+

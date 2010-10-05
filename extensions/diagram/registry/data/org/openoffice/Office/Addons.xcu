@@ -38,6 +38,7 @@
                                 <value xml:lang="en">Diagrams</value>
                                 <value xml:lang="hu">Diagramok</value>
                                 <value xml:lang="es">Diagram</value>
+                                <value xml:lang="pt">Diagram</value>
                             </prop>
                         </node>
                     </node>

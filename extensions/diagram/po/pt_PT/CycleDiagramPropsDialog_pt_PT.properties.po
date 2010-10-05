@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 157.CycleDiagramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Propiedades do diagrama"
+
+#: 159.CycleDiagramPropsDialog.FrameControl1.Label
+msgid "Scope"
+msgstr "Extensão"
+
+#: 161.CycleDiagramPropsDialog.FrameControl2.Label
+msgid "Colors"
+msgstr "Cores"
+
+#: 163.CycleDiagramPropsDialog.FrameControl3.Label
+msgid "Outline"
+msgstr "Contorno"
+
+#: 165.CycleDiagramPropsDialog.FrameControl4.Label
+msgid "Text frame"
+msgstr "Texto frame"
+
+#: 167.CycleDiagramPropsDialog.frameOptionButtonYes.Label
+msgctxt "167.CycleDiagramPropsDialog.frameOptionButtonYes.Label"
+msgid "No"
+msgstr "Não"
+
+#: 169.CycleDiagramPropsDialog.frameOptionButtonNo.Label
+msgctxt "169.CycleDiagramPropsDialog.frameOptionButtonNo.Label"
+msgid "Yes"
+msgstr "Sim"
+
+#: 171.CycleDiagramPropsDialog.diagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagrama"
+
+#: 173.CycleDiagramPropsDialog.selectedShapeOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Item selecionado(s)"
+
+#: 175.CycleDiagramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Cor:"
+
+#: 176.CycleDiagramPropsDialog.colorImageControl.HelpText
+msgid "Color of item"
+msgstr "Cor do item"
+
+#: 178.CycleDiagramPropsDialog.baseColorOptionButton.Label
+msgid "Base colors"
+msgstr "Cores base"
+
+#: 180.CycleDiagramPropsDialog.monographicOptionButtonYes.Label
+msgctxt "180.CycleDiagramPropsDialog.monographicOptionButtonYes.Label"
+msgid "Yes"
+msgstr "Sim"
+
+#: 182.CycleDiagramPropsDialog.monographicOptionButtonNo.Label
+msgctxt "182.CycleDiagramPropsDialog.monographicOptionButtonNo.Label"
+msgid "No"
+msgstr "Não"
+
+#: 184.CycleDiagramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "OK"
+
