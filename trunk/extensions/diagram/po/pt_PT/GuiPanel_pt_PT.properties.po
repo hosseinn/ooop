@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 179.GuiPanel.Title
+msgid "Edit"
+msgstr "Editar"
+
+#: 181.GuiPanel.CommandButton1.Label
+msgid "Add shape"
+msgstr "Adicionar forma"
+
+#: 182.GuiPanel.CommandButton2.HelpText
+msgid "Assign a shape and remove"
+msgstr "Atribuir uma forma e apagar"
+
+#: 183.GuiPanel.CommandButton2.Label
+msgid "Remove shape"
+msgstr "Apagar forma"
+
+#: 186.GuiPanel.ComboBox1.HelpText
+msgid "Display styles"
+msgstr "Mostra estilo"
+
+#: 227.ComboBox1.StringItemList
+msgctxt "227.ComboBox1.StringItemList"
+msgid "Default"
+msgstr "Defeito"
+
+#: 228.ComboBox1.StringItemList
+msgid "Outline"
+msgstr "Contorno"
+
+#: 229.ComboBox1.StringItemList
+msgid "Rounded"
+msgstr "Arredondado"
+
+#: 230.ComboBox1.StringItemList
+msgid "Without frame"
+msgstr "Sem frame"
+
+#: 187.GuiPanel.ComboBox1.Text
+msgctxt "187.GuiPanel.ComboBox1.Text"
+msgid "Default"
+msgstr "Defeito"
+
+#: 239.GuiPanel.ImageControl.HelpText
+msgid "Color of next element"
+msgstr "Cor do próximo elemento"
+
+#: 693.GuiPanel.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+"Grupo\n"
+"nome"
+

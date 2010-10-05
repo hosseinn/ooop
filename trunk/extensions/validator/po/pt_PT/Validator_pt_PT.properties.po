@@ -1,0 +1,67 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 345.Validator.Title
+msgid "Validator"
+msgstr "Validator"
+
+#: 347.Validator.runButton.Label
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: 349.Validator.correctButton.Label
+msgid "Correct"
+msgstr "Corrigir"
+
+#: 353.Validator.formulaLabel.Label
+msgid "Formula:"
+msgstr "Fórmula:"
+
+#: 355.Validator.checkBox1.HelpText
+msgid "Show precedents in the list"
+msgstr "Mostrar precedentes na lista"
+
+#: 356.Validator.checkBox1.Label
+msgid "Show precedents"
+msgstr "Mostrar precedentes"
+
+#: 358.Validator.checkBox2.HelpText
+msgid "Visualize dependencies between cells in the sheet"
+msgstr "Visualiza dependências entre as células na folha"
+
+#: 359.Validator.checkBox2.Label
+msgid "Show dependencies"
+msgstr "Mostra as dependências"
+
+#: 362.Validator.errorLabel.HelpText
+msgid "Detailed description of error"
+msgstr "Descrição detalhada do erro"
+
+#: 363.Validator.errorLabel.Label
+msgid "|Name of error"
+msgstr "|Nome do erro"
+
+#: 365.Validator.cellLabel.Label
+msgid "|Cell"
+msgstr "|Célula"
+
+#: 366.Validator.taskManagerButton.HelpText
+msgid "You can select the check tasks"
+msgstr "Podes selecionar as tarefas de verificação"
+
+#: 367.Validator.taskManagerButton.Label
+msgid "Task manager"
+msgstr "Gestor de tarefas"
+
+#: 369.Validator.sheetLabel.Label
+msgid "Sheet:"
+msgstr "Folha"
+

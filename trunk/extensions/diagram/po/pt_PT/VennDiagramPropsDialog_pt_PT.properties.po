@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 256.VennDiagramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Propriedades do diagrama"
+
+#: 258.VennDiagramPropsDialog.FrameControl1.Label
+msgid "Scope"
+msgstr "Extensão"
+
+#: 260.VennDiagramPropsDialog.FrameControl2.Label
+msgid "Colors"
+msgstr "Cores"
+
+#: 262.VennDiagramPropsDialog.FrameControl3.Label
+msgid "Outline"
+msgstr "Contorno"
+
+#: 264.VennDiagramPropsDialog.FrameControl4.Label
+msgid "Text frame"
+msgstr "Texto frame"
+
+#: 266.VennDiagramPropsDialog.CommandButton1.Label
+msgid "OK"
+msgstr "OK"
+
+#: 268.VennDiagramPropsDialog.diagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagrama"
+
+#: 270.VennDiagramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item"
+msgstr "Item selecionado"
+
+#: 272.VennDiagramPropsDialog.FrameControl5.Label
+msgid "Transparency"
+msgstr "Transparência"
+
+#: 275.VennDiagramPropsDialog.noTransparencyOptionButton.Label
+msgctxt "275.VennDiagramPropsDialog.noTransparencyOptionButton.Label"
+msgid "No"
+msgstr "Não"
+
+#: 277.VennDiagramPropsDialog.mediuamTransparencyOptionButton.Label
+msgid "Medium"
+msgstr "Médio"
+
+#: 279.VennDiagramPropsDialog.extraTransparencyOptionButton.Label
+msgid "Extra"
+msgstr "Extra"
+
+#: 281.VennDiagramPropsDialog.monographicOptionButtonYes.Label
+msgctxt "281.VennDiagramPropsDialog.monographicOptionButtonYes.Label"
+msgid "Yes"
+msgstr "Sim"
+
+#: 283.VennDiagramPropsDialog.monographicOptionButtonNo.Label
+msgctxt "283.VennDiagramPropsDialog.monographicOptionButtonNo.Label"
+msgid "No"
+msgstr "Não"
+
+#: 285.VennDiagramPropsDialog.frameOptionButtonNo.Label
+msgctxt "285.VennDiagramPropsDialog.frameOptionButtonNo.Label"
+msgid "No"
+msgstr "Não"
+
+#: 287.VennDiagramPropsDialog.frameOptionButtonYes.Label
+msgctxt "287.VennDiagramPropsDialog.frameOptionButtonYes.Label"
+msgid "Yes"
+msgstr "Sim"
+
+#: 289.VennDiagramPropsDialog.FrameControl6.Label
+msgid "Rounded text area"
+msgstr "Area do texto arredondada"
+
+#: 291.VennDiagramPropsDialog.frameRoundedOptionButtonNo.Label
+msgctxt "291.VennDiagramPropsDialog.frameRoundedOptionButtonNo.Label"
+msgid "No"
+msgstr "Não"
+
+#: 293.VennDiagramPropsDialog.frameRoundedOptionButtonYes.Label
+msgctxt "293.VennDiagramPropsDialog.frameRoundedOptionButtonYes.Label"
+msgid "Yes"
+msgstr "Sim"
+
+#: 295.VennDiagramPropsDialog.colorOptionButton.Label
+msgid "Color (Selected item properties):"
+msgstr "Cor (seleciona as propriedades do item):"
+

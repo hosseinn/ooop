@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 223.PyramidDiagramPropsDialog.Title
+msgid "Properties of dialog"
+msgstr "Propriedades do diálogo"
+
+#: 225.PyramidDiagramPropsDialog.FrameControl1.Label
+msgid "Scope"
+msgstr "Extensão"
+
+#: 227.PyramidDiagramPropsDialog.diagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagrama"
+
+#: 229.PyramidDiagramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Item selecionado(s)"
+
+#: 231.PyramidDiagramPropsDialog.FrameControl2.Label
+msgid "Colors"
+msgstr "Cores"
+
+#: 233.PyramidDiagramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Cor:"
+
+#: 235.PyramidDiagramPropsDialog.gradientsOptionButton.Label
+msgid "Gradients"
+msgstr "Gradientes"
+
+#: 237.PyramidDiagramPropsDialog.Label2.Label
+msgid "End color:"
+msgstr "Cor final:"
+
+#: 239.PyramidDiagramPropsDialog.baseColorOptionButton.Label
+msgid "Base colors"
+msgstr "Cor base"
+
+#: 241.PyramidDiagramPropsDialog.gradientsCheckBox.Label
+msgid "With gradients"
+msgstr "Com gradientes"
+
+#: 243.PyramidDiagramPropsDialog.FrameControl3.Label
+msgid "Outline"
+msgstr "Contorno"
+
+#: 245.PyramidDiagramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 247.PyramidDiagramPropsDialog.monographicOptionButtonNo.Label
+msgid "No"
+msgstr "Não"
+
+#: 249.PyramidDiagramPropsDialog.monographicOptionButtonYes.Label
+msgid "Yes"
+msgstr "Sim"
+
+#: 251.PyramidDiagramPropsDialog.Label0.Label
+msgid "Start color:"
+msgstr "Cor inicial:"
+

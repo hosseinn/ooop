@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 147.GradientDialog.Title
+msgid "Gradient dialog"
+msgstr "Diálogo do Gradiente"
+
+#: 148.GradientDialog.startColor.HelpText
+msgid "Select the starter color of gradient"
+msgstr "Seleciona a cor de início do gradiente"
+
+#: 149.GradientDialog.endColor.HelpText
+msgid "Select the final color of gradient"
+msgstr "Seleciona a cor final do gradiente"
+
+#: 151.GradientDialog.Label1.Label
+msgid "Start color:"
+msgstr "Cor Inicial:"
+
+#: 153.GradientDialog.Label2.Label
+msgid "End color:"
+msgstr "Cor Final:"
+
+#: 155.GradientDialog.setColorsButton.Label
+msgid "Set colors"
+msgstr "Fixar Cores"
+

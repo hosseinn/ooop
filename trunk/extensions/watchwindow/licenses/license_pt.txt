@@ -1,0 +1,20 @@
+﻿Extensão Watch Window
+
+A Extensão Watch Window foi licenciado sob os termos da GNU Lesser General Public License (LGPL). Podes ler e entender a licença LGPL aqui:
+http://www.gnu.org/licenses/lgpl.html
+
+Esta extensão foi criada por:
+
+Tibor Hornyák
+
+e
+
+* University of Szeged, Hungary - http://www.u-szeged.hu/english/
+* OxygenOffice Professional Team - http://ooop.sf.net/
+
+Supporters:
+
+* FSF.hu Foundation for Promoting and Localizing Free Software in Hungary - http://www.fsf.hu/
+
+ -----
+licensa_pt document V1.1.0

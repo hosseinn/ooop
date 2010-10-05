@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 297.WWindow.Title
+msgid "Watch window"
+msgstr "Janela de observação"
+
+#: 298.WWindow.removeCell.HelpText
+msgid "Remove a cell from the WatchWindow"
+msgstr "Apagar uma célula a partir da WatchWindow"
+
+#: 299.WWindow.removeCell.Label
+msgid "Remove cell"
+msgstr "Apagar célula"
+
+#: 302.WWindow.addCell.HelpText
+msgid "Add a cell to the WatchWindow"
+msgstr "Adicionar uma célula à WatchWindow"
+
+#: 303.WWindow.addCell.Label
+msgid "Add cell"
+msgstr "Adicional célula"
+
+#: 305.WWindow.Title1.Label
+msgid "Item has not been selected"
+msgstr "Item não foi selecionado"
+
+#: 307.WWindow.Message1.Label
+msgid ""
+"Select an item within watchwindow and press remove.\n"
+"\n"
+msgstr ""
+"Seleciona um item dentro JanelaObservação e pressiona apagar.\n"
+"\n"
+
+#: 309.WWindow.Title0.Label
+msgid "Not valid reference"
+msgstr "Referência não válida"
+
+#: 311.WWindow.Message0.Label
+msgid ""
+"Please select a cell, a cell range or write the reference\n"
+"then press the Add cell button.\n"
+"\n"
+"\n"
+msgstr ""
+"Por favor seleciona a célula, um intervalo de células ou escreve a referência\n"
+"depois pressiona o botão Adicionar célula.\n"
+"\n"
+"\n"
+
+#: 313.WWindow.Formula.Label
+msgid "|Formula"
+msgstr "|Fórmula"
+
+#: 315.WWindow.Value.Label
+msgid "|Value"
+msgstr "|Valor"
+
+#: 317.WWindow.Cell.Label
+msgid "|Cell"
+msgstr "|Célula"
+
+#: 319.WWindow.Sheet.Label
+msgid "|Sheet"
+msgstr "|Folha"
+
+#: 320.WWindow.decrease.HelpText
+msgid "Decrease the size of WatchWindow"
+msgstr "reduzir o tamanho da WatchWindow"
+
+#: 321.WWindow.decrease.Label
+msgid "-"
+msgstr "-"
+
+#: 322.WWindow.increase.HelpText
+msgid "Increase the size of WatchWindow"
+msgstr "aumentar o tamanho da WatchWindow"
+
+#: 323.WWindow.increase.Label
+msgid "+"
+msgstr "+"
+
+#: 325.WWindow.sizeLabel.Label
+msgid "size"
+msgstr "tamanho"
+

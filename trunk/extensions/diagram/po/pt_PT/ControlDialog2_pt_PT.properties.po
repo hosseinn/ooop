@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 111.ControlDialog2.Title
+msgid "Edit"
+msgstr "Editar"
+
+#: 112.ControlDialog2.ImageControl.HelpText
+msgid "Color of next item"
+msgstr "Cor do próximo item"
+
+#: 114.ControlDialog2.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+"Grupo\n"
+"nome"
+
+#: 115.ControlDialog2.addShapeButton.HelpText
+msgid "Add a shape to the diagram"
+msgstr "Adicionar uma forma ao diagrama"
+
+#: 116.ControlDialog2.addShapeButton.Label
+msgid "Add shape"
+msgstr "Adicionar forma"
+
+#: 117.ControlDialog2.removeShapeButton.HelpText
+msgid "Remove the selected shapes from the diagram"
+msgstr "Apagar a forma selecionada do diagrama"
+
+#: 118.ControlDialog2.removeShapeButton.Label
+msgid "Remove shape"
+msgstr "Apagar forma"
+
+#: 119.ControlDialog2.StyleComboBox.HelpText
+msgid "Style of item"
+msgstr "Estilo do item"
+
+#: 120.StyleComboBox.StringItemList
+msgctxt "120.StyleComboBox.StringItemList"
+msgid "Default"
+msgstr "Defeito"
+
+#: 121.StyleComboBox.StringItemList
+msgid "Without outline"
+msgstr "Sem contorno"
+
+#: 122.StyleComboBox.StringItemList
+msgid "Rounded"
+msgstr "Arredondado"
+
+#: 123.StyleComboBox.StringItemList
+msgid "Gradients"
+msgstr "Gradientes"
+
+#: 124.StyleComboBox.StringItemList
+msgid "User define"
+msgstr "Definido pelo utilizador"
+
+#: 125.ControlDialog2.StyleComboBox.Text
+msgctxt "125.ControlDialog2.StyleComboBox.Text"
+msgid "Default"
+msgstr "Defeito"
+
+#: 126.ControlDialog2.addPropComboBox.HelpText
+msgid "Select relation between selected and new shape"
+msgstr "Seleciona a relação entre o selecionado e a nova forma"
+
+#: 127.addPropComboBox.StringItemList
+msgctxt "127.addPropComboBox.StringItemList"
+msgid "Underling"
+msgstr "Sublinhar"
+
+#: 128.addPropComboBox.StringItemList
+msgid "Associate"
+msgstr "Associar"
+
+#: 129.ControlDialog2.addPropComboBox.Text
+msgctxt "129.ControlDialog2.addPropComboBox.Text"
+msgid "Underling"
+msgstr "Sublinhar"
+

@@ -1,0 +1,2 @@
+﻿Validator é uma extensão do OpenOffice.org Calc que valida as células selecionadas com base em regras.
+De Calc: Selecione Ferramentas → Detective → Validator.

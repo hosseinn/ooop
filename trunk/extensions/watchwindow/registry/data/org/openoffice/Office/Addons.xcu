@@ -32,8 +32,9 @@
               </prop>
               <prop oor:name="Title" oor:type="xs:string">   
                 <value/>     
-                <value xml:lang="en-US">Display ~watch window</value>
+                <value xml:lang="en-US">Display ~Watch window</value>
                 <value xml:lang="hu">F~igyelőablak megjelenítése</value>
+                <value xml:lang="pt">Exibir ~Watch Window</value>
               </prop>
               <prop oor:name="Context" oor:type="xs:string">
                 <value>com.sun.star.sheet.SpreadsheetDocument</value>

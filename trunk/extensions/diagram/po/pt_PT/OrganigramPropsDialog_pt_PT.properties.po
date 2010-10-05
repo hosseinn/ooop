@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Paulo Antunes <pjantu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 186.OrganigramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Propriedades do diagrama"
+
+#: 188.OrganigramPropsDialog.FrameControl1.Label
+msgid "Scope"
+msgstr "Extensão"
+
+#: 190.OrganigramPropsDialog.selectedShapeOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Item Selecionado(s)"
+
+#: 192.OrganigramPropsDialog.diagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagrama"
+
+#: 194.OrganigramPropsDialog.FrameControl2.Label
+msgid "Colors"
+msgstr "Cores"
+
+#: 197.OrganigramPropsDialog.gradientsOptionButton.Label
+msgid "Gradients"
+msgstr "Gradientes"
+
+#: 199.OrganigramPropsDialog.Label0.Label
+msgid "Start color:"
+msgstr "Cor inicial:"
+
+#: 201.OrganigramPropsDialog.Label1.Label
+msgid "End color:"
+msgstr "Cor final:"
+
+#: 205.OrganigramPropsDialog.FrameControl3.Label
+msgid "Rounded"
+msgstr "Arredondado"
+
+#: 207.OrganigramPropsDialog.FrameControl4.Label
+msgid "Outline"
+msgstr "Contorno"
+
+#: 209.OrganigramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Cor:"
+
+#: 211.OrganigramPropsDialog.noRoundedOptionButton.Label
+msgctxt "211.OrganigramPropsDialog.noRoundedOptionButton.Label"
+msgid "No"
+msgstr "Não"
+
+#: 213.OrganigramPropsDialog.mediumRoundedOptionButton.Label
+msgid "Medium"
+msgstr "Médio"
+
+#: 215.OrganigramPropsDialog.extraRoundedOptionButton.Label
+msgid "Extra"
+msgstr "Extra"
+
+#: 217.OrganigramPropsDialog.yesMonographicOptionButton.Label
+msgid "Yes"
+msgstr "Sim"
+
+#: 219.OrganigramPropsDialog.noMonographicOptionButton.Label
+msgctxt "219.OrganigramPropsDialog.noMonographicOptionButton.Label"
+msgid "No"
+msgstr "Não"
+
+#: 221.OrganigramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "OK"
+

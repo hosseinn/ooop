@@ -1,0 +1,2 @@
+﻿Com a extensão Watch Window, você pode adicionar uma janela de inspeção, que mantém o valor da célula monitorado no écran, não importa onde a alteração é feita. Esta é uma extensão do OpenOffice.org Calc.
+De Calc: Selecione Ferramentas → Detective → Exibir Watch Window .
