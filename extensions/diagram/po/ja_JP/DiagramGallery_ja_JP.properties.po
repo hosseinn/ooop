@@ -15,8 +15,7 @@ msgstr ""
 
 #. # DiagramGallery strings
 #: 130.DiagramGallery.HelpText
-msgctxt "130.DiagramGallery.HelpText"
-"130.DiagramGallery.HelpText"
+msgctxt "130.DiagramGallery.HelpText130.DiagramGallery.HelpText"
 msgid ""
 msgstr ""
 

@@ -15,8 +15,8 @@ msgstr ""
 
 #. # VennDiagramPropsDialog strings
 #: 255.VennDiagramPropsDialog.HelpText
-msgctxt "255.VennDiagramPropsDialog.HelpText"
-"255.VennDiagramPropsDialog.HelpText"
+msgctxt ""
+"255.VennDiagramPropsDialog.HelpText255.VennDiagramPropsDialog.HelpText"
 msgid ""
 msgstr ""
 

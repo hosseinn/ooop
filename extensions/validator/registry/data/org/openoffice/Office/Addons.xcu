@@ -29,6 +29,9 @@
                 <value/>
                 <value xml:lang="en-US">~Validator</value>
                 <value xml:lang="hu">~Validátor</value>
+                <value xml:lang="es">~Validator</value>
+                <value xml:lang="sr">~Validator</value>
+                <value xml:lang="sh">~Validator</value>
               </prop>
               <prop oor:name="Context" oor:type="xs:string">
                 <value>com.sun.star.sheet.SpreadsheetDocument</value>

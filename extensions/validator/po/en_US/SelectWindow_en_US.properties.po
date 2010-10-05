@@ -15,8 +15,7 @@ msgstr ""
 
 #. # SelectWindow strings
 #: 328.SelectWindow.HelpText
-msgctxt "328.SelectWindow.HelpText"
-"328.SelectWindow.HelpText"
+msgctxt "328.SelectWindow.HelpText328.SelectWindow.HelpText"
 msgid ""
 msgstr ""
 
