@@ -78,7 +78,7 @@ do
     for file in *.properties
     do
 	echo "[+] Finalizing $file file."
-	uni2ascii -a U "$file" > "$PROPERTIES_DIR/$file"
+	uni2ascii -a U  "$file" > "$PROPERTIES_DIR/$file"
     done
     rm -f $file
 done
