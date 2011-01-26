@@ -10,7 +10,6 @@ import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
 import com.sun.star.drawing.FillStyle;
 import com.sun.star.drawing.LineStyle;
-//import com.sun.star.drawing.TextFitToSizeType;
 import com.sun.star.drawing.XShape;
 import com.sun.star.drawing.XShapes;
 import com.sun.star.frame.XFrame;
@@ -67,8 +66,6 @@ public class PyramidDiagram extends Diagram {
                     halfDiff = (orignGSWidth - m_GroupSizeWidth) / 2;
                 m_xGroupShape.setPosition(new Point(m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderTop));
                 
-                //int controlTriangleWidth = m_GroupSize;
-                //int controlTriangleHeight = (int)(m_GroupSize * 0.8);
                 XShape xControlTriangle = createShape("PolyPolygonShape", 0);
                 m_xShapes.add(xControlTriangle);
                 Point a = new Point(m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderTop + m_GroupSizeHeight);
@@ -94,7 +91,7 @@ public class PyramidDiagram extends Diagram {
                     getGui().setImageColorOfControlDialog(COLOR);
 
             } catch (PropertyVetoException ex) {
-                System.err.println("PropertyVetoException in PyramidDiagram.createDiagram(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
     }
@@ -189,9 +186,7 @@ public class PyramidDiagram extends Diagram {
     }
 
     public void setGradientOfShape(XShape xShape, int startColor, int endColor){
-
         try{
-
             XPropertySet xShapeProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
             xShapeProps.setPropertyValue("FillStyle", FillStyle.GRADIENT);
             Gradient aGradient = new Gradient();
@@ -206,24 +201,21 @@ public class PyramidDiagram extends Diagram {
             aGradient.EndIntensity = 85;
             aGradient.StepCount = 100;
             xShapeProps.setPropertyValue("FillGradient", aGradient);
-
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in PyramidDiagram.setGradientOfShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in PyramidDiagram.setGradientOfShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in PyramidDiagram.setGradientOfShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in PyramidDiagram.setGradientOfShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
     public int getColorOfShapeByID(int newItemID){
-
         XShape xCurrShape = null;
         String currShapeName = "";
         int currShapeID;
-
         try {
             for( int i = 0; i < m_xShapes.getCount(); i++){
                 xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
@@ -236,9 +228,9 @@ public class PyramidDiagram extends Diagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-             System.err.println("IndexOutOfBoundsException in CycleDiagram.addShape(). Message:\n" + ex.getLocalizedMessage());
+             System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-             System.err.println("WrappedTargetException in CycleDiagram.addShape(). Message:\n" + ex.getLocalizedMessage());
+             System.err.println(ex.getLocalizedMessage());
         }
         return -1;
     }
@@ -267,9 +259,9 @@ public class PyramidDiagram extends Diagram {
                 }
             
             } catch (IndexOutOfBoundsException ex) {
-                System.err.println("IndexOutOfBoundsException in PyramidDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in PyramidDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
     }
@@ -316,9 +308,9 @@ public class PyramidDiagram extends Diagram {
                 }
 
             }catch (IndexOutOfBoundsException ex) {
-                System.err.println("IndexOutOfBoundsException in PyramidDiagram.getTopShapeID(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in PyramidDiagram.getTopShapeID(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
 
@@ -351,9 +343,9 @@ public class PyramidDiagram extends Diagram {
                     }
 
                 } catch (IndexOutOfBoundsException ex) {
-                    System.err.println("IndexOutOfBoundsException in PyramidDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (WrappedTargetException ex) {
-                    System.err.println("WrappedTargetException in PyramidDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+                    System.err.println(ex.getLocalizedMessage());
                 }
 
             }
@@ -384,9 +376,9 @@ public class PyramidDiagram extends Diagram {
                 }
 
             } catch (IndexOutOfBoundsException ex) {
-                System.err.println("IndexOutOfBoundsException in PyramidDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in PyramidDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
     }
@@ -416,9 +408,9 @@ public class PyramidDiagram extends Diagram {
                     }
                 }
             }catch (IndexOutOfBoundsException ex) {
-                System.err.println("IndexOutOfBoundsException in PyramidDiagram.getTopShapeID(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in PyramidDiagram.getTopShapeID(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
         return xTopShape;
@@ -487,9 +479,9 @@ public class PyramidDiagram extends Diagram {
             }
             
         }catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in PyramidDiagram.refreshDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in PyramidDiagram.refreshDiagrame(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -515,13 +507,13 @@ public class PyramidDiagram extends Diagram {
             xPolygonShapeProps.setPropertyValue("PolyPolygon", allPoints);
             
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in PyramidDiagram.setTrapezeShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in PyramidDiagram.setTrapezeShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumenttException in PyramidDiagram.setTrapezeShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in PyramidDiagram.setTrapezeShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -551,13 +543,13 @@ public class PyramidDiagram extends Diagram {
                 xShapeProps.setPropertyValue("LineStyle", LineStyle.NONE);
 
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in PyramidDiagram.setControlTriangleShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in PyramidDiagram.setControlTriangleShapee(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in PyramidDiagram.setControlTriangleShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in PyramidDiagram.setControlTriangleShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -646,15 +638,15 @@ public class PyramidDiagram extends Diagram {
                     }
                 }
             } catch (PropertyVetoException ex) {
-                System.err.println("PropertyVetoException in VennDiagram.refreshShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (IllegalArgumentException ex) {
-                System.err.println("IllegalArgumentException in VennDiagram.refreshShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (UnknownPropertyException ex) {
-                System.err.println("UnknownPropertyException in VennDiagram.refreshShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (IndexOutOfBoundsException ex) {
-                System.err.println("IndexOutOfBoundsException in VennDiagram.refreshShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in VennDiagram.refreshShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
 
@@ -688,9 +680,9 @@ public class PyramidDiagram extends Diagram {
                 if(getGui()!= null && (m_Style == BASE_COLORS || m_Style == BASE_COLORS_GRADIENTS || (m_Style == USER_DEFINE && m_IsBaseColors) ))
                     getGui().setImageColorOfControlDialog(aCOLORS[iTopID % 8]);
             } catch (IndexOutOfBoundsException ex) {
-                System.err.println("IndexOutOfBoundsException in PyramidDiagram.setAllShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in PyramidDiagram.setAllShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
     }
@@ -752,13 +744,13 @@ public class PyramidDiagram extends Diagram {
 
 
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in CycleDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in CycleDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in CycleDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -767,11 +759,11 @@ public class PyramidDiagram extends Diagram {
             XPropertySet xShapeProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
             return AnyConverter.toInt(xShapeProps.getPropertyValue("FillColor"));
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in CycleDiagram.getShapeColor(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in CycleDiagram.getShapeColor(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.getShapeColor(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return -1;
     }
@@ -784,7 +776,7 @@ public class PyramidDiagram extends Diagram {
             XText xText = (XText) UnoRuntime.queryInterface(XText.class, xShape);
             xText.setString(getGui().getDialogPropertyValue( "ControlDialog1", "ControlDialog1.Text.Label" ) );
         } catch (Exception ex) {
-            System.err.println("Exception in CycleDiagram.setTextAndTextFitToSizee(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 

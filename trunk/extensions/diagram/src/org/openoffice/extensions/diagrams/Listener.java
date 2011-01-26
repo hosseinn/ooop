@@ -6,14 +6,15 @@ import com.sun.star.awt.XTopWindowListener;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.EventObject;
 import com.sun.star.awt.XDialogEventHandler;
-import org.openoffice.extensions.diagrams.diagram.organizationdiagram.OrganizationDiagram;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.OrganizationChart;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.organizationdiagram.OrganizationDiagram;
 
 
 
 public class Listener implements  XDialogEventHandler, XTopWindowListener {
 
     Gui         m_Gui           = null;
-    Controller m_Controller   = null;
+    Controller  m_Controller    = null;
 
     Listener(Gui gui, Controller controller){
         m_Gui = gui;
@@ -31,7 +32,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
     // XDialogEventHandler
     @Override
     public String[] getSupportedMethodNames() {
-        String[] aMethods = new String[116];
+        String[] aMethods = new String[123];
         aMethods[0] = "Organigram";
         aMethods[1] = "VennDiagram";
         aMethods[2] = "PyramidDiagram";
@@ -58,35 +59,106 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         aMethods[22] = "setOrganigramProps";
         aMethods[23] = "setBaseColor";
 
+        aMethods[24] = "itemChangedInList";
+        aMethods[25] = "item0Pressed";
+        aMethods[26] = "item1Pressed";
+        aMethods[27] = "item2Pressed";
+        aMethods[28] = "item3Pressed";
+        aMethods[29] = "eventOk";
+
+        aMethods[30] = "convert";
+
         for(int i=1;i<=92;i++)
-            aMethods[i+23] = "image" +i;
+            aMethods[i+30] = "image" +i;
         return aMethods;
     }
 
     // XDialogEventHandler
     @Override
     public boolean callHandlerMethod(XDialog xDialog, Object eventObject, String methodName) throws WrappedTargetException {
-        getController().getDiagrams().removeEventListener();
-        boolean returnValue = callHandlerMethod2(xDialog, eventObject, methodName);
-        if(getController().getDiagramType() != Controller.ORGANIGRAM || !(methodName.equals("addShape") || methodName.equals("removeShape")))
-            getController().getDiagrams().addEventListener();
-        return returnValue;
-    }
 
+        if(methodName.equals("itemChangedInList")){
+            if(((ItemEvent)eventObject).Selected == 0){
+                getController().setGroupType(Controller.ORGANIGROUP);
+                getController().setDiagramType(Controller.ORGANIGRAM);
+            }
+            if(((ItemEvent)eventObject).Selected == 1){
+                getController().setGroupType(Controller.RELATIONGROUP);
+                getController().setDiagramType(Controller.VENNDIAGRAM);
+            }
+            if(((ItemEvent)eventObject).Selected == 2){
+                getController().setGroupType(Controller.LISTGROUP);
+                getController().setDiagramType(Controller.NOTDIAGRAM);
+            }
+            if(((ItemEvent)eventObject).Selected == 3){
+                getController().setGroupType(Controller.MATRIXGROUP);
+                getController().setDiagramType(Controller.NOTDIAGRAM);
+            }
+            getGui().setSelectDialog2Images();
+            getGui().setSelectDialogText();
+            return true;
+        }
 
-    // XDialogEventHandler
-    //@Override
-    public boolean callHandlerMethod2(XDialog xDialog, Object eventObject, String methodName) throws WrappedTargetException {
-        
-        //if(getController().getDiagramType() == Controller.ORGANIGRAM && (methodName.equals("addShape") || methodName.equals("removeShape")))
-        //    getController().getDiagrams().removeEventListener();
+        // SelectDialog for DiagramGallery2
+        if(methodName.equals("item0Pressed")){
+            if(getController().getGroupType() == Controller.ORGANIGROUP)
+                getController().setDiagramType(Controller.ORGANIGRAM);
+            if(getController().getGroupType() == Controller.RELATIONGROUP)
+                getController().setDiagramType(Controller.VENNDIAGRAM);
+            if(getController().getGroupType() == Controller.LISTGROUP)
+                ;
+            if(getController().getGroupType() == Controller.MATRIXGROUP)
+                ;
+            getGui().setSelectDialogText();
+            return true;
+        }
 
-            // SelectDialog
+        if(methodName.equals("item1Pressed")){
+            if(getController().getGroupType() == Controller.ORGANIGROUP)
+                getController().setDiagramType(Controller.HORIZONTALORGANIGRAM);
+            if(getController().getGroupType() == Controller.RELATIONGROUP)
+                getController().setDiagramType(Controller.CYCLEDIAGRAM);
+            if(getController().getGroupType() == Controller.LISTGROUP)
+                ;
+            if(getController().getGroupType() == Controller.MATRIXGROUP)
+                ;
+            getGui().setSelectDialogText();
+            return true;
+        }
+
+        if(methodName.equals("item3Pressed")){
+            if(getController().getGroupType() == Controller.ORGANIGROUP)
+                ;
+            if(getController().getGroupType() == Controller.RELATIONGROUP)
+                ;
+            if(getController().getGroupType() == Controller.LISTGROUP)
+                ;
+            if(getController().getGroupType() == Controller.MATRIXGROUP)
+                ;
+            getGui().setSelectDialogText();
+            return true;
+        }
+
+        if(methodName.equals("item2Pressed")){
+            if(getController().getGroupType() == Controller.ORGANIGROUP)
+                getController().setDiagramType(Controller.TABLEHIERARCHYDIAGRAM);
+            if(getController().getGroupType() == Controller.RELATIONGROUP)
+                getController().setDiagramType(Controller.PYRAMIDDIAGRAM);
+            if(getController().getGroupType() == Controller.LISTGROUP)
+                ;
+            if(getController().getGroupType() == Controller.MATRIXGROUP)
+                ;
+            getGui().setSelectDialogText();
+            return true;
+        }
+
+        // SelectDialog
         if(methodName.equals("Organigram")){
             getController().setDiagramType(Controller.ORGANIGRAM);
             getGui().setSelectDialogText();
             return true;
         }
+
         // SelectDialog
         if(methodName.equals("VennDiagram")){
             getController().setDiagramType(Controller.VENNDIAGRAM);
@@ -105,8 +177,9 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
             getGui().setSelectDialogText();
             return true;
         }
+
         // SelectDialog
-        if(methodName.equals("Ok")){
+        if(methodName.equals("Ok") || methodName.equals("eventOk")){
             getGui().setVisibleSelectWindow(false);
             getController().instantiateDiagram();
             if(getController().getDiagram() != null){
@@ -132,13 +205,13 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         // ControlDialog1, ControlDialog2
         if(methodName.equals("addShape")){
             if(getController().getDiagram() != null) {
-                if(getController().getDiagramType() == Controller.ORGANIGRAM){
-                    OrganizationDiagram orgDiagram = (OrganizationDiagram)getController().getDiagram();
-                    if(orgDiagram.searchErrorInTree()){
-                        getGui().askUserForRepair(orgDiagram);
+                if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
+                    OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
+                    if(orgChart.isErrorInTree()){
+                        getGui().askUserForRepair(orgChart);
                     }else{
-                       getController().getDiagram().addShape();
-                       getController().getDiagram().refreshDiagram();
+                        getController().getDiagram().addShape();
+                        getController().getDiagram().refreshDiagram();
                     }
                 }else{
                     getController().getDiagram().addShape();
@@ -150,10 +223,10 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         // ControlDialog1, ControlDialog2
         if(methodName.equals("removeShape")){
             if(getController().getDiagram() != null) {
-                if(getController().getDiagramType() == Controller.ORGANIGRAM){
-                    OrganizationDiagram orgDiagram = (OrganizationDiagram)getController().getDiagram();
-                    if(orgDiagram.searchErrorInTree()){
-                        getGui().askUserForRepair(orgDiagram);
+                if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
+                    OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
+                    if(orgChart.isErrorInTree()){
+                        getGui().askUserForRepair(orgChart);
                     }else{
                        getController().getDiagram().removeShape();
                        getController().getDiagram().refreshDiagram();
@@ -167,7 +240,6 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         }
         // ControlDialog1, ControlDialog2
         if(methodName.equals("changedStyle")){
-            //if( getController().getDrawPage() != null && getController().getShapes() != null){
             if( getController().getDiagram() != null ){
                 getController().getDiagram().setChangedMode((short)( (ItemEvent)eventObject ).Selected);
                 getController().getDiagram().refreshShapeProperties();
@@ -175,9 +247,27 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
             }
             return true;
         }
+/*
+        if(methodName.equals("convert")){
+            if(getController().getDiagram() != null) {
+                if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
+                    OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
+                    if(orgChart.isErrorInTree()){
+                        getGui().askUserForRepair(orgChart);
+                    }else{
+                        orgChart.convert();
+                        //getController().getDiagram().refreshDiagram();
+                    }
+                }else{
+                    //
+                }
+            }
+            return true;
+        }
+*/
         // ControlDialog2
         if(methodName.equals("changedAddProp")){
-            ((OrganizationDiagram)getController().getDiagram()).setNewItemHType((short)((ItemEvent)eventObject).Selected);
+            ((OrganizationChart)getController().getDiagram()).setNewItemHType((short)((ItemEvent)eventObject).Selected);
             return true;
         }
         if(methodName.equals("setStartColor")){
@@ -192,7 +282,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         }
         if(methodName.equals("setColors")){
             getGui().m_xGradientTopWindow.removeTopWindowListener(this);
-            ((OrganizationDiagram)getController().getDiagram()).setGradientAction(true);
+            ((OrganizationChart)getController().getDiagram()).setGradientAction(true);
             OrganizationDiagram._startColor = getGui().getImageColorOfControlDialog(getGui().m_xStartImage);
             OrganizationDiagram._endColor = getGui().getImageColorOfControlDialog(getGui().m_xEndImage);
             getGui().m_xGradientDialog.endExecute();
