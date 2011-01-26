@@ -97,7 +97,7 @@ public class CycleDiagram extends Diagram {
                     getGui().setImageColorOfControlDialog(COLOR);
             } 
         } catch (Exception ex) {
-            System.err.println("Exception in CycleDiagram.createDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -135,9 +135,9 @@ public class CycleDiagram extends Diagram {
                 getGui().setImageColorOfControlDialog(color);
 
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.initDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.initDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -259,9 +259,9 @@ public class CycleDiagram extends Diagram {
             }
 
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.addShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.addShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -283,9 +283,9 @@ public class CycleDiagram extends Diagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-             System.err.println("IndexOutOfBoundsException in CycleDiagram.addShape(). Message:\n" + ex.getLocalizedMessage());
+             System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-             System.err.println("WrappedTargetException in CycleDiagram.addShape(). Message:\n" + ex.getLocalizedMessage());
+             System.err.println(ex.getLocalizedMessage());
         }
         return -1;
     }
@@ -364,9 +364,9 @@ public class CycleDiagram extends Diagram {
                         getController().setSelectedShape((Object)m_xShapes);
                 }
             } catch (IndexOutOfBoundsException ex) {
-                System.err.println("IndexOutOfBoundsException in CycleDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in CycleDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
     }
@@ -406,9 +406,9 @@ public class CycleDiagram extends Diagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -448,9 +448,9 @@ public class CycleDiagram extends Diagram {
             }
 
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.increaseShapeIDs(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -640,11 +640,11 @@ public class CycleDiagram extends Diagram {
             }
 
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in CycleDiagram.refreshDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.refreshDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.refreshDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -732,9 +732,9 @@ public class CycleDiagram extends Diagram {
             }
 
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.removeSingleItems(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.removeSingleItems(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
 
     }
@@ -783,13 +783,13 @@ public class CycleDiagram extends Diagram {
             xBezierShapeProps.setPropertyValue("PolyPolygonBezier", aCoords);
 
         }catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in CycleDiagram.setBezierShapeSize(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in CycleDiagram.setBezierShapeSize(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in CycleDiagram.setBezierShapeSize(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.setBezierShapeSize(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -877,9 +877,9 @@ public class CycleDiagram extends Diagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.refreshShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.refreshShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
 
     }
@@ -917,9 +917,9 @@ public class CycleDiagram extends Diagram {
             }
 
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.searchPairOfShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.searchPairOfShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return null;
     }
@@ -951,9 +951,9 @@ public class CycleDiagram extends Diagram {
                 getGui().setImageColorOfControlDialog(aCOLORS[iTopID % 8]);
          
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in CycleDiagram.setAllShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.setAllShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -1026,13 +1026,13 @@ public class CycleDiagram extends Diagram {
                 }
             }
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in CycleDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in CycleDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in CycleDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -1041,11 +1041,11 @@ public class CycleDiagram extends Diagram {
             XPropertySet xShapeProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
             return AnyConverter.toInt(xShapeProps.getPropertyValue("FillColor"));
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in CycleDiagram.getShapeColor(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in CycleDiagram.getShapeColor(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.getShapeColor(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return -1;
     }
@@ -1059,13 +1059,13 @@ public class CycleDiagram extends Diagram {
             //xShapeProps.setPropertyValue("LineTransparence", new Integer(1000));
             xShapeProps.setPropertyValue("MoveProtect", new Boolean(true));
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in CycleDiagram.setInvisibleFeatures(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in CycleDiagram.setInvisibleFeatures(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in CycleDiagram.setInvisibleFeatures(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in CycleDiagram.setInvisibleFeaturesr(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -1076,7 +1076,7 @@ public class CycleDiagram extends Diagram {
             XText xText = (XText) UnoRuntime.queryInterface(XText.class, xShape);
             xText.setString(getGui().getDialogPropertyValue( "ControlDialog1", "ControlDialog1.Text.Label" ) );
         } catch (Exception ex) {
-            System.err.println("Exception in CycleDiagram.setTextFitToSize(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 

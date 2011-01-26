@@ -1,5 +1,6 @@
 package org.openoffice.extensions.diagrams;
 
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.tablehierarchydiagram.TableHierarchyDiagram;
 import com.sun.star.container.XNamed;
 import com.sun.star.drawing.XDrawPage;
 import com.sun.star.drawing.XDrawView;
@@ -20,12 +21,14 @@ import com.sun.star.view.XSelectionChangeListener;
 import com.sun.star.view.XSelectionSupplier;
 import org.openoffice.extensions.diagrams.diagram.Diagram;
 import org.openoffice.extensions.diagrams.diagram.cyclediagram.CycleDiagram;
-import org.openoffice.extensions.diagrams.diagram.organizationdiagram.OrganizationDiagram;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.OrganizationChart;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.horizontalorganizationdiagram.HorizontalOrganizationDiagram;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.organizationdiagram.OrganizationDiagram;
 import org.openoffice.extensions.diagrams.diagram.pyramiddiagram.PyramidDiagram;
 import org.openoffice.extensions.diagrams.diagram.venndiagram.VennDiagram;
 
 
-public class Controller implements XSelectionChangeListener {
+public final class Controller implements XSelectionChangeListener {
 
     private         Diagrams            m_Diagrams              = null;
     private         XComponentContext   m_xContext              = null;
@@ -38,14 +41,24 @@ public class Controller implements XSelectionChangeListener {
 
     private         Diagram             m_Diagram               = null;
     private         short               m_DiagramType;
+    private         short               m_GroupType;
     private         short               m_LastDiagramType       = 0;
     private         int                 m_LastDiagramID         = -1;
 
-    protected static final short        ORGANIGRAM              = 1;
-    protected static final short        VENNDIAGRAM             = 2;
-    protected static final short        PYRAMIDDIAGRAM          = 3;
-    protected static final short        CYCLEDIAGRAM            = 4;
+    protected static final short        ORGANIGROUP             = 0;
+    protected static final short        RELATIONGROUP           = 1;
+    protected static final short        LISTGROUP               = 2;
+    protected static final short        MATRIXGROUP             = 3;
 
+    public static final short        ORGANIGRAM              = 1;
+    public static final short        VENNDIAGRAM             = 2;
+    public static final short        PYRAMIDDIAGRAM          = 3;
+    public static final short        CYCLEDIAGRAM            = 4;
+
+    public static final short        HORIZONTALORGANIGRAM    = 5;
+    public static final short        TABLEHIERARCHYDIAGRAM   = 6;
+
+    protected static final short        NOTDIAGRAM              = 10;
 
     Controller( Diagrams diagrams, XComponentContext xContext, XFrame xFrame ){
         m_Diagrams = diagrams;
@@ -71,6 +84,14 @@ public class Controller implements XSelectionChangeListener {
 
     public void setLastDiagramName(String name){
         m_sLastDiagramName = name;
+    }
+
+    public void setGroupType(short dType){
+        m_GroupType = dType;
+    }
+
+    public short getGroupType(){
+        return m_GroupType;
     }
 
     public void setDiagramType(short dType){
@@ -138,7 +159,7 @@ public class Controller implements XSelectionChangeListener {
             XLocalizable xLocalizable = (XLocalizable) UnoRuntime.queryInterface(XLocalizable.class, oConfigurationProvider);
             locale = xLocalizable.getLocale();
         } catch (Exception ex) {
-            System.err.println("Exception in Gui.getLocation(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return locale;
     }
@@ -178,7 +199,7 @@ public class Controller implements XSelectionChangeListener {
         try{
             n = Integer.parseInt(s);
         }catch(NumberFormatException ex){
-             ex.printStackTrace();
+             System.err.println(ex.getLocalizedMessage());
         }
         return n;
     }
@@ -193,10 +214,11 @@ public class Controller implements XSelectionChangeListener {
     // XSelectionChangeListener
     @Override
     public void selectionChanged(EventObject event) {
+
         XNamed xNamed = (XNamed) UnoRuntime.queryInterface( XNamed.class, getSelectedShape() );
         String selectedShapeName = xNamed.getName();
         // listen the diagrams
-        if(selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("VennDiagram") || selectedShapeName.startsWith("PyramidDiagram") || selectedShapeName.startsWith("CycleDiagram")) {
+        if(selectedShapeName.startsWith("TableHierarchyDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("VennDiagram") || selectedShapeName.startsWith("PyramidDiagram") || selectedShapeName.startsWith("CycleDiagram")) {
             String newDiagramName = selectedShapeName.split("-", 2)[0];
             // if the previous selected item not in same diagram,
             // need to instantiate the new diagram
@@ -209,15 +231,18 @@ public class Controller implements XSelectionChangeListener {
                     setDiagramType(PYRAMIDDIAGRAM);
                 if( selectedShapeName.startsWith("CycleDiagram") )
                     setDiagramType(CYCLEDIAGRAM);
+                if( selectedShapeName.startsWith("HorizontalOrganizationDiagram") )
+                    setDiagramType(HORIZONTALORGANIGRAM);
+                if( selectedShapeName.startsWith("TableHierarchyDiagram") )
+                    setDiagramType(TABLEHIERARCHYDIAGRAM);
                 instantiateDiagram();
                 m_sLastDiagramName = newDiagramName;
                 getGui().setVisibleControlDialog(true);
                 getDiagram().initDiagram();
             }
-            if(selectedShapeName.startsWith("OrganizationDiagram") && selectedShapeName.endsWith("RectangleShape0"))
+            if((selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram")) && selectedShapeName.endsWith("RectangleShape0"))
                 if(getDiagram() != null)
-                    ((OrganizationDiagram)getDiagram()).selectGroupShape();
-            //always need to init becouse the user can modify the page???
+                    ((OrganizationChart)getDiagram()).selectShapes();
             if(!getGui().isVisibleControlDialog())
                 getGui().setVisibleControlDialog(true);
             if(getGui().isVisibleControlDialog())
@@ -234,13 +259,22 @@ public class Controller implements XSelectionChangeListener {
             m_Diagram = new PyramidDiagram(this, getGui(), m_xFrame);
         if(m_DiagramType == CYCLEDIAGRAM)
             m_Diagram = new CycleDiagram(this, getGui(), m_xFrame);
+        if(m_DiagramType == HORIZONTALORGANIGRAM)
+            m_Diagram = new HorizontalOrganizationDiagram(this, getGui(), m_xFrame);
+        if(m_DiagramType == TABLEHIERARCHYDIAGRAM)
+            m_Diagram = new TableHierarchyDiagram(this, getGui(), m_xFrame);
     }
+/*
+    public void convert(DiagramTree diagramTree){
+        m_Diagram = new OrganizationDiagram(this, getGui(), m_xFrame, diagramTree);
+    }
+ */
 
     public void setSelectedShape(Object obj){
         try {
            m_xSelectionSupplier.select(obj);
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in Controller.setSelectedShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -254,9 +288,9 @@ public class Controller implements XSelectionChangeListener {
             if (xShapes != null)
                 return (XShape) UnoRuntime.queryInterface(XShape.class, xShapes.getByIndex(0));
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in Controller.getSelectedShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in Controller.getSelectedShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return null;
     }

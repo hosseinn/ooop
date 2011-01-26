@@ -88,7 +88,7 @@ public class VennDiagram extends Diagram {
             getController().setSelectedShape((Object)m_xShapes);
 
         } catch (Exception ex) {
-            System.err.println("Exception in VennDiagram.createDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -138,9 +138,9 @@ public class VennDiagram extends Diagram {
                     getGui().setImageColorOfControlDialog(aCOLORS[ (iTopShapeID) % 8] );
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in VennDiagram.addShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("IndexOutOfBoundsException in VennDiagram.addShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -213,9 +213,9 @@ public class VennDiagram extends Diagram {
             if(getGui() != null && getGui().getControlDialogWindow() != null)
                     getGui().setImageColorOfControlDialog(aCOLORS[ (iTopShapeID) % 8] );
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in VennDiagram.removeShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in VennDiagram.removeShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -319,9 +319,9 @@ public class VennDiagram extends Diagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in VennDiagram.refreshDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in VennDiagram.refreshDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
     
@@ -349,9 +349,9 @@ public class VennDiagram extends Diagram {
             if( getGui() != null)
                 getGui().setImageColorOfControlDialog(aCOLORS[iTopShapeID % 8]);
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in VennDiagram.initDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in VennDiagram.initDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -448,9 +448,9 @@ public class VennDiagram extends Diagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in VennDiagram.setAllShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in VennDiagram.setAllShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -468,9 +468,9 @@ public class VennDiagram extends Diagram {
                     setShapeProperties(xShape, "RectangleShape");
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in VennDiagram.setAllShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in VennDiagram.setAllShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -546,13 +546,13 @@ public class VennDiagram extends Diagram {
                 
             }
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in VennDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in VennDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (PropertyVetoException ex) {
-            System.err.println("PropertyVetoException in VennDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in VennDiagram.setShapeProperties(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -563,7 +563,7 @@ public class VennDiagram extends Diagram {
             XText xText = (XText) UnoRuntime.queryInterface(XText.class, xShape);
             xText.setString(getGui().getDialogPropertyValue( "ControlDialog1", "ControlDialog1.Text.Label" ) );
         } catch (Exception ex) {
-            System.err.println("Exception in VennDiagram.setTextOfRectangle(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
   

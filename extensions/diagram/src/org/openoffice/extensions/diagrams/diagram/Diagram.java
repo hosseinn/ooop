@@ -2,6 +2,7 @@ package org.openoffice.extensions.diagrams.diagram;
 
 import com.sun.star.awt.Point;
 import com.sun.star.awt.Size;
+import com.sun.star.beans.Property;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
@@ -22,14 +23,14 @@ import org.openoffice.extensions.diagrams.Gui;
 
 
 
-public class Diagram {
+public abstract class Diagram {
 
 
-    private     Controller              m_Controller        = null;
-    private     Gui                     m_Gui               = null;
-    private     XFrame                  m_xFrame            = null;
+    protected   Controller              m_Controller        = null;
+    protected   Gui                     m_Gui               = null;
+    protected   XFrame                  m_xFrame            = null;
     protected   XModel                  m_xModel            = null;
-    private     XMultiServiceFactory    m_xMSF              = null;
+    protected   XMultiServiceFactory    m_xMSF              = null;
 
     protected   XDrawPage               m_xDrawPage         = null;
     protected   int                     m_DiagramID         = -1;
@@ -67,9 +68,7 @@ public class Diagram {
     protected boolean         m_IsRoundedFrame;
     protected boolean         m_IsAction;
 
-    public Diagram(){
-
-    }
+    public Diagram(){ }
     
     public Diagram(Controller controller, Gui gui, XFrame xFrame) {
         m_Controller    = controller;
@@ -137,7 +136,7 @@ public class Diagram {
     }
 
     // determinde m_GroupSize
-    public void setGroupSize(){
+    public final void setGroupSize(){
         if(m_xDrawPage == null);
             m_xDrawPage = getController().getCurrentPage();
         if(m_PageProps == null)
@@ -194,9 +193,7 @@ public class Diagram {
         return m_Gui;
     }
 
-    public String getDiagramType(){
-        return "Diagram";
-    }
+    public abstract String getDiagramType();
 
     public int getDiagramID(){
         return m_DiagramID;
@@ -233,7 +230,7 @@ public class Diagram {
             m_xDrawPage.add(m_xGroupShape);
             m_xShapes = (XShapes) UnoRuntime.queryInterface(XShapes.class, m_xGroupShape );
         } catch (Exception ex) {
-            System.err.println("Exception in Diagram.createDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -253,21 +250,26 @@ public class Diagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.err.println("IndexOutOfBoundsException in Diagram.initDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in Diagram.initDiagram(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
-    public void refreshDiagram(){ }
+    public abstract void refreshDiagram();
 
-    public void addShape(){ }
+    public abstract void addShape();
 
-    public void removeShape(){ }
+    public abstract void removeShape();
 
-    public void refreshShapeProperties(){ }
+    public abstract void refreshShapeProperties();
 
-    public void setShapeProperties(XShape xShape, String type){ }
+    public abstract void setShapeProperties(XShape xShape, String type);
+
+
+    public void removeShapeFromGroup(XShape xShape){
+        m_xShapes.remove(xShape);
+    }
 
     public XShape createShape(String type, int num){
         XShape xShape = null;
@@ -276,7 +278,7 @@ public class Diagram {
             XNamed xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class,xShape);
             xNamed.setName(getDiagramType() + m_DiagramID + "-" + type + num);
         }  catch (Exception ex) {
-            System.err.println("Exception in Diagram.createShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return xShape;
     }
@@ -287,7 +289,7 @@ public class Diagram {
             xShape = createShape(type, num);
             xShape.setSize(new Size(width, height));
         }  catch (Exception ex) {
-            System.err.println("Exception in Diagram.createShape(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return xShape;
     }
@@ -303,7 +305,7 @@ public class Diagram {
             XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
             xProp.setPropertyValue("FillColor", new Integer(color));
         }  catch (Exception ex) {
-            System.err.println("Exception in Diagram.setShapesColor(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -319,4 +321,11 @@ public class Diagram {
         m_Style = selected;
     }
 
+    public void test(Object obj){
+            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, obj);
+            Property[] props = xProp.getPropertySetInfo().getProperties();
+            for (Property p : props)
+                System.out.println(p.Name + " "  + p.Type.getTypeName());
+    }
+ 
 }

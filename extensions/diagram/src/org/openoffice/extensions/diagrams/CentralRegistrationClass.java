@@ -1,9 +1,3 @@
-/*
- * CentralRegistrationClass.java
- *
- * Created on 2010.06.12 - 23:52:15
- *
- */
 package org.openoffice.extensions.diagrams;
 
 import com.sun.star.lang.XSingleComponentFactory;
@@ -18,10 +12,7 @@ import java.util.StringTokenizer;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
-/**
- *
- * @author tibi
- */
+
 public class CentralRegistrationClass {
     
     public static XSingleComponentFactory __getComponentFactory( String sImplementationName ) {
@@ -39,19 +30,19 @@ public class CentralRegistrationClass {
                     }
                 }
                 catch (ClassNotFoundException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (ClassCastException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (SecurityException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (NoSuchMethodException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (IllegalArgumentException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (InvocationTargetException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (IllegalAccessException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 }
             }
         }
@@ -72,19 +63,19 @@ public class CentralRegistrationClass {
                     bResult &= ((Boolean)result).booleanValue();
                 }
                 catch (ClassNotFoundException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (ClassCastException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (SecurityException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (NoSuchMethodException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (IllegalArgumentException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (InvocationTargetException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (IllegalAccessException ex) {
-                    ex.printStackTrace();
+                    System.err.println(ex.getLocalizedMessage());
                 }
             }
         }
@@ -110,7 +101,7 @@ public class CentralRegistrationClass {
                 }
             }
         } catch (IOException ex) {
-            ex.printStackTrace();
+            System.err.println(ex.getLocalizedMessage());
         }
             
         return "";

@@ -19,6 +19,7 @@ import com.sun.star.awt.XToolkit;
 import com.sun.star.awt.XTopWindow;
 import com.sun.star.awt.XWindow;
 import com.sun.star.awt.XWindowPeer;
+import com.sun.star.beans.Property;
 import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
@@ -36,9 +37,10 @@ import com.sun.star.resource.XStringResourceWithLocation;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.OrganizationChart;
 
 
-import org.openoffice.extensions.diagrams.diagram.organizationdiagram.OrganizationDiagram;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.organizationdiagram.OrganizationDiagram;
 
 
 public class Gui {
@@ -112,9 +114,10 @@ public class Gui {
         if(bool){
             if(isVisibleControlDialog)
                 setVisibleControlDialog(false);
-            createSelectDialog();
-            getController().removeDiagram();
+            getController().setGroupType(Controller.ORGANIGROUP);
             getController().setDiagramType(Controller.ORGANIGRAM); //ORGANIGRAM
+            createSelectDialog2();
+            getController().removeDiagram();
             m_xSelectDialog.execute();  
         } else {
             m_xSelectDialog.endExecute();
@@ -198,15 +201,146 @@ public class Gui {
             setImageOfButton(oButton, sPackageURL + "/images/ring.png", (short)-1);
 
         }catch(Exception ex){
-            System.err.println("Exception in Gui.createDialog(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
+    public void createSelectDialog2(){
+        try {
+            String sPackageURL              = getPackageLocation();
+            String sDialogURL               = sPackageURL + "/dialogs/DiagramGallery2.xdl";
+            XDialogProvider2 xDialogProv    = getDialogProvider();
+            m_xSelectDialog                 = xDialogProv.createDialogWithHandler( sDialogURL, m_oListener );
+            m_xSelectDTopWindow = (XTopWindow) UnoRuntime.queryInterface(XTopWindow.class, m_xSelectDialog);
+            m_xSelectDTopWindow.addTopWindowListener(m_oListener);
+
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xSelectDialog);
+
+            Object oFixedText = xControlContainer.getControl("Label1");
+            m_XDiagramNameText = (XFixedText) UnoRuntime.queryInterface(XFixedText.class, oFixedText);
+
+            oFixedText = xControlContainer.getControl("Label2");
+            m_XDiagramDescriptionText = (XFixedText) UnoRuntime.queryInterface(XFixedText.class, oFixedText);
+
+            setSelectDialog2Images();
+            setSelectDialogText(Controller.ORGANIGRAM);
+            
+        }catch(Exception ex){
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+    
+    public void setFirstItemOnFocus(){
+        if(m_xSelectDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xSelectDialog);
+            Object oButton = xControlContainer.getControl("Item0");
+            XControl xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
+            if(xButtonControl != null){
+            try {
+                XPropertySet xPropImage = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xButtonControl.getModel());
+                xPropImage.setPropertyValue("FocusOnClick", new Boolean(true));
+            } catch (UnknownPropertyException ex) {
+                System.err.println(ex.getLocalizedMessage());
+            } catch (PropertyVetoException ex) {
+                System.err.println(ex.getLocalizedMessage());
+            } catch (IllegalArgumentException ex) {
+                System.err.println(ex.getLocalizedMessage());
+            } catch (WrappedTargetException ex) {
+                System.err.println(ex.getLocalizedMessage());
+            }
+        }
+        }
+    }
+    
+    public void enableNumOfItems(int n){
+        if(m_xSelectDialog != null){
+            boolean isItem0 = false;
+            boolean isItem1 = false;
+            boolean isItem2 = false;
+            boolean isItem3 = false;
+            if(n > 0)
+                isItem0 = true;
+            if(n > 1)
+                isItem1 = true;
+            if(n > 2)
+                isItem2 = true;
+            if(n > 3)
+                isItem3 = true;
+            
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xSelectDialog);
+            Object oButton = xControlContainer.getControl("Item0");
+            XControl xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
+            enableVisibleControl(xButtonControl, isItem0);
+
+            oButton = xControlContainer.getControl("Item1");
+            xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
+            enableVisibleControl(xButtonControl, isItem1);
+            
+            oButton = xControlContainer.getControl("Item2");
+            xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
+            enableVisibleControl(xButtonControl, isItem2);
+
+            oButton = xControlContainer.getControl("Item3");
+            xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
+            enableVisibleControl(xButtonControl, isItem3);
+        }
+    }
+
+    public void setSelectDialog2Images(){
+        if(m_xSelectDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xSelectDialog);
+            String sPackageURL = getPackageLocation();
+
+            Object oButton0 = xControlContainer.getControl("Item0");
+            Object oButton1 = xControlContainer.getControl("Item1");
+            Object oButton2 = xControlContainer.getControl("Item2");
+            Object oButton3 = xControlContainer.getControl("Item3");
+
+            if(getController().getGroupType() == Controller.ORGANIGROUP){
+                enableNumOfItems(3);
+                setImageOfButton(oButton0, sPackageURL + "/images/orgchart.png", (short)-1);
+                setImageOfButton(oButton1, sPackageURL + "/images/hororgchart.png", (short)-1);
+                setImageOfButton(oButton2, sPackageURL + "/images/tablediagram.png", (short)-1);
+
+                setImageOfButton(oButton3, sPackageURL + "/images/empty.png", (short)-1);
+            }
+            if(getController().getGroupType() == Controller.RELATIONGROUP){
+                enableNumOfItems(3);
+                setImageOfButton(oButton0, sPackageURL + "/images/venn.png", (short)-1);
+                setImageOfButton(oButton1, sPackageURL + "/images/ring.png", (short)-1);
+                setImageOfButton(oButton2, sPackageURL + "/images/pyramid.png", (short)-1);
+
+                setImageOfButton(oButton3, sPackageURL + "/images/empty.png", (short)-1);
+            }
+            if(getController().getGroupType() == Controller.LISTGROUP){
+                enableNumOfItems(0);
+                setImageOfButton(oButton0, sPackageURL + "/images/empty.png", (short)-1);
+                setImageOfButton(oButton1, sPackageURL + "/images/empty.png", (short)-1);
+                setImageOfButton(oButton2, sPackageURL + "/images/empty.png", (short)-1);
+                setImageOfButton(oButton3, sPackageURL + "/images/empty.png", (short)-1);
+            }
+            if(getController().getGroupType() == Controller.MATRIXGROUP){
+                enableNumOfItems(0);
+                setImageOfButton(oButton0, sPackageURL + "/images/empty.png", (short)-1);
+                setImageOfButton(oButton1, sPackageURL + "/images/empty.png", (short)-1);
+                setImageOfButton(oButton2, sPackageURL + "/images/empty.png", (short)-1);
+                setImageOfButton(oButton3, sPackageURL + "/images/empty.png", (short)-1);
+            }
+        }
+    }
+
+    public void testProps(Object obj){
+            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, obj);
+            Property[] props = xProp.getPropertySetInfo().getProperties();
+            for (Property p : props)
+                System.out.println(p.Name + " "  + p.Type.getTypeName());
+    }
+    
     public void createControlDialog() {
         try {
             XDialogProvider2 xDialogProv = getDialogProvider();
             String sPackageURL = getPackageLocation();
-            String sDialogURL = sPackageURL + "/dialogs/ControlDialog" + (getController().getDiagramType() != Controller.ORGANIGRAM ? 1 : 2) + ".xdl";
+            String sDialogURL = sPackageURL + "/dialogs/ControlDialog" + (getController().getDiagramType() != Controller.ORGANIGRAM && getController().getDiagramType() != Controller.HORIZONTALORGANIGRAM && getController().getDiagramType() != Controller.TABLEHIERARCHYDIAGRAM ? 1 : 2) + ".xdl";
             m_xControlDialog = xDialogProv.createDialogWithHandler(sDialogURL, m_oListener);
             if (m_xControlDialog != null) {
                 m_xControlDialogWindow = (XWindow) UnoRuntime.queryInterface(XWindow.class, m_xControlDialog);
@@ -216,9 +350,9 @@ public class Gui {
             XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xControlDialog);
             m_xImageControl = xControlContainer.getControl("ImageControl");
 
-            if(getController().getDiagramType() == Controller.ORGANIGRAM){
+            if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
                 if(getController().getDiagram() != null)
-                    ((OrganizationDiagram)getController().getDiagram()).setNewItemHType(OrganizationDiagram.UNDERLING);
+                    ((OrganizationChart)getController().getDiagram()).setNewItemHType(OrganizationDiagram.UNDERLING);
             }
 
             Object oComboBox = xControlContainer.getControl("StyleComboBox");
@@ -267,7 +401,7 @@ public class Gui {
                 }
             */
         } catch (IllegalArgumentException ex) {
-            System.err.println("Exception in Gui.createControlDialog(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -289,7 +423,7 @@ public class Gui {
                 m_xGradientDialog.execute();
             }
         } catch (IllegalArgumentException ex) {
-            System.err.println("Exception in Gui.showColorTable(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -306,7 +440,7 @@ public class Gui {
                 m_xPaletteDialog.execute();
             }
         } catch (IllegalArgumentException ex) {
-            System.err.println("Exception in Gui.showColorTable(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -315,7 +449,7 @@ public class Gui {
             XDialogProvider2 xDialogProv = getDialogProvider();
             String sPackageURL = getPackageLocation();
             String diagramDefine = "";
-            if(getController().getDiagramType() == Controller.ORGANIGRAM)
+            if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
                 diagramDefine = "OrganigramPropsDialog.xdl";
             if(getController().getDiagramType() == Controller.VENNDIAGRAM)
                 diagramDefine = "VennDiagramPropsDialog.xdl";
@@ -353,7 +487,7 @@ public class Gui {
                     m_xFrameRoundedOBNoControl = null;
                 }
 
-                if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.ORGANIGRAM){
+                if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.ORGANIGRAM  || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
                     m_xStartColorImageControl = xControlContainer.getControl("startColorImageControl");
                     m_xEndColorImageControl = xControlContainer.getControl("endColorImageControl");
 
@@ -397,7 +531,7 @@ public class Gui {
                 m_xPropsDialog.execute();
             }
         } catch (IllegalArgumentException ex) {
-            System.err.println("Exception in Gui.showColorTable(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -409,9 +543,9 @@ public class Gui {
             XPackageInformationProvider xPIP = (XPackageInformationProvider) UnoRuntime.queryInterface(XPackageInformationProvider.class, oPIP);
             location =  xPIP.getPackageLocation("org.openoffice.extensions.diagrams.Diagrams");
         } catch (NoSuchElementException ex) {
-            System.err.println("Exception in Gui.getPackageLocation(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.err.println("Exception in Gui.getPackageLocation(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return location;
     }
@@ -431,7 +565,7 @@ public class Gui {
             }
             xDialogProv = (XDialogProvider2) UnoRuntime.queryInterface(XDialogProvider2.class, obj);
         }catch (Exception ex) {
-            System.err.println("Exception in Gui.getDialogProvider(). Message:\n" + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return xDialogProv;
     }
@@ -443,7 +577,7 @@ public class Gui {
             if ( m_xFrame != null && xToolkit != null ) {
                 WindowDescriptor aDescriptor = new WindowDescriptor();
                 aDescriptor.Type              = WindowClass.MODALTOP;
-                aDescriptor.WindowServiceName = new String( "infobox" );
+                aDescriptor.WindowServiceName = "infobox";
                 aDescriptor.ParentIndex       = -1;
                 aDescriptor.Parent            = (XWindowPeer)UnoRuntime.queryInterface(XWindowPeer.class, m_xFrame.getContainerWindow());
                 //aDescriptor.Bounds            = new Rectangle(0,0,300,200);
@@ -462,7 +596,7 @@ public class Gui {
                 }
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -492,7 +626,7 @@ public class Gui {
                 }
             }
         } catch (com.sun.star.uno.Exception ex) {
-             System.err.println("Exception in Gui.showMessageBox2(). Message:\n" + ex.getLocalizedMessage());
+             System.err.println(ex.getLocalizedMessage());
         }finally{
             if (xComponent != null)
                 xComponent.dispose();
@@ -500,19 +634,37 @@ public class Gui {
     }
 
     public void setSelectDialogText(){
+        setSelectDialogText(getController().getDiagramType());
+    }
+
+    public void setSelectDialogText(short type){
         String sType = "";
-        if(getController().getDiagramType() == Controller.ORGANIGRAM )
+        String sourceFileName = "Strings";
+        if( type == Controller.ORGANIGRAM )
             sType = "Organigram";
-        if(getController().getDiagramType() == Controller.VENNDIAGRAM )
+        if(type == Controller.VENNDIAGRAM )
             sType = "Venndiagram";
-        if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM )
+        if( type == Controller.PYRAMIDDIAGRAM )
             sType = "Pyramiddiagram";
-        if(getController().getDiagramType() == Controller.CYCLEDIAGRAM )
+        if( type == Controller.CYCLEDIAGRAM )
             sType = "Cyclediagram";
-        String diagramNameProperty = "Strings." + sType + ".Label";
-        String diagramDescProperty = "Strings." + sType + "Description.Label";
-        m_XDiagramNameText.setText(getDialogPropertyValue("Strings", diagramNameProperty));
-        m_XDiagramDescriptionText.setText(getDialogPropertyValue("Strings", diagramDescProperty));
+        if( type == Controller.HORIZONTALORGANIGRAM ){
+            sType = "HorizontalOrganigram";
+            sourceFileName += "2";
+        }
+        if( type == Controller.TABLEHIERARCHYDIAGRAM ){
+            sType = "TableHierarchyDiagram";
+            sourceFileName += "2";
+        }
+        if(type == Controller.NOTDIAGRAM){
+            m_XDiagramNameText.setText("");
+            m_XDiagramDescriptionText.setText("");
+        }else{
+            String diagramNameProperty = sourceFileName + "." + sType + ".Label";
+            String diagramDescProperty = sourceFileName + "." + sType + "Description.Label";
+            m_XDiagramNameText.setText(getDialogPropertyValue(sourceFileName, diagramNameProperty));
+            m_XDiagramDescriptionText.setText(getDialogPropertyValue(sourceFileName, diagramDescProperty));
+        }
     }
 
     public String getDialogPropertyValue(String dialogName, String propertyName){
@@ -522,7 +674,7 @@ public class Gui {
         try {
             xResources = StringResourceWithLocation.create(m_xContext, m_resRootUrl, true, getController().getLocation(), dialogName, "", null);
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in Gui.getDialogPropertyValue(). Message: " + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         // map properties
         if(xResources != null){
@@ -553,13 +705,13 @@ public class Gui {
                         xProps.setPropertyValue("ImageAlign", new Short(imageAlign));
                     xProps.setPropertyValue("ImageURL", sImageUrl);
                 } catch (PropertyVetoException ex) {
-                    System.err.println("PropertyVetoException in Gui.setImageOfButton(). Message: " + ex.getLocalizedMessage());
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (WrappedTargetException ex) {
-                    System.err.println("WrappedTargetException in Gui.setImageOfButton(). Message: " + ex.getLocalizedMessage());
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (IllegalArgumentException ex) {
-                    System.err.println("IllegalArgumentException in Gui.setImageOfButton(). Message: " + ex.getLocalizedMessage());
+                    System.err.println(ex.getLocalizedMessage());
                 } catch (UnknownPropertyException ex) {
-                    System.err.println("UnknownPropertyException in Gui.setImageOfButton(). Message: " + ex.getLocalizedMessage());
+                    System.err.println(ex.getLocalizedMessage());
                 }
             }
         }
@@ -573,11 +725,11 @@ public class Gui {
             XPropertySet xPropImage = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xImageControl.getModel());
             color = AnyConverter.toInt(xPropImage.getPropertyValue("BackgroundColor"));
         } catch (WrappedTargetException ex) {
-            System.err.println("WrappedTargetException in Gui.setColor(). Message: " + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
-            System.err.println("IllegalArgumentException in Gui.setColor(). Message: " + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
-            System.err.println("UnknownPropertyException in Gui.setColor(). Message: " + ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return color;
     }
@@ -590,19 +742,20 @@ public class Gui {
         return false;
     }
 
+
     public void enableVisibleControl(XControl xControl, boolean bool){
         if(xControl != null){
             try {
                 XPropertySet xPropImage = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
-                xPropImage.setPropertyValue("EnableVisible", new Boolean(bool));
+                xPropImage.setPropertyValue("EnableVisible", bool);
             } catch (UnknownPropertyException ex) {
-                System.err.println("UnknownPropertyException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (PropertyVetoException ex) {
-                System.err.println("PropertyVetoException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (IllegalArgumentException ex) {
-                System.err.println("IllegalArgumentException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
     }
@@ -613,13 +766,13 @@ public class Gui {
                 XPropertySet xPropImage = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
                 xPropImage.setPropertyValue("Enabled", new Boolean(bool));
             } catch (UnknownPropertyException ex) {
-                System.err.println("UnknownPropertyException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (PropertyVetoException ex) {
-                System.err.println("PropertyVetoException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (IllegalArgumentException ex) {
-                System.err.println("IllegalArgumentException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in Gui.enableImageControl(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
     }
@@ -648,13 +801,13 @@ public class Gui {
                 XPropertySet xPropImage = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xImageControl.getModel());
                 xPropImage.setPropertyValue("BackgroundColor", new Integer(color));
             } catch (PropertyVetoException ex) {
-                System.err.println("PropertyVetoException in Gui.setControlDialogImageColor(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (UnknownPropertyException ex) {
-                System.err.println("UnknownPropertyException in Gui.setControlDialogImageColor(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (IllegalArgumentException ex) {
-                System.err.println("IllegalArgumentException in Gui.setControlDialogImageColor(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             } catch (WrappedTargetException ex) {
-                System.err.println("WrappedTargetException in Gui.setControlDialogImageColor(). Message: " + ex.getLocalizedMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
         }
     }
@@ -672,16 +825,16 @@ public class Gui {
             }
 
         } catch (UnknownPropertyException ex) {
-            ex.printStackTrace();
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            ex.printStackTrace();
+            System.err.println(ex.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
-            ex.printStackTrace();
+            System.err.println(ex.getLocalizedMessage());
         }
         return color;
     }
   
-    public void askUserForRepair(OrganizationDiagram organigram){
+    public void askUserForRepair(OrganizationChart organigram){
         String sTitle = getDialogPropertyValue("Strings", "TreeBuildError.Title");
         String sMessage = getDialogPropertyValue("Strings", "TreeBuildError.Message");
         showMessageBox2(sTitle, sMessage);
@@ -696,6 +849,5 @@ public class Gui {
         if(m_xControlDialogWindow != null)
             m_xControlDialogWindow.setEnable(bool);
     }
-    
     
 }
