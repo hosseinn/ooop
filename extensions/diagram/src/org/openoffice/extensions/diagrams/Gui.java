@@ -15,6 +15,7 @@ import com.sun.star.awt.XFixedText;
 import com.sun.star.awt.XMessageBox;
 import com.sun.star.awt.XMessageBoxFactory;
 import com.sun.star.awt.XRadioButton;
+import com.sun.star.awt.XTextComponent;
 import com.sun.star.awt.XToolkit;
 import com.sun.star.awt.XTopWindow;
 import com.sun.star.awt.XWindow;
@@ -25,7 +26,9 @@ import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.NoSuchElementException;
 import com.sun.star.container.XNameAccess;
+import com.sun.star.container.XNamed;
 import com.sun.star.deployment.XPackageInformationProvider;
+import com.sun.star.drawing.XShape;
 import com.sun.star.frame.XFrame;
 import com.sun.star.frame.XModel;
 import com.sun.star.lang.IllegalArgumentException;
@@ -34,6 +37,7 @@ import com.sun.star.lang.XComponent;
 import com.sun.star.lang.XMultiComponentFactory;
 import com.sun.star.resource.StringResourceWithLocation;
 import com.sun.star.resource.XStringResourceWithLocation;
+import com.sun.star.text.XText;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
@@ -58,7 +62,10 @@ public class Gui {
     protected   XWindow             m_xControlDialogWindow      = null;
     private     boolean             isVisibleControlDialog      = false;
     private     XTopWindow          m_xControlDialogTopWindow   = null;
+    private     XTextComponent      m_xTextField                = null;
     protected   XControl            m_xImageControl             = null;
+    private     Object              m_oUpAndDownButton          = null;
+    private     boolean             m_isShownTextField          = true;
     protected   XDialog             m_xPaletteDialog            = null;
     protected   XTopWindow          m_xPaletteTopWindow         = null;
     private     int                 m_iInfoBoxOk                = -1;
@@ -69,6 +76,11 @@ public class Gui {
     protected   XControl            m_xStartImage               = null;
     protected   XControl            m_xEndImage                 = null;
     protected   String              m_sImageType                = "";
+
+    protected   XDialog             m_xConvertDialog            = null;
+    protected   XWindow             m_xConvertWindow            = null;
+    protected   XTopWindow          m_xConvertTopWindow         = null;
+    protected   XComboBox           m_xConvertComboBox          = null;
 
     protected   XDialog             m_xPropsDialog              = null;
     protected   XTopWindow          m_xPropsTopWindow           = null;
@@ -99,6 +111,12 @@ public class Gui {
 
     public Gui(){ }
 
+    public boolean isShownTextField(){
+        if(m_xTextField != null)
+            return m_isShownTextField;
+        return false;
+    }
+
     public Gui(Controller controller, XComponentContext xContext, XFrame xFrame){
         m_Controller = controller;
         m_xContext = xContext;
@@ -115,7 +133,7 @@ public class Gui {
             if(isVisibleControlDialog)
                 setVisibleControlDialog(false);
             getController().setGroupType(Controller.ORGANIGROUP);
-            getController().setDiagramType(Controller.ORGANIGRAM); //ORGANIGRAM
+            getController().setDiagramType(Controller.SIMPLEORGANIGRAM); //ORGANIGRAM
             createSelectDialog2();
             getController().removeDiagram();
             m_xSelectDialog.execute();  
@@ -222,14 +240,30 @@ public class Gui {
             oFixedText = xControlContainer.getControl("Label2");
             m_XDiagramDescriptionText = (XFixedText) UnoRuntime.queryInterface(XFixedText.class, oFixedText);
 
+            Object oButton = xControlContainer.getControl("Item0");
+            setImageOfButton(oButton, sPackageURL + "/images/orgchart.png", (short)-1);
+            oButton = xControlContainer.getControl("Item1");
+            setImageOfButton(oButton, sPackageURL + "/images/hororgchart.png", (short)-1);
+            oButton = xControlContainer.getControl("Item2");
+            setImageOfButton(oButton, sPackageURL + "/images/tablediagram.png", (short)-1);
+            oButton = xControlContainer.getControl("Item3");
+            setImageOfButton(oButton, sPackageURL + "/images/orgchart2.png", (short)-1);
+            oButton = xControlContainer.getControl("Item4");
+            setImageOfButton(oButton, sPackageURL + "/images/venn.png", (short)-1);
+            oButton = xControlContainer.getControl("Item5");
+            setImageOfButton(oButton, sPackageURL + "/images/ring.png", (short)-1);
+            oButton = xControlContainer.getControl("Item6");
+            setImageOfButton(oButton, sPackageURL + "/images/pyramid.png", (short)-1);
+            //oButton = xControlContainer.getControl("Item7");
+
             setSelectDialog2Images();
-            setSelectDialogText(Controller.ORGANIGRAM);
+            setSelectDialogText(Controller.SIMPLEORGANIGRAM);
             
         }catch(Exception ex){
             System.err.println(ex.getLocalizedMessage());
         }
     }
-    
+/*
     public void setFirstItemOnFocus(){
         if(m_xSelectDialog != null){
             XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xSelectDialog);
@@ -251,80 +285,25 @@ public class Gui {
         }
         }
     }
-    
-    public void enableNumOfItems(int n){
-        if(m_xSelectDialog != null){
-            boolean isItem0 = false;
-            boolean isItem1 = false;
-            boolean isItem2 = false;
-            boolean isItem3 = false;
-            if(n > 0)
-                isItem0 = true;
-            if(n > 1)
-                isItem1 = true;
-            if(n > 2)
-                isItem2 = true;
-            if(n > 3)
-                isItem3 = true;
-            
-            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xSelectDialog);
-            Object oButton = xControlContainer.getControl("Item0");
-            XControl xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
-            enableVisibleControl(xButtonControl, isItem0);
-
-            oButton = xControlContainer.getControl("Item1");
-            xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
-            enableVisibleControl(xButtonControl, isItem1);
-            
-            oButton = xControlContainer.getControl("Item2");
-            xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
-            enableVisibleControl(xButtonControl, isItem2);
-
-            oButton = xControlContainer.getControl("Item3");
-            xButtonControl = (XControl)UnoRuntime.queryInterface(XControl.class, oButton);
-            enableVisibleControl(xButtonControl, isItem3);
-        }
-    }
-
-    public void setSelectDialog2Images(){
+*/
+    public void  setSelectDialog2Images(){
+        int n = getController().getGroupType() * 4;
+        int m = n + 3;
+        if(getController().getGroupType() == 1)
+            m -= 1;
+        if(getController().getGroupType() == 4)
+            m -= 2;
         if(m_xSelectDialog != null){
             XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xSelectDialog);
-            String sPackageURL = getPackageLocation();
-
-            Object oButton0 = xControlContainer.getControl("Item0");
-            Object oButton1 = xControlContainer.getControl("Item1");
-            Object oButton2 = xControlContainer.getControl("Item2");
-            Object oButton3 = xControlContainer.getControl("Item3");
-
-            if(getController().getGroupType() == Controller.ORGANIGROUP){
-                enableNumOfItems(3);
-                setImageOfButton(oButton0, sPackageURL + "/images/orgchart.png", (short)-1);
-                setImageOfButton(oButton1, sPackageURL + "/images/hororgchart.png", (short)-1);
-                setImageOfButton(oButton2, sPackageURL + "/images/tablediagram.png", (short)-1);
-
-                setImageOfButton(oButton3, sPackageURL + "/images/empty.png", (short)-1);
-            }
-            if(getController().getGroupType() == Controller.RELATIONGROUP){
-                enableNumOfItems(3);
-                setImageOfButton(oButton0, sPackageURL + "/images/venn.png", (short)-1);
-                setImageOfButton(oButton1, sPackageURL + "/images/ring.png", (short)-1);
-                setImageOfButton(oButton2, sPackageURL + "/images/pyramid.png", (short)-1);
-
-                setImageOfButton(oButton3, sPackageURL + "/images/empty.png", (short)-1);
-            }
-            if(getController().getGroupType() == Controller.LISTGROUP){
-                enableNumOfItems(0);
-                setImageOfButton(oButton0, sPackageURL + "/images/empty.png", (short)-1);
-                setImageOfButton(oButton1, sPackageURL + "/images/empty.png", (short)-1);
-                setImageOfButton(oButton2, sPackageURL + "/images/empty.png", (short)-1);
-                setImageOfButton(oButton3, sPackageURL + "/images/empty.png", (short)-1);
-            }
-            if(getController().getGroupType() == Controller.MATRIXGROUP){
-                enableNumOfItems(0);
-                setImageOfButton(oButton0, sPackageURL + "/images/empty.png", (short)-1);
-                setImageOfButton(oButton1, sPackageURL + "/images/empty.png", (short)-1);
-                setImageOfButton(oButton2, sPackageURL + "/images/empty.png", (short)-1);
-                setImageOfButton(oButton3, sPackageURL + "/images/empty.png", (short)-1);
+            if(xControlContainer != null){
+                boolean bool;
+                for(int i = 0; i <= 7; i++){
+                    bool = false;
+                    if(i >= n && i <= m)
+                        bool = true;
+                    XControl xItemControl = (XControl)UnoRuntime.queryInterface(XControl.class, xControlContainer.getControl("Item" + i));
+                    enableVisibleControl(xItemControl, bool);
+                }
             }
         }
     }
@@ -340,19 +319,34 @@ public class Gui {
         try {
             XDialogProvider2 xDialogProv = getDialogProvider();
             String sPackageURL = getPackageLocation();
-            String sDialogURL = sPackageURL + "/dialogs/ControlDialog" + (getController().getDiagramType() != Controller.ORGANIGRAM && getController().getDiagramType() != Controller.HORIZONTALORGANIGRAM && getController().getDiagramType() != Controller.TABLEHIERARCHYDIAGRAM ? 1 : 2) + ".xdl";
+            String sDialogURL = sPackageURL + "/dialogs/ControlDialog" + (getController().getGroupType() != Controller.ORGANIGROUP ? 1 : 2) + ".xdl";
             m_xControlDialog = xDialogProv.createDialogWithHandler(sDialogURL, m_oListener);
             if (m_xControlDialog != null) {
                 m_xControlDialogWindow = (XWindow) UnoRuntime.queryInterface(XWindow.class, m_xControlDialog);
                 m_xControlDialogTopWindow = (XTopWindow) UnoRuntime.queryInterface(XTopWindow.class, m_xControlDialogWindow);
                 m_xControlDialogTopWindow.addTopWindowListener(m_oListener);
             }
+
             XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xControlDialog);
+            Object oTextField = xControlContainer.getControl("textField");
+            m_xTextField = (XTextComponent) UnoRuntime.queryInterface(XTextComponent.class, oTextField);
+
             m_xImageControl = xControlContainer.getControl("ImageControl");
 
-            if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
+            if(getController().getGroupType() == Controller.ORGANIGROUP){
+
+                m_oUpAndDownButton = xControlContainer.getControl("downUpButton");
+                m_isShownTextField = true;
+                textFieldDownUp();
+                
                 if(getController().getDiagram() != null)
                     ((OrganizationChart)getController().getDiagram()).setNewItemHType(OrganizationDiagram.UNDERLING);
+
+                Object oConvertButton = xControlContainer.getControl("convertButton");
+                setImageOfButton(oConvertButton, sPackageURL + "/images/convert.png", ImageAlign.LEFT);
+
+                
+                
             }
 
             Object oComboBox = xControlContainer.getControl("StyleComboBox");
@@ -405,6 +399,230 @@ public class Gui {
         }
     }
 
+    public void test(Object obj){
+            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, obj);
+            Property[] props = xProp.getPropertySetInfo().getProperties();
+            for (Property p : props)
+                System.out.println(p.Name + " "  + p.Type.getTypeName());
+    }
+
+    public void textFieldModified(){
+        if(m_xTextField != null)
+            setTextOfSelectedShape(m_xTextField.getText());
+    }
+
+    public String getTextField(){
+        if(m_xTextField != null)
+            return m_xTextField.getText();
+        return "";
+    }
+
+    public void setTextField(String str){
+        m_xTextField.setText(str);
+    }
+
+    public void setTextOfSelectedShape(String str){
+        if(getController().getSelectedShapes().getCount() == 1){
+            XShape xSelectedShape = getController().getSelectedShape();
+            XNamed xNamed = (XNamed) UnoRuntime.queryInterface( XNamed.class, xSelectedShape );
+            String selectedShapeName = xNamed.getName();
+            if((selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("SimpleOrganizationDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram")) && selectedShapeName.contains("RectangleShape") && !selectedShapeName.endsWith("RectangleShape0")){
+                XText xText = (XText)UnoRuntime.queryInterface(XText.class, xSelectedShape);
+                xText.setString(str);
+            }else{
+                //error message
+            }
+        }else{
+            //error message
+        }
+    }
+
+    public void setFocusTextField(){
+        if(m_xTextField != null){
+            XWindow xWindow = (XWindow)UnoRuntime.queryInterface(XWindow.class, m_xTextField);
+            if(xWindow != null)
+                xWindow.setFocus();
+        }
+    }
+
+    public void setControllerTextField(){
+        if(m_xTextField != null){
+            if(getController().isOnlySimpleItemIsSelected()){
+                XText xText = (XText)UnoRuntime.queryInterface(XText.class, getController().getSelectedShape());
+                setTextField(xText.getString());
+            }else{
+                setTextField("Inactive function - this option can be used if only simple item has been selected");
+            }
+        }
+    }
+
+    public void enableVisibleTextField(boolean bool){
+        enableVisibleControl((XControl) UnoRuntime.queryInterface(XControl.class, m_xTextField), bool);
+    }
+
+    public void enableTextField(boolean bool){
+        enableControl((XControl) UnoRuntime.queryInterface(XControl.class, m_xTextField), bool);
+        if(!bool)
+            setFocusControlDialog();
+    }
+
+    public void textFieldDownUp(){
+        try {
+            XControl xControl = (XControl) UnoRuntime.queryInterface(XControl.class, m_xControlDialog);
+            XPropertySet xPS = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
+
+            String sPackageURL = getPackageLocation();
+            m_isShownTextField = !m_isShownTextField;
+
+            if(m_isShownTextField){
+                enableVisibleTextField(true);
+                if(getController().isOnlySimpleItemIsSelected())
+                    setFocusTextField();
+                else
+                    enableTextField(false);
+                xPS.setPropertyValue("Width", new Integer(272));
+                xPS.setPropertyValue("Height", new Integer(35));
+                if(m_oUpAndDownButton != null)
+                    setImageOfButton(m_oUpAndDownButton, sPackageURL + "/images/up.png", (short)-1);
+            }else{
+                enableVisibleTextField(false);
+                xPS.setPropertyValue("Width", new Integer(272));
+                xPS.setPropertyValue("Height", new Integer(15));
+                if(m_oUpAndDownButton != null)
+                    setImageOfButton(m_oUpAndDownButton, sPackageURL + "/images/down.png", (short)-1);
+            }
+        } catch (PropertyVetoException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        } catch (UnknownPropertyException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
+    }
+
+    public void showConvertDialog() {
+        try {
+            XDialogProvider2 xDialogProv = getDialogProvider();
+            String sPackageURL = getPackageLocation();
+            String sDialogURL = sPackageURL + "/dialogs/ConvertDialog.xdl";
+            m_xConvertDialog = xDialogProv.createDialogWithHandler(sDialogURL, m_oListener);
+
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xConvertDialog);
+
+            if (m_xConvertDialog != null){
+                m_xConvertComboBox = (XComboBox)UnoRuntime.queryInterface(XComboBox.class, xControlContainer.getControl("lastHorLevelComboBox"));
+                setConvertDialogRadioButtons();
+                m_xConvertWindow = (XWindow) UnoRuntime.queryInterface(XWindow.class, m_xConvertDialog);
+                m_xConvertTopWindow = (XTopWindow) UnoRuntime.queryInterface(XTopWindow.class, m_xConvertDialog);
+                m_xConvertTopWindow.addTopWindowListener(m_oListener);
+                m_xControlDialogWindow.setEnable(false);
+                m_xConvertDialog.execute();
+            }
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+
+    public short getConversationType(){
+        if(m_xConvertDialog != null){
+            XRadioButton xRadioButton = null;
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xConvertDialog);
+            xRadioButton = (XRadioButton)UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("convertOptionButton1"));
+            if(xRadioButton.getState() == true){
+                if(getController().getGroupType() == Controller.ORGANIGROUP)
+                    return Controller.SIMPLEORGANIGRAM;
+            }
+            xRadioButton = (XRadioButton)UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("convertOptionButton2"));
+            if(xRadioButton.getState() == true){
+                if(getController().getGroupType() == Controller.ORGANIGROUP)
+                    return Controller.HORIZONTALORGANIGRAM;
+            }
+            xRadioButton = (XRadioButton)UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("convertOptionButton3"));
+            if(xRadioButton.getState() == true){
+                if(getController().getGroupType() == Controller.ORGANIGROUP)
+                    return Controller.TABLEHIERARCHYDIAGRAM;
+            }
+            xRadioButton = (XRadioButton)UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("convertOptionButton4"));
+            if(xRadioButton.getState() == true){
+                if(getController().getGroupType() == Controller.ORGANIGROUP)
+                    return Controller.ORGANIGRAM;
+            }
+        }
+        return -1;
+    }
+
+    public void setConvertDialogRadioButtons(){
+        if(m_xConvertDialog != null){
+            try {
+                XRadioButton xRadioButton2          = null;
+                XControl xControl                   = null;
+                XPropertySet xProps                 = null;
+                String disabledButton               = "convertOptionButton";
+                XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xConvertDialog);
+
+                if(getController().getGroupType() == Controller.ORGANIGROUP){
+                    if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM){
+                        xRadioButton2 = (XRadioButton)UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("convertOptionButton2"));
+                        xRadioButton2.setState(true);
+                        disabledButton += 1;
+                    }
+                    if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                        disabledButton += 2;
+                    if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                        disabledButton += 3;
+                    //if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    //    disabledButton += 4;
+
+                    if(getController().getDiagramType() != Controller.ORGANIGRAM){
+                        xControl = (XControl) UnoRuntime.queryInterface(XControl.class, xControlContainer.getControl(disabledButton));
+                        xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
+                        xProps.setPropertyValue("Enabled", new Boolean(false));
+                    }
+                }
+                //return AnyConverter.toBoolean(xPropImage.getPropertyValue("EnableVisible"));
+            } catch (UnknownPropertyException ex) {
+                System.err.println(ex.getLocalizedMessage());
+            } catch (PropertyVetoException ex) {
+                System.err.println(ex.getLocalizedMessage());
+            } catch (IllegalArgumentException ex) {
+                System.err.println(ex.getLocalizedMessage());
+            } catch (WrappedTargetException ex) {
+                System.err.println(ex.getLocalizedMessage());
+            }
+        }
+    }
+
+    public void setConvertComboBox(boolean bool){
+        try {
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xConvertDialog);
+            XControl xControl = (XControl) UnoRuntime.queryInterface(XControl.class, xControlContainer.getControl("lastHorLevelComboBox"));
+            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
+            xProps.setPropertyValue("Enabled", new Boolean(bool));
+            xControl = (XControl) UnoRuntime.queryInterface(XControl.class, xControlContainer.getControl("Label"));
+            xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xControl.getModel());
+            xProps.setPropertyValue("Enabled", new Boolean(bool));
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (PropertyVetoException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+/*
+    public void closeConvertDialog(){
+        if(m_xConvertDialog != null)
+            m_xConvertDialog.endExecute();
+        if(m_xControlDialogWindow != null){
+            m_xControlDialogWindow.setEnable(true);
+            setFocusControlDialog();
+        }
+    }
+*/
     public void showGradientDialog() {
         try {
             XDialogProvider2 xDialogProv = getDialogProvider();
@@ -449,7 +667,7 @@ public class Gui {
             XDialogProvider2 xDialogProv = getDialogProvider();
             String sPackageURL = getPackageLocation();
             String diagramDefine = "";
-            if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+            if(getController().getGroupType() == Controller.ORGANIGROUP)
                 diagramDefine = "OrganigramPropsDialog.xdl";
             if(getController().getDiagramType() == Controller.VENNDIAGRAM)
                 diagramDefine = "VennDiagramPropsDialog.xdl";
@@ -487,7 +705,7 @@ public class Gui {
                     m_xFrameRoundedOBNoControl = null;
                 }
 
-                if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.ORGANIGRAM  || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
+                if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getGroupType() == Controller.ORGANIGROUP){
                     m_xStartColorImageControl = xControlContainer.getControl("startColorImageControl");
                     m_xEndColorImageControl = xControlContainer.getControl("endColorImageControl");
 
@@ -640,8 +858,10 @@ public class Gui {
     public void setSelectDialogText(short type){
         String sType = "";
         String sourceFileName = "Strings";
-        if( type == Controller.ORGANIGRAM )
-            sType = "Organigram";
+        if( type == Controller.ORGANIGRAM){
+            sType = "Organigram2";
+            sourceFileName += "2";
+        }
         if(type == Controller.VENNDIAGRAM )
             sType = "Venndiagram";
         if( type == Controller.PYRAMIDDIAGRAM )
@@ -656,6 +876,8 @@ public class Gui {
             sType = "TableHierarchyDiagram";
             sourceFileName += "2";
         }
+        if( type == Controller.SIMPLEORGANIGRAM)
+            sType = "Organigram";
         if(type == Controller.NOTDIAGRAM){
             m_XDiagramNameText.setText("");
             m_XDiagramDescriptionText.setText("");

@@ -1,4 +1,4 @@
-package org.openoffice.extensions.diagrams.diagram.organizationcharts.tablehierarchydiagram;
+package org.openoffice.extensions.diagrams.diagram.organizationcharts.simpleorganizationdiagram;
 
 import com.sun.star.awt.Point;
 import com.sun.star.drawing.XShape;
@@ -6,17 +6,16 @@ import org.openoffice.extensions.diagrams.diagram.organizationcharts.DiagramTree
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.TreeItem;
 
 
-class THDiagramTree extends DiagramTree {
+public class SODiagramTree extends DiagramTree{
 
-
-    public THDiagramTree(TableHierarchyDiagram thOrganigram) {
-        super(thOrganigram);
+    SODiagramTree(SimpleOrganizationDiagram sOrganigram) {
+        super(sOrganigram);
     }
 
-    THDiagramTree(TableHierarchyDiagram thOrganigram, DiagramTree diagramTree) {
-        super(thOrganigram, diagramTree);
-        THTreeItem.initStaticMembers();
-        m_RootItem = new THTreeItem(this, null, diagramTree.getRootItem());
+    SODiagramTree(SimpleOrganizationDiagram sOrganigram, DiagramTree diagramTree) {
+        super(sOrganigram, diagramTree);
+        SOTreeItem.initStaticMembers();
+        m_RootItem = new SOTreeItem(this, null, diagramTree.getRootItem());
         m_RootItem.setLevel((short)0);
         m_RootItem.setPos(0.0);
         m_RootItem.convertTreeItems(diagramTree.getRootItem());
@@ -24,20 +23,9 @@ class THDiagramTree extends DiagramTree {
 
     @Override
     public void initTreeItems(){
-        THTreeItem.initStaticMembers();
-        m_RootItem = new THTreeItem( this, m_xRootShape, null, (short)0, (short)0);
+        SOTreeItem.initStaticMembers();
+        m_RootItem = new SOTreeItem(this, m_xRootShape, null, (short)0, (short)0);
         m_RootItem.initTreeItems();
-    }
-
-    @Override
-    public void refresh(){
-        THTreeItem.initStaticMembers();
-        m_RootItem.setLevel((short)0);
-        m_RootItem.setPos(0.0);
-        ((THTreeItem)m_RootItem).setWidthUnit(1.0);
-        m_RootItem.setPositionsOfItems();
-        m_RootItem.setProps();
-        m_RootItem.display();
     }
 
     @Override
@@ -86,6 +74,16 @@ class THDiagramTree extends DiagramTree {
     }
 
     @Override
+    public void refresh(){
+        SOTreeItem.initStaticMembers();
+        m_RootItem.setLevel((short)0);
+        m_RootItem.setPos(0.0);
+        m_RootItem.setPositionsOfItems();
+        m_RootItem.setProps();
+        m_RootItem.display();
+    }
+
+    @Override
     public XShape getLastChildShape(XShape xDadShape){
         int     xPos                = -1;
         XShape  xChildeShape        = null;
@@ -104,7 +102,7 @@ class THDiagramTree extends DiagramTree {
     }
 
     @Override
-    public void refreshConnectorProps() {
+    public void refreshConnectorProps(){
         for(XShape xConnShape : connectorList)
             getOrgChart().setConnectorShapeProps(xConnShape, new Integer(2), new Integer(0));
     }

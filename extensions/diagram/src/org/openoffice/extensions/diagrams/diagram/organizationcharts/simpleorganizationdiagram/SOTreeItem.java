@@ -1,4 +1,4 @@
-package org.openoffice.extensions.diagrams.diagram.organizationcharts.horizontalorganizationdiagram;
+package org.openoffice.extensions.diagrams.diagram.organizationcharts.simpleorganizationdiagram;
 
 import com.sun.star.awt.Point;
 import com.sun.star.awt.Size;
@@ -7,8 +7,7 @@ import org.openoffice.extensions.diagrams.diagram.organizationcharts.DiagramTree
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.TreeItem;
 
 
-public class HTreeItem extends TreeItem {
-
+public class SOTreeItem extends TreeItem{
 
     protected static double[]        _maxPositions;
     protected static double          _maxPos                = -1.0;
@@ -21,11 +20,11 @@ public class HTreeItem extends TreeItem {
     private static int              _groupPosY              = 0;
 
 
-    public HTreeItem(DiagramTree diagramTree, TreeItem dad, TreeItem item) {
+    public SOTreeItem(DiagramTree diagramTree, TreeItem dad, TreeItem item) {
         super(diagramTree, dad, item);
     }
-    
-    public HTreeItem(DiagramTree diagramTree, XShape xShape, TreeItem dad, short level, double num){
+
+    public SOTreeItem(DiagramTree diagramTree, XShape xShape, TreeItem dad, short level, double num){
         super(diagramTree, xShape, dad);
         setLevel(level);
         setPos(num);
@@ -40,26 +39,14 @@ public class HTreeItem extends TreeItem {
     }
 
     @Override
-    public void convertTreeItems(TreeItem treeItem){
-        if(treeItem.isFirstChild()){
-            m_FirstChild = new HTreeItem(getDiagramTree(), this, treeItem.getFirstChild());
-            m_FirstChild.convertTreeItems(treeItem.getFirstChild());
-        }
-        if(treeItem.isFirstSibling()){
-            m_FirstSibling = new HTreeItem(getDiagramTree(), getDad(), treeItem.getFirstSibling());
-            m_FirstSibling.convertTreeItems(treeItem.getFirstSibling());
-        }
-    }
-
-    @Override
     public final void setPos(double pos){
         m_Pos = pos;
         if(m_Pos > _maxPositions[m_Level])
             _maxPositions[m_Level] = m_Pos;
         if(m_Pos > _maxPos)
             _maxPos = m_Pos;
-        // XText xText = (XText) UnoRuntime.queryInterface(XText.class, m_xRectangleShape);
-        // xText.setString(m_Level +":"+m_Pos);
+        //XText xText = (XText) UnoRuntime.queryInterface(XText.class, m_xRectangleShape);
+        //xText.setString(m_Level +":"+m_Pos);
     }
 
     @Override
@@ -68,7 +55,7 @@ public class HTreeItem extends TreeItem {
         if(xFirstChildShape != null){
             short firstChildLevel = (short)(m_Level + 1);
             double firstChildPos = _maxPositions[firstChildLevel] + 1.0;
-            m_FirstChild = new HTreeItem(getDiagramTree(), xFirstChildShape, this, firstChildLevel , firstChildPos);
+            m_FirstChild = new SOTreeItem(getDiagramTree(), xFirstChildShape, this, firstChildLevel , firstChildPos);
             m_FirstChild.initTreeItems();
         }
 
@@ -76,10 +63,10 @@ public class HTreeItem extends TreeItem {
         if(xFirstSiblingShape != null){
             short firstSiblingLevel = m_Level;
             double firstSiblingNum = m_Pos + 1.0;
-            m_FirstSibling = new HTreeItem(getDiagramTree(), xFirstSiblingShape, m_Dad, firstSiblingLevel , firstSiblingNum);
+            m_FirstSibling = new SOTreeItem(getDiagramTree(), xFirstSiblingShape, m_Dad, firstSiblingLevel , firstSiblingNum);
             m_FirstSibling.initTreeItems();
         }
-        
+
         if(m_Dad != null && m_Dad.getFirstChild().equals(this)){
             double newPos = 0.0;
             if(isFirstSibling())
@@ -127,34 +114,43 @@ public class HTreeItem extends TreeItem {
         }
     }
 
-    // set _horUnit, _shapeWidth, , horSpace, _verUnit, _shapeHeight, verSpace, _groupPosX, _groupPosY
+    // set _shapeWidth, , horSpace, _shapeHeight, verSpace, _groupPosX, _groupPosY
     @Override
     public void setProps(){
         int baseShapeWidth = _shapeWidth = getDiagramTree().getControlShapeSize().Width;
         int baseShapeHeight = _shapeHeight = getDiagramTree().getControlShapeSize().Height;
         _horSpace = _verSpace = 0;
-        
-        if(_maxLevel > 0){
-            int horUnit = baseShapeWidth / ( _maxLevel * (getDiagramTree().getOrgChart().getWIDTH() + getDiagramTree().getOrgChart().getHORSPACE()) + getDiagramTree().getOrgChart().getWIDTH());
+        if(_maxPos > 0){
+            int horUnit = (int)(baseShapeWidth / ( _maxPos * (getDiagramTree().getOrgChart().getWIDTH() + getDiagramTree().getOrgChart().getHORSPACE()) + getDiagramTree().getOrgChart().getWIDTH()));
             _shapeWidth = horUnit * getDiagramTree().getOrgChart().getWIDTH();
             _horSpace = horUnit * getDiagramTree().getOrgChart().getHORSPACE();
         }
-        if(_maxPos > 0){
-            int verUnit = (int)((baseShapeHeight) / ( _maxPos * (getDiagramTree().getOrgChart().getHEIGHT() + getDiagramTree().getOrgChart().getVERSPACE()) + getDiagramTree().getOrgChart().getHEIGHT()));
+        if(_maxLevel > 0){
+            int verUnit = (baseShapeHeight) / ( _maxLevel * (getDiagramTree().getOrgChart().getHEIGHT() + getDiagramTree().getOrgChart().getVERSPACE()) + getDiagramTree().getOrgChart().getHEIGHT());
             _shapeHeight = verUnit * getDiagramTree().getOrgChart().getHEIGHT();
             _verSpace = verUnit * getDiagramTree().getOrgChart().getVERSPACE();
         }
-
         _groupPosX = getDiagramTree().getControlShapePos().X;
         _groupPosY = getDiagramTree().getControlShapePos().Y;
     }
 
     @Override
     public void setPosOfRect(){
-        int xCoord = _groupPosX + (_shapeWidth + _horSpace) * getLevel();
-        int yCoord = _groupPosY + getDiagramTree().getControlShapeSize().Height -_shapeHeight - (int)((_shapeHeight + _verSpace) * getPos());
+        int xCoord = _groupPosX + (int)((_shapeWidth + _horSpace) * getPos());
+        int yCoord = _groupPosY + (_shapeHeight + _verSpace) * getLevel();
         setPosition(new Point(xCoord, yCoord));
         setSize(new Size(_shapeWidth, _shapeHeight));
     }
 
+    @Override
+    public void convertTreeItems(TreeItem treeItem){
+        if(treeItem.isFirstChild()){
+            m_FirstChild = new SOTreeItem(getDiagramTree(), this, treeItem.getFirstChild());
+            m_FirstChild.convertTreeItems(treeItem.getFirstChild());
+        }
+        if(treeItem.isFirstSibling()){
+            m_FirstSibling = new SOTreeItem(getDiagramTree(), getDad(), treeItem.getFirstSibling());
+            m_FirstSibling.convertTreeItems(treeItem.getFirstSibling());
+        }
+    }
 }

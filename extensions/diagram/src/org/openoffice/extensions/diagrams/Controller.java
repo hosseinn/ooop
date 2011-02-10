@@ -21,9 +21,12 @@ import com.sun.star.view.XSelectionChangeListener;
 import com.sun.star.view.XSelectionSupplier;
 import org.openoffice.extensions.diagrams.diagram.Diagram;
 import org.openoffice.extensions.diagrams.diagram.cyclediagram.CycleDiagram;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.DiagramTree;
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.OrganizationChart;
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.horizontalorganizationdiagram.HorizontalOrganizationDiagram;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.organizationdiagram.ODiagramTree;
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.organizationdiagram.OrganizationDiagram;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.simpleorganizationdiagram.SimpleOrganizationDiagram;
 import org.openoffice.extensions.diagrams.diagram.pyramiddiagram.PyramidDiagram;
 import org.openoffice.extensions.diagrams.diagram.venndiagram.VennDiagram;
 
@@ -48,17 +51,19 @@ public final class Controller implements XSelectionChangeListener {
     protected static final short        ORGANIGROUP             = 0;
     protected static final short        RELATIONGROUP           = 1;
     protected static final short        LISTGROUP               = 2;
-    protected static final short        MATRIXGROUP             = 3;
+    protected static final short        PROCESSGROUP            = 3;
+    protected static final short        MATRIXGROUP             = 4;
+    
+    public static final short           NOTDIAGRAM              = -1;
+    public static final short           SIMPLEORGANIGRAM        =  0;
+    public static final short           HORIZONTALORGANIGRAM    =  1;
+    public static final short           TABLEHIERARCHYDIAGRAM   =  2;
+    public static final short           ORGANIGRAM              =  3;
+    public static final short           VENNDIAGRAM             = 10;
+    public static final short           CYCLEDIAGRAM            = 11;
+    public static final short           PYRAMIDDIAGRAM          = 12;
 
-    public static final short        ORGANIGRAM              = 1;
-    public static final short        VENNDIAGRAM             = 2;
-    public static final short        PYRAMIDDIAGRAM          = 3;
-    public static final short        CYCLEDIAGRAM            = 4;
-
-    public static final short        HORIZONTALORGANIGRAM    = 5;
-    public static final short        TABLEHIERARCHYDIAGRAM   = 6;
-
-    protected static final short        NOTDIAGRAM              = 10;
+    
 
     Controller( Diagrams diagrams, XComponentContext xContext, XFrame xFrame ){
         m_Diagrams = diagrams;
@@ -218,13 +223,15 @@ public final class Controller implements XSelectionChangeListener {
         XNamed xNamed = (XNamed) UnoRuntime.queryInterface( XNamed.class, getSelectedShape() );
         String selectedShapeName = xNamed.getName();
         // listen the diagrams
-        if(selectedShapeName.startsWith("TableHierarchyDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("VennDiagram") || selectedShapeName.startsWith("PyramidDiagram") || selectedShapeName.startsWith("CycleDiagram")) {
+        if(selectedShapeName.startsWith("SimpleOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("VennDiagram") || selectedShapeName.startsWith("PyramidDiagram") || selectedShapeName.startsWith("CycleDiagram")) {
             String newDiagramName = selectedShapeName.split("-", 2)[0];
-            // if the previous selected item not in same diagram,
+            // if the previous selected item is not in the same diagram,
             // need to instantiate the new diagram
             if( m_sLastDiagramName.equals("") || !m_sLastDiagramName.equals(newDiagramName)){
-                if( selectedShapeName.startsWith("OrganizationDiagram") )
+                if( selectedShapeName.startsWith("OrganizationDiagram") ){
                     setDiagramType(ORGANIGRAM);
+                    ODiagramTree.LASTHORLEVEL = -1;
+                }
                 if( selectedShapeName.startsWith("VennDiagram") )
                     setDiagramType(VENNDIAGRAM);
                 if( selectedShapeName.startsWith("PyramidDiagram") )
@@ -235,19 +242,32 @@ public final class Controller implements XSelectionChangeListener {
                     setDiagramType(HORIZONTALORGANIGRAM);
                 if( selectedShapeName.startsWith("TableHierarchyDiagram") )
                     setDiagramType(TABLEHIERARCHYDIAGRAM);
+                if( selectedShapeName.startsWith("SimpleOrganizationDiagram") )
+                    setDiagramType(SIMPLEORGANIGRAM);
                 instantiateDiagram();
                 m_sLastDiagramName = newDiagramName;
                 getGui().setVisibleControlDialog(true);
                 getDiagram().initDiagram();
             }
-            if((selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram")) && selectedShapeName.endsWith("RectangleShape0"))
+            if((selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("SimpleOrganizationDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram")) && selectedShapeName.endsWith("RectangleShape0"))
                 if(getDiagram() != null)
                     ((OrganizationChart)getDiagram()).selectShapes();
+//if((selectedShapeName.startsWith("OrganizationDiagram"))
+//                beállítani a ODiagramTree.LASTHORLEVEL -t
             if(!getGui().isVisibleControlDialog())
                 getGui().setVisibleControlDialog(true);
+            if(getGui().isShownTextField()){
+                if(isOnlySimpleItemIsSelected())
+                    getGui().enableTextField(true);
+                else
+                    getGui().enableTextField(false);
+            }
             if(getGui().isVisibleControlDialog())
                 getGui().setFocusControlDialog();
         }
+
+        if(getGui() != null)
+            getGui().setControllerTextField();
     }
 
     public void instantiateDiagram(){
@@ -263,12 +283,34 @@ public final class Controller implements XSelectionChangeListener {
             m_Diagram = new HorizontalOrganizationDiagram(this, getGui(), m_xFrame);
         if(m_DiagramType == TABLEHIERARCHYDIAGRAM)
             m_Diagram = new TableHierarchyDiagram(this, getGui(), m_xFrame);
+        if(m_DiagramType == SIMPLEORGANIGRAM)
+            m_Diagram = new SimpleOrganizationDiagram(this, getGui(), m_xFrame);
     }
-/*
-    public void convert(DiagramTree diagramTree){
-        m_Diagram = new OrganizationDiagram(this, getGui(), m_xFrame, diagramTree);
+
+    public void convert(short diagramType){
+        String newDiagramTypeName = "";
+        if(diagramType == SIMPLEORGANIGRAM)
+            newDiagramTypeName = "SimpleOrganizationDiagram";
+        if(diagramType == HORIZONTALORGANIGRAM)
+            newDiagramTypeName = "HorizontalOrganizationDiagram";
+        if(diagramType == TABLEHIERARCHYDIAGRAM)
+            newDiagramTypeName = "TableHierarchyDiagram";
+        if(diagramType == ORGANIGRAM)
+            newDiagramTypeName = "OrganizationDiagram";
+        if(m_GroupType == Controller.ORGANIGROUP){
+            String oldDiagramTypeName = getDiagram().getDiagramTypeName();
+            DiagramTree diagramTree = ((OrganizationChart)getDiagram()).getDiagramTree();
+            getDiagram().renameShapes(oldDiagramTypeName, newDiagramTypeName);
+            setDiagramType(diagramType);
+            instantiateDiagram();
+            ((OrganizationChart)getDiagram()).initDiagramTree(diagramTree);
+
+            XNamed xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class, getSelectedShape());
+            String selectedShapeName = xNamed.getName();
+            String newDiagramName = selectedShapeName.split("-", 2)[0];
+            setLastDiagramName(newDiagramName);
+        }
     }
- */
 
     public void setSelectedShape(Object obj){
         try {
@@ -276,6 +318,16 @@ public final class Controller implements XSelectionChangeListener {
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());
         }
+    }
+
+    public boolean isOnlySimpleItemIsSelected(){
+        if(getSelectedShapes().getCount() == 1){
+            XNamed xNamed = (XNamed) UnoRuntime.queryInterface( XNamed.class, getSelectedShape() );
+            String selectedShapeName = xNamed.getName();
+            if((selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("SimpleOrganizationDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram")) && selectedShapeName.contains("RectangleShape") && !selectedShapeName.endsWith("RectangleShape0"))
+                return true;
+        }
+        return false;
     }
 
     public XShapes getSelectedShapes(){

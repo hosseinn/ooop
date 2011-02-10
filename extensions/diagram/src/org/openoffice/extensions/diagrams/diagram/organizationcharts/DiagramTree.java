@@ -34,6 +34,14 @@ public abstract class DiagramTree {
         m_xShapes       = m_OrgChart.getShapes();
     }
 
+    public DiagramTree(OrganizationChart orgChart, DiagramTree diagramTree){
+        m_OrgChart      = orgChart;
+        rectangleList   = diagramTree.rectangleList;
+        connectorList   = diagramTree.connectorList;
+        m_xShapes       = m_OrgChart.getShapes();
+        m_xControlShape = diagramTree.m_xControlShape;
+        m_xRootShape    = diagramTree.m_xRootShape;
+    }
 
     public abstract void initTreeItems();
 
@@ -52,6 +60,8 @@ public abstract class DiagramTree {
     public TreeItem getRootItem(){
         return m_RootItem;
     }
+
+    public abstract void refreshConnectorProps();
 
     // set root Item, return number of roots (if number is not 1, than there is error
     public short setRootItem(){
@@ -278,6 +288,8 @@ public abstract class DiagramTree {
     }
 
     public Size getControlShapeSize(){
+        if(m_xControlShape == null)
+            System.out.println("controlShape = null");
         return m_xControlShape.getSize();
     }
 

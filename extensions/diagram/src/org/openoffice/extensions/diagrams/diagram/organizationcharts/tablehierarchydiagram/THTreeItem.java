@@ -22,6 +22,10 @@ class THTreeItem extends TreeItem{
     private static int          _groupPosY          = 0;
 
 
+    THTreeItem(DiagramTree diagramTree, TreeItem dad, TreeItem item) {
+        super(diagramTree, dad, item);
+    }
+    
     public THTreeItem(DiagramTree diagramTree, XShape xShape, TreeItem dad, short level, double num){
         super(diagramTree, xShape, dad);
         setLevel(level);
@@ -36,6 +40,18 @@ class THTreeItem extends TreeItem{
         _maxPositions = new double[100];
         for(int i=0; i<_maxPositions.length; i++)
             _maxPositions[i] = -1.0;
+    }
+
+    @Override
+    public void convertTreeItems(TreeItem treeItem){
+        if(treeItem.isFirstChild()){
+            m_FirstChild = new THTreeItem(getDiagramTree(), this, treeItem.getFirstChild());
+            m_FirstChild.convertTreeItems(treeItem.getFirstChild());
+        }
+        if(treeItem.isFirstSibling()){
+            m_FirstSibling = new THTreeItem(getDiagramTree(), getDad(), treeItem.getFirstSibling());
+            m_FirstSibling.convertTreeItems(treeItem.getFirstSibling());
+        }
     }
 
     public double getWidthUnit(){

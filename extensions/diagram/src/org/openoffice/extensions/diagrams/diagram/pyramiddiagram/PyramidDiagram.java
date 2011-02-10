@@ -39,7 +39,7 @@ public class PyramidDiagram extends Diagram {
     }
     
     @Override
-    public String getDiagramType(){
+    public String getDiagramTypeName(){
         return "PyramidDiagram";
     }
 
@@ -54,23 +54,23 @@ public class PyramidDiagram extends Diagram {
         if(m_xDrawPage != null && m_xShapes != null){
             try {
 
-                int orignGSWidth = m_GroupSizeWidth;
-                if ((m_GroupSizeWidth * 4 / 5) <= (m_GroupSizeHeight))
-                    m_GroupSizeHeight = m_GroupSizeWidth * 4 / 5;
+                int orignGSWidth = m_DrawAreaWidth;
+                if ((m_DrawAreaWidth * 4 / 5) <= (m_DrawAreaHeight))
+                    m_DrawAreaHeight = m_DrawAreaWidth * 4 / 5;
                 else
-                    m_GroupSizeWidth = m_GroupSizeHeight * 5 / 4;
-                m_xGroupShape.setSize(new Size(m_GroupSizeWidth, m_GroupSizeHeight));
+                    m_DrawAreaWidth = m_DrawAreaHeight * 5 / 4;
+                m_xGroupShape.setSize(new Size(m_DrawAreaWidth, m_DrawAreaHeight));
                 
                 int halfDiff = 0;
-                if (orignGSWidth > m_GroupSizeWidth) 
-                    halfDiff = (orignGSWidth - m_GroupSizeWidth) / 2;
+                if (orignGSWidth > m_DrawAreaWidth)
+                    halfDiff = (orignGSWidth - m_DrawAreaWidth) / 2;
                 m_xGroupShape.setPosition(new Point(m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderTop));
                 
                 XShape xControlTriangle = createShape("PolyPolygonShape", 0);
                 m_xShapes.add(xControlTriangle);
-                Point a = new Point(m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderTop + m_GroupSizeHeight);
-                Point b = new Point(m_PageProps.BorderLeft + m_GroupSizeWidth / 2 + halfDiff, m_PageProps.BorderTop);
-                Point c = new Point(m_PageProps.BorderLeft + m_GroupSizeWidth + halfDiff, m_PageProps.BorderTop + m_GroupSizeHeight);
+                Point a = new Point(m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderTop + m_DrawAreaHeight);
+                Point b = new Point(m_PageProps.BorderLeft + m_DrawAreaWidth / 2 + halfDiff, m_PageProps.BorderTop);
+                Point c = new Point(m_PageProps.BorderLeft + m_DrawAreaWidth + halfDiff, m_PageProps.BorderTop + m_DrawAreaHeight);
                 setControlTriangleShape(xControlTriangle, a, b, c);
 
                 XShape xTrapezeShape = null;

@@ -1,7 +1,5 @@
 package org.openoffice.extensions.diagrams.diagram.organizationcharts.tablehierarchydiagram;
 
-import com.sun.star.awt.Point;
-import com.sun.star.awt.Size;
 import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
@@ -10,7 +8,6 @@ import com.sun.star.drawing.LineStyle;
 import com.sun.star.drawing.XShape;
 import com.sun.star.frame.XFrame;
 import com.sun.star.lang.IllegalArgumentException;
-import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.uno.UnoRuntime;
 import org.openoffice.extensions.diagrams.Controller;
@@ -37,76 +34,74 @@ public class TableHierarchyDiagram extends OrganizationChart {
     }
 
     @Override
+    public void initDiagramTree(DiagramTree diagramTree){
+        super.initDiagram();
+        m_DiagramTree = new THDiagramTree(this, diagramTree);
+    }
+ 
+    @Override
     public DiagramTree getDiagramTree(){
         return m_DiagramTree;
     }
 
     @Override
-    public String getDiagramType(){
+    public String getDiagramTypeName(){
         return "TableHierarchyDiagram";
     }
 
     @Override
     public void createDiagram(int n){
-        try{
-            if(m_xDrawPage != null && m_xShapes != null && n > 0){
+        if(m_xDrawPage != null && m_xShapes != null && n > 0){
+            setDrawArea();
+            // base shape
+            XShape xBaseShape = createShape("RectangleShape", 0, m_PageProps.BorderLeft + m_iHalfDiff, m_PageProps.BorderBottom, m_DrawAreaWidth, m_DrawAreaHeight);
+            m_xShapes.add(xBaseShape);
+            setPropsOfBaseShape(xBaseShape);
 
-                int orignGSWidth = m_GroupSizeWidth;
-
-                if( (m_GroupSizeWidth / GROUPWIDTH ) <= ( m_GroupSizeHeight / GROUPHEIGHT ) )
-                    m_GroupSizeHeight = m_GroupSizeWidth * GROUPHEIGHT / GROUPWIDTH;
-                else
-                    m_GroupSizeWidth = m_GroupSizeHeight * GROUPWIDTH / GROUPHEIGHT;
-                // set new size of m_xGroupShape for Organigram
-                m_xGroupShape.setSize(new Size(m_GroupSizeWidth,m_GroupSizeHeight));
-
-                int halfDiff = 0;
-                if(orignGSWidth > m_GroupSizeWidth)
-                    halfDiff = (orignGSWidth - m_GroupSizeWidth) / 2;
-                m_xGroupShape.setPosition( new Point( m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderTop ) );
-
-                // base shape
-                XShape xBaseShape = createShape("RectangleShape", 0, m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderBottom, m_GroupSizeWidth, m_GroupSizeHeight);
-                m_xShapes.add(xBaseShape);
-                setPropsOfBaseShape(xBaseShape);
-
-                int horUnit = m_GroupSizeWidth / ( n - 1 );
-                int shapeWidth = m_GroupSizeWidth;
-
-                int verUnit = m_GroupSizeHeight / 2;
-                int shapeHeight = m_GroupSizeHeight / 2;
-
-                int xCoord = m_PageProps.BorderLeft + halfDiff;
-                int yCoord = m_PageProps.BorderTop;
-
-                XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
-                m_xShapes.add(xStartShape);
-                setMoveProtectOfShape(xStartShape);
-                setTextFitToSize(xStartShape);
-                setShapeProperties(xStartShape, "RectangleShape");
-                setColorOfShape(xStartShape, COLOR);
-
-                yCoord += verUnit;
-                shapeWidth /= 3;
-                XShape xRectShape = null;
-
-                for( int i = 2; i <= n; i++ ){
-                    xRectShape = createShape("RectangleShape", i, xCoord + ((i-2) * horUnit), yCoord, shapeWidth, shapeHeight);
-                    m_xShapes.add(xRectShape);
-                    setMoveProtectOfShape(xRectShape);
-                    setTextFitToSize(xRectShape);
-                    setShapeProperties(xRectShape, "RectangleShape");
-                    setColorOfShape(xRectShape, COLOR);
-
-                    XShape xConnectorShape = createShape("ConnectorShape", i);
-                    m_xShapes.add(xConnectorShape);
-                    setMoveProtectOfShape(xConnectorShape);
-                    setConnectorShapeProps(xConnectorShape, xStartShape, new Integer(2), xRectShape, new Integer(0));
-                }
-                getController().setSelectedShape((Object)xStartShape);
+            int horUnit, shapeWidth, verUnit, shapeHeight;
+            horUnit = shapeWidth = verUnit =  shapeHeight = 0;
+            shapeWidth = m_DrawAreaWidth;
+            if(n > 1){
+                horUnit = m_DrawAreaWidth / ( n - 1 );
+                verUnit = m_DrawAreaHeight / 2;
+                shapeHeight = m_DrawAreaHeight / 2;
             }
-        } catch (PropertyVetoException ex) {
-            System.err.println(ex.getLocalizedMessage());
+            if(n == 1)
+                shapeHeight = m_DrawAreaHeight;
+
+            int xCoord = m_PageProps.BorderLeft + m_iHalfDiff;
+            int yCoord = m_PageProps.BorderTop;
+
+            XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
+            m_xShapes.add(xStartShape);
+            setMoveProtectOfShape(xStartShape);
+            setTextFitToSize(xStartShape);
+            setShapeProperties(xStartShape, "RectangleShape");
+            int color = -1;
+            if(getGui() != null && getGui().getControlDialogWindow() != null)
+                color = getGui().getImageColorOfControlDialog();
+            if(color < 0)
+                color = COLOR;
+            setColorOfShape(xStartShape, color);
+
+            yCoord += verUnit;
+            shapeWidth /= 3;
+            XShape xRectShape = null;
+
+            for( int i = 2; i <= n; i++ ){
+                xRectShape = createShape("RectangleShape", i, xCoord + ((i-2) * horUnit), yCoord, shapeWidth, shapeHeight);
+                m_xShapes.add(xRectShape);
+                setMoveProtectOfShape(xRectShape);
+                setTextFitToSize(xRectShape);
+                setShapeProperties(xRectShape, "RectangleShape");
+                setColorOfShape(xRectShape, color);
+
+                XShape xConnectorShape = createShape("ConnectorShape", i);
+                m_xShapes.add(xConnectorShape);
+                setMoveProtectOfShape(xConnectorShape);
+                setConnectorShapeProps(xConnectorShape, xStartShape, new Integer(2), xRectShape, new Integer(0));
+            }
+            getController().setSelectedShape((Object)xStartShape);
         }
     }
 
@@ -142,110 +137,79 @@ public class TableHierarchyDiagram extends OrganizationChart {
 
     @Override
     public void addShape(){
-        try {
-            if(m_DiagramTree != null){
-                XShape xSelectedShape = getController().getSelectedShape();
-                if(xSelectedShape != null){
-                    XNamed xNamed = (XNamed) UnoRuntime.queryInterface( XNamed.class, xSelectedShape );
-                    String selectedShapeName = xNamed.getName();
+        if(m_DiagramTree != null){
+            XShape xSelectedShape = getController().getSelectedShape();
+            if(xSelectedShape != null){
+                XNamed xNamed = (XNamed) UnoRuntime.queryInterface( XNamed.class, xSelectedShape );
+                String selectedShapeName = xNamed.getName();
+                int iTopShapeID = -1;
 
-                    int iTopShapeID = -1;
-                    XShape xCurrShape = null;
-                    String currShapeName = "";
-
-                    if(selectedShapeName.contains("RectangleShape") && !selectedShapeName.contains("RectangleShape0")){
-                        TreeItem selectedItem = m_DiagramTree.getTreeItem(xSelectedShape);
-                        // can't be associate of root item
-                        if(selectedItem.getDad() == null && m_sNewItemHType == 1 ) {
-                            String title = getGui().getDialogPropertyValue("Strings", "ItemAddError.Title");
-                            String message = getGui().getDialogPropertyValue("Strings", "ItemAddError.Message");
-                            getGui().showMessageBox(title, message);
-                        }else{
-                            // adjust iTopShapeID
-                            for( int i=0; i < m_xShapes.getCount(); i++ ){
-                                xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
-                                currShapeName = getShapeName(xCurrShape);
-                                if (currShapeName.contains("RectangleShape")) {
-                                    int shapeID = getController().getNumberOfShape(currShapeName);
-                                    if (shapeID > iTopShapeID)
-                                        iTopShapeID = shapeID;
-                                }
-                            }
-                            if( iTopShapeID <= 0 ){
-                                clearEmptyDiagramAndReCreate();
-                            }else{
-                                iTopShapeID++;
-                                XShape xRectangleShape = createShape("RectangleShape", iTopShapeID);
-                                m_xShapes.add(xRectangleShape);
-                                setMoveProtectOfShape(xRectangleShape);
-                                setTextFitToSize(xRectangleShape);
-                                setShapeProperties(xRectangleShape, "RectangleShape");
-                
-                                int color = getGui().getImageColorOfControlDialog();
-                                if(color < 0)
-                                    color = COLOR;
-                                setColorOfShape(xRectangleShape, color);
-
-                                m_DiagramTree.addToRectangles(xRectangleShape);
-
-                                TreeItem newTreeItem = null;
-                                TreeItem dadItem = null;
-
-                                if(m_sNewItemHType == UNDERLING){
-                                    dadItem = selectedItem;
-                                    newTreeItem = new THTreeItem(m_DiagramTree, xRectangleShape, dadItem, (short)0 , 0.0);
-                                    if(!dadItem.isFirstChild()){
-                                        dadItem.setFirstChild(newTreeItem);
-                                    }else{
-                                        XShape xPreviousChild = m_DiagramTree.getLastChildShape(xSelectedShape);
-                                        if(xPreviousChild != null){
-                                            TreeItem previousItem = m_DiagramTree.getTreeItem(xPreviousChild);
-                                            if(previousItem != null)
-                                                previousItem.setFirstSibling(newTreeItem);
-                                        }
-                                    }
-                                }else if(m_sNewItemHType == ASSOCIATE){
-                                    dadItem = selectedItem.getDad();
-                                    newTreeItem = new THTreeItem(m_DiagramTree, xRectangleShape, dadItem, (short)0, 0.0);
-                                    if(selectedItem.isFirstSibling())
-                                        newTreeItem.setFirstSibling(selectedItem.getFirstSibling());
-                                    selectedItem.setFirstSibling(newTreeItem);
-                                }
-                                if(iTopShapeID > 1){
-                                    // set connector shape
-                                    XShape xConnectorShape = createShape("ConnectorShape", iTopShapeID);
-                                    m_xShapes.add(xConnectorShape);
-                                    setMoveProtectOfShape(xConnectorShape);
-                                    m_DiagramTree.addToConnectors(xConnectorShape);
-                                    XShape xStartShape = null;
-                                    if(m_sNewItemHType == UNDERLING)
-                                        xStartShape = getController().getSelectedShape();
-                                    else if(m_sNewItemHType == ASSOCIATE)
-                                        xStartShape = selectedItem.getDad().getRectangleShape();
-                                    setConnectorShapeProps(xConnectorShape, xStartShape, new Integer(1), xRectangleShape, new Integer(3));
-                                }
-                            }
-                        }
-                    }else if(selectedShapeName.contains("GroupShape")){
-                        for( int i=0; i < m_xShapes.getCount(); i++ ){
-                            xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
-                            currShapeName = getShapeName(xCurrShape);
-                            if (currShapeName.contains("RectangleShape")) {
-                                int shapeID = getController().getNumberOfShape(currShapeName);
-                                if (shapeID > iTopShapeID)
-                                    iTopShapeID = shapeID;
-                            }
-                        }
-                        if( iTopShapeID <= 0 )
+                if(selectedShapeName.contains("RectangleShape") && !selectedShapeName.contains("RectangleShape0")){
+                    TreeItem selectedItem = m_DiagramTree.getTreeItem(xSelectedShape);
+                    // can't be associate of root item
+                    if(selectedItem.getDad() == null && m_sNewItemHType == 1 ) {
+                        String title = getGui().getDialogPropertyValue("Strings", "ItemAddError.Title");
+                        String message = getGui().getDialogPropertyValue("Strings", "ItemAddError.Message");
+                        getGui().showMessageBox(title, message);
+                    }else{
+                        iTopShapeID = getTopShapeID();
+                        if( iTopShapeID <= 0 ){
                             clearEmptyDiagramAndReCreate();
-                    }
+                        }else{
+                            iTopShapeID++;
+                            XShape xRectangleShape = createShape("RectangleShape", iTopShapeID);
+                            m_xShapes.add(xRectangleShape);
+                            setMoveProtectOfShape(xRectangleShape);
+                            setTextFitToSize(xRectangleShape);
+                            setShapeProperties(xRectangleShape, "RectangleShape");
+                            int color = -1;
+                            if(getGui() != null && getGui().getControlDialogWindow() != null)
+                                color = getGui().getImageColorOfControlDialog();
+                            if(color < 0)
+                                color = COLOR;
+                            setColorOfShape(xRectangleShape, color);
+                            m_DiagramTree.addToRectangles(xRectangleShape);
 
+                            TreeItem newTreeItem = null;
+                            TreeItem dadItem = null;
+
+                            if(m_sNewItemHType == UNDERLING){
+                                dadItem = selectedItem;
+                                newTreeItem = new THTreeItem(m_DiagramTree, xRectangleShape, dadItem, (short)0 , 0.0);
+                                if(!dadItem.isFirstChild()){
+                                    dadItem.setFirstChild(newTreeItem);
+                                }else{
+                                    XShape xPreviousChild = m_DiagramTree.getLastChildShape(xSelectedShape);
+                                    if(xPreviousChild != null){
+                                        TreeItem previousItem = m_DiagramTree.getTreeItem(xPreviousChild);
+                                        if(previousItem != null)
+                                            previousItem.setFirstSibling(newTreeItem);
+                                    }
+                                }
+                            }else if(m_sNewItemHType == ASSOCIATE){
+                                dadItem = selectedItem.getDad();
+                                newTreeItem = new THTreeItem(m_DiagramTree, xRectangleShape, dadItem, (short)0, 0.0);
+                                if(selectedItem.isFirstSibling())
+                                    newTreeItem.setFirstSibling(selectedItem.getFirstSibling());
+                                selectedItem.setFirstSibling(newTreeItem);
+                            }
+                            if(iTopShapeID > 1){
+                                // set connector shape
+                                XShape xConnectorShape = createShape("ConnectorShape", iTopShapeID);
+                                m_xShapes.add(xConnectorShape);
+                                setMoveProtectOfShape(xConnectorShape);
+                                m_DiagramTree.addToConnectors(xConnectorShape);
+                                XShape xStartShape = null;
+                                if(m_sNewItemHType == UNDERLING)
+                                    xStartShape = getController().getSelectedShape();
+                                else if(m_sNewItemHType == ASSOCIATE)
+                                    xStartShape = selectedItem.getDad().getRectangleShape();
+                                setConnectorShapeProps(xConnectorShape, xStartShape, new Integer(1), xRectangleShape, new Integer(3));
+                            }
+                        }
+                    }
                 }
             }
-        } catch (IndexOutOfBoundsException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (WrappedTargetException ex) {
-            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -299,6 +263,26 @@ public class TableHierarchyDiagram extends OrganizationChart {
 
                 }
             }
+        }
+    }
+
+    @Override
+    public void setConnectorShapeProps(XShape xConnectorShape, Integer startIndex, Integer endIndex){
+        try {
+            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnectorShape);
+            xProps.setPropertyValue("StartGluePointIndex", startIndex);
+            xProps.setPropertyValue("EndGluePointIndex", endIndex);
+            //xProps.setPropertyValue("LineWidth",new Integer(100));
+            xProps.setPropertyValue("LineStyle", LineStyle.NONE);
+            //xProps.setPropertyValue("EdgeKind", ConnectorType.STANDARD);
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (PropertyVetoException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
