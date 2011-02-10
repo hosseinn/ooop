@@ -39,7 +39,7 @@ public class VennDiagram extends Diagram {
     }
 
     @Override
-    public String getDiagramType(){
+    public String getDiagramTypeName(){
         return "VennDiagram";
     }
 
@@ -52,12 +52,12 @@ public class VennDiagram extends Diagram {
     public void createDiagram(int n){
         try {
 
-            m_GroupSize = m_GroupSizeWidth <= m_GroupSizeHeight ? m_GroupSizeWidth : m_GroupSizeHeight;
+            m_GroupSize = m_DrawAreaWidth <= m_DrawAreaHeight ? m_DrawAreaWidth : m_DrawAreaHeight;
             m_xGroupShape.setSize( new Size( m_GroupSize, m_GroupSize ) );
 
             int halfDiff = 0;
-            if(m_GroupSize < m_GroupSizeWidth)
-                halfDiff = (m_GroupSizeWidth - m_GroupSize) / 2;
+            if(m_GroupSize < m_DrawAreaWidth)
+                halfDiff = (m_DrawAreaWidth - m_GroupSize) / 2;
             m_xGroupShape.setPosition( new Point( m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderTop ) );
 
             int ellipseSize = m_GroupSize / 3;

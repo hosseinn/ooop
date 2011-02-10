@@ -44,7 +44,7 @@ public class CycleDiagram extends Diagram {
     }
 
     @Override
-    public String getDiagramType(){
+    public String getDiagramTypeName(){
         return "CycleDiagram";
     }
 
@@ -58,12 +58,12 @@ public class CycleDiagram extends Diagram {
         try {
             if(m_xDrawPage != null && m_xShapes != null){
 
-                m_GroupSize = m_GroupSizeWidth <= m_GroupSizeHeight ? m_GroupSizeWidth : m_GroupSizeHeight;
+                m_GroupSize = m_DrawAreaWidth <= m_DrawAreaHeight ? m_DrawAreaWidth : m_DrawAreaHeight;
                 m_xGroupShape.setSize( new Size( m_GroupSize, m_GroupSize ) );
 
                 int halfDiff = 0;
-                if(m_GroupSize < m_GroupSizeWidth)
-                    halfDiff = (m_GroupSizeWidth - m_GroupSize) / 2;
+                if(m_GroupSize < m_DrawAreaWidth)
+                    halfDiff = (m_DrawAreaWidth - m_GroupSize) / 2;
                 m_xGroupShape.setPosition( new Point( m_PageProps.BorderLeft + halfDiff, m_PageProps.BorderTop ) );
 
                 int controlEllipseSize = m_GroupSize / 4 * 3;

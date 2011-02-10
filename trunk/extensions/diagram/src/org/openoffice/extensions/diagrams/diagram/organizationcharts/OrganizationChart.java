@@ -2,6 +2,8 @@ package org.openoffice.extensions.diagrams.diagram.organizationcharts;
 
 import com.sun.star.awt.Gradient;
 import com.sun.star.awt.GradientStyle;
+import com.sun.star.awt.Point;
+import com.sun.star.awt.Size;
 import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
@@ -41,61 +43,28 @@ public abstract class OrganizationChart extends Diagram{
 
     protected final short       DEFAULT             = 0;
     protected final short       NOT_MONOGRAPHIC     = 1;
-    protected final short       ROUNDED             = 2;
+    protected final short       NOT_ROUNDED         = 2;
     protected final short       GRADIENTS           = 3;
     protected final short       USER_DEFINE         = 4;
 
+    protected int               m_iHalfDiff         = 0;
+    
     protected boolean           m_IsGradientAction  = false;
     public static int           _startColor         = 16711680;
     public static int           _endColor           = 8388608;
+
+    //private FillStyle fillStyle = FillStyle.SOLID;
+    //private LineStyle lineStyle = LineStyle.SOLID;
+    //private int lineWidth = 100;
+    //private int cornerRadius = 600;
 
 
     public OrganizationChart(Controller controller, Gui gui, XFrame xFrame) {
         super(controller, gui, xFrame);
         m_sNewItemHType = UNDERLING;
     }
-/*
-    public void convert(){
-        System.out.println(getDiagramTree().m_RootItem.m_sRectangleName);
-        String oldDiagramType = getDiagramType();
-        System.out.println(getDiagramType());
-        getController().setDiagramType(Controller.ORGANIGRAM);
-        //getController().convert(getDiagramTree());
-        //String newDiagramType = getDiagramType();
-        String newDiagramType = "OrganizationDiagram";
-        System.out.println(newDiagramType);
-        renameShapes(oldDiagramType, newDiagramType);
 
-    }
-
-    public void renameShapes(String oldDiagramName, String newDiagramName){
-        XShape xShape = null;
-        try {
-            XNamed xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class, m_xGroupShape);
-            String shapeName = xNamed.getName();
-            System.out.println(shapeName);
-            shapeName = shapeName.replace(oldDiagramName, newDiagramName);
-            System.out.println(shapeName);
-            xNamed.setName(shapeName);
-            for(int i=0; i < m_xShapes.getCount(); i++){
-                System.out.println(i);
-                xShape = (XShape)UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
-                if(xShape != null){
-                    xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class, xShape);
-                    shapeName = xNamed.getName();
-                    System.out.println(shapeName);
-                    shapeName = shapeName.replace(oldDiagramName, newDiagramName);
-                    System.out.println(shapeName);
-                    xNamed.setName(shapeName);
-                }
-            }
-        } catch (IndexOutOfBoundsException ex) {
-            System.out.println(ex.getLocalizedMessage());
-        } catch (WrappedTargetException ex) {
-            System.out.println(ex.getLocalizedMessage());
-        }
-    }
-*/
+    public abstract void initDiagramTree(DiagramTree diagramTree);
 
     public void setGradientAction(boolean bool){
         m_IsGradientAction = bool;
@@ -137,6 +106,48 @@ public abstract class OrganizationChart extends Diagram{
 
     public abstract void createDiagram(int n);
 
+    public void setDrawArea(){
+        try {
+            int orignGSWidth = m_DrawAreaWidth;
+            if ((m_DrawAreaWidth / GROUPWIDTH) <= (m_DrawAreaHeight / GROUPHEIGHT)) {
+                m_DrawAreaHeight = m_DrawAreaWidth * GROUPHEIGHT / GROUPWIDTH;
+            } else {
+                m_DrawAreaWidth = m_DrawAreaHeight * GROUPWIDTH / GROUPHEIGHT;
+            }
+            // set new size of m_xGroupShape for Organigram
+            m_xGroupShape.setSize(new Size(m_DrawAreaWidth, m_DrawAreaHeight));
+            m_iHalfDiff = 0;
+            if (orignGSWidth > m_DrawAreaWidth)
+                m_iHalfDiff = (orignGSWidth - m_DrawAreaWidth) / 2;
+            m_xGroupShape.setPosition(new Point(m_PageProps.BorderLeft + m_iHalfDiff, m_PageProps.BorderTop));
+        } catch (PropertyVetoException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
+    }
+
+    public int getTopShapeID(){
+        int iTopShapeID = -1;
+        XShape xCurrShape = null;
+        String currShapeName = "";
+        int shapeID;
+        try {
+            for( int i=0; i < m_xShapes.getCount(); i++ ){
+                xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
+                currShapeName = getShapeName(xCurrShape);
+                if (currShapeName.contains("RectangleShape")) {
+                    shapeID = getController().getNumberOfShape(currShapeName);
+                    if (shapeID > iTopShapeID)
+                        iTopShapeID = shapeID;
+                }
+            }
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
+        return iTopShapeID;
+    }
+
     public abstract DiagramTree getDiagramTree();
 
     public boolean isErrorInTree(){
@@ -153,6 +164,8 @@ public abstract class OrganizationChart extends Diagram{
     }
 
     public void repairDiagram(){
+        if(getDiagramTree().getRectangleListSize() == 0)
+            clearEmptyDiagramAndReCreate();
         getDiagramTree().repairTree();
         initDiagram();
     }
@@ -190,40 +203,77 @@ public abstract class OrganizationChart extends Diagram{
         getDiagramTree().refresh();
     }
 
+    public void refreshConnectorProps(){
+        getDiagramTree().refreshConnectorProps();
+    }
+
     @Override
     public void setShapeProperties(XShape xShape, String type) {
 
-        int color = getGui().getImageColorOfControlDialog();
-        if(color < 0)
-            color = COLOR;
+        int shapeID = getController().getNumberOfShape(getShapeName(xShape));
+
+        int color = -1;
+        if(getGui() != null && getGui().getControlDialogWindow() != null)
+            color = getGui().getImageColorOfControlDialog();
+        //if(color < 0)
+        //    color = COLOR;
         XPropertySet xProp = null;
 
         try {
             xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
-            //if( m_Style != GRADIENTS ){
+/*
+            if(m_Style == GRADIENTS)
+                if(getGui().isEnableControlDialogImageColor())
+                    getGui().disableControlDialogImageColor();
+            if(m_Style == DEFAULT)
+                if(!getGui().isEnableControlDialogImageColor())
+                    getGui().enableControlDialogImageColor();
+ *
+ */
+ 
             if( m_Style != GRADIENTS || !( m_Style == USER_DEFINE && m_IsGradients == true)){
                 if(!getGui().isEnableControlDialogImageColor())
                     getGui().enableControlDialogImageColor();
             }
-            if( m_Style == DEFAULT ){
-                xProp.setPropertyValue("FillColor", new Integer(color));
-                xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
-                xProp.setPropertyValue("CornerRadius", new Integer(0));
+  
+            /*
+            if( m_Style == DEFAULT){
                 xProp.setPropertyValue("FillStyle", FillStyle.SOLID);
-            }else if( m_Style == NOT_MONOGRAPHIC){
+                if(color < 0)
+                    color = aCOLORS[(shapeID - 1) % aCOLORS.length];
+                int index = -1;
+                for(int i = 0; i < aCOLORS.length; i++)
+                    if(aCOLORS[i] == color)
+                        index = (i + 1) % aCOLORS.length;
+                if(index == -1)
+                    index = shapeID % aCOLORS.length;
                 xProp.setPropertyValue("FillColor", new Integer(color));
-                xProp.setPropertyValue("LineStyle", LineStyle.NONE);
-                xProp.setPropertyValue("CornerRadius", new Integer(0));
+                if(getGui() != null && getGui().getControlDialogWindow() != null)
+                    getGui().setImageColorOfControlDialog(aCOLORS[index] );
+            }
+             */
+            if( m_Style == DEFAULT){
                 xProp.setPropertyValue("FillStyle", FillStyle.SOLID);
-            }else if( m_Style == ROUNDED){
-                xProp.setPropertyValue("FillColor", new Integer(color));
                 xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
+                xProp.setPropertyValue("LineWidth", new Integer(100));
                 xProp.setPropertyValue("CornerRadius", new Integer(600));
+            }else if( m_Style == NOT_MONOGRAPHIC){
                 xProp.setPropertyValue("FillStyle", FillStyle.SOLID);
-            } else if( m_Style == GRADIENTS){
-                getGui().disableControlDialogImageColor();
+                xProp.setPropertyValue("LineWidth", new Integer(100));
+                xProp.setPropertyValue("LineStyle", LineStyle.NONE);
+                xProp.setPropertyValue("CornerRadius", new Integer(600));
+            }else if( m_Style == NOT_ROUNDED){
+                xProp.setPropertyValue("FillStyle", FillStyle.SOLID);
                 xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
+                xProp.setPropertyValue("LineWidth", new Integer(100));
                 xProp.setPropertyValue("CornerRadius", new Integer(0));
+            } else if( m_Style == GRADIENTS){
+                xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
+                xProp.setPropertyValue("LineWidth", new Integer(100));
+                xProp.setPropertyValue("CornerRadius", new Integer(600));
+
+                getGui().disableControlDialogImageColor();
+
                 xProp.setPropertyValue("FillStyle", FillStyle.GRADIENT);
                 Gradient aGradient = new Gradient();
                 aGradient.Style = GradientStyle.LINEAR;
@@ -395,6 +445,8 @@ public abstract class OrganizationChart extends Diagram{
 
     public abstract void setConnectorShapeProps(XShape xConnectorShape, XShape xStartShape, Integer startIndex, XShape xEndShape, Integer endIndex);
 
+    public abstract void setConnectorShapeProps(XShape xConnShape, Integer start, Integer end);
+
     public void clearEmptyDiagramAndReCreate(){
         try {
              if(m_xShapes != null){
@@ -405,7 +457,6 @@ public abstract class OrganizationChart extends Diagram{
                         m_xShapes.remove(xShape);
                 }
             }
-            m_xDrawPage.remove(m_xGroupShape);
             createDiagram(1);
         } catch (IndexOutOfBoundsException ex) {
             System.err.println(ex.getLocalizedMessage());

@@ -1,30 +1,34 @@
 package org.openoffice.extensions.diagrams.diagram.organizationcharts.organizationdiagram;
 
 import com.sun.star.awt.Point;
+import com.sun.star.beans.UnknownPropertyException;
+import com.sun.star.beans.XPropertySet;
 import com.sun.star.drawing.XShape;
+import com.sun.star.lang.IllegalArgumentException;
+import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.uno.AnyConverter;
+import com.sun.star.uno.UnoRuntime;
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.DiagramTree;
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.TreeItem;
 
 
 public class ODiagramTree extends DiagramTree{
 
+    public static short LASTHORLEVEL = 2;
 
     public ODiagramTree(OrganizationDiagram organigram){
         super(organigram);
     }
-/*
-    ODiagramTree(OrganizationDiagram organigram, DiagramTree diagramTree) {
-        this(organigram);
 
-        rectangleList       = diagramTree.rectangleList;
-        connectorList       = diagramTree.connectorList;
-        m_xShapes           = diagramTree.m_xShapes;
-        m_xControlShape     = diagramTree.m_xControlShape;
-        m_xRootShape        = diagramTree.m_xRootShape;
-        m_RootItem          = diagramTree.m_RootItem;
-        m_SelectedItem      = diagramTree.m_SelectedItem;
+    public ODiagramTree(OrganizationDiagram organigram, DiagramTree diagramTree) {
+        super(organigram, diagramTree);
+        OTreeItem.initStaticMembers();
+        m_RootItem = new OTreeItem(this, null, diagramTree.getRootItem());
+        m_RootItem.setLevel((short)0);
+        m_RootItem.setPos(0.0);
+        m_RootItem.convertTreeItems(diagramTree.getRootItem());
     }
-*/
+
     @Override
     public void initTreeItems(){
         OTreeItem.initStaticMembers();
@@ -43,8 +47,11 @@ public class ODiagramTree extends DiagramTree{
 
         for(XShape xConnShape : connectorList){
             if(xDadShape.equals(getStartShapeOfConnector(xConnShape))){
+                int endOfConn = getEndGluePointIndex(xConnShape);
+                if(ODiagramTree.LASTHORLEVEL == -1 && endOfConn == 3)
+                    ODiagramTree.LASTHORLEVEL = (short)(level - 1);
                 xChildeShape = getEndShapeOfConnector(xConnShape);
-                if(level <= 2){
+                if(level <= ODiagramTree.LASTHORLEVEL){
                     if( xPos == -1 || xChildeShape.getPosition().X < xPos){
                         xPos = xChildeShape.getPosition().X;
                         xFirstChildShape = xChildeShape;
@@ -71,7 +78,7 @@ public class ODiagramTree extends DiagramTree{
         for(XShape xConnShape : connectorList){
             if(xDadShape.equals(getStartShapeOfConnector(xConnShape))){
                 xChildeShape = getEndShapeOfConnector(xConnShape);
-                if(level <= 2){
+                if(level <= ODiagramTree.LASTHORLEVEL){
                     if( xPos == -1 || xChildeShape.getPosition().X > xPos){
                         xPos = xChildeShape.getPosition().X;
                         xLastChildShape = xChildeShape;
@@ -105,7 +112,7 @@ public class ODiagramTree extends DiagramTree{
         for(XShape xConnShape : connectorList){
             if(xDadShape.equals(getStartShapeOfConnector(xConnShape))){
                 xSiblingShape = getEndShapeOfConnector(xConnShape);
-                if(level <= 2){
+                if(level <= ODiagramTree.LASTHORLEVEL){
                     if( xSiblingShape.getPosition().X > baseShapePos.X){
                         if( xPos == -1 || xSiblingShape.getPosition().X < xPos){
                             xPos = xSiblingShape.getPosition().X;
@@ -128,10 +135,40 @@ public class ODiagramTree extends DiagramTree{
     @Override
     public void refresh(){
         OTreeItem.initStaticMembers();
-        TreeItem._maxLevel = 0;
+        m_RootItem.setLevel((short)0);
+        m_RootItem.setPos(0.0);
         m_RootItem.setPositionsOfItems();
         m_RootItem.setProps();
         m_RootItem.display();
     }
 
+    @Override
+    public void refreshConnectorProps(){
+        for(XShape xConnShape : connectorList){
+            XShape xShape = getEndShapeOfConnector(xConnShape);
+            short level = getTreeItem(xShape).getLevel();
+            Integer start, end;
+            start = new Integer(2);
+            if(level <= ODiagramTree.LASTHORLEVEL){
+                end = new Integer(0);
+            } else{
+                end = new Integer(3);
+            }
+            getOrgChart().setConnectorShapeProps(xConnShape, start, end);
+        }
+    }
+
+    public int getEndGluePointIndex(XShape xConnShape){
+        try {
+            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnShape);
+                return AnyConverter.toInt(xProps.getPropertyValue("EndGluePointIndex"));
+        } catch (UnknownPropertyException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
+        return -1;
+    }
 }

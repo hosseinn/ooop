@@ -6,7 +6,10 @@ import com.sun.star.awt.XTopWindowListener;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.EventObject;
 import com.sun.star.awt.XDialogEventHandler;
+import com.sun.star.drawing.XShape;
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.OrganizationChart;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.TreeItem;
+import org.openoffice.extensions.diagrams.diagram.organizationcharts.organizationdiagram.ODiagramTree;
 import org.openoffice.extensions.diagrams.diagram.organizationcharts.organizationdiagram.OrganizationDiagram;
 
 
@@ -15,6 +18,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
 
     Gui         m_Gui           = null;
     Controller  m_Controller    = null;
+    int         m_iLastHorLevel = 3;
 
     Listener(Gui gui, Controller controller){
         m_Gui = gui;
@@ -32,7 +36,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
     // XDialogEventHandler
     @Override
     public String[] getSupportedMethodNames() {
-        String[] aMethods = new String[123];
+        String[] aMethods = new String[140];
         aMethods[0] = "Organigram";
         aMethods[1] = "VennDiagram";
         aMethods[2] = "PyramidDiagram";
@@ -64,12 +68,32 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         aMethods[26] = "item1Pressed";
         aMethods[27] = "item2Pressed";
         aMethods[28] = "item3Pressed";
-        aMethods[29] = "eventOk";
+        aMethods[29] = "item4Pressed";
+        aMethods[30] = "item5Pressed";
+        aMethods[31] = "item6Pressed";
+        aMethods[32] = "item7Pressed";
 
-        aMethods[30] = "convert";
+        aMethods[33] = "eventOk";
+
+        aMethods[34] = "convert";
+        aMethods[35] = "convertAction";
+        aMethods[36] = "downUpAction";
+        aMethods[37] = "textFieldModified";
+
+        aMethods[38] = "allShape";
+        aMethods[39] = "root";
+        aMethods[40] = "previous";
+        aMethods[41] = "next";
+        aMethods[42] = "up";
+        aMethods[43] = "down";
+        aMethods[44] = "edit";
+
+        aMethods[45] = "changedLastHorLevel";
+        aMethods[46] = "converButton1Pressed";
+        aMethods[47] = "converButton2Pressed";
 
         for(int i=1;i<=92;i++)
-            aMethods[i+30] = "image" +i;
+            aMethods[i+47] = "image" +i;
         return aMethods;
     }
 
@@ -80,7 +104,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         if(methodName.equals("itemChangedInList")){
             if(((ItemEvent)eventObject).Selected == 0){
                 getController().setGroupType(Controller.ORGANIGROUP);
-                getController().setDiagramType(Controller.ORGANIGRAM);
+                getController().setDiagramType(Controller.SIMPLEORGANIGRAM);
             }
             if(((ItemEvent)eventObject).Selected == 1){
                 getController().setGroupType(Controller.RELATIONGROUP);
@@ -91,6 +115,10 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
                 getController().setDiagramType(Controller.NOTDIAGRAM);
             }
             if(((ItemEvent)eventObject).Selected == 3){
+                getController().setGroupType(Controller.PROCESSGROUP);
+                getController().setDiagramType(Controller.NOTDIAGRAM);
+            }
+            if(((ItemEvent)eventObject).Selected == 4){
                 getController().setGroupType(Controller.MATRIXGROUP);
                 getController().setDiagramType(Controller.NOTDIAGRAM);
             }
@@ -100,12 +128,14 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         }
 
         // SelectDialog for DiagramGallery2
-        if(methodName.equals("item0Pressed")){
+        if(methodName.equals("item0Pressed") || methodName.equals("item4Pressed")){
             if(getController().getGroupType() == Controller.ORGANIGROUP)
-                getController().setDiagramType(Controller.ORGANIGRAM);
+                getController().setDiagramType(Controller.SIMPLEORGANIGRAM);
             if(getController().getGroupType() == Controller.RELATIONGROUP)
                 getController().setDiagramType(Controller.VENNDIAGRAM);
             if(getController().getGroupType() == Controller.LISTGROUP)
+                ;
+            if(getController().getGroupType() == Controller.PROCESSGROUP)
                 ;
             if(getController().getGroupType() == Controller.MATRIXGROUP)
                 ;
@@ -113,25 +143,14 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
             return true;
         }
 
-        if(methodName.equals("item1Pressed")){
+        if(methodName.equals("item1Pressed") || methodName.equals("item5Pressed")){
             if(getController().getGroupType() == Controller.ORGANIGROUP)
                 getController().setDiagramType(Controller.HORIZONTALORGANIGRAM);
             if(getController().getGroupType() == Controller.RELATIONGROUP)
                 getController().setDiagramType(Controller.CYCLEDIAGRAM);
             if(getController().getGroupType() == Controller.LISTGROUP)
                 ;
-            if(getController().getGroupType() == Controller.MATRIXGROUP)
-                ;
-            getGui().setSelectDialogText();
-            return true;
-        }
-
-        if(methodName.equals("item3Pressed")){
-            if(getController().getGroupType() == Controller.ORGANIGROUP)
-                ;
-            if(getController().getGroupType() == Controller.RELATIONGROUP)
-                ;
-            if(getController().getGroupType() == Controller.LISTGROUP)
+            if(getController().getGroupType() == Controller.PROCESSGROUP)
                 ;
             if(getController().getGroupType() == Controller.MATRIXGROUP)
                 ;
@@ -139,12 +158,30 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
             return true;
         }
 
-        if(methodName.equals("item2Pressed")){
+
+        if(methodName.equals("item2Pressed") || methodName.equals("item6Pressed")){
             if(getController().getGroupType() == Controller.ORGANIGROUP)
                 getController().setDiagramType(Controller.TABLEHIERARCHYDIAGRAM);
             if(getController().getGroupType() == Controller.RELATIONGROUP)
                 getController().setDiagramType(Controller.PYRAMIDDIAGRAM);
             if(getController().getGroupType() == Controller.LISTGROUP)
+                ;
+            if(getController().getGroupType() == Controller.PROCESSGROUP)
+                ;
+            if(getController().getGroupType() == Controller.MATRIXGROUP)
+                ;
+            getGui().setSelectDialogText();
+            return true;
+        }
+
+        if(methodName.equals("item3Pressed") || methodName.equals("item7Pressed")){
+            if(getController().getGroupType() == Controller.ORGANIGROUP)
+                getController().setDiagramType(Controller.ORGANIGRAM);
+            if(getController().getGroupType() == Controller.RELATIONGROUP)
+                ;
+            if(getController().getGroupType() == Controller.LISTGROUP)
+                ;
+            if(getController().getGroupType() == Controller.PROCESSGROUP)
                 ;
             if(getController().getGroupType() == Controller.MATRIXGROUP)
                 ;
@@ -190,6 +227,91 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
             return true;
         }
         // ControlDialog1, ControlDialog2
+        if(methodName.equals("allShape")){
+            if(getController().getDiagram() != null){
+                getController().getDiagram().setFocusGroupShape();
+            }
+            return true;
+        }
+        if(methodName.equals("root")){
+            if(getController().getDiagram() != null) {
+                if(getController().getGroupType() == Controller.ORGANIGROUP){
+                    OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
+                    TreeItem treeItem = orgChart.getDiagramTree().getRootItem();
+                    if(treeItem != null)
+                        getController().setSelectedShape(treeItem.getRectangleShape());
+                }
+            }
+            return true;
+        }
+
+        if(methodName.equals("previous")){
+            if(getController().isOnlySimpleItemIsSelected()){
+                if(getController().getDiagram() != null) {
+                    if(getController().getGroupType() == Controller.ORGANIGROUP){
+                        OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
+                        TreeItem treeItem = orgChart.getDiagramTree().getTreeItem(getController().getSelectedShape());
+                        if(treeItem.isDad()){
+                             TreeItem previousItem = treeItem.getDad().getPreviousSibling(treeItem);
+                            if(previousItem != null)
+                                getController().setSelectedShape(previousItem.getRectangleShape());
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        if(methodName.equals("next")){
+            if(getController().isOnlySimpleItemIsSelected()){
+                if(getController().getDiagram() != null) {
+                    if(getController().getGroupType() == Controller.ORGANIGROUP){
+                        OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
+                        TreeItem treeItem = orgChart.getDiagramTree().getTreeItem(getController().getSelectedShape());
+                        if(treeItem.isFirstSibling())
+                            getController().setSelectedShape(treeItem.getFirstSibling().getRectangleShape());
+                    }
+                }
+            }
+            return true;
+        }
+
+        if(methodName.equals("up")){
+            if(getController().isOnlySimpleItemIsSelected()){
+                if(getController().getDiagram() != null) {
+                    if(getController().getGroupType() == Controller.ORGANIGROUP){
+                        OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
+                        TreeItem treeItem = orgChart.getDiagramTree().getTreeItem(getController().getSelectedShape());
+                        if(treeItem.isDad())
+                            getController().setSelectedShape(treeItem.getDad().getRectangleShape());
+                    }
+                }
+            }
+            return true;
+        }
+
+        if(methodName.equals("down")){
+            if(getController().isOnlySimpleItemIsSelected()){
+                if(getController().getDiagram() != null) {
+                    if(getController().getGroupType() == Controller.ORGANIGROUP){
+                        OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
+                        TreeItem treeItem = orgChart.getDiagramTree().getTreeItem(getController().getSelectedShape());
+                        if(treeItem.isFirstChild())
+                            getController().setSelectedShape(treeItem.getFirstChild().getRectangleShape());
+                    }
+                }
+            }
+            return true;
+        }
+
+        if(methodName.equals("edit")){
+            if(!getGui().isShownTextField())
+                getGui().textFieldDownUp();
+            if(getController().isOnlySimpleItemIsSelected())
+                getGui().setFocusTextField();
+            return true;
+        }
+
         if(methodName.equals("showColorTable")){
 
             if(((EventObject)eventObject).Source.equals(getGui().m_xColorImageControl))
@@ -205,7 +327,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         // ControlDialog1, ControlDialog2
         if(methodName.equals("addShape")){
             if(getController().getDiagram() != null) {
-                if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
+                if(getController().getGroupType() == Controller.ORGANIGROUP){
                     OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
                     if(orgChart.isErrorInTree()){
                         getGui().askUserForRepair(orgChart);
@@ -223,7 +345,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         // ControlDialog1, ControlDialog2
         if(methodName.equals("removeShape")){
             if(getController().getDiagram() != null) {
-                if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
+                if(getController().getGroupType() == Controller.ORGANIGROUP){
                     OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
                     if(orgChart.isErrorInTree()){
                         getGui().askUserForRepair(orgChart);
@@ -247,16 +369,53 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
             }
             return true;
         }
-/*
+
         if(methodName.equals("convert")){
+            getGui().showConvertDialog();
+            m_iLastHorLevel = 2;
+            return true;
+        }
+
+        if(methodName.equals("converButton1Pressed")){
+            getGui().setConvertComboBox(false);
+            return true;
+        }
+
+        if(methodName.equals("converButton2Pressed")){
+            getGui().setConvertComboBox(true);
+            return true;
+        }
+
+        if(methodName.equals("changedLastHorLevel")){
+            m_iLastHorLevel = ((ItemEvent)eventObject).Selected;
+            return true;
+        }
+
+        if(methodName.equals("convertAction")){
+            getGui().m_xConvertTopWindow.removeTopWindowListener(this);
+            short convType = getGui().getConversationType();
+
+            getGui().m_xConvertDialog.endExecute();
+            getGui().m_xConvertWindow = null;
+            getGui().m_xConvertTopWindow = null;
+            getGui().m_xConvertDialog = null;
+            getGui().m_xControlDialogWindow.setEnable(true);
+            getGui().m_xControlDialogWindow.setFocus();
             if(getController().getDiagram() != null) {
-                if(getController().getDiagramType() == Controller.ORGANIGRAM || getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM || getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM){
+                if(getController().getGroupType() == Controller.ORGANIGROUP){
                     OrganizationChart orgChart = (OrganizationChart)getController().getDiagram();
                     if(orgChart.isErrorInTree()){
                         getGui().askUserForRepair(orgChart);
                     }else{
-                        orgChart.convert();
-                        //getController().getDiagram().refreshDiagram();
+                        if(convType == Controller.ORGANIGRAM){
+                            if(getController().getDiagramType() == Controller.ORGANIGRAM && m_iLastHorLevel == ODiagramTree.LASTHORLEVEL)
+                                return true;
+                            ODiagramTree.LASTHORLEVEL = (short)m_iLastHorLevel;
+                        }
+                        if(convType != Controller.ORGANIGRAM || (convType == Controller.ORGANIGRAM && getController().getDiagramType() != Controller.ORGANIGRAM))
+                            getController().convert(convType);
+                        getController().getDiagram().refreshDiagram();
+                        ((OrganizationChart)getController().getDiagram()).refreshConnectorProps();
                     }
                 }else{
                     //
@@ -264,7 +423,17 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
             }
             return true;
         }
-*/
+
+        if(methodName.equals("downUpAction")){
+            getGui().textFieldDownUp();
+            return true;
+        }
+
+        if(methodName.equals("textFieldModified")){
+            getGui().textFieldModified();
+            return true;
+        }
+
         // ControlDialog2
         if(methodName.equals("changedAddProp")){
             ((OrganizationChart)getController().getDiagram()).setNewItemHType((short)((ItemEvent)eventObject).Selected);
@@ -557,6 +726,16 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
            getGui().m_xGradientWindow = null;
            getGui().m_xGradientTopWindow = null;
            getGui().m_xGradientDialog = null;
+           getGui().m_xControlDialogWindow.setEnable(true);
+           getGui().m_xControlDialogWindow.setFocus();
+        }
+
+        if(event.Source.equals(getGui().m_xConvertTopWindow)){
+           getGui().m_xConvertTopWindow.removeTopWindowListener(this);
+           getGui().m_xConvertDialog.endExecute();
+           getGui().m_xConvertWindow = null;
+           getGui().m_xConvertTopWindow = null;
+           getGui().m_xConvertDialog = null;
            getGui().m_xControlDialogWindow.setEnable(true);
            getGui().m_xControlDialogWindow.setFocus();
         }

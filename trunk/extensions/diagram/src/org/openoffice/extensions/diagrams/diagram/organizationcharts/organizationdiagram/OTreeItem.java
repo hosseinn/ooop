@@ -9,22 +9,22 @@ import org.openoffice.extensions.diagrams.diagram.organizationcharts.TreeItem;
 
 public class OTreeItem extends TreeItem{
 
+    protected static double[]        _maxPositions;
+    protected static double[]        _maxBranchPositions;
+    protected static double          _maxPos                = -1.0;
 
-    protected static double          _level1MaxPos           = -1;
-    protected static double          _level2MaxPos           = -1;
-    protected static double          _maxPos                 = -1;
+    private static int              _horSpace               = 0;
+    private static int              _verSpace               = 0;
+    private static int              _shapeWidth             = 0;
+    private static int              _shapeHeight            = 0;
+    private static int              _groupPosX              = 0;
+    private static int              _groupPosY              = 0;
 
-    protected static int            _borderTop              = 0;
-    protected static int            _borderLeft             = 0;
-    protected static int            _groupSizeWidth         = 0;
-    protected static int            _groupSizeHeight        = 0;
-    protected static int            _horSpace               = 0;
-    protected static int            _verSpace               = 0;
-    protected static int            _shapeWidth             = 0;
-    protected static int            _shapeHeight            = 0;
-    protected static int            _horUnit                = 0;
 
-    
+    public OTreeItem(DiagramTree diagramTree, TreeItem dad, TreeItem item){
+        super(diagramTree, dad, item);
+    }
+
     public OTreeItem(DiagramTree diagramTree, XShape xShape, TreeItem dad, short level, double num){
         super(diagramTree, xShape, dad);
         setLevel(level);
@@ -32,199 +32,214 @@ public class OTreeItem extends TreeItem{
     }
 
     public static void initStaticMembers(){
-        TreeItem._maxLevel = -1;
-        _maxPos = _level1MaxPos = _level2MaxPos = -1.0;
+        _maxLevel = -1;
+        _maxPos = -1.0;
+        _maxPositions = new double[100];
+        for(int i=0; i<_maxPositions.length; i++)
+            _maxPositions[i] = -1.0;
+        _maxBranchPositions = new double[100];
+        for(int i=0; i<_maxBranchPositions.length; i++)
+            _maxBranchPositions[i] = -1.0;
+    }
+
+    @Override
+    public void convertTreeItems(TreeItem treeItem){
+        if(treeItem.isFirstChild()){
+            m_FirstChild = new OTreeItem(getDiagramTree(), this, treeItem.getFirstChild());
+            m_FirstChild.convertTreeItems(treeItem.getFirstChild());
+        }
+        if(treeItem.isFirstSibling()){
+            m_FirstSibling = new OTreeItem(getDiagramTree(), getDad(), treeItem.getFirstSibling());
+            m_FirstSibling.convertTreeItems(treeItem.getFirstSibling());
+        }
     }
 
     @Override
     public final void setPos(double pos){
         m_Pos = pos;
+        if(m_Pos > _maxPositions[m_Level])
+            _maxPositions[m_Level] = m_Pos;
+        if(m_Pos > _maxPos)
+            _maxPos = m_Pos;
         //XText xText = (XText) UnoRuntime.queryInterface(XText.class, m_xRectangleShape);
         //xText.setString(m_Level +":"+m_Pos);
-        if(m_Level == 1)
-           if(m_Pos >_level1MaxPos)
-                _level1MaxPos = m_Pos;
-        if(m_Level == 2)
-            if(m_Pos >_level2MaxPos)
-                _level2MaxPos = m_Pos;
-        if(_maxPos < m_Pos)
-            _maxPos = m_Pos;
-        if(m_Level > 3)
-            if(_level2MaxPos < (m_Pos - 1))
-                _level2MaxPos = (short)(m_Pos - 1);
     }
 
-    // set the treeItems in the tree (set dad-firstChild-firstSibling relations of TreeItems)
-    // and set m_level and m_PosNum
     @Override
     public void initTreeItems(){
+
         XShape xFirstChildShape = getDiagramTree().getFirstChildShape(m_xRectangleShape);
         if(xFirstChildShape != null){
             short firstChildLevel = (short)(m_Level + 1);
-            short firstChildNum = (short)0;
-            if(firstChildLevel == 1)
-                if(_level1MaxPos > -1)
-                    firstChildNum = (short)(_level1MaxPos + 2);
-            if(firstChildLevel == 2)
-                if(_level2MaxPos > -1)
-                    firstChildNum = (short)(_level2MaxPos + 2);
-            if(firstChildLevel == 3)
-                firstChildNum = (short)(_level2MaxPos + 1);
-            if(firstChildLevel > 3)
-                firstChildNum = (short)(getPos() + 1);
-                //firstChildNum = (short)(++_level2MaxPos + 1);
-                
-            m_FirstChild = new OTreeItem(getDiagramTree(), xFirstChildShape, this, firstChildLevel , firstChildNum);
+            double firstChildPos = 0.0;
+            if(firstChildLevel <= ODiagramTree.LASTHORLEVEL)
+                firstChildPos = _maxPositions[firstChildLevel] + 1.0;
+            if(firstChildLevel > ODiagramTree.LASTHORLEVEL)
+                firstChildPos = m_Pos + 0.5;
+            m_FirstChild = new OTreeItem(getDiagramTree(), xFirstChildShape, this, firstChildLevel , firstChildPos);
             m_FirstChild.initTreeItems();
         }
 
-        if(m_FirstChild != null){
-            TreeItem lastChildItem = getDiagramTree().getTreeItem(getDiagramTree().getLastChildShape(m_xRectangleShape));
-            short newPos = (short)(  ( m_FirstChild.getPos() + lastChildItem.getPos() ) / 2 );
-            if(m_Level == 0)
-                setPos( newPos );
-            if(m_Level == 1) {
-                if(newPos > getPos()){
-                    setPos( newPos );
-                }else if(newPos < getPos()){
-                    short diff = (short)(getPos() - newPos);
-                    increaseDescendantsPosNum(diff);
+        if(m_Level == ODiagramTree.LASTHORLEVEL){
+            short deep = getNumberOfItemsInBranch(this);
+            if(deep > 2){
+                double maxPosInLevel = _maxBranchPositions[m_Level + deep - 1];
+                if(m_Pos < maxPosInLevel + 0.5){
+                    if(isFirstChild()){
+                        getFirstChild().increasePosInBranch(maxPosInLevel + 0.5 - m_Pos);
+                        setPos(maxPosInLevel + 0.5);
+                    }
                 }
             }
+            setMaxPosOfBranch();
         }
 
         XShape xFirstSiblingShape = getDiagramTree().getFirstSiblingShape(m_xRectangleShape, m_Dad);
         if(xFirstSiblingShape != null){
-            short firstSiblingLevel = m_Level;
-            double firstSiblingNum = 0.0;
-            if(m_Level == 1 || m_Level == 2)
-                firstSiblingNum = (short)(getPos() + 2);
-            if(m_Level == 2){
-                int deep = getDeepOfTreeBranch(this);
-                if(deep > 1)
-                    firstSiblingNum = (short)(getPos() + deep + 1);
-            }
-            if(m_Level > 2) {
-                firstSiblingNum = getPos();
-                firstSiblingLevel = (short)(m_Level + getNumberOfItemsInBranch(this));
-            }
 
-            m_FirstSibling = new OTreeItem(getDiagramTree(), xFirstSiblingShape, m_Dad, firstSiblingLevel , firstSiblingNum);
+            short firstSiblingLevel = m_Level;
+            double firstSiblingPos = m_Pos + 1.0;
+
+            if(firstSiblingLevel > ODiagramTree.LASTHORLEVEL){
+                firstSiblingPos = m_Pos;
+                if(isFirstChild()){
+                    TreeItem lastSibling = getFirstChild().getLastSibling();
+                    firstSiblingLevel = (short)(lastSibling.getLevel() + 1);
+                    TreeItem lastSiblingsLastChild = lastSibling.getLastChild();
+                    if(lastSiblingsLastChild != null)
+                        firstSiblingLevel = (short)(lastSiblingsLastChild.getLevel());
+                }else{
+                    firstSiblingLevel = (short)(getLevel() + 1);
+                }
+            }
+            m_FirstSibling = new OTreeItem(getDiagramTree(), xFirstSiblingShape, m_Dad, firstSiblingLevel, firstSiblingPos);
             m_FirstSibling.initTreeItems();
         }
+
+        if(m_Level <= ODiagramTree.LASTHORLEVEL && m_Dad != null && m_Dad.getFirstChild().equals(this)){
+            double newPos = 0.0;
+            if(isFirstSibling())
+                newPos = (_maxPositions[m_Level] + m_Pos) / 2;
+            else
+                newPos = m_Pos;
+            if(newPos > m_Dad.getPos())
+                m_Dad.setPos(newPos);
+            if(newPos < m_Dad.getPos())
+                increasePosInBranch(m_Dad.getPos() - newPos);
+        }
     }
+
 
     @Override
     public void setPositionsOfItems(){
         if(m_FirstChild != null){
             short firstChildLevel = (short)(m_Level + 1);
-            short firstChildNum = (short)0;
-            if(firstChildLevel == 1)
-                if(_level1MaxPos > -1)
-                    firstChildNum = (short)(_level1MaxPos + 2);
-            if(firstChildLevel == 2)
-                if(_level2MaxPos > -1)
-                    firstChildNum = (short)(_level2MaxPos + 2);
-            if(firstChildLevel == 3)
-                firstChildNum = (short)(_level2MaxPos + 1);
-            if(firstChildLevel > 3)
-                firstChildNum = (short)( getPos() + 1);
-           
+            double firstChildPos = 0.0;
+            if(firstChildLevel <= ODiagramTree.LASTHORLEVEL)
+                firstChildPos = _maxPositions[firstChildLevel] + 1.0;
+
+            if(firstChildLevel > ODiagramTree.LASTHORLEVEL){
+                firstChildPos = m_Pos + 0.5;
+            }
             m_FirstChild.setLevel(firstChildLevel);
-            m_FirstChild.setPos(firstChildNum);
+            m_FirstChild.setPos(firstChildPos);
             m_FirstChild.setPositionsOfItems();
 
-            TreeItem lastChildItem = getDiagramTree().getTreeItem(getDiagramTree().getLastChildShape(m_xRectangleShape));
-            short newPos = (short)(  ( m_FirstChild.getPos() + lastChildItem.getPos() ) / 2 );
-            if(m_Level == 0)
-                setPos( newPos );
-            if(m_Level == 1) {
-                if(newPos > getPos()){
-                    setPos( newPos );
-                }else if(newPos < getPos()){
-                    short diff = (short)(getPos() - newPos);
-                    increaseDescendantsPosNum(diff);
-                }
-            }
         }
 
-        if(m_FirstSibling != null){
- 
-            short firstSiblingLevel = m_Level;
-            short firstSiblingNum = (short)0;
-            if(m_Level == 1 || m_Level == 2)
-                firstSiblingNum = (short)(getPos() + 2);
-            if(m_Level == 2){
-                int deep = getDeepOfTreeBranch(this);
-                if(deep > 1){
-                    firstSiblingNum = (short)(getPos() + deep + 1);
+        if(m_Level == ODiagramTree.LASTHORLEVEL){
+            short deep = getNumberOfItemsInBranch(this);
+            if(deep > 2){
+                double maxPosInLevel = _maxBranchPositions[m_Level + deep - 1];
+                if(m_Pos < maxPosInLevel + 0.5){
+                    if(isFirstChild()){
+                        getFirstChild().increasePosInBranch(maxPosInLevel + 0.5 - m_Pos);
+                        setPos(maxPosInLevel + 0.5);
+                    }
                 }
             }
-            if(m_Level > 2) {
-                firstSiblingNum = (short)getPos();
-                firstSiblingLevel = (short)(m_Level + getNumberOfItemsInBranch(this));
+            setMaxPosOfBranch(); 
+        }
+        
+        if(m_FirstSibling != null){
+            short firstSiblingLevel = m_Level;
+            double firstSiblingPos = m_Pos + 1.0;
+
+            if(firstSiblingLevel > ODiagramTree.LASTHORLEVEL){
+                firstSiblingPos = m_Pos;
+                //firstSiblingLevel = (short)(m_Level + getNumberOfItemsInBranch(this));
+                if(isFirstChild()){
+                    TreeItem lastSibling = getFirstChild().getLastSibling();
+                    firstSiblingLevel = (short)(lastSibling.getLevel() + 1);
+                    TreeItem lastSiblingsLastChild = lastSibling.getLastChild();
+                    if(lastSiblingsLastChild != null)
+                        firstSiblingLevel = (short)(lastSiblingsLastChild.getLevel());
+                }else{
+                    firstSiblingLevel = (short)(getLevel() + 1);
+                }
             }
-
             m_FirstSibling.setLevel(firstSiblingLevel);
-            m_FirstSibling.setPos(firstSiblingNum);
-
+            m_FirstSibling.setPos(firstSiblingPos);
             m_FirstSibling.setPositionsOfItems();
+        }
+
+        if(m_Level <= ODiagramTree.LASTHORLEVEL && m_Dad != null && m_Dad.getFirstChild().equals(this)){
+            double newPos = 0.0;
+            if(isFirstSibling())
+                newPos = (_maxPositions[m_Level] + m_Pos) / 2;
+            else
+                newPos = m_Pos;
+            if(newPos > m_Dad.getPos())
+                m_Dad.setPos(newPos);
+            if(newPos < m_Dad.getPos())
+                increasePosInBranch(m_Dad.getPos() - newPos);
         }
     }
 
-    // set _horSpace, _shapeWidth, _horUnit, _verSpace, _shapeHeight and controlShape size
+    public void setMaxPosOfBranch(){
+        System.arraycopy(_maxPositions, 0, _maxBranchPositions, 0, _maxBranchPositions.length);
+        double localMax = -1.0;
+        for(int i = 0; i < _maxBranchPositions.length; i++){
+            if(i > ODiagramTree.LASTHORLEVEL){
+                if(_maxBranchPositions[i] > localMax)
+                    localMax = _maxBranchPositions[i];
+                if(_maxBranchPositions[i] < localMax)
+                    _maxBranchPositions[i] = localMax;
+            }
+        }
+    }
+
+    // set _shapeWidth, , horSpace, _shapeHeight, verSpace, _groupPosX, _groupPosY
     @Override
     public void setProps(){
-        Size size = getDiagramTree().getControlShapeSize();
-        Point point = getDiagramTree().getControlShapePos();
-        _groupSizeWidth = size.Width;
-        _groupSizeHeight = size.Height;
-        _borderLeft = point.X;
-        _borderTop =  point.Y;
-
+        int baseShapeWidth = _shapeWidth = getDiagramTree().getControlShapeSize().Width;
+        int baseShapeHeight = _shapeHeight = getDiagramTree().getControlShapeSize().Height;
+        _horSpace = _verSpace = 0;
         if(_maxPos > 0){
-            _horSpace =  (short)(_groupSizeWidth * 2 * getDiagramTree().getOrgChart().getHORSPACE() / ( _maxPos * (getDiagramTree().getOrgChart().getWIDTH() + getDiagramTree().getOrgChart().getHORSPACE()) + 2 * getDiagramTree().getOrgChart().getWIDTH() ) );
-            _shapeWidth = _horSpace * getDiagramTree().getOrgChart().getWIDTH() / getDiagramTree().getOrgChart().getHORSPACE();
-        }else{
-            _horSpace = 0;
-            _shapeWidth = _groupSizeWidth;
+            int horUnit = (int)(baseShapeWidth / ( _maxPos * (getDiagramTree().getOrgChart().getWIDTH() + getDiagramTree().getOrgChart().getHORSPACE()) + getDiagramTree().getOrgChart().getWIDTH()));
+            _shapeWidth = horUnit * getDiagramTree().getOrgChart().getWIDTH();
+            _horSpace = horUnit * getDiagramTree().getOrgChart().getHORSPACE();
         }
-
-        _horUnit = (_shapeWidth + _horSpace ) / 2;
-
-        int verBaseUnit = _groupSizeHeight / ( (_maxLevel+1)*getDiagramTree().getOrgChart().getHEIGHT() + _maxLevel*getDiagramTree().getOrgChart().getVERSPACE() );
-        if(_maxLevel > 0)
-            _verSpace = verBaseUnit * getDiagramTree().getOrgChart().getVERSPACE();
-        else
-            _verSpace = 0;
-
-        _shapeHeight = verBaseUnit * getDiagramTree().getOrgChart().getHEIGHT();
+        if(_maxLevel > 0){
+            int verUnit = (baseShapeHeight) / ( _maxLevel * (getDiagramTree().getOrgChart().getHEIGHT() + getDiagramTree().getOrgChart().getVERSPACE()) + getDiagramTree().getOrgChart().getHEIGHT());
+            _shapeHeight = verUnit * getDiagramTree().getOrgChart().getHEIGHT();
+            _verSpace = verUnit * getDiagramTree().getOrgChart().getVERSPACE();
+        }
+        _groupPosX = getDiagramTree().getControlShapePos().X;
+        _groupPosY = getDiagramTree().getControlShapePos().Y;
     }
 
     @Override
     public void setPosOfRect(){
-        int shapeWidth  = _shapeWidth;
-        int shapeHeight = _shapeHeight;
-        int xCoord;
-        if(getLevel() == 0){
-            double dFirstChildPos = (double)getFirstChild().getPos();
-            double dLevel1MaxPos = (double)_level1MaxPos;
-            double dPos = dFirstChildPos + ( (dLevel1MaxPos - dFirstChildPos) / 2 );
-            //System.out.println(dPos);
-            xCoord = (int)(_borderLeft + dPos * _horUnit);
+        int xCoord = _groupPosX + (int)((_shapeWidth + _horSpace) * getPos());
+        int yCoord = _groupPosY + (_shapeHeight + _verSpace) * getLevel();
+        if(m_Level > ODiagramTree.LASTHORLEVEL){
+            setPosition(new Point((int)(xCoord + _shapeWidth * 0.1), yCoord));
+            setSize(new Size((int)(_shapeWidth * 0.9), _shapeHeight ));
+        }else{
+            setPosition(new Point(xCoord, yCoord));
+            setSize(new Size(_shapeWidth, _shapeHeight));
         }
-        else
-            xCoord = (short)(_borderLeft + getPos() * _horUnit);//(shapeWidth + _horSpace) / 2;
-        int yCoord = _borderTop + m_Level * ( shapeHeight + _verSpace );
+    }
 
-        setPosition(new Point(xCoord, yCoord));
-        setSize(new Size(shapeWidth, shapeHeight));
-    }
-    
-/*
-    @Override
-    public String toString(){
-        return "toString: " + m_sRectangleName + " id: " + m_ID + " level: " + m_Level + " num: " + getPosNum();
-    }
-*/
 }

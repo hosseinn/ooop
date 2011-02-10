@@ -13,6 +13,15 @@ public class HDiagramTree extends DiagramTree{
         super(hOrganigram);
     }
 
+    HDiagramTree(HorizontalOrganizationDiagram hOrganigram, DiagramTree diagramTree) {
+        super(hOrganigram, diagramTree);
+        HTreeItem.initStaticMembers();
+        m_RootItem = new HTreeItem(this, null, diagramTree.getRootItem());
+        m_RootItem.setLevel((short)0);
+        m_RootItem.setPos(0.0);
+        m_RootItem.convertTreeItems(diagramTree.getRootItem());
+    }
+
     @Override
     public void initTreeItems(){
         HTreeItem.initStaticMembers();
@@ -92,5 +101,12 @@ public class HDiagramTree extends DiagramTree{
         }
         return xLastChildShape;
     }
+
+    @Override
+    public void refreshConnectorProps(){
+        for(XShape xConnShape : connectorList)
+            getOrgChart().setConnectorShapeProps(xConnShape, new Integer(1), new Integer(3));
+    }
+
 
 }

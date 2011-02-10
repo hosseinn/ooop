@@ -18,6 +18,8 @@ import com.sun.star.lang.XMultiServiceFactory;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.openoffice.extensions.diagrams.Controller;
 import org.openoffice.extensions.diagrams.Gui;
 
@@ -39,15 +41,15 @@ public abstract class Diagram {
     //Width-Height-BorderLeft-BorderRight-BorderTop-BorderBottom
 
     // m_GroupSize is the side of the bigest possible cube in the draw page
-    protected   int                     m_GroupSizeWidth    = 0;
-    protected   int                     m_GroupSizeHeight   = 0;
+    protected   int                     m_DrawAreaWidth     = 0;
+    protected   int                     m_DrawAreaHeight    = 0;
     protected   XShape                  m_xGroupShape       = null;
     protected   XNamed                  m_xNamed            = null;
     protected   XShapes                 m_xShapes           = null;
 
     protected short                     m_Style;
 
-    protected final int                 COLOR               = 10079487;
+    protected final int                 COLOR               = 255;
 
     protected final int[]               aCOLORS             = { 65280, 255, 16711680, 16776960,
                                                                 9699435, 16737843, 47359, 12076800 };
@@ -77,6 +79,13 @@ public abstract class Diagram {
         m_xModel = m_xFrame.getController().getModel();
         m_xMSF = (XMultiServiceFactory) UnoRuntime.queryInterface(XMultiServiceFactory.class, m_xModel);
         setGroupSize();
+    }
+
+    public void setFocusGroupShape(){
+        XShapes xShapes = getController().getSelectedShapes();
+        getController().setSelectedShape(m_xGroupShape);
+        if(getController().getSelectedShapes() == null)
+            getController().setSelectedShape(xShapes);
     }
 
     public void setSelectedDiagramProps(boolean bool){
@@ -142,8 +151,8 @@ public abstract class Diagram {
         if(m_PageProps == null)
             adjustPageProps();
         if(m_PageProps != null){
-            m_GroupSizeWidth = m_PageProps.Width - m_PageProps.BorderLeft - m_PageProps.BorderRight;
-            m_GroupSizeHeight = m_PageProps.Height - m_PageProps.BorderTop - m_PageProps.BorderBottom;
+            m_DrawAreaWidth = m_PageProps.Width - m_PageProps.BorderLeft - m_PageProps.BorderRight;
+            m_DrawAreaHeight = m_PageProps.Height - m_PageProps.BorderTop - m_PageProps.BorderBottom;
         }
     }
 
@@ -193,18 +202,18 @@ public abstract class Diagram {
         return m_Gui;
     }
 
-    public abstract String getDiagramType();
+    public abstract String getDiagramTypeName();
 
     public int getDiagramID(){
         return m_DiagramID;
     }
 
-    public int getGroupSizeWidth(){
-        return m_GroupSizeWidth;
+    public int getDrawAreaWidth(){
+        return m_DrawAreaWidth;
     }
     
-    public int getGroupSizeHeight(){
-        return m_GroupSizeHeight;
+    public int getDrawAreaHeight(){
+        return m_DrawAreaHeight;
     }
 
     // set m_xDrawPage, PageProps, m_xGroupSize, m_xGroupShape and m_xShapes
@@ -214,7 +223,7 @@ public abstract class Diagram {
             m_DiagramID = (int) (Math.random()*10000);
 
             // set diagramName in the Controller object
-            String diagramName = getDiagramType() + m_DiagramID;
+            String diagramName = getDiagramTypeName() + m_DiagramID;
             getController().setLastDiagramName(diagramName);
 
             // set new PageProps object with data of page
@@ -226,7 +235,7 @@ public abstract class Diagram {
 
             m_xGroupShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xMSF.createInstance ("com.sun.star.drawing.GroupShape"));
             m_xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class, m_xGroupShape);
-            m_xNamed.setName( getDiagramType() + m_DiagramID + "-GroupShape" );
+            m_xNamed.setName( getDiagramTypeName() + m_DiagramID + "-GroupShape" );
             m_xDrawPage.add(m_xGroupShape);
             m_xShapes = (XShapes) UnoRuntime.queryInterface(XShapes.class, m_xGroupShape );
         } catch (Exception ex) {
@@ -245,8 +254,9 @@ public abstract class Diagram {
             for(int i=0; i < m_xDrawPage.getCount(); i++){
                 xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xDrawPage.getByIndex(i));
                 currShapeName = getShapeName(xCurrShape);
-                if (currShapeName.contains(diagramIDName) && currShapeName.startsWith(getDiagramType()) && currShapeName.endsWith("GroupShape")) {
+                if (currShapeName.contains(diagramIDName) && currShapeName.startsWith(getDiagramTypeName()) && currShapeName.endsWith("GroupShape")) {
                     m_xShapes = (XShapes) UnoRuntime.queryInterface(XShapes.class, xCurrShape );
+                    m_xGroupShape = (XShape) UnoRuntime.queryInterface(XShape.class, xCurrShape );
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
@@ -276,11 +286,34 @@ public abstract class Diagram {
         try {
             xShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xMSF.createInstance ("com.sun.star.drawing." + type ));
             XNamed xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class,xShape);
-            xNamed.setName(getDiagramType() + m_DiagramID + "-" + type + num);
+            xNamed.setName(getDiagramTypeName() + m_DiagramID + "-" + type + num);
         }  catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
         return xShape;
+    }
+
+    public void renameShapes(String oldDiagramName, String newDiagramName){
+        XShape xShape = null;
+        try {
+            XNamed xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class, m_xGroupShape);
+            String shapeName = xNamed.getName();
+            shapeName = shapeName.replace(oldDiagramName, newDiagramName);
+            xNamed.setName(shapeName);
+            for(int i=0; i < m_xShapes.getCount(); i++){
+                xShape = (XShape)UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
+                if(xShape != null){
+                    xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class, xShape);
+                    shapeName = xNamed.getName();
+                    shapeName = shapeName.replace(oldDiagramName, newDiagramName);
+                    xNamed.setName(shapeName);
+                }
+            }
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
     }
 
     public XShape createShape(String type, int num, int width, int height){
@@ -299,7 +332,13 @@ public abstract class Diagram {
         xShape.setPosition(new Point(x, y));
         return xShape;
     }
-
+/*
+    public void setColorOfShape(XShape xShape, short num){
+        setColorOfShape(xShape, aCOLORS[(num - 1) % 8]);
+        if(getGui() != null && getGui().getControlDialogWindow() != null)
+            getGui().setImageColorOfControlDialog(aCOLORS[ num % 8] );
+    }
+*/
     public void setColorOfShape(XShape xShape, int color){
         try {
             XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
