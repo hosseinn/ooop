@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="GradientDialog" dlg:left="155" dlg:top="86" dlg:width="102" dlg:height="93" dlg:help-text="&amp;2522.GradientDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;2523.GradientDialog.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xff0000"/>
+  <dlg:style dlg:style-id="1" dlg:background-color="0x800000"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:img dlg:style-id="0" dlg:id="startColor" dlg:tab-index="2" dlg:left="60" dlg:top="32" dlg:width="15" dlg:height="10" dlg:help-text="&amp;2524.GradientDialog.startColor.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:setStartColor" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:style-id="1" dlg:id="endColor" dlg:tab-index="3" dlg:left="60" dlg:top="42" dlg:width="15" dlg:height="10" dlg:help-text="&amp;2525.GradientDialog.endColor.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:setEndColor" script:language="UNO"/>
+  </dlg:img>
+  <dlg:button dlg:id="setColorsButton" dlg:tab-index="4" dlg:left="5" dlg:top="74" dlg:width="92" dlg:height="14" dlg:help-text="&amp;2526.GradientDialog.setColorsButton.HelpText" dlg:value="&amp;2527.GradientDialog.setColorsButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:gradientDialogOK" script:language="UNO"/>
+  </dlg:button>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="setColorModeOptionButton" dlg:tab-index="0" dlg:left="8" dlg:top="8" dlg:width="88" dlg:height="10" dlg:help-text="&amp;2528.GradientDialog.setColorModeOptionButton.HelpText" dlg:value="&amp;2529.GradientDialog.setColorModeOptionButton.Label" dlg:group-name="Mode">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColorMode" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="setGradientOptionButton" dlg:tab-index="1" dlg:left="8" dlg:top="22" dlg:width="88" dlg:height="10" dlg:help-text="&amp;2530.GradientDialog.setGradientOptionButton.HelpText" dlg:value="&amp;2531.GradientDialog.setGradientOptionButton.Label" dlg:group-name="Mode" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setGradientSettings" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:text dlg:id="label1" dlg:tab-index="5" dlg:left="25" dlg:top="33" dlg:width="35" dlg:height="10" dlg:help-text="&amp;2532.GradientDialog.label1.HelpText" dlg:value="&amp;2533.GradientDialog.label1.Label"/>
+  <dlg:text dlg:id="label2" dlg:tab-index="6" dlg:left="25" dlg:top="43" dlg:width="35" dlg:height="10" dlg:help-text="&amp;2534.GradientDialog.label2.HelpText" dlg:value="&amp;2535.GradientDialog.label2.Label"/>
+  <dlg:menulist dlg:id="gradientModeListBox" dlg:tab-index="7" dlg:left="25" dlg:top="54" dlg:width="50" dlg:height="14" dlg:help-text="&amp;2536.GradientDialog.gradientModeListBox.HelpText" dlg:spin="true" dlg:linecount="2">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;2537.gradientModeListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;2538.gradientModeListBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedGradientMode" script:language="UNO"/>
+  </dlg:menulist>
+ </dlg:bulletinboard>
+</dlg:window>

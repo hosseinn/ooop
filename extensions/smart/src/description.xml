@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created with OpenOffice.org API plug-in for NetBeans Version 2.0.6.000205-->
+<description xmlns="http://openoffice.org/extensions/description/2006" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <version value="0.9.0"/>
+    <identifier value="oxygenoffice.extensions.smart.SmART"/>
+    <extension-description>
+        <src lang="hu" xlink:href="description/description_hu.txt"/>
+        <src lang="pt" xlink:href="description/description_pt.txt"/>
+        <src lang="en" xlink:href="description/description_en.txt"/>
+        <src lang="es" xlink:href="description/description_es.txt"/>
+    </extension-description>
+    <display-name>
+        <name lang="hu">SmART</name>
+        <name lang="en">SmART</name>
+    </display-name>
+    <publisher>
+        <name lang="fr" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
+        <name lang="es" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
+        <name lang="hu" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Csapat</name>
+        <name lang="en" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
+        <name lang="fi" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
+        <name lang="pt" xlink:href="http://ooop.sf.net/">OxygenOffice Professional Team</name>
+    </publisher>
+    <registration>
+        <simple-license accept-by="admin" default-license-id="en">
+            <license-text lang="en" license-id="en" xlink:href="licenses/license_en-US.txt"/>
+            <license-text lang="hu" xlink:href="licenses/license_hu.txt"/>
+            <license-text lang="es" xlink:href="licenses/license_es.txt"/>
+            <license-text lang="pt" xlink:href="licenses/license_pt.txt"/>
+        </simple-license>
+    </registration>
+    <icon>
+        <default xlink:href="images/smart_42.png"/>
+        <high-contrast xlink:href="images/smart_42.png"/>
+    </icon>
+</description>

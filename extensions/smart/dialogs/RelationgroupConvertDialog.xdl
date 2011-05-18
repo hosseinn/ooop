@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="RelationgroupConvertDialog" dlg:left="144" dlg:top="14" dlg:width="100" dlg:height="87" dlg:help-text="&amp;5124.RelationgroupConvertDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;5125.RelationgroupConvertDialog.Title">
+ <dlg:bulletinboard>
+  <dlg:text dlg:id="textLabel" dlg:tab-index="0" dlg:left="5" dlg:top="5" dlg:width="60" dlg:height="8" dlg:help-text="&amp;5126.RelationgroupConvertDialog.textLabel.HelpText" dlg:value="&amp;5127.RelationgroupConvertDialog.textLabel.Label"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="convertOptionButton1" dlg:tab-index="1" dlg:left="10" dlg:top="18" dlg:width="80" dlg:height="8" dlg:help-text="&amp;5128.RelationgroupConvertDialog.convertOptionButton1.HelpText" dlg:value="&amp;5129.RelationgroupConvertDialog.convertOptionButton1.Label" dlg:group-name="DiagramTypes" dlg:checked="true"/>
+   <dlg:radio dlg:id="convertOptionButton2" dlg:tab-index="2" dlg:left="10" dlg:top="30" dlg:width="80" dlg:height="8" dlg:help-text="&amp;5130.RelationgroupConvertDialog.convertOptionButton2.HelpText" dlg:value="&amp;5131.RelationgroupConvertDialog.convertOptionButton2.Label" dlg:group-name="DiagramTypes"/>
+   <dlg:radio dlg:id="convertOptionButton3" dlg:tab-index="3" dlg:left="10" dlg:top="42" dlg:width="80" dlg:height="8" dlg:help-text="&amp;5132.RelationgroupConvertDialog.convertOptionButton3.HelpText" dlg:value="&amp;5133.RelationgroupConvertDialog.convertOptionButton3.Label" dlg:group-name="DiagramTypes"/>
+   <dlg:radio dlg:id="convertOptionButton4" dlg:tab-index="4" dlg:left="10" dlg:top="54" dlg:width="80" dlg:height="8" dlg:help-text="&amp;5134.RelationgroupConvertDialog.convertOptionButton4.HelpText" dlg:value="&amp;5135.RelationgroupConvertDialog.convertOptionButton4.Label" dlg:group-name="DiagramTypes"/>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="convertActionButton" dlg:tab-index="5" dlg:left="5" dlg:top="68" dlg:width="90" dlg:height="14" dlg:help-text="&amp;5136.RelationgroupConvertDialog.convertActionButton.HelpText" dlg:value="&amp;5137.RelationgroupConvertDialog.convertActionButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:convertAction" script:language="UNO"/>
+  </dlg:button>
+ </dlg:bulletinboard>
+</dlg:window>
