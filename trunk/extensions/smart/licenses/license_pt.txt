@@ -1,0 +1,19 @@
+﻿Extensão SmART 
+
+A Extensão SmART foi licenciado sob termo de GNU Lesser General Public License (LGPL). Podes ler e entender a licença LGPL aqui:
+http://www.gnu.org/licenses/lgpl.html
+
+Esta extensão é criada por:
+
+Tibor Hornyák
+
+e
+
+* OxygenOffice Professional Team - http://ooop.sf.net/
+
+Supporters:
+
+* FSF.hu Foundation for Promoting and Localizing Free Software in Hungary - http://www.fsf.hu/
+
+ -----
+license_pt documento V1.1.0
