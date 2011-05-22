@@ -5,7 +5,7 @@
  oor:package="org.openoffice.Office.UI">
 	<node oor:name="UIElements">
 		<node oor:name="States">
-			<node oor:name="private:resource/toolbar/addon_SmART.OfficeToolBar" oor:op="replace">
+			<node oor:name="private:resource/toolbar/addon_oxygenoffice.extensions.smart.smartprotocolhandler" oor:op="replace">
 				<prop oor:name="UIName" oor:type="xs:string">
 					<value>SmART</value>
 				</prop>

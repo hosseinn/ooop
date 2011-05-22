@@ -58,6 +58,8 @@ import oxygenoffice.extensions.smart.diagram.relationdiagrams.venndiagram.VennDi
 public class Gui {
 
 
+    public      boolean             isShownTips;
+
     private     XComponentContext   m_xContext                  = null;
     private     XFrame              m_xFrame                    = null;
     private     Controller          m_Controller                = null;
@@ -158,6 +160,7 @@ public class Gui {
     public Gui(){ }
 
     public Gui(Controller controller, XComponentContext xContext, XFrame xFrame){
+        isShownTips = true;
         m_Controller = controller;
         m_xContext = xContext;
         m_xFrame = xFrame;
@@ -184,6 +187,23 @@ public class Gui {
             if(m_xGalleryDialog != null)
                 m_xGalleryDialog.endExecute();
             disposeGalleryDialog();
+        }
+    }
+
+
+    public boolean isShownTips(){
+        return isShownTips;
+    }
+
+    public void setShownTips(){
+        isShownTips = false;
+        if(m_xGalleryDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xGalleryDialog);
+            if(xControlContainer != null){
+                XCheckBox xTipsCheckBox = (XCheckBox) UnoRuntime.queryInterface(XCheckBox.class, xControlContainer.getControl("TipsCheckBox"));
+                if(xTipsCheckBox.getState() == 1)
+                    isShownTips = true;
+            }
         }
     }
 
@@ -221,6 +241,12 @@ public class Gui {
 
             setGalleryDialog2Images();
             setGalleryDialogText(Controller.SIMPLEORGANIGRAM);
+
+            XCheckBox xTipsCheckBox = (XCheckBox) UnoRuntime.queryInterface(XCheckBox.class, xControlContainer.getControl("TipsCheckBox"));
+            if(isShownTips)
+                xTipsCheckBox.setState((short)1);
+            else
+                xTipsCheckBox.setState((short)0);
 
         }catch(Exception ex){
             System.err.println(ex.getLocalizedMessage());
