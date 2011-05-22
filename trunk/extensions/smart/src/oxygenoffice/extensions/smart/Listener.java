@@ -328,6 +328,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
 
         //pressed OK button ("OK" - pressed OK button of DiagramGallery1 dialog - deprecated)
         if(methodName.equals("OK") || methodName.equals("eventOK")){
+            getGui().setShownTips();
             getGui().executeGalleryDialog(false);
             getController().instantiateDiagram();
             if(getController().getDiagram() != null){
@@ -335,6 +336,16 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
                 getController().getDiagram().createDiagram();
                 getController().getDiagram().initDiagram();
             }
+            if(getGui().isShownTips()){
+                String title = getGui().getDialogPropertyValue("Strings2", "Strings2.Tips.Name.Label");
+                String message = "";
+                if(getController().getGroupType() == Controller.ORGANIGROUP)
+                    message = getGui().getDialogPropertyValue("Strings2", "Strings2.Organizationcharts.Tips.Label");
+                if(getController().getGroupType() == Controller.RELATIONGROUP)
+                    message = getGui().getDialogPropertyValue("Strings2", "Strings2.Relationdiagrams.Tips.Label");
+                getGui().showMessageBox(title, message);
+            }
+     
             return true;
         }
         //****************************************************************************************************

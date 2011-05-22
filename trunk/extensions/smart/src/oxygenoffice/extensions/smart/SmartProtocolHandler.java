@@ -47,6 +47,7 @@ public final class SmartProtocolHandler extends WeakBase
     }
 
     // com.sun.star.lang.XInitialization:
+    @Override
     public void initialize( Object[] object )
         throws com.sun.star.uno.Exception
     {
@@ -85,7 +86,8 @@ public final class SmartProtocolHandler extends WeakBase
     }
 
     // com.sun.star.frame.XDispatch:
-     public void dispatch( com.sun.star.util.URL aURL,
+    @Override
+    public void dispatch( com.sun.star.util.URL aURL,
                            com.sun.star.beans.PropertyValue[] aArguments )
     {
          if ( aURL.Protocol.compareTo("oxygenoffice.extensions.smart.smartprotocolhandler:") == 0 )
@@ -99,12 +101,14 @@ public final class SmartProtocolHandler extends WeakBase
         }
     }
 
+    @Override
     public void addStatusListener( com.sun.star.frame.XStatusListener xControl,
                                     com.sun.star.util.URL aURL )
     {
         // add your own code here
     }
 
+    @Override
     public void removeStatusListener( com.sun.star.frame.XStatusListener xControl,
                                        com.sun.star.util.URL aURL )
     {
@@ -112,10 +116,12 @@ public final class SmartProtocolHandler extends WeakBase
     }
 
     // com.sun.star.lang.XServiceInfo:
+    @Override
     public String getImplementationName() {
          return m_implementationName;
     }
 
+    @Override
     public boolean supportsService( String sService ) {
         int len = m_serviceNames.length;
         for( int i=0; i < len; i++) {
@@ -125,11 +131,13 @@ public final class SmartProtocolHandler extends WeakBase
         return false;
     }
 
+    @Override
     public String[] getSupportedServiceNames() {
         return m_serviceNames;
     }
 
     // com.sun.star.frame.XDispatchProvider:
+    @Override
     public com.sun.star.frame.XDispatch queryDispatch(com.sun.star.util.URL aURL, String sTargetFrameName, int iSearchFlags)
     {
         if ( aURL.Protocol.compareTo("oxygenoffice.extensions.smart.smartprotocolhandler:") == 0 )
@@ -141,6 +149,7 @@ public final class SmartProtocolHandler extends WeakBase
     }
 
     // com.sun.star.frame.XDispatchProvider:
+    @Override
     public com.sun.star.frame.XDispatch[] queryDispatches(com.sun.star.frame.DispatchDescriptor[] seqDescriptors )
     {
         int nCount = seqDescriptors.length;

@@ -4,7 +4,7 @@
   <node oor:name="AddonUI">
       
       <node oor:name="OfficeMenuBarMerging" oor:node-type="MergeMenuItems">
-            <node oor:name="oxygenoffice.extensions.smart.smartprotocolhandler.showsmartgallery" oor:op="replace">
+            <node oor:name="oxygenoffice.extensions.smart.smartprotocolhandler" oor:op="replace">
                 <node oor:name="S1" oor:op="replace">
                     <prop oor:name="MergePoint" oor:type="xs:string">
                         <value>.uno:InsertMenu\.uno:InsertObjectChart</value>
@@ -44,7 +44,7 @@
         </node>
 
         <node oor:name="OfficeToolBar">
-            <node oor:name="oxygenoffice.extensions.smart.smartprotocolhandler.showsmartgallery" oor:op="replace">
+            <node oor:name="oxygenoffice.extensions.smart.smartprotocolhandler" oor:op="replace">
                 <node oor:name="m1" oor:op="replace">
                     <prop oor:name="Context" oor:type="xs:string">
                         <value>com.sun.star.drawing.DrawingDocument,com.sun.star.presentation.PresentationDocument</value>
@@ -71,7 +71,7 @@
 
 
         <node oor:name="Images">
-            <node oor:name="oxygenoffice.extensions.smart.smartprotocolhandler.showsmartgallery.images" oor:op="replace">
+            <node oor:name="oxygenoffice.extensions.smart.smartprotocolhandler.images" oor:op="replace">
                 <prop oor:name="URL" oor:type="xs:string">
                     <value>oxygenoffice.extensions.smart.smartprotocolhandler:showSmartGallery</value>
                 </prop>
