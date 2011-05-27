@@ -1,0 +1,160 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/DiagramGallery2_en_GB.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/DiagramGallery2_en_GB.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # DiagramGallery2 strings
+#: 4.DiagramGallery2.HelpText
+msgctxt "4.DiagramGallery2.HelpText"
+"4.DiagramGallery2.HelpText"
+msgid ""
+msgstr ""
+
+#: 5.DiagramGallery2.Title
+msgid "SmART gallery"
+msgstr "SmART gallery"
+
+#: 6.DiagramGallery2.ListBox.HelpText
+msgctxt "6.DiagramGallery2.ListBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 7.ListBox.StringItemList
+msgid "Hierarchy"
+msgstr "Hierarchy"
+
+#: 8.ListBox.StringItemList
+msgid "Relationship"
+msgstr "Relationship"
+
+#: 9.ListBox.StringItemList
+msgid "Process"
+msgstr "Process"
+
+#: 10.ListBox.StringItemList
+msgid "List"
+msgstr "List"
+
+#: 11.ListBox.StringItemList
+msgid "Matrix"
+msgstr "Matrix"
+
+#: 12.DiagramGallery2.Label1.HelpText
+msgctxt "12.DiagramGallery2.Label1.HelpText"
+msgid ""
+msgstr ""
+
+#: 13.DiagramGallery2.Label1.Label
+msgctxt "13.DiagramGallery2.Label1.Label"
+msgid ""
+msgstr ""
+
+#: 14.DiagramGallery2.Label2.HelpText
+msgctxt "14.DiagramGallery2.Label2.HelpText"
+msgid ""
+msgstr ""
+
+#: 15.DiagramGallery2.Label2.Label
+msgctxt "15.DiagramGallery2.Label2.Label"
+msgid ""
+msgstr ""
+
+#: 16.DiagramGallery2.OkButton.HelpText
+msgid "Create new diagram"
+msgstr "Create new diagram"
+
+#: 17.DiagramGallery2.OkButton.Label
+msgid "Ok"
+msgstr "Ok"
+
+#: 18.DiagramGallery2.Item0.HelpText
+msgid "Organization Chart"
+msgstr "Organization Chart"
+
+#: 19.DiagramGallery2.Item0.Label
+msgctxt "19.DiagramGallery2.Item0.Label"
+msgid ""
+msgstr ""
+
+#: 20.DiagramGallery2.Item1.HelpText
+msgid "Horizontal Organization Chart"
+msgstr "Horizontal Organization Chart"
+
+#: 21.DiagramGallery2.Item1.Label
+msgctxt "21.DiagramGallery2.Item1.Label"
+msgid ""
+msgstr ""
+
+#: 22.DiagramGallery2.Item2.HelpText
+msgid "Table Hierarchy"
+msgstr "Table Hierarchy"
+
+#: 23.DiagramGallery2.Item2.Label
+msgctxt "23.DiagramGallery2.Item2.Label"
+msgid ""
+msgstr ""
+
+#: 24.DiagramGallery2.Item3.HelpText
+msgid "Organization Chart 2"
+msgstr "Organization Chart 2"
+
+#: 25.DiagramGallery2.Item3.Label
+msgctxt "25.DiagramGallery2.Item3.Label"
+msgid ""
+msgstr ""
+
+#: 26.DiagramGallery2.Item4.HelpText
+msgid "Venn Diagram"
+msgstr "Venn Diagram"
+
+#: 27.DiagramGallery2.Item4.Label
+msgctxt "27.DiagramGallery2.Item4.Label"
+msgid ""
+msgstr ""
+
+#: 28.DiagramGallery2.Item5.HelpText
+msgid "Cycle Diagram"
+msgstr "Cycle Diagram"
+
+#: 29.DiagramGallery2.Item5.Label
+msgctxt "29.DiagramGallery2.Item5.Label"
+msgid ""
+msgstr ""
+
+#: 30.DiagramGallery2.Item6.HelpText
+msgid "Pyramid Diagram"
+msgstr "Pyramid Diagram"
+
+#: 31.DiagramGallery2.Item6.Label
+msgctxt "31.DiagramGallery2.Item6.Label"
+msgid ""
+msgstr ""
+
+#: 32.DiagramGallery2.Item7.HelpText
+msgctxt "32.DiagramGallery2.Item7.HelpText"
+msgid ""
+msgstr ""
+
+#: 33.DiagramGallery2.Item7.Label
+msgctxt "33.DiagramGallery2.Item7.Label"
+msgid ""
+msgstr ""
+
+#: 38.DiagramGallery2.TipsCheckBox.HelpText
+msgctxt "38.DiagramGallery2.TipsCheckBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 39.DiagramGallery2.TipsCheckBox.Label
+msgid "Show tips"
+msgstr "Show tips"

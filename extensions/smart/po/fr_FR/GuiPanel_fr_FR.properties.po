@@ -1,0 +1,85 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/GuiPanel_fr_FR.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/GuiPanel_fr_FR.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # GuiPanel strings
+#: 178.GuiPanel.HelpText
+msgctxt "178.GuiPanel.HelpText"
+"178.GuiPanel.HelpText"
+msgid ""
+msgstr ""
+
+#: 179.GuiPanel.Title
+msgid "Edit"
+msgstr "Éditer"
+
+#: 180.GuiPanel.CommandButton1.HelpText
+msgctxt "180.GuiPanel.CommandButton1.HelpText"
+msgid ""
+msgstr ""
+
+#: 181.GuiPanel.CommandButton1.Label
+msgid "Add shape"
+msgstr "Ajouter une forme"
+
+#: 182.GuiPanel.CommandButton2.HelpText
+msgid "Assign a shape and remove"
+msgstr "Assigner une forme et la supprimer"
+
+#: 183.GuiPanel.CommandButton2.Label
+msgid "Remove shape"
+msgstr "Supprimer la forme"
+
+#: 186.GuiPanel.ComboBox1.HelpText
+msgid "Display styles"
+msgstr "Afficher les styles"
+
+#: 227.ComboBox1.StringItemList
+msgctxt "227.ComboBox1.StringItemList"
+msgid "Default"
+msgstr "Par défaut"
+
+#: 228.ComboBox1.StringItemList
+msgid "Outline"
+msgstr "Monographie"
+
+#: 229.ComboBox1.StringItemList
+msgid "Rounded"
+msgstr "Arrondi"
+
+#: 230.ComboBox1.StringItemList
+msgid "Without frame"
+msgstr "Sans cadre"
+
+#: 187.GuiPanel.ComboBox1.Text
+msgctxt "187.GuiPanel.ComboBox1.Text"
+msgid "Default"
+msgstr "Par défaut"
+
+#: 239.GuiPanel.ImageControl.HelpText
+msgid "Color of next element"
+msgstr "Couleur de l'élément suivant"
+
+#: 692.GuiPanel.Text.HelpText
+msgctxt "692.GuiPanel.Text.HelpText"
+msgid ""
+msgstr ""
+
+#: 693.GuiPanel.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+"Groupe\n"
+"nom"

@@ -1,0 +1,107 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/dialogs/Strings_en_US.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # Strings strings
+#: 1.Strings.Organigram.Label
+msgid "Organization Chart"
+msgstr ""
+
+#: 2.Strings.OrganigramDescription.Label
+msgid "Use this to illustrate hierarchical relationships"
+msgstr ""
+
+#: 3.Strings.Venndiagram.Label
+msgid "Venn Diagram"
+msgstr ""
+
+#: 4.Strings.VenndiagramDescription.Label
+msgid "Use this to illustrate areas of overlap between elements"
+msgstr ""
+
+#: 5.Strings.Pyramiddiagram.Label
+msgid "Pyramid Diagram"
+msgstr ""
+
+#: 6.Strings.PyramiddiagramDescription.Label
+msgid "Use this to illustrate foundation-based relationships"
+msgstr ""
+
+#: 7.Strings.Cyclediagram.Label
+msgid "Cycle Diagram"
+msgstr ""
+
+#: 8.Strings.CyclediagramDescription.Label
+msgid "Use this to illustrate a process with a continuous cycle"
+msgstr ""
+
+#: 9.Strings.CycleStyleComboBox1
+msgid "Without outline"
+msgstr ""
+
+#: 10.Strings.CycleStyleComboBox2
+msgctxt "10.Strings.CycleStyleComboBox2"
+msgid "Base colors"
+msgstr ""
+
+#: 11.Strings.CycleStyleComboBox3
+msgid "With frame"
+msgstr ""
+
+#: 12.Strings.PyramidStyleComboBox1
+msgid "With gradients"
+msgstr ""
+
+#: 13.Strings.PyramidStyleComboBox2
+msgctxt "13.Strings.PyramidStyleComboBox2"
+msgid "Base colors"
+msgstr ""
+
+#: 14.Strings.PyramidStyleComboBox3
+msgid "Base colors with gradients"
+msgstr ""
+
+#: 15.Strings.RoutShapeError.Title
+msgid "Error"
+msgstr ""
+
+#: 16.Strings.RoutShapeError.Message
+msgid "Cannot found the main item."
+msgstr ""
+
+#: 17.Strings.ItemAddError.Title
+msgid "Add item is disabled"
+msgstr ""
+
+#: 18.Strings.ItemAddError.Message
+msgid "You cannot add associate item to main item."
+msgstr ""
+
+#: 19.Strings.RoutShapeRemoveError.Title
+msgid "Main item is selected"
+msgstr ""
+
+#: 20.Strings.RoutShapeRemoveError.Message
+msgid "You cannot remove the main item."
+msgstr ""
+
+#: 21.Strings.TreeBuildError.Title
+msgid "The struct of diagram has broken."
+msgstr ""
+
+#: 22.Strings.TreeBuildError.Message
+msgid ""
+"Do you want to Diagram extension to try to correct the problem? After the "
+"correction you might retry the modification."
+msgstr ""

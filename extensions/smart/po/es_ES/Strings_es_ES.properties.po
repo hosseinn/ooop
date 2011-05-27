@@ -1,0 +1,109 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/Strings_es_ES.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/Strings_es_ES.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # Strings strings
+#: 1.Strings.Organigram.Label
+msgid "Organization Chart"
+msgstr "Organigrama"
+
+#: 2.Strings.OrganigramDescription.Label
+msgid "Use this to illustrate hierarchical relationships"
+msgstr "Úselo para ilustrar relaciones jerárquicas"
+
+#: 3.Strings.Venndiagram.Label
+msgid "Venn Diagram"
+msgstr "Diagrama de Venn "
+
+#: 4.Strings.VenndiagramDescription.Label
+msgid "Use this to illustrate areas of overlap between elements"
+msgstr "Úselo para ilustrar áreas de superposición entre elementos"
+
+#: 5.Strings.Pyramiddiagram.Label
+msgid "Pyramid Diagram"
+msgstr "Diagrama piramidal"
+
+#: 6.Strings.PyramiddiagramDescription.Label
+msgid "Use this to illustrate foundation-based relationships"
+msgstr "Úselo para ilustrar relaciones basadas en infraestructuras"
+
+#: 7.Strings.Cyclediagram.Label
+msgid "Cycle Diagram"
+msgstr "Diagrama de ciclo"
+
+#: 8.Strings.CyclediagramDescription.Label
+msgid "Use this to illustrate a process with a continuous cycle"
+msgstr "Úselo para ilustrar un proceso con ciclo continuo"
+
+#: 9.Strings.CycleStyleComboBox1
+msgid "Without outline"
+msgstr "Sin contorno"
+
+#: 10.Strings.CycleStyleComboBox2
+msgctxt "10.Strings.CycleStyleComboBox2"
+msgid "Base colors"
+msgstr "Colores base"
+
+#: 11.Strings.CycleStyleComboBox3
+msgid "With frame"
+msgstr "Con marco"
+
+#: 12.Strings.PyramidStyleComboBox1
+msgid "With gradients"
+msgstr "Con degradados"
+
+#: 13.Strings.PyramidStyleComboBox2
+msgctxt "13.Strings.PyramidStyleComboBox2"
+msgid "Base colors"
+msgstr "Colores base"
+
+#: 14.Strings.PyramidStyleComboBox3
+msgid "Base colors with gradients"
+msgstr "Colores base con degradados"
+
+#: 15.Strings.RoutShapeError.Title
+msgid "Error"
+msgstr "Error"
+
+#: 16.Strings.RoutShapeError.Message
+msgid "Cannot found the main item."
+msgstr "No se puede encontrar el elemento principal."
+
+#: 17.Strings.ItemAddError.Title
+msgid "Add item is disabled"
+msgstr "Añadir elemento está deshabilitado."
+
+#: 18.Strings.ItemAddError.Message
+msgid "You cannot add associate item to main item."
+msgstr "No puede añadir Asociar elemento al elemento principal."
+
+#: 19.Strings.RoutShapeRemoveError.Title
+msgid "Main item is selected"
+msgstr "Está seleccionado el elemento principal "
+
+#: 20.Strings.RoutShapeRemoveError.Message
+msgid "You cannot remove the main item."
+msgstr "No puede eliminar el elemento principal."
+
+#: 21.Strings.TreeBuildError.Title
+msgid "The struct of diagram has broken."
+msgstr "La estructura del diagrama se ha roto."
+
+#: 22.Strings.TreeBuildError.Message
+msgid ""
+"Do you want to Diagram extension to try to correct the problem? After the "
+"correction you might retry the modification."
+msgstr ""
+"¿Desea que Diagram extension intente corregir el problema? Tras la "
+"corrección podrá reintentar la modificación."

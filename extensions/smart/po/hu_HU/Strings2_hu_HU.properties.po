@@ -1,0 +1,380 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/Strings2_hu_HU.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/Strings2_hu_HU.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # Strings2 strings
+#: 1.Strings2.HorizontalOrganigram.Label
+msgid "Horizontal Organization Chart"
+msgstr "Vízszintes szervezeti diagram"
+
+#: 2.Strings2.HorizontalOrganigramDescription.Label
+msgid "Use this to illustrate horizontal hierarchical relationships"
+msgstr "Vízszintes hierarchikus kapcsolatok szemléltetésére használható"
+
+#: 3.Strings2.TableHierarchyDiagram.Label
+msgid "Table Hierarchy"
+msgstr "Táblázatos hierarchia diagram"
+
+#: 4.Strings2.TableHierarchyDiagramDescription.Label
+msgid ""
+"Use this to illustrate groups of information built from top to bottom, and "
+"the hierarchies within each group"
+msgstr ""
+"Információcsoportok ábrázolása fentről lefelé, az egyes csoportokra jellemző "
+"hierarchiák szemléltetésével"
+
+#: 5.Strings2.Organigram2.Label
+msgid "Organization Chart 2"
+msgstr "Szervezeti diagram 2"
+
+#: 6.Strings2.Organigram2Description.Label
+msgid ""
+"Use this to illustrate hierarchical relationships, below third level items "
+"are displayed vertical layout"
+msgstr ""
+"Vízszintes hierarchikus kapcsolatok szemléltetésére használható, a harmadik "
+"szint alatti elemek elrendezése függőleges"
+
+#: 7.Strings2.ButtDiagram.Label
+msgid "Target Diagram"
+msgstr "Céltábla diagram"
+
+#: 8.Strings2.ButtDiagramDescription.Label
+msgid "Use this to illustrate steps toward a goal"
+msgstr "Egy végső célkitűzés felé tett lépéseket ábrázolja"
+
+#: 9.Strings2.InactiveFunction.Label
+msgid ""
+"Inactive function - this option can be used if only simple item has been "
+"selected"
+msgstr ""
+"Nem aktív funkció - a szövegszerkesztő csak akkor aktív, ha csak egyetlen "
+"elem van kiválasztva"
+
+#: 10.Strings2.Diagrams.UserDefineDescription.Label
+msgid "Personal settings"
+msgstr "Egyéni beállítások"
+
+#: 11.Strings2.Organigram.DefaultDescription.Label
+msgid ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"with outline and without shadow"
+msgstr ""
+"Hatókör: diagram, nem módosítja a színeket, a közepesen kerekített "
+"négyszögeket körvonalaikkal jeleníti meg és nem árnyékol"
+
+#: 12.Strings2.Organigram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"without outline and shadow"
+msgstr ""
+"Hatókör: diagram, nem módosítja a színeket, a közepesen kerekített "
+"négyszögeket körvonalaik nélkül jeleníti meg és nem árnyékol"
+
+#: 13.Strings2.Organigram.NotRoundedDescription.Label
+msgid ""
+"Area: allShape, doesnot modify colors, displays rectangles with outline and "
+"without rounded and shadow"
+msgstr ""
+"Hatókör: diagram, nem módosítja a színeket, a kerekítés nélküli négyszögeket "
+"körvonalaikkal jeleníti meg és nem árnyékol"
+
+#: 14.Strings2.Organigram.WithShadowDescription.Label
+msgid ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"with outline and shadow"
+msgstr ""
+"Hatókör: diagram, nem módosítja a színeket, a közepesen kerekített "
+"négyszögeket körvonalaikkal jeleníti meg és árnyékol"
+
+#: 15.Strings2.Organigram.BlueGradientsDescription.Label
+msgid ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays medium "
+"rounded rectangles with outline and without shadow"
+msgstr ""
+"Hatókör: diagram, beállítja a Kék-színátmenet (BlueGradients) funkciót, és "
+"módosítja a színeket, a közepesen kerekített négyszögeket körvonalaikkal "
+"jeleníti meg és nem árnyékol"
+
+#: 16.Strings2.Organigram.RedGradientsDescription.Label
+msgid ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays medium "
+"rounded rectangles with outline and without shadow"
+msgstr ""
+
+#: 17.Strings2.VennDiagram.DefaultDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline and rounded textFrames"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, az alakzatok közepesen áttetszőek, megjeleníti a körvonalakat "
+"és a kerekített szövegkereteket"
+
+#: 18.Strings2.VennDiagram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays rounded textFrames but doesnot display outline"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, az alakzatok közepesen áttetszőek, nem jeleníti meg a "
+"körvonalakat de megjeleníti a kerekített szövegkereteket"
+
+#: 19.Strings2.VennDiagram.WithoutFrameDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline but doesnot display textFrames"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, az alakzatok közepesen áttetszőek, megjeleníti a körvonalakat "
+"de nem jeleníti meg a szövegkereteket"
+
+#: 20.Strings2.VennDiagram.NotRoundedDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline and textFrames without rounded"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, az alakzatok közepesen áttetszőek, megjeleníti a körvonalakat "
+"és a szövegkereteket kerekítés nélkül"
+
+#: 21.Strings2.CycleDiagram.DefaultDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"but doesnot display shadow and textFrames"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, megjeleníti a körvonalakat, de nem jeleníti meg a "
+"szövegkereteket, és nem árnyékol"
+
+#: 22.Strings2.CycleDiagram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors and modifies colors, doesnot display outline "
+"and shadow and textFrames"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, nem jeleníti meg sem a körvonalakat, sem a szövegkereteket, és "
+"nem árnyékol"
+
+#: 23.Strings2.CycleDiagram.WithShadowDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, dispalys outline "
+"and shadow but doesnot display textFrames"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, megjeleníti a körvonakat, és árnyékol, de nem jeleníti meg "
+"szövegkereteket"
+
+#: 24.Strings2.CycleDiagram.WithFrameDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"and textFrames but doesnot display shadow"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, megjeleníti a körvonalakat, és a szövegkereteket, de nem "
+"árnyékol"
+
+#: 25.Strings2.CycleDiagram.BlueGradientsDescription.Label
+msgid ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays "
+"outline but doesnot display shadow and textFrames"
+msgstr ""
+"Hatókör: diagram, beállítja a Kék-színátmenet (BlueGradients) funkciót, és "
+"módosítja a színeket, megjeleníti a körvonalakat, de nem jeleníti meg a "
+"szövegkereteket, és nem árnyékol"
+
+#: 26.Strings2.CycleDiagram.RedGradientsDescription.Label
+msgid ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays outline "
+"but doesnot display shadow and textFrames"
+msgstr ""
+"Hatókör: diagram, beállítja a Piros-színátmenet (RedGradients) funkciót, és "
+"módosítja a színeket, megjeleníti a körvonalakat, de nem jeleníti meg a "
+"szövegkereteket, és nem árnyékol"
+
+#: 27.Strings2.PyramidDiagram.DefaultDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"but doesnot display shadow"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, megjeleníti a körvonalakat, és nem árnyékol"
+
+#: 28.Strings2.PyramidDiagram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors and modifies colors, doesnot display outline "
+"and shadow"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, nem jeleníti meg a körvonalakat, és nem árnyékol"
+
+#: 29.Strings2.PyramidDiagram.WithShadowDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, dispalys outline "
+"and shadow"
+msgstr ""
+"Hatókör: diagram, beállítja az Alapszínek (BaseColors) funkciót és módosítja "
+"a színeket, megjeleníti a körvonalakat, és árnyékol"
+
+#: 30.Strings2.PyramidDiagram.BaseColorsWithGradientsDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors (with gradients of "
+"base colors), displays outline but doesnot display shadow"
+msgstr ""
+"Hatókör: diagram, beállítja a Alapszínek (BaseColors) funkciót, és módosítja "
+"a színeket (az alapszínek színátmeneteivel), megjeleníti a körvonalakat, és "
+"nem árnyékol"
+
+#: 31.Strings2.PyramidDiagram.BlueGradientsDescription.Label
+msgid ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays "
+"outline but doesnot display shadow"
+msgstr ""
+"Hatókör: diagram, beállítja a Kék-színátmenet (BlueGradients) funkciót, és "
+"módosítja a színeket, megjeleníti a körvonalakat, és nem árnyékol"
+
+#: 32.Strings2.PyramidDiagram.RedGradientsDescription.Label
+msgid ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays outline "
+"but doesnot display shadow"
+msgstr ""
+"Hatókör: diagram, beállítja a Piros-színátmenet (RedGradients) funkciót, és "
+"módosítja a színeket, megjeleníti a körvonalakat, és nem árnyékol"
+
+#: 33.Strings2.TargetDiagram.DefaultDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+msgstr ""
+"Hatókör: diagram, elrendezés: középre, beállítja az Alapszínek (BaseColors) "
+"funkciót és módosítja a színeket, megjeleníti a körvonalakat, de nem "
+"jeleníti meg a szövegkereteket"
+
+#: 34.Strings2.TargetDiagram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"doesnot display outline and textFrames"
+msgstr ""
+"Hatókör: diagram, elrendezés: középre, beállítja az Alapszínek (BaseColors) "
+"funkciót és módosítja a színeket, nem jeleníti meg a körvonalakat és a "
+"szövegkereteket"
+
+#: 35.Strings2.TargetDiagram.WithFrameDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"dispalys outline and textFrames"
+msgstr ""
+"Hatókör: diagram, elrendezés: középre, beállítja az Alapszínek (BaseColors) "
+"funkciót és módosítja a színeket, megjeleníti a körvonalakat és a "
+"szövegkereteket"
+
+#: 36.Strings2.TargetDiagram.BlueGradientsDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets BlueGradients mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+msgstr ""
+"Hatókör: diagram, elrendezés: középre, beállítja a Kék-színátmenet "
+"(BlueGradients) funkciót, és módosítja a színeket, megjeleníti a "
+"körvonalakat, de nem jeleníti meg a szövegkereteket"
+
+#: 37.Strings2.TargetDiagram.RedGradientsDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets RedGradients mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+msgstr ""
+"Hatókör: diagram, elrendezés: középre, beállítja a Piros-színátmenet "
+"(RedGradients) funkciót, és módosítja a színeket, megjeleníti a "
+"körvonalakat, de nem jeleníti meg a szövegkereteket"
+
+#: 38.Strings2.TargetDiagram.LeftLayoutDescription.Label
+msgid ""
+"Area: allShape, layout: left, sets BaseColors mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+msgstr ""
+"Hatókör: diagram, elrendezés: balra, beállítja az Alapszínek (BaseColors) "
+"funkciót és módosítja a színeket, megjeleníti a körvonalakat, de nem "
+"jeleníti meg a szövegkereteket"
+
+#: 39.Strings2.ConvertError.Title
+msgid "Can't convert diagram"
+msgstr "Nem lehet konvertálni a diagrammot"
+
+#: 40.Strings2.ConvertError.Message
+msgid "Select a shape in diagram and try again."
+msgstr "Valasszon ki egy elemet a diagramban, majd próbálja újra."
+
+#: 41.Strings2.Tips.Name.Label
+msgid "Tips"
+msgstr "Tippek"
+
+#: 42.Strings2.Organizationcharts.Tips.Label
+msgid ""
+"You can navigate with short keys between active items in diagram and obtain "
+"text editor function in simple way.\n"
+"\n"
+"Short keys of organization charts :\n"
+"\n"
+"a - selects all shape\n"
+"f - selects first shape\n"
+"d - steps down in the tree\n"
+"u - steps up in the tree\n"
+"n - steps next sibling in the tree\n"
+"p - steps previous sibling in the tree\n"
+"e - shows and actives texteditor\n"
+"\n"
+msgstr ""
+"Egyszerűen navigálhat a kijelölt elemek között, és könnyen elérheti a "
+"szövegszerkesztő funkciót a gyorsbillentyűk segítségével.\n"
+"\n"
+"A hierarhia diagramok gyorsbillentyűi:\n"
+"\n"
+"a - kijelöli az összes elemet (all)\n"
+"f - kijelöli az első elemet (first)\n"
+"d - lejjebb lép egy szintel a fában (down)\n"
+"u - feljebb lép egy szintel a fában (up)\n"
+"n - kijelöli a következő testvért a fában (next)\n"
+"p - kijelöli az előző testvért a fában (previous)\n"
+"e - aktívizálja a szövegszerkesztőt (editor)\n"
+"\n"
+
+#: 43.Strings2.Relationdiagrams.Tips.Label
+msgid ""
+"You can navigate with short keys between active items in diagram and obtain "
+"text editor function in simple way.\n"
+"\n"
+"Short keys of relation diagrams :\n"
+"\n"
+"a - selects all shape\n"
+"f - selects first shape\n"
+"n - selects next shape\n"
+"p - selects previous shape\n"
+"m - selects main shape of item (if the items consist of pair)\n"
+"t - selects text shape of item (if the items consist of pair)\n"
+"e - shows and actives texteditor\n"
+"\n"
+msgstr ""
+"Egyszerűen navigálhat a kijelölt elemek között, és könnyen elérheti a "
+"szövegszerkesztő funkciót a gyorsbillentyűk segítségével.\n"
+"\n"
+"A kapcsolati diagramok gyorsbillentyűi:\n"
+"\n"
+"a - kijelöli az összes elemet (all)\n"
+"f - kijelöli az első elemet (first)\n"
+"n - kijelöli a következő elemet (next)\n"
+"p - kijelöli az előző elemet (previous)\n"
+"m - kijelöli a fő alakzatot (mikor egy elem két alakzatból áll - main shape)\n"
+"t - kijelöli a szöveges alakzatot (mikor egy elem két alakzatból áll - text "
+"shape)\n"
+"e - aktívizálja a szövegszerkesztőt (editor)\n"
+"\n"

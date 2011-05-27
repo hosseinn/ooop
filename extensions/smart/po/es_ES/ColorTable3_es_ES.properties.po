@@ -1,0 +1,503 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/ColorTable3_es_ES.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/ColorTable3_es_ES.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # ColorTable3 strings
+#: 4818.ColorTable3.HelpText
+msgctxt "4818.ColorTable3.HelpText"
+"4818.ColorTable3.HelpText"
+msgid ""
+msgstr ""
+
+#: 4819.ColorTable3.Title
+msgid "Color table"
+msgstr "Tabla de color"
+
+#: 4820.ColorTable3.ImageControl1.HelpText
+msgctxt "4820.ColorTable3.ImageControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 4821.ColorTable3.ImageControl2.HelpText
+msgctxt "4821.ColorTable3.ImageControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 4822.ColorTable3.ImageControl3.HelpText
+msgctxt "4822.ColorTable3.ImageControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 4823.ColorTable3.ImageControl5.HelpText
+msgctxt "4823.ColorTable3.ImageControl5.HelpText"
+msgid ""
+msgstr ""
+
+#: 4824.ColorTable3.ImageControl6.HelpText
+msgctxt "4824.ColorTable3.ImageControl6.HelpText"
+msgid ""
+msgstr ""
+
+#: 4825.ColorTable3.ImageControl7.HelpText
+msgctxt "4825.ColorTable3.ImageControl7.HelpText"
+msgid ""
+msgstr ""
+
+#: 4826.ColorTable3.ImageControl8.HelpText
+msgctxt "4826.ColorTable3.ImageControl8.HelpText"
+msgid ""
+msgstr ""
+
+#: 4827.ColorTable3.ImageControl16.HelpText
+msgctxt "4827.ColorTable3.ImageControl16.HelpText"
+msgid ""
+msgstr ""
+
+#: 4828.ColorTable3.ImageControl15.HelpText
+msgctxt "4828.ColorTable3.ImageControl15.HelpText"
+msgid ""
+msgstr ""
+
+#: 4829.ColorTable3.ImageControl14.HelpText
+msgctxt "4829.ColorTable3.ImageControl14.HelpText"
+msgid ""
+msgstr ""
+
+#: 4830.ColorTable3.ImageControl13.HelpText
+msgctxt "4830.ColorTable3.ImageControl13.HelpText"
+msgid ""
+msgstr ""
+
+#: 4831.ColorTable3.ImageControl11.HelpText
+msgctxt "4831.ColorTable3.ImageControl11.HelpText"
+msgid ""
+msgstr ""
+
+#: 4832.ColorTable3.ImageControl10.HelpText
+msgctxt "4832.ColorTable3.ImageControl10.HelpText"
+msgid ""
+msgstr ""
+
+#: 4833.ColorTable3.ImageControl9.HelpText
+msgctxt "4833.ColorTable3.ImageControl9.HelpText"
+msgid ""
+msgstr ""
+
+#: 4834.ColorTable3.ImageControl12.HelpText
+msgctxt "4834.ColorTable3.ImageControl12.HelpText"
+msgid ""
+msgstr ""
+
+#: 4835.ColorTable3.ImageControl4.HelpText
+msgctxt "4835.ColorTable3.ImageControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 4836.ColorTable3.ImageControl17.HelpText
+msgctxt "4836.ColorTable3.ImageControl17.HelpText"
+msgid ""
+msgstr ""
+
+#: 4837.ColorTable3.ImageControl20.HelpText
+msgctxt "4837.ColorTable3.ImageControl20.HelpText"
+msgid ""
+msgstr ""
+
+#: 4838.ColorTable3.ImageControl28.HelpText
+msgctxt "4838.ColorTable3.ImageControl28.HelpText"
+msgid ""
+msgstr ""
+
+#: 4839.ColorTable3.ImageControl33.HelpText
+msgctxt "4839.ColorTable3.ImageControl33.HelpText"
+msgid ""
+msgstr ""
+
+#: 4840.ColorTable3.ImageControl36.HelpText
+msgctxt "4840.ColorTable3.ImageControl36.HelpText"
+msgid ""
+msgstr ""
+
+#: 4841.ColorTable3.ImageControl44.HelpText
+msgctxt "4841.ColorTable3.ImageControl44.HelpText"
+msgid ""
+msgstr ""
+
+#: 4842.ColorTable3.ImageControl29.HelpText
+msgctxt "4842.ColorTable3.ImageControl29.HelpText"
+msgid ""
+msgstr ""
+
+#: 4843.ColorTable3.ImageControl30.HelpText
+msgctxt "4843.ColorTable3.ImageControl30.HelpText"
+msgid ""
+msgstr ""
+
+#: 4844.ColorTable3.ImageControl31.HelpText
+msgctxt "4844.ColorTable3.ImageControl31.HelpText"
+msgid ""
+msgstr ""
+
+#: 4845.ColorTable3.ImageControl32.HelpText
+msgctxt "4845.ColorTable3.ImageControl32.HelpText"
+msgid ""
+msgstr ""
+
+#: 4846.ColorTable3.ImageControl18.HelpText
+msgctxt "4846.ColorTable3.ImageControl18.HelpText"
+msgid ""
+msgstr ""
+
+#: 4847.ColorTable3.ImageControl19.HelpText
+msgctxt "4847.ColorTable3.ImageControl19.HelpText"
+msgid ""
+msgstr ""
+
+#: 4848.ColorTable3.ImageControl21.HelpText
+msgctxt "4848.ColorTable3.ImageControl21.HelpText"
+msgid ""
+msgstr ""
+
+#: 4849.ColorTable3.ImageControl22.HelpText
+msgctxt "4849.ColorTable3.ImageControl22.HelpText"
+msgid ""
+msgstr ""
+
+#: 4850.ColorTable3.ImageControl23.HelpText
+msgctxt "4850.ColorTable3.ImageControl23.HelpText"
+msgid ""
+msgstr ""
+
+#: 4851.ColorTable3.ImageControl24.HelpText
+msgctxt "4851.ColorTable3.ImageControl24.HelpText"
+msgid ""
+msgstr ""
+
+#: 4852.ColorTable3.ImageControl25.HelpText
+msgctxt "4852.ColorTable3.ImageControl25.HelpText"
+msgid ""
+msgstr ""
+
+#: 4853.ColorTable3.ImageControl26.HelpText
+msgctxt "4853.ColorTable3.ImageControl26.HelpText"
+msgid ""
+msgstr ""
+
+#: 4854.ColorTable3.ImageControl27.HelpText
+msgctxt "4854.ColorTable3.ImageControl27.HelpText"
+msgid ""
+msgstr ""
+
+#: 4855.ColorTable3.ImageControl38.HelpText
+msgctxt "4855.ColorTable3.ImageControl38.HelpText"
+msgid ""
+msgstr ""
+
+#: 4856.ColorTable3.ImageControl39.HelpText
+msgctxt "4856.ColorTable3.ImageControl39.HelpText"
+msgid ""
+msgstr ""
+
+#: 4857.ColorTable3.ImageControl45.HelpText
+msgctxt "4857.ColorTable3.ImageControl45.HelpText"
+msgid ""
+msgstr ""
+
+#: 4858.ColorTable3.ImageControl47.HelpText
+msgctxt "4858.ColorTable3.ImageControl47.HelpText"
+msgid ""
+msgstr ""
+
+#: 4859.ColorTable3.ImageControl48.HelpText
+msgctxt "4859.ColorTable3.ImageControl48.HelpText"
+msgid ""
+msgstr ""
+
+#: 4860.ColorTable3.ImageControl46.HelpText
+msgctxt "4860.ColorTable3.ImageControl46.HelpText"
+msgid ""
+msgstr ""
+
+#: 4861.ColorTable3.ImageControl43.HelpText
+msgctxt "4861.ColorTable3.ImageControl43.HelpText"
+msgid ""
+msgstr ""
+
+#: 4862.ColorTable3.ImageControl42.HelpText
+msgctxt "4862.ColorTable3.ImageControl42.HelpText"
+msgid ""
+msgstr ""
+
+#: 4863.ColorTable3.ImageControl41.HelpText
+msgctxt "4863.ColorTable3.ImageControl41.HelpText"
+msgid ""
+msgstr ""
+
+#: 4864.ColorTable3.ImageControl40.HelpText
+msgctxt "4864.ColorTable3.ImageControl40.HelpText"
+msgid ""
+msgstr ""
+
+#: 4865.ColorTable3.ImageControl37.HelpText
+msgctxt "4865.ColorTable3.ImageControl37.HelpText"
+msgid ""
+msgstr ""
+
+#: 4866.ColorTable3.ImageControl35.HelpText
+msgctxt "4866.ColorTable3.ImageControl35.HelpText"
+msgid ""
+msgstr ""
+
+#: 4867.ColorTable3.ImageControl34.HelpText
+msgctxt "4867.ColorTable3.ImageControl34.HelpText"
+msgid ""
+msgstr ""
+
+#: 4868.ColorTable3.ImageControl49.HelpText
+msgctxt "4868.ColorTable3.ImageControl49.HelpText"
+msgid ""
+msgstr ""
+
+#: 4869.ColorTable3.ImageControl50.HelpText
+msgctxt "4869.ColorTable3.ImageControl50.HelpText"
+msgid ""
+msgstr ""
+
+#: 4870.ColorTable3.ImageControl51.HelpText
+msgctxt "4870.ColorTable3.ImageControl51.HelpText"
+msgid ""
+msgstr ""
+
+#: 4871.ColorTable3.ImageControl52.HelpText
+msgctxt "4871.ColorTable3.ImageControl52.HelpText"
+msgid ""
+msgstr ""
+
+#: 4872.ColorTable3.ImageControl53.HelpText
+msgctxt "4872.ColorTable3.ImageControl53.HelpText"
+msgid ""
+msgstr ""
+
+#: 4873.ColorTable3.ImageControl54.HelpText
+msgctxt "4873.ColorTable3.ImageControl54.HelpText"
+msgid ""
+msgstr ""
+
+#: 4874.ColorTable3.ImageControl55.HelpText
+msgctxt "4874.ColorTable3.ImageControl55.HelpText"
+msgid ""
+msgstr ""
+
+#: 4875.ColorTable3.ImageControl56.HelpText
+msgctxt "4875.ColorTable3.ImageControl56.HelpText"
+msgid ""
+msgstr ""
+
+#: 4876.ColorTable3.ImageControl57.HelpText
+msgctxt "4876.ColorTable3.ImageControl57.HelpText"
+msgid ""
+msgstr ""
+
+#: 4877.ColorTable3.ImageControl58.HelpText
+msgctxt "4877.ColorTable3.ImageControl58.HelpText"
+msgid ""
+msgstr ""
+
+#: 4878.ColorTable3.ImageControl59.HelpText
+msgctxt "4878.ColorTable3.ImageControl59.HelpText"
+msgid ""
+msgstr ""
+
+#: 4879.ColorTable3.ImageControl60.HelpText
+msgctxt "4879.ColorTable3.ImageControl60.HelpText"
+msgid ""
+msgstr ""
+
+#: 4880.ColorTable3.ImageControl61.HelpText
+msgctxt "4880.ColorTable3.ImageControl61.HelpText"
+msgid ""
+msgstr ""
+
+#: 4881.ColorTable3.ImageControl62.HelpText
+msgctxt "4881.ColorTable3.ImageControl62.HelpText"
+msgid ""
+msgstr ""
+
+#: 4882.ColorTable3.ImageControl63.HelpText
+msgctxt "4882.ColorTable3.ImageControl63.HelpText"
+msgid ""
+msgstr ""
+
+#: 4883.ColorTable3.ImageControl64.HelpText
+msgctxt "4883.ColorTable3.ImageControl64.HelpText"
+msgid ""
+msgstr ""
+
+#: 4884.ColorTable3.ImageControl65.HelpText
+msgctxt "4884.ColorTable3.ImageControl65.HelpText"
+msgid ""
+msgstr ""
+
+#: 4885.ColorTable3.ImageControl66.HelpText
+msgctxt "4885.ColorTable3.ImageControl66.HelpText"
+msgid ""
+msgstr ""
+
+#: 4886.ColorTable3.ImageControl67.HelpText
+msgctxt "4886.ColorTable3.ImageControl67.HelpText"
+msgid ""
+msgstr ""
+
+#: 4887.ColorTable3.ImageControl68.HelpText
+msgctxt "4887.ColorTable3.ImageControl68.HelpText"
+msgid ""
+msgstr ""
+
+#: 4888.ColorTable3.ImageControl69.HelpText
+msgctxt "4888.ColorTable3.ImageControl69.HelpText"
+msgid ""
+msgstr ""
+
+#: 4889.ColorTable3.ImageControl70.HelpText
+msgctxt "4889.ColorTable3.ImageControl70.HelpText"
+msgid ""
+msgstr ""
+
+#: 4890.ColorTable3.ImageControl71.HelpText
+msgctxt "4890.ColorTable3.ImageControl71.HelpText"
+msgid ""
+msgstr ""
+
+#: 4891.ColorTable3.ImageControl72.HelpText
+msgctxt "4891.ColorTable3.ImageControl72.HelpText"
+msgid ""
+msgstr ""
+
+#: 4892.ColorTable3.ImageControl73.HelpText
+msgctxt "4892.ColorTable3.ImageControl73.HelpText"
+msgid ""
+msgstr ""
+
+#: 4893.ColorTable3.ImageControl74.HelpText
+msgctxt "4893.ColorTable3.ImageControl74.HelpText"
+msgid ""
+msgstr ""
+
+#: 4894.ColorTable3.ImageControl75.HelpText
+msgctxt "4894.ColorTable3.ImageControl75.HelpText"
+msgid ""
+msgstr ""
+
+#: 4895.ColorTable3.ImageControl76.HelpText
+msgctxt "4895.ColorTable3.ImageControl76.HelpText"
+msgid ""
+msgstr ""
+
+#: 4896.ColorTable3.ImageControl77.HelpText
+msgctxt "4896.ColorTable3.ImageControl77.HelpText"
+msgid ""
+msgstr ""
+
+#: 4897.ColorTable3.ImageControl78.HelpText
+msgctxt "4897.ColorTable3.ImageControl78.HelpText"
+msgid ""
+msgstr ""
+
+#: 4898.ColorTable3.ImageControl79.HelpText
+msgctxt "4898.ColorTable3.ImageControl79.HelpText"
+msgid ""
+msgstr ""
+
+#: 4899.ColorTable3.ImageControl80.HelpText
+msgctxt "4899.ColorTable3.ImageControl80.HelpText"
+msgid ""
+msgstr ""
+
+#: 4900.ColorTable3.ImageControl81.HelpText
+msgctxt "4900.ColorTable3.ImageControl81.HelpText"
+msgid ""
+msgstr ""
+
+#: 4901.ColorTable3.ImageControl82.HelpText
+msgctxt "4901.ColorTable3.ImageControl82.HelpText"
+msgid ""
+msgstr ""
+
+#: 4902.ColorTable3.ImageControl83.HelpText
+msgctxt "4902.ColorTable3.ImageControl83.HelpText"
+msgid ""
+msgstr ""
+
+#: 4903.ColorTable3.ImageControl84.HelpText
+msgctxt "4903.ColorTable3.ImageControl84.HelpText"
+msgid ""
+msgstr ""
+
+#: 4904.ColorTable3.ImageControl85.HelpText
+msgctxt "4904.ColorTable3.ImageControl85.HelpText"
+msgid ""
+msgstr ""
+
+#: 4905.ColorTable3.ImageControl86.HelpText
+msgctxt "4905.ColorTable3.ImageControl86.HelpText"
+msgid ""
+msgstr ""
+
+#: 4906.ColorTable3.ImageControl87.HelpText
+msgctxt "4906.ColorTable3.ImageControl87.HelpText"
+msgid ""
+msgstr ""
+
+#: 4907.ColorTable3.ImageControl88.HelpText
+msgctxt "4907.ColorTable3.ImageControl88.HelpText"
+msgid ""
+msgstr ""
+
+#: 4908.ColorTable3.ImageControl89.HelpText
+msgctxt "4908.ColorTable3.ImageControl89.HelpText"
+msgid ""
+msgstr ""
+
+#: 4909.ColorTable3.ImageControl90.HelpText
+msgctxt "4909.ColorTable3.ImageControl90.HelpText"
+msgid ""
+msgstr ""
+
+#: 4910.ColorTable3.ImageControl91.HelpText
+msgctxt "4910.ColorTable3.ImageControl91.HelpText"
+msgid ""
+msgstr ""
+
+#: 4911.ColorTable3.ImageControl92.HelpText
+msgctxt "4911.ColorTable3.ImageControl92.HelpText"
+msgid ""
+msgstr ""
+
+#: 4912.ColorTable3.baseColorsModeCheckBox.HelpText
+msgctxt "4912.ColorTable3.baseColorsModeCheckBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 4913.ColorTable3.baseColorsModeCheckBox.Label
+msgid "Base colors mode"
+msgstr "Base colors mode"
+
+#: 5031.ColorTable3.saveBaseColorsCheckBoxSettingButton.HelpText
+msgctxt "5031.ColorTable3.saveBaseColorsCheckBoxSettingButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5032.ColorTable3.saveBaseColorsCheckBoxSettingButton.Label
+msgid "Save and exit"
+msgstr "Save and exit"

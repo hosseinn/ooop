@@ -1,0 +1,367 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/OrganigramPropsDialog_en_GB.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/OrganigramPropsDialog_en_GB.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # OrganigramPropsDialog strings
+#: 5196.OrganigramPropsDialog.HelpText
+msgctxt "5196.OrganigramPropsDialog.HelpText"
+"5196.OrganigramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 5197.OrganigramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Properties of diagram"
+
+#: 5198.OrganigramPropsDialog.frameControl1.HelpText
+msgctxt "5198.OrganigramPropsDialog.frameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 5199.OrganigramPropsDialog.frameControl1.Label
+msgid "Scope"
+msgstr "Scope"
+
+#: 5200.OrganigramPropsDialog.frameControl2.HelpText
+msgctxt "5200.OrganigramPropsDialog.frameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 5201.OrganigramPropsDialog.frameControl2.Label
+msgid "Colors"
+msgstr "Colours"
+
+#: 5202.OrganigramPropsDialog.colorImageControl.HelpText
+msgctxt "5202.OrganigramPropsDialog.colorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 5203.OrganigramPropsDialog.gradientsOptionButton.HelpText
+msgctxt "5203.OrganigramPropsDialog.gradientsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5204.OrganigramPropsDialog.gradientsOptionButton.Label
+msgid "Gradients"
+msgstr "Gradients"
+
+#: 5205.OrganigramPropsDialog.label0.HelpText
+msgctxt "5205.OrganigramPropsDialog.label0.HelpText"
+msgid ""
+msgstr ""
+
+#: 5206.OrganigramPropsDialog.label0.Label
+msgid "Start color:"
+msgstr "Start colour:"
+
+#: 5207.OrganigramPropsDialog.label1.HelpText
+msgctxt "5207.OrganigramPropsDialog.label1.HelpText"
+msgid ""
+msgstr ""
+
+#: 5208.OrganigramPropsDialog.label1.Label
+msgid "End color:"
+msgstr "End colour:"
+
+#: 5209.OrganigramPropsDialog.startColorImageControl.HelpText
+msgctxt "5209.OrganigramPropsDialog.startColorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 5210.OrganigramPropsDialog.endColorImageControl.HelpText
+msgctxt "5210.OrganigramPropsDialog.endColorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 5211.OrganigramPropsDialog.frameControl3.HelpText
+msgctxt "5211.OrganigramPropsDialog.frameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 5212.OrganigramPropsDialog.frameControl3.Label
+msgid "Rounded"
+msgstr "Rounded"
+
+#: 5213.OrganigramPropsDialog.frameControl4.HelpText
+msgctxt "5213.OrganigramPropsDialog.frameControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 5214.OrganigramPropsDialog.frameControl4.Label
+msgid "Outline"
+msgstr "Outline"
+
+#: 5215.OrganigramPropsDialog.colorOptionButton.HelpText
+msgctxt "5215.OrganigramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5216.OrganigramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Colour:"
+
+#: 5217.OrganigramPropsDialog.noRoundedOptionButton.HelpText
+msgctxt "5217.OrganigramPropsDialog.noRoundedOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5218.OrganigramPropsDialog.noRoundedOptionButton.Label
+msgctxt "5218.OrganigramPropsDialog.noRoundedOptionButton.Label"
+msgid "No"
+msgstr "No"
+
+#: 5219.OrganigramPropsDialog.mediumRoundedOptionButton.HelpText
+msgctxt "5219.OrganigramPropsDialog.mediumRoundedOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5220.OrganigramPropsDialog.mediumRoundedOptionButton.Label
+msgid "Medium"
+msgstr "Medium"
+
+#: 5221.OrganigramPropsDialog.extraRoundedOptionButton.HelpText
+msgctxt "5221.OrganigramPropsDialog.extraRoundedOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5222.OrganigramPropsDialog.extraRoundedOptionButton.Label
+msgid "Extra"
+msgstr "Extra"
+
+#: 5223.OrganigramPropsDialog.okCommandButton.HelpText
+msgctxt "5223.OrganigramPropsDialog.okCommandButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5224.OrganigramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 5225.OrganigramPropsDialog.allDiagramOptionButton.HelpText
+msgctxt "5225.OrganigramPropsDialog.allDiagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5226.OrganigramPropsDialog.allDiagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagram"
+
+#: 5227.OrganigramPropsDialog.frameControl5.HelpText
+msgctxt "5227.OrganigramPropsDialog.frameControl5.HelpText"
+msgid ""
+msgstr ""
+
+#: 5228.OrganigramPropsDialog.frameControl5.Label
+msgid "Shadow"
+msgstr "Shadow"
+
+#: 5229.OrganigramPropsDialog.yesShadowOptionButton.HelpText
+msgctxt "5229.OrganigramPropsDialog.yesShadowOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5230.OrganigramPropsDialog.yesShadowOptionButton.Label
+msgctxt "5230.OrganigramPropsDialog.yesShadowOptionButton.Label"
+msgid "Yes"
+msgstr "Yes"
+
+#: 5231.OrganigramPropsDialog.noShadowOptionButton.HelpText
+msgctxt "5231.OrganigramPropsDialog.noShadowOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5232.OrganigramPropsDialog.noShadowOptionButton.Label
+msgctxt "5232.OrganigramPropsDialog.noShadowOptionButton.Label"
+msgid "No"
+msgstr "No"
+
+#: 5233.OrganigramPropsDialog.yesOutlineOptionButton.HelpText
+msgctxt "5233.OrganigramPropsDialog.yesOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5234.OrganigramPropsDialog.yesOutlineOptionButton.Label
+msgctxt "5234.OrganigramPropsDialog.yesOutlineOptionButton.Label"
+msgid "Yes"
+msgstr "Yes"
+
+#: 5235.OrganigramPropsDialog.noOutlineOptionButton.HelpText
+msgctxt "5235.OrganigramPropsDialog.noOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5236.OrganigramPropsDialog.noOutlineOptionButton.Label
+msgctxt "5236.OrganigramPropsDialog.noOutlineOptionButton.Label"
+msgid "No"
+msgstr "No"
+
+#: 5237.OrganigramPropsDialog.listBox.HelpText
+msgctxt "5237.OrganigramPropsDialog.listBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 5238.listBox.StringItemList
+msgid "Default"
+msgstr "Default"
+
+#: 5239.listBox.StringItemList
+msgid "Without outline"
+msgstr "Without outline"
+
+#: 5240.listBox.StringItemList
+msgid "Not rounded"
+msgstr "Not rounded"
+
+#: 5241.listBox.StringItemList
+msgid "With shadow"
+msgstr "With shadow"
+
+#: 5242.listBox.StringItemList
+msgid "Blue gradients"
+msgstr "Blue gradients"
+
+#: 5243.listBox.StringItemList
+msgid "Red gradients"
+msgstr "Red gradients"
+
+#: 5244.listBox.StringItemList
+msgid "User define"
+msgstr "User define"
+
+#: 5245.OrganigramPropsDialog.imageControl.HelpText
+msgctxt "5245.OrganigramPropsDialog.imageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 5246.OrganigramPropsDialog.modifyColorsCheckBox.HelpText
+msgctxt "5246.OrganigramPropsDialog.modifyColorsCheckBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 5247.OrganigramPropsDialog.modifyColorsCheckBox.Label
+msgid "Modify colors"
+msgstr "Modify colours"
+
+#: 5248.OrganigramPropsDialog.selectedItemsOptionButton.HelpText
+msgctxt "5248.OrganigramPropsDialog.selectedItemsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5249.OrganigramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Selected item(s)"
+
+#: 5250.OrganigramPropsDialog.gradientModeListBox.HelpText
+msgctxt "5250.OrganigramPropsDialog.gradientModeListBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 5251.gradientModeListBox.StringItemList
+msgid "Vertical"
+msgstr "Vertical"
+
+#: 5252.gradientModeListBox.StringItemList
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: 5253.OrganigramPropsDialog.siblingsOptionButton.HelpText
+msgctxt "5253.OrganigramPropsDialog.siblingsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5254.OrganigramPropsDialog.siblingsOptionButton.Label
+msgid "Selected item(s) and its siblings"
+msgstr "Selected item(s) and its siblings"
+
+#: 5255.OrganigramPropsDialog.branchOptionButton.HelpText
+msgctxt "5255.OrganigramPropsDialog.branchOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5256.OrganigramPropsDialog.branchOptionButton.Label
+msgid "Selected item(s) and its branch"
+msgstr "Selected item(s) and its branch"
+
+#: 5257.OrganigramPropsDialog.allShapeButton.HelpText
+msgctxt "5257.OrganigramPropsDialog.allShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5258.OrganigramPropsDialog.allShapeButton.Label
+msgid "a"
+msgstr "a"
+
+#: 5261.OrganigramPropsDialog.previousButton.HelpText
+msgctxt "5261.OrganigramPropsDialog.previousButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5262.OrganigramPropsDialog.previousButton.Label
+msgid "p"
+msgstr "p"
+
+#: 5263.OrganigramPropsDialog.nextButton.HelpText
+msgctxt "5263.OrganigramPropsDialog.nextButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5264.OrganigramPropsDialog.nextButton.Label
+msgid "n"
+msgstr "n"
+
+#: 5265.OrganigramPropsDialog.upButton.HelpText
+msgctxt "5265.OrganigramPropsDialog.upButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5266.OrganigramPropsDialog.upButton.Label
+msgid "u"
+msgstr "u"
+
+#: 5267.OrganigramPropsDialog.downButton.HelpText
+msgctxt "5267.OrganigramPropsDialog.downButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5268.OrganigramPropsDialog.downButton.Label
+msgid "d"
+msgstr "d"
+
+#: 5273.OrganigramPropsDialog.descriptionLabel.HelpText
+msgctxt "5273.OrganigramPropsDialog.descriptionLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 5274.OrganigramPropsDialog.descriptionLabel.Label
+msgctxt "5274.OrganigramPropsDialog.descriptionLabel.Label"
+msgid ""
+msgstr ""
+
+#: 5275.OrganigramPropsDialog.label.HelpText
+msgctxt "5275.OrganigramPropsDialog.label.HelpText"
+msgid ""
+msgstr ""
+
+#: 5276.OrganigramPropsDialog.label.Label
+msgid "Description:"
+msgstr "Description:"
+
+#: 5277.OrganigramPropsDialog.firstShapeButton.HelpText
+msgctxt "5277.OrganigramPropsDialog.firstShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5278.OrganigramPropsDialog.firstShapeButton.Label
+msgid "f"
+msgstr "f"
