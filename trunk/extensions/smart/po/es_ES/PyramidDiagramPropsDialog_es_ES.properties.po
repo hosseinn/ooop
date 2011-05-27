@@ -1,0 +1,271 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/PyramidDiagramPropsDialog_es_ES.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/PyramidDiagramPropsDialog_es_ES.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # PyramidDiagramPropsDialog strings
+#: 4683.PyramidDiagramPropsDialog.HelpText
+msgctxt "4683.PyramidDiagramPropsDialog.HelpText"
+"4683.PyramidDiagramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 4684.PyramidDiagramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Propiedades del diagrama"
+
+#: 4685.PyramidDiagramPropsDialog.frameControl1.HelpText
+msgctxt "4685.PyramidDiagramPropsDialog.frameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 4686.PyramidDiagramPropsDialog.frameControl1.Label
+msgid "Scope"
+msgstr "Ámbito"
+
+#: 4687.PyramidDiagramPropsDialog.yesOutlineOptionButton.HelpText
+msgctxt "4687.PyramidDiagramPropsDialog.yesOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4688.PyramidDiagramPropsDialog.yesOutlineOptionButton.Label
+msgctxt "4688.PyramidDiagramPropsDialog.yesOutlineOptionButton.Label"
+msgid "Yes"
+msgstr "Sí"
+
+#: 4689.PyramidDiagramPropsDialog.noOutlineOptionButton.HelpText
+msgctxt "4689.PyramidDiagramPropsDialog.noOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4690.PyramidDiagramPropsDialog.noOutlineOptionButton.Label
+msgctxt "4690.PyramidDiagramPropsDialog.noOutlineOptionButton.Label"
+msgid "No"
+msgstr "No"
+
+#: 4691.PyramidDiagramPropsDialog.okCommandButton.HelpText
+msgctxt "4691.PyramidDiagramPropsDialog.okCommandButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4692.PyramidDiagramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "Aceptar"
+
+#: 4693.PyramidDiagramPropsDialog.listBox.HelpText
+msgctxt "4693.PyramidDiagramPropsDialog.listBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 4781.listBox.StringItemList
+msgid "Default"
+msgstr "Default"
+
+#: 4782.listBox.StringItemList
+msgid "Without outline"
+msgstr "Without outline"
+
+#: 4783.listBox.StringItemList
+msgid "With shadow"
+msgstr "With shadow"
+
+#: 4784.listBox.StringItemList
+msgid "Base colors with gradients"
+msgstr "Base colors with gradients"
+
+#: 4785.listBox.StringItemList
+msgid "Blue gradients"
+msgstr "Blue gradients"
+
+#: 4786.listBox.StringItemList
+msgid "Red gradients"
+msgstr "Red gradients"
+
+#: 4787.listBox.StringItemList
+msgid "User define"
+msgstr "User define"
+
+#: 4701.PyramidDiagramPropsDialog.modifyColorsCheckBox.HelpText
+msgctxt "4701.PyramidDiagramPropsDialog.modifyColorsCheckBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 4702.PyramidDiagramPropsDialog.modifyColorsCheckBox.Label
+msgid "Modify colors"
+msgstr "Modify colors"
+
+#: 4703.PyramidDiagramPropsDialog.allShapeButton.HelpText
+msgctxt "4703.PyramidDiagramPropsDialog.allShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4704.PyramidDiagramPropsDialog.allShapeButton.Label
+msgid "a"
+msgstr "a"
+
+#: 4705.PyramidDiagramPropsDialog.firstShapeButton.HelpText
+msgctxt "4705.PyramidDiagramPropsDialog.firstShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4706.PyramidDiagramPropsDialog.firstShapeButton.Label
+msgid "f"
+msgstr "f"
+
+#: 4707.PyramidDiagramPropsDialog.previousShapeButton.HelpText
+msgctxt "4707.PyramidDiagramPropsDialog.previousShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4708.PyramidDiagramPropsDialog.previousShapeButton.Label
+msgid "p"
+msgstr "p"
+
+#: 4709.PyramidDiagramPropsDialog.nextShapeButton.HelpText
+msgctxt "4709.PyramidDiagramPropsDialog.nextShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4710.PyramidDiagramPropsDialog.nextShapeButton.Label
+msgid "n"
+msgstr "n"
+
+#: 4711.PyramidDiagramPropsDialog.mainShapeButton.HelpText
+msgctxt "4711.PyramidDiagramPropsDialog.mainShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4712.PyramidDiagramPropsDialog.mainShapeButton.Label
+msgid "m"
+msgstr "m"
+
+#: 4713.PyramidDiagramPropsDialog.textShapeButton.HelpText
+msgctxt "4713.PyramidDiagramPropsDialog.textShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4714.PyramidDiagramPropsDialog.textShapeButton.Label
+msgid "t"
+msgstr "t"
+
+#: 4715.PyramidDiagramPropsDialog.imageControl.HelpText
+msgctxt "4715.PyramidDiagramPropsDialog.imageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 4716.PyramidDiagramPropsDialog.yesShadowOptionButton.HelpText
+msgctxt "4716.PyramidDiagramPropsDialog.yesShadowOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4717.PyramidDiagramPropsDialog.yesShadowOptionButton.Label
+msgctxt "4717.PyramidDiagramPropsDialog.yesShadowOptionButton.Label"
+msgid "Yes"
+msgstr "Sí"
+
+#: 4718.PyramidDiagramPropsDialog.noShadowOptionButton.HelpText
+msgctxt "4718.PyramidDiagramPropsDialog.noShadowOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4719.PyramidDiagramPropsDialog.noShadowOptionButton.Label
+msgctxt "4719.PyramidDiagramPropsDialog.noShadowOptionButton.Label"
+msgid "No"
+msgstr "No"
+
+#: 4720.PyramidDiagramPropsDialog.baseColorOptionButton.HelpText
+msgctxt "4720.PyramidDiagramPropsDialog.baseColorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4721.PyramidDiagramPropsDialog.baseColorOptionButton.Label
+msgid "Base colors mode"
+msgstr "Base colors mode"
+
+#: 4722.PyramidDiagramPropsDialog.colorOptionButton.HelpText
+msgctxt "4722.PyramidDiagramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4723.PyramidDiagramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Color:"
+
+#: 4724.PyramidDiagramPropsDialog.colorImageControl.HelpText
+msgctxt "4724.PyramidDiagramPropsDialog.colorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 4725.PyramidDiagramPropsDialog.frameControl2.HelpText
+msgctxt "4725.PyramidDiagramPropsDialog.frameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 4726.PyramidDiagramPropsDialog.frameControl2.Label
+msgid "Colors"
+msgstr "Colores"
+
+#: 4727.PyramidDiagramPropsDialog.allDiagramOptionButton.HelpText
+msgctxt "4727.PyramidDiagramPropsDialog.allDiagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4728.PyramidDiagramPropsDialog.allDiagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagrama"
+
+#: 4729.PyramidDiagramPropsDialog.selectedItemsOptionButton.HelpText
+msgctxt "4729.PyramidDiagramPropsDialog.selectedItemsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4730.PyramidDiagramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Elemento(s) seleccionado(s)"
+
+#: 4731.PyramidDiagramPropsDialog.label.HelpText
+msgctxt "4731.PyramidDiagramPropsDialog.label.HelpText"
+msgid ""
+msgstr ""
+
+#: 4732.PyramidDiagramPropsDialog.label.Label
+msgid "Description:"
+msgstr "Description:"
+
+#: 4733.PyramidDiagramPropsDialog.descriptionLabel.HelpText
+msgctxt "4733.PyramidDiagramPropsDialog.descriptionLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 4734.PyramidDiagramPropsDialog.descriptionLabel.Label
+msgctxt "4734.PyramidDiagramPropsDialog.descriptionLabel.Label"
+msgid ""
+msgstr ""
+
+#: 4735.PyramidDiagramPropsDialog.frameControl4.HelpText
+msgctxt "4735.PyramidDiagramPropsDialog.frameControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 4736.PyramidDiagramPropsDialog.frameControl4.Label
+msgid "Shadow"
+msgstr "Shadow"
+
+#: 4737.PyramidDiagramPropsDialog.frameControl3.HelpText
+msgctxt "4737.PyramidDiagramPropsDialog.frameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 4738.PyramidDiagramPropsDialog.frameControl3.Label
+msgid "Outline"
+msgstr "Contorno"

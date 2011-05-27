@@ -1,0 +1,125 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/OrganigroupConvertDialog_pt_PT.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/OrganigroupConvertDialog_pt_PT.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # OrganigroupConvertDialog strings
+#: 5141.OrganigroupConvertDialog.HelpText
+msgctxt "5141.OrganigroupConvertDialog.HelpText"
+"5141.OrganigroupConvertDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 5142.OrganigroupConvertDialog.Title
+msgid "Conversation"
+msgstr "Conversation"
+
+#: 5143.OrganigroupConvertDialog.textLabel.HelpText
+msgctxt "5143.OrganigroupConvertDialog.textLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 5144.OrganigroupConvertDialog.textLabel.Label
+msgid "Convert to"
+msgstr "Convert to"
+
+#: 5145.OrganigroupConvertDialog.convertOptionButton1.HelpText
+msgctxt "5145.OrganigroupConvertDialog.convertOptionButton1.HelpText"
+msgid ""
+msgstr ""
+
+#: 5146.OrganigroupConvertDialog.convertOptionButton1.Label
+msgid "Organization Chart"
+msgstr "Organization Chart"
+
+#: 5147.OrganigroupConvertDialog.convertOptionButton2.HelpText
+msgctxt "5147.OrganigroupConvertDialog.convertOptionButton2.HelpText"
+msgid ""
+msgstr ""
+
+#: 5148.OrganigroupConvertDialog.convertOptionButton2.Label
+msgid "Horizontal Organization Chart"
+msgstr "Horizontal Organization Chart"
+
+#: 5149.OrganigroupConvertDialog.convertOptionButton3.HelpText
+msgctxt "5149.OrganigroupConvertDialog.convertOptionButton3.HelpText"
+msgid ""
+msgstr ""
+
+#: 5150.OrganigroupConvertDialog.convertOptionButton3.Label
+msgid "Table Hierarchy Diagram"
+msgstr "Table Hierarchy Diagram"
+
+#: 5151.OrganigroupConvertDialog.convertOptionButton4.HelpText
+msgctxt "5151.OrganigroupConvertDialog.convertOptionButton4.HelpText"
+msgid ""
+msgstr ""
+
+#: 5152.OrganigroupConvertDialog.convertOptionButton4.Label
+msgid "Organization Chart 2"
+msgstr "Organization Chart 2"
+
+#: 5153.OrganigroupConvertDialog.convertActionButton.HelpText
+msgctxt "5153.OrganigroupConvertDialog.convertActionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5154.OrganigroupConvertDialog.convertActionButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 5155.OrganigroupConvertDialog.Label.HelpText
+msgctxt "5155.OrganigroupConvertDialog.Label.HelpText"
+msgid ""
+msgstr ""
+
+#: 5156.OrganigroupConvertDialog.Label.Label
+msgid "The last horizontal level :"
+msgstr "The last horizontal level :"
+
+#: 5157.OrganigroupConvertDialog.lastHorLevelListBox.HelpText
+msgctxt "5157.OrganigroupConvertDialog.lastHorLevelListBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 5158.lastHorLevelListBox.StringItemList
+msgid "1"
+msgstr "1"
+
+#: 5159.lastHorLevelListBox.StringItemList
+msgid "2"
+msgstr "2"
+
+#: 5160.lastHorLevelListBox.StringItemList
+msgid "3"
+msgstr "3"
+
+#: 5161.lastHorLevelListBox.StringItemList
+msgid "4"
+msgstr "4"
+
+#: 5162.lastHorLevelListBox.StringItemList
+msgid "5"
+msgstr "5"
+
+#: 5163.lastHorLevelListBox.StringItemList
+msgid "6"
+msgstr "6"
+
+#: 5164.lastHorLevelListBox.StringItemList
+msgid "7"
+msgstr "7"
+
+#: 5165.lastHorLevelListBox.StringItemList
+msgid "8"
+msgstr "8"

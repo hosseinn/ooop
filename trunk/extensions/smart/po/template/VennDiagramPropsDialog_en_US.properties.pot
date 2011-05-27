@@ -1,0 +1,329 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/dialogs/VennDiagramPropsDialog_en_US.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # VennDiagramPropsDialog strings
+#: 4401.VennDiagramPropsDialog.HelpText
+msgctxt "4401.VennDiagramPropsDialog.HelpText"
+"4401.VennDiagramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 4402.VennDiagramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr ""
+
+#: 4403.VennDiagramPropsDialog.CommandButton1.HelpText
+msgctxt "4403.VennDiagramPropsDialog.CommandButton1.HelpText"
+msgid ""
+msgstr ""
+
+#: 4404.VennDiagramPropsDialog.CommandButton1.Label
+msgid "OK"
+msgstr ""
+
+#: 4405.VennDiagramPropsDialog.selectedItemsOptionButton.HelpText
+msgctxt "4405.VennDiagramPropsDialog.selectedItemsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4406.VennDiagramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item"
+msgstr ""
+
+#: 4407.VennDiagramPropsDialog.colorImageControl.HelpText
+msgctxt "4407.VennDiagramPropsDialog.colorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 4408.VennDiagramPropsDialog.noTransparencyOptionButton.HelpText
+msgctxt "4408.VennDiagramPropsDialog.noTransparencyOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4409.VennDiagramPropsDialog.noTransparencyOptionButton.Label
+msgctxt "4409.VennDiagramPropsDialog.noTransparencyOptionButton.Label"
+msgid "No"
+msgstr ""
+
+#: 4410.VennDiagramPropsDialog.extraTransparencyOptionButton.HelpText
+msgctxt "4410.VennDiagramPropsDialog.extraTransparencyOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4411.VennDiagramPropsDialog.extraTransparencyOptionButton.Label
+msgid "Extra"
+msgstr ""
+
+#: 4412.VennDiagramPropsDialog.imageControl.HelpText
+msgctxt "4412.VennDiagramPropsDialog.imageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 4413.VennDiagramPropsDialog.frameControl6.HelpText
+msgctxt "4413.VennDiagramPropsDialog.frameControl6.HelpText"
+msgid ""
+msgstr ""
+
+#: 4414.VennDiagramPropsDialog.frameControl6.Label
+msgid "Rounded text area"
+msgstr ""
+
+#: 4415.VennDiagramPropsDialog.frameControl2.HelpText
+msgctxt "4415.VennDiagramPropsDialog.frameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 4416.VennDiagramPropsDialog.frameControl2.Label
+msgid "Colors"
+msgstr ""
+
+#: 4417.VennDiagramPropsDialog.frameControl1.HelpText
+msgctxt "4417.VennDiagramPropsDialog.frameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 4418.VennDiagramPropsDialog.frameControl1.Label
+msgid "Scope"
+msgstr ""
+
+#: 4419.VennDiagramPropsDialog.listBox.HelpText
+msgctxt "4419.VennDiagramPropsDialog.listBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 4678.listBox.StringItemList
+msgid "Default"
+msgstr ""
+
+#: 4679.listBox.StringItemList
+msgid "Without outline"
+msgstr ""
+
+#: 4680.listBox.StringItemList
+msgid "Without frame"
+msgstr ""
+
+#: 4681.listBox.StringItemList
+msgid "Not rouded"
+msgstr ""
+
+#: 4682.listBox.StringItemList
+msgid "User define"
+msgstr ""
+
+#: 4425.VennDiagramPropsDialog.frameControl3.HelpText
+msgctxt "4425.VennDiagramPropsDialog.frameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 4426.VennDiagramPropsDialog.frameControl3.Label
+msgid "Transparency"
+msgstr ""
+
+#: 4427.VennDiagramPropsDialog.frameControl4.HelpText
+msgctxt "4427.VennDiagramPropsDialog.frameControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 4428.VennDiagramPropsDialog.frameControl4.Label
+msgid "Outline"
+msgstr ""
+
+#: 4429.VennDiagramPropsDialog.frameControl5.HelpText
+msgctxt "4429.VennDiagramPropsDialog.frameControl5.HelpText"
+msgid ""
+msgstr ""
+
+#: 4430.VennDiagramPropsDialog.frameControl5.Label
+msgid "Text frame"
+msgstr ""
+
+#: 4431.VennDiagramPropsDialog.mediumTransparencyOptionButton.HelpText
+msgctxt "4431.VennDiagramPropsDialog.mediumTransparencyOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4432.VennDiagramPropsDialog.mediumTransparencyOptionButton.Label
+msgid "Medium"
+msgstr ""
+
+#: 4433.VennDiagramPropsDialog.allDiagramOptionButton.HelpText
+msgctxt "4433.VennDiagramPropsDialog.allDiagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4434.VennDiagramPropsDialog.allDiagramOptionButton.Label
+msgid "Diagram"
+msgstr ""
+
+#: 4435.VennDiagramPropsDialog.colorOptionButton.HelpText
+msgctxt "4435.VennDiagramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4436.VennDiagramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr ""
+
+#: 4437.VennDiagramPropsDialog.baseColorOptionButton.HelpText
+msgctxt "4437.VennDiagramPropsDialog.baseColorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4438.VennDiagramPropsDialog.baseColorOptionButton.Label
+msgid "Base colors mode"
+msgstr ""
+
+#: 4439.VennDiagramPropsDialog.modifyColorsCheckBox.HelpText
+msgctxt "4439.VennDiagramPropsDialog.modifyColorsCheckBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 4440.VennDiagramPropsDialog.modifyColorsCheckBox.Label
+msgid "Modify colors"
+msgstr ""
+
+#: 4441.VennDiagramPropsDialog.yesFrameRoundedOptionButton.HelpText
+msgctxt "4441.VennDiagramPropsDialog.yesFrameRoundedOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4442.VennDiagramPropsDialog.yesFrameRoundedOptionButton.Label
+msgctxt "4442.VennDiagramPropsDialog.yesFrameRoundedOptionButton.Label"
+msgid "Yes"
+msgstr ""
+
+#: 4443.VennDiagramPropsDialog.noFrameRoundedOptionButton.HelpText
+msgctxt "4443.VennDiagramPropsDialog.noFrameRoundedOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4444.VennDiagramPropsDialog.noFrameRoundedOptionButton.Label
+msgctxt "4444.VennDiagramPropsDialog.noFrameRoundedOptionButton.Label"
+msgid "No"
+msgstr ""
+
+#: 4445.VennDiagramPropsDialog.yesFrameOptionButton.HelpText
+msgctxt "4445.VennDiagramPropsDialog.yesFrameOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4446.VennDiagramPropsDialog.yesFrameOptionButton.Label
+msgctxt "4446.VennDiagramPropsDialog.yesFrameOptionButton.Label"
+msgid "Yes"
+msgstr ""
+
+#: 4447.VennDiagramPropsDialog.noFrameOptionButton.HelpText
+msgctxt "4447.VennDiagramPropsDialog.noFrameOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4448.VennDiagramPropsDialog.noFrameOptionButton.Label
+msgctxt "4448.VennDiagramPropsDialog.noFrameOptionButton.Label"
+msgid "No"
+msgstr ""
+
+#: 4449.VennDiagramPropsDialog.yesOutlineOptionButton.HelpText
+msgctxt "4449.VennDiagramPropsDialog.yesOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4450.VennDiagramPropsDialog.yesOutlineOptionButton.Label
+msgctxt "4450.VennDiagramPropsDialog.yesOutlineOptionButton.Label"
+msgid "Yes"
+msgstr ""
+
+#: 4451.VennDiagramPropsDialog.noOutlineOptionButton.HelpText
+msgctxt "4451.VennDiagramPropsDialog.noOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4452.VennDiagramPropsDialog.noOutlineOptionButton.Label
+msgctxt "4452.VennDiagramPropsDialog.noOutlineOptionButton.Label"
+msgid "No"
+msgstr ""
+
+#: 4453.VennDiagramPropsDialog.allShapeButton.HelpText
+msgctxt "4453.VennDiagramPropsDialog.allShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4454.VennDiagramPropsDialog.allShapeButton.Label
+msgid "a"
+msgstr ""
+
+#: 4455.VennDiagramPropsDialog.textShapeButton.HelpText
+msgctxt "4455.VennDiagramPropsDialog.textShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4456.VennDiagramPropsDialog.textShapeButton.Label
+msgid "t"
+msgstr ""
+
+#: 4457.VennDiagramPropsDialog.mainShapeButton.HelpText
+msgctxt "4457.VennDiagramPropsDialog.mainShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4458.VennDiagramPropsDialog.mainShapeButton.Label
+msgid "m"
+msgstr ""
+
+#: 4459.VennDiagramPropsDialog.nextShapeButton.HelpText
+msgctxt "4459.VennDiagramPropsDialog.nextShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4460.VennDiagramPropsDialog.nextShapeButton.Label
+msgid "n"
+msgstr ""
+
+#: 4461.VennDiagramPropsDialog.previousShapeButton.HelpText
+msgctxt "4461.VennDiagramPropsDialog.previousShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4462.VennDiagramPropsDialog.previousShapeButton.Label
+msgid "p"
+msgstr ""
+
+#: 4463.VennDiagramPropsDialog.firstShapeButton.HelpText
+msgctxt "4463.VennDiagramPropsDialog.firstShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4464.VennDiagramPropsDialog.firstShapeButton.Label
+msgid "f"
+msgstr ""
+
+#: 4531.VennDiagramPropsDialog.label.HelpText
+msgctxt "4531.VennDiagramPropsDialog.label.HelpText"
+msgid ""
+msgstr ""
+
+#: 4532.VennDiagramPropsDialog.label.Label
+msgid "Description:"
+msgstr ""
+
+#: 4533.VennDiagramPropsDialog.descriptionLabel.HelpText
+msgctxt "4533.VennDiagramPropsDialog.descriptionLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 4534.VennDiagramPropsDialog.descriptionLabel.Label
+msgctxt "4534.VennDiagramPropsDialog.descriptionLabel.Label"
+msgid ""
+msgstr ""

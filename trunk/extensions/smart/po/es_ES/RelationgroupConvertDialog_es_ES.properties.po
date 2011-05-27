@@ -1,0 +1,79 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/RelationgroupConvertDialog_es_ES.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/RelationgroupConvertDialog_es_ES.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # RelationgroupConvertDialog strings
+#: 5124.RelationgroupConvertDialog.HelpText
+msgctxt "5124.RelationgroupConvertDialog.HelpText"
+"5124.RelationgroupConvertDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 5125.RelationgroupConvertDialog.Title
+msgid "Conversation"
+msgstr "Conversation"
+
+#: 5126.RelationgroupConvertDialog.textLabel.HelpText
+msgctxt "5126.RelationgroupConvertDialog.textLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 5127.RelationgroupConvertDialog.textLabel.Label
+msgid "Convert to"
+msgstr "Convert to"
+
+#: 5128.RelationgroupConvertDialog.convertOptionButton1.HelpText
+msgctxt "5128.RelationgroupConvertDialog.convertOptionButton1.HelpText"
+msgid ""
+msgstr ""
+
+#: 5129.RelationgroupConvertDialog.convertOptionButton1.Label
+msgid "Venn diagram"
+msgstr "Venn diagram"
+
+#: 5130.RelationgroupConvertDialog.convertOptionButton2.HelpText
+msgctxt "5130.RelationgroupConvertDialog.convertOptionButton2.HelpText"
+msgid ""
+msgstr ""
+
+#: 5131.RelationgroupConvertDialog.convertOptionButton2.Label
+msgid "Cycle diagram"
+msgstr "Cycle diagram"
+
+#: 5132.RelationgroupConvertDialog.convertOptionButton3.HelpText
+msgctxt "5132.RelationgroupConvertDialog.convertOptionButton3.HelpText"
+msgid ""
+msgstr ""
+
+#: 5133.RelationgroupConvertDialog.convertOptionButton3.Label
+msgid "Pyramid diagram"
+msgstr "Pyramid diagram"
+
+#: 5134.RelationgroupConvertDialog.convertOptionButton4.HelpText
+msgctxt "5134.RelationgroupConvertDialog.convertOptionButton4.HelpText"
+msgid ""
+msgstr ""
+
+#: 5135.RelationgroupConvertDialog.convertOptionButton4.Label
+msgid "Target diagram"
+msgstr "Target diagram"
+
+#: 5136.RelationgroupConvertDialog.convertActionButton.HelpText
+msgctxt "5136.RelationgroupConvertDialog.convertActionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5137.RelationgroupConvertDialog.convertActionButton.Label
+msgid "OK"
+msgstr "OK"

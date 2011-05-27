@@ -1,0 +1,298 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/TargetDiagramPropsDialog_pt_PT.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/TargetDiagramPropsDialog_pt_PT.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # TargetDiagramPropsDialog strings
+#: 4465.TargetDiagramPropsDialog.HelpText
+msgctxt "4465.TargetDiagramPropsDialog.HelpText"
+"4465.TargetDiagramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 4466.TargetDiagramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Propriedades do diagrama"
+
+#: 4467.TargetDiagramPropsDialog.selectedItemsOptionButton.HelpText
+msgctxt "4467.TargetDiagramPropsDialog.selectedItemsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4468.TargetDiagramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Item selecionado"
+
+#: 4469.TargetDiagramPropsDialog.colorImageControl.HelpText
+msgctxt "4469.TargetDiagramPropsDialog.colorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 4470.TargetDiagramPropsDialog.imageControl.HelpText
+msgctxt "4470.TargetDiagramPropsDialog.imageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 4471.TargetDiagramPropsDialog.frameControl2.HelpText
+msgctxt "4471.TargetDiagramPropsDialog.frameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 4472.TargetDiagramPropsDialog.frameControl2.Label
+msgid "Colors"
+msgstr "Cores"
+
+#: 4473.TargetDiagramPropsDialog.frameControl1.HelpText
+msgctxt "4473.TargetDiagramPropsDialog.frameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 4474.TargetDiagramPropsDialog.frameControl1.Label
+msgid "Scope"
+msgstr "Extensão"
+
+#: 4475.TargetDiagramPropsDialog.listBox.HelpText
+msgctxt "4475.TargetDiagramPropsDialog.listBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 4476.listBox.StringItemList
+msgid "Default"
+msgstr "Default"
+
+#: 4477.listBox.StringItemList
+msgid "Without outline"
+msgstr "Without outline"
+
+#: 4478.listBox.StringItemList
+msgid "With textFrame"
+msgstr "With textFrame"
+
+#: 4479.listBox.StringItemList
+msgid "Blue gradients"
+msgstr "Blue gradients"
+
+#: 4480.listBox.StringItemList
+msgid "Red gradients"
+msgstr "Red gradients"
+
+#: 4481.listBox.StringItemList
+msgid "Left layout"
+msgstr "Left layout"
+
+#: 4482.listBox.StringItemList
+msgid "User define"
+msgstr "User define"
+
+#: 4483.TargetDiagramPropsDialog.frameControl3.HelpText
+msgctxt "4483.TargetDiagramPropsDialog.frameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 4484.TargetDiagramPropsDialog.frameControl3.Label
+msgid "Layout"
+msgstr "Layout"
+
+#: 4485.TargetDiagramPropsDialog.frameControl4.HelpText
+msgctxt "4485.TargetDiagramPropsDialog.frameControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 4486.TargetDiagramPropsDialog.frameControl4.Label
+msgid "Outline"
+msgstr "Contorno"
+
+#: 4487.TargetDiagramPropsDialog.frameControl5.HelpText
+msgctxt "4487.TargetDiagramPropsDialog.frameControl5.HelpText"
+msgid ""
+msgstr ""
+
+#: 4488.TargetDiagramPropsDialog.frameControl5.Label
+msgid "Text frame"
+msgstr "Texto frame"
+
+#: 4489.TargetDiagramPropsDialog.allDiagramOptionButton.HelpText
+msgctxt "4489.TargetDiagramPropsDialog.allDiagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4490.TargetDiagramPropsDialog.allDiagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagrama"
+
+#: 4491.TargetDiagramPropsDialog.colorOptionButton.HelpText
+msgctxt "4491.TargetDiagramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4492.TargetDiagramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Cor:"
+
+#: 4493.TargetDiagramPropsDialog.baseColorOptionButton.HelpText
+msgctxt "4493.TargetDiagramPropsDialog.baseColorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4494.TargetDiagramPropsDialog.baseColorOptionButton.Label
+msgid "Base colors mode"
+msgstr "Base colors mode"
+
+#: 4495.TargetDiagramPropsDialog.modifyColorsCheckBox.HelpText
+msgctxt "4495.TargetDiagramPropsDialog.modifyColorsCheckBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 4496.TargetDiagramPropsDialog.modifyColorsCheckBox.Label
+msgid "Modify colors"
+msgstr "Modify colors"
+
+#: 4497.TargetDiagramPropsDialog.yesFrameOptionButton.HelpText
+msgctxt "4497.TargetDiagramPropsDialog.yesFrameOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4498.TargetDiagramPropsDialog.yesFrameOptionButton.Label
+msgctxt "4498.TargetDiagramPropsDialog.yesFrameOptionButton.Label"
+msgid "Yes"
+msgstr "Sim"
+
+#: 4499.TargetDiagramPropsDialog.noFrameOptionButton.HelpText
+msgctxt "4499.TargetDiagramPropsDialog.noFrameOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4500.TargetDiagramPropsDialog.noFrameOptionButton.Label
+msgctxt "4500.TargetDiagramPropsDialog.noFrameOptionButton.Label"
+msgid "No"
+msgstr "Não"
+
+#: 4501.TargetDiagramPropsDialog.yesOutlineOptionButton.HelpText
+msgctxt "4501.TargetDiagramPropsDialog.yesOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4502.TargetDiagramPropsDialog.yesOutlineOptionButton.Label
+msgctxt "4502.TargetDiagramPropsDialog.yesOutlineOptionButton.Label"
+msgid "Yes"
+msgstr "Sim"
+
+#: 4503.TargetDiagramPropsDialog.noOutlineOptionButton.HelpText
+msgctxt "4503.TargetDiagramPropsDialog.noOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4504.TargetDiagramPropsDialog.noOutlineOptionButton.Label
+msgctxt "4504.TargetDiagramPropsDialog.noOutlineOptionButton.Label"
+msgid "No"
+msgstr "Não"
+
+#: 4505.TargetDiagramPropsDialog.allShapeButton.HelpText
+msgctxt "4505.TargetDiagramPropsDialog.allShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4506.TargetDiagramPropsDialog.allShapeButton.Label
+msgid "a"
+msgstr "a"
+
+#: 4507.TargetDiagramPropsDialog.textShapeButton.HelpText
+msgctxt "4507.TargetDiagramPropsDialog.textShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4508.TargetDiagramPropsDialog.textShapeButton.Label
+msgid "t"
+msgstr "t"
+
+#: 4509.TargetDiagramPropsDialog.mainShapeButton.HelpText
+msgctxt "4509.TargetDiagramPropsDialog.mainShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4510.TargetDiagramPropsDialog.mainShapeButton.Label
+msgid "m"
+msgstr "m"
+
+#: 4511.TargetDiagramPropsDialog.nextShapeButton.HelpText
+msgctxt "4511.TargetDiagramPropsDialog.nextShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4512.TargetDiagramPropsDialog.nextShapeButton.Label
+msgid "n"
+msgstr "n"
+
+#: 4513.TargetDiagramPropsDialog.previousShapeButton.HelpText
+msgctxt "4513.TargetDiagramPropsDialog.previousShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4514.TargetDiagramPropsDialog.previousShapeButton.Label
+msgid "p"
+msgstr "p"
+
+#: 4515.TargetDiagramPropsDialog.firstShapeButton.HelpText
+msgctxt "4515.TargetDiagramPropsDialog.firstShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4516.TargetDiagramPropsDialog.firstShapeButton.Label
+msgid "f"
+msgstr "f"
+
+#: 4517.TargetDiagramPropsDialog.centerLayoutOptionButton.HelpText
+msgctxt "4517.TargetDiagramPropsDialog.centerLayoutOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4518.TargetDiagramPropsDialog.centerLayoutOptionButton.Label
+msgid "Center"
+msgstr "Center"
+
+#: 4519.TargetDiagramPropsDialog.leftLayoutOptionButton.HelpText
+msgctxt "4519.TargetDiagramPropsDialog.leftLayoutOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4520.TargetDiagramPropsDialog.leftLayoutOptionButton.Label
+msgid "Left"
+msgstr "Left"
+
+#: 4521.TargetDiagramPropsDialog.okCommandButton.HelpText
+msgctxt "4521.TargetDiagramPropsDialog.okCommandButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 4522.TargetDiagramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 4523.TargetDiagramPropsDialog.descriptionLabel.HelpText
+msgctxt "4523.TargetDiagramPropsDialog.descriptionLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 4524.TargetDiagramPropsDialog.descriptionLabel.Label
+msgctxt "4524.TargetDiagramPropsDialog.descriptionLabel.Label"
+msgid ""
+msgstr ""
+
+#: 4525.TargetDiagramPropsDialog.label.HelpText
+msgctxt "4525.TargetDiagramPropsDialog.label.HelpText"
+msgid ""
+msgstr ""
+
+#: 4526.TargetDiagramPropsDialog.label.Label
+msgid "Description:"
+msgstr "Description:"

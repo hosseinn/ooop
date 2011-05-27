@@ -1,0 +1,91 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/DiagramGallery_pt_PT.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/DiagramGallery_pt_PT.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # DiagramGallery strings
+#: 2105.DiagramGallery.HelpText
+msgctxt "2105.DiagramGallery.HelpText"
+"2105.DiagramGallery.HelpText"
+msgid ""
+msgstr ""
+
+#: 2106.DiagramGallery.Title
+msgid "Diagram gallery"
+msgstr "Galeria de Diagramas"
+
+#: 2107.DiagramGallery.OrganigramButton.HelpText
+msgctxt "2107.DiagramGallery.OrganigramButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2108.DiagramGallery.OrganigramButton.Label
+msgctxt "2108.DiagramGallery.OrganigramButton.Label"
+msgid ""
+msgstr ""
+
+#: 2109.DiagramGallery.VennDiagramButton.HelpText
+msgctxt "2109.DiagramGallery.VennDiagramButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2110.DiagramGallery.VennDiagramButton.Label
+msgctxt "2110.DiagramGallery.VennDiagramButton.Label"
+msgid ""
+msgstr ""
+
+#: 2111.DiagramGallery.OkButton.HelpText
+msgid "Create new diagram"
+msgstr "Criar novo diagrama"
+
+#: 2112.DiagramGallery.OkButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 2113.DiagramGallery.PyramidDiagramButton.HelpText
+msgctxt "2113.DiagramGallery.PyramidDiagramButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2114.DiagramGallery.PyramidDiagramButton.Label
+msgctxt "2114.DiagramGallery.PyramidDiagramButton.Label"
+msgid ""
+msgstr ""
+
+#: 2115.DiagramGallery.CycleDiagramButton.HelpText
+msgctxt "2115.DiagramGallery.CycleDiagramButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2116.DiagramGallery.CycleDiagramButton.Label
+msgctxt "2116.DiagramGallery.CycleDiagramButton.Label"
+msgid ""
+msgstr ""
+
+#: 2117.DiagramGallery.diagramNameLabel.HelpText
+msgctxt "2117.DiagramGallery.diagramNameLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 2118.DiagramGallery.diagramNameLabel.Label
+msgid "Organization Chart"
+msgstr "Organograma"
+
+#: 2119.DiagramGallery.diagramDescriptionLabel.HelpText
+msgctxt "2119.DiagramGallery.diagramDescriptionLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 2120.DiagramGallery.diagramDescriptionLabel.Label
+msgid "Illustrates hierarchical relationships"
+msgstr "Ilustra as relações hierárquicas"

@@ -1,0 +1,85 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/GuiPanel_ja_JP.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/GuiPanel_ja_JP.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # GuiPanel strings
+#: 178.GuiPanel.HelpText
+msgctxt "178.GuiPanel.HelpText"
+"178.GuiPanel.HelpText"
+msgid ""
+msgstr ""
+
+#: 179.GuiPanel.Title
+msgid "Edit"
+msgstr "編集"
+
+#: 180.GuiPanel.CommandButton1.HelpText
+msgctxt "180.GuiPanel.CommandButton1.HelpText"
+msgid ""
+msgstr ""
+
+#: 181.GuiPanel.CommandButton1.Label
+msgid "Add shape"
+msgstr "シェイプを追加"
+
+#: 182.GuiPanel.CommandButton2.HelpText
+msgid "Assign a shape and remove"
+msgstr "シェイプの割当と削除"
+
+#: 183.GuiPanel.CommandButton2.Label
+msgid "Remove shape"
+msgstr "シェイプを削除"
+
+#: 186.GuiPanel.ComboBox1.HelpText
+msgid "Display styles"
+msgstr "スタイルを表示"
+
+#: 227.ComboBox1.StringItemList
+msgctxt "227.ComboBox1.StringItemList"
+msgid "Default"
+msgstr "デフォルト"
+
+#: 228.ComboBox1.StringItemList
+msgid "Outline"
+msgstr "論文用"
+
+#: 229.ComboBox1.StringItemList
+msgid "Rounded"
+msgstr "角丸枠"
+
+#: 230.ComboBox1.StringItemList
+msgid "Without frame"
+msgstr "枠なし"
+
+#: 187.GuiPanel.ComboBox1.Text
+msgctxt "187.GuiPanel.ComboBox1.Text"
+msgid "Default"
+msgstr "デフォルト"
+
+#: 239.GuiPanel.ImageControl.HelpText
+msgid "Color of next element"
+msgstr "次要素の色"
+
+#: 692.GuiPanel.Text.HelpText
+msgctxt "692.GuiPanel.Text.HelpText"
+msgid ""
+msgstr ""
+
+#: 693.GuiPanel.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+"グループ\n"
+"名"

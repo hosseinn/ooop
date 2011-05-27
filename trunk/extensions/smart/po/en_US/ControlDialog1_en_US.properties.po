@@ -1,0 +1,158 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/ControlDialog1_en_US.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/ControlDialog1_en_US.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # ControlDialog1 strings
+#: 2884.ControlDialog1.HelpText
+msgctxt "2884.ControlDialog1.HelpText"
+"2884.ControlDialog1.HelpText"
+msgid ""
+msgstr ""
+
+#: 2885.ControlDialog1.Title
+msgid "Edit"
+msgstr "Edit"
+
+#: 2886.ControlDialog1.ImageControl.HelpText
+msgid "Color of next item"
+msgstr "Color of next item"
+
+#: 2887.ControlDialog1.Text.HelpText
+msgctxt "2887.ControlDialog1.Text.HelpText"
+msgid ""
+msgstr ""
+
+#: 2888.ControlDialog1.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+"Group\n"
+"name"
+
+#: 2889.ControlDialog1.addShapeButton.HelpText
+msgid "Add a shape to the diagram"
+msgstr "Add a shape to the diagram"
+
+#: 2890.ControlDialog1.addShapeButton.Label
+msgid "Add shape"
+msgstr "Add shape"
+
+#: 2891.ControlDialog1.removeShapeButton.HelpText
+msgid "Remove the selected shapes from the diagram"
+msgstr "Remove the selected shapes from the diagram"
+
+#: 2892.ControlDialog1.removeShapeButton.Label
+msgid "Remove shape"
+msgstr "Remove shape"
+
+#: 2893.ControlDialog1.previousShapeButton.HelpText
+msgctxt "2893.ControlDialog1.previousShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2894.ControlDialog1.previousShapeButton.Label
+msgid "p"
+msgstr "p"
+
+#: 2895.ControlDialog1.allShapeButton.HelpText
+msgctxt "2895.ControlDialog1.allShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2896.ControlDialog1.allShapeButton.Label
+msgid "a"
+msgstr "a"
+
+#: 2897.ControlDialog1.firstShapeButton.HelpText
+msgctxt "2897.ControlDialog1.firstShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2898.ControlDialog1.firstShapeButton.Label
+msgid "f"
+msgstr "f"
+
+#: 2899.ControlDialog1.nextShapeButton.HelpText
+msgctxt "2899.ControlDialog1.nextShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2900.ControlDialog1.nextShapeButton.Label
+msgid "n"
+msgstr "n"
+
+#: 2901.ControlDialog1.editButton.HelpText
+msgctxt "2901.ControlDialog1.editButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2902.ControlDialog1.editButton.Label
+msgid "e"
+msgstr "e"
+
+#: 2903.ControlDialog1.mainShapeButton.HelpText
+msgctxt "2903.ControlDialog1.mainShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2904.ControlDialog1.mainShapeButton.Label
+msgid "m"
+msgstr "m"
+
+#: 2905.ControlDialog1.textShapeButton.HelpText
+msgctxt "2905.ControlDialog1.textShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2906.ControlDialog1.textShapeButton.Label
+msgid "t"
+msgstr "t"
+
+#: 2907.ControlDialog1.convertButton.HelpText
+msgid "Convert diagram"
+msgstr "Convert diagram"
+
+#: 2908.ControlDialog1.convertButton.Label
+msgctxt "2908.ControlDialog1.convertButton.Label"
+msgid ""
+msgstr ""
+
+#: 2909.ControlDialog1.downUpButton.HelpText
+msgid "Display text editor of selected item"
+msgstr "Display text editor of selected item"
+
+#: 2910.ControlDialog1.downUpButton.Label
+msgctxt "2910.ControlDialog1.downUpButton.Label"
+msgid ""
+msgstr ""
+
+#: 2913.ControlDialog1.propertiesButton.HelpText
+msgctxt "2913.ControlDialog1.propertiesButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2914.ControlDialog1.propertiesButton.Label
+msgid "Properties"
+msgstr "Properties"
+
+#: 2915.ControlDialog1.textField.HelpText
+msgctxt "2915.ControlDialog1.textField.HelpText"
+msgid ""
+msgstr ""
+
+#: 2916.ControlDialog1.textField.Text
+msgctxt "2916.ControlDialog1.textField.Text"
+msgid ""
+msgstr ""

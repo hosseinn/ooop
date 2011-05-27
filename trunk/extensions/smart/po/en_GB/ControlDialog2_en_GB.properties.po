@@ -1,0 +1,170 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/ControlDialog2_en_GB.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/ControlDialog2_en_GB.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # ControlDialog2 strings
+#: 5279.ControlDialog2.HelpText
+msgctxt "5279.ControlDialog2.HelpText"
+"5279.ControlDialog2.HelpText"
+msgid ""
+msgstr ""
+
+#: 5280.ControlDialog2.Title
+msgid "Edit"
+msgstr "Edit"
+
+#: 5281.ControlDialog2.ImageControl.HelpText
+msgid "Color of next item"
+msgstr "Colour of next item"
+
+#: 5282.ControlDialog2.Text.HelpText
+msgctxt "5282.ControlDialog2.Text.HelpText"
+msgid ""
+msgstr ""
+
+#: 5283.ControlDialog2.Text.Label
+msgid ""
+"Group\n"
+"name"
+msgstr ""
+"Group\n"
+"name"
+
+#: 5284.ControlDialog2.addShapeButton.HelpText
+msgid "Add a shape to the diagram"
+msgstr "Add a shape to the diagram"
+
+#: 5285.ControlDialog2.addShapeButton.Label
+msgid "Add shape"
+msgstr "Add shape"
+
+#: 5286.ControlDialog2.removeShapeButton.HelpText
+msgid "Remove the selected shapes from the diagram"
+msgstr "Remove the selected shapes from the diagram"
+
+#: 5287.ControlDialog2.removeShapeButton.Label
+msgid "Remove shape"
+msgstr "Remove shape"
+
+#: 5288.ControlDialog2.convertButton.HelpText
+msgid "Convert diagram"
+msgstr "Convert diagram"
+
+#: 5289.ControlDialog2.convertButton.Label
+msgctxt "5289.ControlDialog2.convertButton.Label"
+msgid ""
+msgstr ""
+
+#: 5290.ControlDialog2.downUpButton.HelpText
+msgid "Display text editor of selected item"
+msgstr "Display text editor of selected item"
+
+#: 5291.ControlDialog2.downUpButton.Label
+msgctxt "5291.ControlDialog2.downUpButton.Label"
+msgid ""
+msgstr ""
+
+#: 5292.ControlDialog2.textField.HelpText
+msgctxt "5292.ControlDialog2.textField.HelpText"
+msgid ""
+msgstr ""
+
+#: 5293.ControlDialog2.textField.Text
+msgctxt "5293.ControlDialog2.textField.Text"
+msgid ""
+msgstr ""
+
+#: 5294.ControlDialog2.upButton.HelpText
+msgctxt "5294.ControlDialog2.upButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5295.ControlDialog2.upButton.Label
+msgid "u"
+msgstr "u"
+
+#: 5296.ControlDialog2.downButton.HelpText
+msgctxt "5296.ControlDialog2.downButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5297.ControlDialog2.downButton.Label
+msgid "d"
+msgstr "d"
+
+#: 5298.ControlDialog2.nextButton.HelpText
+msgctxt "5298.ControlDialog2.nextButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5299.ControlDialog2.nextButton.Label
+msgid "n"
+msgstr "n"
+
+#: 5300.ControlDialog2.previousButton.HelpText
+msgctxt "5300.ControlDialog2.previousButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5301.ControlDialog2.previousButton.Label
+msgid "p"
+msgstr "p"
+
+#: 5302.ControlDialog2.editButton.HelpText
+msgctxt "5302.ControlDialog2.editButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5303.ControlDialog2.editButton.Label
+msgid "e"
+msgstr "e"
+
+#: 5306.ControlDialog2.allShapeButton.HelpText
+msgctxt "5306.ControlDialog2.allShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5307.ControlDialog2.allShapeButton.Label
+msgid "a"
+msgstr "a"
+
+#: 5308.ControlDialog2.propertiesButton.HelpText
+msgid "Settings of diagram"
+msgstr "Settings of diagram"
+
+#: 5309.ControlDialog2.propertiesButton.Label
+msgid "Properties"
+msgstr "Properties"
+
+#: 5310.ControlDialog2.addPropListBox.HelpText
+msgctxt "5310.ControlDialog2.addPropListBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 5311.addPropListBox.StringItemList
+msgid "Underling"
+msgstr "Underling"
+
+#: 5312.addPropListBox.StringItemList
+msgid "Associate"
+msgstr "Associate"
+
+#: 5313.ControlDialog2.firstShapeButton.HelpText
+msgctxt "5313.ControlDialog2.firstShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5314.ControlDialog2.firstShapeButton.Label
+msgid "f"
+msgstr "f"

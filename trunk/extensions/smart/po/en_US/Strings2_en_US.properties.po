@@ -1,0 +1,363 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/Strings2_en_US.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/Strings2_en_US.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # Strings2 strings
+#: 1.Strings2.HorizontalOrganigram.Label
+msgid "Horizontal Organization Chart"
+msgstr "Horizontal Organization Chart"
+
+#: 2.Strings2.HorizontalOrganigramDescription.Label
+msgid "Use this to illustrate horizontal hierarchical relationships"
+msgstr "Use this to illustrate horizontal hierarchical relationships"
+
+#: 3.Strings2.TableHierarchyDiagram.Label
+msgid "Table Hierarchy"
+msgstr "Table Hierarchy"
+
+#: 4.Strings2.TableHierarchyDiagramDescription.Label
+msgid ""
+"Use this to illustrate groups of information built from top to bottom, and "
+"the hierarchies within each group"
+msgstr ""
+"Use this to illustrate groups of information built from top to bottom, and "
+"the hierarchies within each group"
+
+#: 5.Strings2.Organigram2.Label
+msgid "Organization Chart 2"
+msgstr "Organization Chart 2"
+
+#: 6.Strings2.Organigram2Description.Label
+msgid ""
+"Use this to illustrate hierarchical relationships, below third level items "
+"are displayed vertical layout"
+msgstr ""
+"Use this to illustrate hierarchical relationships, below third level items "
+"are displayed vertical layout"
+
+#: 7.Strings2.ButtDiagram.Label
+msgid "Target Diagram"
+msgstr "Target Diagram"
+
+#: 8.Strings2.ButtDiagramDescription.Label
+msgid "Use this to illustrate steps toward a goal"
+msgstr "Use this to illustrate steps toward a goal"
+
+#: 9.Strings2.InactiveFunction.Label
+msgid ""
+"Inactive function - this option can be used if only simple item has been "
+"selected"
+msgstr ""
+"Inactive function - this option can be used if only simple item has been "
+"selected"
+
+#: 10.Strings2.Diagrams.UserDefineDescription.Label
+msgid "Personal settings"
+msgstr "Personal settings"
+
+#: 11.Strings2.Organigram.DefaultDescription.Label
+msgid ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"with outline and without shadow"
+msgstr ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"with outline and without shadow"
+
+#: 12.Strings2.Organigram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"without outline and shadow"
+msgstr ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"without outline and shadow"
+
+#: 13.Strings2.Organigram.NotRoundedDescription.Label
+msgid ""
+"Area: allShape, doesnot modify colors, displays rectangles with outline and "
+"without rounded and shadow"
+msgstr ""
+"Area: allShape, doesnot modify colors, displays rectangles with outline and "
+"without rounded and shadow"
+
+#: 14.Strings2.Organigram.WithShadowDescription.Label
+msgid ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"with outline and shadow"
+msgstr ""
+"Area: allShape, doesnot modify colors, displays medium rounded rectangles "
+"with outline and shadow"
+
+#: 15.Strings2.Organigram.BlueGradientsDescription.Label
+msgid ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays medium "
+"rounded rectangles with outline and without shadow"
+msgstr ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays medium "
+"rounded rectangles with outline and without shadow"
+
+#: 16.Strings2.Organigram.RedGradientsDescription.Label
+msgid ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays medium "
+"rounded rectangles with outline and without shadow"
+msgstr ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays medium "
+"rounded rectangles with outline and without shadow"
+
+#: 17.Strings2.VennDiagram.DefaultDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline and rounded textFrames"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline and rounded textFrames"
+
+#: 18.Strings2.VennDiagram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays rounded textFrames but doesnot display outline"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays rounded textFrames but doesnot display outline"
+
+#: 19.Strings2.VennDiagram.WithoutFrameDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline but doesnot display textFrames"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline but doesnot display textFrames"
+
+#: 20.Strings2.VennDiagram.NotRoundedDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline and textFrames without rounded"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, sets medium "
+"transparency, displays outline and textFrames without rounded"
+
+#: 21.Strings2.CycleDiagram.DefaultDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"but doesnot display shadow and textFrames"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"but doesnot display shadow and textFrames"
+
+#: 22.Strings2.CycleDiagram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors and modifies colors, doesnot display outline "
+"and shadow and textFrames"
+msgstr ""
+"Area: allShape, sets BaseColors and modifies colors, doesnot display outline "
+"and shadow and textFrames"
+
+#: 23.Strings2.CycleDiagram.WithShadowDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, dispalys outline "
+"and shadow but doesnot display textFrames"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, dispalys outline "
+"and shadow but doesnot display textFrames"
+
+#: 24.Strings2.CycleDiagram.WithFrameDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"and textFrames but doesnot display shadow"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"and textFrames but doesnot display shadow"
+
+#: 25.Strings2.CycleDiagram.BlueGradientsDescription.Label
+msgid ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays "
+"outline but doesnot display shadow and textFrames"
+msgstr ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays "
+"outline but doesnot display shadow and textFrames"
+
+#: 26.Strings2.CycleDiagram.RedGradientsDescription.Label
+msgid ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays outline "
+"but doesnot display shadow and textFrames"
+msgstr ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays outline "
+"but doesnot display shadow and textFrames"
+
+#: 27.Strings2.PyramidDiagram.DefaultDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"but doesnot display shadow"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, displays outline "
+"but doesnot display shadow"
+
+#: 28.Strings2.PyramidDiagram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors and modifies colors, doesnot display outline "
+"and shadow"
+msgstr ""
+"Area: allShape, sets BaseColors and modifies colors, doesnot display outline "
+"and shadow"
+
+#: 29.Strings2.PyramidDiagram.WithShadowDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors, dispalys outline "
+"and shadow"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors, dispalys outline "
+"and shadow"
+
+#: 30.Strings2.PyramidDiagram.BaseColorsWithGradientsDescription.Label
+msgid ""
+"Area: allShape, sets BaseColors mode and modifies colors (with gradients of "
+"base colors), displays outline but doesnot display shadow"
+msgstr ""
+"Area: allShape, sets BaseColors mode and modifies colors (with gradients of "
+"base colors), displays outline but doesnot display shadow"
+
+#: 31.Strings2.PyramidDiagram.BlueGradientsDescription.Label
+msgid ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays "
+"outline but doesnot display shadow"
+msgstr ""
+"Area: allShape, sets BlueGradients mode and modifies colors, displays "
+"outline but doesnot display shadow"
+
+#: 32.Strings2.PyramidDiagram.RedGradientsDescription.Label
+msgid ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays outline "
+"but doesnot display shadow"
+msgstr ""
+"Area: allShape, sets RedGradients mode and modifies colors, displays outline "
+"but doesnot display shadow"
+
+#: 33.Strings2.TargetDiagram.DefaultDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+msgstr ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+
+#: 34.Strings2.TargetDiagram.WithoutOutlineDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"doesnot display outline and textFrames"
+msgstr ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"doesnot display outline and textFrames"
+
+#: 35.Strings2.TargetDiagram.WithFrameDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"dispalys outline and textFrames"
+msgstr ""
+"Area: allShape, layout: center, sets BaseColors mode and modifies colors, "
+"dispalys outline and textFrames"
+
+#: 36.Strings2.TargetDiagram.BlueGradientsDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets BlueGradients mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+msgstr ""
+"Area: allShape, layout: center, sets BlueGradients mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+
+#: 37.Strings2.TargetDiagram.RedGradientsDescription.Label
+msgid ""
+"Area: allShape, layout: center, sets RedGradients mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+msgstr ""
+"Area: allShape, layout: center, sets RedGradients mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+
+#: 38.Strings2.TargetDiagram.LeftLayoutDescription.Label
+msgid ""
+"Area: allShape, layout: left, sets BaseColors mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+msgstr ""
+"Area: allShape, layout: left, sets BaseColors mode and modifies colors, "
+"displays outline but doesnot display textFrames"
+
+#: 39.Strings2.ConvertError.Title
+msgid "Can't convert diagram"
+msgstr "Can't convert diagram"
+
+#: 40.Strings2.ConvertError.Message
+msgid "Select a shape in diagram and try again."
+msgstr "Select a shape in diagram and try again."
+
+#: 41.Strings2.Tips.Name.Label
+msgid "Tips"
+msgstr "Tips"
+
+#: 42.Strings2.Organizationcharts.Tips.Label
+msgid ""
+"You can navigate with short keys between active items in diagram and obtain "
+"text editor function in simple way.\n"
+"\n"
+"Short keys of organization charts :\n"
+"\n"
+"a - selects all shape\n"
+"f - selects first shape\n"
+"d - steps down in the tree\n"
+"u - steps up in the tree\n"
+"n - steps next sibling in the tree\n"
+"p - steps previous sibling in the tree\n"
+"e - shows and actives texteditor\n"
+"\n"
+msgstr ""
+"You can navigate with short keys between active items in diagram and obtain "
+"text editor function in simple way.\n"
+"\n"
+"Short keys of organization charts :\n"
+"\n"
+"a - selects all shape\n"
+"f - selects first shape\n"
+"d - steps down in the tree\n"
+"u - steps up in the tree\n"
+"n - steps next sibling in the tree\n"
+"p - steps previous sibling in the tree\n"
+"e - shows and actives texteditor\n"
+"\n"
+
+#: 43.Strings2.Relationdiagrams.Tips.Label
+msgid ""
+"You can navigate with short keys between active items in diagram and obtain "
+"text editor function in simple way.\n"
+"\n"
+"Short keys of relation diagrams :\n"
+"\n"
+"a - selects all shape\n"
+"f - selects first shape\n"
+"n - selects next shape\n"
+"p - selects previous shape\n"
+"m - selects main shape of item (if the items consist of pair)\n"
+"t - selects text shape of item (if the items consist of pair)\n"
+"e - shows and actives texteditor\n"
+"\n"
+msgstr ""
+"You can navigate with short keys between active items in diagram and obtain "
+"text editor function in simple way.\n"
+"\n"
+"Short keys of relation diagrams :\n"
+"\n"
+"a - selects all shape\n"
+"f - selects first shape\n"
+"n - selects next shape\n"
+"p - selects previous shape\n"
+"m - selects main shape of item (if the items consist of pair)\n"
+"t - selects text shape of item (if the items consist of pair)\n"
+"e - shows and actives texteditor\n"
+"\n"

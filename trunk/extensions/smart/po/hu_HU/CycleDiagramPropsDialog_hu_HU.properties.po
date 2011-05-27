@@ -1,0 +1,300 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/CycleDiagramPropsDialog_hu_HU.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/CycleDiagramPropsDialog_hu_HU.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # CycleDiagramPropsDialog strings
+#: 5033.CycleDiagramPropsDialog.HelpText
+msgctxt "5033.CycleDiagramPropsDialog.HelpText"
+"5033.CycleDiagramPropsDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 5034.CycleDiagramPropsDialog.Title
+msgid "Properties of diagram"
+msgstr "Diagram tulajdonságok"
+
+#: 5035.CycleDiagramPropsDialog.frameControl1.HelpText
+msgctxt "5035.CycleDiagramPropsDialog.frameControl1.HelpText"
+msgid ""
+msgstr ""
+
+#: 5036.CycleDiagramPropsDialog.frameControl1.Label
+msgid "Scope"
+msgstr "Hatókör"
+
+#: 5037.CycleDiagramPropsDialog.yesOutlineOptionButton.HelpText
+msgctxt "5037.CycleDiagramPropsDialog.yesOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5038.CycleDiagramPropsDialog.yesOutlineOptionButton.Label
+msgctxt "5038.CycleDiagramPropsDialog.yesOutlineOptionButton.Label"
+msgid "Yes"
+msgstr "Van"
+
+#: 5039.CycleDiagramPropsDialog.noOutlineOptionButton.HelpText
+msgctxt "5039.CycleDiagramPropsDialog.noOutlineOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5040.CycleDiagramPropsDialog.noOutlineOptionButton.Label
+msgctxt "5040.CycleDiagramPropsDialog.noOutlineOptionButton.Label"
+msgid "No"
+msgstr "Nincs"
+
+#: 5041.CycleDiagramPropsDialog.okCommandButton.HelpText
+msgctxt "5041.CycleDiagramPropsDialog.okCommandButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5042.CycleDiagramPropsDialog.okCommandButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 5043.CycleDiagramPropsDialog.listBox.HelpText
+msgctxt "5043.CycleDiagramPropsDialog.listBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 5044.listBox.StringItemList
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: 5045.listBox.StringItemList
+msgid "Without outline"
+msgstr "Körvonal nélkül"
+
+#: 5046.listBox.StringItemList
+msgid "With shadow"
+msgstr "Árnyékolt"
+
+#: 5047.listBox.StringItemList
+msgid "With frame"
+msgstr "Szövegkerettel"
+
+#: 5048.listBox.StringItemList
+msgid "Blue gradients"
+msgstr "Kék színátmenet"
+
+#: 5049.listBox.StringItemList
+msgid "Red gradients"
+msgstr "Piros színátmenet"
+
+#: 5050.listBox.StringItemList
+msgid "User define"
+msgstr "Felhasználói"
+
+#: 5051.CycleDiagramPropsDialog.modifyColorsCheckBox.HelpText
+msgctxt "5051.CycleDiagramPropsDialog.modifyColorsCheckBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 5052.CycleDiagramPropsDialog.modifyColorsCheckBox.Label
+msgid "Modify colors"
+msgstr "Színek változtatása"
+
+#: 5053.CycleDiagramPropsDialog.allShapeButton.HelpText
+msgctxt "5053.CycleDiagramPropsDialog.allShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5054.CycleDiagramPropsDialog.allShapeButton.Label
+msgid "a"
+msgstr "a"
+
+#: 5055.CycleDiagramPropsDialog.firstShapeButton.HelpText
+msgctxt "5055.CycleDiagramPropsDialog.firstShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5056.CycleDiagramPropsDialog.firstShapeButton.Label
+msgid "f"
+msgstr "f"
+
+#: 5057.CycleDiagramPropsDialog.previousShapeButton.HelpText
+msgctxt "5057.CycleDiagramPropsDialog.previousShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5058.CycleDiagramPropsDialog.previousShapeButton.Label
+msgid "p"
+msgstr "p"
+
+#: 5059.CycleDiagramPropsDialog.nextShapeButton.HelpText
+msgctxt "5059.CycleDiagramPropsDialog.nextShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5060.CycleDiagramPropsDialog.nextShapeButton.Label
+msgid "n"
+msgstr "n"
+
+#: 5061.CycleDiagramPropsDialog.mainShapeButton.HelpText
+msgctxt "5061.CycleDiagramPropsDialog.mainShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5062.CycleDiagramPropsDialog.mainShapeButton.Label
+msgid "m"
+msgstr "m"
+
+#: 5063.CycleDiagramPropsDialog.textShapeButton.HelpText
+msgctxt "5063.CycleDiagramPropsDialog.textShapeButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5064.CycleDiagramPropsDialog.textShapeButton.Label
+msgid "t"
+msgstr "t"
+
+#: 5065.CycleDiagramPropsDialog.imageControl.HelpText
+msgctxt "5065.CycleDiagramPropsDialog.imageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 5066.CycleDiagramPropsDialog.yesShadowOptionButton.HelpText
+msgctxt "5066.CycleDiagramPropsDialog.yesShadowOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5067.CycleDiagramPropsDialog.yesShadowOptionButton.Label
+msgctxt "5067.CycleDiagramPropsDialog.yesShadowOptionButton.Label"
+msgid "Yes"
+msgstr "Van"
+
+#: 5068.CycleDiagramPropsDialog.noShadowOptionButton.HelpText
+msgctxt "5068.CycleDiagramPropsDialog.noShadowOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5069.CycleDiagramPropsDialog.noShadowOptionButton.Label
+msgctxt "5069.CycleDiagramPropsDialog.noShadowOptionButton.Label"
+msgid "No"
+msgstr "Nincs"
+
+#: 5070.CycleDiagramPropsDialog.baseColorOptionButton.HelpText
+msgctxt "5070.CycleDiagramPropsDialog.baseColorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5071.CycleDiagramPropsDialog.baseColorOptionButton.Label
+msgid "Base colors mode"
+msgstr "Alapszínek funkció"
+
+#: 5072.CycleDiagramPropsDialog.colorOptionButton.HelpText
+msgctxt "5072.CycleDiagramPropsDialog.colorOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5073.CycleDiagramPropsDialog.colorOptionButton.Label
+msgid "Color:"
+msgstr "Szín:"
+
+#: 5074.CycleDiagramPropsDialog.colorImageControl.HelpText
+msgctxt "5074.CycleDiagramPropsDialog.colorImageControl.HelpText"
+msgid ""
+msgstr ""
+
+#: 5075.CycleDiagramPropsDialog.frameControl2.HelpText
+msgctxt "5075.CycleDiagramPropsDialog.frameControl2.HelpText"
+msgid ""
+msgstr ""
+
+#: 5076.CycleDiagramPropsDialog.frameControl2.Label
+msgid "Colors"
+msgstr "Színek"
+
+#: 5077.CycleDiagramPropsDialog.frameControl5.HelpText
+msgctxt "5077.CycleDiagramPropsDialog.frameControl5.HelpText"
+msgid ""
+msgstr ""
+
+#: 5078.CycleDiagramPropsDialog.frameControl5.Label
+msgid "Text frame"
+msgstr "Szövegdoboz keret"
+
+#: 5079.CycleDiagramPropsDialog.frameControl4.HelpText
+msgctxt "5079.CycleDiagramPropsDialog.frameControl4.HelpText"
+msgid ""
+msgstr ""
+
+#: 5080.CycleDiagramPropsDialog.frameControl4.Label
+msgid "Outline"
+msgstr "Keret"
+
+#: 5081.CycleDiagramPropsDialog.frameControl3.HelpText
+msgctxt "5081.CycleDiagramPropsDialog.frameControl3.HelpText"
+msgid ""
+msgstr ""
+
+#: 5082.CycleDiagramPropsDialog.frameControl3.Label
+msgid "Shadow"
+msgstr "Árnyékolás"
+
+#: 5083.CycleDiagramPropsDialog.allDiagramOptionButton.HelpText
+msgctxt "5083.CycleDiagramPropsDialog.allDiagramOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5084.CycleDiagramPropsDialog.allDiagramOptionButton.Label
+msgid "Diagram"
+msgstr "Diagram"
+
+#: 5085.CycleDiagramPropsDialog.selectedItemsOptionButton.HelpText
+msgctxt "5085.CycleDiagramPropsDialog.selectedItemsOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5086.CycleDiagramPropsDialog.selectedItemsOptionButton.Label
+msgid "Selected item(s)"
+msgstr "Kiválasztott elem(ek)"
+
+#: 5087.CycleDiagramPropsDialog.noFrameOptionButton.HelpText
+msgctxt "5087.CycleDiagramPropsDialog.noFrameOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5088.CycleDiagramPropsDialog.noFrameOptionButton.Label
+msgctxt "5088.CycleDiagramPropsDialog.noFrameOptionButton.Label"
+msgid "No"
+msgstr "Nincs"
+
+#: 5089.CycleDiagramPropsDialog.yesFrameOptionButton.HelpText
+msgctxt "5089.CycleDiagramPropsDialog.yesFrameOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 5090.CycleDiagramPropsDialog.yesFrameOptionButton.Label
+msgctxt "5090.CycleDiagramPropsDialog.yesFrameOptionButton.Label"
+msgid "Yes"
+msgstr "Van"
+
+#: 5095.CycleDiagramPropsDialog.label.HelpText
+msgctxt "5095.CycleDiagramPropsDialog.label.HelpText"
+msgid ""
+msgstr ""
+
+#: 5096.CycleDiagramPropsDialog.label.Label
+msgid "Description:"
+msgstr "Leírás:"
+
+#: 5097.CycleDiagramPropsDialog.descriptionLabel.HelpText
+msgctxt "5097.CycleDiagramPropsDialog.descriptionLabel.HelpText"
+msgid ""
+msgstr ""
+
+#: 5098.CycleDiagramPropsDialog.descriptionLabel.Label
+msgctxt "5098.CycleDiagramPropsDialog.descriptionLabel.Label"
+msgid ""
+msgstr ""

@@ -1,0 +1,91 @@
+#. extracted from /home/kami/svn/ooop/trunk/extensions/smart/temp/template/GradientDialog_en_GB.properties, /home/kami/svn/ooop/trunk/extensions/smart/dialogs/GradientDialog_en_GB.properties
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-27 03:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Accelerator-Marker: &\n"
+
+#. # GradientDialog strings
+#: 2522.GradientDialog.HelpText
+msgctxt "2522.GradientDialog.HelpText"
+"2522.GradientDialog.HelpText"
+msgid ""
+msgstr ""
+
+#: 2523.GradientDialog.Title
+msgid "Gradient dialog"
+msgstr "Gradient dialog"
+
+#: 2524.GradientDialog.startColor.HelpText
+msgid "Select the starter color of gradient"
+msgstr "Select the starter colour of gradient"
+
+#: 2525.GradientDialog.endColor.HelpText
+msgid "Select the final color of gradient"
+msgstr "Select the final colour of gradient"
+
+#: 2526.GradientDialog.setColorsButton.HelpText
+msgctxt "2526.GradientDialog.setColorsButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2527.GradientDialog.setColorsButton.Label
+msgid "OK"
+msgstr "OK"
+
+#: 2528.GradientDialog.setColorModeOptionButton.HelpText
+msgctxt "2528.GradientDialog.setColorModeOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2529.GradientDialog.setColorModeOptionButton.Label
+msgid "Change back to color mode"
+msgstr "Change back to color mode"
+
+#: 2530.GradientDialog.setGradientOptionButton.HelpText
+msgctxt "2530.GradientDialog.setGradientOptionButton.HelpText"
+msgid ""
+msgstr ""
+
+#: 2531.GradientDialog.setGradientOptionButton.Label
+msgid "Set gradient"
+msgstr "Set gradient"
+
+#: 2532.GradientDialog.label1.HelpText
+msgctxt "2532.GradientDialog.label1.HelpText"
+msgid ""
+msgstr ""
+
+#: 2533.GradientDialog.label1.Label
+msgid "Start color:"
+msgstr "Start colour:"
+
+#: 2534.GradientDialog.label2.HelpText
+msgctxt "2534.GradientDialog.label2.HelpText"
+msgid ""
+msgstr ""
+
+#: 2535.GradientDialog.label2.Label
+msgid "End color:"
+msgstr "End colour:"
+
+#: 2536.GradientDialog.gradientModeListBox.HelpText
+msgctxt "2536.GradientDialog.gradientModeListBox.HelpText"
+msgid ""
+msgstr ""
+
+#: 2537.gradientModeListBox.StringItemList
+msgid "Vertical"
+msgstr "Vertical"
+
+#: 2538.gradientModeListBox.StringItemList
+msgid "Horizontal"
+msgstr "Horizontal"
