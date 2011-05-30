@@ -1,2 +1,2 @@
-﻿A SmART kiterjesztés egy LibreOffice Draw vagy Impress programból használható kiterjesztés, amellyel néhány kattintással létrehozhatja kedvenc diagramjait.
- Draw-ból vagy Impress-ből: Válassza ki a Beszúrás → SmART galéria lehetőséget vagy a SmART eszköztárat engedélyezve kattintson a SmART galéria gombra.
+A SmART kiterjesztés egy LibreOffice Draw vagy Impress programból használható kiterjesztés, amellyel néhány kattintással létrehozhatja kedvenc diagramjait.
+Draw-ból vagy Impress-ből: Válassza ki a Beszúrás → SmART galéria lehetőséget vagy a SmART eszköztárat engedélyezve kattintson a SmART galéria gombra.

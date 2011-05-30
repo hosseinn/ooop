@@ -1,2 +1,2 @@
-﻿SmART is a LibreOffice Draw and Impress extension that creates your favorite smart diagrams with few clicks. 
+SmART is a LibreOffice Draw and Impress extension that creates your favorite smart diagrams with few clicks. 
 From Draw or Impress: Select Insert → SmART gallery or enable SmART Toolbar then click on SmART gallery button.
