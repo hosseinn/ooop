@@ -1,4 +1,4 @@
-﻿SmART Extension
+SmART Extension
 
 The SmART Extension has been licensed under term of GNU Lesser General Public License (LGPL). You can read and understand LGPL license here:
 http://www.gnu.org/licenses/lgpl.html

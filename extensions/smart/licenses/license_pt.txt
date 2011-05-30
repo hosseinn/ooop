@@ -1,4 +1,4 @@
-﻿Extensão SmART 
+Extensão SmART 
 
 A Extensão SmART foi licenciado sob termo de GNU Lesser General Public License (LGPL). Podes ler e entender a licença LGPL aqui:
 http://www.gnu.org/licenses/lgpl.html

@@ -1,9 +1,14 @@
 package oxygenoffice.extensions.smart;
 
+import com.sun.star.comp.helper.Bootstrap;
+import com.sun.star.comp.helper.BootstrapException;
+import com.sun.star.container.XNameAccess;
+import com.sun.star.deployment.XPackageInformationProvider;
 import com.sun.star.frame.FrameActionEvent;
 import com.sun.star.frame.XFrameActionListener;
 import com.sun.star.lang.EventObject;
 import com.sun.star.lang.XComponent;
+import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
 import com.sun.star.lib.uno.helper.Factory;
@@ -11,6 +16,8 @@ import com.sun.star.lang.XSingleComponentFactory;
 import com.sun.star.registry.XRegistryKey;
 import com.sun.star.lib.uno.helper.WeakBase;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public final class SmartProtocolHandler extends WeakBase
@@ -82,6 +89,22 @@ public final class SmartProtocolHandler extends WeakBase
                     if(m_xFrame.equals(frameObj.getXFrame()))
                        m_Controller =  frameObj.getController();
             }
+            threatDiagramExtensionIfItExists();
+        }
+    }
+
+    public void threatDiagramExtensionIfItExists(){
+        try {
+            XNameAccess xNameAccess = (XNameAccess) UnoRuntime.queryInterface(XNameAccess.class, m_xContext );
+            Object oPIP = xNameAccess.getByName("/singletons/com.sun.star.deployment.PackageInformationProvider");
+            XPackageInformationProvider xPIP = (XPackageInformationProvider) UnoRuntime.queryInterface(XPackageInformationProvider.class, oPIP);
+            String[][] str = xPIP.getExtensionList();
+            for(int i = 0; i < str.length; i++)
+                for(int j = 0; j < str[i].length; j++)
+                    if(str[i][j].equals("org.openoffice.extensions.diagrams.Diagrams"))
+                        new WarningThread(m_xContext, m_xFrame, xPIP).start();
+        } catch (Exception ex) {
+            System.out.println(ex.getLocalizedMessage());
         }
     }
 
