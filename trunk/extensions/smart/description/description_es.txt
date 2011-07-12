@@ -1,2 +1,2 @@
-SmART es una extensión para LibreOffice Draw e Impress que crea sus diagramas favoritos en un par de clics. 
-Desde Draw o Impress: seleccione Insertar un SmART o habilite la Barra de herramientas SmART, y a continuación haga clic en el botón SmART.
+SmART es una extensiï¿½n para LibreOffice Draw e Impress que crea sus SmART-diagramas favoritos en un par de clics. 
+Desde Draw o Impress: seleccione Insertar un SmART o habilite la Barra de herramientas SmART, y a continuaciï¿½n haga clic en el botï¿½n SmART.

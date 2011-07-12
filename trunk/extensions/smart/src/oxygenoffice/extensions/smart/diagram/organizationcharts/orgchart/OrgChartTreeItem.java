@@ -61,20 +61,19 @@ public class OrgChartTreeItem extends OrganizationChartTreeItem{
             _maxPositions[m_Level] = m_Pos;
         if(m_Pos > _maxPos)
             _maxPos = m_Pos;
-        //XText xText = (XText) UnoRuntime.queryInterface(XText.class, m_xRectangleShape);
-        //xText.setString(m_Level +":"+m_Pos);
+//        XText xText = (XText) UnoRuntime.queryInterface(XText.class, m_xRectangleShape);
+//        xText.setString(m_Level +":"+m_Pos);
     }
 
     @Override
     public void initTreeItems(){
-
         XShape xFirstChildShape = getDiagramTree().getFirstChildShape(m_xRectangleShape);
         if(xFirstChildShape != null){
             short firstChildLevel = (short)(m_Level + 1);
             double firstChildPos = 0.0;
             if(firstChildLevel <= OrgChartTree.LASTHORLEVEL)
                 firstChildPos = _maxPositions[firstChildLevel] + 1.0;
-            if(firstChildLevel > OrgChartTree.LASTHORLEVEL)
+            else
                 firstChildPos = m_Pos + 0.5;
             m_FirstChild = new OrgChartTreeItem(getDiagramTree(), xFirstChildShape, this, firstChildLevel , firstChildPos);
             m_FirstChild.initTreeItems();

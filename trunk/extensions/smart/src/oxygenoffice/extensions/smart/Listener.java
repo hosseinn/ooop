@@ -109,7 +109,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //"textFieldModified" - common
         //short cuts - hidden buttons:
         //"allShape" - common
-//        aMethods[26] = "root";
+//aMethods[26] = "root";
         //"previous" - common
         //"next" - common
         aMethods[27] = "up";
@@ -379,8 +379,8 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
                     if(orgChart.isErrorInTree()){
                         getGui().askUserForRepair(orgChart);
                     }else{
-                       getController().getDiagram().removeShape();
-                       getController().getDiagram().refreshDiagram();
+                        getController().getDiagram().removeShape();
+                        getController().getDiagram().refreshDiagram();
                     }
                 }else{
                     getController().getDiagram().removeShape();
@@ -733,19 +733,6 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //selected setAllShape option button
         if(methodName.contains("setAllShapes")){
             getController().getDiagram().setSelectedAllShapesProps(true);
-//            if(getGui().m_xBaseColorRadioButton != null)
-//                if(getGui().m_xBaseColorRadioButton.getState())
-//                    getGui().m_xColorRadioButton.setState(true);
-//            getGui().enableControl(getGui().m_xBaseColorControl, true);
-//            getGui().enableControl(getGui().m_xYesOutlineOBControl, true);
-//            getGui().enableControl(getGui().m_xNoOutlineOBControl, true);
-//            getGui().enableControl(getGui().m_xYesFrameOBControl, true);
-//            getGui().enableControl(getGui().m_xNoFrameOBControl, true);
-//            getGui().enableControl(getGui().m_xNoFrameRoundedOBControl, true);
-//            getGui().enableControl(getGui().m_xYesFrameRoundedOBControl, true);
-
-            //if(getController().getGroupType() == Controller.ORGANIGROUP)
-               
             if(getController().getDiagramType() == Controller.VENNDIAGRAM)
                 getGui().enableVennDiagramNotAllShapeControls(true);
             if(getController().getDiagramType() == Controller.TARGETDIAGRAM)
@@ -756,18 +743,6 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //selected setSelectedShapes option button
         if(methodName.contains("setSelectedShapes")){
             getController().getDiagram().setSelectedAllShapesProps(false);
-//            if(getGui().m_xBaseColorRadioButton != null)
-//                if(getGui().m_xBaseColorRadioButton.getState())
-//                    getGui().m_xColorRadioButton.setState(true);
-//            getGui().enableControl(getGui().m_xBaseColorControl, false);
-//            getGui().enableControl(getGui().m_xYesOutlineOBControl, false);
-//            getGui().enableControl(getGui().m_xNoOutlineOBControl, false);
-//            getGui().enableControl(getGui().m_xGradientsCheckBoxControl, false);
-//            getGui().enableControl(getGui().m_xYesFrameOBControl, false);
-//            getGui().enableControl(getGui().m_xNoFrameOBControl, false);
-//            getGui().enableControl(getGui().m_xNoFrameRoundedOBControl, false);
-//            getGui().enableControl(getGui().m_xYesFrameRoundedOBControl, false);
-            
             if(getController().getGroupType() == Controller.ORGANIGROUP)
                 getController().getDiagram().setSelectedAreaProps(Diagram.SELECTED_SHAPES);
             if(getController().getDiagramType() == Controller.VENNDIAGRAM)
@@ -810,20 +785,10 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
 
         //selected setColor option button
         if(methodName.contains("setColor")){
-//            getGui().enableControl(getGui().m_xGradientsCheckBoxControl, false);
-//            getGui().enableControl(getGui().m_xStartColorLabelControl, false);
-//            getGui().enableControl(getGui().m_xEndColorLabelControl, false);
-//            getGui().enableVisibleControl(getGui().m_xStartColorImageControl, false);
-//            getGui().enableVisibleControl(getGui().m_xEndColorImageControl, false);
-//            getGui().enableControl(getGui().m_xColorImageControl, true);
-
             if(getController().getGroupType() == Controller.ORGANIGROUP)
                 getGui().enableOrganigramControlsIsColorProps(true);
             if(getController().getGroupType() == Controller.RELATIONGROUP)
                 getGui().enableControl(getGui().m_xColorImageControlOfPD, true);
-
-            //getController().getDiagram().setGradientProps(false);
-            //getController().getDiagram().setBaseColorsProps(false);
             return true;
         }
 
@@ -868,18 +833,8 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
 
         //selected setGradients option button
         if(methodName.contains("setGradients")){
-//            getGui().enableVisibleControl(getGui().m_xColorImageControl, false);
-//            getGui().enableControl(getGui().m_xGradientsCheckBoxControl, false);
-//            getGui().enableControl(getGui().m_xStartColorLabelControl, true);
-//            getGui().enableControl(getGui().m_xEndColorLabelControl, true);
-//            getGui().enableVisibleControl(getGui().m_xStartColorImageControl, true);
-//            getGui().enableVisibleControl(getGui().m_xEndColorImageControl, true);
-
             if(getController().getGroupType() == Controller.ORGANIGROUP)
                 getGui().enableOrganigramControlsIsColorProps(false);
-
-            //getController().getDiagram().setGradientProps(true);
-//            getController().getDiagram().setBaseColorsProps(false);
             return true;
         }
 
@@ -925,18 +880,9 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //VennDiagramPropsDialog events **********************************************************************
         //selected setBaseColor option button
         if(methodName.endsWith("setBaseColor")){
-//            getGui().enableControl(getGui().m_xStartColorLabelControl, false);
-//            getGui().enableControl(getGui().m_xEndColorLabelControl, false);
-//            getGui().enableVisibleControl(getGui().m_xStartColorImageControl, false);
-//            getGui().enableVisibleControl(getGui().m_xEndColorImageControl, false);
-//            getGui().enableControl(getGui().m_xColorImageControl, false);
-//            getGui().enableControl(getGui().m_xGradientsCheckBoxControl, true);
-
             if(getController().getGroupType() == Controller.RELATIONGROUP)
                 getGui().enableControl(getGui().m_xColorImageControlOfPD, false);
 
-            //getController().getDiagram().setBaseColorsProps(true);
-//            getController().getDiagram().setGradientProps(false);
             return true;
         }
 
@@ -1065,9 +1011,14 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
                         getGui().askUserForRepair(orgChart);
                     }else{
                         if(convType == Controller.ORGANIGRAM){
-                            if(getController().getDiagramType() == Controller.ORGANIGRAM && m_iLastHorLevel == OrgChartTree.LASTHORLEVEL)
-                                return true;
-                            OrgChartTree.LASTHORLEVEL = (short)m_iLastHorLevel;
+                            if(getController().getDiagramType() == Controller.ORGANIGRAM){
+                                if(m_iLastHorLevel == OrgChartTree.LASTHORLEVEL)
+                                    return true;
+                                else
+                                    ((OrgChartTree)(orgChart.getDiagramTree())).setHorLevelOfControlShape((short)m_iLastHorLevel);
+                            }else{
+                                OrgChartTree.LASTHORLEVEL = (short)m_iLastHorLevel;
+                            }
                         }
                         if(convType != Controller.ORGANIGRAM || (convType == Controller.ORGANIGRAM && getController().getDiagramType() != Controller.ORGANIGRAM))
                             getController().convert(convType);

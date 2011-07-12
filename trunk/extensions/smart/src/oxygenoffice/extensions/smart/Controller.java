@@ -4,6 +4,8 @@ import com.sun.star.beans.Property;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
 import com.sun.star.drawing.XDrawPage;
+import com.sun.star.drawing.XDrawPages;
+import com.sun.star.drawing.XDrawPagesSupplier;
 import com.sun.star.drawing.XDrawView;
 import com.sun.star.drawing.XShape;
 import com.sun.star.drawing.XShapes;
@@ -16,6 +18,7 @@ import com.sun.star.lang.Locale;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.XLocalizable;
 import com.sun.star.lang.XMultiComponentFactory;
+import com.sun.star.lang.XServiceInfo;
 import com.sun.star.text.XText;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
@@ -42,48 +45,57 @@ import oxygenoffice.extensions.smart.diagram.relationdiagrams.venndiagram.VennDi
 
 public final class Controller implements XSelectionChangeListener {
 
-    private         SmartProtocolHandler    m_SmartPH           = null;
-    private         XComponentContext   m_xContext              = null;
-    private         XFrame              m_xFrame                = null;
-    private         XController         m_xController           = null;
-    private         Gui                 m_Gui                   = null;
-    private         XSelectionSupplier  m_xSelectionSupplier    = null;
+    private         SmartProtocolHandler    m_SmartPH                   = null;
+    private         XComponentContext       m_xContext                  = null;
+    private         XFrame                  m_xFrame                    = null;
+    private         XController             m_xController               = null;
+    private         Gui                     m_Gui                       = null;
+    private         XSelectionSupplier      m_xSelectionSupplier        = null;
 
-    private         String              m_sLastDiagramName      = "";
+    private         String                  m_sLastDiagramName          = "";
 
-    private         Diagram             m_Diagram               = null;
-    private         short               m_DiagramType;
-    private         short               m_GroupType;
-    private         short               m_LastDiagramType       = -1;
-    private         int                 m_LastDiagramID         = -1;
+    private         Diagram                 m_Diagram                   = null;
+    private         short                   m_DiagramType;
+    private         short                   m_GroupType;
+    private         short                   m_LastDiagramType           = -1;
+    private         int                     m_LastDiagramID             = -1;
+    private         int                     m_NumberOfPages             = 0;
 
-    private         boolean             m_IsOrganiGroupConversAction  = false;
+    private         boolean                 m_IsOrganiGroupConversAction= false;
 
-    public static final short           ORGANIGROUP             = 0;
-    public static final short           RELATIONGROUP           = 1;
-    public static final short           LISTGROUP               = 2;
-    public static final short           PROCESSGROUP            = 3;
-    public static final short           MATRIXGROUP             = 4;
+    public static final short               ORGANIGROUP                 = 0;
+    public static final short               RELATIONGROUP               = 1;
+    public static final short               LISTGROUP                   = 2;
+    public static final short               PROCESSGROUP                = 3;
+    public static final short               MATRIXGROUP                 = 4;
     
-    public static final short           NOTDIAGRAM              = -1;
-    public static final short           SIMPLEORGANIGRAM        =  0;
-    public static final short           HORIZONTALORGANIGRAM    =  1;
-    public static final short           TABLEHIERARCHYDIAGRAM   =  2;
-    public static final short           ORGANIGRAM              =  3;
-    public static final short           VENNDIAGRAM             = 10;
-    public static final short           CYCLEDIAGRAM            = 11;
-    public static final short           PYRAMIDDIAGRAM          = 12;
-    public static final short           TARGETDIAGRAM           = 13;
+    public static final short               NOTDIAGRAM                  = -1;
+    public static final short               SIMPLEORGANIGRAM            =  0;
+    public static final short               HORIZONTALORGANIGRAM        =  1;
+    public static final short               TABLEHIERARCHYDIAGRAM       =  2;
+    public static final short               ORGANIGRAM                  =  3;
+    public static final short               VENNDIAGRAM                 = 10;
+    public static final short               CYCLEDIAGRAM                = 11;
+    public static final short               PYRAMIDDIAGRAM              = 12;
+    public static final short               TARGETDIAGRAM               = 13;
 
-    
+
 
     Controller(SmartProtocolHandler smartPH, XComponentContext xContext, XFrame xFrame){
         m_SmartPH = smartPH;
         m_xContext  = xContext;
         m_xFrame    = xFrame;
         m_xController = m_xFrame.getController();
+        m_NumberOfPages = getNumberOfPages();
         setGui();
         addSelectionListener();
+    }
+
+    public int getNumberOfPages(){
+        Object oDocument = m_xFrame.getController().getModel();
+        XDrawPagesSupplier pagesSupplier = (XDrawPagesSupplier)UnoRuntime.queryInterface(XDrawPagesSupplier.class, oDocument);
+        XDrawPages pages = pagesSupplier.getDrawPages();
+        return pages.getCount();
     }
 
     public SmartProtocolHandler getSmartPH(){
@@ -229,74 +241,92 @@ public final class Controller implements XSelectionChangeListener {
     @Override
     public void selectionChanged(EventObject event) {
         XNamed xNamed = (XNamed) UnoRuntime.queryInterface( XNamed.class, getSelectedShape() );
-        String selectedShapeName = xNamed.getName();
-        // listen the diagrams
-        if(selectedShapeName.startsWith("SimpleOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("VennDiagram") || selectedShapeName.startsWith("PyramidDiagram") || selectedShapeName.startsWith("CycleDiagram") || selectedShapeName.startsWith("ButtDiagram")) {
-            String newDiagramName = selectedShapeName.split("-", 2)[0];
-            // if the previous selected item is not in the same diagram,
-            // need to instantiate the new diagram
-            if( m_sLastDiagramName.equals("") || !m_sLastDiagramName.equals(newDiagramName)){
-                if( selectedShapeName.startsWith("OrganizationDiagram") ){
-                    setGroupType(ORGANIGROUP);
-                    setDiagramType(ORGANIGRAM);
-                    OrgChartTree.LASTHORLEVEL = -1;
+        if(xNamed == null){
+            int numOfPages = getNumberOfPages();
+            // if user insert new page to the document, the control dialog will disappear
+            if(numOfPages > m_NumberOfPages)
+                disappearControlDialog();
+            m_NumberOfPages = numOfPages;
+        }else{
+            m_NumberOfPages = getNumberOfPages();
+            String selectedShapeName = xNamed.getName();
+            // listen the diagrams
+            if(selectedShapeName.startsWith("SimpleOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("VennDiagram") || selectedShapeName.startsWith("PyramidDiagram") || selectedShapeName.startsWith("CycleDiagram") || selectedShapeName.startsWith("ButtDiagram")) {
+                String newDiagramName = selectedShapeName.split("-", 2)[0];
+                // if the previous selected item is not in the same diagram,
+                // need to instantiate the new diagram
+                if( m_sLastDiagramName.equals("") || !m_sLastDiagramName.equals(newDiagramName)){
+                    if( selectedShapeName.startsWith("OrganizationDiagram") ){
+                        setGroupType(ORGANIGROUP);
+                        setDiagramType(ORGANIGRAM);
+                        OrgChartTree.LASTHORLEVEL = -1;
+                    }
+                    if( selectedShapeName.startsWith("VennDiagram") ){
+                        setGroupType(RELATIONGROUP);
+                        setDiagramType(VENNDIAGRAM);
+                    }
+                    if( selectedShapeName.startsWith("PyramidDiagram") ){
+                        setGroupType(RELATIONGROUP);
+                        setDiagramType(PYRAMIDDIAGRAM);
+                    }
+                    if( selectedShapeName.startsWith("CycleDiagram") ){
+                        setGroupType(RELATIONGROUP);
+                        setDiagramType(CYCLEDIAGRAM);
+                    }
+                    if( selectedShapeName.startsWith("ButtDiagram") ){
+                        setGroupType(RELATIONGROUP);
+                        setDiagramType(TARGETDIAGRAM);
+                    }
+                    if( selectedShapeName.startsWith("HorizontalOrganizationDiagram") ){
+                        setGroupType(ORGANIGROUP);
+                        setDiagramType(HORIZONTALORGANIGRAM);
+                    }
+                    if( selectedShapeName.startsWith("TableHierarchyDiagram") ){
+                        setGroupType(ORGANIGROUP);
+                        setDiagramType(TABLEHIERARCHYDIAGRAM);
+                    }
+                    if( selectedShapeName.startsWith("SimpleOrganizationDiagram") ){
+                        setGroupType(ORGANIGROUP);
+                        setDiagramType(SIMPLEORGANIGRAM);
+                    }
+                    instantiateDiagram();
+                    m_sLastDiagramName = newDiagramName;
+                    getGui().setVisibleControlDialog(true);
+                    getDiagram().initDiagram();
                 }
-                if( selectedShapeName.startsWith("VennDiagram") ){
-                    setGroupType(RELATIONGROUP);
-                    setDiagramType(VENNDIAGRAM);
-                }
-                if( selectedShapeName.startsWith("PyramidDiagram") ){
-                    setGroupType(RELATIONGROUP);
-                    setDiagramType(PYRAMIDDIAGRAM);
-                }
-                if( selectedShapeName.startsWith("CycleDiagram") ){
-                    setGroupType(RELATIONGROUP);
-                    setDiagramType(CYCLEDIAGRAM);
-                }
-                if( selectedShapeName.startsWith("ButtDiagram") ){
-                    setGroupType(RELATIONGROUP);
-                    setDiagramType(TARGETDIAGRAM);
-                }
-                if( selectedShapeName.startsWith("HorizontalOrganizationDiagram") ){
-                    setGroupType(ORGANIGROUP);
-                    setDiagramType(HORIZONTALORGANIGRAM);
-                }
-                if( selectedShapeName.startsWith("TableHierarchyDiagram") ){
-                    setGroupType(ORGANIGROUP);
-                    setDiagramType(TABLEHIERARCHYDIAGRAM);
-                }
-                if( selectedShapeName.startsWith("SimpleOrganizationDiagram") ){
-                    setGroupType(ORGANIGROUP);
-                    setDiagramType(SIMPLEORGANIGRAM);
-                }
-                instantiateDiagram();
-                m_sLastDiagramName = newDiagramName;
-                getGui().setVisibleControlDialog(true);
-                getDiagram().initDiagram();
-            }
-            if((selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("SimpleOrganizationDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram")) && selectedShapeName.endsWith("RectangleShape0"))
-                if(getDiagram() != null)
-                    ((OrganizationChart)getDiagram()).selectShapes();
-            if(!getGui().isVisibleControlDialog())
-                getGui().setVisibleControlDialog(true);
-            if(m_GroupType == RELATIONGROUP && this.isOnlySimpleItemIsSelected() && getGui().isVisibleControlDialog() && getDiagram() != null && getDiagram().isBaseColorsProps())
+                if((selectedShapeName.startsWith("OrganizationDiagram") || selectedShapeName.startsWith("SimpleOrganizationDiagram") || selectedShapeName.startsWith("HorizontalOrganizationDiagram") || selectedShapeName.startsWith("TableHierarchyDiagram")) && selectedShapeName.endsWith("RectangleShape0"))
+                    if(getDiagram() != null)
+                        ((OrganizationChart)getDiagram()).selectShapes();
+                if(!getGui().isVisibleControlDialog())
+                    getGui().setVisibleControlDialog(true);
+                if(m_GroupType == RELATIONGROUP && this.isOnlySimpleItemIsSelected() && getGui().isVisibleControlDialog() && getDiagram() != null && getDiagram().isBaseColorsProps())
                     getGui().setImageColorOfControlDialog(((RelationDiagram)getDiagram()).getNextColor());
-            if(getGui().isShownTextFieldOfControlDialog()){
-                if(isOnlySimpleItemIsSelected())
-                    getGui().enableTextFieldOfControlDialog(true);
-                else
-                    getGui().enableTextFieldOfControlDialog(false);
+                if(getGui().isShownTextFieldOfControlDialog()){
+                    if(isOnlySimpleItemIsSelected())
+                        getGui().enableTextFieldOfControlDialog(true);
+                    else
+                        getGui().enableTextFieldOfControlDialog(false);
+                }
+                if(getGui().isVisibleControlDialog())
+                    getGui().setFocusControlDialog();
+            }else{
+                disappearControlDialog();
             }
-            if(getGui().isVisibleControlDialog())
-                getGui().setFocusControlDialog();
+            
+            if(getGui() != null)
+                getGui().setTextFieldOfControlDialog();
         }
+    }
 
-        if(getGui() != null)
-            getGui().setTextFieldOfControlDialog();
+    public void disappearControlDialog(){
+        m_sLastDiagramName = "";
+            if(getGui() != null)
+                if(getGui().isVisibleControlDialog())
+                    getGui().setVisibleControlDialog(false);
     }
 
     public void instantiateDiagram(){
-
+  
         if(!m_IsOrganiGroupConversAction && getGui() != null)
             getGui().disposePropertiesDialog();
 
@@ -328,14 +358,6 @@ public final class Controller implements XSelectionChangeListener {
             newDiagramTypeName = "TableHierarchyDiagram";
         if(diagramType == ORGANIGRAM)
             newDiagramTypeName = "OrganizationDiagram";
-        //if(diagramType == VENNDIAGRAM)
-        //    newDiagramTypeName = "VennDiagram";
-        //if(diagramType == CYCLEDIAGRAM)
-        //    newDiagramTypeName = "CycleDiagram";
-        //if(diagramType == PYRAMIDDIAGRAM)
-        //    newDiagramTypeName = "PyramieDiagram";
-        //if(diagramType == TARGETDIAGRAM)
-        //    newDiagramTypeName = "TargetDiagram";
 
         if(m_GroupType == Controller.ORGANIGROUP){
             m_IsOrganiGroupConversAction = true;
@@ -370,8 +392,8 @@ public final class Controller implements XSelectionChangeListener {
             getDiagram().setSelectedAreaProps(sSelectedArea);
             getDiagram().setGradientProps(isGradients);
             getDiagram().setGradientDirectionProps(sGradientDirection);
-            ((OrganizationChart)getDiagram()).setPropertiesValues(isSelectAllShape, isModifyColors, isBlueGradients, isRedGradients, sRounded, isOutline, isShadow);
-            
+            ((OrganizationChart)getDiagram()).setPropertiesValues(isSelectAllShape, isModifyColors, isBlueGradients, isRedGradients, sRounded, isOutline, isShadow);            
+
             ((OrganizationChart)getDiagram()).initDiagramTree(diagramTree);
             XNamed xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class, getSelectedShape());
             String selectedShapeName = xNamed.getName();
@@ -380,9 +402,6 @@ public final class Controller implements XSelectionChangeListener {
             m_IsOrganiGroupConversAction = false;
         }
         if(m_GroupType == Controller.RELATIONGROUP){
-            //m_IsOrganiGroupConversAction = true;
-            //String oldDiagramTypeName = getDiagram().getDiagramTypeName();
-            //getDiagram().renameShapes(oldDiagramTypeName, newDiagramTypeName);
             ArrayList<ShapeData> shapeDatas = ((RelationDiagram)getDiagram()).getShapeDatas();
             ((RelationDiagram)getDiagram()).removeAllShapesFromDrawPage();
             setDiagramType(diagramType);
@@ -394,7 +413,9 @@ public final class Controller implements XSelectionChangeListener {
             String selectedShapeName = xNamed.getName();
             String newDiagramName = selectedShapeName.split("-", 2)[0];
             setLastDiagramName(newDiagramName);
-            //m_IsOrganiGroupConversAction = false;
+            
+            if(getGui() != null)
+                getGui().setTextFieldOfControlDialog();
         }
     }
 
@@ -482,12 +503,26 @@ public final class Controller implements XSelectionChangeListener {
             //error message
         }
     }
-
-     public void testProps(Object obj){
-            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, obj);
-            Property[] props = xProp.getPropertySetInfo().getProperties();
-            for (Property p : props)
-                System.out.println(p.Name + " "  + p.Type.getTypeName());
+/*
+    public void testServices(Object obj){
+        XServiceInfo xSI = (XServiceInfo) UnoRuntime.queryInterface(XServiceInfo.class, obj);
+        System.out.println("---------------------- test services ----------------------------");
+        System.out.println("implementation name:");
+        System.out.println(xSI.getImplementationName());
+        System.out.println("supported services:");
+        String[] str = xSI.getSupportedServiceNames();
+        for(int i = 0; i < str.length; i++)
+            System.out.println(str[i]);
+        System.out.println("-----------------------------------------------------------------");
     }
 
+    public void testProps(Object obj){
+        XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, obj);
+        Property[] props = xProp.getPropertySetInfo().getProperties();
+        System.out.println("---------------------- test properties --------------------------");
+        for (Property p : props)
+            System.out.println(p.Name + " "  + p.Type.getTypeName());
+        System.out.println("-----------------------------------------------------------------");
+    }
+*/
 }

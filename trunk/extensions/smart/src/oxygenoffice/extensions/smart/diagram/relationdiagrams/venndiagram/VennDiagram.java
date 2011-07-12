@@ -59,6 +59,7 @@ public class VennDiagram extends RelationDiagram {
         createDiagram(3);
     }
 
+    @Override
     public void createControlShape(){
         int ellipseSize = m_GroupSize / 3;
         Point middlePoint = new Point(m_GroupSize / 2 + m_PageProps.BorderLeft + m_iHalfDiff, m_GroupSize / 2 + m_PageProps.BorderTop);
@@ -207,8 +208,6 @@ public class VennDiagram extends RelationDiagram {
         setColorOfShape(xEllipseShape, color);
         setMoveProtectOfShape(xEllipseShape);
 
-        getController().setSelectedShape((Object)xEllipseShape);
-
         XShape xRectangleShape = createShape( "RectangleShape", shapeID, size.Width/2, size.Height/4 );
         m_xShapes.add(xRectangleShape);
         setColorOfShape(xRectangleShape, color);
@@ -222,6 +221,8 @@ public class VennDiagram extends RelationDiagram {
             item.setDefaultText();
         else
             item.setText(str);
+        
+        getController().setSelectedShape((Object)xEllipseShape);
     }
 
     @Override
@@ -402,9 +403,9 @@ public class VennDiagram extends RelationDiagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 

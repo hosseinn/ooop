@@ -148,7 +148,16 @@ public class Gui {
     protected   XControl            m_xNoFrameRoundedOBControlOfPD  = null;
     protected   XControl            m_xYesFrameRoundedOBControlOfPD = null;
 
-    protected   XFixedText          m_xDescriptionLabelOfPD         = null;
+    protected   XFixedText          m_xAreaLabelOfPD                = null;
+    protected   XFixedText          m_xModifiesColorLabelOfPD       = null;
+    protected   XFixedText          m_xColorModeLabelOfPD           = null;
+    protected   XFixedText          m_xRoundedLabelOfPD             = null;
+    protected   XFixedText          m_xOutlineLabelOfPD             = null;
+    protected   XFixedText          m_xShadowLabelOfPD              = null;
+    protected   XFixedText          m_xTransparencyLabelOfPD        = null;
+    protected   XFixedText          m_xTFrameLabelOfPD              = null;
+    protected   XFixedText          m_xRoundedTFrameLabelOfPD       = null;
+    protected   XFixedText          m_xLayoutLabelOfPD              = null;
 
     //**********************************************************************
 
@@ -1046,7 +1055,13 @@ public class Gui {
                         m_xStartColorImageControlOfPD = xControlContainer.getControl("startColorImageControl");
                         m_xEndColorImageControlOfPD = xControlContainer.getControl("endColorImageControl");
                         m_xEndColorLabelControlOfPD = xControlContainer.getControl("label1");
-                        m_xDescriptionLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("descriptionLabel"));
+
+                        m_xAreaLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label7"));
+                        m_xModifiesColorLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label8"));
+                        m_xColorModeLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label9"));
+                        m_xRoundedLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label10"));
+                        m_xOutlineLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label11"));
+                        m_xShadowLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label12"));
                     }
 
                     if(getController().getDiagramType() == Controller.VENNDIAGRAM){
@@ -1062,7 +1077,14 @@ public class Gui {
                         m_xNoFrameOBControlOfPD = xControlContainer.getControl("noFrameOptionButton");
                         m_xYesFrameRoundedOBControlOfPD = xControlContainer.getControl("yesFrameRoundedOptionButton");
                         m_xNoFrameRoundedOBControlOfPD = xControlContainer.getControl("noFrameRoundedOptionButton");
-                        m_xDescriptionLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("descriptionLabel"));
+
+                        m_xAreaLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label8"));
+                        m_xModifiesColorLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label9"));
+                        m_xColorModeLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label10"));
+                        m_xTransparencyLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label11"));
+                        m_xOutlineLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label12"));
+                        m_xTFrameLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label13"));
+                        m_xRoundedTFrameLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label14"));
                     }
 
                     if(getController().getDiagramType() == Controller.CYCLEDIAGRAM){
@@ -1073,7 +1095,13 @@ public class Gui {
                         m_xColorImageControlOfPD = xControlContainer.getControl("colorImageControl");
                         m_xYesShadowOBOfPD = xControlContainer.getControl("yesShadowOptionButton");
                         m_xNoShadowOBOfPD = xControlContainer.getControl("noShadowOptionButton");
-                        m_xDescriptionLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("descriptionLabel"));
+
+                        m_xAreaLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label7"));
+                        m_xModifiesColorLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label8"));
+                        m_xColorModeLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label9"));
+                        m_xOutlineLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label10"));
+                        m_xTFrameLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label11"));
+                        m_xShadowLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label12"));
                     }
 
                     if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM){
@@ -1082,7 +1110,12 @@ public class Gui {
                         m_xBaseColorRadioButtonOfPD = (XRadioButton)UnoRuntime.queryInterface(XRadioButton.class, m_xBaseColorOBControlOfPD);
                         m_xColorOBControlOfPD = xControlContainer.getControl("colorOptionButton");
                         m_xColorImageControlOfPD = xControlContainer.getControl("colorImageControl");
-                        m_xDescriptionLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("descriptionLabel"));
+
+                        m_xAreaLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label6"));
+                        m_xModifiesColorLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label7"));
+                        m_xColorModeLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label8"));
+                        m_xOutlineLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label9"));
+                        m_xShadowLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label10"));
                     }
 
                     if(getController().getDiagramType() == Controller.TARGETDIAGRAM){
@@ -1096,7 +1129,13 @@ public class Gui {
                         m_xNoOutlineOBControlOfPD = xControlContainer.getControl("noOutlineOptionButton");
                         m_xYesFrameOBControlOfPD = xControlContainer.getControl("yesFrameOptionButton");
                         m_xNoFrameOBControlOfPD = xControlContainer.getControl("noFrameOptionButton");
-                        m_xDescriptionLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("descriptionLabel"));
+
+                        m_xAreaLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label7"));
+                        m_xModifiesColorLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label8"));
+                        m_xColorModeLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label9"));
+                        m_xLayoutLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label10"));
+                        m_xOutlineLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label11"));
+                        m_xTFrameLabelOfPD = (XFixedText)UnoRuntime.queryInterface(XFixedText.class, xControlContainer.getControl("Label12"));
                     }
 
                     setControlScaleImageProp(xControlContainer.getControl("imageControl"), false);
@@ -1122,11 +1161,6 @@ public class Gui {
             setShownPropsDialog(true);
             m_xPropsDialog.execute();
         }
-    }
-
-    public  void setDescriptionLabelOfPropsDialog(String description){
-        if(m_xDescriptionLabelOfPD != null)
-            m_xDescriptionLabelOfPD.setText(description);
     }
      
     public void endExecutePropertiesDialog(){
@@ -1160,9 +1194,16 @@ public class Gui {
         XControl xImageControl = xControlContainer.getControl("imageControl");
         short style = getController().getDiagram().getStyle();
 
+        String localAllShape = getDialogPropertyValue("Strings2", "Strings2.Common.LocalDiagramScope.Label");
+        String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
+        String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
+        String localBlueGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
+        String localRedGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
+
         if(style != OrganizationChart.USER_DEFINE){
             enableVisibleOrganigramPropsControls(false);
             enableVisibleControl(xImageControl, true);
+            enablePropertiesFieldOfOrganigroupPD(true);
             if(style == OrganizationChart.DEFAULT){
                 if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
                     setGraphic(xImageControl, "/images/simpleOrgchart_default.png");
@@ -1172,7 +1213,8 @@ public class Gui {
                     setGraphic(xImageControl, "/images/tableHierarchy_default.png");
                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
                     setGraphic(xImageControl, "/images/orgchart_default.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Organigram.DefaultDescription.Label"));
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localNo, "", localYes, localYes, localNo);
+                enableColorFunctionFieldFieldOfOrganigroupPD(false);
             }
             if(style == OrganizationChart.WITHOUT_OUTLINE){
                 if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
@@ -1183,7 +1225,8 @@ public class Gui {
                     setGraphic(xImageControl, "/images/tableHierarchy_withoutOutline.png");
                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
                     setGraphic(xImageControl, "/images/orgchart_withoutOutline.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Organigram.WithoutOutlineDescription.Label"));
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localNo, "", localYes, localNo, localNo);
+                enableColorFunctionFieldFieldOfOrganigroupPD(false);
             }
             if(style == OrganizationChart.NOT_ROUNDED){
                 if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
@@ -1194,7 +1237,8 @@ public class Gui {
                     setGraphic(xImageControl, "/images/tableHierarchy_notRounded.png");
                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
                     setGraphic(xImageControl, "/images/orgchart_notRounded.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Organigram.NotRoundedDescription.Label"));
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localNo, "", localNo, localYes, localNo);
+                enableColorFunctionFieldFieldOfOrganigroupPD(false);
             }
             if(style == OrganizationChart.WITH_SHADOW){
                 if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
@@ -1205,7 +1249,8 @@ public class Gui {
                     setGraphic(xImageControl, "/images/tableHierarchy_withShadow.png");
                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
                     setGraphic(xImageControl, "/images/orgchart_withShadow.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Organigram.WithShadowDescription.Label"));
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localNo, "", localYes, localYes, localYes);
+                enableColorFunctionFieldFieldOfOrganigroupPD(false);
             }
             if(style == OrganizationChart.BLUE_GRADIENTS){
                 if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
@@ -1216,7 +1261,7 @@ public class Gui {
                     setGraphic(xImageControl, "/images/tableHierarchy_blueGradients.png");
                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
                     setGraphic(xImageControl, "/images/orgchart_blueGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Organigram.BlueGradientsDescription.Label"));
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, localBlueGradients, localYes, localYes, localNo);
             }
             if(style == OrganizationChart.RED_GRADIENTS){
                 if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
@@ -1227,13 +1272,58 @@ public class Gui {
                     setGraphic(xImageControl, "/images/tableHierarchy_redGradients.png");
                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
                     setGraphic(xImageControl, "/images/orgchart_redGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Organigram.RedGradientsDescription.Label"));
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, localRedGradients, localYes, localYes, localNo);
             }
         }else{
             enableVisibleControl(xImageControl, false);
             enableVisibleOrganigramPropsControls(true);
-            setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Diagrams.UserDefineDescription.Label"));
+            enablePropertiesFieldOfOrganigroupPD(false);
         }
+    }
+    
+    public void enablePropertiesFieldOfOrganigroupPD(boolean bool){
+        if(m_xPropsDialog != null){
+            if(bool == false){
+                if(m_xAreaLabelOfPD != null)
+                    m_xAreaLabelOfPD.setText("");
+                if(m_xModifiesColorLabelOfPD != null)
+                    m_xModifiesColorLabelOfPD.setText("");
+                if(m_xColorModeLabelOfPD != null)
+                    m_xColorModeLabelOfPD.setText("");
+                if(m_xRoundedLabelOfPD != null)
+                    m_xRoundedLabelOfPD.setText("");
+                if(m_xOutlineLabelOfPD != null)
+                    m_xOutlineLabelOfPD.setText("");
+                if(m_xShadowLabelOfPD != null)
+                    m_xShadowLabelOfPD.setText("");
+            }
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("FrameControl"), bool);
+            for(int i = 1; i <= 12; i++)
+                enableControl(xControlContainer.getControl("Label" + i), bool);
+        }
+    }
+
+    public void enableColorFunctionFieldFieldOfOrganigroupPD(boolean bool){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("Label3"), bool);
+        }
+    }
+
+    public  void setDescriptionLabelOfOrganigroupPD(String area, String modifiesColor, String colorMode, String rounded, String outline, String shadow){
+        if(m_xAreaLabelOfPD != null)
+            m_xAreaLabelOfPD.setText(area);
+        if(m_xModifiesColorLabelOfPD != null)
+            m_xModifiesColorLabelOfPD.setText(modifiesColor);
+        if(m_xColorModeLabelOfPD != null)
+            m_xColorModeLabelOfPD.setText(colorMode);
+        if(m_xRoundedLabelOfPD != null)
+            m_xRoundedLabelOfPD.setText(rounded);
+        if(m_xOutlineLabelOfPD != null)
+            m_xOutlineLabelOfPD.setText(outline);
+        if(m_xShadowLabelOfPD != null)
+            m_xShadowLabelOfPD.setText(shadow);
     }
 
     public void enableVisibleOrganigramPropsControls(boolean bool){
@@ -1354,30 +1444,88 @@ public class Gui {
         XControl xImageControl = xControlContainer.getControl("imageControl");
         short style = getController().getDiagram().getStyle();
 
+        String localAllShape = getDialogPropertyValue("Strings2", "Strings2.Common.LocalDiagramScope.Label");
+        String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
+        String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
+        String localBaseColors = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColors.Label");
+        String localMedium = getDialogPropertyValue("Strings2", "Strings2.Common.LocalMedium.Label");
+
         if(style != VennDiagram.USER_DEFINE){
             enableVisibleVennDiagramPropsControls(false);
             enableVisibleControl(xImageControl, true);
+            enablePropertiesFieldOfVennDiagramPD(true);
+            
             if(style == VennDiagram.DEFAULT){
                 setGraphic(xImageControl, "/images/venn_default.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.VennDiagram.DefaultDescription.Label"));
+                setDescriptionLabelOfVennDiagramPD(localAllShape, localYes, localBaseColors, localMedium, localYes, localYes, localYes);
             }
             if (style == VennDiagram.WITHOUT_OUTLINE){
                 setGraphic(xImageControl, "/images/venn_withoutOutline.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.VennDiagram.WithoutOutlineDescription.Label"));
+                setDescriptionLabelOfVennDiagramPD(localAllShape, localYes, localBaseColors, localMedium, localNo, localYes, localYes);
             }
             if (style == VennDiagram.WITHOUT_FRAME){
                 setGraphic(xImageControl, "/images/venn_withoutFrame.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.VennDiagram.WithoutFrameDescription.Label"));
+                setDescriptionLabelOfVennDiagramPD(localAllShape, localYes, localBaseColors, localMedium, localYes, localNo, "");
+                enableRoundedTextFieldFieldOfVennDiagramPD(false);
             }
             if (style == VennDiagram.NOT_ROUNDED){
                 setGraphic(xImageControl, "/images/venn_notRounded.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.VennDiagram.NotRoundedDescription.Label"));
+                setDescriptionLabelOfVennDiagramPD(localAllShape, localYes, localBaseColors, localMedium, localYes, localYes, localNo);
             }
         }else{
             enableVisibleControl(xImageControl, false);
             enableVisibleVennDiagramPropsControls(true);
-            setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Diagrams.UserDefineDescription.Label"));
+            enablePropertiesFieldOfVennDiagramPD(false);
         }
+    }
+
+    public void enablePropertiesFieldOfVennDiagramPD(boolean bool){
+        if(m_xPropsDialog != null){
+            if(bool == false){
+                if(m_xAreaLabelOfPD != null)
+                    m_xAreaLabelOfPD.setText("");
+                if(m_xColorModeLabelOfPD != null)
+                    m_xColorModeLabelOfPD.setText("");
+                if(m_xModifiesColorLabelOfPD != null)
+                    m_xModifiesColorLabelOfPD.setText("");
+                if(m_xTransparencyLabelOfPD != null)
+                    m_xTransparencyLabelOfPD.setText("");
+                if(m_xOutlineLabelOfPD != null)
+                    m_xOutlineLabelOfPD.setText("");
+                if(m_xTFrameLabelOfPD != null)
+                    m_xTFrameLabelOfPD.setText("");
+                if(m_xRoundedTFrameLabelOfPD != null)
+                    m_xRoundedTFrameLabelOfPD.setText("");
+            }
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("FrameControl"), bool);
+            for(int i = 1; i <= 14; i++)
+                enableControl(xControlContainer.getControl("Label" + i), bool);
+        }
+    }
+
+    public void enableRoundedTextFieldFieldOfVennDiagramPD(boolean bool){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("Label7"), bool);
+        }
+    }
+
+    public  void setDescriptionLabelOfVennDiagramPD(String area, String modifiesColor, String colorMode, String transp, String outline, String TFrame, String roundedTFrame){
+        if(m_xAreaLabelOfPD != null)
+            m_xAreaLabelOfPD.setText(area);
+        if(m_xModifiesColorLabelOfPD != null)
+            m_xModifiesColorLabelOfPD.setText(modifiesColor);
+        if(m_xColorModeLabelOfPD != null)
+            m_xColorModeLabelOfPD.setText(colorMode);
+        if(m_xTransparencyLabelOfPD != null)
+            m_xTransparencyLabelOfPD.setText(transp);
+        if(m_xOutlineLabelOfPD != null)
+            m_xOutlineLabelOfPD.setText(outline);
+        if(m_xTFrameLabelOfPD != null)
+            m_xTFrameLabelOfPD.setText(TFrame);
+        if(m_xRoundedTFrameLabelOfPD != null)
+            m_xRoundedTFrameLabelOfPD.setText(roundedTFrame);
     }
 
     public void enableVisibleVennDiagramPropsControls(boolean bool){
@@ -1477,39 +1625,86 @@ public class Gui {
         XControl xImageControl = xControlContainer.getControl("imageControl");
         short style = getController().getDiagram().getStyle();
 
+        String localAllShape = getDialogPropertyValue("Strings2", "Strings2.Common.LocalDiagramScope.Label");
+        String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
+        String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
+        String localBaseColors = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColors.Label");
+        String localBlueGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
+        String localRedGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
+
         if(style != CycleDiagram.USER_DEFINE){
             enableVisibleCycleDiagramPropsControls(false);
             enableVisibleControl(xImageControl, true);
+            enablePropertiesFieldOfCycleDiagramPD(true);
+
             if(style == CycleDiagram.DEFAULT){
                 setGraphic(xImageControl, "/images/ring_default.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.CycleDiagram.DefaultDescription.Label"));
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localBaseColors, localYes, localNo, localNo);
             }
             if(style == CycleDiagram.WITHOUT_OUTLINE){
                 setGraphic(xImageControl, "/images/ring_withoutOutline.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.CycleDiagram.WithoutOutlineDescription.Label"));
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localBaseColors, localNo, localNo, localNo);
             }
             if(style == CycleDiagram.WITH_SHADOW){
                 setGraphic(xImageControl, "/images/ring_withShadow.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.CycleDiagram.WithShadowDescription.Label"));
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localBaseColors, localYes, localNo, localYes);
             }
             if(style == CycleDiagram.WITH_FRAME){
                 setGraphic(xImageControl, "/images/ring_withFrame.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.CycleDiagram.WithFrameDescription.Label"));
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localBaseColors, localYes, localYes, localNo);
             }
             if(style == CycleDiagram.BLUE_GRADIENTS){
                 setGraphic(xImageControl, "/images/ring_blueGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.CycleDiagram.BlueGradientsDescription.Label"));
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localBlueGradients, localYes, localNo, localNo);
             }
             if(style == CycleDiagram.RED_GRADIENTS){
                 setGraphic(xImageControl, "/images/ring_redGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.CycleDiagram.RedGradientsDescription.Label"));
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localRedGradients, localYes, localNo, localNo);
             }
         }
         if(style == CycleDiagram.USER_DEFINE){
             enableVisibleControl(xImageControl, false);
             enableVisibleCycleDiagramPropsControls(true);
-            setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Diagrams.UserDefineDescription.Label"));
+            enablePropertiesFieldOfCycleDiagramPD(false);
         }
+    }
+
+    public void enablePropertiesFieldOfCycleDiagramPD(boolean bool){
+        if(m_xPropsDialog != null){
+            if(bool == false){
+                if(m_xAreaLabelOfPD != null)
+                    m_xAreaLabelOfPD.setText("");
+                if(m_xModifiesColorLabelOfPD != null)
+                    m_xModifiesColorLabelOfPD.setText("");
+                if(m_xColorModeLabelOfPD != null)
+                    m_xColorModeLabelOfPD.setText("");
+                if(m_xOutlineLabelOfPD != null)
+                    m_xOutlineLabelOfPD.setText("");
+                if(m_xTFrameLabelOfPD != null)
+                    m_xTFrameLabelOfPD.setText("");
+                if(m_xShadowLabelOfPD != null)
+                    m_xShadowLabelOfPD.setText("");
+            }
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("FrameControl"), bool);
+            for(int i = 1; i <= 12; i++)
+                enableControl(xControlContainer.getControl("Label" + i), bool);
+        }
+    }
+    
+    public  void setDescriptionLabelOfCycleDiagramPD(String area, String modifiesColor, String colorMode, String outline, String textFrame, String shadow){
+        if(m_xAreaLabelOfPD != null)
+            m_xAreaLabelOfPD.setText(area);
+        if(m_xModifiesColorLabelOfPD != null)
+            m_xModifiesColorLabelOfPD.setText(modifiesColor);
+        if(m_xColorModeLabelOfPD != null)
+            m_xColorModeLabelOfPD.setText(colorMode);
+        if(m_xOutlineLabelOfPD != null)
+            m_xOutlineLabelOfPD.setText(outline);
+        if(m_xTFrameLabelOfPD != null)
+            m_xTFrameLabelOfPD.setText(textFrame);
+        if(m_xShadowLabelOfPD != null)
+            m_xShadowLabelOfPD.setText(shadow);
     }
 
     public void enableVisibleCycleDiagramPropsControls(boolean bool){
@@ -1581,38 +1776,82 @@ public class Gui {
         XControl xImageControl = xControlContainer.getControl("imageControl");
         short style = getController().getDiagram().getStyle();
 
+        String localAllShape = getDialogPropertyValue("Strings2", "Strings2.Common.LocalDiagramScope.Label");
+        String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
+        String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
+        String localBaseColors = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColors.Label");
+        String localBlueGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
+        String localRedGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
+        String localBaseColorsGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColorsGradients.Label");
+
         if(style != PyramidDiagram.USER_DEFINE){
             enableVisiblePyramidDiagramPropsControls(false);
             enableVisibleControl(xImageControl, true);
+            enablePropertiesFieldOfPyramidDiagramPD(true);
+
             if(style == PyramidDiagram.DEFAULT){
                 setGraphic(xImageControl, "/images/pyramid_default.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.PyramidDiagram.DefaultDescription.Label"));
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localBaseColors, localYes, localNo);
             }
             if(style == PyramidDiagram.WITHOUT_OUTLINE){
                 setGraphic(xImageControl, "/images/pyramid_withoutOutline.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.PyramidDiagram.WithoutOutlineDescription.Label"));
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localBaseColors, localNo, localNo);
             }
             if(style == PyramidDiagram.WITH_SHADOW){
                 setGraphic(xImageControl, "/images/pyramid_withShadow.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.PyramidDiagram.WithShadowDescription.Label"));
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localBaseColors, localYes, localYes);
             }
             if(style == PyramidDiagram.BC_WITH_GRADIENTS){
                 setGraphic(xImageControl, "/images/pyramid_basecolorsWithGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.PyramidDiagram.BaseColorsWithGradientsDescription.Label"));
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localBaseColorsGradients, localYes, localNo);
             }
             if(style == PyramidDiagram.BLUE_GRADIENTS){
                 setGraphic(xImageControl, "/images/pyramid_blueGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.PyramidDiagram.BlueGradientsDescription.Label"));
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localBlueGradients, localYes, localNo);
             }
             if(style == PyramidDiagram.RED_GRADIENTS){
                 setGraphic(xImageControl, "/images/pyramid_redGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.PyramidDiagram.RedGradientsDescription.Label"));
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localRedGradients, localYes, localNo);
             }
         }else{
             enableVisibleControl(xImageControl, false);
             enableVisiblePyramidDiagramPropsControls(true);
-            setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Diagrams.UserDefineDescription.Label"));
+            enablePropertiesFieldOfPyramidDiagramPD(false);
         }
+    }
+
+    public void enablePropertiesFieldOfPyramidDiagramPD(boolean bool){
+        if(m_xPropsDialog != null){
+            if(bool == false){
+                if(m_xAreaLabelOfPD != null)
+                    m_xAreaLabelOfPD.setText("");
+                if(m_xModifiesColorLabelOfPD != null)
+                    m_xModifiesColorLabelOfPD.setText("");
+                if(m_xColorModeLabelOfPD != null)
+                    m_xColorModeLabelOfPD.setText("");
+                if(m_xOutlineLabelOfPD != null)
+                    m_xOutlineLabelOfPD.setText("");
+                if(m_xShadowLabelOfPD != null)
+                    m_xShadowLabelOfPD.setText("");
+            }
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("FrameControl"), bool);
+            for(int i = 1; i <= 10; i++)
+                enableControl(xControlContainer.getControl("Label" + i), bool);
+        }
+    }
+
+    public  void setDescriptionLabelOfPyramidDiagramPD(String area, String modifiesColor, String colorMode, String outline, String shadow){
+        if(m_xAreaLabelOfPD != null)
+            m_xAreaLabelOfPD.setText(area);
+        if(m_xModifiesColorLabelOfPD != null)
+            m_xModifiesColorLabelOfPD.setText(modifiesColor);
+        if(m_xColorModeLabelOfPD != null)
+            m_xColorModeLabelOfPD.setText(colorMode);
+        if(m_xOutlineLabelOfPD != null)
+            m_xOutlineLabelOfPD.setText(outline);
+        if(m_xShadowLabelOfPD != null)
+            m_xShadowLabelOfPD.setText(shadow);
     }
 
     public void enableVisiblePyramidDiagramPropsControls(boolean bool){
@@ -1676,38 +1915,87 @@ public class Gui {
         XControl xImageControl = xControlContainer.getControl("imageControl");
         short style = getController().getDiagram().getStyle();
 
+        String localAllShape = getDialogPropertyValue("Strings2", "Strings2.Common.LocalDiagramScope.Label");
+        String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
+        String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
+        String localBaseColors = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColors.Label");
+        String localBlueGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
+        String localRedGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
+        String localCenter = getDialogPropertyValue("Strings2", "Strings2.Common.LocalCentert.Label");
+        String localLeft = getDialogPropertyValue("Strings2", "Strings2.Common.LocalLeft.Label");
+
         if(style != TargetDiagram.USER_DEFINE){
             enableVisibleTargetDiagramPropsControls(false);
             enableVisibleControl(xImageControl, true);
+            enablePropertiesFieldOfTargetDiagramPD(true);
+
             if(style == TargetDiagram.DEFAULT){
                 setGraphic(xImageControl, "/images/target_default.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.TargetDiagram.DefaultDescription.Label"));
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localBaseColors, localCenter, localYes, localNo);
             }
             if (style == TargetDiagram.WITHOUT_OUTLINE){
                 setGraphic(xImageControl, "/images/target_withoutOutline.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.TargetDiagram.WithoutOutlineDescription.Label"));
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localBaseColors, localCenter, localNo, localNo);
             }
             if (style == TargetDiagram.WITH_FRAME){
                 setGraphic(xImageControl, "/images/target_withTextFrame.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.TargetDiagram.WithFrameDescription.Label"));
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localBaseColors, localCenter, localYes, localYes);
             }
             if (style == TargetDiagram.BLUE_GRADIENTS){
                 setGraphic(xImageControl, "/images/target_blueGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.TargetDiagram.BlueGradientsDescription.Label"));
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localBlueGradients, localCenter, localYes, localNo);
             }
             if (style == TargetDiagram.RED_GRADIENTS){
                 setGraphic(xImageControl, "/images/target_redGradients.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.TargetDiagram.RedGradientsDescription.Label"));
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localRedGradients, localCenter, localYes, localNo);
             }
             if (style == TargetDiagram.LEFT_LAYOUT){
                 setGraphic(xImageControl, "/images/target_leftLayout.png");
-                setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.TargetDiagram.LeftLayoutDescription.Label"));
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localBaseColors, localLeft, localYes, localNo);
             }
         }else{
             enableVisibleControl(xImageControl, false);
             enableVisibleTargetDiagramPropsControls(true);
-            setDescriptionLabelOfPropsDialog(getDialogPropertyValue("Strings2", "Strings2.Diagrams.UserDefineDescription.Label"));
+            enablePropertiesFieldOfTargetDiagramPD(false);
         }
+    }
+
+        public void enablePropertiesFieldOfTargetDiagramPD(boolean bool){
+        if(m_xPropsDialog != null){
+            if(bool == false){
+                if(m_xAreaLabelOfPD != null)
+                    m_xAreaLabelOfPD.setText("");
+                if(m_xModifiesColorLabelOfPD != null)
+                    m_xModifiesColorLabelOfPD.setText("");
+                if(m_xColorModeLabelOfPD != null)
+                    m_xColorModeLabelOfPD.setText("");
+                if(m_xLayoutLabelOfPD != null)
+                    m_xLayoutLabelOfPD.setText("");
+                if(m_xOutlineLabelOfPD != null)
+                    m_xOutlineLabelOfPD.setText("");
+                if(m_xTFrameLabelOfPD != null)
+                    m_xTFrameLabelOfPD.setText("");
+            }
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("FrameControl"), bool);
+            for(int i = 1; i <= 12; i++)
+                enableControl(xControlContainer.getControl("Label" + i), bool);
+        }
+    }
+
+    public  void setDescriptionLabelOfTargetDiagramPD(String area, String modifiesColor, String colorMode, String layout, String outline, String tFrame){
+        if(m_xAreaLabelOfPD != null)
+            m_xAreaLabelOfPD.setText(area);
+        if(m_xModifiesColorLabelOfPD != null)
+            m_xModifiesColorLabelOfPD.setText(modifiesColor);
+        if(m_xColorModeLabelOfPD != null)
+            m_xColorModeLabelOfPD.setText(colorMode);
+        if(m_xLayoutLabelOfPD != null)
+            m_xLayoutLabelOfPD.setText(layout);
+        if(m_xOutlineLabelOfPD != null)
+            m_xOutlineLabelOfPD.setText(outline);
+        if(m_xTFrameLabelOfPD != null)
+            m_xTFrameLabelOfPD.setText(tFrame);
     }
 
     public void enableVisibleTargetDiagramPropsControls(boolean bool){
