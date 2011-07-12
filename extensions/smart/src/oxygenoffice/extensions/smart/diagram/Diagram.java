@@ -1,5 +1,4 @@
 package oxygenoffice.extensions.smart.diagram;
-
 import com.sun.star.awt.Gradient;
 import com.sun.star.awt.GradientStyle;
 import com.sun.star.awt.Point;
@@ -168,23 +167,8 @@ public abstract class Diagram {
 
     public void setGradientProps(boolean bool){
         m_IsGradients = bool;
-        //if(getController().getGroupType() == Controller.ORGANIGROUP || getController().getDiagramType() == Controller.CYCLEDIAGRAM || getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.TARGETDIAGRAM){
-//        if(bool)
-//            getGui().setColorModeOfImageOfControlDialog();
-        //    if(!bool){
-                if(getController().getGroupType() == Controller.ORGANIGROUP)
-                    getGui().setImageColorOfControlDialog(m_iColor);
-                //if(getController().getDiagramType() == Controller.CYCLEDIAGRAM || getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.TARGETDIAGRAM)
-                //    getGui().setImageColorOfControlDialog(((RelationDiagram)this).getNextColor());
-        //    }
- //       }
-/*
-        if(getController().getGroupType() == Controller.RELATIONGROUP){
-            //getGui().setGradientModeImageOfControlDialog(bool);
-            if(!bool)
-                getGui().setImageColorOfControlDialog(m_iColor);
-        }
-*/
+        if(getController().getGroupType() == Controller.ORGANIGROUP)
+            getGui().setImageColorOfControlDialog(m_iColor);
     }
 
     public boolean isGradientProps(){
@@ -193,9 +177,6 @@ public abstract class Diagram {
 
     public void setBlueGradientsProps(boolean isBlueGradients){
         m_IsBlueGradients = isBlueGradients;
-        //if(getController().getGroupType() == Controller.ORGANIGROUP || getController().getDiagramType() == Controller.CYCLEDIAGRAM || getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.TARGETDIAGRAM)
- //       if(isBlueGradients)
- //           getGui().setColorModeOfImageOfControlDialog();
     }
 
     public boolean isBlueGradientsProps(){
@@ -204,9 +185,6 @@ public abstract class Diagram {
 
     public void setRedGradientsProps(boolean isRedGradients){
         m_IsRedGradients = isRedGradients;
-        //if(getController().getGroupType() == Controller.ORGANIGROUP || getController().getDiagramType() == Controller.CYCLEDIAGRAM || getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.TARGETDIAGRAM)
-   //     if(isRedGradients)
-   //         getGui().setColorModeOfImageOfControlDialog();
     }
 
     public boolean isRedGradientsProps(){
@@ -215,10 +193,6 @@ public abstract class Diagram {
 
     public void setBaseColorsProps(boolean bool){
         m_IsBaseColors = bool;
-        //if(getController().getGroupType() == Controller.RELATIONGROUP)
- //           getGui().setColorModeOfImageOfControlDialog();
-        //if(getController().getGroupType() == Controller.RELATIONGROUP)
-        //    getGui().setBaseColorsModeImageOfControlDialog(bool);
     }
 
     public boolean isBaseColorsProps(){
@@ -227,8 +201,6 @@ public abstract class Diagram {
 
     public void setBaseColorsWithGradientsProps(boolean bool){
         m_IsBaseColorsWithGradients = bool;
- //       if(bool)
- //           getGui().setColorModeOfImageOfControlDialog();
     }
 
     public boolean isBaseColorsWithGradientsProps(){

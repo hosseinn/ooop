@@ -8,6 +8,7 @@ import com.sun.star.drawing.XShape;
 import com.sun.star.drawing.XShapes;
 import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.text.XText;
 import com.sun.star.uno.UnoRuntime;
 import java.util.ArrayList;
 
@@ -40,6 +41,8 @@ public abstract class OrganizationChartTree {
         connectorList   = diagramTree.connectorList;
         m_xShapes       = m_OrgChart.getShapes();
         m_xControlShape = diagramTree.m_xControlShape;
+        XText xText = (XText)UnoRuntime.queryInterface(XText.class, m_xControlShape);
+        xText.setString("");
         m_xRootShape    = diagramTree.m_xRootShape;
     }
 
@@ -288,9 +291,10 @@ public abstract class OrganizationChartTree {
     }
 
     public Size getControlShapeSize(){
-        if(m_xControlShape == null)
-            System.out.println("controlShape = null");
-        return m_xControlShape.getSize();
+        if(m_xControlShape != null)
+            return m_xControlShape.getSize();
+        else
+            return null;
     }
 
     public void setControlShapePos(Point point){

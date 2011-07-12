@@ -118,6 +118,7 @@ public class CycleDiagram extends RelationDiagram {
         createDiagram(2);
     }
 
+    @Override
     public void createControlShape(){
         int controlEllipseSize = m_GroupSize / 4 * 3;
         Point middlePoint = new Point(m_GroupSize / 2 + m_PageProps.BorderLeft + m_iHalfDiff, m_GroupSize / 2 + m_PageProps.BorderTop);
@@ -215,6 +216,14 @@ public class CycleDiagram extends RelationDiagram {
         setInvisibleFeatures(xRectangleShape);
         setTextFitToSize(xRectangleShape);
         setMoveProtectOfShape(xRectangleShape);
+        
+        CycleDiagramItem item = new CycleDiagramItem(this, shapeID, xBezierShape, xRectangleShape);
+        addItem(item);
+        item.setShapesProps();
+        if(str.equals("DefaultText"))
+            item.setDefaultText();
+        else
+            item.setText(str);
 
         XShape selectedShape = getController().getSelectedShape();
         if(selectedShape != null){
@@ -225,14 +234,6 @@ public class CycleDiagram extends RelationDiagram {
                 getController().setSelectedShape(xBezierShape);
         }else
             getController().setSelectedShape(xBezierShape);
-        
-        CycleDiagramItem item = new CycleDiagramItem(this, shapeID, xBezierShape, xRectangleShape);
-        addItem(item);
-        item.setShapesProps();
-        if(str.equals("DefaultText"))
-            item.setDefaultText();
-        else
-            item.setText(str);
     }
 
     public XShape getControlShape(){
@@ -405,9 +406,9 @@ public class CycleDiagram extends RelationDiagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 

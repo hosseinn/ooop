@@ -170,7 +170,6 @@ public class PyramidDiagram extends RelationDiagram {
             setColorOfShape(xTrapezeShape, color);
         }
         setMoveProtectOfShape(xTrapezeShape);
-        getController().setSelectedShape(xTrapezeShape);
 
         PyramidDiagramItem item = new PyramidDiagramItem(this, shapeID, xTrapezeShape);
         addItem(item);
@@ -179,6 +178,8 @@ public class PyramidDiagram extends RelationDiagram {
             item.setDefaultText();
         else
             item.setText(str);
+
+        getController().setSelectedShape(xTrapezeShape);
     }
 
     @Override
@@ -347,9 +348,9 @@ public class PyramidDiagram extends RelationDiagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 

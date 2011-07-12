@@ -81,6 +81,7 @@ public class TargetDiagram extends RelationDiagram{
         createDiagram(3);
     }
 
+    @Override
     public void createControlShape(){
         int controlEllipseSize = m_DrawAreaHeight * 7 / 8;
         Point middlePoint = new Point(m_PageProps.BorderLeft + m_iHalfDiff + controlEllipseSize / 2, m_PageProps.BorderTop + m_DrawAreaHeight - controlEllipseSize / 2);
@@ -154,6 +155,14 @@ public class TargetDiagram extends RelationDiagram{
         XShape xConnShape = createConnectorShape(shapeID, xEllipseShape, xRectangleShape);
         setMoveProtectOfShape(xConnShape);
 
+        TargetDiagramItem item = new TargetDiagramItem(this, shapeID, xEllipseShape, xRectangleShape, xConnShape);
+        addItem(item);
+        item.setShapesProps();
+        if(str.equals("DefaultText"))
+            item.setDefaultText();
+        else
+            item.setText(str);
+
         XShape selectedShape = getController().getSelectedShape();
         if(selectedShape != null){
             String selectedShapeName = getShapeName(selectedShape);
@@ -163,14 +172,6 @@ public class TargetDiagram extends RelationDiagram{
                 getController().setSelectedShape(xEllipseShape);
         }else
             getController().setSelectedShape(xEllipseShape);
-
-        TargetDiagramItem item = new TargetDiagramItem(this, shapeID, xEllipseShape, xRectangleShape, xConnShape);
-        addItem(item);
-        item.setShapesProps();
-        if(str.equals("DefaultText"))
-            item.setDefaultText();
-        else
-            item.setText(str);
     }
 
     public XShape createConnectorShape(int ID, XShape xEllipseShape, XShape xRectShape){
@@ -630,9 +631,9 @@ public class TargetDiagram extends RelationDiagram{
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 

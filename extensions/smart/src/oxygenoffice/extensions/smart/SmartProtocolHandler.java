@@ -1,7 +1,5 @@
 package oxygenoffice.extensions.smart;
 
-import com.sun.star.comp.helper.Bootstrap;
-import com.sun.star.comp.helper.BootstrapException;
 import com.sun.star.container.XNameAccess;
 import com.sun.star.deployment.XPackageInformationProvider;
 import com.sun.star.frame.FrameActionEvent;
@@ -16,8 +14,6 @@ import com.sun.star.lang.XSingleComponentFactory;
 import com.sun.star.registry.XRegistryKey;
 import com.sun.star.lib.uno.helper.WeakBase;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 public final class SmartProtocolHandler extends WeakBase
@@ -187,19 +183,18 @@ public final class SmartProtocolHandler extends WeakBase
      // XFrameActionListener
     @Override
     public void disposing(EventObject event) {
-        // when the document is closed we have to remove FrameObject item into the list
-        if(event.Source.toString().contains("com.sun.star.frame.XModel")){
-            m_xComponent.removeEventListener(this);
-            m_Controller.getGui().closeAndDisposeControlDialog();
+        // when the frame is closed we have to remove FrameObject item into the list
+        if( event.Source.equals(m_xFrame)){
+            m_xFrame.removeFrameActionListener(this);
             if(_frameObjectList != null){
                 for(FrameObject frameObj : _frameObjectList)
                     if(m_xFrame.equals(frameObj.getXFrame()))
                         _frameObjectList.remove(frameObj);
             }
-        }
-        // when the frame is closed we have to remove FrameObject item into the list
-        if( event.Source.equals(m_xFrame)){
-            m_xFrame.removeFrameActionListener(this);
+        }else{
+            // when the document is closed we have to remove FrameObject item into the list
+            m_xComponent.removeEventListener(this);
+            m_Controller.getGui().closeAndDisposeControlDialog();
             if(_frameObjectList != null){
                 for(FrameObject frameObj : _frameObjectList)
                     if(m_xFrame.equals(frameObj.getXFrame()))
@@ -209,6 +204,7 @@ public final class SmartProtocolHandler extends WeakBase
     }
 
     @Override
-    public void frameAction(FrameActionEvent arg0) { }
+    public void frameAction(FrameActionEvent arg0) {
+    }
 
 }

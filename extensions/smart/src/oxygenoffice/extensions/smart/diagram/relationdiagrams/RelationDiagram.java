@@ -55,7 +55,7 @@ public abstract class RelationDiagram extends Diagram{
         getController().removeSelectionListener();
         if(m_xDrawPage != null && m_xShapes != null){
             if(isBaseColorsProps() && getGui() != null && getGui().getControlDialogWindow() != null)
-                    getGui().setImageColorOfControlDialog(aCOLORS[0]);
+                getGui().setImageColorOfControlDialog(aCOLORS[0]);
             for(ShapeData shapeData : shapeDatas){
                 createItem(shapeData.getID(), shapeData.getText());
                 if(isBaseColorsProps() && getGui() != null && getGui().getControlDialogWindow() != null)
@@ -84,10 +84,6 @@ public abstract class RelationDiagram extends Diagram{
         try {
             XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
             xProp.setPropertyValue("FillStyle", FillStyle.NONE);
-            //xProp.setPropertyValue("FillColor", new Integer(0xFFFFFF));
-            //xProp.setPropertyValue("FillTransparence", new Integer(1000));
-            //xProp.setPropertyValue("LineColor", new Integer(0xFFFFFF));
-            //xProp.setPropertyValue("LineTransparence", new Integer(1000));
             xProp.setPropertyValue("LineStyle", LineStyle.NONE);
             xProp.setPropertyValue("MoveProtect", new Boolean(true));
         } catch (Exception ex) {

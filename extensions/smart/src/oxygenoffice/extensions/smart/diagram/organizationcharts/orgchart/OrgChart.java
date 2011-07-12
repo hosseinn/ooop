@@ -10,6 +10,7 @@ import com.sun.star.drawing.XShape;
 import com.sun.star.frame.XFrame;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.text.XText;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
 import oxygenoffice.extensions.smart.Gui;
@@ -58,6 +59,9 @@ public class OrgChart extends OrganizationChart{
             XShape xBaseShape = createShape("RectangleShape", 0, m_PageProps.BorderLeft + m_iHalfDiff, m_PageProps.BorderTop, m_DrawAreaWidth, m_DrawAreaHeight);
             m_xShapes.add(xBaseShape);
             setControlShapeProps(xBaseShape);
+            XText xText = UnoRuntime.queryInterface(XText.class, xBaseShape);
+            xText.setString("2");
+            OrgChartTree.LASTHORLEVEL = 2;
 
             int horUnit, horSpace, shapeWidth, verUnit, verSpace, shapeHeight;
             horUnit = horSpace = shapeWidth = verUnit = verSpace =  shapeHeight = 0;
@@ -146,6 +150,10 @@ public class OrgChart extends OrganizationChart{
         if(m_DiagramTree == null)
             m_DiagramTree = new OrgChartTree(this);
         m_DiagramTree.setLists();
+        if(OrgChartTree.LASTHORLEVEL == -1)
+            OrgChartTree.LASTHORLEVEL = ((OrgChartTree)m_DiagramTree).getHorLevelOfControlShape();
+        else
+            ((OrgChartTree)m_DiagramTree).setHorLevelOfControlShape(OrgChartTree.LASTHORLEVEL);
         m_DiagramTree.setTree();
     }
 
