@@ -18,6 +18,7 @@ import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
 import oxygenoffice.extensions.smart.Gui;
+import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
 
@@ -196,10 +197,32 @@ public class CycleDiagram extends RelationDiagram {
         }
     }
 
-    
+
     @Override
-    public void createItem(int shapeID, String str){
-        int color = getColor(shapeID);
+    public RelationDiagramItem createItem(int shapeID, String str, Color oColor){
+        XShape xBezierShape = createShape("ClosedBezierShape", shapeID);
+        m_xShapes.add(xBezierShape);
+        setMoveProtectOfShape(xBezierShape);
+
+        XShape xRectangleShape = createShape("RectangleShape", shapeID);
+        m_xShapes.add(xRectangleShape);
+        setInvisibleFeatures(xRectangleShape);
+        setMoveProtectOfShape(xRectangleShape);
+
+        CycleDiagramItem item = new CycleDiagramItem(this, shapeID, xBezierShape, xRectangleShape);
+        addItem(item);
+
+        item.setText(str);
+        item.setShapesProps();
+        item.setColor(oColor);
+        getController().setSelectedShape(xBezierShape);
+
+        return item;
+
+    }
+
+    @Override
+    public RelationDiagramItem createItem(int shapeID, String str, int color){
         XShape xBezierShape = createShape("ClosedBezierShape", shapeID);
         m_xShapes.add(xBezierShape);
         if(m_IsBlueGradients || m_IsRedGradients){
@@ -214,16 +237,18 @@ public class CycleDiagram extends RelationDiagram {
         XShape xRectangleShape = createShape("RectangleShape", shapeID);
         m_xShapes.add(xRectangleShape);
         setInvisibleFeatures(xRectangleShape);
-        setTextFitToSize(xRectangleShape);
         setMoveProtectOfShape(xRectangleShape);
         
         CycleDiagramItem item = new CycleDiagramItem(this, shapeID, xBezierShape, xRectangleShape);
         addItem(item);
-        item.setShapesProps();
+
+        if(str.equals(""))
+            str = " ";
         if(str.equals("DefaultText"))
             item.setDefaultText();
         else
             item.setText(str);
+        item.setShapesProps();
 
         XShape selectedShape = getController().getSelectedShape();
         if(selectedShape != null){
@@ -234,6 +259,8 @@ public class CycleDiagram extends RelationDiagram {
                 getController().setSelectedShape(xBezierShape);
         }else
             getController().setSelectedShape(xBezierShape);
+        
+        return item;
     }
 
     public XShape getControlShape(){
@@ -478,11 +505,13 @@ public class CycleDiagram extends RelationDiagram {
                 }
             }
 
-            if(isSelectedAllShapesProps())
+            if(isSelectedAllShapesProps()){
                 setAllShapeProperties();
-            else
+            } else{
                 setSelectedShapesProperties();
-            
+                setAllShapeFontMeausereProperties();
+            }
+
             setModifyColorsProps(false);
         }else{
             setSelectedAllShapesProps(isSelectAllShape);
@@ -574,6 +603,8 @@ public class CycleDiagram extends RelationDiagram {
                 else
                     xProp.setPropertyValue("LineStyle", LineStyle.NONE);
             }
+            
+            setFontPropertiesOfShape(xShape);
 
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());

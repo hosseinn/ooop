@@ -36,6 +36,18 @@ public class CycleDiagramItem extends RelationDiagramItem{
                 getRDiagram().setShapeProperties(xTextShape);
         }
     }
+
+    @Override
+    public void setShapeFontMeausereProps(){
+        if(xMainShape != null){
+            if(getRDiagram().isInGruopShapes(xMainShape))
+                getRDiagram().setFontPropertiesOfShape(xMainShape);
+        }
+        if(xTextShape != null){
+            if(getRDiagram().isInGruopShapes(xTextShape))
+                getRDiagram().setFontPropertiesOfShape(xTextShape);
+        }
+    }
     
     public void setPosition(int numOfItems, Size controlShapeSize, Point controlShapePoint, Point middlePoint, Point rectMiddlePoint, int rectShapeWidth, int rectShapeHeight, double angle, int radius, int radius2, int radius3, int radius4, int radius5, int radius6, double point1Diff, double point2Diff, double point3Diff, double point4Diff, double point5Diff, double point6Diff, double point7Diff, double point8Diff, double point9Diff) {
         

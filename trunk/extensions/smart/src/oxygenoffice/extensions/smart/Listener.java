@@ -43,7 +43,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
     @Override
     public String[] getSupportedMethodNames() {
 
-        String[] aMethods = new String[163];
+        String[] aMethods = new String[167];
 
         //DiagramGallery1 events - deprecated *************************
         //aMethods[0] = "Organigram";
@@ -151,6 +151,11 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         aMethods[133] = "setColor";
         aMethods[134] = "setOutlineYes";
         aMethods[135] = "setOutlineNo";
+
+        aMethods[163] = "setTextToFitToSize";
+        aMethods[164] = "setFontSize";
+        aMethods[165] = "changedFontSize";
+        aMethods[166] = "modifyTextColor";
         //*************************************************************
 
         //OrganigramPropsDialog events ********************************
@@ -658,6 +663,8 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
                 getGui().m_xEventObjectControl = getGui().m_xStartColorImageControlOfPD;
             if(((EventObject)eventObject).Source.equals(getGui().m_xEndColorImageControlOfPD))
                 getGui().m_xEventObjectControl = getGui().m_xEndColorImageControlOfPD;
+            if(((EventObject)eventObject).Source.equals(getGui().getTextColorImageControl()))
+                getGui().m_xEventObjectControl = getGui().getTextColorImageControl();
             getGui().executeColorTable();
             return true;
         }
@@ -813,6 +820,29 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
             }
             return true;
         }
+
+        //selected textFit option button
+        if(methodName.contains("setTextToFitToSize")){
+            getGui().enableFontSizeListBox(false);
+            return true;
+        }
+
+        //selected fontSize option button
+        if(methodName.contains("setFontSize")){
+            getGui().enableFontSizeListBox(true);
+            return true;
+        }
+
+        //changed state of fontSize combobox
+        if(methodName.contains("changedFontSize")){
+            return true;
+        }
+
+        //changed state of modifyTextColorCheckBox
+        if(methodName.contains("modifyTextColor")){
+            getGui().setTextColorToolsProps();
+            return true;
+        }
         //****************************************************************************************************
 
 
@@ -870,6 +900,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
 
         // OrganigramPropsDialog
         if(methodName.contains("setOrganigramProps")){
+            getGui().setTextProperties();
             getController().getDiagram().setActionProps(true);
             getGui().endExecutePropertiesDialog();
             return true;
@@ -938,6 +969,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
 
         //pressed OK button
         if(methodName.contains("setVennDiagramProps")){
+            getGui().setTextProperties();
             getController().getDiagram().setActionProps(true);
             getGui().endExecutePropertiesDialog();
             return true;
@@ -948,6 +980,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //CycleDiagramProps dialog event *********************************************************************
         //pressed OK button
         if(methodName.contains("setCycleDiagramProps")){
+            getGui().setTextProperties();
             getController().getDiagram().setActionProps(true);
             getGui().endExecutePropertiesDialog();
             return true;
@@ -958,6 +991,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //TargetDiagramProps dialog event *********************************************************************
         //pressed OK button
         if(methodName.contains("setTargetDiagramProps")){
+            getGui().setTextProperties();
             getController().getDiagram().setActionProps(true);
             if(getController().getGui().isLefLayoutInTargetDiagram())
                 ((TargetDiagram)getController().getDiagram()).setLeftLayoutProperty(true);
@@ -971,6 +1005,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //PyramidDiagramProps dialog event *********************************************************************
         //pressed OK button
         if(methodName.contains("setPyramidDiagramProps")){
+            getGui().setTextProperties();
             getController().getDiagram().setActionProps(true);
             getGui().endExecutePropertiesDialog();
             return true;

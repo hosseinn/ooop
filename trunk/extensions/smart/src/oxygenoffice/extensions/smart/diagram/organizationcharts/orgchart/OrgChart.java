@@ -83,6 +83,7 @@ public class OrgChart extends OrganizationChart{
 
             XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
             m_xShapes.add(xStartShape);
+            setTextOfShape(xStartShape, " ");
             setItemProperties(xStartShape, (short)0);
 
             xCoord = m_PageProps.BorderLeft + m_iHalfDiff;
@@ -92,6 +93,7 @@ public class OrgChart extends OrganizationChart{
             for( int i = 2; i <= n; i++ ){
                 xRectShape = createShape("RectangleShape", i, xCoord + (shapeWidth + horSpace) * (i-2), yCoord, shapeWidth, shapeHeight);
                 m_xShapes.add(xRectShape);
+                setTextOfShape(xRectShape, " ");
                 setItemProperties(xRectShape, (short)1);
 
                 XShape xConnectorShape = createShape("ConnectorShape", i);
@@ -207,6 +209,7 @@ public class OrgChart extends OrganizationChart{
                                 selectedItem.setFirstSibling(newTreeItem);
                             }
 
+                            setTextOfShape(xRectangleShape, " ");
                             setItemProperties(xRectangleShape, newTreeItem.getDeepOfItem());
                             
                             if(iTopShapeID > 1){

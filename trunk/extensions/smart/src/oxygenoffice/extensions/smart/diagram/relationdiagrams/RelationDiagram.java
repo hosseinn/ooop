@@ -6,10 +6,12 @@ import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.drawing.FillStyle;
 import com.sun.star.drawing.LineStyle;
+import com.sun.star.drawing.TextFitToSizeType;
 import com.sun.star.drawing.XShape;
 import com.sun.star.frame.XFrame;
 import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import java.util.ArrayList;
 import oxygenoffice.extensions.smart.Controller;
@@ -54,10 +56,13 @@ public abstract class RelationDiagram extends Diagram{
         createControlShape();
         getController().removeSelectionListener();
         if(m_xDrawPage != null && m_xShapes != null){
-            if(isBaseColorsProps() && getGui() != null && getGui().getControlDialogWindow() != null)
-                getGui().setImageColorOfControlDialog(aCOLORS[0]);
+            if(getGui() != null && getGui().getControlDialogWindow() != null)
+                if(isBaseColorsProps())
+                    getGui().setImageColorOfControlDialog(aCOLORS[0]);
+                else
+                    getGui().setImageColorOfControlDialog(getColorProps());
             for(ShapeData shapeData : shapeDatas){
-                createItem(shapeData.getID(), shapeData.getText());
+                createItem(shapeData.getID(), shapeData.getText(), shapeData.getColor());
                 if(isBaseColorsProps() && getGui() != null && getGui().getControlDialogWindow() != null)
                     getGui().setImageColorOfControlDialog(aCOLORS[shapeData.getID() % 8]);
             }
@@ -127,16 +132,23 @@ public abstract class RelationDiagram extends Diagram{
 
     public abstract int getTopShapeID();
 
-    public abstract void createItem(int shapeID, String str);
+    public abstract RelationDiagramItem createItem(int shapeID, String str, Color oColor);
 
-    public void createItem(int shapeID){
-        createItem(shapeID, "DefaultText");
+    public abstract RelationDiagramItem createItem(int shapeID, String str, int color);
+
+    public RelationDiagramItem createItem(int shapeID, String str){
+        int color = getColor(shapeID);
+        return createItem(shapeID, str, color);
+    }
+
+    public RelationDiagramItem createItem(int shapeID){
+        return createItem(shapeID, "DefaultText");
     }
 
     public ArrayList<ShapeData> getShapeDatas(){
         ArrayList<ShapeData> shapeDatas = new ArrayList<ShapeData>();
         for(RelationDiagramItem item : items)
-            shapeDatas.add(new ShapeData(item.getID(), item.getText()));
+            shapeDatas.add(new ShapeData(item.getID(), item.getText(), item.getColor()));
         return shapeDatas;
     }
 
@@ -217,6 +229,23 @@ public abstract class RelationDiagram extends Diagram{
         }
     }
 
+    @Override
+    public void setFontPropertyValues(){
+        try {
+            XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, getFirstItem().getTextShape());
+            TextFitToSizeType textFit = (TextFitToSizeType)xPropText.getPropertyValue("TextFitToSize");
+            if(textFit.getValue() == TextFitToSizeType.NONE_value){
+                setTextFitProps(false);
+            } else{
+                setTextFitProps(true);
+            }
+            float fontSizeValue = AnyConverter.toFloat(xPropText.getPropertyValue("CharHeight"));
+            setFontSizeProps(fontSizeValue);
+        } catch (Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+
     public void setShapeProperties(XShape xShape) {
         if (getShapeName(xShape).contains("EllipseShape"))
             setShapeProperties(xShape, "EllipseShape");
@@ -233,6 +262,11 @@ public abstract class RelationDiagram extends Diagram{
     public void setAllShapeProperties(){
         for(RelationDiagramItem item : items)
             item.setShapesProps();
+    }
+
+    public void setAllShapeFontMeausereProperties(){
+        for(RelationDiagramItem item : items)
+            item.setShapeFontMeausereProps();
     }
 
     public int getNextColor(){

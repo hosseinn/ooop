@@ -5,10 +5,12 @@ public class ShapeData {
 
     private int     id = -1;
     private String  text = "";
+    private Color   oColor = null;
 
-    ShapeData(int id, String text){
+    ShapeData(int id, String text, Color oColor){
         this.id     = id;
         this.text   = text;
+        this.oColor  = oColor;
     }
 
     public int getID(){
@@ -23,4 +25,12 @@ public class ShapeData {
     public void setText(String text){
         this.text = text;
     }
+    public Color getColor(){
+        return oColor;
+    }
+    /*
+    public void setColor(Color oColor){
+        this.oColor = oColor;
+    }
+     */
 }

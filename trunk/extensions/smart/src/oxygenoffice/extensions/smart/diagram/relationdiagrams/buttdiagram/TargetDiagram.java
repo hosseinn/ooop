@@ -21,6 +21,7 @@ import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
 import oxygenoffice.extensions.smart.Gui;
+import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
 
@@ -132,10 +133,35 @@ public class TargetDiagram extends RelationDiagram{
                 getGui().setImageColorOfControlDialog(aCOLORS[ (selectedShapeID + 1) % 8] );
         }
     }
+
+
+
+    @Override
+    public RelationDiagramItem createItem(int shapeID, String str, Color oColor){
+        XShape xEllipseShape = createShape("EllipseShape", shapeID);
+        m_xShapes.add(xEllipseShape);
+        setMoveProtectOfShape(xEllipseShape);
+
+        XShape xRectangleShape = createShape("RectangleShape", shapeID);
+        m_xShapes.add(xRectangleShape);
+        setMoveProtectOfShape(xRectangleShape);
+
+        XShape xConnShape = createConnectorShape(shapeID, xEllipseShape, xRectangleShape);
+        setMoveProtectOfShape(xConnShape);
+
+        TargetDiagramItem item = new TargetDiagramItem(this, shapeID, xEllipseShape, xRectangleShape, xConnShape);
+        addItem(item);
+
+        item.setText(str);
+        item.setShapesProps();
+        item.setColor(oColor);
+        getController().setSelectedShape(xEllipseShape);
+
+        return item;
+    }
     
     @Override
-    public void createItem(int shapeID, String str) {
-        int color = getColor(shapeID);
+    public RelationDiagramItem createItem(int shapeID, String str, int color) {
         XShape xEllipseShape = createShape("EllipseShape", shapeID);
         m_xShapes.add(xEllipseShape);
         if(m_IsBlueGradients || m_IsRedGradients){
@@ -150,18 +176,20 @@ public class TargetDiagram extends RelationDiagram{
         XShape xRectangleShape = createShape("RectangleShape", shapeID);
         m_xShapes.add(xRectangleShape);
         setMoveProtectOfShape(xRectangleShape);
-        setTextFitToSize(xRectangleShape);
 
         XShape xConnShape = createConnectorShape(shapeID, xEllipseShape, xRectangleShape);
         setMoveProtectOfShape(xConnShape);
 
         TargetDiagramItem item = new TargetDiagramItem(this, shapeID, xEllipseShape, xRectangleShape, xConnShape);
         addItem(item);
-        item.setShapesProps();
+
+        if(str.equals(""))
+            str = " ";
         if(str.equals("DefaultText"))
             item.setDefaultText();
         else
             item.setText(str);
+        item.setShapesProps();
 
         XShape selectedShape = getController().getSelectedShape();
         if(selectedShape != null){
@@ -172,6 +200,8 @@ public class TargetDiagram extends RelationDiagram{
                 getController().setSelectedShape(xEllipseShape);
         }else
             getController().setSelectedShape(xEllipseShape);
+        
+        return item;
     }
 
     public XShape createConnectorShape(int ID, XShape xEllipseShape, XShape xRectShape){
@@ -481,9 +511,10 @@ public class TargetDiagram extends RelationDiagram{
                 setAllShapeProperties();
             }else{
                 setSelectedShapesProperties();
+                setAllShapeFontMeausereProperties();
             }
             setModifyColorsProps(false);
-
+            
         }else{
             setSelectedAllShapesProps(isSelectAllShape);
             m_IsLeftLayout = isLeftLayout;
@@ -574,6 +605,9 @@ public class TargetDiagram extends RelationDiagram{
                         setTextColorOfShape(xShape, color);
                 }
             }
+            
+            setFontPropertiesOfShape(xShape);
+
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {

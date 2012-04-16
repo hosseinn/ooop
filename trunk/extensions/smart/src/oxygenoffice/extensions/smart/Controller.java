@@ -364,6 +364,8 @@ public final class Controller implements XSelectionChangeListener {
             String oldDiagramTypeName = getDiagram().getDiagramTypeName();
 
             //store props of old diagram
+            boolean isTextFit = getDiagram().isTextFitProps();
+            float fFontSize = getDiagram().getFontSizeProps();
             short style = getDiagram().getStyle();
             boolean isSelectAllShape = getDiagram().isSelectedAllShapesProps();
             short sSelectedArea = getDiagram().getSeletctedAreaProps();
@@ -385,6 +387,8 @@ public final class Controller implements XSelectionChangeListener {
             instantiateDiagram();
 
             //set old props to the new diagram
+            getDiagram().setTextFitProps(isTextFit);
+            getDiagram().setFontSizeProps(fFontSize);
             getDiagram().setColorProps(color);
             getDiagram().setStartColorProps(startColor);
             getDiagram().setEndColorProps(endColor);
@@ -402,10 +406,41 @@ public final class Controller implements XSelectionChangeListener {
             m_IsOrganiGroupConversAction = false;
         }
         if(m_GroupType == Controller.RELATIONGROUP){
+
+            //store props of old diagram
+            boolean isTextFit = getDiagram().isTextFitProps();
+            float fFontSize = getDiagram().getFontSizeProps();
+            boolean isBaseColors = getDiagram().isBaseColorsProps();
+            int color = getDiagram().getColorProps();
+            int startColor = getDiagram().getStartColorProps();
+            int endColor = getDiagram().getEndColorProps();
+            boolean isBlueGradients = getDiagram().isBlueGradientsProps();
+            boolean isRedGradients = getDiagram().isRedGradientsProps();
+
+            //basic settings
+            getDiagram().setBlueGradientsProps(false);
+            getDiagram().setRedGradientsProps(false);
+            getDiagram().setBaseColorsWithGradientsProps(false);
+
             ArrayList<ShapeData> shapeDatas = ((RelationDiagram)getDiagram()).getShapeDatas();
             ((RelationDiagram)getDiagram()).removeAllShapesFromDrawPage();
             setDiagramType(diagramType);
             instantiateDiagram();
+ 
+            //set old props to the new diagram
+            getDiagram().setTextFitProps(isTextFit);
+            getDiagram().setFontSizeProps(fFontSize);
+            getDiagram().setBaseColorsProps(isBaseColors);
+            getDiagram().setColorProps(color);
+            getDiagram().setStartColorProps(startColor);
+            getDiagram().setEndColorProps(endColor);
+            if(diagramType != VENNDIAGRAM){
+                getDiagram().setBlueGradientsProps(isBlueGradients);
+                getDiagram().setRedGradientsProps(isRedGradients);
+            }
+
+            getGui().setColorModeOfImageOfControlDialog();
+
             ((RelationDiagram)getDiagram()).createDiagram(shapeDatas);
             getDiagram().initDiagram();
 

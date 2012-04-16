@@ -54,7 +54,7 @@ public class VennDiagramItem extends RelationDiagramItem{
     public boolean isInjuredItem(){
         return !getRDiagram().isInGruopShapes(xMainShape);
     }
-
+    
     @Override
     public void setShapesProps(){
         if(xMainShape != null){
@@ -64,6 +64,18 @@ public class VennDiagramItem extends RelationDiagramItem{
         if(xTextShape != null){
             if(getRDiagram().isInGruopShapes(xTextShape))
                 getRDiagram().setShapeProperties(xTextShape);
+        }
+    }
+
+    @Override
+    public void setShapeFontMeausereProps(){
+        if(xMainShape != null){
+            if(getRDiagram().isInGruopShapes(xMainShape))
+                getRDiagram().setFontPropertiesOfShape(xMainShape);
+        }
+        if(xTextShape != null){
+            if(getRDiagram().isInGruopShapes(xTextShape))
+                getRDiagram().setFontPropertiesOfShape(xTextShape);
         }
     }
 

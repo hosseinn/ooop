@@ -1,5 +1,6 @@
 package oxygenoffice.extensions.smart.diagram.relationdiagrams.buttdiagram;
 
+import com.sun.star.awt.GradientStyle;
 import com.sun.star.awt.Point;
 import com.sun.star.awt.Size;
 import com.sun.star.beans.PropertyVetoException;
@@ -11,6 +12,7 @@ import com.sun.star.drawing.GluePoint2;
 import com.sun.star.drawing.XGluePointsSupplier;
 import com.sun.star.drawing.XShape;
 import com.sun.star.uno.UnoRuntime;
+import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
 
 /**
@@ -41,6 +43,18 @@ public class TargetDiagramItem extends RelationDiagramItem{
         if(xTextShape != null){
             if(getRDiagram().isInGruopShapes(xTextShape))
                 getRDiagram().setShapeProperties(xTextShape);
+        }
+    }
+
+    @Override
+    public void setShapeFontMeausereProps(){
+        if(xMainShape != null){
+            if(getRDiagram().isInGruopShapes(xMainShape))
+                getRDiagram().setFontPropertiesOfShape(xMainShape);
+        }
+        if(xTextShape != null){
+            if(getRDiagram().isInGruopShapes(xTextShape))
+                getRDiagram().setFontPropertiesOfShape(xTextShape);
         }
     }
 
@@ -167,6 +181,22 @@ public class TargetDiagramItem extends RelationDiagramItem{
         if(xConnShape != null){
             if(getRDiagram().isInGruopShapes(xConnShape))
                 getRDiagram().removeShapeFromGroup(xConnShape);
+        }
+    }
+
+    @Override
+    public void setColor(Color oColor){
+        if(getRDiagram() != null){
+            if(oColor.isGradient()){
+                getRDiagram().setGradient(xMainShape, GradientStyle.RADIAL, oColor.getStartColor(), oColor.getEndColor(), (short)0, (short)0, (short)50, (short)50, (short)100, (short)100);
+                //getRDiagram().setGradient(xTextShape, GradientStyle.RECT, oColor.getStartColor(), oColor.getEndColor(), (short)0, (short)10, (short)50, (short)50, (short)100, (short)100);
+                ((TargetDiagram)getRDiagram()).setInvisibleFeatures(xTextShape);
+                ((TargetDiagram)getRDiagram()).setTextColorOfShape(xTextShape, oColor.getStartColor());
+            }else{
+                getRDiagram().setColorOfShape(xMainShape, oColor.getColor());
+                ((TargetDiagram)getRDiagram()).setInvisibleFeatures(xTextShape);
+                ((TargetDiagram)getRDiagram()).setTextColorOfShape(xTextShape, oColor.getColor());
+            }
         }
     }
 

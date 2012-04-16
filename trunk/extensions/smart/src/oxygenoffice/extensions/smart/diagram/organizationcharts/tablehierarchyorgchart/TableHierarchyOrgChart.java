@@ -76,6 +76,7 @@ public class TableHierarchyOrgChart extends OrganizationChart {
 
             XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
             m_xShapes.add(xStartShape);
+            setTextOfShape(xStartShape, " ");
             setItemProperties(xStartShape, (short)0);
           
             yCoord += verUnit;
@@ -85,6 +86,7 @@ public class TableHierarchyOrgChart extends OrganizationChart {
             for( int i = 2; i <= n; i++ ){
                 xRectShape = createShape("RectangleShape", i, xCoord + ((i-2) * horUnit), yCoord, shapeWidth, shapeHeight);
                 m_xShapes.add(xRectShape);
+                setTextOfShape(xRectShape, " ");
                 setItemProperties(xRectShape, (short)1);
 
                 XShape xConnectorShape = createShape("ConnectorShape", i);
@@ -179,6 +181,7 @@ public class TableHierarchyOrgChart extends OrganizationChart {
                                 selectedItem.setFirstSibling(newTreeItem);
                             }
 
+                            setTextOfShape(xRectangleShape, " ");
                             setItemProperties(xRectangleShape, level);
                             
                             if(iTopShapeID > 1){
