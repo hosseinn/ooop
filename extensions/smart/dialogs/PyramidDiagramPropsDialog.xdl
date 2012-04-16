@@ -1,104 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="PyramidDiagramPropsDialog" dlg:left="0" dlg:top="66" dlg:width="235" dlg:height="224" dlg:help-text="&amp;703.PyramidDiagramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;704.PyramidDiagramPropsDialog.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="PyramidDiagramPropsDialog" dlg:left="0" dlg:top="66" dlg:width="235" dlg:height="259" dlg:help-text="&amp;267.PyramidDiagramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;268.PyramidDiagramPropsDialog.Title">
  <dlg:styles>
   <dlg:style dlg:style-id="0" dlg:background-color="0xff" dlg:border="simple"/>
+  <dlg:style dlg:style-id="1" dlg:background-color="0x0" dlg:border="simple"/>
  </dlg:styles>
  <dlg:bulletinboard>
-  <dlg:titledbox dlg:id="frameControl1" dlg:tab-index="7" dlg:left="80" dlg:top="6" dlg:width="149" dlg:height="28" dlg:help-text="&amp;705.PyramidDiagramPropsDialog.frameControl1.HelpText">
-   <dlg:title dlg:value="&amp;706.PyramidDiagramPropsDialog.frameControl1.Label"/>
+  <dlg:titledbox dlg:id="frameControl1" dlg:tab-index="7" dlg:left="80" dlg:top="6" dlg:width="149" dlg:height="26" dlg:help-text="&amp;269.PyramidDiagramPropsDialog.frameControl1.HelpText">
+   <dlg:title dlg:value="&amp;270.PyramidDiagramPropsDialog.frameControl1.Label"/>
   </dlg:titledbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="16" dlg:left="90" dlg:top="101" dlg:width="50" dlg:height="10" dlg:help-text="&amp;707.PyramidDiagramPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;708.PyramidDiagramPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Monographic" dlg:checked="true">
+   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="16" dlg:left="90" dlg:top="98" dlg:width="50" dlg:height="10" dlg:help-text="&amp;271.PyramidDiagramPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;272.PyramidDiagramPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Monographic" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineYes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="17" dlg:left="155" dlg:top="101" dlg:width="50" dlg:height="10" dlg:help-text="&amp;709.PyramidDiagramPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;710.PyramidDiagramPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Monographic">
+   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="17" dlg:left="155" dlg:top="98" dlg:width="50" dlg:height="10" dlg:help-text="&amp;273.PyramidDiagramPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;274.PyramidDiagramPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Monographic">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineNo" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:button dlg:id="okCommandButton" dlg:tab-index="21" dlg:left="5" dlg:top="206" dlg:width="225" dlg:height="14" dlg:help-text="&amp;711.PyramidDiagramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;712.PyramidDiagramPropsDialog.okCommandButton.Label">
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="27" dlg:left="5" dlg:top="242" dlg:width="225" dlg:height="14" dlg:help-text="&amp;275.PyramidDiagramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;276.PyramidDiagramPropsDialog.okCommandButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setPyramidDiagramProps" script:language="UNO"/>
   </dlg:button>
-  <dlg:menulist dlg:id="listBox" dlg:tab-index="6" dlg:left="5" dlg:top="4" dlg:width="72" dlg:height="150" dlg:help-text="&amp;713.PyramidDiagramPropsDialog.listBox.HelpText">
+  <dlg:menulist dlg:id="listBox" dlg:tab-index="6" dlg:left="5" dlg:top="3" dlg:width="72" dlg:height="186" dlg:help-text="&amp;277.PyramidDiagramPropsDialog.listBox.HelpText">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;714.listBox.StringItemList" dlg:selected="true"/>
-    <dlg:menuitem dlg:value="&amp;715.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;716.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;717.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;718.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;719.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;720.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;278.listBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;279.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;280.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;281.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;282.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;283.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;284.listBox.StringItemList"/>
    </dlg:menupopup>
    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedStyle" script:language="UNO"/>
   </dlg:menulist>
-  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="11" dlg:left="90" dlg:top="53" dlg:width="75" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;721.PyramidDiagramPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;722.PyramidDiagramPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
+  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="11" dlg:left="90" dlg:top="51" dlg:width="75" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;285.PyramidDiagramPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;286.PyramidDiagramPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyColors" script:language="UNO"/>
   </dlg:checkbox>
-  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="102" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;723.PyramidDiagramPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;724.PyramidDiagramPropsDialog.allShapeButton.Label">
+  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="102" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;287.PyramidDiagramPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;288.PyramidDiagramPropsDialog.allShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:allShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="117" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;725.PyramidDiagramPropsDialog.firstShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;726.PyramidDiagramPropsDialog.firstShapeButton.Label">
+  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="117" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;289.PyramidDiagramPropsDialog.firstShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;290.PyramidDiagramPropsDialog.firstShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:first" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="2" dlg:left="132" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;727.PyramidDiagramPropsDialog.previousShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;728.PyramidDiagramPropsDialog.previousShapeButton.Label">
+  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="2" dlg:left="132" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;291.PyramidDiagramPropsDialog.previousShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;292.PyramidDiagramPropsDialog.previousShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:previous" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="3" dlg:left="147" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;729.PyramidDiagramPropsDialog.nextShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;730.PyramidDiagramPropsDialog.nextShapeButton.Label">
+  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="3" dlg:left="147" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;293.PyramidDiagramPropsDialog.nextShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;294.PyramidDiagramPropsDialog.nextShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:next" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="mainShapeButton" dlg:tab-index="4" dlg:left="162" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;731.PyramidDiagramPropsDialog.mainShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;732.PyramidDiagramPropsDialog.mainShapeButton.Label">
+  <dlg:button dlg:id="mainShapeButton" dlg:tab-index="4" dlg:left="162" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;295.PyramidDiagramPropsDialog.mainShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;296.PyramidDiagramPropsDialog.mainShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:mainShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="textShapeButton" dlg:tab-index="5" dlg:left="177" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;733.PyramidDiagramPropsDialog.textShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;734.PyramidDiagramPropsDialog.textShapeButton.Label">
+  <dlg:button dlg:id="textShapeButton" dlg:tab-index="5" dlg:left="177" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;297.PyramidDiagramPropsDialog.textShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;298.PyramidDiagramPropsDialog.textShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:textShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:img dlg:id="imageControl" dlg:tab-index="22" dlg:left="80" dlg:top="3" dlg:width="150" dlg:height="150" dlg:help-text="&amp;735.PyramidDiagramPropsDialog.imageControl.HelpText"/>
+  <dlg:img dlg:id="imageControl" dlg:tab-index="28" dlg:left="80" dlg:top="3" dlg:width="150" dlg:height="150" dlg:help-text="&amp;299.PyramidDiagramPropsDialog.imageControl.HelpText"/>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="yesShadowOptionButton" dlg:tab-index="19" dlg:left="90" dlg:top="134" dlg:width="50" dlg:height="10" dlg:help-text="&amp;736.PyramidDiagramPropsDialog.yesShadowOptionButton.HelpText" dlg:value="&amp;737.PyramidDiagramPropsDialog.yesShadowOptionButton.Label" dlg:group-name="Shadow">
+   <dlg:radio dlg:id="yesShadowOptionButton" dlg:tab-index="19" dlg:left="90" dlg:top="130" dlg:width="50" dlg:height="10" dlg:help-text="&amp;300.PyramidDiagramPropsDialog.yesShadowOptionButton.HelpText" dlg:value="&amp;301.PyramidDiagramPropsDialog.yesShadowOptionButton.Label" dlg:group-name="Shadow">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setShadowYes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="noShadowOptionButton" dlg:tab-index="20" dlg:left="155" dlg:top="134" dlg:width="50" dlg:height="10" dlg:help-text="&amp;738.PyramidDiagramPropsDialog.noShadowOptionButton.HelpText" dlg:value="&amp;739.PyramidDiagramPropsDialog.noShadowOptionButton.Label" dlg:group-name="Shadow" dlg:checked="true">
+   <dlg:radio dlg:id="noShadowOptionButton" dlg:tab-index="20" dlg:left="155" dlg:top="130" dlg:width="50" dlg:height="10" dlg:help-text="&amp;302.PyramidDiagramPropsDialog.noShadowOptionButton.HelpText" dlg:value="&amp;303.PyramidDiagramPropsDialog.noShadowOptionButton.Label" dlg:group-name="Shadow" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setShadowNo" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="baseColorOptionButton" dlg:tab-index="12" dlg:left="90" dlg:top="66" dlg:width="60" dlg:height="10" dlg:help-text="&amp;740.PyramidDiagramPropsDialog.baseColorOptionButton.HelpText" dlg:value="&amp;741.PyramidDiagramPropsDialog.baseColorOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
+   <dlg:radio dlg:id="baseColorOptionButton" dlg:tab-index="12" dlg:left="90" dlg:top="64" dlg:width="60" dlg:height="10" dlg:help-text="&amp;304.PyramidDiagramPropsDialog.baseColorOptionButton.HelpText" dlg:value="&amp;305.PyramidDiagramPropsDialog.baseColorOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setBaseColor" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="13" dlg:left="155" dlg:top="66" dlg:width="35" dlg:height="10" dlg:help-text="&amp;742.PyramidDiagramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;743.PyramidDiagramPropsDialog.colorOptionButton.Label" dlg:group-name="Color">
+   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="13" dlg:left="155" dlg:top="64" dlg:width="35" dlg:height="10" dlg:help-text="&amp;306.PyramidDiagramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;307.PyramidDiagramPropsDialog.colorOptionButton.Label" dlg:group-name="Color">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColor" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="14" dlg:left="191" dlg:top="65" dlg:width="15" dlg:height="10" dlg:help-text="&amp;744.PyramidDiagramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="14" dlg:left="191" dlg:top="63" dlg:width="15" dlg:height="10" dlg:help-text="&amp;308.PyramidDiagramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
-  <dlg:titledbox dlg:id="frameControl2" dlg:tab-index="10" dlg:left="80" dlg:top="39" dlg:width="149" dlg:height="45" dlg:help-text="&amp;745.PyramidDiagramPropsDialog.frameControl2.HelpText">
-   <dlg:title dlg:value="&amp;746.PyramidDiagramPropsDialog.frameControl2.Label"/>
+  <dlg:titledbox dlg:id="frameControl2" dlg:tab-index="10" dlg:left="80" dlg:top="38" dlg:width="149" dlg:height="43" dlg:help-text="&amp;309.PyramidDiagramPropsDialog.frameControl2.HelpText">
+   <dlg:title dlg:value="&amp;310.PyramidDiagramPropsDialog.frameControl2.Label"/>
   </dlg:titledbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="8" dlg:left="90" dlg:top="18" dlg:width="40" dlg:height="10" dlg:help-text="&amp;747.PyramidDiagramPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;748.PyramidDiagramPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="8" dlg:left="90" dlg:top="17" dlg:width="40" dlg:height="10" dlg:help-text="&amp;311.PyramidDiagramPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;312.PyramidDiagramPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="9" dlg:left="155" dlg:top="18" dlg:width="70" dlg:height="10" dlg:help-text="&amp;749.PyramidDiagramPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;750.PyramidDiagramPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
+   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="9" dlg:left="155" dlg:top="17" dlg:width="70" dlg:height="10" dlg:help-text="&amp;313.PyramidDiagramPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;314.PyramidDiagramPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:titledbox dlg:id="frameControl4" dlg:tab-index="18" dlg:left="80" dlg:top="122" dlg:width="149" dlg:height="28" dlg:help-text="&amp;751.PyramidDiagramPropsDialog.frameControl4.HelpText">
-   <dlg:title dlg:value="&amp;752.PyramidDiagramPropsDialog.frameControl4.Label"/>
+  <dlg:titledbox dlg:id="frameControl4" dlg:tab-index="18" dlg:left="80" dlg:top="119" dlg:width="149" dlg:height="26" dlg:help-text="&amp;315.PyramidDiagramPropsDialog.frameControl4.HelpText">
+   <dlg:title dlg:value="&amp;316.PyramidDiagramPropsDialog.frameControl4.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="frameControl3" dlg:tab-index="15" dlg:left="80" dlg:top="89" dlg:width="149" dlg:height="28" dlg:help-text="&amp;753.PyramidDiagramPropsDialog.frameControl3.HelpText">
-   <dlg:title dlg:value="&amp;754.PyramidDiagramPropsDialog.frameControl3.Label"/>
+  <dlg:titledbox dlg:id="frameControl3" dlg:tab-index="15" dlg:left="80" dlg:top="87" dlg:width="149" dlg:height="26" dlg:help-text="&amp;317.PyramidDiagramPropsDialog.frameControl3.HelpText">
+   <dlg:title dlg:value="&amp;318.PyramidDiagramPropsDialog.frameControl3.Label"/>
   </dlg:titledbox>
-  <dlg:text dlg:id="Label1" dlg:tab-index="24" dlg:left="13" dlg:top="168" dlg:width="50" dlg:height="9" dlg:help-text="&amp;755.PyramidDiagramPropsDialog.Label1.HelpText" dlg:value="&amp;756.PyramidDiagramPropsDialog.Label1.Label"/>
-  <dlg:text dlg:id="Label2" dlg:tab-index="25" dlg:left="13" dlg:top="177" dlg:width="50" dlg:height="9" dlg:help-text="&amp;757.PyramidDiagramPropsDialog.Label2.HelpText" dlg:value="&amp;758.PyramidDiagramPropsDialog.Label2.Label"/>
-  <dlg:text dlg:id="Label5" dlg:tab-index="27" dlg:left="140" dlg:top="177" dlg:width="55" dlg:height="9" dlg:help-text="&amp;759.PyramidDiagramPropsDialog.Label5.HelpText" dlg:value="&amp;760.PyramidDiagramPropsDialog.Label5.Label"/>
-  <dlg:text dlg:id="Label6" dlg:tab-index="28" dlg:left="67" dlg:top="168" dlg:width="70" dlg:height="9" dlg:help-text="&amp;761.PyramidDiagramPropsDialog.Label6.HelpText" dlg:value="&amp;762.PyramidDiagramPropsDialog.Label6.Label"/>
-  <dlg:text dlg:id="Label7" dlg:tab-index="29" dlg:left="67" dlg:top="177" dlg:width="70" dlg:height="9" dlg:help-text="&amp;763.PyramidDiagramPropsDialog.Label7.HelpText" dlg:value="&amp;764.PyramidDiagramPropsDialog.Label7.Label"/>
-  <dlg:text dlg:id="Label10" dlg:tab-index="31" dlg:left="195" dlg:top="177" dlg:width="20" dlg:height="9" dlg:help-text="&amp;765.PyramidDiagramPropsDialog.Label10.HelpText" dlg:value="&amp;766.PyramidDiagramPropsDialog.Label10.Label"/>
-  <dlg:text dlg:id="Label3" dlg:tab-index="32" dlg:left="13" dlg:top="186" dlg:width="50" dlg:height="9" dlg:help-text="&amp;767.PyramidDiagramPropsDialog.Label3.HelpText" dlg:value="&amp;768.PyramidDiagramPropsDialog.Label3.Label"/>
-  <dlg:text dlg:id="Label4" dlg:tab-index="26" dlg:left="140" dlg:top="168" dlg:width="55" dlg:height="9" dlg:help-text="&amp;769.PyramidDiagramPropsDialog.Label4.HelpText" dlg:value="&amp;770.PyramidDiagramPropsDialog.Label4.Label"/>
-  <dlg:text dlg:id="Label9" dlg:tab-index="30" dlg:left="195" dlg:top="168" dlg:width="20" dlg:height="9" dlg:help-text="&amp;771.PyramidDiagramPropsDialog.Label9.HelpText" dlg:value="&amp;772.PyramidDiagramPropsDialog.Label9.Label"/>
-  <dlg:text dlg:id="Label8" dlg:tab-index="33" dlg:left="67" dlg:top="186" dlg:width="70" dlg:height="9" dlg:help-text="&amp;773.PyramidDiagramPropsDialog.Label8.HelpText" dlg:value="&amp;774.PyramidDiagramPropsDialog.Label8.Label"/>
-  <dlg:titledbox dlg:id="FrameControl" dlg:tab-index="23" dlg:left="5" dlg:top="158" dlg:width="225" dlg:height="42" dlg:help-text="&amp;775.PyramidDiagramPropsDialog.FrameControl.HelpText">
-   <dlg:title dlg:value="&amp;776.PyramidDiagramPropsDialog.FrameControl.Label"/>
+  <dlg:text dlg:id="Label1" dlg:tab-index="30" dlg:left="13" dlg:top="204" dlg:width="50" dlg:height="9" dlg:help-text="&amp;319.PyramidDiagramPropsDialog.Label1.HelpText" dlg:value="&amp;320.PyramidDiagramPropsDialog.Label1.Label"/>
+  <dlg:text dlg:id="Label2" dlg:tab-index="31" dlg:left="13" dlg:top="213" dlg:width="50" dlg:height="9" dlg:help-text="&amp;321.PyramidDiagramPropsDialog.Label2.HelpText" dlg:value="&amp;322.PyramidDiagramPropsDialog.Label2.Label"/>
+  <dlg:text dlg:id="Label5" dlg:tab-index="33" dlg:left="140" dlg:top="213" dlg:width="55" dlg:height="9" dlg:help-text="&amp;323.PyramidDiagramPropsDialog.Label5.HelpText" dlg:value="&amp;324.PyramidDiagramPropsDialog.Label5.Label"/>
+  <dlg:text dlg:id="Label6" dlg:tab-index="34" dlg:left="67" dlg:top="204" dlg:width="70" dlg:height="9" dlg:help-text="&amp;325.PyramidDiagramPropsDialog.Label6.HelpText" dlg:value="&amp;326.PyramidDiagramPropsDialog.Label6.Label"/>
+  <dlg:text dlg:id="Label7" dlg:tab-index="35" dlg:left="67" dlg:top="213" dlg:width="70" dlg:height="9" dlg:help-text="&amp;327.PyramidDiagramPropsDialog.Label7.HelpText" dlg:value="&amp;328.PyramidDiagramPropsDialog.Label7.Label"/>
+  <dlg:text dlg:id="Label10" dlg:tab-index="37" dlg:left="195" dlg:top="213" dlg:width="20" dlg:height="9" dlg:help-text="&amp;329.PyramidDiagramPropsDialog.Label10.HelpText" dlg:value="&amp;330.PyramidDiagramPropsDialog.Label10.Label"/>
+  <dlg:text dlg:id="Label3" dlg:tab-index="38" dlg:left="13" dlg:top="222" dlg:width="50" dlg:height="9" dlg:help-text="&amp;331.PyramidDiagramPropsDialog.Label3.HelpText" dlg:value="&amp;332.PyramidDiagramPropsDialog.Label3.Label"/>
+  <dlg:text dlg:id="Label4" dlg:tab-index="32" dlg:left="140" dlg:top="204" dlg:width="55" dlg:height="9" dlg:help-text="&amp;333.PyramidDiagramPropsDialog.Label4.HelpText" dlg:value="&amp;334.PyramidDiagramPropsDialog.Label4.Label"/>
+  <dlg:text dlg:id="Label9" dlg:tab-index="36" dlg:left="195" dlg:top="204" dlg:width="20" dlg:height="9" dlg:help-text="&amp;335.PyramidDiagramPropsDialog.Label9.HelpText" dlg:value="&amp;336.PyramidDiagramPropsDialog.Label9.Label"/>
+  <dlg:text dlg:id="Label8" dlg:tab-index="39" dlg:left="67" dlg:top="222" dlg:width="70" dlg:height="9" dlg:help-text="&amp;337.PyramidDiagramPropsDialog.Label8.HelpText" dlg:value="&amp;338.PyramidDiagramPropsDialog.Label8.Label"/>
+  <dlg:titledbox dlg:id="FrameControl" dlg:tab-index="29" dlg:left="5" dlg:top="194" dlg:width="225" dlg:height="42" dlg:help-text="&amp;339.PyramidDiagramPropsDialog.FrameControl.HelpText">
+   <dlg:title dlg:value="&amp;340.PyramidDiagramPropsDialog.FrameControl.Label"/>
   </dlg:titledbox>
+  <dlg:titledbox dlg:id="frameControl5" dlg:tab-index="21" dlg:left="80" dlg:top="155" dlg:width="149" dlg:height="34" dlg:help-text="&amp;341.PyramidDiagramPropsDialog.frameControl5.HelpText">
+   <dlg:title dlg:value="&amp;342.PyramidDiagramPropsDialog.frameControl5.Label"/>
+  </dlg:titledbox>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="textFitOptionButton" dlg:tab-index="22" dlg:left="88" dlg:top="164" dlg:width="60" dlg:height="10" dlg:help-text="&amp;343.PyramidDiagramPropsDialog.textFitOptionButton.HelpText" dlg:value="&amp;344.PyramidDiagramPropsDialog.textFitOptionButton.Label" dlg:group-name="FontSettings" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setTextToFitToSize" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="fontSizeOptionButton" dlg:tab-index="23" dlg:left="155" dlg:top="164" dlg:width="40" dlg:height="10" dlg:help-text="&amp;345.PyramidDiagramPropsDialog.fontSizeOptionButton.HelpText" dlg:value="&amp;346.PyramidDiagramPropsDialog.fontSizeOptionButton.Label" dlg:group-name="FontSettings">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFontSize" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="fontSizeListBox" dlg:tab-index="24" dlg:disabled="true" dlg:left="196" dlg:top="162" dlg:width="24" dlg:height="12" dlg:help-text="&amp;347.PyramidDiagramPropsDialog.fontSizeListBox.HelpText" dlg:spin="true" dlg:linecount="29">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;348.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;349.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;350.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;351.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;352.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;353.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;354.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;355.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;356.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;357.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;358.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;359.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;360.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;361.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;362.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;363.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;364.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;365.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;366.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;367.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;368.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;369.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;370.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;371.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;372.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;373.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;374.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;375.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;376.fontSizeListBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedFontSize" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:checkbox dlg:id="modifyTextColorCheckBox" dlg:tab-index="25" dlg:left="88" dlg:top="177" dlg:width="72" dlg:height="10" dlg:help-text="&amp;382.PyramidDiagramPropsDialog.modifyTextColorCheckBox.HelpText" dlg:value="&amp;383.PyramidDiagramPropsDialog.modifyTextColorCheckBox.Label" dlg:checked="false">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyTextColor" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:text dlg:id="textColorLabel" dlg:tab-index="40" dlg:disabled="true" dlg:left="164" dlg:top="177" dlg:width="30" dlg:height="10" dlg:help-text="&amp;384.PyramidDiagramPropsDialog.textColorLabel.HelpText" dlg:value="&amp;385.PyramidDiagramPropsDialog.textColorLabel.Label"/>
+  <dlg:img dlg:style-id="1" dlg:id="textColorImageControl" dlg:tab-index="26" dlg:disabled="true" dlg:left="196" dlg:top="176" dlg:width="15" dlg:height="10" dlg:help-text="&amp;386.PyramidDiagramPropsDialog.textColorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
  </dlg:bulletinboard>
 </dlg:window>

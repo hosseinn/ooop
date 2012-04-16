@@ -9,6 +9,7 @@ import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
 import com.sun.star.drawing.FillStyle;
 import com.sun.star.drawing.LineStyle;
+import com.sun.star.drawing.TextFitToSizeType;
 import com.sun.star.drawing.XShape;
 import com.sun.star.drawing.XShapes;
 import com.sun.star.frame.XFrame;
@@ -371,6 +372,9 @@ public abstract class OrganizationChart extends Diagram{
             }else{
                 xProp.setPropertyValue("Shadow", new Boolean(false));
             }
+
+            setFontPropertiesOfShape(xShape);
+
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
@@ -378,6 +382,23 @@ public abstract class OrganizationChart extends Diagram{
         } catch (PropertyVetoException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+
+    @Override
+    public void setFontPropertyValues(){
+        try {
+            XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, getDiagramTree().getRootItem().getRectangleShape());
+            TextFitToSizeType textFit = (TextFitToSizeType)xPropText.getPropertyValue("TextFitToSize");
+            if(textFit.getValue() == TextFitToSizeType.NONE_value){
+                setTextFitProps(false);
+            } else{
+                setTextFitProps(true);
+            }
+            float fontSizeValue = AnyConverter.toFloat(xPropText.getPropertyValue("CharHeight"));
+            setFontSizeProps(fontSizeValue);
+        } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
     }
@@ -446,19 +467,20 @@ public abstract class OrganizationChart extends Diagram{
                 }
             }
             
-            if(isSelectedAllShapesProps())
+            if(isSelectedAllShapesProps()){
                 setAllShapeProperties();
-            else{
+            } else {
                 if(getSeletctedAreaProps() == Diagram.SELECTED_SHAPES)
                     setSelectedShapesProperties();
                 if(getSeletctedAreaProps() == Diagram.SIBLING_SHAPES)
                     setSiblingShapesProperties();
                 if(getSeletctedAreaProps() == Diagram.BRANCH_SHAPES)
                     setBranchShapesProperties();
+                
+                setAllShapeFontMeausereProperties();
             }
 
             setModifyColorsProps(false);
-            
         }else{
             setSelectedAllShapesProps(isSelectAllShape);
             setModifyColorsProps(isModifyColors);
@@ -481,6 +503,24 @@ public abstract class OrganizationChart extends Diagram{
                 currShapeName = getShapeName(xCurrShape);
                 if (currShapeName.contains("RectangleShape")&& !currShapeName.endsWith("RectangleShape0")) {
                     setShapeProperties(xCurrShape,"RectangleShape");
+                }
+            }
+        } catch (IndexOutOfBoundsException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+
+    public void setAllShapeFontMeausereProperties(){
+        try {
+            XShape xCurrShape = null;
+            String currShapeName = "";
+            for(int i=0; i < m_xShapes.getCount(); i++){
+                xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
+                currShapeName = getShapeName(xCurrShape);
+                if (currShapeName.contains("RectangleShape")&& !currShapeName.endsWith("RectangleShape0")) {
+                    setFontPropertiesOfShape(xCurrShape);
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
@@ -595,7 +635,9 @@ public abstract class OrganizationChart extends Diagram{
 
     public void setItemProperties(XShape xRectangleShape, short level){
         setMoveProtectOfShape(xRectangleShape);
-        setTextFitToSize(xRectangleShape);
+        
+        setFontPropertiesOfShape(xRectangleShape);
+
         if(m_IsGradients || m_IsBlueGradients || m_IsRedGradients){
             if(level != -1 && (m_IsBlueGradients || m_IsRedGradients))
                 setGradientsStylesColors(level);

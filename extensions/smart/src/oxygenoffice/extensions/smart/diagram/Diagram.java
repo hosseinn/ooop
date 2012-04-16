@@ -18,6 +18,7 @@ import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.XMultiServiceFactory;
+import com.sun.star.text.XText;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
@@ -72,13 +73,13 @@ public abstract class Diagram {
 
     private boolean                     m_IsModifyColors;
     protected boolean                   m_IsColor;
-    private boolean                     m_IsBaseColors;
-    protected boolean                   m_IsBaseColorsWithGradients;
-    protected boolean                   m_IsGradients       = false;
+    private boolean                     m_IsBaseColors              = true;
+    protected boolean                   m_IsBaseColorsWithGradients = false;
+    protected boolean                   m_IsGradients               = false;
     protected short                     m_sGradientDirection;
     // VERTICAL, HORIZONTAL
-    protected boolean                   m_IsBlueGradients;
-    protected boolean                   m_IsRedGradients;
+    protected boolean                   m_IsBlueGradients           = false;
+    protected boolean                   m_IsRedGradients            = false;
 
     protected int                       m_iColor            = 255;
     protected int                       m_iStartColor       = 16711680;
@@ -95,6 +96,13 @@ public abstract class Diagram {
     protected boolean                   m_IsShadow;
     protected boolean                   m_IsAction;
 
+    //text properties with default starting values for every diagram
+    protected boolean                   m_IsTextToFitToSize = true;
+    protected float                     m_fFontSize = (float)32.0;
+    //values have defined in FontSize class
+    protected boolean                   m_IsTextColorChage = false;
+    protected int                       m_iTextColor            = 0;
+    
 
     public Diagram(){ }
     
@@ -279,6 +287,38 @@ public abstract class Diagram {
         m_IsAction = bool;
     }
 
+    public void setTextColorProps(int color){
+        m_iTextColor = color;
+    }
+
+    public int getTextColorProps(){
+        return m_iTextColor;
+    }
+
+    public void setTextColorChange(boolean bool){
+        m_IsTextColorChage = bool;
+    }
+
+    public boolean isTextColorChange(){
+        return m_IsTextColorChage;
+    }
+
+    public void setTextFitProps(boolean bool){
+        m_IsTextToFitToSize = bool;
+    }
+
+    public boolean isTextFitProps(){
+        return m_IsTextToFitToSize;
+    }
+
+    public void setFontSizeProps(float fontSize){
+        m_fFontSize = fontSize;
+    }
+
+    public float getFontSizeProps(){
+        return m_fFontSize;
+    }
+    
     // determinde m_GroupSize
     public final void setGroupSize(){
         if(m_xDrawPage == null);
@@ -446,9 +486,9 @@ public abstract class Diagram {
                 }
             }
         } catch (IndexOutOfBoundsException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -484,11 +524,34 @@ public abstract class Diagram {
         }
         return null;
     }
-
+/*
     public void setTextFitToSize(XShape xShape){
         try {
             XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
             xPropText.setPropertyValue("TextFitToSize", TextFitToSizeType.PROPORTIONAL);
+        } catch (Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+*/
+    public abstract void setFontPropertyValues();
+
+    public void setFontPropertiesOfShape(XShape xShape){
+        try {
+            XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
+            if(isTextFitProps()){
+                xPropText.setPropertyValue("TextFitToSize", TextFitToSizeType.PROPORTIONAL);
+            }else{
+                xPropText.setPropertyValue("TextFitToSize", TextFitToSizeType.NONE);
+                xPropText.setPropertyValue("CharHeight", new Float(getFontSizeProps()));
+            }
+
+            if(isTextColorChange()){
+                XText xText = (XText)UnoRuntime.queryInterface(XText.class, xShape);
+                XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
+                xTextProps.setPropertyValue( "CharColor", new Integer(getTextColorProps()));
+            }
+
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
@@ -509,6 +572,10 @@ public abstract class Diagram {
     
     public void setGradient(XShape xShape, short angle){
         setGradient(xShape, GradientStyle.LINEAR, m_iStartColor, m_iEndColor, angle, (short)0, (short)0, (short)0, (short)100, (short)100);
+    }
+
+    public void setGradient(XShape xShape, int startColor, int endColor){
+        setGradient(xShape, GradientStyle.LINEAR, startColor, endColor, (short)0, (short)0, (short)0, (short)0, (short)100, (short)100);
     }
 
     public void setGradient(XShape xShape, GradientStyle gradientStyle, short angle, short border, short xOffset, short yOffset, short startIntensity, short endIntensity){
@@ -541,6 +608,11 @@ public abstract class Diagram {
         } catch (WrappedTargetException ex) {
             System.err.println(ex.getLocalizedMessage());
         }
+    }
+
+    public void setTextOfShape(XShape xShape, String str){
+        if(xShape != null)
+            ((XText) UnoRuntime.queryInterface(XText.class, xShape)).setString(str);
     }
  
 }

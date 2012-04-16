@@ -1,9 +1,19 @@
 package oxygenoffice.extensions.smart.diagram.relationdiagrams;
 
+import com.sun.star.awt.Gradient;
+import com.sun.star.beans.PropertyVetoException;
+import com.sun.star.beans.UnknownPropertyException;
+import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
+import com.sun.star.drawing.FillStyle;
 import com.sun.star.drawing.XShape;
+import com.sun.star.lang.IllegalArgumentException;
+import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.text.XText;
+import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oxygenoffice.extensions.smart.Controller;
 
 public abstract class RelationDiagramItem {
@@ -30,6 +40,35 @@ public abstract class RelationDiagramItem {
     
     public XShape getTextShape(){
         return xTextShape;
+    }
+
+    public Color getColor(){
+        try {
+            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xMainShape);
+            if(((FillStyle)xProp.getPropertyValue("FillStyle")) == FillStyle.SOLID){
+                int color = AnyConverter.toInt(xProp.getPropertyValue("FillColor"));
+                return new Color(false, color, 0, 0);
+            } else{
+                int startColor = ((Gradient)xProp.getPropertyValue("FillGradient")).StartColor;
+                int endColor = ((Gradient)xProp.getPropertyValue("FillGradient")).EndColor;
+                return new Color(true, startColor, startColor, endColor);
+            }
+        }  catch (Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+        return null;
+    }
+  
+    public void setColor(Color oColor){
+        if(getRDiagram() != null){
+            if(oColor.isGradient()){
+                getRDiagram().setGradient(xMainShape, oColor.getStartColor(), oColor.getEndColor());
+                getRDiagram().setGradient(xTextShape, oColor.getStartColor(), oColor.getEndColor());
+            }else{
+                getRDiagram().setColorOfShape(xMainShape, oColor.getColor());
+                getRDiagram().setColorOfShape(xTextShape, oColor.getColor());
+            }
+        }
     }
 
     public int getID(){
@@ -115,5 +154,7 @@ public abstract class RelationDiagramItem {
     public abstract boolean isInjuredItem();
 
     public abstract void setShapesProps();
+    
+    public abstract void setShapeFontMeausereProps();
     
 }

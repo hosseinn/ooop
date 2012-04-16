@@ -81,6 +81,7 @@ public class HorizontalOrgChart extends OrganizationChart{
 
             XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
             m_xShapes.add(xStartShape);
+            setTextOfShape(xStartShape, " ");
             setItemProperties(xStartShape, (short)0);
 
             xCoord += (shapeWidth + horSpace);
@@ -90,6 +91,7 @@ public class HorizontalOrgChart extends OrganizationChart{
             for( int i = 2; i <= n; i++ ){
                 xRectShape = createShape("RectangleShape", i, xCoord, yCoord + m_DrawAreaHeight - shapeHeight - (shapeHeight + verSpace) * (i-2), shapeWidth, shapeHeight);
                 m_xShapes.add(xRectShape);
+                setTextOfShape(xRectShape, " ");
                 setItemProperties(xRectShape, (short)1);
 
                 XShape xConnectorShape = createShape("ConnectorShape", i);
@@ -183,6 +185,7 @@ public class HorizontalOrgChart extends OrganizationChart{
                                 selectedItem.setFirstSibling(newTreeItem);
                             }
 
+                            setTextOfShape(xRectangleShape, " ");
                             setItemProperties(xRectangleShape, level);
                             
                             if(iTopShapeID > 1){

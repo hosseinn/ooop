@@ -19,6 +19,7 @@ import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
 import oxygenoffice.extensions.smart.Gui;
+import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
 
@@ -66,6 +67,8 @@ public class PyramidDiagram extends RelationDiagram {
     @Override
     public void createDiagram(){
         super.createDiagram();
+        m_IsTextToFitToSize = false;
+        m_fFontSize = (float)22.0;
         createDiagram(3);
     }
 
@@ -152,8 +155,23 @@ public class PyramidDiagram extends RelationDiagram {
     }
 
     @Override
-    public void createItem(int shapeID, String str) {
-        int color = getColor(shapeID);
+    public RelationDiagramItem createItem(int shapeID, String str, Color oColor){
+        XShape xTrapezeShape = createShape("PolyPolygonShape", shapeID);
+        m_xShapes.add(xTrapezeShape);
+        setMoveProtectOfShape(xTrapezeShape);
+
+        PyramidDiagramItem item = new PyramidDiagramItem(this, shapeID, xTrapezeShape);
+        addItem(item);
+
+        item.setText(str);
+        item.setShapesProps();
+        item.setColor(oColor);
+        getController().setSelectedShape(xTrapezeShape);
+        return item;
+    }
+
+    @Override
+    public RelationDiagramItem createItem(int shapeID, String str, int color) {
         XShape xTrapezeShape = createShape("PolyPolygonShape", shapeID);
         m_xShapes.add(xTrapezeShape);
         if(m_IsBaseColorsWithGradients || m_IsBlueGradients || m_IsRedGradients){
@@ -173,13 +191,16 @@ public class PyramidDiagram extends RelationDiagram {
 
         PyramidDiagramItem item = new PyramidDiagramItem(this, shapeID, xTrapezeShape);
         addItem(item);
-        item.setShapesProps();
+
+        if(str.equals(""))
+            str = " ";
         if(str.equals("DefaultText"))
             item.setDefaultText();
         else
             item.setText(str);
-
+        item.setShapesProps();
         getController().setSelectedShape(xTrapezeShape);
+        return item;
     }
 
     @Override
@@ -420,10 +441,12 @@ public class PyramidDiagram extends RelationDiagram {
                 }
             }
 
-            if(isSelectedAllShapesProps())
+            if(isSelectedAllShapesProps()){
                 setAllShapeProperties();
-            else
+            } else{
                 setSelectedShapesProperties();
+                setAllShapeFontMeausereProperties();
+            }
 
             setModifyColorsProps(false);
         }else{
@@ -496,6 +519,8 @@ public class PyramidDiagram extends RelationDiagram {
             else
                 xProp.setPropertyValue("LineStyle", LineStyle.NONE);
   
+            setFontPropertiesOfShape(xShape);
+            
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {

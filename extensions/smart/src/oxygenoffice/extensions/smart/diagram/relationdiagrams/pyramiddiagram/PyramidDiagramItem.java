@@ -30,6 +30,14 @@ public class PyramidDiagramItem extends RelationDiagramItem{
         }
     }
 
+    @Override
+    public void setShapeFontMeausereProps(){
+        if(xMainShape != null){
+            if(getRDiagram().isInGruopShapes(xMainShape))
+                getRDiagram().setFontPropertiesOfShape(xMainShape);
+        }
+    }
+
     public void setPosition(int numOfItems, Size controlShapeSize, Point controlShapePos) {
         if(xMainShape != null) {
             Point a = new Point();

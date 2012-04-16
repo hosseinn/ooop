@@ -17,6 +17,7 @@ import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
 import oxygenoffice.extensions.smart.Gui;
 import oxygenoffice.extensions.smart.diagram.Diagram;
+import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
 
@@ -200,9 +201,19 @@ public class VennDiagram extends RelationDiagram {
     }
 
     @Override
-    public void createItem(int shapeID, String str){
+    public RelationDiagramItem createItem(int shapeID, String str, Color oColor){
+        int color = 0;
+        if(!oColor.isGradient())
+            color = oColor.getColor();
+        else
+            color = oColor.getStartColor();
+        VennDiagramItem item = (VennDiagramItem)createItem(shapeID, str, color);
+        return item;
+    }
+
+    @Override
+    public RelationDiagramItem createItem(int shapeID, String str, int color){
         Size size = getControlShape().getSize();
-        int color = getColor(shapeID);
         XShape xEllipseShape = createShape("EllipseShape", shapeID, size.Width, size.Height);
         m_xShapes.add(xEllipseShape);
         setColorOfShape(xEllipseShape, color);
@@ -212,17 +223,22 @@ public class VennDiagram extends RelationDiagram {
         m_xShapes.add(xRectangleShape);
         setColorOfShape(xRectangleShape, color);
         setMoveProtectOfShape(xRectangleShape);
-        setTextFitToSize(xRectangleShape);
 
         VennDiagramItem item = new VennDiagramItem(this, shapeID, xEllipseShape, xRectangleShape);
         addItem(item);
-        item.setShapesProps();
+
+        if(str.equals(""))
+            str = " ";
         if(str.equals("DefaultText"))
             item.setDefaultText();
         else
             item.setText(str);
-        
+
+        item.setShapesProps();
+
         getController().setSelectedShape((Object)xEllipseShape);
+
+        return item;
     }
 
     @Override
@@ -326,7 +342,7 @@ public class VennDiagram extends RelationDiagram {
         m_IsAction = false;
 
         getGui().executePropertiesDialog();
-
+ 
         if(m_IsAction){
 
             if( m_Style == DEFAULT ){
@@ -364,6 +380,7 @@ public class VennDiagram extends RelationDiagram {
                 m_IsFrame = isFrame;
                 m_IsRoundedFrame = isRoundedFrame;
                 setSelectedShapesProperties();
+                setAllShapeFontMeausereProperties();
             }else{
                 if(!m_IsFrame)
                     m_IsRoundedFrame = isRoundedFrame;
@@ -415,7 +432,7 @@ public class VennDiagram extends RelationDiagram {
         XPropertySet xProp = null;
         try {
             xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
-            
+
             if(isModifyColorsProps()){
                 int color = -1;
                 int shapeID = getController().getShapeID(getShapeName(xShape));
@@ -456,6 +473,9 @@ public class VennDiagram extends RelationDiagram {
                     xProp.setPropertyValue("LineStyle", LineStyle.NONE);
                 }
             }
+
+            setFontPropertiesOfShape(xShape);
+
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {

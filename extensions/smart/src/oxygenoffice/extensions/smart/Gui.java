@@ -104,7 +104,7 @@ public class Gui {
     //**********************************************************************
 
 
-    //GradientDialog *******************************************************
+    //ConvertDialog *******************************************************
     private     XDialog             m_xConvertDialog                = null;
     //private     XWindow             m_xConvertDialogWindow        = null;
     protected   XTopWindow          m_xConvertDialogTopWindow       = null;
@@ -481,7 +481,7 @@ public class Gui {
                 setGraphic(m_xICOfControlDialog, "");
         }
     }
-    
+
     public void setImageColorOfControlDialog(int color){
         setImageColorOfControl(m_xICOfControlDialog, color);
     }
@@ -1139,12 +1139,17 @@ public class Gui {
                     }
 
                     setControlScaleImageProp(xControlContainer.getControl("imageControl"), false);
+                    
+                    getController().getDiagram().setFontPropertyValues();
                 }
             } catch (IllegalArgumentException ex) {
                 System.err.println(ex.getLocalizedMessage());
             }
         }
         if(m_xPropsDialog != null){
+
+            setTextOptionControls();
+
             if(getController().getGroupType() == Controller.ORGANIGROUP)
                 setOrganigramPropsDialog();
             if(getController().getDiagramType() == Controller.VENNDIAGRAM)
@@ -1162,7 +1167,133 @@ public class Gui {
             m_xPropsDialog.execute();
         }
     }
-     
+
+    public void setTextOptionControls(){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            boolean isFitText = getController().getDiagram().isTextFitProps();
+            if(isFitText){
+                XRadioButton textFitRB = (XRadioButton) UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("textFitOptionButton"));
+                textFitRB.setState(true);
+            }else{
+                XRadioButton fontSizeRB = (XRadioButton) UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("fontSizeOptionButton"));
+                fontSizeRB.setState(true);
+                setMarkInFontSizeLB();
+            }
+            enableFontSizeListBox(!isFitText);
+        }
+    }
+
+    public void enableFontSizeListBox(boolean bool){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("fontSizeListBox"), bool);
+        }
+    }
+
+    public void setMarkInFontSizeLB(){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            XListBox fontSizeLB = (XListBox)UnoRuntime.queryInterface(XListBox.class, xControlContainer.getControl("fontSizeListBox"));
+
+            //short selectedItemPos = fontSizeLB.getSelectedItemPos();
+            short index = FontSize._getIndexOfFontSize(getController().getDiagram().getFontSizeProps());
+            fontSizeLB.selectItemPos(index, true);
+            String label = fontSizeLB.getSelectedItem();
+            if(!label.startsWith("*"))
+                label = "*" + label.substring(1);
+            fontSizeLB.removeItems(index, (short)1);
+            fontSizeLB.addItem(label, index);
+            fontSizeLB.selectItemPos(index, true);
+        }
+    }
+
+    public void setNoMarkInFontSizeLB(){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            XListBox fontSizeLB = (XListBox)UnoRuntime.queryInterface(XListBox.class, xControlContainer.getControl("fontSizeListBox"));
+            short index = FontSize._getIndexOfFontSize(getController().getDiagram().getFontSizeProps());
+            fontSizeLB.selectItemPos(index, true);
+            String label = fontSizeLB.getSelectedItem();
+            if(label.startsWith("*"))
+                label = " " + label.substring(1);
+            fontSizeLB.removeItems(index, (short)1);
+            fontSizeLB.addItem(label, index);
+            fontSizeLB.selectItemPos(index, true);
+        }
+    }
+
+    public void setTextProperties(){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            XRadioButton textFitRB = (XRadioButton) UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("textFitOptionButton"));
+            boolean isFitText = textFitRB.getState();
+            getController().getDiagram().setTextFitProps(isFitText);
+            if(isFitText){
+                setNoMarkInFontSizeLB();
+            } else {
+                XListBox fontSizeLB = (XListBox)UnoRuntime.queryInterface(XListBox.class, xControlContainer.getControl("fontSizeListBox"));
+                float newFontSize = FontSize._getFontSize(fontSizeLB.getSelectedItemPos());
+                setNoMarkInFontSizeLB();
+                getController().getDiagram().setFontSizeProps(newFontSize);    
+            }
+            
+            boolean isTextColorChange = isCheckedModifyTextColorCheckBox();
+            getController().getDiagram().setTextColorChange(isTextColorChange);
+            if(isTextColorChange)
+                getController().getDiagram().setTextColorProps(getImageColorOfControl(getTextColorImageControl()));
+         }
+    }
+
+    public XControl getTextColorImageControl(){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            return xControlContainer.getControl("textColorImageControl");
+        }
+        return null;
+    }
+
+    public void enableTextColorImageControl(boolean bool){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("textColorImageControl"), bool);
+        }
+    }
+    
+    public void enableTextColorLabel(boolean bool){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            enableControl(xControlContainer.getControl("textColorLabel"), bool);
+        }
+    }
+
+
+
+    public boolean isCheckedModifyTextColorCheckBox(){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            short state = ((XCheckBox) UnoRuntime.queryInterface(XCheckBox.class, xControlContainer.getControl("modifyTextColorCheckBox"))).getState();
+            if(state==1)
+                return true;
+        }
+        return false;
+    }
+
+    public void setTextColorToolsProps(){
+        boolean state = isCheckedModifyTextColorCheckBox();
+        enableTextColorImageControl(state);
+        enableTextColorLabel(state);
+    }
+
+    public void setDefaultTextColorToolsProps(){
+        if(m_xPropsDialog != null){
+            XControlContainer xControlContainer = (XControlContainer) UnoRuntime.queryInterface(XControlContainer.class, m_xPropsDialog);
+            ((XCheckBox) UnoRuntime.queryInterface(XCheckBox.class, xControlContainer.getControl("modifyTextColorCheckBox"))).setState((short)0);
+            enableTextColorImageControl(false);
+            enableTextColorLabel(false);
+        }
+    }
+
     public void endExecutePropertiesDialog(){
         if(m_xPropsDialogTopWindow != null)
                 m_xPropsDialogTopWindow.removeTopWindowListener(m_oListener);
@@ -1170,6 +1301,7 @@ public class Gui {
             setShownPropsDialog(false);
             enableControlDialogWindow(true);
             setFocusControlDialog();
+            setDefaultTextColorToolsProps();
     }
 
     public void disposePropertiesDialog(){
