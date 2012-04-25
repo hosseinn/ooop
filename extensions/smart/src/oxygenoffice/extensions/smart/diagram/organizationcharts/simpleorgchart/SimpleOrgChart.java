@@ -79,7 +79,7 @@ public class SimpleOrgChart extends OrganizationChart {
             XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
             m_xShapes.add(xStartShape);
             setTextOfShape(xStartShape, " ");
-            setItemProperties(xStartShape, (short)0);
+            setItemProperties(xStartShape, (short)0, 2);
 
             xCoord = m_PageProps.BorderLeft + m_iHalfDiff;
             yCoord = m_PageProps.BorderTop + shapeHeight + verSpace;
@@ -89,7 +89,7 @@ public class SimpleOrgChart extends OrganizationChart {
                 xRectShape = createShape("RectangleShape", i, xCoord + (shapeWidth + horSpace) * (i-2), yCoord, shapeWidth, shapeHeight);
                 m_xShapes.add(xRectShape);
                 setTextOfShape(xRectShape, " ");
-                setItemProperties(xRectShape, (short)1);
+                setItemProperties(xRectShape, (short)1, 2);
 
                 XShape xConnectorShape = createShape("ConnectorShape", i);
                 m_xShapes.add(xConnectorShape);

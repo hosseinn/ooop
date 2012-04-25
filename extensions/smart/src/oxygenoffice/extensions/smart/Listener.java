@@ -551,7 +551,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //ControlDialog2 events ******************************************************************************
         //click on colorImageControl
         if(methodName.equals("showColorTable2")){
-            if(getController().getDiagram().isGradientProps() || getController().getDiagram().isBlueGradientsProps() || getController().getDiagram().isRedGradientsProps())
+            if(getController().getDiagram().isGradientProps() || getController().getDiagram().isPreDefinedGradientsProps())
                 getGui().executeGradientDialog();
             else
                 getGui().executeColorTable2();
@@ -611,10 +611,8 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //pressed GradientMode button
         if(methodName.equals("setGradientMode")){
             getController().getDiagram().setGradientProps(true);
-            if(getController().getGroupType() == Controller.ORGANIGROUP){
-                getController().getDiagram().setBlueGradientsProps(false);
-                getController().getDiagram().setRedGradientsProps(false);
-            }
+            if(getController().getGroupType() == Controller.ORGANIGROUP)
+                getController().getDiagram().setPreDefinedGradientsProps(false);
             getGui().endExecuteColorTable();
             getGui().disposeColorTable();
             getGui().executeGradientDialog();
@@ -626,7 +624,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         //ColorTable3 event **********************************************************************************
         if(methodName.equals("changedBaseColorsCheckBox")){
             if(getController().getDiagramType() == Controller.CYCLEDIAGRAM || getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.TARGETDIAGRAM){
-                if(getController().getDiagram().isBlueGradientsProps() || getController().getDiagram().isRedGradientsProps()){
+                if(getController().getDiagram().isPreDefinedGradientsProps()){
                     if(getGui().isBaseColorModeOfColorTable())
                         getGui().enableImageControlsOfColorTable(true);
                     else
@@ -638,7 +636,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
         if(methodName.equals("saveBaseColorsCheckBoxSetting")){
             boolean isGradients = false;
             if(getController().getDiagramType() == Controller.CYCLEDIAGRAM || getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.TARGETDIAGRAM)
-                if(getController().getDiagram().isBlueGradientsProps() || getController().getDiagram().isRedGradientsProps())
+                if(getController().getDiagram().isPreDefinedGradientsProps())
                    isGradients = true;
             if(getController().getGroupType() == Controller.RELATIONGROUP)
                 getGui().setBaseColorsProps();
@@ -712,7 +710,7 @@ public class Listener implements  XDialogEventHandler, XTopWindowListener {
                 getController().getDiagram().setEndColorProps(getGui().getColorOfEndImageOfGradientDialog());
             }
             getGui().disposeGradientDialog();
-            getGui().setColorModeOfImageOfControlDialog();
+            //getGui().setColorModeOfImageOfControlDialog();
             return true;
         }
         //****************************************************************************************************

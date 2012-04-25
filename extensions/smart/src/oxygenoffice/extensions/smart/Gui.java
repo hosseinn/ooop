@@ -44,6 +44,7 @@ import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
 import oxygenoffice.extensions.smart.diagram.Diagram;
+import oxygenoffice.extensions.smart.diagram.GradientDefinitions;
 import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChart;
 import oxygenoffice.extensions.smart.diagram.organizationcharts.orgchart.OrgChartTree;
 import oxygenoffice.extensions.smart.diagram.organizationcharts.orgchart.OrgChart;
@@ -426,17 +427,43 @@ public class Gui {
         return m_xControlDialogWindow;
     }
 
+    public void setPreDefinedGradModeOnImageOfControlDialog(){
+        if(getController().getDiagram().getStyle() == GradientDefinitions.BLUE_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/blueGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.AQUA_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/aquaGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.RED_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/redGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.FIRE_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/fireGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.SUN_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/sunGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.GREEN_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/greenGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.OLIVE_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/oliveGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.PURPLE_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/purpleGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.PINK_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/pinkGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.INDIAN_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/indianGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.MAROON_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/maroonGradient_mode.png");
+        if(getController().getDiagram().getStyle() == GradientDefinitions.BROWN_GRADIENTS)
+            setGraphic(m_xICOfControlDialog, "/images/brownGradient_mode.png");
+    }
+
     public void setColorModeOfImageOfControlDialog(){
         
         if(getController().getGroupType() == Controller.ORGANIGROUP){
-            if(getController().getDiagram().isGradientProps())
+            if(getController().getDiagram().isGradientProps()){
                 setGraphic(m_xICOfControlDialog, "/images/gradient_mode.png");
-            else if(getController().getDiagram().isBlueGradientsProps())
-                setGraphic(m_xICOfControlDialog, "/images/blueGradient_mode.png");
-            else if(getController().getDiagram().isRedGradientsProps())
-                setGraphic(m_xICOfControlDialog, "/images/redGradient_mode.png");
-            else
+            } else if (getController().getDiagram().isPreDefinedGradientsProps()) {
+                setPreDefinedGradModeOnImageOfControlDialog();
+            } else {
                 setGraphic(m_xICOfControlDialog, "");
+            }
         }
 
         if(getController().getDiagramType() == Controller.VENNDIAGRAM){
@@ -447,22 +474,19 @@ public class Gui {
         }
 
         if(getController().getDiagramType() == Controller.CYCLEDIAGRAM){
-            if(getController().getDiagram().isBlueGradientsProps())
-                setGraphic(m_xICOfControlDialog, "/images/blueGradient_mode.png");
-            else if(getController().getDiagram().isRedGradientsProps())
-                setGraphic(m_xICOfControlDialog, "/images/redGradient_mode.png");
-            else if(getController().getDiagram().isBaseColorsProps())
+            if (getController().getDiagram().isPreDefinedGradientsProps()) {
+                setPreDefinedGradModeOnImageOfControlDialog();
+            } else if(getController().getDiagram().isBaseColorsProps()) {
                 setGraphic(m_xICOfControlDialog, "/images/basecolors_mode.png");
-            else
+            }  else {
                 setGraphic(m_xICOfControlDialog, "");
+            }
         }
 
         if(getController().getDiagramType() == Controller.PYRAMIDDIAGRAM){
-            if(getController().getDiagram().isBlueGradientsProps())
-                setGraphic(m_xICOfControlDialog, "/images/blueGradient_mode.png");
-            else if(getController().getDiagram().isRedGradientsProps())
-                setGraphic(m_xICOfControlDialog, "/images/redGradient_mode.png");
-            else if(getController().getDiagram().isBaseColorsWithGradientsProps())
+            if (getController().getDiagram().isPreDefinedGradientsProps()) {
+                setPreDefinedGradModeOnImageOfControlDialog();
+            } else if(getController().getDiagram().isBaseColorsWithGradientsProps())
                 setGraphic(m_xICOfControlDialog, "/images/basecolorsWithGradients_mode.png");
             else if(getController().getDiagram().isBaseColorsProps())
                 setGraphic(m_xICOfControlDialog, "/images/basecolors_mode.png");
@@ -471,11 +495,9 @@ public class Gui {
         }
 
         if(getController().getDiagramType() == Controller.TARGETDIAGRAM){
-            if(getController().getDiagram().isBlueGradientsProps())
-                setGraphic(m_xICOfControlDialog, "/images/blueGradient_mode.png");
-            else if(getController().getDiagram().isRedGradientsProps())
-                setGraphic(m_xICOfControlDialog, "/images/redGradient_mode.png");
-            else if(getController().getDiagram().isBaseColorsProps())
+            if (getController().getDiagram().isPreDefinedGradientsProps()) {
+                setPreDefinedGradModeOnImageOfControlDialog();
+            } else if(getController().getDiagram().isBaseColorsProps())
                 setGraphic(m_xICOfControlDialog, "/images/basecolors_mode.png");
             else
                 setGraphic(m_xICOfControlDialog, "");
@@ -634,7 +656,7 @@ public class Gui {
                 if(getController().getDiagram() != null && !getController().getDiagram().isBaseColorsProps())
                     xBaseColorCheckBox.setState((short)0);
                 if(getController().getDiagramType() == Controller.CYCLEDIAGRAM || getController().getDiagramType() == Controller.PYRAMIDDIAGRAM || getController().getDiagramType() == Controller.TARGETDIAGRAM){
-                    if(getController().getDiagram().isBlueGradientsProps() || getController().getDiagram().isRedGradientsProps())
+                    if(getController().getDiagram().isPreDefinedGradientsProps())
                         enableImageControlsOfColorTable(false);
                 }
                 addListenerAndExecuteColorTable();
@@ -712,8 +734,7 @@ public class Gui {
     public void setBaseColorsProps(){
         if(isBaseColorModeOfColorTable()){
             getController().getDiagram().setBaseColorsProps(true);
-            getController().getDiagram().setBlueGradientsProps(false);
-            getController().getDiagram().setRedGradientsProps(false);
+            getController().getDiagram().setPreDefinedGradientsProps(false);
         }else{
             getController().getDiagram().setBaseColorsProps(false);
             getController().getDiagram().setBaseColorsWithGradientsProps(false);
@@ -780,7 +801,7 @@ public class Gui {
                 xListBox.selectItemPos(getController().getDiagram().getGradientDirectionProps(), true);
 
                 if(getController().getGroupType() == Controller.ORGANIGROUP){
-                    if(getController().getDiagram().isBlueGradientsProps() || getController().getDiagram().isRedGradientsProps()){
+                    if(getController().getDiagram().isPreDefinedGradientsProps()){
                         XRadioButton xRadioButton = (XRadioButton)UnoRuntime.queryInterface(XRadioButton.class, xControlContainer.getControl("setColorModeOptionButton"));
                         xRadioButton.setState(true);
                         enableControl(xControlContainer.getControl("setGradientOptionButton"), false);
@@ -841,8 +862,7 @@ public class Gui {
     }
 
     public void setGradientProps(){
-        getController().getDiagram().setBlueGradientsProps(false);
-        getController().getDiagram().setRedGradientsProps(false);
+        getController().getDiagram().setPreDefinedGradientsProps(false);
         if(isGradientModeOfGradientDialog())
             getController().getDiagram().setGradientProps(true);
         else
@@ -1040,6 +1060,7 @@ public class Gui {
                     diagramDefine = "TargetDiagramPropsDialog.xdl";
                 String sDialogURL = sPackageURL + "/dialogs/" + diagramDefine;
                 m_xPropsDialog = xDialogProv.createDialogWithHandler(sDialogURL, m_oListener);
+
                 if (m_xPropsDialog != null) {
                     m_xPropsDialogWindow = (XWindow) UnoRuntime.queryInterface(XWindow.class, m_xPropsDialog);
                     m_xPropsDialogTopWindow = (XTopWindow) UnoRuntime.queryInterface(XTopWindow.class, m_xPropsDialog);
@@ -1141,7 +1162,7 @@ public class Gui {
                     setControlScaleImageProp(xControlContainer.getControl("imageControl"), false);
                     
                     getController().getDiagram().setFontPropertyValues();
-                }
+                }        
             } catch (IllegalArgumentException ex) {
                 System.err.println(ex.getLocalizedMessage());
             }
@@ -1160,7 +1181,7 @@ public class Gui {
                 setPyramidDiagramPropsDialog();
             if(getController().getDiagramType() == Controller.TARGETDIAGRAM)
                 setTargetDiagramPropsDialog();
-
+            
             m_xPropsDialogTopWindow.addTopWindowListener(m_oListener);
             enableControlDialogWindow(false);
             setShownPropsDialog(true);
@@ -1319,6 +1340,23 @@ public class Gui {
             setFocusControlDialog();
         }
     }
+
+    public String[] getLocalGradientNames(){
+        String[] gradientNames = new String[12];
+        gradientNames[0] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
+        gradientNames[1] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalAquaGradients.Label");
+        gradientNames[2] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
+        gradientNames[3] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalFireGradients.Label");
+        gradientNames[4] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalSunGradients.Label");
+        gradientNames[5] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalGreenGradients.Label");
+        gradientNames[6] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalOliveGradients.Label");
+        gradientNames[7] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalPurpleGradients.Label");
+        gradientNames[8] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalPinkGradients.Label");
+        gradientNames[9] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalIndianGradients.Label");
+        gradientNames[10] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalMaroonGradients.Label");
+        gradientNames[11] = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBrownGradients.Label");
+        return gradientNames;
+    }
      
     public void setOrganigramPropsDialog(){
 
@@ -1329,8 +1367,7 @@ public class Gui {
         String localAllShape = getDialogPropertyValue("Strings2", "Strings2.Common.LocalDiagramScope.Label");
         String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
         String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
-        String localBlueGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
-        String localRedGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
+        String[] gradientNames = getLocalGradientNames();
 
         if(style != OrganizationChart.USER_DEFINE){
             enableVisibleOrganigramPropsControls(false);
@@ -1384,7 +1421,7 @@ public class Gui {
                 setDescriptionLabelOfOrganigroupPD(localAllShape, localNo, "", localYes, localYes, localYes);
                 enableColorFunctionFieldFieldOfOrganigroupPD(false);
             }
-            if(style == OrganizationChart.BLUE_GRADIENTS){
+            if(style == GradientDefinitions.BLUE_GRADIENTS){
                 if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
                     setGraphic(xImageControl, "/images/simpleOrgchart_blueGradients.png");
                 if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
@@ -1393,9 +1430,20 @@ public class Gui {
                     setGraphic(xImageControl, "/images/tableHierarchy_blueGradients.png");
                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
                     setGraphic(xImageControl, "/images/orgchart_blueGradients.png");
-                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, localBlueGradients, localYes, localYes, localNo);
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[0], localYes, localYes, localNo);
             }
-            if(style == OrganizationChart.RED_GRADIENTS){
+            if(style == GradientDefinitions.AQUA_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_aquaGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_aquaGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_aquaGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_aquaGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[1], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.RED_GRADIENTS){
                 if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
                     setGraphic(xImageControl, "/images/simpleOrgchart_redGradients.png");
                 if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
@@ -1404,7 +1452,106 @@ public class Gui {
                     setGraphic(xImageControl, "/images/tableHierarchy_redGradients.png");
                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
                     setGraphic(xImageControl, "/images/orgchart_redGradients.png");
-                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, localRedGradients, localYes, localYes, localNo);
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[2], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.FIRE_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_fireGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_fireGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_fireGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_fireGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[3], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.SUN_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_sunGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_sunGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_sunGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_sunGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[4], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.GREEN_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_greenGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_greenGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_greenGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_greenGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[5], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.OLIVE_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_oliveGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_oliveGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_oliveGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_oliveGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[6], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.PURPLE_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_purpleGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_purpleGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_purpleGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_purpleGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[7], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.PINK_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_pinkGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_pinkGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_pinkGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_pinkGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[8], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.INDIAN_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_indianGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_indianGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_indianGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_indianGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[9], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.MAROON_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_maroonGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_maroonGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_maroonGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_maroonGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[10], localYes, localYes, localNo);
+            }
+            if(style == GradientDefinitions.BROWN_GRADIENTS){
+                if(getController().getDiagramType() == Controller.SIMPLEORGANIGRAM)
+                    setGraphic(xImageControl, "/images/simpleOrgchart_brownGradients.png");
+                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
+                    setGraphic(xImageControl, "/images/hororgchart_brownGradients.png");
+                if(getController().getDiagramType() == Controller.TABLEHIERARCHYDIAGRAM)
+                    setGraphic(xImageControl, "/images/tableHierarchy_brownGradients.png");
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    setGraphic(xImageControl, "/images/orgchart_brownGradients.png");
+                setDescriptionLabelOfOrganigroupPD(localAllShape, localYes, gradientNames[11], localYes, localYes, localNo);
             }
         }else{
             enableVisibleControl(xImageControl, false);
@@ -1761,8 +1908,7 @@ public class Gui {
         String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
         String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
         String localBaseColors = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColors.Label");
-        String localBlueGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
-        String localRedGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
+        String[] gradientNames = getLocalGradientNames();
 
         if(style != CycleDiagram.USER_DEFINE){
             enableVisibleCycleDiagramPropsControls(false);
@@ -1785,13 +1931,53 @@ public class Gui {
                 setGraphic(xImageControl, "/images/ring_withFrame.png");
                 setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localBaseColors, localYes, localYes, localNo);
             }
-            if(style == CycleDiagram.BLUE_GRADIENTS){
+            if(style == GradientDefinitions.BLUE_GRADIENTS){
                 setGraphic(xImageControl, "/images/ring_blueGradients.png");
-                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localBlueGradients, localYes, localNo, localNo);
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[0], localYes, localNo, localNo);
             }
-            if(style == CycleDiagram.RED_GRADIENTS){
+            if(style == GradientDefinitions.AQUA_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_aquaGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[1], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.RED_GRADIENTS){
                 setGraphic(xImageControl, "/images/ring_redGradients.png");
-                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, localRedGradients, localYes, localNo, localNo);
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[2], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.FIRE_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_fireGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[3], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.SUN_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_sunGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[4], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.GREEN_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_greenGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[5], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.OLIVE_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_oliveGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[6], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.PURPLE_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_purpleGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[7], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.PINK_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_pinkGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[8], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.INDIAN_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_indianGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[9], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.MAROON_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_maroonGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[10], localYes, localNo, localNo);
+            }
+            if(style == GradientDefinitions.BROWN_GRADIENTS){
+                setGraphic(xImageControl, "/images/ring_brownGradients.png");
+                setDescriptionLabelOfCycleDiagramPD(localAllShape, localYes, gradientNames[11], localYes, localNo, localNo);
             }
         }
         if(style == CycleDiagram.USER_DEFINE){
@@ -1912,9 +2098,8 @@ public class Gui {
         String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
         String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
         String localBaseColors = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColors.Label");
-        String localBlueGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
-        String localRedGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
         String localBaseColorsGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColorsGradients.Label");
+        String[] gradientNames = getLocalGradientNames();
 
         if(style != PyramidDiagram.USER_DEFINE){
             enableVisiblePyramidDiagramPropsControls(false);
@@ -1937,13 +2122,53 @@ public class Gui {
                 setGraphic(xImageControl, "/images/pyramid_basecolorsWithGradients.png");
                 setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localBaseColorsGradients, localYes, localNo);
             }
-            if(style == PyramidDiagram.BLUE_GRADIENTS){
+            if(style == GradientDefinitions.BLUE_GRADIENTS){
                 setGraphic(xImageControl, "/images/pyramid_blueGradients.png");
-                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localBlueGradients, localYes, localNo);
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[0], localYes, localNo);
             }
-            if(style == PyramidDiagram.RED_GRADIENTS){
+            if(style == GradientDefinitions.AQUA_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_aquaGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[1], localYes, localNo);
+            }
+            if(style == GradientDefinitions.RED_GRADIENTS){
                 setGraphic(xImageControl, "/images/pyramid_redGradients.png");
-                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, localRedGradients, localYes, localNo);
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[2], localYes, localNo);
+            }
+            if(style == GradientDefinitions.FIRE_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_fireGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[3], localYes, localNo);
+            }
+            if(style == GradientDefinitions.SUN_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_sunGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[4], localYes, localNo);
+            }
+            if(style == GradientDefinitions.GREEN_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_greenGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[5], localYes, localNo);
+            }
+            if(style == GradientDefinitions.OLIVE_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_oliveGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[6], localYes, localNo);
+            }
+            if(style == GradientDefinitions.PURPLE_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_purpleGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[7], localYes, localNo);
+            }
+            if(style == GradientDefinitions.PINK_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_pinkGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[8], localYes, localNo);
+            }
+            if(style == GradientDefinitions.INDIAN_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_indianGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[9], localYes, localNo);
+            }
+            if(style == GradientDefinitions.MAROON_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_maroonGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[10], localYes, localNo);
+            }
+            if(style == GradientDefinitions.BROWN_GRADIENTS){
+                setGraphic(xImageControl, "/images/pyramid_brownGradients.png");
+                setDescriptionLabelOfPyramidDiagramPD(localAllShape, localYes, gradientNames[11], localYes, localNo);
             }
         }else{
             enableVisibleControl(xImageControl, false);
@@ -2051,10 +2276,9 @@ public class Gui {
         String localYes = getDialogPropertyValue("Strings2", "Strings2.Common.LocalYes.Label");
         String localNo = getDialogPropertyValue("Strings2", "Strings2.Common.LocalNo.Label");
         String localBaseColors = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBaseColors.Label");
-        String localBlueGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalBlueGradients.Label");
-        String localRedGradients = getDialogPropertyValue("Strings2", "Strings2.Common.LocalRedGradients.Label");
         String localCenter = getDialogPropertyValue("Strings2", "Strings2.Common.LocalCentert.Label");
         String localLeft = getDialogPropertyValue("Strings2", "Strings2.Common.LocalLeft.Label");
+        String[] gradientNames = getLocalGradientNames();
 
         if(style != TargetDiagram.USER_DEFINE){
             enableVisibleTargetDiagramPropsControls(false);
@@ -2073,13 +2297,53 @@ public class Gui {
                 setGraphic(xImageControl, "/images/target_withTextFrame.png");
                 setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localBaseColors, localCenter, localYes, localYes);
             }
-            if (style == TargetDiagram.BLUE_GRADIENTS){
+            if(style == GradientDefinitions.BLUE_GRADIENTS){
                 setGraphic(xImageControl, "/images/target_blueGradients.png");
-                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localBlueGradients, localCenter, localYes, localNo);
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[0], localCenter, localYes, localNo);
             }
-            if (style == TargetDiagram.RED_GRADIENTS){
+            if(style == GradientDefinitions.AQUA_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_aquaGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[1], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.RED_GRADIENTS){
                 setGraphic(xImageControl, "/images/target_redGradients.png");
-                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, localRedGradients, localCenter, localYes, localNo);
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[2], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.FIRE_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_fireGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[3], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.SUN_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_sunGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[4], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.GREEN_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_greenGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[5], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.OLIVE_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_oliveGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[6], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.PURPLE_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_purpleGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[7], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.PINK_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_pinkGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[8], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.INDIAN_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_indianGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[9], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.MAROON_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_maroonGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[10], localCenter, localYes, localNo);
+            }
+            if(style == GradientDefinitions.BROWN_GRADIENTS){
+                setGraphic(xImageControl, "/images/target_brownGradients.png");
+                setDescriptionLabelOfTargetDiagramPD(localAllShape, localYes, gradientNames[11], localCenter, localYes, localNo);
             }
             if (style == TargetDiagram.LEFT_LAYOUT){
                 setGraphic(xImageControl, "/images/target_leftLayout.png");

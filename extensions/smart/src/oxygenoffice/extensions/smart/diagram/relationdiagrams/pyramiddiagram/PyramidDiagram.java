@@ -19,6 +19,7 @@ import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
 import oxygenoffice.extensions.smart.Gui;
+import oxygenoffice.extensions.smart.diagram.GradientDefinitions;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
@@ -34,9 +35,8 @@ public class PyramidDiagram extends RelationDiagram {
     public final static short   WITHOUT_OUTLINE     = 1;
     public final static short   WITH_SHADOW         = 2;
     public final static short   BC_WITH_GRADIENTS   = 3;
-    public final static short   BLUE_GRADIENTS      = 4;
-    public final static short   RED_GRADIENTS       = 5;
-    public final static short   USER_DEFINE         = 6;
+    // 4 - 15 Gradients from GradientDefinitions.java
+    public final static short   USER_DEFINE         = 16;
 
     private final static int    SHADOW_DIST         = 400;
     private final static int    SHADOW_TRANSP       = 30;
@@ -51,8 +51,7 @@ public class PyramidDiagram extends RelationDiagram {
         setModifyColorsProps(false);
         setBaseColorsProps(true);
         m_IsBaseColorsWithGradients = false;
-        m_IsBlueGradients = false;
-        m_IsRedGradients = false;
+        m_IsPreDefinedGradients = false;
         m_IsShadow = false;
         m_IsOutline = true;
 
@@ -174,12 +173,12 @@ public class PyramidDiagram extends RelationDiagram {
     public RelationDiagramItem createItem(int shapeID, String str, int color) {
         XShape xTrapezeShape = createShape("PolyPolygonShape", shapeID);
         m_xShapes.add(xTrapezeShape);
-        if(m_IsBaseColorsWithGradients || m_IsBlueGradients || m_IsRedGradients){
+        if(m_IsBaseColorsWithGradients || m_IsPreDefinedGradients){
             if(m_IsBaseColorsWithGradients){
                 setColorsOfGradients(color);
                 setGradient(xTrapezeShape, GradientStyle.RECT, (short)0, (short)0, (short)50, (short)50, (short)100, (short)75);
             }
-            if(m_IsBlueGradients || m_IsRedGradients){
+            if(m_IsPreDefinedGradients){
                 if(shapeID > 0)
                     setGradientsStyleColors(shapeID);
                 setGradient(xTrapezeShape);
@@ -242,8 +241,19 @@ public class PyramidDiagram extends RelationDiagram {
         Size controlShapeSize = xControlTriangleShape.getSize();
         Point controlShapePos = xControlTriangleShape.getPosition();
 
-        for(RelationDiagramItem item : items)
+        for(RelationDiagramItem item : items){
             ((PyramidDiagramItem)item).setPosition(numOfItems, controlShapeSize, controlShapePos);
+            if(isPreDefinedGradientsProps() && m_Style != USER_DEFINE)
+                setGradientColor(item.getMainShape());
+        }
+    }
+
+    public void setGradientColor(XShape xShape){
+        int shapeID = getController().getShapeID(getShapeName(xShape));
+        if(shapeID > 0){
+            setGradientsStyleColors(shapeID);
+            setGradient(xShape);
+        }
     }
 
     public XShape getControlShape(){
@@ -375,13 +385,12 @@ public class PyramidDiagram extends RelationDiagram {
         }
     }
 
-    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, boolean isBaseColors, boolean isBaseColorsWithGradients, boolean isBlueGradients, boolean isRedGradients, boolean isOutline, boolean isShadow){
+    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, boolean isBaseColors, boolean isBaseColorsWithGradients, boolean isPreDefinedGradients, boolean isOutline, boolean isShadow){
         setSelectedAllShapesProps(isSelectAllShape);
         setModifyColorsProps(isModifyColors);
         setBaseColorsProps(isBaseColors);
         setBaseColorsWithGradientsProps(isBaseColorsWithGradients);
-        setBlueGradientsProps(isBlueGradients);
-        setRedGradientsProps(isRedGradients);
+        setPreDefinedGradientsProps(isPreDefinedGradients);
         setOutlineProps(isOutline);
         setShadowProps(isShadow);
         getGui().setColorModeOfImageOfControlDialog();
@@ -394,8 +403,7 @@ public class PyramidDiagram extends RelationDiagram {
         boolean isModifyColors = isModifyColorsProps();
         boolean isBaseColors = isBaseColorsProps();
         boolean isBaseColorsWithGradients = m_IsBaseColorsWithGradients;
-        boolean isBlueGradients = m_IsBlueGradients;
-        boolean isRedGradients = m_IsRedGradients;
+        boolean isPreDefinedGradients = m_IsPreDefinedGradients;
         boolean isShadow =  m_IsShadow;
         boolean isOutline = m_IsOutline;
 
@@ -405,31 +413,28 @@ public class PyramidDiagram extends RelationDiagram {
 
         if(m_IsAction){
             if( m_Style == DEFAULT ){
-                setPropertiesValues(true, true, true, false, false, false, true, false);
+                setPropertiesValues(true, true, true, false, false, true, false);
                 getGui().setImageColorOfControlDialog(getNextColor());
             }
             if( m_Style == WITHOUT_OUTLINE){
-                setPropertiesValues(true, true, true, false, false, false, false, false);
+                setPropertiesValues(true, true, true, false, false, false, false);
                 getGui().setImageColorOfControlDialog(getNextColor());
             }
             if( m_Style == WITH_SHADOW){
-                setPropertiesValues(true, true, true, false, false, false, true, true);
+                setPropertiesValues(true, true, true, false, false, true, true);
                 getGui().setImageColorOfControlDialog(getNextColor());
             }
             if( m_Style == BC_WITH_GRADIENTS){
-                setPropertiesValues(true, true, true, true, false, false, true, false);
+                setPropertiesValues(true, true, true, true, false, true, false);
                 getGui().setImageColorOfControlDialog(getNextColor());
             }
-            if( m_Style == BLUE_GRADIENTS)
-                setPropertiesValues(true, true, false, false, true, false, true, false);
-            if( m_Style == RED_GRADIENTS)
-                setPropertiesValues(true, true, false, false, false, true, true, false);
+            if(GradientDefinitions.isPreDefinedGradient(m_Style))
+                setPropertiesValues(true, true, false, false, true, true, false);
             if(m_Style == USER_DEFINE){
                 setModifyColorsProps(getGui().isModifyColorsPropsInDiagramPropsDialog());
                 if(isModifyColorsProps()){
                     setBaseColorsWithGradientsProps(false);
-                    setBlueGradientsProps(false);
-                    setRedGradientsProps(false);
+                    setPreDefinedGradientsProps(false);
                     setBaseColorsProps(getGui().isBaseColorsPropsInDiagramPropsDialog());
                     if(isBaseColorsProps()){
                         getGui().setImageColorOfControlDialog(getNextColor());
@@ -453,10 +458,8 @@ public class PyramidDiagram extends RelationDiagram {
             setSelectedAllShapesProps(isSelectAllShape);
             setModifyColorsProps(isModifyColors);
             setBaseColorsProps(isBaseColors);
-            //m_IsBaseColors = isBaseColors;
             m_IsBaseColorsWithGradients = isBaseColorsWithGradients;
-            m_IsBlueGradients = isBlueGradients;
-            m_IsRedGradients = isRedGradients;
+            m_IsPreDefinedGradients = isPreDefinedGradients;
             m_IsShadow = isShadow;
             m_IsOutline = isOutline;
         }
@@ -472,13 +475,13 @@ public class PyramidDiagram extends RelationDiagram {
             if(isModifyColorsProps()){
                 int color = -1;
                 int shapeID = getController().getShapeID(getShapeName(xShape));
-                if(m_IsBaseColorsWithGradients || m_IsBlueGradients || m_IsRedGradients){
+                if(m_IsBaseColorsWithGradients || m_IsPreDefinedGradients){
                     if(m_IsBaseColorsWithGradients){
                         if(shapeID > 0)
                             setGradientsStyleColors(shapeID);
                         setGradient(xShape, GradientStyle.RECT, (short)0, (short)0, (short)50, (short)50, (short)100, (short)75);
                     }
-                    if(m_IsBlueGradients || m_IsRedGradients){
+                    if(m_IsPreDefinedGradients){
                         if(shapeID > 0)
                             setGradientsStyleColors(shapeID);
                         setGradient(xShape);
@@ -549,25 +552,10 @@ public class PyramidDiagram extends RelationDiagram {
                 setEndColorProps(color);
             }
         }
-        if(m_IsBlueGradients){
-            shapeID %= 8;
-            if(shapeID < 4){
-                setStartColorProps(aBLUE_COLORS[shapeID]);
-                setEndColorProps(aBLUE_COLORS[shapeID + 1]);
-            }else{
-                setStartColorProps(aBLUE_COLORS[8 - shapeID]);
-                setEndColorProps(aBLUE_COLORS[8 - (shapeID + 1)]);
-            }
-        }
-        if(m_IsRedGradients){
-            shapeID %= 8;
-            if(shapeID < 4){
-                setStartColorProps(aRED_COLORS[shapeID]);
-                setEndColorProps(aRED_COLORS[shapeID + 1]);
-            }else{
-                setStartColorProps(aRED_COLORS[8 - shapeID]);
-                setEndColorProps(aRED_COLORS[8 - (shapeID + 1)]);
-            }
+        if(m_IsPreDefinedGradients){
+            int topShapeID = getTopShapeID();
+            setStartColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, shapeID, topShapeID));
+            setEndColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, shapeID + 1, topShapeID));
         }
     }
 

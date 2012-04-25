@@ -77,7 +77,7 @@ public class TableHierarchyOrgChart extends OrganizationChart {
             XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
             m_xShapes.add(xStartShape);
             setTextOfShape(xStartShape, " ");
-            setItemProperties(xStartShape, (short)0);
+            setItemProperties(xStartShape, (short)0, 2);
           
             yCoord += verUnit;
             shapeWidth = shapeWidth / 3 - GAP;
@@ -87,7 +87,7 @@ public class TableHierarchyOrgChart extends OrganizationChart {
                 xRectShape = createShape("RectangleShape", i, xCoord + ((i-2) * horUnit), yCoord, shapeWidth, shapeHeight);
                 m_xShapes.add(xRectShape);
                 setTextOfShape(xRectShape, " ");
-                setItemProperties(xRectShape, (short)1);
+                setItemProperties(xRectShape, (short)1, 2);
 
                 XShape xConnectorShape = createShape("ConnectorShape", i);
                 m_xShapes.add(xConnectorShape);

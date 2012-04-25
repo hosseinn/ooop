@@ -82,7 +82,7 @@ public class HorizontalOrgChart extends OrganizationChart{
             XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
             m_xShapes.add(xStartShape);
             setTextOfShape(xStartShape, " ");
-            setItemProperties(xStartShape, (short)0);
+            setItemProperties(xStartShape, (short)0, 2);
 
             xCoord += (shapeWidth + horSpace);
             yCoord = m_PageProps.BorderTop;
@@ -92,7 +92,7 @@ public class HorizontalOrgChart extends OrganizationChart{
                 xRectShape = createShape("RectangleShape", i, xCoord, yCoord + m_DrawAreaHeight - shapeHeight - (shapeHeight + verSpace) * (i-2), shapeWidth, shapeHeight);
                 m_xShapes.add(xRectShape);
                 setTextOfShape(xRectShape, " ");
-                setItemProperties(xRectShape, (short)1);
+                setItemProperties(xRectShape, (short)1, 2);
 
                 XShape xConnectorShape = createShape("ConnectorShape", i);
                 m_xShapes.add(xConnectorShape);

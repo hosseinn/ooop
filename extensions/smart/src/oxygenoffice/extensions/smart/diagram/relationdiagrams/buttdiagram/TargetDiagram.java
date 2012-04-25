@@ -21,6 +21,7 @@ import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
 import oxygenoffice.extensions.smart.Gui;
+import oxygenoffice.extensions.smart.diagram.GradientDefinitions;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
@@ -35,13 +36,12 @@ public class TargetDiagram extends RelationDiagram{
 
     private boolean             m_IsLeftLayout;
 
-    public final static short   DEFAULT          = 0;
-    public final static short   WITHOUT_OUTLINE  = 1;
-    public final static short   WITH_FRAME       = 2;
-    public final static short   BLUE_GRADIENTS   = 3;
-    public final static short   RED_GRADIENTS    = 4;
-    public final static short   LEFT_LAYOUT      = 5;
-    public final static short   USER_DEFINE      = 6;
+    public final static short   DEFAULT             = 0;
+    public final static short   WITHOUT_OUTLINE     = 1;
+    public final static short   WITH_FRAME          = 2;
+    public final static short   LEFT_LAYOUT         = 3;
+    // 4 - 15 Gradients from GradientDefinitions.java
+    public final static short   USER_DEFINE         = 16;
 
 
     public TargetDiagram(Controller controller, Gui gui, XFrame xFrame) {
@@ -54,14 +54,12 @@ public class TargetDiagram extends RelationDiagram{
         m_IsLeftLayout = false;
         setModifyColorsProps(false);
         setBaseColorsProps(true);
-        m_IsBlueGradients = false;
-        m_IsRedGradients = false;
+        m_IsPreDefinedGradients = false;
         m_IsOutline = true;
         m_IsFrame = false;
 
         m_IsAction = false;
     }
-
 
     public boolean isLeftLayoutProperty(){
         return m_IsLeftLayout;
@@ -164,7 +162,7 @@ public class TargetDiagram extends RelationDiagram{
     public RelationDiagramItem createItem(int shapeID, String str, int color) {
         XShape xEllipseShape = createShape("EllipseShape", shapeID);
         m_xShapes.add(xEllipseShape);
-        if(m_IsBlueGradients || m_IsRedGradients){
+        if(m_IsPreDefinedGradients){
             if(shapeID > 0)
                 setGradientsStyleColors(shapeID);
             setGradient(xEllipseShape, GradientStyle.RADIAL, (short)0, (short)0, (short)50, (short)50, (short)100, (short)100);
@@ -312,9 +310,19 @@ public class TargetDiagram extends RelationDiagram{
         Size controlRectSize = getControlRectangleShape().getSize();
         Point controlRectPos = getControlRectangleShape().getPosition();
 
-        for(RelationDiagramItem item : items)
+        for(RelationDiagramItem item : items){
             ((TargetDiagramItem)item).setPosition(numOfItems, controlEllipseSize, controlEllipsePos, middlePoint, controlRectSize, controlRectPos);
+            if(isPreDefinedGradientsProps() && m_Style != USER_DEFINE)
+                setGradientColor(item.getMainShape());
+        }
+    }
 
+    public void setGradientColor(XShape xShape){
+        int shapeID = getController().getShapeID(getShapeName(xShape));
+        if(shapeID > 0){
+            setGradientsStyleColors(shapeID);
+            setGradient(xShape, GradientStyle.RADIAL, (short)0, (short)0, (short)50, (short)50, (short)100, (short)100);
+        }
     }
 
     @Override
@@ -442,13 +450,12 @@ public class TargetDiagram extends RelationDiagram{
         return null;
     }
 
-    public void setPropertiesValues(boolean isSelectAllShape, boolean isLeftLayout, boolean isModifyColors, boolean isBaseColors, boolean isBlueGradients, boolean isRedGradients, boolean isOutline, boolean isFrame){
+    public void setPropertiesValues(boolean isSelectAllShape, boolean isLeftLayout, boolean isModifyColors, boolean isBaseColors, boolean isPreDefinedGradients, boolean isOutline, boolean isFrame){
         setSelectedAllShapesProps(isSelectAllShape);
         m_IsLeftLayout = isLeftLayout;
         setModifyColorsProps(isModifyColors);
         setBaseColorsProps(isBaseColors);
-        setBlueGradientsProps(isBlueGradients);
-        setRedGradientsProps(isRedGradients);
+        setPreDefinedGradientsProps(isPreDefinedGradients);
         setOutlineProps(isOutline);
         setFrameProps(isFrame);
         getGui().setColorModeOfImageOfControlDialog();
@@ -461,8 +468,7 @@ public class TargetDiagram extends RelationDiagram{
         boolean isLeftLayout = m_IsLeftLayout;
         boolean isModifyColors = isModifyColorsProps();
         boolean isBaseColors = isBaseColorsProps();
-        boolean isBlueGradients = m_IsBlueGradients;
-        boolean isRedGradients = m_IsRedGradients;
+        boolean isPreDefinedGradients = m_IsPreDefinedGradients;
         boolean isOutline = m_IsOutline;
         boolean isFrame = m_IsFrame;
 
@@ -472,30 +478,27 @@ public class TargetDiagram extends RelationDiagram{
 
         if(m_IsAction){
             if(m_Style == DEFAULT){
-                setPropertiesValues(true, false, true, true, false, false, true, false);
+                setPropertiesValues(true, false, true, true, false, true, false);
                 getGui().setImageColorOfControlDialog(getNextColor());
             }
             if(m_Style == WITHOUT_OUTLINE){
-                setPropertiesValues(true, false, true, true, false, false, false, false);
+                setPropertiesValues(true, false, true, true, false, false, false);
                 getGui().setImageColorOfControlDialog(getNextColor());
             }
             if(m_Style == WITH_FRAME){
-                setPropertiesValues(true, false, true, true, false, false, true, true);
+                setPropertiesValues(true, false, true, true, false, true, true);
                 getGui().setImageColorOfControlDialog(getNextColor());
             }
-            if(m_Style == BLUE_GRADIENTS)
-                setPropertiesValues(true, false, true, false, true, false, true, false);
-            if(m_Style == RED_GRADIENTS)
-                setPropertiesValues(true, false, true, false, false, true, true, false);
             if(m_Style == LEFT_LAYOUT){
-                setPropertiesValues(true, true, true, true, false, false, true, false);
+                setPropertiesValues(true, true, true, true, false, true, false);
                 getGui().setImageColorOfControlDialog(getNextColor());
             }
+            if(GradientDefinitions.isPreDefinedGradient(m_Style))
+                setPropertiesValues(true, false, true, false, true, true, false);
             if (m_Style == USER_DEFINE) {
                 setModifyColorsProps(getGui().isModifyColorsPropsInDiagramPropsDialog());
                 if(isModifyColorsProps()){
-                    setBlueGradientsProps(false);
-                    setRedGradientsProps(false);
+                    setPreDefinedGradientsProps(false);
                     setBaseColorsProps(getGui().isBaseColorsPropsInDiagramPropsDialog());
                     if(isBaseColorsProps()){
                         getGui().setImageColorOfControlDialog(getNextColor());
@@ -520,8 +523,7 @@ public class TargetDiagram extends RelationDiagram{
             m_IsLeftLayout = isLeftLayout;
             setModifyColorsProps(isModifyColors);
             setBaseColorsProps(isBaseColors);
-            m_IsBlueGradients = isBlueGradients;
-            m_IsRedGradients = isRedGradients;
+            m_IsPreDefinedGradients = isPreDefinedGradients;
             m_IsOutline = isOutline;
             m_IsFrame = isFrame;
         }
@@ -538,7 +540,7 @@ public class TargetDiagram extends RelationDiagram{
                 if(isModifyColorsProps()){
                     int color = -1;
                     int shapeID = getController().getShapeID(getShapeName(xShape));
-                    if(m_IsBlueGradients || m_IsRedGradients){
+                    if(m_IsPreDefinedGradients){
                         if(shapeID > 0)
                             setGradientsStyleColors(shapeID);
                         if(m_IsLeftLayout)
@@ -619,28 +621,12 @@ public class TargetDiagram extends RelationDiagram{
         }
     }
     
-//NOT COMPLISHED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public void setGradientsStyleColors(int shapeID){
         --shapeID;
-        if(m_IsBlueGradients){
-            shapeID %= 8;
-            if(shapeID < 4){
-                setStartColorProps(aBLUE_COLORS[shapeID]);
-                setEndColorProps(aBLUE_COLORS[shapeID + 1]);
-            }else{
-                setStartColorProps(aBLUE_COLORS[8 - shapeID]);
-                setEndColorProps(aBLUE_COLORS[8 - (shapeID + 1)]);
-            }
-        }
-        if(m_IsRedGradients){
-            shapeID %= 8;
-            if(shapeID < 4){
-                setStartColorProps(aRED_COLORS[shapeID]);
-                setEndColorProps(aRED_COLORS[shapeID + 1]);
-            }else{
-                setStartColorProps(aRED_COLORS[8 - shapeID]);
-                setEndColorProps(aRED_COLORS[8 - (shapeID + 1)]);
-            }
+        if(m_IsPreDefinedGradients){
+            int topShapeID = getTopShapeID();
+            setStartColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, shapeID, topShapeID));
+            setEndColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, shapeID + 1, topShapeID));
         }
     }
 
