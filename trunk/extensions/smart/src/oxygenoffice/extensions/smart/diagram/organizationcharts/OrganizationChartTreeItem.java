@@ -44,7 +44,7 @@ public class OrganizationChartTreeItem {
 
     public void initTreeItems(){ };
 
-    public void setPositionsOfItems(){ System.out.println("- setPosOfItems: "); };
+    public void setPositionsOfItems(){ };
 
     public void setPosOfRect(){ };
 
@@ -194,6 +194,14 @@ public class OrganizationChartTreeItem {
         setPosOfRect();
         if(m_FirstSibling != null)
             m_FirstSibling.display();
+    }
+
+    public void setGradient(){
+        if(m_FirstChild != null)
+            m_FirstChild.setGradient();
+        getDiagramTree().getOrgChart().setGradientColor(getRectangleShape(), getLevel(), OrganizationChartTreeItem._maxLevel + 1);
+        if(m_FirstSibling != null)
+            m_FirstSibling.setGradient();
     }
 
     public void setProperties(){

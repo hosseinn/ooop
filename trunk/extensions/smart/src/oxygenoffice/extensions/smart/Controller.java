@@ -372,8 +372,7 @@ public final class Controller implements XSelectionChangeListener {
             boolean isModifyColors = getDiagram().isModifyColorsProps();
             short sGradientDirection = getDiagram().getGradientDirectionProps();
             boolean isGradients = getDiagram().isGradientProps();
-            boolean isBlueGradients = getDiagram().isBlueGradientsProps();
-            boolean isRedGradients = getDiagram().isRedGradientsProps();
+            boolean isPreDefinedGradients = getDiagram().isPreDefinedGradientsProps();
             short   sRounded = getDiagram().getRoundedProps();
             boolean isOutline = getDiagram().isOutlineProps();
             boolean isShadow = getDiagram().isShadowProps();
@@ -396,7 +395,7 @@ public final class Controller implements XSelectionChangeListener {
             getDiagram().setSelectedAreaProps(sSelectedArea);
             getDiagram().setGradientProps(isGradients);
             getDiagram().setGradientDirectionProps(sGradientDirection);
-            ((OrganizationChart)getDiagram()).setPropertiesValues(isSelectAllShape, isModifyColors, isBlueGradients, isRedGradients, sRounded, isOutline, isShadow);            
+            ((OrganizationChart)getDiagram()).setPropertiesValues(isSelectAllShape, isModifyColors, isPreDefinedGradients, sRounded, isOutline, isShadow);
 
             ((OrganizationChart)getDiagram()).initDiagramTree(diagramTree);
             XNamed xNamed = (XNamed) UnoRuntime.queryInterface(XNamed.class, getSelectedShape());
@@ -408,18 +407,17 @@ public final class Controller implements XSelectionChangeListener {
         if(m_GroupType == Controller.RELATIONGROUP){
 
             //store props of old diagram
+            short style = getDiagram().getStyle();
             boolean isTextFit = getDiagram().isTextFitProps();
             float fFontSize = getDiagram().getFontSizeProps();
             boolean isBaseColors = getDiagram().isBaseColorsProps();
             int color = getDiagram().getColorProps();
             int startColor = getDiagram().getStartColorProps();
             int endColor = getDiagram().getEndColorProps();
-            boolean isBlueGradients = getDiagram().isBlueGradientsProps();
-            boolean isRedGradients = getDiagram().isRedGradientsProps();
+            boolean isPreDefinedGradients = getDiagram().isPreDefinedGradientsProps();
 
             //basic settings
-            getDiagram().setBlueGradientsProps(false);
-            getDiagram().setRedGradientsProps(false);
+            getDiagram().setPreDefinedGradientsProps(false);
             getDiagram().setBaseColorsWithGradientsProps(false);
 
             ArrayList<ShapeData> shapeDatas = ((RelationDiagram)getDiagram()).getShapeDatas();
@@ -435,8 +433,8 @@ public final class Controller implements XSelectionChangeListener {
             getDiagram().setStartColorProps(startColor);
             getDiagram().setEndColorProps(endColor);
             if(diagramType != VENNDIAGRAM){
-                getDiagram().setBlueGradientsProps(isBlueGradients);
-                getDiagram().setRedGradientsProps(isRedGradients);
+                getDiagram().setPreDefinedGradientsProps(isPreDefinedGradients);
+                getDiagram().setStyle(style);
             }
 
             getGui().setColorModeOfImageOfControlDialog();

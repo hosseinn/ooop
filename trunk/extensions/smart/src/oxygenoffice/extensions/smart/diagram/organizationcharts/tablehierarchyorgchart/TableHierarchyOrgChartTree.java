@@ -38,6 +38,7 @@ class TableHierarchyOrgChartTree extends OrganizationChartTree {
         m_RootItem.setPositionsOfItems();
         m_RootItem.setProps();
         m_RootItem.display();
+        setGradientColorProps();
     }
 
     @Override

@@ -66,6 +66,11 @@ public abstract class OrganizationChartTree {
 
     public abstract void refreshConnectorProps();
 
+    public void setGradientColorProps(){
+        if(getOrgChart().isPreDefinedGradientsProps() && getOrgChart().getStyle() != OrganizationChart.USER_DEFINE)
+            m_RootItem.setGradient();
+    }
+
     // set root Item, return number of roots (if number is not 1, than there is error
     public short setRootItem(){
         boolean isRoot;

@@ -21,6 +21,7 @@ import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
 import oxygenoffice.extensions.smart.Gui;
 import oxygenoffice.extensions.smart.diagram.Diagram;
+import oxygenoffice.extensions.smart.diagram.GradientDefinitions;
 
 
 public abstract class OrganizationChart extends Diagram{
@@ -51,21 +52,15 @@ public abstract class OrganizationChart extends Diagram{
     public final static short   WITHOUT_OUTLINE     = 1;
     public final static short   NOT_ROUNDED         = 2;
     public final static short   WITH_SHADOW         = 3;
-    public final static short   BLUE_GRADIENTS      = 4;
-    public final static short   RED_GRADIENTS       = 5;
-    public final static short   USER_DEFINE         = 6;
+    // 4 - 15 Gradients from GradientDefinitions.java
+    public final static short   USER_DEFINE         = 16;
 
     //values of propperties
     private final static int    CORNER_RADIUS1      = 350;
     private final static int    CORNER_RADIUS2      = 700;
     public final static int     SHADOW_DIST         = 300;
     private final static int    SHADOW_TRANSP       = 30;
-
-    protected final int[]       aRED_COLORS         = { 11674146, 14160145, 16711680, 16744192, 16776960 };
-    protected final int[]       aBLUE_COLORS        = { 85, 170, 255, 7573742, 11393254 };
-    
    
-
 
     public OrganizationChart(Controller controller, Gui gui, XFrame xFrame) {
         super(controller, gui, xFrame);
@@ -73,15 +68,14 @@ public abstract class OrganizationChart extends Diagram{
         setSelectedAllShapesProps(true);
         setModifyColorsProps(false);
         m_IsGradients = false;
-        m_IsBlueGradients = false;
-        m_IsRedGradients = false;
+        m_IsPreDefinedGradients = false;
         m_sRounded = Diagram.MEDIUM_ROUNDED;
         m_IsOutline = true;
         m_IsShadow = false;
     }
 
     public abstract void initDiagramTree(OrganizationChartTree diagramTree);
-
+    
     public void setNewItemHType(short n){
         m_sNewItemHType = n;
     }
@@ -263,10 +257,6 @@ public abstract class OrganizationChart extends Diagram{
             XPropertySet xBaseProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xBaseShape);
             xBaseProps.setPropertyValue("FillStyle", FillStyle.NONE);
             xBaseProps.setPropertyValue("LineStyle", LineStyle.NONE);
-            //xBaseProps.setPropertyValue("FillColor", new Integer(0xFFFFFF));
-      //xBaseProps.setPropertyValue("FillTransparence", new Integer(100));
-            //xBaseProps.setPropertyValue("LineColor", new Integer(0xFFFFFF));
-      //xBaseProps.setPropertyValue("LineTransparence", new Integer(100));
             xBaseProps.setPropertyValue("MoveProtect", new Boolean(true));
         } catch (UnknownPropertyException ex) {
             System.err.println(ex.getLocalizedMessage());
@@ -287,22 +277,12 @@ public abstract class OrganizationChart extends Diagram{
     public void refreshConnectorProps(){
         getDiagramTree().refreshConnectorProps();
     }
-
     
-
-    public void setGradientsStylesColors(short level){
-        if(m_IsBlueGradients){
-            level %= 4;
-            setStartColorProps(aBLUE_COLORS[level]);
-            setEndColorProps(aBLUE_COLORS[level + 1]);
-        }
-        if(m_IsRedGradients){
-            level %= 4;
-            setStartColorProps(aRED_COLORS[level]);
-            setEndColorProps(aRED_COLORS[level + 1]);
-        }
+    public void setGradientsStylesColors(short level, int iSteps){
+        setStartColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, level, iSteps));
+        setEndColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, level+1, iSteps));
     }
-
+    
     @Override
     public void setShapeProperties(XShape xShape, String type) {
         int color = -1;
@@ -311,16 +291,17 @@ public abstract class OrganizationChart extends Diagram{
             xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
             
             if(isModifyColorsProps()){
-                if(m_IsGradients || m_IsBlueGradients || m_IsRedGradients){
-                    if(m_IsBlueGradients || m_IsRedGradients){
+                if(m_IsGradients || m_IsPreDefinedGradients){
+                    if(m_IsPreDefinedGradients){
                         OrganizationChartTree diagramTree = getDiagramTree();
                         if(diagramTree != null){
                             OrganizationChartTreeItem item = diagramTree.getTreeItem(xShape);
                             if(item != null){
+                                int iSteps = OrganizationChartTreeItem._maxLevel + 1;
                                 if(getController().getDiagramType() == Controller.ORGANIGRAM)
-                                    setGradientsStylesColors(item.getDeepOfItem());
+                                    setGradientsStylesColors(item.getDeepOfItem(), iSteps);
                                 else
-                                    setGradientsStylesColors(item.getLevel());
+                                    setGradientsStylesColors(item.getLevel(), iSteps);
                             }
                         }
                     }
@@ -403,11 +384,10 @@ public abstract class OrganizationChart extends Diagram{
         }
     }
     
-    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, boolean isBlueGradients, boolean isRedGradients, short sRounded, boolean isOutline, boolean isShadow){
+    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, boolean isPreDefinedGradients, short sRounded, boolean isOutline, boolean isShadow){
         setSelectedAllShapesProps(isSelectAllShape);
         setModifyColorsProps(isModifyColors);
-        setBlueGradientsProps(isBlueGradients);
-        setRedGradientsProps(isRedGradients);
+        setPreDefinedGradientsProps(isPreDefinedGradients);
         setRoundedProps(sRounded);
         setOutlineProps(isOutline);
         setShadowProps(isShadow);
@@ -421,8 +401,7 @@ public abstract class OrganizationChart extends Diagram{
         boolean isSelectAllShape = isSelectedAllShapesProps();
         boolean isModifyColors = isModifyColorsProps();
         boolean isGradients = m_IsGradients;
-        boolean isBlueGradients = m_IsBlueGradients;
-        boolean isRedGradients = m_IsRedGradients;
+        boolean isPreDefinedGradients = m_IsPreDefinedGradients;
         short sRounded = m_sRounded;
         boolean isOutline = m_IsOutline;
         boolean isShadow = m_IsShadow;
@@ -430,32 +409,29 @@ public abstract class OrganizationChart extends Diagram{
         m_IsAction = false;
 
         getGui().executePropertiesDialog();
-        
+
         if(m_IsAction){
             
             if( m_Style == DEFAULT )
-                setPropertiesValues(true, false, false, false, Diagram.MEDIUM_ROUNDED, true, false);
+                setPropertiesValues(true, false, false, Diagram.MEDIUM_ROUNDED, true, false);
             if( m_Style == WITHOUT_OUTLINE)
-                setPropertiesValues(true, false, false, false, Diagram.MEDIUM_ROUNDED, false, false);
+                setPropertiesValues(true, false, false, Diagram.MEDIUM_ROUNDED, false, false);
             if( m_Style == NOT_ROUNDED)
-                setPropertiesValues(true, false, false, false, Diagram.NULL_ROUNDED, true, false);
+                setPropertiesValues(true, false, false, Diagram.NULL_ROUNDED, true, false);
             if( m_Style == WITH_SHADOW)
-                setPropertiesValues(true, false, false, false, Diagram.MEDIUM_ROUNDED, true, true);
-            if(m_Style == BLUE_GRADIENTS || m_Style == RED_GRADIENTS){
+                setPropertiesValues(true, false, false, Diagram.MEDIUM_ROUNDED, true, true);
+            if(GradientDefinitions.isPreDefinedGradient(m_Style)){
                 setGradientProps(false);
                 if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
                     setGradientDirectionProps(Diagram.HORIZONTAL);
                 else
                     setGradientDirectionProps(Diagram.VERTICAL);
             }
-            if(m_Style == BLUE_GRADIENTS)
-                setPropertiesValues(true, true, true, false, Diagram.MEDIUM_ROUNDED, true, false);
-            if(m_Style == RED_GRADIENTS)
-                setPropertiesValues(true, true, false, true, Diagram.MEDIUM_ROUNDED, true, false);
+            if(GradientDefinitions.isPreDefinedGradient(m_Style))
+                setPropertiesValues(true, true, true, Diagram.MEDIUM_ROUNDED, true, false);
             if(m_Style == USER_DEFINE){
                 if(isModifyColorsProps()){
-                    setBlueGradientsProps(false);
-                    setRedGradientsProps(false);
+                    setPreDefinedGradientsProps(false);
                     setGradientProps(getGui().isGradientPropsInDiagramPropsDialog());
                     if(m_IsGradients){
                         setStartColorProps(getGui().getImageColorOfControl(getGui().m_xStartColorImageControlOfPD));
@@ -485,8 +461,7 @@ public abstract class OrganizationChart extends Diagram{
             setSelectedAllShapesProps(isSelectAllShape);
             setModifyColorsProps(isModifyColors);
             m_IsGradients = isGradients;
-            m_IsBlueGradients = isBlueGradients;
-            m_IsRedGradients = isRedGradients;
+            m_IsPreDefinedGradients = isPreDefinedGradients;
             m_sRounded = sRounded;
             m_IsOutline = isOutline;
             m_IsShadow = isShadow;
@@ -635,12 +610,28 @@ public abstract class OrganizationChart extends Diagram{
 
     public void setItemProperties(XShape xRectangleShape, short level){
         setMoveProtectOfShape(xRectangleShape);
-        
+        setFontPropertiesOfShape(xRectangleShape);
+        if(m_IsGradients || m_IsPreDefinedGradients){
+            if(m_IsGradients){
+                if(getGradientDirectionProps() == Diagram.VERTICAL)
+                    setGradient(xRectangleShape);
+                else
+                    setGradient(xRectangleShape, (short)900);
+            }
+        } else{
+            setColorOfShape(xRectangleShape, getColor());
+        }
+        setShapeProperties(xRectangleShape, "RectangleShape");
+    }
+
+    public void setItemProperties(XShape xRectangleShape, short level, int iSteps){
+        setMoveProtectOfShape(xRectangleShape);
+
         setFontPropertiesOfShape(xRectangleShape);
 
-        if(m_IsGradients || m_IsBlueGradients || m_IsRedGradients){
-            if(level != -1 && (m_IsBlueGradients || m_IsRedGradients))
-                setGradientsStylesColors(level);
+        if(m_IsGradients || m_IsPreDefinedGradients){
+            if(level != -1 && m_IsPreDefinedGradients)
+                setGradientsStylesColors(level, iSteps);
             if(getGradientDirectionProps() == Diagram.VERTICAL)
                 setGradient(xRectangleShape);
             else
@@ -650,6 +641,16 @@ public abstract class OrganizationChart extends Diagram{
         }
         setShapeProperties(xRectangleShape, "RectangleShape");
     }
+   
+    public void setGradientColor(XShape xRectangleShape, short level, int iSteps){
+            if(level != -1)
+                setGradientsStylesColors(level, iSteps);
+            if(getGradientDirectionProps() == Diagram.VERTICAL)
+                setGradient(xRectangleShape);
+            else
+                setGradient(xRectangleShape, (short)900);
+    }
+    
 
     public int getColor(){
         int color = -1;

@@ -29,9 +29,11 @@ public abstract class RelationDiagram extends Diagram{
     public final static short                   CORNER_RADIUS   = 300;
 
     public final int                            COLOR           = 255;
-    public final int[]  aCOLORS         = { 65280, 255, 16711680, 16776960, 9699435, 16737843, 47359, 12076800 };
-    public final int[]  aRED_COLORS     = { 11674146, 14160145, 16711680, 16744192, 16776960 };
-    public final int[]  aBLUE_COLORS    = { 85, 170, 255, 7573742, 11393254 };
+    public final int[]                          aCOLORS         = { 65280, 255,
+                                                                    16711680, 16776960,
+                                                                    9699435, 16737843,
+                                                                    47359, 12076800 };
+    
 
     public RelationDiagram(Controller controller, Gui gui, XFrame xFrame){
         super(controller, gui, xFrame);
