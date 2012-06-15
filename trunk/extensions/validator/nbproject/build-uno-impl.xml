@@ -18,6 +18,7 @@
         <echo message="setting up UNO environment ..."/>
         <property name="office.unopkg" value="${office.program.dir}${file.separator}unopkg"/>
         <property name="office.soffice" value="${office.program.dir}${file.separator}soffice"/>
+        <property name="office.scalc" value="${office.program.dir}${file.separator}scalc"/>
         
         <property name="sdk.idl.dir" location="${oo.sdk.dir}${file.separator}idl"/> 
         <property name="sdk.idlc" value="${sdk.bin.dir}${file.separator}idlc"/>
@@ -413,14 +414,15 @@
 
     <!-- subtargets for different office versions -->
     <target name="-run-oo">
-        <echo message="${office.unopkg} gui -f ${uno.package.name}"/>
+        <echo message="${office.unopkg} add -f --suppress-license ${uno.package.name}"/>
         <exec dir="${office.program.dir}" executable="${office.unopkg}" failonerror="true">
-            <arg value="gui"/>
+            <arg value="add"/>
             <arg value="-f"/>
+            <arg value="--suppress-license"/>
             <arg file="${uno.package.name}"/>
         </exec>
-        <echo message="${office.soffice}"/>
-        <exec executable="${office.soffice}" dir="${office.program.dir}" failonerror="true">
+        <echo message="${office.scalc}"/>
+        <exec executable="${office.scalc}" dir="${office.program.dir}" failonerror="true">
             <arg value="${office.startup.options}"/>
         </exec>
     </target>
