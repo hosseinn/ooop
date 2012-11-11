@@ -129,13 +129,17 @@ public class HorizontalOrgChartTreeItem extends OrganizationChartTreeItem {
 
     // set _horUnit, _shapeWidth, , horSpace, _verUnit, _shapeHeight, verSpace, _groupPosX, _groupPosY
     @Override
-    public void setProps(){
+    public void setMeasureProps(){
+        int iHiddenElementNum = 0;
+        if(getDiagramTree().getOrgChart().isHiddenRootElementProp())
+            iHiddenElementNum = 1;
+        
         int baseShapeWidth = _shapeWidth = getDiagramTree().getControlShapeSize().Width;
         int baseShapeHeight = _shapeHeight = getDiagramTree().getControlShapeSize().Height;
         _horSpace = _verSpace = 0;
         
         if(_maxLevel > 0){
-            int horUnit = baseShapeWidth / ( _maxLevel * (getDiagramTree().getOrgChart().getShapeWidth() + getDiagramTree().getOrgChart().getHorSpace()) + getDiagramTree().getOrgChart().getShapeWidth());
+            int horUnit = baseShapeWidth / ( (_maxLevel - iHiddenElementNum) * (getDiagramTree().getOrgChart().getShapeWidth() + getDiagramTree().getOrgChart().getHorSpace()) + getDiagramTree().getOrgChart().getShapeWidth());
             _shapeWidth = horUnit * getDiagramTree().getOrgChart().getShapeWidth();
             _horSpace = horUnit * getDiagramTree().getOrgChart().getHorSpace();
         }
@@ -153,6 +157,12 @@ public class HorizontalOrgChartTreeItem extends OrganizationChartTreeItem {
     public void setPosOfRect(){
         int xCoord = _groupPosX + (_shapeWidth + _horSpace) * getLevel();
         int yCoord = _groupPosY + getDiagramTree().getControlShapeSize().Height -_shapeHeight - (int)((_shapeHeight + _verSpace) * getPos());
+        if(getDiagramTree().getOrgChart().isHiddenRootElementProp()){
+            if(this.equals(getDiagramTree().getRootItem()))
+                xCoord = _groupPosX - 10;
+            else
+                xCoord = _groupPosX + (_shapeWidth + _horSpace) * (getLevel() - 1);
+        }
         setPosition(new Point(xCoord, yCoord));
         setSize(new Size(_shapeWidth, _shapeHeight));
     }

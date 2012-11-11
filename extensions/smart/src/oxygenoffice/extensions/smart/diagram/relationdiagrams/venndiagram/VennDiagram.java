@@ -5,55 +5,125 @@ import com.sun.star.awt.Size;
 import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
-import com.sun.star.drawing.FillStyle;
 import com.sun.star.drawing.LineStyle;
+import com.sun.star.drawing.TextFitToSizeType;
 import com.sun.star.drawing.XShape;
 import com.sun.star.drawing.XShapes;
 import com.sun.star.frame.XFrame;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.text.XText;
+import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
+import java.util.ArrayList;
 import oxygenoffice.extensions.smart.Controller;
-import oxygenoffice.extensions.smart.Gui;
+import oxygenoffice.extensions.smart.diagram.Color;
 import oxygenoffice.extensions.smart.diagram.Diagram;
-import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
-import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
+import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
+import oxygenoffice.extensions.smart.gui.Gui;
 
 
 public class VennDiagram extends RelationDiagram {
 
 
-    public final static short   DEFAULT          = 0;
-    public final static short   WITHOUT_OUTLINE  = 1;
-    public final static short   WITHOUT_FRAME    = 2;
-    public final static short   NOT_ROUNDED      = 3;
-    public final static short   USER_DEFINE      = 4;
-
-    private final static int    TRANSP_VALUE     = 35;
-    private final static int    TRANSP_VALUE2    = 50;
-
-
+    public final static short   DEFAULT         = 0;
+    public final static short   WITHOUT_OUTLINE = 1;
+    public final static short   WITHOUT_FRAME   = 2;
+    public final static short   NOT_ROUNDED     = 3;
+    public final static short   GREEN_DARK      = 4;
+    public final static short   GREEN_BRIGHT    = 5;
+    public final static short   BLUE_DARK       = 6;
+    public final static short   BLUE_BRIGHT     = 7;
+    public final static short   PURPLE_DARK     = 8;
+    public final static short   PURPLE_BRIGHT   = 9;
+    public final static short   ORANGE_DARK     = 10;
+    public final static short   ORANGE_BRIGHT   = 11;
+    public final static short   YELLOW_DARK     = 12;
+    public final static short   YELLOW_BRIGHT   = 13;
+    public final static short   USER_DEFINE    = 14;
+    
+    public final static short   FIRST_COLORTHEME_STYLE_VALUE = 4;
+   
+    
     public VennDiagram(Controller controller, Gui gui, XFrame xFrame){
         super(controller, gui, xFrame);
-        //default values
-        setSelectedAllShapesProps(true);
-        setModifyColorsProps(false);
-        setBaseColorsProps(true);
-        m_sTransparency = Diagram.MEDIUM_TRANSP;
-        m_IsOutline = true;
-        m_IsFrame = true;
-        m_IsRoundedFrame = true;
-
-        m_IsAction = false;
+        setDefaultProps();
+        setColorModeProp(Diagram.BASE_COLORS_MODE);
+    }
+    
+    @Override
+    public short getUserDefineStyleValue(){
+        return USER_DEFINE;
+    }
+    
+    @Override
+    public boolean isColorThemeStyle(short style){
+        return  style == GREEN_DARK || style == GREEN_BRIGHT ||
+                style == BLUE_DARK || style == BLUE_BRIGHT || 
+                style == PURPLE_DARK || style == PURPLE_BRIGHT ||
+                style == ORANGE_DARK || style == ORANGE_BRIGHT ||
+                style == YELLOW_DARK || style == YELLOW_BRIGHT;
+    }
+    
+    @Override
+    public short getColorModeOfThemeStyle(short style){
+        return (short)(style - FIRST_COLORTHEME_STYLE_VALUE + Diagram.FIRST_COLORTHEME_MODE_VALUE);
     }
 
     @Override
     public String getDiagramTypeName(){
         return "VennDiagram";
     }
-
+    
+    @Override
+    public void initProperties(XShape xControlShape, ArrayList<RelationDiagramItem> items){
+        super.initProperties(xControlShape, items);
+        XPropertySet xProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, items.get(0).getMainShape());
+        try {
+            //if(getStyleProps() == VennDiagram.DEFAULT){ }
+            if(getStyleProp() == VennDiagram.WITHOUT_OUTLINE)
+                setOutlineProp(false);
+            if(getStyleProp() == VennDiagram.WITHOUT_FRAME)
+                setFrameProp(false);
+            if(getStyleProp() == VennDiagram.NOT_ROUNDED)
+                setRoundedFrameProp(true);
+            if(getStyleProp() == VennDiagram.USER_DEFINE){
+                
+                int transparence = AnyConverter.toInt(xProps.getPropertyValue("FillTransparence"));
+                if(transparence <= 10)
+                    setTransparencyProp(Diagram.NULL_TRANSP);
+                if(transparence > 10 && transparence < 40)
+                    setTransparencyProp(Diagram.MEDIUM_TRANSP);
+                if(transparence >= 40)
+                    setTransparencyProp(Diagram.EXTRA_TRANSP);
+             
+                if(((LineStyle)xProps.getPropertyValue("LineStyle")).getValue() == LineStyle.NONE_value)
+                    setOutlineProp(false);
+                setShapesLineWidthProp(AnyConverter.toInt(xProps.getPropertyValue("LineWidth")));
+                
+                xProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, items.get(0).getTextShape());
+                transparence = AnyConverter.toInt(xProps.getPropertyValue("FillTransparence"));
+                setFrameProp(transparence != 100);
+                if(isFrameProp()){
+                    int cornerRadius = AnyConverter.toInt(xProps.getPropertyValue("CornerRadius"));
+                    setRoundedFrameProp(cornerRadius > 0);
+                }
+            }
+            setFontPropertyValues();
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, items.get(0).getTextShape());
+            XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
+            setTextColorProp(AnyConverter.toInt(xTextProps.getPropertyValue("CharColor")));
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (com.sun.star.lang.IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+    
     @Override
     public void createDiagram(){
         super.createDiagram();
@@ -70,7 +140,6 @@ public class VennDiagram extends RelationDiagram {
         m_xControlShape = createShape("EllipseShape", 0, coord.X, coord.Y, size.Width, size.Height);
         m_xShapes.add(m_xControlShape);
         setControlShapeProps(getControlShape());
-        getController().setSelectedShape(m_xControlShape);
     }
 
     @Override
@@ -82,25 +151,30 @@ public class VennDiagram extends RelationDiagram {
             XShape xCurrShape;
             String currShapeName = "";
             int currShapeID;
-
-            for( int i=0; i < m_xShapes.getCount(); i++ ){
+            for(int i = 0; i < m_xShapes.getCount(); i++ ){
                 xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
                 currShapeName = getShapeName(xCurrShape);
-                if (currShapeName.contains("EllipseShape")) {
-                    if(currShapeName.endsWith("EllipseShape0")){
-                        m_xControlShape = xCurrShape;
-                    }else{
+                if(currShapeName.endsWith("EllipseShape0"))
+                    m_xControlShape = xCurrShape;
+            }
+            int topShapeID = getTopShapeID();
+            for(int i = 1; i <= topShapeID; i++ ){
+                for(int j = 0; j < m_xShapes.getCount(); j++ ){
+                    xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(j));
+                    currShapeName = getShapeName(xCurrShape);
+                    if (currShapeName.contains("EllipseShape")) {
                         currShapeID = getController().getShapeID(currShapeName);
-                        addItem(new VennDiagramItem(this, currShapeID, xCurrShape, getPairOfMainShape(currShapeID)));
+                        if(currShapeID == i)
+                            addItem(new VennDiagramItem(this, currShapeID, xCurrShape, getPairOfMainShape(currShapeID)));
                     }
-                }
+                } 
             }  
         } catch (IndexOutOfBoundsException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
             System.err.println(ex.getLocalizedMessage());
         }
-        setControlShapeProps(getControlShape());
+        setControlShapePropsWithoutTextProps(getControlShape());
     }
 
     @Override
@@ -150,8 +224,9 @@ public class VennDiagram extends RelationDiagram {
         return iTopShapeID;
     }
 
+    @Override
     public XShape getControlShape(){
-        if(m_xControlShape == null){
+        if(m_xControlShape == null && m_xShapes != null){
             XShape xCurrShape = null;
             String currShapeName = "";
             try {
@@ -172,7 +247,6 @@ public class VennDiagram extends RelationDiagram {
 
     @Override
     public void addShape(){
-
         int selectedShapeID = getSelectedShapeID();
         if(selectedShapeID > 0)
             increaseItemsIDs(selectedShapeID);
@@ -181,47 +255,60 @@ public class VennDiagram extends RelationDiagram {
         if(selectedShapeID == -1 ){
             super.createDiagram();
             createDiagram(1);
-            getGui().setColorModeOfImageOfControlDialog();
         }else{
             createItem(selectedShapeID + 1);
-            if(isBaseColorsProps() && getGui() != null && getGui().getControlDialogWindow() != null)
-                getGui().setImageColorOfControlDialog(aCOLORS[ (selectedShapeID + 1) % 8] );
+            if(isBaseColorsMode())
+                setColorProp(_aBaseColors[(selectedShapeID + 1) % 8]);
         }
     }
 
     @Override
     public int getSelectedShapeID(){
-        String shapeName = getShapeName(getController().getSelectedShape());
-        if(shapeName.contains("VennDiagram") && (shapeName.contains("EllipseShape") || shapeName.contains("RectangleShape"))){
-            int currShapeID = getController().getShapeID(shapeName);
-            if(currShapeID >= 0)
-                return currShapeID;
+        XShape xShape = getController().getSelectedShape();
+        if(xShape != null){
+            String shapeName = getShapeName(xShape);
+            if(shapeName.contains("VennDiagram") && (shapeName.contains("EllipseShape") || shapeName.contains("RectangleShape"))){
+                int currShapeID = getController().getShapeID(shapeName);
+                if(currShapeID >= 0)
+                    return currShapeID;
+            }
         }
         return -1;
     }
 
     @Override
     public RelationDiagramItem createItem(int shapeID, String str, Color oColor){
-        int color = 0;
-        if(!oColor.isGradient())
-            color = oColor.getColor();
-        else
-            color = oColor.getStartColor();
-        VennDiagramItem item = (VennDiagramItem)createItem(shapeID, str, color);
-        return item;
-    }
-
-    @Override
-    public RelationDiagramItem createItem(int shapeID, String str, int color){
+        if(oColor.isGradient())
+            setColorProp(oColor.getStartColor());
         Size size = getControlShape().getSize();
         XShape xEllipseShape = createShape("EllipseShape", shapeID, size.Width, size.Height);
         m_xShapes.add(xEllipseShape);
-        setColorOfShape(xEllipseShape, color);
         setMoveProtectOfShape(xEllipseShape);
 
         XShape xRectangleShape = createShape( "RectangleShape", shapeID, size.Width/2, size.Height/4 );
         m_xShapes.add(xRectangleShape);
-        setColorOfShape(xRectangleShape, color);
+        setMoveProtectOfShape(xRectangleShape);
+
+        VennDiagramItem item = new VennDiagramItem(this, shapeID, xEllipseShape, xRectangleShape);
+        addItem(item);
+        item.setText(str);
+        item.setShapesProps();
+        item.setColor(oColor);
+        item.setLineColor();
+        getController().setSelectedShape((Object)xEllipseShape);
+
+        return item;
+    }
+    
+    @Override
+    public RelationDiagramItem createItem(int shapeID, String str){
+        Size size = getControlShape().getSize();
+        XShape xEllipseShape = createShape("EllipseShape", shapeID, size.Width, size.Height);
+        m_xShapes.add(xEllipseShape);
+        setMoveProtectOfShape(xEllipseShape);
+
+        XShape xRectangleShape = createShape( "RectangleShape", shapeID, size.Width/2, size.Height/4 );
+        m_xShapes.add(xRectangleShape);
         setMoveProtectOfShape(xRectangleShape);
 
         VennDiagramItem item = new VennDiagramItem(this, shapeID, xEllipseShape, xRectangleShape);
@@ -234,8 +321,8 @@ public class VennDiagram extends RelationDiagram {
         else
             item.setText(str);
 
-        item.setShapesProps();
-
+        item.setShapesProps(true);
+        setTextColorOfShape(item.getTextShape());
         getController().setSelectedShape((Object)xEllipseShape);
 
         return item;
@@ -277,17 +364,16 @@ public class VennDiagram extends RelationDiagram {
                 }
         
                 if(selectedShapeName.contains("EllipseShape") && !selectedShapeName.endsWith("EllipseShape0")){
-                    if(selectedShapeID == 1 && getTopShapeID() == 1){
+                    if(selectedShapeID == 1 && getTopShapeID() == 1)
                         xNextSelectedShape = getControlShape();
-                        if(isBaseColorsProps() && getGui() != null && getGui().isVisibleControlDialog())
-                            getGui().setImageColorOfControlDialog(aCOLORS[0]);
-                    }
                     selectedItem.removeItem();
                     decreaseItemsIDs(selectedShapeID);
                 }
 
                 if(xNextSelectedShape != null)
                     getController().setSelectedShape(xNextSelectedShape);
+                if(isBaseColorsMode())
+                    setColorProp(getNextColor());
             }
         }
     }
@@ -317,86 +403,36 @@ public class VennDiagram extends RelationDiagram {
         return xShape;
     }
 
-    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, boolean isBaseColors, short sTransparency, boolean isOutline, boolean isFrame, boolean isRoundedFrame){
-        setSelectedAllShapesProps(isSelectAllShape);
-        setModifyColorsProps(isModifyColors);
-        setBaseColorsProps(isBaseColors);
-        setTransparencyProps(sTransparency);
-        setOutlineProps(isOutline);
-        setFrameProps(isFrame);
-        setRoundedFrameProps(isRoundedFrame);
-        getGui().setColorModeOfImageOfControlDialog();
+    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, short sColorMode, short sTransparency, boolean isOutline, int lineWidth, boolean isFrame, boolean isRoundedFrame){
+        setSelectedAllShapesProp(isSelectAllShape);
+        setModifyColorsProp(isModifyColors);
+        setColorModeProp(sColorMode);
+        setTransparencyProp(sTransparency);
+        setOutlineProp(isOutline);
+        setShapesLineWidthProp(lineWidth);
+        setFrameProp(isFrame);
+        setRoundedFrameProp(isRoundedFrame);
     }
 
+    
     @Override
-    public void refreshShapeProperties(){
-        // need to memorize members, if user would exit into propsDialog
-        boolean isSelectAllShape = isSelectedAllShapesProps();
-        boolean isModifyColors = isModifyColorsProps();
-        boolean isBaseColors = isBaseColorsProps();
-        short   sTransparency = m_sTransparency;
-        boolean isOutline = m_IsOutline;
-        boolean isFrame = m_IsFrame;
-        boolean isRoundedFrame = m_IsRoundedFrame;
-            
-        m_IsAction = false;
-
-        getGui().executePropertiesDialog();
- 
-        if(m_IsAction){
-
-            if( m_Style == DEFAULT ){
-                setPropertiesValues(true, true, true, (short)1, true, true, true);
-                getGui().setImageColorOfControlDialog(getNextColor());
-            }
-            if( m_Style == WITHOUT_OUTLINE){
-                setPropertiesValues(true, true, true, (short)1, false, true, true);
-                getGui().setImageColorOfControlDialog(getNextColor());
-            }
-            if( m_Style == WITHOUT_FRAME){
-                setPropertiesValues(true, true, true, (short)1, true, false, true);
-                getGui().setImageColorOfControlDialog(getNextColor());
-            }
-            if( m_Style == NOT_ROUNDED){
-                setPropertiesValues(true, true, true, (short)1, true, true, false);
-                getGui().setImageColorOfControlDialog(getNextColor());
-            }
-            if(m_Style == USER_DEFINE){
-                setModifyColorsProps(getGui().isModifyColorsPropsInDiagramPropsDialog());
-                if(isModifyColorsProps()){
-                    setBaseColorsProps(getGui().isBaseColorsPropsInDiagramPropsDialog());
-                    if(isBaseColorsProps()){
-                        getGui().setImageColorOfControlDialog(getNextColor());
-                    }else{
-                        setColorProps(getGui().getImageColorOfControl(getGui().m_xColorImageControlOfPD));
-                        getGui().setImageColorOfControlDialog(m_iColor);
-                    }
-                    getGui().setColorModeOfImageOfControlDialog();
-                }
-            }
-
-            if(!isSelectedAllShapesProps()){
-                m_IsOutline = isOutline;
-                m_IsFrame = isFrame;
-                m_IsRoundedFrame = isRoundedFrame;
+    public void showPropertyDialog(){
+        getGui().enableControlDialogWindow(false);
+        short exec = getGui().executePropertiesDialog();
+        if(exec == 1){  
+            getGui().setPropertiesOfVennDiagram();
+            if(isSelectedAllShapesProp()){
+                setAllShapeProperties();
+                setModifyColorsProp(false);
+            } else {
                 setSelectedShapesProperties();
-                setAllShapeFontMeausereProperties();
-            }else{
-                if(!m_IsFrame)
-                    m_IsRoundedFrame = isRoundedFrame;
+                setModifyColorsProp(false);
                 setAllShapeProperties();
             }
-            setModifyColorsProps(false);
-        }else{
-            setSelectedAllShapesProps(isSelectAllShape);
-            setModifyColorsProps(isModifyColors);
-            setBaseColorsProps(isBaseColors);
-            m_sTransparency = sTransparency;
-            m_IsOutline = isOutline;
-            m_IsFrame = isFrame;
-            m_IsRoundedFrame = isRoundedFrame;
-        }
-        m_IsAction = false;
+            
+            getController().getDiagram().refreshDiagram();
+        } 
+        getGui().enableAndSetFocusControlDialog();
     }
 
     @Override
@@ -425,57 +461,67 @@ public class VennDiagram extends RelationDiagram {
             System.err.println(ex.getLocalizedMessage());
         }
     }
-
+    
+    public void setColorSettingsOfShape(XShape xShape){
+        if(isSimpleColorMode())
+            setLineColorProp(getDefaultLineColor());
+        if(isBaseColorsMode())
+            setLineColorProp(getDefaultLineColor());
+        if(isColorThemeMode())
+            setColorThemeColors();
+        
+        setColorOfShape(xShape);
+        setLineColorOfShape(xShape);
+    }
+    
     @Override
     public void setShapeProperties(XShape xShape, String type) {
-
+        setFontPropertiesOfShape(xShape);
         XPropertySet xProp = null;
         try {
             xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
-
-            if(isModifyColorsProps()){
-                int color = -1;
-                int shapeID = getController().getShapeID(getShapeName(xShape));
-              
-                if(isBaseColorsProps()){
-                    color = aCOLORS[(shapeID - 1) % 8];
+            if(type.equals("BaseShape"))
+                if(!isTextFitProp())
+                    xProp.setPropertyValue("CharHeight", new Float(40.0));
+            
+            if(!type.equals("BaseShape")){
+                if(isModifyColorsProp())
+                    setColorSettingsOfShape(xShape);
+                
+                if(m_sTransparency == Diagram.NULL_TRANSP)
+                    xProp.setPropertyValue("FillTransparence", new Integer(0));
+                if(m_sTransparency == Diagram.MEDIUM_TRANSP)
+                    xProp.setPropertyValue("FillTransparence", new Integer(TRANSP_VALUE1));
+                if(m_sTransparency == Diagram.EXTRA_TRANSP)
+                    xProp.setPropertyValue("FillTransparence", new Integer(TRANSP_VALUE2));
+/*
+                if(m_sTransparency == Diagram.NULL_TRANSP)
+                    xProp.setPropertyValue("LineTransparence", new Integer(0));
+                if(m_sTransparency == Diagram.MEDIUM_TRANSP)
+                    xProp.setPropertyValue("LineTransparence", new Integer(TRANSP_VALUE1));
+                if(m_sTransparency == Diagram.EXTRA_TRANSP)
+                    xProp.setPropertyValue("LineTransparence", new Integer(TRANSP_VALUE2));
+*/                
+                if(isOutlineProp()){
+                    xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
+                    xProp.setPropertyValue("LineWidth", new Integer(getShapesLineWidhtProp()));
                 }else{
-                    if(getGui() != null && getGui().getControlDialogWindow() != null)
-                        color = getGui().getImageColorOfControlDialog();
-                    if(color == -1)
-                        color = m_iColor;
-                }
-                xProp.setPropertyValue("FillStyle", FillStyle.SOLID);
-                xProp.setPropertyValue("FillColor", new Integer(color));
-            }
-
-            if(m_sTransparency == Diagram.NULL_TRANSP)
-                xProp.setPropertyValue("FillTransparence", new Integer(0));
-            if(m_sTransparency == Diagram.MEDIUM_TRANSP)
-                xProp.setPropertyValue("FillTransparence", new Integer(TRANSP_VALUE));
-            if(m_sTransparency == Diagram.EXTRA_TRANSP)
-                xProp.setPropertyValue("FillTransparence", new Integer(TRANSP_VALUE2));
-
-            if(m_IsOutline)
-                xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
-            else
-                xProp.setPropertyValue("LineStyle", LineStyle.NONE);
-
-            if(type.equals("RectangleShape")){
-                if(m_IsFrame){
-                    if(m_IsRoundedFrame){
-                        xProp.setPropertyValue("CornerRadius", new Integer(RelationDiagram.CORNER_RADIUS));
-                    }else{
-                        xProp.setPropertyValue("CornerRadius", new Integer(0));
-                    }
-                }else{
-                    xProp.setPropertyValue("FillTransparence", new Integer(100));
                     xProp.setPropertyValue("LineStyle", LineStyle.NONE);
                 }
+                
+                if(type.equals("RectangleShape")){
+                    if(isFrameProp()){
+                        if(isRoundedFrameProp()){
+                            xProp.setPropertyValue("CornerRadius", new Integer(RelationDiagram.CORNER_RADIUS1));
+                        }else{
+                            xProp.setPropertyValue("CornerRadius", new Integer(0));
+                        }
+                    }else{
+                        xProp.setPropertyValue("FillTransparence", new Integer(100));
+                        xProp.setPropertyValue("LineStyle", LineStyle.NONE);
+                    }
+                }
             }
-
-            setFontPropertiesOfShape(xShape);
-
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
@@ -486,5 +532,4 @@ public class VennDiagram extends RelationDiagram {
             System.err.println(ex.getLocalizedMessage());
         }
     }
-
 }

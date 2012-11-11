@@ -3,16 +3,20 @@ package oxygenoffice.extensions.smart;
 import com.sun.star.container.XNameAccess;
 import com.sun.star.deployment.XPackageInformationProvider;
 import com.sun.star.frame.FrameActionEvent;
+import com.sun.star.frame.XFrame;
 import com.sun.star.frame.XFrameActionListener;
+import com.sun.star.frame.XStatusListener;
 import com.sun.star.lang.EventObject;
 import com.sun.star.lang.XComponent;
+import com.sun.star.lang.XSingleComponentFactory;
+import com.sun.star.lib.uno.helper.Factory;
+import com.sun.star.lib.uno.helper.WeakBase;
+import com.sun.star.registry.XRegistryKey;
+import com.sun.star.ui.XContextMenuInterception;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
 import com.sun.star.uno.XComponentContext;
-import com.sun.star.lib.uno.helper.Factory;
-import com.sun.star.lang.XSingleComponentFactory;
-import com.sun.star.registry.XRegistryKey;
-import com.sun.star.lib.uno.helper.WeakBase;
+import com.sun.star.util.URL;
 import java.util.ArrayList;
 
 
@@ -23,21 +27,44 @@ public final class SmartProtocolHandler extends WeakBase
               com.sun.star.frame.XDispatchProvider,
               XFrameActionListener
 {
-    private final XComponentContext         m_xContext;
-    private com.sun.star.frame.XFrame       m_xFrame;
+    private final        XComponentContext  m_xContext;
+    private XFrame                          m_xFrame;
     private static final String             m_implementationName = SmartProtocolHandler.class.getName();
     private static final String[]           m_serviceNames = { "com.sun.star.frame.ProtocolHandler" };
-    private Controller                      m_Controller = null;
-    private XComponent                      m_xComponent = null;
+    private              Controller         m_Controller     = null;
+    private              XComponent         m_xComponent     = null;
     // store every frame with its Controller object
-    private static ArrayList<FrameObject>   _frameObjectList = null;
+    private static ArrayList<FrameObject>   _frameObjectList  = null;
+//    private              String             m_sOOName         = "";
+//    private              String             m_sOOSetupVersion = "";
 
 
     public SmartProtocolHandler( XComponentContext context )
     {
         m_xContext = context;
+//        setLONameAndVersion();
     };
 
+/*
+    public void setLONameAndVersion(){
+        try {
+            XMultiComponentFactory  xMCF = m_xContext.getServiceManager();
+            Object oConfigurationProvider = xMCF.createInstanceWithContext("com.sun.star.configuration.ConfigurationProvider", m_xContext);
+            XMultiServiceFactory xMSF = (XMultiServiceFactory)UnoRuntime.queryInterface(XMultiServiceFactory.class, oConfigurationProvider);
+            String str[] = new String[1];
+            str[0] = "/org.openoffice.Setup/Product";
+            Object oConfigurationAccess = xMSF.createInstanceWithArguments("com.sun.star.configuration.ConfigurationAccess", str);
+            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, oConfigurationAccess);
+            m_sOOName = AnyConverter.toString(xProps.getPropertyValue("ooName"));
+            m_sOOSetupVersion = AnyConverter.toString(xProps.getPropertyValue("ooSetupVersion"));
+        } catch (com.sun.star.uno.Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }    
+    }
+     
+    public String getOOName(){ return m_sOOName; }
+    public String getOOSetupVersion(){ return m_sOOSetupVersion; }
+*/
     public static XSingleComponentFactory __getComponentFactory( String sImplementationName ) {
         XSingleComponentFactory xFactory = null;
         if ( sImplementationName.equals( m_implementationName ) )
@@ -79,7 +106,10 @@ public final class SmartProtocolHandler extends WeakBase
                     m_Controller = new Controller( this, m_xContext, m_xFrame );
                 
                 _frameObjectList.add(new FrameObject(m_xFrame, m_Controller));
-                
+
+                XContextMenuInterception xContextMenuInterception = (XContextMenuInterception)UnoRuntime.queryInterface(XContextMenuInterception.class, m_xFrame.getController());
+                if(xContextMenuInterception != null)
+                    xContextMenuInterception.registerContextMenuInterceptor(new ContextMenuInterceptor(m_xContext, m_xFrame, this));
             }else{
                 for(FrameObject frameObj : _frameObjectList)
                     if(m_xFrame.equals(frameObj.getXFrame()))
@@ -87,6 +117,10 @@ public final class SmartProtocolHandler extends WeakBase
             }
             threatDiagramExtensionIfItExists();
         }
+    }
+
+    public Controller getController(){
+        return m_Controller;
     }
 
     public void threatDiagramExtensionIfItExists(){
@@ -100,7 +134,7 @@ public final class SmartProtocolHandler extends WeakBase
                     if(str[i][j].equals("org.openoffice.extensions.diagrams.Diagrams"))
                         new WarningThread(m_xContext, m_xFrame, xPIP).start();
         } catch (Exception ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -113,18 +147,47 @@ public final class SmartProtocolHandler extends WeakBase
         {
             if ( aURL.Path.compareTo("showSmartGallery") == 0 )
             {
-                if(m_Controller != null)
-                    m_Controller.executeGalleryDialog();
+                short exec = 0;
+                if(m_Controller != null){
+                    exec = m_Controller.executeGalleryDialog();
+                    if(exec == 1)
+                        m_Controller.createDiagram();
+                }
                 return;
             }
+           
+            if ( aURL.Path.compareTo("createDiagramFromList") == 0 )
+            {
+                if(m_Controller != null)
+                    m_Controller.createDiagramFromList();
+                return;
+            }
+/*
+            if ( aURL.Path.compareTo("showOrHideRootElement") == 0 )
+            {
+                if(m_Controller != null)
+                    m_Controller.showOrHideRootElement();
+                return;
+            }
+*/
         }
     }
 
     @Override
-    public void addStatusListener( com.sun.star.frame.XStatusListener xControl,
-                                    com.sun.star.util.URL aURL )
-    {
-        // add your own code here
+    public void addStatusListener( XStatusListener xControl, URL aURL ) {
+/*
+        System.out.println(aURL.Complete);
+        m_xStatusListener = xControl;
+        m_createFromListURL = aURL;
+        if (aURL.Complete.compareTo("oxygenoffice.extensions.smart.smartprotocolhandler:createDiagramFromList") == 0) {
+            FeatureStateEvent aEvent = new FeatureStateEvent();
+            aEvent.FeatureURL = aURL;
+            aEvent.Source = (com.sun.star.frame.XDispatch) this;
+            aEvent.IsEnabled = false;
+            aEvent.Requery = false;
+            xControl.statusChanged(aEvent);
+        }
+*/
     }
 
     @Override
@@ -162,6 +225,12 @@ public final class SmartProtocolHandler extends WeakBase
         if ( aURL.Protocol.compareTo("oxygenoffice.extensions.smart.smartprotocolhandler:") == 0 )
         {
             if ( aURL.Path.compareTo("showSmartGallery") == 0 )
+                return this;
+
+            if ( aURL.Path.compareTo("createDiagramFromList") == 0 )
+                return this;
+            
+            if ( aURL.Path.compareTo("showOrHideRootElement") == 0 )
                 return this;
         }
         return null;

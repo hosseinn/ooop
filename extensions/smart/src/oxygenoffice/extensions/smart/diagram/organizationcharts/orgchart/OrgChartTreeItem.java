@@ -193,7 +193,11 @@ public class OrgChartTreeItem extends OrganizationChartTreeItem{
 
     // set _shapeWidth, , horSpace, _shapeHeight, verSpace, _groupPosX, _groupPosY
     @Override
-    public void setProps(){
+    public void setMeasureProps(){
+        int iHiddenElementNum = 0;
+        if(getDiagramTree().getOrgChart().isHiddenRootElementProp())
+            iHiddenElementNum = 1;
+        
         int baseShapeWidth = _shapeWidth = getDiagramTree().getControlShapeSize().Width;
         int baseShapeHeight = _shapeHeight = getDiagramTree().getControlShapeSize().Height;
         _horSpace = _verSpace = 0;
@@ -203,7 +207,7 @@ public class OrgChartTreeItem extends OrganizationChartTreeItem{
             _horSpace = horUnit * getDiagramTree().getOrgChart().getHorSpace();
         }
         if(_maxLevel > 0){
-            int verUnit = (baseShapeHeight) / ( _maxLevel * (getDiagramTree().getOrgChart().getShapeHeight() + getDiagramTree().getOrgChart().getVerSpace()) + getDiagramTree().getOrgChart().getShapeHeight());
+            int verUnit = (baseShapeHeight) / ((_maxLevel - iHiddenElementNum) * (getDiagramTree().getOrgChart().getShapeHeight() + getDiagramTree().getOrgChart().getVerSpace()) + getDiagramTree().getOrgChart().getShapeHeight());
             _shapeHeight = verUnit * getDiagramTree().getOrgChart().getShapeHeight();
             _verSpace = verUnit * getDiagramTree().getOrgChart().getVerSpace();
         }
@@ -215,6 +219,12 @@ public class OrgChartTreeItem extends OrganizationChartTreeItem{
     public void setPosOfRect(){
         int xCoord = _groupPosX + (int)((_shapeWidth + _horSpace) * getPos());
         int yCoord = _groupPosY + (_shapeHeight + _verSpace) * getLevel();
+        if(getDiagramTree().getOrgChart().isHiddenRootElementProp()){
+            if(this.equals(getDiagramTree().getRootItem()))
+                yCoord = _groupPosY - 10;
+            else
+                yCoord = _groupPosY + (_shapeHeight + _verSpace) * (getLevel() - 1);
+        }
         if(m_Level > OrgChartTree.LASTHORLEVEL){
             setPosition(new Point((int)(xCoord + _shapeWidth * 0.1), yCoord));
             setSize(new Size((int)(_shapeWidth * 0.9), _shapeHeight ));

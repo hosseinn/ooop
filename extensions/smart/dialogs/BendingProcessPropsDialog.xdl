@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="BendingProcessPropsDialog" dlg:left="0" dlg:top="66" dlg:width="250" dlg:height="287" dlg:help-text="&amp;4805.BendingProcessPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;4806.BendingProcessPropsDialog.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xff"/>
+  <dlg:style dlg:style-id="1" dlg:background-color="0x0"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="20" dlg:left="83" dlg:top="102" dlg:width="50" dlg:height="9" dlg:help-text="&amp;4807.BendingProcessPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;4808.BendingProcessPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Outline" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineYes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="21" dlg:left="83" dlg:top="112" dlg:width="50" dlg:height="10" dlg:help-text="&amp;4809.BendingProcessPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;4810.BendingProcessPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Outline">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineNo" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="51" dlg:left="174" dlg:top="270" dlg:width="35" dlg:height="14" dlg:help-text="&amp;4811.BendingProcessPropsDialog.okCommandButton.HelpText" dlg:value="&amp;4812.BendingProcessPropsDialog.okCommandButton.Label" dlg:button-type="ok"/>
+  <dlg:menulist dlg:id="listBox" dlg:tab-index="5" dlg:left="3" dlg:top="3" dlg:width="72" dlg:height="236" dlg:help-text="&amp;4813.BendingProcessPropsDialog.listBox.HelpText" dlg:linecount="20">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;4814.listBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;4815.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4816.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4817.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4818.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4819.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4820.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4821.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4822.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4823.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4824.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4825.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4826.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4827.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4828.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4829.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4830.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4831.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4832.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4833.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4834.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4835.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4836.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4837.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4838.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4839.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4840.listBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedStyle" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="7" dlg:left="136" dlg:top="11" dlg:width="75" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;4841.BendingProcessPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;4842.BendingProcessPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyColors" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="102" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;4843.BendingProcessPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;4844.BendingProcessPropsDialog.allShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:allShape" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="117" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;4845.BendingProcessPropsDialog.firstShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;4846.BendingProcessPropsDialog.firstShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:first" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="2" dlg:left="132" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;4847.BendingProcessPropsDialog.previousShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;4848.BendingProcessPropsDialog.previousShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:previous" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="3" dlg:left="147" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;4849.BendingProcessPropsDialog.nextShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;4850.BendingProcessPropsDialog.nextShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:next" script:language="UNO"/>
+  </dlg:button>
+  <dlg:img dlg:id="imageControl" dlg:tab-index="31" dlg:left="78" dlg:top="3" dlg:width="169" dlg:height="169" dlg:help-text="&amp;4851.BendingProcessPropsDialog.imageControl.HelpText" dlg:tabstop="true"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="yesShadowOptionButton" dlg:tab-index="25" dlg:left="83" dlg:top="135" dlg:width="50" dlg:height="9" dlg:help-text="&amp;4852.BendingProcessPropsDialog.yesShadowOptionButton.HelpText" dlg:value="&amp;4853.BendingProcessPropsDialog.yesShadowOptionButton.Label" dlg:group-name="Shadow"/>
+   <dlg:radio dlg:id="noShadowOptionButton" dlg:tab-index="26" dlg:left="160" dlg:top="135" dlg:width="50" dlg:height="9" dlg:help-text="&amp;4854.BendingProcessPropsDialog.noShadowOptionButton.HelpText" dlg:value="&amp;4855.BendingProcessPropsDialog.noShadowOptionButton.Label" dlg:group-name="Shadow" dlg:checked="true"/>
+   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="12" dlg:left="83" dlg:top="54" dlg:width="35" dlg:height="10" dlg:help-text="&amp;4856.BendingProcessPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;4857.BendingProcessPropsDialog.colorOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColor" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="16" dlg:left="119" dlg:top="54" dlg:width="15" dlg:height="10" dlg:help-text="&amp;4858.BendingProcessPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="9" dlg:left="90" dlg:top="28" dlg:width="50" dlg:height="10" dlg:help-text="&amp;4859.BendingProcessPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;4860.BendingProcessPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="10" dlg:left="150" dlg:top="28" dlg:width="85" dlg:height="10" dlg:help-text="&amp;4861.BendingProcessPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;4862.BendingProcessPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="textFitOptionButton" dlg:tab-index="46" dlg:left="8" dlg:top="251" dlg:width="66" dlg:height="10" dlg:help-text="&amp;4863.BendingProcessPropsDialog.textFitOptionButton.HelpText" dlg:value="&amp;4864.BendingProcessPropsDialog.textFitOptionButton.Label" dlg:group-name="FontSettings" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setTextToFitToSize" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="fontSizeOptionButton" dlg:tab-index="47" dlg:left="80" dlg:top="251" dlg:width="42" dlg:height="10" dlg:help-text="&amp;4865.BendingProcessPropsDialog.fontSizeOptionButton.HelpText" dlg:value="&amp;4866.BendingProcessPropsDialog.fontSizeOptionButton.Label" dlg:group-name="FontSettings">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFontSize" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="fontSizeListBox" dlg:tab-index="48" dlg:disabled="true" dlg:left="124" dlg:top="249" dlg:width="24" dlg:height="12" dlg:help-text="&amp;4867.BendingProcessPropsDialog.fontSizeListBox.HelpText" dlg:spin="true" dlg:linecount="29">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;4868.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4869.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4870.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4871.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4872.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4873.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4874.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4875.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4876.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4877.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4878.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4879.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4880.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4881.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4882.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4883.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4884.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4885.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4886.fontSizeListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;4887.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4888.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4889.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4890.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4891.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4892.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4893.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4894.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4895.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4896.fontSizeListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:checkbox dlg:id="modifyTextColorCheckBox" dlg:tab-index="49" dlg:left="162" dlg:top="251" dlg:width="65" dlg:height="9" dlg:help-text="&amp;4897.BendingProcessPropsDialog.modifyTextColorCheckBox.HelpText" dlg:value="&amp;4898.BendingProcessPropsDialog.modifyTextColorCheckBox.Label" dlg:checked="false">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyTextColor" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:img dlg:style-id="1" dlg:id="textColorImageControl" dlg:tab-index="50" dlg:disabled="true" dlg:left="228" dlg:top="251" dlg:width="15" dlg:height="10" dlg:help-text="&amp;4899.BendingProcessPropsDialog.textColorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:button dlg:id="sizeButton" dlg:tab-index="4" dlg:left="162" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:help-text="&amp;4900.BendingProcessPropsDialog.sizeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;4901.BendingProcessPropsDialog.sizeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:size" script:language="UNO"/>
+  </dlg:button>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="preDefinedColorThemesOptionButton" dlg:tab-index="13" dlg:left="83" dlg:top="65" dlg:width="70" dlg:height="9" dlg:help-text="&amp;4902.BendingProcessPropsDialog.preDefinedColorThemesOptionButton.HelpText" dlg:value="&amp;4903.BendingProcessPropsDialog.preDefinedColorThemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorTheme" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="preDefinedColorSchemesOptionButton" dlg:tab-index="14" dlg:left="83" dlg:top="76" dlg:width="70" dlg:height="9" dlg:help-text="&amp;4904.BendingProcessPropsDialog.preDefinedColorSchemesOptionButton.HelpText" dlg:value="&amp;4905.BendingProcessPropsDialog.preDefinedColorSchemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorScheme" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="cancelCommandButton" dlg:tab-index="52" dlg:left="212" dlg:top="270" dlg:width="35" dlg:height="14" dlg:help-text="&amp;4906.BendingProcessPropsDialog.cancelCommandButton.HelpText" dlg:value="&amp;4907.BendingProcessPropsDialog.cancelCommandButton.Label" dlg:button-type="cancel"/>
+  <dlg:button dlg:id="setBaseColorsCommandButton" dlg:tab-index="15" dlg:left="172" dlg:top="42" dlg:width="70" dlg:height="13" dlg:help-text="&amp;4908.BendingProcessPropsDialog.setBaseColorsCommandButton.HelpText" dlg:value="&amp;4909.BendingProcessPropsDialog.setBaseColorsCommandButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setBaseColorsSettings" script:language="UNO"/>
+  </dlg:button>
+  <dlg:text dlg:id="lineWidthLabel" dlg:tab-index="22" dlg:left="158" dlg:top="103" dlg:width="50" dlg:height="10" dlg:help-text="&amp;4910.BendingProcessPropsDialog.lineWidthLabel.HelpText" dlg:value="&amp;4911.BendingProcessPropsDialog.lineWidthLabel.Label" dlg:align="right" dlg:tabstop="false"/>
+  <dlg:menulist dlg:id="lineWidthListBox" dlg:tab-index="23" dlg:left="212" dlg:top="101" dlg:width="30" dlg:height="12" dlg:help-text="&amp;4912.BendingProcessPropsDialog.lineWidthListBox.HelpText" dlg:spin="true" dlg:linecount="6">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;4913.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4914.lineWidthListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;4915.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4916.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4917.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4918.lineWidthListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="baseColorsOptionButton" dlg:tab-index="11" dlg:left="83" dlg:top="43" dlg:width="80" dlg:height="10" dlg:help-text="&amp;4919.BendingProcessPropsDialog.baseColorsOptionButton.HelpText" dlg:value="&amp;4920.BendingProcessPropsDialog.baseColorsOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setBaseColors" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="preDefinedColorThemesListBox" dlg:tab-index="17" dlg:left="182" dlg:top="63" dlg:width="60" dlg:height="12" dlg:help-text="&amp;4921.BendingProcessPropsDialog.preDefinedColorThemesListBox.HelpText" dlg:spin="true" dlg:linecount="10">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;4922.preDefinedColorThemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;4923.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4924.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4925.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4926.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4927.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4928.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4929.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4930.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4931.preDefinedColorThemesListBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:preDefinedColorThemesListBoxChanged" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:menulist dlg:id="preDefinedColorSchemesListBox" dlg:tab-index="18" dlg:left="182" dlg:top="75" dlg:width="60" dlg:height="12" dlg:help-text="&amp;4932.BendingProcessPropsDialog.preDefinedColorSchemesListBox.HelpText" dlg:spin="true" dlg:linecount="12">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;4933.preDefinedColorSchemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;4934.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4935.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4936.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4937.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4938.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4939.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4940.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4941.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4942.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4943.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;4944.preDefinedColorSchemesListBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:preDefinedColorSchemesListBoxChanged" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:text dlg:id="propsLabel1" dlg:tab-index="33" dlg:left="83" dlg:top="182" dlg:width="65" dlg:height="9" dlg:help-text="&amp;4945.BendingProcessPropsDialog.propsLabel1.HelpText" dlg:value="&amp;4946.BendingProcessPropsDialog.propsLabel1.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel7" dlg:tab-index="34" dlg:left="148" dlg:top="182" dlg:width="96" dlg:height="9" dlg:help-text="&amp;4947.BendingProcessPropsDialog.propsLabel7.HelpText" dlg:value="&amp;4948.BendingProcessPropsDialog.propsLabel7.Label" dlg:tabstop="false"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="noRoundedOptionButton" dlg:tab-index="28" dlg:left="83" dlg:top="158" dlg:width="40" dlg:height="9" dlg:help-text="&amp;4949.BendingProcessPropsDialog.noRoundedOptionButton.HelpText" dlg:value="&amp;4950.BendingProcessPropsDialog.noRoundedOptionButton.Label" dlg:group-name="Rounded"/>
+   <dlg:radio dlg:id="mediumRoundedOptionButton" dlg:tab-index="29" dlg:left="143" dlg:top="158" dlg:width="40" dlg:height="9" dlg:help-text="&amp;4951.BendingProcessPropsDialog.mediumRoundedOptionButton.HelpText" dlg:value="&amp;4952.BendingProcessPropsDialog.mediumRoundedOptionButton.Label" dlg:group-name="Rounded" dlg:checked="true"/>
+   <dlg:radio dlg:id="extraRoundedOptionButton" dlg:tab-index="30" dlg:left="203" dlg:top="158" dlg:width="40" dlg:height="9" dlg:help-text="&amp;4953.BendingProcessPropsDialog.extraRoundedOptionButton.HelpText" dlg:value="&amp;4954.BendingProcessPropsDialog.extraRoundedOptionButton.Label" dlg:group-name="Rounded"/>
+  </dlg:radiogroup>
+  <dlg:titledbox dlg:id="colorsFrameControl" dlg:tab-index="6" dlg:left="78" dlg:top="3" dlg:width="169" dlg:height="90" dlg:help-text="&amp;4955.BendingProcessPropsDialog.colorsFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;4956.BendingProcessPropsDialog.colorsFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="areaFrameControl" dlg:tab-index="8" dlg:left="83" dlg:top="19" dlg:width="159" dlg:height="22" dlg:help-text="&amp;4957.BendingProcessPropsDialog.areaFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;4958.BendingProcessPropsDialog.areaFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="outlineFrameControl" dlg:tab-index="19" dlg:left="78" dlg:top="93" dlg:width="169" dlg:height="32" dlg:help-text="&amp;4959.BendingProcessPropsDialog.outlineFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;4960.BendingProcessPropsDialog.outlineFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="shadowFrameControl" dlg:tab-index="24" dlg:left="78" dlg:top="126" dlg:width="169" dlg:height="22" dlg:help-text="&amp;4961.BendingProcessPropsDialog.shadowFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;4962.BendingProcessPropsDialog.shadowFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="roundedFrameControl" dlg:tab-index="27" dlg:left="78" dlg:top="149" dlg:width="169" dlg:height="22" dlg:help-text="&amp;4963.BendingProcessPropsDialog.roundedFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;4964.BendingProcessPropsDialog.roundedFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="propsFrameControl" dlg:tab-index="32" dlg:left="78" dlg:top="173" dlg:width="169" dlg:height="65" dlg:help-text="&amp;4965.BendingProcessPropsDialog.propsFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;4966.BendingProcessPropsDialog.propsFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="textFrameControl" dlg:tab-index="45" dlg:left="3" dlg:top="241" dlg:width="244" dlg:height="24" dlg:help-text="&amp;4967.BendingProcessPropsDialog.textFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;4968.BendingProcessPropsDialog.textFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:text dlg:id="propsLabel2" dlg:tab-index="35" dlg:left="83" dlg:top="191" dlg:width="65" dlg:height="9" dlg:help-text="&amp;4969.BendingProcessPropsDialog.propsLabel2.HelpText" dlg:value="&amp;4970.BendingProcessPropsDialog.propsLabel2.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel3" dlg:tab-index="37" dlg:left="83" dlg:top="200" dlg:width="65" dlg:height="9" dlg:help-text="&amp;4971.BendingProcessPropsDialog.propsLabel3.HelpText" dlg:value="&amp;4972.BendingProcessPropsDialog.propsLabel3.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel4" dlg:tab-index="39" dlg:left="83" dlg:top="209" dlg:width="65" dlg:height="9" dlg:help-text="&amp;4973.BendingProcessPropsDialog.propsLabel4.HelpText" dlg:value="&amp;4974.BendingProcessPropsDialog.propsLabel4.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel5" dlg:tab-index="41" dlg:left="83" dlg:top="218" dlg:width="65" dlg:height="9" dlg:help-text="&amp;4975.BendingProcessPropsDialog.propsLabel5.HelpText" dlg:value="&amp;4976.BendingProcessPropsDialog.propsLabel5.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel6" dlg:tab-index="43" dlg:left="83" dlg:top="226" dlg:width="65" dlg:height="9" dlg:help-text="&amp;4977.BendingProcessPropsDialog.propsLabel6.HelpText" dlg:value="&amp;4978.BendingProcessPropsDialog.propsLabel6.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel8" dlg:tab-index="36" dlg:left="148" dlg:top="191" dlg:width="96" dlg:height="9" dlg:help-text="&amp;4979.BendingProcessPropsDialog.propsLabel8.HelpText" dlg:value="&amp;4980.BendingProcessPropsDialog.propsLabel8.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel9" dlg:tab-index="38" dlg:left="148" dlg:top="200" dlg:width="96" dlg:height="9" dlg:help-text="&amp;4981.BendingProcessPropsDialog.propsLabel9.HelpText" dlg:value="&amp;4982.BendingProcessPropsDialog.propsLabel9.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel10" dlg:tab-index="40" dlg:left="148" dlg:top="209" dlg:width="96" dlg:height="9" dlg:help-text="&amp;4983.BendingProcessPropsDialog.propsLabel10.HelpText" dlg:value="&amp;4984.BendingProcessPropsDialog.propsLabel10.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel11" dlg:tab-index="42" dlg:left="148" dlg:top="218" dlg:width="96" dlg:height="9" dlg:help-text="&amp;4985.BendingProcessPropsDialog.propsLabel11.HelpText" dlg:value="&amp;4986.BendingProcessPropsDialog.propsLabel11.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel12" dlg:tab-index="44" dlg:left="148" dlg:top="226" dlg:width="96" dlg:height="9" dlg:help-text="&amp;4987.BendingProcessPropsDialog.propsLabel12.HelpText" dlg:value="&amp;4988.BendingProcessPropsDialog.propsLabel12.Label" dlg:tabstop="false"/>
+ </dlg:bulletinboard>
+</dlg:window>

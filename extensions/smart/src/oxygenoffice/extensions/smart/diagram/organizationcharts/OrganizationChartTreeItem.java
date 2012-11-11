@@ -2,7 +2,16 @@ package oxygenoffice.extensions.smart.diagram.organizationcharts;
 
 import com.sun.star.awt.Point;
 import com.sun.star.awt.Size;
+import com.sun.star.beans.PropertyVetoException;
+import com.sun.star.beans.UnknownPropertyException;
+import com.sun.star.beans.XPropertySet;
+import com.sun.star.drawing.FillStyle;
+import com.sun.star.drawing.LineStyle;
 import com.sun.star.drawing.XShape;
+import com.sun.star.lang.IllegalArgumentException;
+import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.uno.UnoRuntime;
+import oxygenoffice.extensions.smart.Controller;
 
 
 // TreeItems represent the rectangles of the diagram
@@ -36,6 +45,68 @@ public class OrganizationChartTreeItem {
         m_Dad = dad;
     }
 
+    public void hideElement(){
+        try {
+            XPropertySet xConnProps = null;
+            XPropertySet xBaseProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, m_xRectangleShape);
+            if(getDiagramTree().getOrgChart().isHiddenRootElementProp()){
+                xBaseProps.setPropertyValue("FillStyle", FillStyle.NONE);
+                xBaseProps.setPropertyValue("LineStyle", LineStyle.NONE);
+                if(getDiagramTree().getOrgChart().getController().getDiagramType() != Controller.TABLEHIERARCHYDIAGRAM){
+                    for(XShape xConnShape : getDiagramTree().connectorList){
+                        if(m_xRectangleShape.equals(getDiagramTree().getStartShapeOfConnector(xConnShape))){
+                            xConnProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnShape);
+                            if(xConnProps != null)
+                                xConnProps.setPropertyValue("LineStyle", LineStyle.NONE);
+                        }
+                    }
+                }
+                if(getDiagramTree().getOrgChart().getController().getSelectedShape().equals(m_xRectangleShape))
+                    getDiagramTree().getOrgChart().getController().setSelectedShape(getFirstChild().getRectangleShape());
+            }else{
+                if(getDiagramTree().getOrgChart().isAnyGradientColorMode())
+                    xBaseProps.setPropertyValue("FillStyle", FillStyle.GRADIENT);
+                else
+                    xBaseProps.setPropertyValue("FillStyle", FillStyle.SOLID);
+                if(getDiagramTree().getOrgChart().isOutlineProp())
+                    xBaseProps.setPropertyValue("LineStyle", LineStyle.SOLID);
+                else
+                    xBaseProps.setPropertyValue("LineStyle", LineStyle.NONE);
+                if(getDiagramTree().getOrgChart().getController().getDiagramType() != Controller.TABLEHIERARCHYDIAGRAM){
+                    for(XShape xConnShape : getDiagramTree().connectorList){
+                        if(m_xRectangleShape.equals(getDiagramTree().getStartShapeOfConnector(xConnShape))){
+                            xConnProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnShape);
+                            if(xConnProps != null)
+                                xConnProps.setPropertyValue("LineStyle", LineStyle.SOLID);
+                        }
+                    }
+                }
+            }
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (PropertyVetoException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+
+    public boolean isHiddenElement(){
+        try {
+            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, m_xRectangleShape);
+            FillStyle style = (FillStyle)xProps.getPropertyValue("FillStyle");
+            if(style.getValue() == FillStyle.NONE_value)
+                return true;
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+        return false;
+    }
+
     public void convertTreeItems(OrganizationChartTreeItem treeItem){ }
 
     public void setDiagramTree(OrganizationChartTree diagramTree){
@@ -48,7 +119,7 @@ public class OrganizationChartTreeItem {
 
     public void setPosOfRect(){ };
 
-    public void setProps(){ };
+    public void setMeasureProps(){ };
 
     public boolean isDad(){
         if(m_Dad == null)
@@ -199,7 +270,8 @@ public class OrganizationChartTreeItem {
     public void setGradient(){
         if(m_FirstChild != null)
             m_FirstChild.setGradient();
-        getDiagramTree().getOrgChart().setGradientColor(getRectangleShape(), getLevel(), OrganizationChartTreeItem._maxLevel + 1);
+        if(!getDiagramTree().getRootItem().equals(this) || !getDiagramTree().getOrgChart().isHiddenRootElementProp())
+            getDiagramTree().getOrgChart().setShapesGradientColor(getRectangleShape(), getLevel(), OrganizationChartTreeItem._maxLevel + 1);
         if(m_FirstSibling != null)
             m_FirstSibling.setGradient();
     }
@@ -235,7 +307,6 @@ public class OrganizationChartTreeItem {
     public void printTree(){
         if(m_FirstChild != null)
             m_FirstChild.printTree();
-        System.out.println(this);
         if(m_FirstSibling != null)
             m_FirstSibling.printTree();
     }

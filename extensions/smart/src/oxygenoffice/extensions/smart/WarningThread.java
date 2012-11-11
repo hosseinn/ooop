@@ -32,7 +32,6 @@ public class WarningThread extends Thread{
     private XComponentContext           m_xContext  = null;
     private XFrame                      m_xFrame    = null;
     private XPackageInformationProvider m_xPIP      = null;
-    private boolean                     m_IsDone;
     private short                       m_sMessageValue;
 
     public WarningThread(XComponentContext xContext, XFrame xFrame, XPackageInformationProvider xPIP){

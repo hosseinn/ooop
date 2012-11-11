@@ -14,11 +14,15 @@ public class AdaptOldProperties {
             } else{
                 File file1 = new File(args[1]);
                 File file2 = new File(args[2]);
-                if(!file1.exists() || !file2.exists()){
-                    if(!file1.exists())
-                        System.out.println("Nem létező fájl: " + args[1]);
-                    if(!file2.exists())
-                        System.out.println("Nem létező fájl: " + args[2]);
+                
+                if(!file1.exists()){
+                    System.out.println("Nem létező fájl: " + args[1]);
+                    printUsing();
+                }else if(args[0].equals("-addNums") && (file2.isDirectory() || !file2.exists())){
+                    System.out.println("Nem létező fájl: " + args[2]);
+                    printUsing();
+                }else if(args[0].equals("-adapt") && !file2.isDirectory()){
+                    System.out.println("Nem létező könyvtár: " + args[2]);
                     printUsing();
                 }else{
                     if(args.length == 4)
@@ -37,10 +41,13 @@ public class AdaptOldProperties {
     public static void printUsing(){
         System.out.println("\nHasználat:\n"
           + "1. lépés - módosuló sorok megszámozása:\n"
-          + "java AdaptOldProperties -addNums old.properties new_en_US.properties\n"
-          + "2. lépes - régi tulajdonságok adaptálása, minden properties fájlon:\n"
-          + "java AdaptOldProperties -adapt old.properties_ old-xx.properties\n"
-          + "a 4. paraméter a számok záró karaktere - opcionális");
+          + "java AdaptOldProperties -addNums old_en_US.properties new_en_US.properties\n"
+          + "új létrehozott fájl: new_en_US_addedNums.properties"
+          + "2. lépes - régi tulajdonságok adaptálása, minden properties fájlon a megadott könyvtárban:\n"
+          + "java AdaptOldProperties -adapt new_en_US_addedNums.properties dir\n"
+          + "a 3. paraméter egy könytárnév, ahol régi nem en_US properties fájlok találhatók"
+          + "a 4. paraméter a számok záró karaktere - opcionális"
+          + "a program a \"result\" mappába rakja a kész új properties fájlokat.");
     }
 
     public static void addNums(String[] args){
@@ -48,7 +55,7 @@ public class AdaptOldProperties {
   		FileInputStream fstream2 = new FileInputStream(args[2]);
   		DataInputStream in2 = new DataInputStream(fstream2);
   		BufferedReader brNewProps = new BufferedReader(new InputStreamReader(in2));
-                String newFileName = args[1].split(".properties")[0] + "_.properties";
+                String newFileName = args[2].split(".properties")[0] + "_addedNums.properties";
 		BufferedWriter outputFile = new BufferedWriter(new FileWriter(newFileName));
                 System.out.println("\n------------------------------ addNums -----------------------------");
                 System.out.println(newFileName + " fájl létrehozva.");
@@ -90,50 +97,63 @@ public class AdaptOldProperties {
 
     public static void adapt(String[] args){
         try{
-            FileInputStream fstream1 = new FileInputStream(args[1]);
-            DataInputStream in1 = new DataInputStream(fstream1);
-            BufferedReader brNewProps = new BufferedReader(new InputStreamReader(in1));
-            String outputFileName = args[2].indexOf("-") > -1 ? args[2].replace('-', '_') : args[2] + "_";
-            BufferedWriter outputFile = new BufferedWriter(new FileWriter(outputFileName));
-            System.out.println("\n------------------------------- adapt ------------------------------");
-            System.out.println(outputFileName + " fájl létrehozva.");
-            System.out.println("Módosított sorok " + args[1] + " alapján:");
-            String strLineNewProp, strLineOldProp;
-
-            while ((strLineNewProp = brNewProps.readLine()) != null)   {
-  		if(strLineNewProp.endsWith(endChar)){
-                    String[] parts = strLineNewProp.split(" ");
-                    String lastPart = parts[parts.length - 1];
-                    String sNum = lastPart.substring(0, lastPart.length() - 1);
-                    FileInputStream fstream2 = new FileInputStream(args[2]);
-                    DataInputStream in2 = new DataInputStream(fstream2);
-                    BufferedReader brOldProps = new BufferedReader(new InputStreamReader(in2));
-                    String sValue = "";
-                    while ((strLineOldProp = brOldProps.readLine()) != null)   {
-                        if(strLineOldProp.startsWith(sNum)){
-                            int index = strLineOldProp.indexOf("=");
-                            sValue = strLineOldProp.substring(index + 1);
-                            String newValuePart = parts[parts.length - 2];
-                            if(newValuePart.endsWith(":") && !sValue.endsWith(":")){
-                                sValue += ":";
-                                System.out.println("Hiányzó kettőspont a " + args[2] + " -ben\n" + strLineOldProp + " - javítva");
+            File outputDir = new File("result");
+            outputDir.mkdir();
+            File dir = new File(args[2]);
+            File[] files = dir.listFiles();
+            for(File f : files){
+                String outputFileName = f.getName();
+                if(outputFileName.endsWith(".properties")){
+                    if(outputFileName.indexOf("-") > -1)
+                        outputFileName = outputFileName.replace('-', '_');
+                    outputFileName = outputDir.getName() + File.separator + outputFileName;           
+                    BufferedWriter outputFile = new BufferedWriter(new FileWriter(outputFileName));
+                    System.out.println("\n------------------------------- adapt ------------------------------");
+                    System.out.println(outputFileName + " fájl létrehozva.");
+                    System.out.println("Módosított sorok " + args[1] + " alapján:");
+                    
+                    FileInputStream fstream1 = new FileInputStream(args[1]);
+                    DataInputStream in1 = new DataInputStream(fstream1);
+                    BufferedReader brNewProps = new BufferedReader(new InputStreamReader(in1));
+                    String strLineNewProp, strLineOldProp;
+                    
+                    while ((strLineNewProp = brNewProps.readLine()) != null){
+                        if(strLineNewProp.endsWith(endChar)){
+                            String[] parts = strLineNewProp.split(" ");
+                            String lastPart = parts[parts.length - 1];
+                            String sNum = lastPart.substring(0, lastPart.length() - 1);
+                            FileInputStream fstream2 = new FileInputStream(args[2] + File.separator + f.getName());
+                            DataInputStream in2 = new DataInputStream(fstream2);
+                            BufferedReader brOldProps = new BufferedReader(new InputStreamReader(in2));
+                            String sValue = "";
+                            while ((strLineOldProp = brOldProps.readLine()) != null)   {
+                                if(strLineOldProp.startsWith(sNum)){
+                                    int index = strLineOldProp.indexOf("=");
+                                    sValue = strLineOldProp.substring(index + 1);
+                                    String newValuePart = parts[parts.length - 2];
+                                    if(newValuePart.endsWith(":") && !sValue.endsWith(":")){
+                                        sValue += ":";
+                                        System.out.println("Hiányzó kettőspont a " + args[2] + " -ben\n" + strLineOldProp + " - javítva");
+                                    }
+                                    break;
+                                }
                             }
-                            break;
+                            in2.close();
+                            int index = strLineNewProp.indexOf("=");
+                            String subStr = strLineNewProp.substring(0, index + 1);
+                            outputFile.write(subStr + sValue + "\n");
+                            System.out.println(subStr + sValue);
+                        }else{
+                            outputFile.write(strLineNewProp + "\n");
                         }
                     }
-                    in2.close();
-                    int index = strLineNewProp.indexOf("=");
-                    String subStr = strLineNewProp.substring(0, index + 1);
-                    outputFile.write(subStr + sValue + "\n");
-                    System.out.println(subStr + sValue);
-                }else{
-                    outputFile.write(strLineNewProp + "\n");
+   
+                    in1.close();
+                    outputFile.close();
                 }
             }
-            in1.close();
-            outputFile.close();
             System.out.println("-------------------------------    --------------------------------\n");
-    	}catch (Exception e){
+        }catch (Exception e){
   		System.err.println("Hiba: " + e.getLocalizedMessage());
   	}
     }

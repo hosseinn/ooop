@@ -1,20 +1,15 @@
 package oxygenoffice.extensions.smart.diagram.organizationcharts.simpleorgchart;
 
-import com.sun.star.beans.UnknownPropertyException;
-import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
-import com.sun.star.drawing.ConnectorType;
-import com.sun.star.drawing.LineStyle;
 import com.sun.star.drawing.XShape;
 import com.sun.star.frame.XFrame;
-import com.sun.star.lang.IllegalArgumentException;
-import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
-import oxygenoffice.extensions.smart.Gui;
-import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChartTree;
+import oxygenoffice.extensions.smart.diagram.DataOfDiagram;
 import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChart;
+import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChartTree;
 import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChartTreeItem;
+import oxygenoffice.extensions.smart.gui.Gui;
 
 
 public class SimpleOrgChart extends OrganizationChart {
@@ -57,6 +52,7 @@ public class SimpleOrgChart extends OrganizationChart {
             XShape xBaseShape = createShape("RectangleShape", 0, m_PageProps.BorderLeft + m_iHalfDiff, m_PageProps.BorderTop, m_DrawAreaWidth, m_DrawAreaHeight);
             m_xShapes.add(xBaseShape);
             setControlShapeProps(xBaseShape);
+            setColorModeAndStyeOfControlShape(xBaseShape);
 
             int horUnit, horSpace, shapeWidth, verUnit, verSpace, shapeHeight;
             horUnit = horSpace = shapeWidth = verUnit = verSpace = shapeHeight = 0;
@@ -79,27 +75,140 @@ public class SimpleOrgChart extends OrganizationChart {
             XShape xStartShape = createShape("RectangleShape", 1, xCoord, yCoord, shapeWidth, shapeHeight);
             m_xShapes.add(xStartShape);
             setTextOfShape(xStartShape, " ");
-            setItemProperties(xStartShape, (short)0, 2);
+            setMoveProtectOfShape(xStartShape);
+            setColorProp(aORGCHARTCOLORS[0]);
+            setShapeProperties(xStartShape, "RectangleShape", true);
 
             xCoord = m_PageProps.BorderLeft + m_iHalfDiff;
             yCoord = m_PageProps.BorderTop + shapeHeight + verSpace;
             XShape xRectShape = null;
+            XShape xSelectedShape = null;
 
-            for( int i = 2; i <= n; i++ ){
+            int i;
+            for( i = 2; i <= n; i++ ){
                 xRectShape = createShape("RectangleShape", i, xCoord + (shapeWidth + horSpace) * (i-2), yCoord, shapeWidth, shapeHeight);
                 m_xShapes.add(xRectShape);
+                //setTextFitToSize(xRectShape);
                 setTextOfShape(xRectShape, " ");
-                setItemProperties(xRectShape, (short)1, 2);
+                setMoveProtectOfShape(xRectShape);
+                setColorProp(aORGCHARTCOLORS[(i - 1) % 8]);
+                setShapeProperties(xRectShape, "RectangleShape", true);
 
                 XShape xConnectorShape = createShape("ConnectorShape", i);
                 m_xShapes.add(xConnectorShape);
                 setMoveProtectOfShape(xConnectorShape);
                 setConnectorShapeProps(xConnectorShape, xStartShape, new Integer(2), xRectShape, new Integer(0));
+                if(i == 2 && xRectShape != null)
+                    xSelectedShape = xRectShape;
             }
-            getController().setSelectedShape((Object)xStartShape);
+            int id = 1;
+            if(n == 1 && xStartShape != null){
+                getController().setSelectedShape((Object)xStartShape);
+            } else if(xSelectedShape != null){
+                getController().setSelectedShape((Object)xSelectedShape);
+                id = getController().getShapeID(getShapeName(xSelectedShape));
+            }
+            
+            setColorProp(aORGCHARTCOLORS[(id - 1) % 8]);
         }
     }
 
+    @Override
+    public void createDiagram(DataOfDiagram datas){
+        if(!datas.isEmpty()){
+            super.createDiagram(datas);
+            boolean isRootItem = datas.isOneFirstLevelData();
+            if(!isRootItem)
+                datas.increaseLevels();
+            if(m_xDrawPage != null && m_xShapes != null){
+                setDrawArea();
+                // base shape
+                XShape xBaseShape = createShape("RectangleShape", 0, m_PageProps.BorderLeft, m_PageProps.BorderTop, m_DrawAreaWidth, m_DrawAreaHeight);
+                m_xShapes.add(xBaseShape);
+                setControlShapeProps(xBaseShape);
+                setColorModeAndStyeOfControlShape(xBaseShape);
+
+                XShape xStartShape = createShape("RectangleShape", 1, m_PageProps.BorderLeft, m_PageProps.BorderTop, m_DrawAreaWidth, m_DrawAreaHeight);
+                m_xShapes.add(xStartShape);
+                if(isRootItem)
+                    setTextOfShape(xStartShape, datas.get(0).getValue());
+                else
+                    setTextOfShape(xStartShape, " ");
+                setMoveProtectOfShape(xStartShape);
+                setColorProp(aLOORANGES[2]);
+                setShapeProperties(xStartShape, "RectangleShape", true);
+                if(xStartShape != null)
+                    getController().setSelectedShape((Object)xStartShape);
+                initDiagram();
+
+                m_DiagramTree = new SimpleOrgChartTree(this, xBaseShape, xStartShape);
+                OrganizationChartTreeItem dadItem = m_DiagramTree.getRootItem();
+                OrganizationChartTreeItem newTreeItem = null;
+                OrganizationChartTreeItem lastTreeItem = dadItem;
+                int size = datas.size();
+                int iRoot = 0;
+                if(isRootItem)
+                    iRoot = 1;
+                int iColor = 0;
+                for( int i = iRoot; i < size; i++){
+                    XShape xShape = createShape("RectangleShape", i + (2 - iRoot));
+                    m_xShapes.add(xShape);
+                    setTextOfShape(xShape, datas.get(i).getValue());
+                    setMoveProtectOfShape(xShape);
+                    if(i > iRoot)
+                        if(datas.get(i).getLevel() == 1)
+                            iColor++;
+                    iColor %= 5;
+                    int iColorLevel = datas.get(i).getLevel();
+                    if(iColorLevel > 4)
+                        iColorLevel = 4;
+                    setColorProp(aLOCOLORS2[iColor][iColorLevel]);
+                    setShapeProperties(xShape, "RectangleShape", true);
+                    m_DiagramTree.addToRectangles(xShape);
+                    
+                    if(lastTreeItem.getLevel() == datas.get(i).getLevel()){
+                    }else if(lastTreeItem.getLevel() < datas.get(i).getLevel()){
+                        dadItem = lastTreeItem;
+                    }else{
+                        int lev = dadItem.getLevel() + 1 - datas.get(i).getLevel();
+                        for(int j = 0; j < lev; j++)
+                            dadItem = dadItem.getDad();
+                    }
+
+                    XShape xConnectorShape = createShape("ConnectorShape", i + (2 - iRoot));
+                    m_xShapes.add(xConnectorShape);
+                    setMoveProtectOfShape(xConnectorShape);
+                    setConnectorShapeProps(xConnectorShape, dadItem.getRectangleShape(), new Integer(2), xShape, new Integer(0));
+                    m_DiagramTree.addToConnectors(xConnectorShape);
+
+                    newTreeItem = new SimpleOrgChartTreeItem(m_DiagramTree, xShape, dadItem, (short)0, 0.0);
+                    if(lastTreeItem.getLevel() == datas.get(i).getLevel()){
+                        lastTreeItem.setFirstSibling(newTreeItem);
+                    }else if(lastTreeItem.getLevel() < datas.get(i).getLevel()){
+                        if(!dadItem.isFirstChild()){
+                            dadItem.setFirstChild(newTreeItem);
+                        }
+                    }else{
+                        dadItem.getLastChild().setFirstSibling(newTreeItem);
+                    }
+                    lastTreeItem = newTreeItem;
+                    refreshDiagram();
+                }
+                if(!isRootItem){
+                    getController().setSelectedShape((Object)m_DiagramTree.getRootItem().getLastChild().getRectangleShape());
+                    setHiddenRootElementProp(true);
+                    getDiagramTree().getRootItem().hideElement();
+                    refreshDiagram();
+                }else{
+                    iColor++;
+                    iColor %= 5;
+                    setColorProp(aLOCOLORS2[iColor][1]);
+                    getController().setSelectedShape((Object)m_DiagramTree.getRootItem().getRectangleShape());
+                }
+            }
+        }
+    }
+    
     @Override
     public void initDiagram() {
         //initial members: m_xDrawPage, m_DiagramID, m_xShapes
@@ -108,47 +217,6 @@ public class SimpleOrgChart extends OrganizationChart {
             m_DiagramTree = new SimpleOrgChartTree(this);
         m_DiagramTree.setLists();
         m_DiagramTree.setTree();
-    }
-
-    @Override
-    public void setConnectorShapeProps(XShape xConnectorShape, XShape xStartShape, Integer startIndex, XShape xEndShape, Integer endIndex){
-        try {
-            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnectorShape);
-            xProp.setPropertyValue("StartShape", xStartShape);
-            xProp.setPropertyValue("EndShape", xEndShape);
-            xProp.setPropertyValue("StartGluePointIndex", startIndex);
-            xProp.setPropertyValue("EndGluePointIndex", endIndex);
-            xProp.setPropertyValue("LineWidth",new Integer(100));
-            xProp.setPropertyValue("EdgeKind", ConnectorType.STANDARD);
-        } catch (com.sun.star.beans.PropertyVetoException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (IllegalArgumentException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (UnknownPropertyException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (WrappedTargetException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        }
-    }
-    
-    @Override
-    public void setConnectorShapeProps(XShape xConnectorShape, Integer startIndex, Integer endIndex){
-        try {
-            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnectorShape);
-            xProps.setPropertyValue("StartGluePointIndex", startIndex);
-            xProps.setPropertyValue("EndGluePointIndex", endIndex);
-            xProps.setPropertyValue("LineWidth",new Integer(100));
-            xProps.setPropertyValue("LineStyle", LineStyle.SOLID);
-            xProps.setPropertyValue("EdgeKind", ConnectorType.STANDARD);
-        } catch (com.sun.star.beans.PropertyVetoException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (UnknownPropertyException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (IllegalArgumentException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (WrappedTargetException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        }
     }
 
     @Override
@@ -179,10 +247,8 @@ public class SimpleOrgChart extends OrganizationChart {
                             OrganizationChartTreeItem newTreeItem = null;
                             OrganizationChartTreeItem dadItem = null;
 
-                            short level = -1;
                             if(m_sNewItemHType == UNDERLING){
                                 dadItem = selectedItem;
-                                level = (short)(dadItem.getLevel() + 1);
                                 newTreeItem = new SimpleOrgChartTreeItem(m_DiagramTree, xRectangleShape, dadItem, (short)0 , 0.0);
                                 if(!dadItem.isFirstChild()){
                                     dadItem.setFirstChild(newTreeItem);
@@ -195,7 +261,6 @@ public class SimpleOrgChart extends OrganizationChart {
                                     }
                                 }
                             }else if(m_sNewItemHType == ASSOCIATE){
-                                level = selectedItem.getLevel();
                                 dadItem = selectedItem.getDad();
                                 newTreeItem = new SimpleOrgChartTreeItem(m_DiagramTree, xRectangleShape, dadItem, (short)0, 0.0);
                                 if(selectedItem.isFirstSibling())
@@ -204,7 +269,10 @@ public class SimpleOrgChart extends OrganizationChart {
                             }
 
                             setTextOfShape(xRectangleShape, " ");
-                            setItemProperties(xRectangleShape, level);
+                            setMoveProtectOfShape(xRectangleShape);
+  //                          setFontPropertiesOfShape(xRectangleShape);
+  //                          setColorSettingsOfShape(xRectangleShape);
+                            setShapeProperties(xRectangleShape, "RectangleShape", true);
 
                             if(iTopShapeID > 1){
                                  // set connector shape
@@ -218,6 +286,10 @@ public class SimpleOrgChart extends OrganizationChart {
                                 else if(m_sNewItemHType == ASSOCIATE)
                                     xStartShape = selectedItem.getDad().getRectangleShape();
                                 setConnectorShapeProps(xConnectorShape, xStartShape, new Integer(2), xRectangleShape, new Integer(0));
+                                if(isHiddenRootElementProp())
+                                    if(getDiagramTree().getRootItem().getRectangleShape().equals(xStartShape))
+                                        getDiagramTree().getRootItem().hideElement();
+
                             }
                         }
                     }

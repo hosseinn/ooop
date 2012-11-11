@@ -1,6 +1,6 @@
-SmART kiterjesztés
+SmART galéria kiterjesztés
 
-A SmART kiterjesztés a GNU Lesser General Public License (LGPL) licenc alapján került kiadásra. Az LGPL licenc megtekinthető a következő helyen:
+A SmART galéria kiterjesztés a GNU Lesser General Public License (LGPL) licenc alapján került kiadásra. Az LGPL licenc megtekinthető a következő helyen:
 http://www.gnu.org/licenses/lgpl.html
 
 A kiterjesztést készítette:

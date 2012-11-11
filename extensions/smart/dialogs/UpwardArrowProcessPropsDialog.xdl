@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="UpwardArrowProcessPropsDialog" dlg:left="0" dlg:top="66" dlg:width="248" dlg:height="281" dlg:help-text="&amp;7116.UpwardArrowProcessPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;7117.UpwardArrowProcessPropsDialog.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xff"/>
+  <dlg:style dlg:style-id="1" dlg:background-color="0x0"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="23" dlg:left="85" dlg:top="141" dlg:width="50" dlg:height="9" dlg:help-text="&amp;7118.UpwardArrowProcessPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;7119.UpwardArrowProcessPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Outline" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineYes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="24" dlg:left="85" dlg:top="152" dlg:width="50" dlg:height="10" dlg:help-text="&amp;7120.UpwardArrowProcessPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;7121.UpwardArrowProcessPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Outline">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineNo" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="43" dlg:left="172" dlg:top="264" dlg:width="35" dlg:height="14" dlg:help-text="&amp;7122.UpwardArrowProcessPropsDialog.okCommandButton.HelpText" dlg:value="&amp;7123.UpwardArrowProcessPropsDialog.okCommandButton.Label" dlg:button-type="ok"/>
+  <dlg:menulist dlg:id="listBox" dlg:tab-index="5" dlg:left="3" dlg:top="3" dlg:width="74" dlg:height="227" dlg:help-text="&amp;7124.UpwardArrowProcessPropsDialog.listBox.HelpText" dlg:linecount="20">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;7125.listBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7126.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7127.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7128.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7129.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7130.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7131.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7132.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7133.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7134.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7135.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7136.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7137.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7138.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7139.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7140.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7141.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7142.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7143.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7144.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7145.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7146.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7147.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7148.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7149.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7150.listBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedStyle" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="7" dlg:left="134" dlg:top="12" dlg:width="75" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;7151.UpwardArrowProcessPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;7152.UpwardArrowProcessPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyColors" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="102" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;7153.UpwardArrowProcessPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7154.UpwardArrowProcessPropsDialog.allShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:allShape" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="117" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;7155.UpwardArrowProcessPropsDialog.firstShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7156.UpwardArrowProcessPropsDialog.firstShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:first" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="2" dlg:left="132" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;7157.UpwardArrowProcessPropsDialog.previousShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7158.UpwardArrowProcessPropsDialog.previousShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:previous" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="3" dlg:left="147" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;7159.UpwardArrowProcessPropsDialog.nextShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7160.UpwardArrowProcessPropsDialog.nextShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:next" script:language="UNO"/>
+  </dlg:button>
+  <dlg:img dlg:id="imageControl" dlg:tab-index="27" dlg:left="80" dlg:top="3" dlg:width="165" dlg:height="165" dlg:help-text="&amp;7161.UpwardArrowProcessPropsDialog.imageControl.HelpText" dlg:tabstop="true"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="12" dlg:left="85" dlg:top="62" dlg:width="35" dlg:height="10" dlg:help-text="&amp;7162.UpwardArrowProcessPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;7163.UpwardArrowProcessPropsDialog.colorOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColor" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="16" dlg:left="120" dlg:top="62" dlg:width="15" dlg:height="10" dlg:help-text="&amp;7164.UpwardArrowProcessPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="9" dlg:left="91" dlg:top="30" dlg:width="50" dlg:height="10" dlg:help-text="&amp;7165.UpwardArrowProcessPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;7166.UpwardArrowProcessPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="10" dlg:left="155" dlg:top="30" dlg:width="85" dlg:height="10" dlg:help-text="&amp;7167.UpwardArrowProcessPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;7168.UpwardArrowProcessPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="textFitOptionButton" dlg:tab-index="38" dlg:left="8" dlg:top="240" dlg:width="66" dlg:height="10" dlg:help-text="&amp;7169.UpwardArrowProcessPropsDialog.textFitOptionButton.HelpText" dlg:value="&amp;7170.UpwardArrowProcessPropsDialog.textFitOptionButton.Label" dlg:group-name="FontSettings" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setTextToFitToSize" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="fontSizeOptionButton" dlg:tab-index="39" dlg:left="75" dlg:top="240" dlg:width="45" dlg:height="10" dlg:help-text="&amp;7171.UpwardArrowProcessPropsDialog.fontSizeOptionButton.HelpText" dlg:value="&amp;7172.UpwardArrowProcessPropsDialog.fontSizeOptionButton.Label" dlg:group-name="FontSettings">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFontSize" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="fontSizeListBox" dlg:tab-index="40" dlg:disabled="true" dlg:left="122" dlg:top="239" dlg:width="24" dlg:height="12" dlg:help-text="&amp;7173.UpwardArrowProcessPropsDialog.fontSizeListBox.HelpText" dlg:spin="true" dlg:linecount="29">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;7174.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7175.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7176.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7177.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7178.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7179.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7180.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7181.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7182.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7183.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7184.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7185.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7186.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7187.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7188.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7189.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7190.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7191.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7192.fontSizeListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7193.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7194.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7195.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7196.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7197.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7198.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7199.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7200.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7201.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7202.fontSizeListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:checkbox dlg:id="modifyTextColorCheckBox" dlg:tab-index="41" dlg:left="160" dlg:top="240" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7203.UpwardArrowProcessPropsDialog.modifyTextColorCheckBox.HelpText" dlg:value="&amp;7204.UpwardArrowProcessPropsDialog.modifyTextColorCheckBox.Label" dlg:checked="false">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyTextColor" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:img dlg:style-id="1" dlg:id="textColorImageControl" dlg:tab-index="42" dlg:disabled="true" dlg:left="226" dlg:top="240" dlg:width="15" dlg:height="10" dlg:help-text="&amp;7205.UpwardArrowProcessPropsDialog.textColorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:button dlg:id="sizeButton" dlg:tab-index="4" dlg:left="162" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:help-text="&amp;7206.UpwardArrowProcessPropsDialog.sizeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7207.UpwardArrowProcessPropsDialog.sizeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:size" script:language="UNO"/>
+  </dlg:button>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="preDefinedColorThemesOptionButton" dlg:tab-index="13" dlg:left="85" dlg:top="74" dlg:width="70" dlg:height="9" dlg:help-text="&amp;7208.UpwardArrowProcessPropsDialog.preDefinedColorThemesOptionButton.HelpText" dlg:value="&amp;7209.UpwardArrowProcessPropsDialog.preDefinedColorThemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorTheme" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="preDefinedColorSchemesOptionButton" dlg:tab-index="14" dlg:left="85" dlg:top="86" dlg:width="70" dlg:height="9" dlg:help-text="&amp;7210.UpwardArrowProcessPropsDialog.preDefinedColorSchemesOptionButton.HelpText" dlg:value="&amp;7211.UpwardArrowProcessPropsDialog.preDefinedColorSchemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorScheme" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="cancelCommandButton" dlg:tab-index="44" dlg:left="210" dlg:top="264" dlg:width="35" dlg:height="14" dlg:help-text="&amp;7212.UpwardArrowProcessPropsDialog.cancelCommandButton.HelpText" dlg:value="&amp;7213.UpwardArrowProcessPropsDialog.cancelCommandButton.Label" dlg:button-type="cancel"/>
+  <dlg:button dlg:id="setBaseColorsCommandButton" dlg:tab-index="15" dlg:left="170" dlg:top="49" dlg:width="70" dlg:height="13" dlg:help-text="&amp;7214.UpwardArrowProcessPropsDialog.setBaseColorsCommandButton.HelpText" dlg:value="&amp;7215.UpwardArrowProcessPropsDialog.setBaseColorsCommandButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setBaseColorsSettings" script:language="UNO"/>
+  </dlg:button>
+  <dlg:text dlg:id="lineWidthLabel" dlg:tab-index="25" dlg:left="155" dlg:top="141" dlg:width="50" dlg:height="10" dlg:help-text="&amp;7216.UpwardArrowProcessPropsDialog.lineWidthLabel.HelpText" dlg:value="&amp;7217.UpwardArrowProcessPropsDialog.lineWidthLabel.Label" dlg:align="right" dlg:tabstop="false"/>
+  <dlg:menulist dlg:id="lineWidthListBox" dlg:tab-index="26" dlg:left="210" dlg:top="140" dlg:width="30" dlg:height="12" dlg:help-text="&amp;7218.UpwardArrowProcessPropsDialog.lineWidthListBox.HelpText" dlg:spin="true" dlg:linecount="6">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;7219.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7220.lineWidthListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7221.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7222.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7223.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7224.lineWidthListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="baseColorsOptionButton" dlg:tab-index="11" dlg:left="85" dlg:top="50" dlg:width="80" dlg:height="10" dlg:help-text="&amp;7225.UpwardArrowProcessPropsDialog.baseColorsOptionButton.HelpText" dlg:value="&amp;7226.UpwardArrowProcessPropsDialog.baseColorsOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setBaseColors" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="preDefinedColorThemesListBox" dlg:tab-index="17" dlg:left="179" dlg:top="73" dlg:width="60" dlg:height="12" dlg:help-text="&amp;7227.UpwardArrowProcessPropsDialog.preDefinedColorThemesListBox.HelpText" dlg:spin="true" dlg:linecount="10">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;7228.preDefinedColorThemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7229.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7230.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7231.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7232.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7233.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7234.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7235.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7236.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7237.preDefinedColorThemesListBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:preDefinedColorThemesListBoxChanged" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:menulist dlg:id="preDefinedColorSchemesListBox" dlg:tab-index="18" dlg:left="179" dlg:top="85" dlg:width="60" dlg:height="12" dlg:help-text="&amp;7238.UpwardArrowProcessPropsDialog.preDefinedColorSchemesListBox.HelpText" dlg:spin="true" dlg:linecount="12">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;7239.preDefinedColorSchemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7240.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7241.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7242.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7243.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7244.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7245.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7246.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7247.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7248.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7249.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7250.preDefinedColorSchemesListBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:preDefinedColorSchemesListBoxChanged" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:text dlg:id="propsLabel1" dlg:tab-index="29" dlg:left="85" dlg:top="184" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7251.UpwardArrowProcessPropsDialog.propsLabel1.HelpText" dlg:value="&amp;7252.UpwardArrowProcessPropsDialog.propsLabel1.Label" dlg:tabstop="false"/>
+  <dlg:titledbox dlg:id="colorsFrameControl" dlg:tab-index="6" dlg:left="80" dlg:top="3" dlg:width="165" dlg:height="124" dlg:help-text="&amp;7253.UpwardArrowProcessPropsDialog.colorsFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;7254.UpwardArrowProcessPropsDialog.colorsFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="areaFrameControl" dlg:tab-index="8" dlg:left="85" dlg:top="20" dlg:width="155" dlg:height="25" dlg:help-text="&amp;7255.UpwardArrowProcessPropsDialog.areaFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;7256.UpwardArrowProcessPropsDialog.areaFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="arrowFrameControl" dlg:tab-index="19" dlg:left="85" dlg:top="98" dlg:width="92" dlg:height="25" dlg:help-text="&amp;7257.UpwardArrowProcessPropsDialog.arrowFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;7258.UpwardArrowProcessPropsDialog.arrowFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="outlineFrameControl" dlg:tab-index="22" dlg:left="80" dlg:top="131" dlg:width="165" dlg:height="36" dlg:help-text="&amp;7259.UpwardArrowProcessPropsDialog.outlineFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;7260.UpwardArrowProcessPropsDialog.outlineFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="propsFrameControl" dlg:tab-index="28" dlg:left="80" dlg:top="172" dlg:width="165" dlg:height="57" dlg:help-text="&amp;7261.UpwardArrowProcessPropsDialog.propsFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;7262.UpwardArrowProcessPropsDialog.propsFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="textFrameControl" dlg:tab-index="37" dlg:left="3" dlg:top="230" dlg:width="242" dlg:height="25" dlg:help-text="&amp;7263.UpwardArrowProcessPropsDialog.textFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;7264.UpwardArrowProcessPropsDialog.textFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:checkbox dlg:id="modifyArrowShapeColorCheckBox" dlg:tab-index="20" dlg:left="90" dlg:top="108" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7265.UpwardArrowProcessPropsDialog.modifyArrowShapeColorCheckBox.HelpText" dlg:value="&amp;7266.UpwardArrowProcessPropsDialog.modifyArrowShapeColorCheckBox.Label" dlg:checked="false">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyArrowShapesColor" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:img dlg:style-id="1" dlg:id="arrowColorImageControl" dlg:tab-index="21" dlg:disabled="true" dlg:left="157" dlg:top="108" dlg:width="15" dlg:height="10" dlg:help-text="&amp;7267.UpwardArrowProcessPropsDialog.arrowColorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:text dlg:id="propsLabel2" dlg:tab-index="31" dlg:left="85" dlg:top="194" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7268.UpwardArrowProcessPropsDialog.propsLabel2.HelpText" dlg:value="&amp;7269.UpwardArrowProcessPropsDialog.propsLabel2.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel3" dlg:tab-index="33" dlg:left="85" dlg:top="204" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7270.UpwardArrowProcessPropsDialog.propsLabel3.HelpText" dlg:value="&amp;7271.UpwardArrowProcessPropsDialog.propsLabel3.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel4" dlg:tab-index="35" dlg:left="85" dlg:top="214" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7272.UpwardArrowProcessPropsDialog.propsLabel4.HelpText" dlg:value="&amp;7273.UpwardArrowProcessPropsDialog.propsLabel4.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel5" dlg:tab-index="30" dlg:left="150" dlg:top="184" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7274.UpwardArrowProcessPropsDialog.propsLabel5.HelpText" dlg:value="&amp;7275.UpwardArrowProcessPropsDialog.propsLabel5.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel6" dlg:tab-index="32" dlg:left="150" dlg:top="194" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7276.UpwardArrowProcessPropsDialog.propsLabel6.HelpText" dlg:value="&amp;7277.UpwardArrowProcessPropsDialog.propsLabel6.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel7" dlg:tab-index="34" dlg:left="150" dlg:top="204" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7278.UpwardArrowProcessPropsDialog.propsLabel7.HelpText" dlg:value="&amp;7279.UpwardArrowProcessPropsDialog.propsLabel7.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel8" dlg:tab-index="36" dlg:left="150" dlg:top="214" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7280.UpwardArrowProcessPropsDialog.propsLabel8.HelpText" dlg:value="&amp;7281.UpwardArrowProcessPropsDialog.propsLabel8.Label" dlg:tabstop="false"/>
+ </dlg:bulletinboard>
+</dlg:window>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="BaseColorsSettings" dlg:left="10" dlg:top="9" dlg:width="121" dlg:height="60" dlg:help-text="&amp;4789.BaseColorsSettings.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;4790.BaseColorsSettings.Title">
+ <dlg:bulletinboard>
+  <dlg:img dlg:id="ImageControl1" dlg:tab-index="0" dlg:left="3" dlg:top="5" dlg:width="10" dlg:height="10" dlg:help-text="&amp;4791.BaseColorsSettings.ImageControl1.HelpText" dlg:tabstop="false">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:id="ImageControl2" dlg:tab-index="1" dlg:left="18" dlg:top="5" dlg:width="10" dlg:height="10" dlg:help-text="&amp;4792.BaseColorsSettings.ImageControl2.HelpText" dlg:tabstop="false">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:id="ImageControl3" dlg:tab-index="2" dlg:left="33" dlg:top="5" dlg:width="10" dlg:height="10" dlg:help-text="&amp;4793.BaseColorsSettings.ImageControl3.HelpText" dlg:tabstop="false">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:id="ImageControl4" dlg:tab-index="3" dlg:left="48" dlg:top="5" dlg:width="10" dlg:height="10" dlg:help-text="&amp;4794.BaseColorsSettings.ImageControl4.HelpText" dlg:tabstop="false">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:id="ImageControl5" dlg:tab-index="4" dlg:left="63" dlg:top="5" dlg:width="10" dlg:height="10" dlg:help-text="&amp;4795.BaseColorsSettings.ImageControl5.HelpText" dlg:tabstop="false">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:id="ImageControl6" dlg:tab-index="5" dlg:left="78" dlg:top="5" dlg:width="10" dlg:height="10" dlg:help-text="&amp;4796.BaseColorsSettings.ImageControl6.HelpText" dlg:tabstop="false">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:id="ImageControl7" dlg:tab-index="6" dlg:left="93" dlg:top="5" dlg:width="10" dlg:height="10" dlg:help-text="&amp;4797.BaseColorsSettings.ImageControl7.HelpText" dlg:tabstop="false">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:img dlg:id="ImageControl8" dlg:tab-index="7" dlg:left="108" dlg:top="5" dlg:width="10" dlg:height="10" dlg:help-text="&amp;4798.BaseColorsSettings.ImageControl8.HelpText" dlg:tabstop="false">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:button dlg:id="cancelCommandButton" dlg:tab-index="10" dlg:left="83" dlg:top="43" dlg:width="35" dlg:height="14" dlg:help-text="&amp;4799.BaseColorsSettings.cancelCommandButton.HelpText" dlg:value="&amp;4800.BaseColorsSettings.cancelCommandButton.Label" dlg:button-type="cancel"/>
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="9" dlg:left="45" dlg:top="43" dlg:width="35" dlg:height="14" dlg:help-text="&amp;4801.BaseColorsSettings.okCommandButton.HelpText" dlg:value="&amp;4802.BaseColorsSettings.okCommandButton.Label" dlg:button-type="ok"/>
+  <dlg:button dlg:id="setDefaultValuesButton" dlg:tab-index="8" dlg:left="3" dlg:top="21" dlg:width="115" dlg:height="13" dlg:help-text="&amp;4803.BaseColorsSettings.setDefaultValuesButton.HelpText" dlg:value="&amp;4804.BaseColorsSettings.setDefaultValuesButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setDefaultBaseColorsSettings" script:language="UNO"/>
+  </dlg:button>
+ </dlg:bulletinboard>
+</dlg:window>

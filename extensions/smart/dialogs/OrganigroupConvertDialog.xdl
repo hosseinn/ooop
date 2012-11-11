@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="OrganigroupConvertDialog" dlg:left="144" dlg:top="14" dlg:width="140" dlg:height="99" dlg:help-text="&amp;5141.OrganigroupConvertDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;5142.OrganigroupConvertDialog.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="OrganigroupConvertDialog" dlg:left="144" dlg:top="14" dlg:width="141" dlg:height="95" dlg:help-text="&amp;1801.OrganigroupConvertDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;1802.OrganigroupConvertDialog.Title">
  <dlg:bulletinboard>
-  <dlg:text dlg:id="textLabel" dlg:tab-index="0" dlg:left="5" dlg:top="5" dlg:width="60" dlg:height="8" dlg:help-text="&amp;5143.OrganigroupConvertDialog.textLabel.HelpText" dlg:value="&amp;5144.OrganigroupConvertDialog.textLabel.Label"/>
+  <dlg:text dlg:id="textLabel" dlg:tab-index="0" dlg:left="5" dlg:top="3" dlg:width="60" dlg:height="8" dlg:help-text="&amp;1803.OrganigroupConvertDialog.textLabel.HelpText" dlg:value="&amp;1804.OrganigroupConvertDialog.textLabel.Label"/>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="convertOptionButton1" dlg:tab-index="1" dlg:left="10" dlg:top="18" dlg:width="125" dlg:height="8" dlg:help-text="&amp;5145.OrganigroupConvertDialog.convertOptionButton1.HelpText" dlg:value="&amp;5146.OrganigroupConvertDialog.convertOptionButton1.Label" dlg:group-name="DiagramTypes" dlg:checked="true">
+   <dlg:radio dlg:id="convertOptionButton1" dlg:tab-index="1" dlg:left="5" dlg:top="15" dlg:width="130" dlg:height="8" dlg:help-text="&amp;1805.OrganigroupConvertDialog.convertOptionButton1.HelpText" dlg:value="&amp;1806.OrganigroupConvertDialog.convertOptionButton1.Label" dlg:group-name="DiagramTypes" dlg:checked="true">
     <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:converButton1Pressed" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="convertOptionButton2" dlg:tab-index="2" dlg:left="10" dlg:top="30" dlg:width="125" dlg:height="8" dlg:help-text="&amp;5147.OrganigroupConvertDialog.convertOptionButton2.HelpText" dlg:value="&amp;5148.OrganigroupConvertDialog.convertOptionButton2.Label" dlg:group-name="DiagramTypes">
+   <dlg:radio dlg:id="convertOptionButton2" dlg:tab-index="2" dlg:left="5" dlg:top="26" dlg:width="130" dlg:height="8" dlg:help-text="&amp;1807.OrganigroupConvertDialog.convertOptionButton2.HelpText" dlg:value="&amp;1808.OrganigroupConvertDialog.convertOptionButton2.Label" dlg:group-name="DiagramTypes">
     <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:converButton1Pressed" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="convertOptionButton3" dlg:tab-index="3" dlg:left="10" dlg:top="42" dlg:width="125" dlg:height="8" dlg:help-text="&amp;5149.OrganigroupConvertDialog.convertOptionButton3.HelpText" dlg:value="&amp;5150.OrganigroupConvertDialog.convertOptionButton3.Label" dlg:group-name="DiagramTypes">
+   <dlg:radio dlg:id="convertOptionButton3" dlg:tab-index="3" dlg:left="5" dlg:top="37" dlg:width="130" dlg:height="8" dlg:help-text="&amp;1809.OrganigroupConvertDialog.convertOptionButton3.HelpText" dlg:value="&amp;1810.OrganigroupConvertDialog.convertOptionButton3.Label" dlg:group-name="DiagramTypes">
     <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:converButton1Pressed" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="convertOptionButton4" dlg:tab-index="4" dlg:left="10" dlg:top="54" dlg:width="125" dlg:height="8" dlg:help-text="&amp;5151.OrganigroupConvertDialog.convertOptionButton4.HelpText" dlg:value="&amp;5152.OrganigroupConvertDialog.convertOptionButton4.Label" dlg:group-name="DiagramTypes">
+   <dlg:radio dlg:id="convertOptionButton4" dlg:tab-index="4" dlg:left="5" dlg:top="48" dlg:width="130" dlg:height="8" dlg:help-text="&amp;1811.OrganigroupConvertDialog.convertOptionButton4.HelpText" dlg:value="&amp;1812.OrganigroupConvertDialog.convertOptionButton4.Label" dlg:group-name="DiagramTypes">
     <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:converButton2Pressed" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:button dlg:id="convertActionButton" dlg:tab-index="7" dlg:left="5" dlg:top="80" dlg:width="130" dlg:height="14" dlg:help-text="&amp;5153.OrganigroupConvertDialog.convertActionButton.HelpText" dlg:value="&amp;5154.OrganigroupConvertDialog.convertActionButton.Label">
-   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:convertAction" script:language="UNO"/>
-  </dlg:button>
-  <dlg:text dlg:id="Label" dlg:tab-index="5" dlg:disabled="true" dlg:left="15" dlg:top="64" dlg:width="100" dlg:height="9" dlg:help-text="&amp;5155.OrganigroupConvertDialog.Label.HelpText" dlg:value="&amp;5156.OrganigroupConvertDialog.Label.Label" dlg:align="center" dlg:tabstop="false"/>
-  <dlg:menulist dlg:id="lastHorLevelListBox" dlg:tab-index="6" dlg:disabled="true" dlg:left="117" dlg:top="63" dlg:width="18" dlg:height="12" dlg:help-text="&amp;5157.OrganigroupConvertDialog.lastHorLevelListBox.HelpText" dlg:spin="true" dlg:linecount="8">
+  <dlg:button dlg:id="convertActionButton" dlg:tab-index="7" dlg:left="63" dlg:top="76" dlg:width="35" dlg:height="14" dlg:help-text="&amp;1813.OrganigroupConvertDialog.convertActionButton.HelpText" dlg:value="&amp;1814.OrganigroupConvertDialog.convertActionButton.Label" dlg:button-type="ok"/>
+  <dlg:text dlg:id="Label" dlg:tab-index="5" dlg:disabled="true" dlg:left="10" dlg:top="59" dlg:width="105" dlg:height="9" dlg:help-text="&amp;1815.OrganigroupConvertDialog.Label.HelpText" dlg:value="&amp;1816.OrganigroupConvertDialog.Label.Label" dlg:align="center" dlg:tabstop="false"/>
+  <dlg:menulist dlg:id="lastHorLevelListBox" dlg:tab-index="6" dlg:disabled="true" dlg:left="118" dlg:top="57" dlg:width="18" dlg:height="12" dlg:help-text="&amp;1817.OrganigroupConvertDialog.lastHorLevelListBox.HelpText" dlg:spin="true" dlg:linecount="8">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;5158.lastHorLevelListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;5159.lastHorLevelListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;5160.lastHorLevelListBox.StringItemList" dlg:selected="true"/>
-    <dlg:menuitem dlg:value="&amp;5161.lastHorLevelListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;5162.lastHorLevelListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;5163.lastHorLevelListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;5164.lastHorLevelListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;5165.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;1818.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;1819.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;1820.lastHorLevelListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;1821.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;1822.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;1823.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;1824.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;1825.lastHorLevelListBox.StringItemList"/>
    </dlg:menupopup>
-   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedLastHorLevel" script:language="UNO"/>
   </dlg:menulist>
+  <dlg:button dlg:id="cancelButton" dlg:tab-index="8" dlg:left="101" dlg:top="76" dlg:width="35" dlg:height="14" dlg:help-text="&amp;1828.OrganigroupConvertDialog.cancelButton.HelpText" dlg:value="&amp;1829.OrganigroupConvertDialog.cancelButton.Label" dlg:button-type="cancel"/>
  </dlg:bulletinboard>
 </dlg:window>

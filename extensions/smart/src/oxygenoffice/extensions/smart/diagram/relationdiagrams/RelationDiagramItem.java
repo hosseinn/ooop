@@ -1,20 +1,15 @@
 package oxygenoffice.extensions.smart.diagram.relationdiagrams;
 
 import com.sun.star.awt.Gradient;
-import com.sun.star.beans.PropertyVetoException;
-import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
 import com.sun.star.drawing.FillStyle;
 import com.sun.star.drawing.XShape;
-import com.sun.star.lang.IllegalArgumentException;
-import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.text.XText;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import oxygenoffice.extensions.smart.Controller;
+import oxygenoffice.extensions.smart.diagram.Color;
 
 public abstract class RelationDiagramItem {
 
@@ -42,9 +37,10 @@ public abstract class RelationDiagramItem {
         return xTextShape;
     }
 
-    public Color getColor(){
+    public Color getColorObj(){
         try {
             XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xMainShape);
+            //int lineColor = AnyConverter.toInt(xProp.getPropertyValue("LineColor"));
             if(((FillStyle)xProp.getPropertyValue("FillStyle")) == FillStyle.SOLID){
                 int color = AnyConverter.toInt(xProp.getPropertyValue("FillColor"));
                 return new Color(false, color, 0, 0);
@@ -61,13 +57,20 @@ public abstract class RelationDiagramItem {
   
     public void setColor(Color oColor){
         if(getRDiagram() != null){
-            if(oColor.isGradient()){
+            if(oColor.isGradient() && getRDiagram().getController().getDiagramType() != Controller.VENNDIAGRAM){
                 getRDiagram().setGradient(xMainShape, oColor.getStartColor(), oColor.getEndColor());
                 getRDiagram().setGradient(xTextShape, oColor.getStartColor(), oColor.getEndColor());
             }else{
                 getRDiagram().setColorOfShape(xMainShape, oColor.getColor());
                 getRDiagram().setColorOfShape(xTextShape, oColor.getColor());
             }
+        }
+    }
+    
+    public void setLineColor(){
+        if(getRDiagram() != null){
+            getRDiagram().setLineColorOfShape(xMainShape);
+            getRDiagram().setLineColorOfShape(xTextShape);
         }
     }
 
@@ -154,6 +157,16 @@ public abstract class RelationDiagramItem {
     public abstract boolean isInjuredItem();
 
     public abstract void setShapesProps();
+    
+    public void setShapesProps(boolean modifyColor){
+        if(modifyColor){
+            getRDiagram().setModifyColorsProp(true);
+            setShapesProps();
+            getRDiagram().setModifyColorsProp(false);
+        } else {
+            setShapesProps();
+        }
+    }
     
     public abstract void setShapeFontMeausereProps();
     

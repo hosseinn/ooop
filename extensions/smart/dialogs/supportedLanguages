@@ -1,33 +1,37 @@
-Supported languages in SmART verison 0.9.5
+Supported languages in SmART verison 1.0.0
 
-ast
-bg
-ca
-cs
-da
+Fully language support:
 en_GB
 en_US - default
-es
-et
-(eu)
-fa
-fi
-fr
-gd
-gl
 hu
-it
-ja
-ko
-nb
-nl
-pl
-pt
-pt_BR
-ro
-sk
-tr
-zh_CN
+
+Other language support (not fully):
+es
+
+(ast)
+(bg)
+(ca)
+(cs)
+(da)
+(et)
+(eu)
+(fa)
+(fi)
+(fr)
+(gd)
+(gl)
+(it)
+(ja)
+(ko)
+(nb)
+(nl)
+(pl)
+(pt)
+(pt_BR)
+(ro)
+(sk)
+(tr)
+(zh_CN)
 (zh_TW)
 
 

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="StaggeredProcessPropsDialog" dlg:left="0" dlg:top="66" dlg:width="250" dlg:height="287" dlg:help-text="&amp;6746.StaggeredProcessPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;6747.StaggeredProcessPropsDialog.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xff"/>
+  <dlg:style dlg:style-id="1" dlg:background-color="0x0"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="20" dlg:left="83" dlg:top="102" dlg:width="50" dlg:height="9" dlg:help-text="&amp;6748.StaggeredProcessPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;6749.StaggeredProcessPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Outline" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineYes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="21" dlg:left="83" dlg:top="112" dlg:width="50" dlg:height="10" dlg:help-text="&amp;6750.StaggeredProcessPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;6751.StaggeredProcessPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Outline">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineNo" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="51" dlg:left="174" dlg:top="270" dlg:width="35" dlg:height="14" dlg:help-text="&amp;6752.StaggeredProcessPropsDialog.okCommandButton.HelpText" dlg:value="&amp;6753.StaggeredProcessPropsDialog.okCommandButton.Label" dlg:button-type="ok"/>
+  <dlg:menulist dlg:id="listBox" dlg:tab-index="5" dlg:left="3" dlg:top="3" dlg:width="72" dlg:height="236" dlg:help-text="&amp;6754.StaggeredProcessPropsDialog.listBox.HelpText" dlg:linecount="20">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6755.listBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6756.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6757.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6758.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6759.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6760.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6761.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6762.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6763.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6764.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6765.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6766.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6767.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6768.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6769.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6770.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6771.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6772.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6773.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6774.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6775.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6776.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6777.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6778.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6779.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6780.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6781.listBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedStyle" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="7" dlg:left="135" dlg:top="11" dlg:width="75" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6782.StaggeredProcessPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;6783.StaggeredProcessPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyColors" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="102" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6784.StaggeredProcessPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6785.StaggeredProcessPropsDialog.allShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:allShape" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="117" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6786.StaggeredProcessPropsDialog.firstShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6787.StaggeredProcessPropsDialog.firstShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:first" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="2" dlg:left="132" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6788.StaggeredProcessPropsDialog.previousShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6789.StaggeredProcessPropsDialog.previousShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:previous" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="3" dlg:left="147" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6790.StaggeredProcessPropsDialog.nextShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6791.StaggeredProcessPropsDialog.nextShapeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:next" script:language="UNO"/>
+  </dlg:button>
+  <dlg:img dlg:id="imageControl" dlg:tab-index="31" dlg:left="78" dlg:top="3" dlg:width="169" dlg:height="169" dlg:help-text="&amp;6792.StaggeredProcessPropsDialog.imageControl.HelpText" dlg:tabstop="true"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="yesShadowOptionButton" dlg:tab-index="25" dlg:left="83" dlg:top="135" dlg:width="50" dlg:height="9" dlg:help-text="&amp;6793.StaggeredProcessPropsDialog.yesShadowOptionButton.HelpText" dlg:value="&amp;6794.StaggeredProcessPropsDialog.yesShadowOptionButton.Label" dlg:group-name="Shadow"/>
+   <dlg:radio dlg:id="noShadowOptionButton" dlg:tab-index="26" dlg:left="160" dlg:top="135" dlg:width="50" dlg:height="9" dlg:help-text="&amp;6795.StaggeredProcessPropsDialog.noShadowOptionButton.HelpText" dlg:value="&amp;6796.StaggeredProcessPropsDialog.noShadowOptionButton.Label" dlg:group-name="Shadow" dlg:checked="true"/>
+   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="12" dlg:left="83" dlg:top="54" dlg:width="35" dlg:height="10" dlg:help-text="&amp;6797.StaggeredProcessPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;6798.StaggeredProcessPropsDialog.colorOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColor" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="16" dlg:left="119" dlg:top="54" dlg:width="15" dlg:height="10" dlg:help-text="&amp;6799.StaggeredProcessPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="9" dlg:left="90" dlg:top="28" dlg:width="50" dlg:height="10" dlg:help-text="&amp;6800.StaggeredProcessPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;6801.StaggeredProcessPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="10" dlg:left="150" dlg:top="28" dlg:width="85" dlg:height="10" dlg:help-text="&amp;6802.StaggeredProcessPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;6803.StaggeredProcessPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="textFitOptionButton" dlg:tab-index="46" dlg:left="8" dlg:top="251" dlg:width="66" dlg:height="10" dlg:help-text="&amp;6804.StaggeredProcessPropsDialog.textFitOptionButton.HelpText" dlg:value="&amp;6805.StaggeredProcessPropsDialog.textFitOptionButton.Label" dlg:group-name="FontSettings" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setTextToFitToSize" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="fontSizeOptionButton" dlg:tab-index="47" dlg:left="76" dlg:top="251" dlg:width="44" dlg:height="10" dlg:help-text="&amp;6806.StaggeredProcessPropsDialog.fontSizeOptionButton.HelpText" dlg:value="&amp;6807.StaggeredProcessPropsDialog.fontSizeOptionButton.Label" dlg:group-name="FontSettings">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFontSize" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="fontSizeListBox" dlg:tab-index="48" dlg:disabled="true" dlg:left="124" dlg:top="249" dlg:width="24" dlg:height="12" dlg:help-text="&amp;6808.StaggeredProcessPropsDialog.fontSizeListBox.HelpText" dlg:spin="true" dlg:linecount="29">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6809.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6810.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6811.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6812.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6813.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6814.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6815.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6816.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6817.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6818.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6819.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6820.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6821.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6822.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6823.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6824.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6825.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6826.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6827.fontSizeListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6828.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6829.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6830.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6831.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6832.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6833.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6834.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6835.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6836.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6837.fontSizeListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:checkbox dlg:id="modifyTextColorCheckBox" dlg:tab-index="49" dlg:left="162" dlg:top="251" dlg:width="65" dlg:height="9" dlg:help-text="&amp;6838.StaggeredProcessPropsDialog.modifyTextColorCheckBox.HelpText" dlg:value="&amp;6839.StaggeredProcessPropsDialog.modifyTextColorCheckBox.Label" dlg:checked="false">
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyTextColor" script:language="UNO"/>
+  </dlg:checkbox>
+  <dlg:img dlg:style-id="1" dlg:id="textColorImageControl" dlg:tab-index="50" dlg:disabled="true" dlg:left="228" dlg:top="251" dlg:width="15" dlg:height="10" dlg:help-text="&amp;6840.StaggeredProcessPropsDialog.textColorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:button dlg:id="sizeButton" dlg:tab-index="4" dlg:left="162" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:help-text="&amp;6841.StaggeredProcessPropsDialog.sizeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6842.StaggeredProcessPropsDialog.sizeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:size" script:language="UNO"/>
+  </dlg:button>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="preDefinedColorThemesOptionButton" dlg:tab-index="13" dlg:left="83" dlg:top="65" dlg:width="70" dlg:height="9" dlg:help-text="&amp;6843.StaggeredProcessPropsDialog.preDefinedColorThemesOptionButton.HelpText" dlg:value="&amp;6844.StaggeredProcessPropsDialog.preDefinedColorThemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorTheme" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="preDefinedColorSchemesOptionButton" dlg:tab-index="14" dlg:left="83" dlg:top="76" dlg:width="70" dlg:height="9" dlg:help-text="&amp;6845.StaggeredProcessPropsDialog.preDefinedColorSchemesOptionButton.HelpText" dlg:value="&amp;6846.StaggeredProcessPropsDialog.preDefinedColorSchemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorScheme" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="cancelCommandButton" dlg:tab-index="52" dlg:left="212" dlg:top="270" dlg:width="35" dlg:height="14" dlg:help-text="&amp;6847.StaggeredProcessPropsDialog.cancelCommandButton.HelpText" dlg:value="&amp;6848.StaggeredProcessPropsDialog.cancelCommandButton.Label" dlg:button-type="cancel"/>
+  <dlg:button dlg:id="setBaseColorsCommandButton" dlg:tab-index="15" dlg:left="172" dlg:top="42" dlg:width="70" dlg:height="13" dlg:help-text="&amp;6849.StaggeredProcessPropsDialog.setBaseColorsCommandButton.HelpText" dlg:value="&amp;6850.StaggeredProcessPropsDialog.setBaseColorsCommandButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setBaseColorsSettings" script:language="UNO"/>
+  </dlg:button>
+  <dlg:text dlg:id="lineWidthLabel" dlg:tab-index="22" dlg:left="158" dlg:top="103" dlg:width="50" dlg:height="10" dlg:help-text="&amp;6851.StaggeredProcessPropsDialog.lineWidthLabel.HelpText" dlg:value="&amp;6852.StaggeredProcessPropsDialog.lineWidthLabel.Label" dlg:align="right" dlg:tabstop="false"/>
+  <dlg:menulist dlg:id="lineWidthListBox" dlg:tab-index="23" dlg:left="212" dlg:top="101" dlg:width="30" dlg:height="12" dlg:help-text="&amp;6853.StaggeredProcessPropsDialog.lineWidthListBox.HelpText" dlg:spin="true" dlg:linecount="6">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6854.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6855.lineWidthListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6856.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6857.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6858.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6859.lineWidthListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="baseColorsOptionButton" dlg:tab-index="11" dlg:left="83" dlg:top="43" dlg:width="80" dlg:height="10" dlg:help-text="&amp;6860.StaggeredProcessPropsDialog.baseColorsOptionButton.HelpText" dlg:value="&amp;6861.StaggeredProcessPropsDialog.baseColorsOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setBaseColors" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="preDefinedColorThemesListBox" dlg:tab-index="17" dlg:left="182" dlg:top="63" dlg:width="60" dlg:height="12" dlg:help-text="&amp;6862.StaggeredProcessPropsDialog.preDefinedColorThemesListBox.HelpText" dlg:spin="true" dlg:linecount="10">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6863.preDefinedColorThemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6864.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6865.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6866.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6867.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6868.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6869.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6870.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6871.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6872.preDefinedColorThemesListBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:preDefinedColorThemesListBoxChanged" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:menulist dlg:id="preDefinedColorSchemesListBox" dlg:tab-index="18" dlg:left="182" dlg:top="75" dlg:width="60" dlg:height="12" dlg:help-text="&amp;6873.StaggeredProcessPropsDialog.preDefinedColorSchemesListBox.HelpText" dlg:spin="true" dlg:linecount="12">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6874.preDefinedColorSchemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6875.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6876.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6877.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6878.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6879.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6880.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6881.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6882.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6883.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6884.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6885.preDefinedColorSchemesListBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:preDefinedColorSchemesListBoxChanged" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:text dlg:id="propsLabel1" dlg:tab-index="33" dlg:left="83" dlg:top="182" dlg:width="65" dlg:height="9" dlg:help-text="&amp;6886.StaggeredProcessPropsDialog.propsLabel1.HelpText" dlg:value="&amp;6887.StaggeredProcessPropsDialog.propsLabel1.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel7" dlg:tab-index="34" dlg:left="148" dlg:top="182" dlg:width="95" dlg:height="9" dlg:help-text="&amp;6888.StaggeredProcessPropsDialog.propsLabel7.HelpText" dlg:value="&amp;6889.StaggeredProcessPropsDialog.propsLabel7.Label" dlg:tabstop="false"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="noRoundedOptionButton" dlg:tab-index="28" dlg:left="83" dlg:top="158" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6890.StaggeredProcessPropsDialog.noRoundedOptionButton.HelpText" dlg:value="&amp;6891.StaggeredProcessPropsDialog.noRoundedOptionButton.Label" dlg:group-name="Rounded"/>
+   <dlg:radio dlg:id="mediumRoundedOptionButton" dlg:tab-index="29" dlg:left="142" dlg:top="158" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6892.StaggeredProcessPropsDialog.mediumRoundedOptionButton.HelpText" dlg:value="&amp;6893.StaggeredProcessPropsDialog.mediumRoundedOptionButton.Label" dlg:group-name="Rounded" dlg:checked="true"/>
+   <dlg:radio dlg:id="extraRoundedOptionButton" dlg:tab-index="30" dlg:left="201" dlg:top="158" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6894.StaggeredProcessPropsDialog.extraRoundedOptionButton.HelpText" dlg:value="&amp;6895.StaggeredProcessPropsDialog.extraRoundedOptionButton.Label" dlg:group-name="Rounded"/>
+  </dlg:radiogroup>
+  <dlg:titledbox dlg:id="colorsFrameControl" dlg:tab-index="6" dlg:left="78" dlg:top="3" dlg:width="169" dlg:height="90" dlg:help-text="&amp;6896.StaggeredProcessPropsDialog.colorsFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;6897.StaggeredProcessPropsDialog.colorsFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="areaFrameControl" dlg:tab-index="8" dlg:left="83" dlg:top="19" dlg:width="159" dlg:height="22" dlg:help-text="&amp;6898.StaggeredProcessPropsDialog.areaFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;6899.StaggeredProcessPropsDialog.areaFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="outlineFrameControl" dlg:tab-index="19" dlg:left="78" dlg:top="93" dlg:width="169" dlg:height="32" dlg:help-text="&amp;6900.StaggeredProcessPropsDialog.outlineFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;6901.StaggeredProcessPropsDialog.outlineFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="shadowFrameControl" dlg:tab-index="24" dlg:left="78" dlg:top="126" dlg:width="169" dlg:height="22" dlg:help-text="&amp;6902.StaggeredProcessPropsDialog.shadowFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;6903.StaggeredProcessPropsDialog.shadowFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="roundedFrameControl" dlg:tab-index="27" dlg:left="78" dlg:top="149" dlg:width="169" dlg:height="22" dlg:help-text="&amp;6904.StaggeredProcessPropsDialog.roundedFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;6905.StaggeredProcessPropsDialog.roundedFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="propsFrameControl" dlg:tab-index="32" dlg:left="78" dlg:top="173" dlg:width="169" dlg:height="65" dlg:help-text="&amp;6906.StaggeredProcessPropsDialog.propsFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;6907.StaggeredProcessPropsDialog.propsFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="textFrameControl" dlg:tab-index="45" dlg:left="3" dlg:top="241" dlg:width="244" dlg:height="24" dlg:help-text="&amp;6908.StaggeredProcessPropsDialog.textFrameControl.HelpText">
+   <dlg:title dlg:value="&amp;6909.StaggeredProcessPropsDialog.textFrameControl.Label"/>
+  </dlg:titledbox>
+  <dlg:text dlg:id="propsLabel2" dlg:tab-index="35" dlg:left="83" dlg:top="191" dlg:width="65" dlg:height="9" dlg:help-text="&amp;6910.StaggeredProcessPropsDialog.propsLabel2.HelpText" dlg:value="&amp;6911.StaggeredProcessPropsDialog.propsLabel2.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel3" dlg:tab-index="37" dlg:left="83" dlg:top="200" dlg:width="65" dlg:height="9" dlg:help-text="&amp;6912.StaggeredProcessPropsDialog.propsLabel3.HelpText" dlg:value="&amp;6913.StaggeredProcessPropsDialog.propsLabel3.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel4" dlg:tab-index="39" dlg:left="83" dlg:top="209" dlg:width="65" dlg:height="9" dlg:help-text="&amp;6914.StaggeredProcessPropsDialog.propsLabel4.HelpText" dlg:value="&amp;6915.StaggeredProcessPropsDialog.propsLabel4.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel5" dlg:tab-index="41" dlg:left="83" dlg:top="218" dlg:width="65" dlg:height="9" dlg:help-text="&amp;6916.StaggeredProcessPropsDialog.propsLabel5.HelpText" dlg:value="&amp;6917.StaggeredProcessPropsDialog.propsLabel5.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel6" dlg:tab-index="43" dlg:left="83" dlg:top="226" dlg:width="65" dlg:height="9" dlg:help-text="&amp;6918.StaggeredProcessPropsDialog.propsLabel6.HelpText" dlg:value="&amp;6919.StaggeredProcessPropsDialog.propsLabel6.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel8" dlg:tab-index="36" dlg:left="148" dlg:top="191" dlg:width="95" dlg:height="9" dlg:help-text="&amp;6920.StaggeredProcessPropsDialog.propsLabel8.HelpText" dlg:value="&amp;6921.StaggeredProcessPropsDialog.propsLabel8.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel9" dlg:tab-index="38" dlg:left="148" dlg:top="200" dlg:width="95" dlg:height="9" dlg:help-text="&amp;6922.StaggeredProcessPropsDialog.propsLabel9.HelpText" dlg:value="&amp;6923.StaggeredProcessPropsDialog.propsLabel9.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel10" dlg:tab-index="40" dlg:left="148" dlg:top="209" dlg:width="95" dlg:height="9" dlg:help-text="&amp;6924.StaggeredProcessPropsDialog.propsLabel10.HelpText" dlg:value="&amp;6925.StaggeredProcessPropsDialog.propsLabel10.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel11" dlg:tab-index="42" dlg:left="148" dlg:top="218" dlg:width="95" dlg:height="9" dlg:help-text="&amp;6926.StaggeredProcessPropsDialog.propsLabel11.HelpText" dlg:value="&amp;6927.StaggeredProcessPropsDialog.propsLabel11.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel12" dlg:tab-index="44" dlg:left="148" dlg:top="226" dlg:width="95" dlg:height="9" dlg:help-text="&amp;6928.StaggeredProcessPropsDialog.propsLabel12.HelpText" dlg:value="&amp;6929.StaggeredProcessPropsDialog.propsLabel12.Label" dlg:tabstop="false"/>
+ </dlg:bulletinboard>
+</dlg:window>
