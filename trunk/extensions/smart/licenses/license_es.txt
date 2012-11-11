@@ -1,11 +1,11 @@
-SmART Extension
+SmART Gallery Extension
 
-La extensión SmART Extension ha sido autorizada bajo los términos de la Licencia Pública General Reducida de GNU  (Lesser General Public License [LGPL]). Puede leer y comprender la licencia LGPL aquí:
+La extensión SmART Gallery Extension ha sido autorizada bajo los términos de la Licencia Pública General Reducida de GNU  (Lesser General Public License [LGPL]). Puede leer y comprender la licencia LGPL aquí:
 http://www.gnu.org/licenses/lgpl.html
 
 Esta extensión está creada por:
 
-Tibor HornyÃ¡k
+Tibor Hornyák
 
 y
 

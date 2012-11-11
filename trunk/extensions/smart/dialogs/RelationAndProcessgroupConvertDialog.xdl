@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="RelationAndProcessgroupConvertDialog" dlg:left="144" dlg:top="14" dlg:width="137" dlg:height="127" dlg:help-text="&amp;4751.RelationAndProcessgroupConvertDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;4752.RelationAndProcessgroupConvertDialog.Title">
+ <dlg:bulletinboard>
+  <dlg:text dlg:id="textLabel" dlg:tab-index="0" dlg:left="5" dlg:top="5" dlg:width="60" dlg:height="8" dlg:help-text="&amp;4753.RelationAndProcessgroupConvertDialog.textLabel.HelpText" dlg:value="&amp;4754.RelationAndProcessgroupConvertDialog.textLabel.Label"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="convertOptionButton1" dlg:tab-index="1" dlg:left="10" dlg:top="18" dlg:width="122" dlg:height="8" dlg:help-text="&amp;4755.RelationAndProcessgroupConvertDialog.convertOptionButton1.HelpText" dlg:value="&amp;4756.RelationAndProcessgroupConvertDialog.convertOptionButton1.Label" dlg:group-name="DiagramTypes" dlg:checked="true"/>
+   <dlg:radio dlg:id="convertOptionButton2" dlg:tab-index="2" dlg:left="10" dlg:top="28" dlg:width="122" dlg:height="8" dlg:help-text="&amp;4757.RelationAndProcessgroupConvertDialog.convertOptionButton2.HelpText" dlg:value="&amp;4758.RelationAndProcessgroupConvertDialog.convertOptionButton2.Label" dlg:group-name="DiagramTypes"/>
+   <dlg:radio dlg:id="convertOptionButton3" dlg:tab-index="3" dlg:left="10" dlg:top="38" dlg:width="122" dlg:height="8" dlg:help-text="&amp;4759.RelationAndProcessgroupConvertDialog.convertOptionButton3.HelpText" dlg:value="&amp;4760.RelationAndProcessgroupConvertDialog.convertOptionButton3.Label" dlg:group-name="DiagramTypes"/>
+   <dlg:radio dlg:id="convertOptionButton4" dlg:tab-index="4" dlg:left="10" dlg:top="48" dlg:width="122" dlg:height="8" dlg:help-text="&amp;4761.RelationAndProcessgroupConvertDialog.convertOptionButton4.HelpText" dlg:value="&amp;4762.RelationAndProcessgroupConvertDialog.convertOptionButton4.Label" dlg:group-name="DiagramTypes"/>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="convertActionButton" dlg:tab-index="9" dlg:left="59" dlg:top="108" dlg:width="35" dlg:height="14" dlg:help-text="&amp;4763.RelationAndProcessgroupConvertDialog.convertActionButton.HelpText" dlg:value="&amp;4764.RelationAndProcessgroupConvertDialog.convertActionButton.Label" dlg:button-type="ok"/>
+  <dlg:button dlg:id="cancelButton" dlg:tab-index="10" dlg:left="97" dlg:top="108" dlg:width="35" dlg:height="14" dlg:help-text="&amp;4765.RelationAndProcessgroupConvertDialog.cancelButton.HelpText" dlg:value="&amp;4766.RelationAndProcessgroupConvertDialog.cancelButton.Label" dlg:button-type="cancel"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="convertOptionButton5" dlg:tab-index="5" dlg:left="10" dlg:top="63" dlg:width="122" dlg:height="8" dlg:help-text="&amp;4775.RelationAndProcessgroupConvertDialog.convertOptionButton5.HelpText" dlg:value="&amp;4776.RelationAndProcessgroupConvertDialog.convertOptionButton5.Label" dlg:group-name="DiagramTypes"/>
+   <dlg:radio dlg:id="convertOptionButton6" dlg:tab-index="6" dlg:left="10" dlg:top="73" dlg:width="122" dlg:height="8" dlg:help-text="&amp;4777.RelationAndProcessgroupConvertDialog.convertOptionButton6.HelpText" dlg:value="&amp;4778.RelationAndProcessgroupConvertDialog.convertOptionButton6.Label" dlg:group-name="DiagramTypes"/>
+   <dlg:radio dlg:id="convertOptionButton7" dlg:tab-index="7" dlg:left="10" dlg:top="83" dlg:width="122" dlg:height="8" dlg:help-text="&amp;4779.RelationAndProcessgroupConvertDialog.convertOptionButton7.HelpText" dlg:value="&amp;4780.RelationAndProcessgroupConvertDialog.convertOptionButton7.Label" dlg:group-name="DiagramTypes"/>
+   <dlg:radio dlg:id="convertOptionButton8" dlg:tab-index="8" dlg:left="10" dlg:top="93" dlg:width="122" dlg:height="8" dlg:help-text="&amp;4781.RelationAndProcessgroupConvertDialog.convertOptionButton8.HelpText" dlg:value="&amp;4782.RelationAndProcessgroupConvertDialog.convertOptionButton8.Label" dlg:group-name="DiagramTypes"/>
+  </dlg:radiogroup>
+  <dlg:fixedline dlg:id="FixedLine1" dlg:tab-index="11" dlg:disabled="true" dlg:left="20" dlg:top="58" dlg:width="102" dlg:height="4" dlg:help-text="&amp;4787.RelationAndProcessgroupConvertDialog.FixedLine1.HelpText" dlg:value="&amp;4788.RelationAndProcessgroupConvertDialog.FixedLine1.Label"/>
+ </dlg:bulletinboard>
+</dlg:window>

@@ -8,9 +8,9 @@ import com.sun.star.drawing.XShape;
 import com.sun.star.drawing.XShapes;
 import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.WrappedTargetException;
-import com.sun.star.text.XText;
 import com.sun.star.uno.UnoRuntime;
 import java.util.ArrayList;
+import oxygenoffice.extensions.smart.Controller;
 
 
 public abstract class OrganizationChartTree {
@@ -41,8 +41,8 @@ public abstract class OrganizationChartTree {
         connectorList   = diagramTree.connectorList;
         m_xShapes       = m_OrgChart.getShapes();
         m_xControlShape = diagramTree.m_xControlShape;
-        XText xText = (XText)UnoRuntime.queryInterface(XText.class, m_xControlShape);
-        xText.setString("");
+        if(getOrgChart().getController().getDiagramType() != Controller.ORGANIGRAM)
+            getOrgChart().removeHorLevelPropsOfControlShape(m_xControlShape);
         m_xRootShape    = diagramTree.m_xRootShape;
     }
 
@@ -66,9 +66,8 @@ public abstract class OrganizationChartTree {
 
     public abstract void refreshConnectorProps();
 
-    public void setGradientColorProps(){
-        if(getOrgChart().isPreDefinedGradientsProps() && getOrgChart().getStyle() != OrganizationChart.USER_DEFINE)
-            m_RootItem.setGradient();
+    public void refreshSchemesColors(){
+        m_RootItem.setGradient();
     }
 
     // set root Item, return number of roots (if number is not 1, than there is error
@@ -209,6 +208,15 @@ public abstract class OrganizationChartTree {
             System.err.println(ex.getLocalizedMessage());
         }
         return xEndShape;
+    }
+    
+    public XShape getRootsConnector(){
+        if(m_xRootShape != null){
+            for(XShape xConnShape : connectorList)
+                if(m_xRootShape.equals(getStartShapeOfConnector(xConnShape)))
+                    return xConnShape;
+        }
+        return null;
     }
 
     public XShape getDadConnectorShape(XShape xRectShape){

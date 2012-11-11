@@ -1,210 +1,306 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="OrganigramPropsDialog" dlg:left="0" dlg:top="0" dlg:width="235" dlg:height="260" dlg:help-text="&amp;517.OrganigramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;518.OrganigramPropsDialog.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="OrganigramPropsDialog" dlg:left="0" dlg:top="0" dlg:width="267" dlg:height="329" dlg:help-text="&amp;6298.OrganigramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;6299.OrganigramPropsDialog.Title">
  <dlg:styles>
-  <dlg:style dlg:style-id="0" dlg:background-color="0xff" dlg:border="simple"/>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xff"/>
   <dlg:style dlg:style-id="1" dlg:background-color="0xff0000"/>
   <dlg:style dlg:style-id="2" dlg:background-color="0x800000"/>
-  <dlg:style dlg:style-id="3" dlg:background-color="0x0" dlg:border="simple"/>
+  <dlg:style dlg:style-id="3" dlg:background-color="0x0"/>
  </dlg:styles>
  <dlg:bulletinboard>
-  <dlg:titledbox dlg:id="frameControl1" dlg:tab-index="7" dlg:left="80" dlg:top="3" dlg:width="149" dlg:height="48" dlg:help-text="&amp;519.OrganigramPropsDialog.frameControl1.HelpText">
-   <dlg:title dlg:value="&amp;520.OrganigramPropsDialog.frameControl1.Label"/>
+  <dlg:titledbox dlg:id="frameControl1" dlg:tab-index="10" dlg:disabled="true" dlg:left="83" dlg:top="19" dlg:width="176" dlg:height="48" dlg:help-text="&amp;6300.OrganigramPropsDialog.frameControl1.HelpText">
+   <dlg:title dlg:value="&amp;6301.OrganigramPropsDialog.frameControl1.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="frameControl2" dlg:tab-index="12" dlg:left="80" dlg:top="53" dlg:width="149" dlg:height="46" dlg:help-text="&amp;521.OrganigramPropsDialog.frameControl2.HelpText">
-   <dlg:title dlg:value="&amp;522.OrganigramPropsDialog.frameControl2.Label"/>
+  <dlg:titledbox dlg:id="frameControl2" dlg:tab-index="8" dlg:left="78" dlg:top="3" dlg:width="186" dlg:height="126" dlg:help-text="&amp;6302.OrganigramPropsDialog.frameControl2.HelpText">
+   <dlg:title dlg:value="&amp;6303.OrganigramPropsDialog.frameControl2.Label"/>
   </dlg:titledbox>
-  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="16" dlg:left="98" dlg:top="84" dlg:width="15" dlg:height="10" dlg:help-text="&amp;523.OrganigramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="19" dlg:disabled="true" dlg:left="113" dlg:top="70" dlg:width="15" dlg:height="10" dlg:help-text="&amp;6304.OrganigramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="gradientsOptionButton" dlg:tab-index="15" dlg:left="130" dlg:top="73" dlg:width="44" dlg:height="9" dlg:help-text="&amp;524.OrganigramPropsDialog.gradientsOptionButton.HelpText" dlg:value="&amp;525.OrganigramPropsDialog.gradientsOptionButton.Label" dlg:group-name="Color">
+   <dlg:radio dlg:id="gradientsOptionButton" dlg:tab-index="18" dlg:disabled="true" dlg:left="83" dlg:top="103" dlg:width="44" dlg:height="8" dlg:help-text="&amp;6305.OrganigramPropsDialog.gradientsOptionButton.HelpText" dlg:value="&amp;6306.OrganigramPropsDialog.gradientsOptionButton.Label" dlg:group-name="Color">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setGradients" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:text dlg:id="label0" dlg:tab-index="18" dlg:disabled="true" dlg:left="176" dlg:top="74" dlg:width="32" dlg:height="10" dlg:help-text="&amp;526.OrganigramPropsDialog.label0.HelpText" dlg:value="&amp;527.OrganigramPropsDialog.label0.Label" dlg:tabstop="false"/>
-  <dlg:text dlg:id="label1" dlg:tab-index="19" dlg:disabled="true" dlg:left="176" dlg:top="84" dlg:width="32" dlg:height="10" dlg:help-text="&amp;528.OrganigramPropsDialog.label1.HelpText" dlg:value="&amp;529.OrganigramPropsDialog.label1.Label" dlg:tabstop="false"/>
-  <dlg:img dlg:style-id="1" dlg:id="startColorImageControl" dlg:tab-index="20" dlg:left="209" dlg:top="74" dlg:width="15" dlg:height="10" dlg:help-text="&amp;530.OrganigramPropsDialog.startColorImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="1" dlg:id="startColorImageControl" dlg:tab-index="23" dlg:disabled="true" dlg:left="167" dlg:top="104" dlg:width="15" dlg:height="10" dlg:help-text="&amp;6307.OrganigramPropsDialog.startColorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
-  <dlg:img dlg:style-id="2" dlg:id="endColorImageControl" dlg:tab-index="21" dlg:left="209" dlg:top="84" dlg:width="15" dlg:height="10" dlg:help-text="&amp;531.OrganigramPropsDialog.endColorImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="2" dlg:id="endColorImageControl" dlg:tab-index="25" dlg:disabled="true" dlg:left="167" dlg:top="116" dlg:width="15" dlg:height="10" dlg:help-text="&amp;6308.OrganigramPropsDialog.endColorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
-  <dlg:titledbox dlg:id="frameControl3" dlg:tab-index="22" dlg:left="80" dlg:top="101" dlg:width="149" dlg:height="22" dlg:help-text="&amp;532.OrganigramPropsDialog.frameControl3.HelpText">
-   <dlg:title dlg:value="&amp;533.OrganigramPropsDialog.frameControl3.Label"/>
+  <dlg:titledbox dlg:id="frameControl3" dlg:tab-index="28" dlg:left="78" dlg:top="131" dlg:width="186" dlg:height="24" dlg:help-text="&amp;6309.OrganigramPropsDialog.frameControl3.HelpText">
+   <dlg:title dlg:value="&amp;6310.OrganigramPropsDialog.frameControl3.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="frameControl4" dlg:tab-index="29" dlg:left="159" dlg:top="125" dlg:width="70" dlg:height="30" dlg:help-text="&amp;534.OrganigramPropsDialog.frameControl4.HelpText">
-   <dlg:title dlg:value="&amp;535.OrganigramPropsDialog.frameControl4.Label"/>
+  <dlg:titledbox dlg:id="frameControl4" dlg:tab-index="35" dlg:left="131" dlg:top="157" dlg:width="133" dlg:height="32" dlg:help-text="&amp;6311.OrganigramPropsDialog.frameControl4.HelpText">
+   <dlg:title dlg:value="&amp;6312.OrganigramPropsDialog.frameControl4.Label"/>
   </dlg:titledbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="14" dlg:left="90" dlg:top="73" dlg:width="28" dlg:height="9" dlg:help-text="&amp;536.OrganigramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;537.OrganigramPropsDialog.colorOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
+   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="15" dlg:disabled="true" dlg:left="83" dlg:top="70" dlg:width="28" dlg:height="8" dlg:help-text="&amp;6313.OrganigramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;6314.OrganigramPropsDialog.colorOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColor" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="noRoundedOptionButton" dlg:tab-index="23" dlg:left="92" dlg:top="110" dlg:width="30" dlg:height="9" dlg:help-text="&amp;538.OrganigramPropsDialog.noRoundedOptionButton.HelpText" dlg:value="&amp;539.OrganigramPropsDialog.noRoundedOptionButton.Label" dlg:group-name="Rounded">
-    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setNoRounded" script:language="UNO"/>
-   </dlg:radio>
-   <dlg:radio dlg:id="mediumRoundedOptionButton" dlg:tab-index="24" dlg:left="130" dlg:top="110" dlg:width="32" dlg:height="9" dlg:help-text="&amp;540.OrganigramPropsDialog.mediumRoundedOptionButton.HelpText" dlg:value="&amp;541.OrganigramPropsDialog.mediumRoundedOptionButton.Label" dlg:group-name="Rounded" dlg:checked="true">
-    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setMediumRounded" script:language="UNO"/>
-   </dlg:radio>
-   <dlg:radio dlg:id="extraRoundedOptionButton" dlg:tab-index="25" dlg:left="176" dlg:top="110" dlg:width="32" dlg:height="9" dlg:help-text="&amp;542.OrganigramPropsDialog.extraRoundedOptionButton.HelpText" dlg:value="&amp;543.OrganigramPropsDialog.extraRoundedOptionButton.Label" dlg:group-name="Rounded">
-    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setExtraRounded" script:language="UNO"/>
-   </dlg:radio>
+   <dlg:radio dlg:id="noRoundedOptionButton" dlg:tab-index="29" dlg:left="83" dlg:top="140" dlg:width="48" dlg:height="9" dlg:help-text="&amp;6315.OrganigramPropsDialog.noRoundedOptionButton.HelpText" dlg:value="&amp;6316.OrganigramPropsDialog.noRoundedOptionButton.Label" dlg:group-name="Rounded"/>
+   <dlg:radio dlg:id="mediumRoundedOptionButton" dlg:tab-index="30" dlg:left="144" dlg:top="140" dlg:width="48" dlg:height="9" dlg:help-text="&amp;6317.OrganigramPropsDialog.mediumRoundedOptionButton.HelpText" dlg:value="&amp;6318.OrganigramPropsDialog.mediumRoundedOptionButton.Label" dlg:group-name="Rounded" dlg:checked="true"/>
+   <dlg:radio dlg:id="extraRoundedOptionButton" dlg:tab-index="31" dlg:left="206" dlg:top="140" dlg:width="48" dlg:height="9" dlg:help-text="&amp;6319.OrganigramPropsDialog.extraRoundedOptionButton.HelpText" dlg:value="&amp;6320.OrganigramPropsDialog.extraRoundedOptionButton.Label" dlg:group-name="Rounded"/>
   </dlg:radiogroup>
-  <dlg:button dlg:id="okCommandButton" dlg:tab-index="36" dlg:left="5" dlg:top="242" dlg:width="225" dlg:height="14" dlg:help-text="&amp;544.OrganigramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;545.OrganigramPropsDialog.okCommandButton.Label">
-   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setOrganigramProps" script:language="UNO"/>
-  </dlg:button>
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="76" dlg:left="191" dlg:top="313" dlg:width="35" dlg:height="14" dlg:help-text="&amp;6321.OrganigramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;6322.OrganigramPropsDialog.okCommandButton.Label" dlg:button-type="ok"/>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="8" dlg:left="90" dlg:top="12" dlg:width="120" dlg:height="9" dlg:help-text="&amp;546.OrganigramPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;547.OrganigramPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="11" dlg:disabled="true" dlg:left="90" dlg:top="27" dlg:width="160" dlg:height="9" dlg:help-text="&amp;6323.OrganigramPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;6324.OrganigramPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:titledbox dlg:id="frameControl5" dlg:tab-index="26" dlg:left="80" dlg:top="125" dlg:width="70" dlg:height="30" dlg:help-text="&amp;548.OrganigramPropsDialog.frameControl5.HelpText">
-   <dlg:title dlg:value="&amp;549.OrganigramPropsDialog.frameControl5.Label"/>
+  <dlg:titledbox dlg:id="frameControl5" dlg:tab-index="32" dlg:left="78" dlg:top="157" dlg:width="49" dlg:height="32" dlg:help-text="&amp;6325.OrganigramPropsDialog.frameControl5.HelpText">
+   <dlg:title dlg:value="&amp;6326.OrganigramPropsDialog.frameControl5.Label"/>
   </dlg:titledbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="yesShadowOptionButton" dlg:tab-index="27" dlg:left="90" dlg:top="134" dlg:width="50" dlg:height="9" dlg:help-text="&amp;550.OrganigramPropsDialog.yesShadowOptionButton.HelpText" dlg:value="&amp;551.OrganigramPropsDialog.yesShadowOptionButton.Label" dlg:group-name="Shadow">
-    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setShadowYes" script:language="UNO"/>
-   </dlg:radio>
-   <dlg:radio dlg:id="noShadowOptionButton" dlg:tab-index="28" dlg:left="90" dlg:top="143" dlg:width="50" dlg:height="9" dlg:help-text="&amp;552.OrganigramPropsDialog.noShadowOptionButton.HelpText" dlg:value="&amp;553.OrganigramPropsDialog.noShadowOptionButton.Label" dlg:group-name="Shadow" dlg:checked="true">
-    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setShadowNo" script:language="UNO"/>
-   </dlg:radio>
-   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="30" dlg:left="169" dlg:top="134" dlg:width="50" dlg:height="9" dlg:help-text="&amp;554.OrganigramPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;555.OrganigramPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Monographic" dlg:checked="true">
+   <dlg:radio dlg:id="yesShadowOptionButton" dlg:tab-index="33" dlg:left="83" dlg:top="167" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6327.OrganigramPropsDialog.yesShadowOptionButton.HelpText" dlg:value="&amp;6328.OrganigramPropsDialog.yesShadowOptionButton.Label" dlg:group-name="Shadow"/>
+   <dlg:radio dlg:id="noShadowOptionButton" dlg:tab-index="34" dlg:left="83" dlg:top="176" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6329.OrganigramPropsDialog.noShadowOptionButton.HelpText" dlg:value="&amp;6330.OrganigramPropsDialog.noShadowOptionButton.Label" dlg:group-name="Shadow" dlg:checked="true"/>
+   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="36" dlg:left="137" dlg:top="167" dlg:width="36" dlg:height="9" dlg:help-text="&amp;6331.OrganigramPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;6332.OrganigramPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Outline" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineYes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="31" dlg:left="169" dlg:top="143" dlg:width="50" dlg:height="9" dlg:help-text="&amp;556.OrganigramPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;557.OrganigramPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Monographic">
+   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="37" dlg:left="137" dlg:top="176" dlg:width="36" dlg:height="9" dlg:help-text="&amp;6333.OrganigramPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;6334.OrganigramPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Outline">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineNo" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:menulist dlg:id="listBox" dlg:tab-index="6" dlg:left="5" dlg:top="4" dlg:width="70" dlg:height="186" dlg:help-text="&amp;558.OrganigramPropsDialog.listBox.HelpText" dlg:linecount="7">
-   <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;722.listBox.StringItemList" dlg:selected="true"/>
-    <dlg:menuitem dlg:value="&amp;723.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;724.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;725.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;726.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;727.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;728.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;729.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;730.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;731.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;732.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;733.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;734.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;735.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;736.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;737.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;738.listBox.StringItemList"/>
-   </dlg:menupopup>
-   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedStyle" script:language="UNO"/>
-  </dlg:menulist>
-  <dlg:img dlg:id="imageControl" dlg:tab-index="37" dlg:disabled="true" dlg:left="80" dlg:top="3" dlg:width="150" dlg:height="151" dlg:help-text="&amp;566.OrganigramPropsDialog.imageControl.HelpText"/>
-  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="13" dlg:left="90" dlg:top="63" dlg:width="65" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;567.OrganigramPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;568.OrganigramPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
+  <dlg:img dlg:id="imageControl" dlg:tab-index="40" dlg:left="78" dlg:top="3" dlg:width="186" dlg:height="186" dlg:help-text="&amp;6335.OrganigramPropsDialog.imageControl.HelpText" dlg:tabstop="true"/>
+  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="9" dlg:left="140" dlg:top="11" dlg:width="65" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6336.OrganigramPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;6337.OrganigramPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyColors" script:language="UNO"/>
   </dlg:checkbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="9" dlg:left="90" dlg:top="21" dlg:width="120" dlg:height="9" dlg:help-text="&amp;569.OrganigramPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;570.OrganigramPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
+   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="12" dlg:disabled="true" dlg:left="90" dlg:top="36" dlg:width="160" dlg:height="9" dlg:help-text="&amp;6338.OrganigramPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;6339.OrganigramPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
    </dlg:radio>
-  </dlg:radiogroup>
-  <dlg:menulist dlg:id="gradientModeListBox" dlg:tab-index="17" dlg:visible="false" dlg:left="130" dlg:top="82" dlg:width="44" dlg:height="12" dlg:help-text="&amp;571.OrganigramPropsDialog.gradientModeListBox.HelpText" dlg:spin="true" dlg:linecount="2">
-   <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;572.gradientModeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;573.gradientModeListBox.StringItemList"/>
-   </dlg:menupopup>
-   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedGradientMode" script:language="UNO"/>
-  </dlg:menulist>
-  <dlg:radiogroup>
-   <dlg:radio dlg:id="siblingsOptionButton" dlg:tab-index="10" dlg:left="90" dlg:top="30" dlg:width="120" dlg:height="9" dlg:help-text="&amp;574.OrganigramPropsDialog.siblingsOptionButton.HelpText" dlg:value="&amp;575.OrganigramPropsDialog.siblingsOptionButton.Label" dlg:group-name="Area">
+   <dlg:radio dlg:id="siblingsOptionButton" dlg:tab-index="13" dlg:disabled="true" dlg:left="90" dlg:top="45" dlg:width="160" dlg:height="9" dlg:help-text="&amp;6340.OrganigramPropsDialog.siblingsOptionButton.HelpText" dlg:value="&amp;6341.OrganigramPropsDialog.siblingsOptionButton.Label" dlg:group-name="Area">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSiblingsShapes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="branchOptionButton" dlg:tab-index="11" dlg:left="90" dlg:top="39" dlg:width="120" dlg:height="9" dlg:help-text="&amp;576.OrganigramPropsDialog.branchOptionButton.HelpText" dlg:value="&amp;577.OrganigramPropsDialog.branchOptionButton.Label" dlg:group-name="Area">
+   <dlg:radio dlg:id="branchOptionButton" dlg:tab-index="14" dlg:disabled="true" dlg:left="90" dlg:top="54" dlg:width="160" dlg:height="9" dlg:help-text="&amp;6342.OrganigramPropsDialog.branchOptionButton.HelpText" dlg:value="&amp;6343.OrganigramPropsDialog.branchOptionButton.Label" dlg:group-name="Area">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setBranchShapes" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="113" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;578.OrganigramPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;579.OrganigramPropsDialog.allShapeButton.Label">
+  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="113" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6344.OrganigramPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6345.OrganigramPropsDialog.allShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:allShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="previousButton" dlg:tab-index="2" dlg:left="143" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;580.OrganigramPropsDialog.previousButton.HelpText" dlg:tabstop="false" dlg:value="&amp;581.OrganigramPropsDialog.previousButton.Label">
+  <dlg:button dlg:id="previousButton" dlg:tab-index="2" dlg:left="143" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6346.OrganigramPropsDialog.previousButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6347.OrganigramPropsDialog.previousButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:previous" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="nextButton" dlg:tab-index="3" dlg:left="158" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;582.OrganigramPropsDialog.nextButton.HelpText" dlg:tabstop="false" dlg:value="&amp;583.OrganigramPropsDialog.nextButton.Label">
+  <dlg:button dlg:id="nextButton" dlg:tab-index="3" dlg:left="158" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6348.OrganigramPropsDialog.nextButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6349.OrganigramPropsDialog.nextButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:next" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="upButton" dlg:tab-index="4" dlg:left="173" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;584.OrganigramPropsDialog.upButton.HelpText" dlg:tabstop="false" dlg:value="&amp;585.OrganigramPropsDialog.upButton.Label">
+  <dlg:button dlg:id="upButton" dlg:tab-index="4" dlg:left="173" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6350.OrganigramPropsDialog.upButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6351.OrganigramPropsDialog.upButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:up" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="downButton" dlg:tab-index="5" dlg:left="188" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;586.OrganigramPropsDialog.downButton.HelpText" dlg:tabstop="false" dlg:value="&amp;587.OrganigramPropsDialog.downButton.Label">
+  <dlg:button dlg:id="downButton" dlg:tab-index="5" dlg:left="188" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6352.OrganigramPropsDialog.downButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6353.OrganigramPropsDialog.downButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:down" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="128" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;588.OrganigramPropsDialog.firstShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;589.OrganigramPropsDialog.firstShapeButton.Label">
+  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="128" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6354.OrganigramPropsDialog.firstShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6355.OrganigramPropsDialog.firstShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:first" script:language="UNO"/>
   </dlg:button>
-  <dlg:titledbox dlg:id="FrameControl" dlg:tab-index="38" dlg:left="5" dlg:top="194" dlg:width="225" dlg:height="42" dlg:help-text="&amp;590.OrganigramPropsDialog.FrameControl.HelpText">
-   <dlg:title dlg:value="&amp;591.OrganigramPropsDialog.FrameControl.Label"/>
+  <dlg:titledbox dlg:id="FrameControl" dlg:tab-index="41" dlg:left="78" dlg:top="191" dlg:width="186" dlg:height="48" dlg:help-text="&amp;6356.OrganigramPropsDialog.FrameControl.HelpText">
+   <dlg:title dlg:value="&amp;6357.OrganigramPropsDialog.FrameControl.Label"/>
   </dlg:titledbox>
-  <dlg:text dlg:id="Label1" dlg:tab-index="39" dlg:left="13" dlg:top="204" dlg:width="55" dlg:height="9" dlg:help-text="&amp;592.OrganigramPropsDialog.Label1.HelpText" dlg:value="&amp;593.OrganigramPropsDialog.Label1.Label"/>
-  <dlg:text dlg:id="Label2" dlg:tab-index="40" dlg:left="13" dlg:top="213" dlg:width="55" dlg:height="9" dlg:help-text="&amp;594.OrganigramPropsDialog.Label2.HelpText" dlg:value="&amp;595.OrganigramPropsDialog.Label2.Label"/>
-  <dlg:text dlg:id="Label12" dlg:tab-index="48" dlg:left="200" dlg:top="222" dlg:width="20" dlg:height="9" dlg:help-text="&amp;596.OrganigramPropsDialog.Label12.HelpText" dlg:value="&amp;597.OrganigramPropsDialog.Label12.Label"/>
-  <dlg:text dlg:id="Label11" dlg:tab-index="47" dlg:left="200" dlg:top="213" dlg:width="20" dlg:height="9" dlg:help-text="&amp;598.OrganigramPropsDialog.Label11.HelpText" dlg:value="&amp;599.OrganigramPropsDialog.Label11.Label"/>
-  <dlg:text dlg:id="Label10" dlg:tab-index="46" dlg:left="200" dlg:top="204" dlg:width="20" dlg:height="9" dlg:help-text="&amp;600.OrganigramPropsDialog.Label10.HelpText" dlg:value="&amp;601.OrganigramPropsDialog.Label10.Label"/>
-  <dlg:text dlg:id="Label9" dlg:tab-index="50" dlg:left="68" dlg:top="222" dlg:width="50" dlg:height="9" dlg:help-text="&amp;602.OrganigramPropsDialog.Label9.HelpText" dlg:value="&amp;603.OrganigramPropsDialog.Label9.Label"/>
-  <dlg:text dlg:id="Label8" dlg:tab-index="45" dlg:left="68" dlg:top="213" dlg:width="50" dlg:height="9" dlg:help-text="&amp;604.OrganigramPropsDialog.Label8.HelpText" dlg:value="&amp;605.OrganigramPropsDialog.Label8.Label"/>
-  <dlg:text dlg:id="Label7" dlg:tab-index="44" dlg:left="68" dlg:top="204" dlg:width="50" dlg:height="9" dlg:help-text="&amp;606.OrganigramPropsDialog.Label7.HelpText" dlg:value="&amp;607.OrganigramPropsDialog.Label7.Label"/>
-  <dlg:text dlg:id="Label6" dlg:tab-index="43" dlg:left="130" dlg:top="222" dlg:width="70" dlg:height="9" dlg:help-text="&amp;608.OrganigramPropsDialog.Label6.HelpText" dlg:value="&amp;609.OrganigramPropsDialog.Label6.Label"/>
-  <dlg:text dlg:id="Label5" dlg:tab-index="42" dlg:left="130" dlg:top="213" dlg:width="70" dlg:height="9" dlg:help-text="&amp;610.OrganigramPropsDialog.Label5.HelpText" dlg:value="&amp;611.OrganigramPropsDialog.Label5.Label"/>
-  <dlg:text dlg:id="Label4" dlg:tab-index="41" dlg:left="130" dlg:top="204" dlg:width="70" dlg:height="9" dlg:help-text="&amp;612.OrganigramPropsDialog.Label4.HelpText" dlg:value="&amp;613.OrganigramPropsDialog.Label4.Label"/>
-  <dlg:text dlg:id="Label3" dlg:tab-index="49" dlg:left="13" dlg:top="222" dlg:width="55" dlg:height="9" dlg:help-text="&amp;614.OrganigramPropsDialog.Label3.HelpText" dlg:value="&amp;615.OrganigramPropsDialog.Label3.Label"/>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="textFitOptionButton" dlg:tab-index="33" dlg:left="88" dlg:top="166" dlg:width="60" dlg:height="10" dlg:help-text="&amp;616.OrganigramPropsDialog.textFitOptionButton.HelpText" dlg:value="&amp;617.OrganigramPropsDialog.textFitOptionButton.Label" dlg:group-name="FontSettings" dlg:checked="true">
+   <dlg:radio dlg:id="textFitOptionButton" dlg:tab-index="55" dlg:left="8" dlg:top="250" dlg:width="65" dlg:height="9" dlg:help-text="&amp;6358.OrganigramPropsDialog.textFitOptionButton.HelpText" dlg:value="&amp;6359.OrganigramPropsDialog.textFitOptionButton.Label" dlg:group-name="FontSettings" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setTextToFitToSize" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="fontSizeOptionButton" dlg:tab-index="34" dlg:left="155" dlg:top="166" dlg:width="40" dlg:height="10" dlg:help-text="&amp;618.OrganigramPropsDialog.fontSizeOptionButton.HelpText" dlg:value="&amp;619.OrganigramPropsDialog.fontSizeOptionButton.Label" dlg:group-name="FontSettings">
+   <dlg:radio dlg:id="fontSizeOptionButton" dlg:tab-index="56" dlg:left="86" dlg:top="250" dlg:width="50" dlg:height="9" dlg:help-text="&amp;6360.OrganigramPropsDialog.fontSizeOptionButton.HelpText" dlg:value="&amp;6361.OrganigramPropsDialog.fontSizeOptionButton.Label" dlg:group-name="FontSettings">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFontSize" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:menulist dlg:id="fontSizeListBox" dlg:tab-index="35" dlg:disabled="true" dlg:left="196" dlg:top="163" dlg:width="24" dlg:height="12" dlg:help-text="&amp;620.OrganigramPropsDialog.fontSizeListBox.HelpText" dlg:spin="true" dlg:linecount="29">
+  <dlg:menulist dlg:id="fontSizeListBox" dlg:tab-index="57" dlg:disabled="true" dlg:left="138" dlg:top="248" dlg:width="26" dlg:height="12" dlg:help-text="&amp;6362.OrganigramPropsDialog.fontSizeListBox.HelpText" dlg:spin="true" dlg:linecount="29">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;621.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;622.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;623.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;624.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;625.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;626.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;627.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;628.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;629.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;630.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;631.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;632.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;633.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;634.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;635.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;636.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;637.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;638.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;639.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;640.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;641.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;642.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;643.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;644.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;645.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;646.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;647.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;648.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;649.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6363.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6364.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6365.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6366.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6367.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6368.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6369.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6370.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6371.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6372.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6373.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6374.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6375.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6376.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6377.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6378.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6379.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6380.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6381.fontSizeListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6382.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6383.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6384.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6385.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6386.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6387.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6388.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6389.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6390.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6391.fontSizeListBox.StringItemList"/>
    </dlg:menupopup>
-   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedFontSize" script:language="UNO"/>
   </dlg:menulist>
-  <dlg:titledbox dlg:id="frameControl6" dlg:tab-index="32" dlg:left="80" dlg:top="156" dlg:width="149" dlg:height="34" dlg:help-text="&amp;650.OrganigramPropsDialog.frameControl6.HelpText">
-   <dlg:title dlg:value="&amp;651.OrganigramPropsDialog.frameControl6.Label"/>
+  <dlg:titledbox dlg:id="frameControl6" dlg:tab-index="54" dlg:left="3" dlg:top="241" dlg:width="261" dlg:height="22" dlg:help-text="&amp;6392.OrganigramPropsDialog.frameControl6.HelpText">
+   <dlg:title dlg:value="&amp;6393.OrganigramPropsDialog.frameControl6.Label"/>
   </dlg:titledbox>
-  <dlg:checkbox dlg:id="modifyTextColorCheckBox" dlg:tab-index="51" dlg:left="88" dlg:top="178" dlg:width="72" dlg:height="10" dlg:help-text="&amp;652.OrganigramPropsDialog.modifyTextColorCheckBox.HelpText" dlg:value="&amp;653.OrganigramPropsDialog.modifyTextColorCheckBox.Label" dlg:checked="false">
+  <dlg:checkbox dlg:id="modifyTextColorCheckBox" dlg:tab-index="58" dlg:left="178" dlg:top="250" dlg:width="62" dlg:height="9" dlg:help-text="&amp;6394.OrganigramPropsDialog.modifyTextColorCheckBox.HelpText" dlg:value="&amp;6395.OrganigramPropsDialog.modifyTextColorCheckBox.Label" dlg:checked="false">
    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyTextColor" script:language="UNO"/>
   </dlg:checkbox>
-  <dlg:img dlg:style-id="3" dlg:id="textColorImageControl" dlg:tab-index="52" dlg:disabled="true" dlg:left="196" dlg:top="177" dlg:width="15" dlg:height="10" dlg:help-text="&amp;654.OrganigramPropsDialog.textColorImageControl.HelpText">
+  <dlg:img dlg:style-id="3" dlg:id="textColorImageControl" dlg:tab-index="59" dlg:disabled="true" dlg:left="244" dlg:top="250" dlg:width="15" dlg:height="10" dlg:help-text="&amp;6396.OrganigramPropsDialog.textColorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
-  <dlg:text dlg:id="textColorLabel" dlg:tab-index="53" dlg:disabled="true" dlg:left="164" dlg:top="178" dlg:width="30" dlg:height="10" dlg:help-text="&amp;655.OrganigramPropsDialog.textColorLabel.HelpText" dlg:value="&amp;656.OrganigramPropsDialog.textColorLabel.Label"/>
+  <dlg:button dlg:id="sizeButton" dlg:tab-index="6" dlg:left="203" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6397.OrganigramPropsDialog.sizeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6398.OrganigramPropsDialog.sizeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:size" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="cancelCommandButton" dlg:tab-index="77" dlg:left="229" dlg:top="313" dlg:width="35" dlg:height="14" dlg:help-text="&amp;6399.OrganigramPropsDialog.cancelCommandButton.HelpText" dlg:value="&amp;6400.OrganigramPropsDialog.cancelCommandButton.Label" dlg:button-type="cancel"/>
+  <dlg:checkbox dlg:id="CheckBox3" dlg:tab-index="78" dlg:left="91" dlg:top="269" dlg:width="0" dlg:height="2" dlg:help-text="&amp;6401.OrganigramPropsDialog.CheckBox3.HelpText" dlg:value="&amp;6402.OrganigramPropsDialog.CheckBox3.Label" dlg:checked="false"/>
+  <dlg:text dlg:id="startColorLabel" dlg:tab-index="22" dlg:disabled="true" dlg:left="133" dlg:top="104" dlg:width="34" dlg:height="10" dlg:help-text="&amp;6403.OrganigramPropsDialog.startColorLabel.HelpText" dlg:value="&amp;6404.OrganigramPropsDialog.startColorLabel.Label" dlg:tabstop="false"/>
+  <dlg:menulist dlg:id="gradientDirectionListBox" dlg:tab-index="27" dlg:disabled="true" dlg:left="199" dlg:top="114" dlg:width="60" dlg:height="12" dlg:help-text="&amp;6405.OrganigramPropsDialog.gradientDirectionListBox.HelpText" dlg:spin="true" dlg:linecount="2">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6406.gradientDirectionListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6407.gradientDirectionListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:text dlg:id="gradientDirectionLabel" dlg:tab-index="26" dlg:disabled="true" dlg:left="199" dlg:top="104" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6408.OrganigramPropsDialog.gradientDirectionLabel.HelpText" dlg:value="&amp;6409.OrganigramPropsDialog.gradientDirectionLabel.Label" dlg:tabstop="false"/>
+  <dlg:menulist dlg:id="lineWidthListBox" dlg:tab-index="39" dlg:left="229" dlg:top="166" dlg:width="30" dlg:height="12" dlg:help-text="&amp;6410.OrganigramPropsDialog.lineWidthListBox.HelpText" dlg:spin="true" dlg:linecount="6">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6411.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6412.lineWidthListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6413.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6414.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6415.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6416.lineWidthListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:text dlg:id="lineWidthLabel" dlg:tab-index="38" dlg:left="176" dlg:top="168" dlg:width="50" dlg:height="10" dlg:help-text="&amp;6417.OrganigramPropsDialog.lineWidthLabel.HelpText" dlg:value="&amp;6418.OrganigramPropsDialog.lineWidthLabel.Label" dlg:align="right" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel1" dlg:tab-index="42" dlg:left="83" dlg:top="200" dlg:width="60" dlg:height="9" dlg:help-text="&amp;6419.OrganigramPropsDialog.propsLabel1.HelpText" dlg:value="&amp;6420.OrganigramPropsDialog.propsLabel1.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel2" dlg:tab-index="46" dlg:left="83" dlg:top="218" dlg:width="60" dlg:height="9" dlg:help-text="&amp;6421.OrganigramPropsDialog.propsLabel2.HelpText" dlg:value="&amp;6422.OrganigramPropsDialog.propsLabel2.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel3" dlg:tab-index="48" dlg:left="83" dlg:top="227" dlg:width="60" dlg:height="9" dlg:help-text="&amp;6423.OrganigramPropsDialog.propsLabel3.HelpText" dlg:value="&amp;6424.OrganigramPropsDialog.propsLabel3.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel4" dlg:tab-index="44" dlg:left="83" dlg:top="209" dlg:width="60" dlg:height="9" dlg:help-text="&amp;6425.OrganigramPropsDialog.propsLabel4.HelpText" dlg:value="&amp;6426.OrganigramPropsDialog.propsLabel4.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel5" dlg:tab-index="50" dlg:left="186" dlg:top="200" dlg:width="42" dlg:height="9" dlg:help-text="&amp;6427.OrganigramPropsDialog.propsLabel5.HelpText" dlg:value="&amp;6428.OrganigramPropsDialog.propsLabel5.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel6" dlg:tab-index="52" dlg:left="186" dlg:top="209" dlg:width="42" dlg:height="9" dlg:help-text="&amp;6429.OrganigramPropsDialog.propsLabel6.HelpText" dlg:value="&amp;6430.OrganigramPropsDialog.propsLabel6.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel7" dlg:tab-index="43" dlg:left="143" dlg:top="200" dlg:width="35" dlg:height="9" dlg:help-text="&amp;6431.OrganigramPropsDialog.propsLabel7.HelpText" dlg:value="&amp;6432.OrganigramPropsDialog.propsLabel7.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel8" dlg:tab-index="47" dlg:left="143" dlg:top="218" dlg:width="35" dlg:height="9" dlg:help-text="&amp;6433.OrganigramPropsDialog.propsLabel8.HelpText" dlg:value="&amp;6434.OrganigramPropsDialog.propsLabel8.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel9" dlg:tab-index="49" dlg:left="143" dlg:top="227" dlg:width="115" dlg:height="9" dlg:help-text="&amp;6435.OrganigramPropsDialog.propsLabel9.HelpText" dlg:value="&amp;6436.OrganigramPropsDialog.propsLabel9.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel10" dlg:tab-index="45" dlg:left="143" dlg:top="209" dlg:width="35" dlg:height="9" dlg:help-text="&amp;6437.OrganigramPropsDialog.propsLabel10.HelpText" dlg:value="&amp;6438.OrganigramPropsDialog.propsLabel10.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel11" dlg:tab-index="51" dlg:left="228" dlg:top="200" dlg:width="30" dlg:height="9" dlg:help-text="&amp;6439.OrganigramPropsDialog.propsLabel11.HelpText" dlg:value="&amp;6440.OrganigramPropsDialog.propsLabel11.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel12" dlg:tab-index="53" dlg:left="228" dlg:top="209" dlg:width="30" dlg:height="9" dlg:help-text="&amp;6441.OrganigramPropsDialog.propsLabel12.HelpText" dlg:value="&amp;6442.OrganigramPropsDialog.propsLabel12.Label" dlg:tabstop="false"/>
+  <dlg:titledbox dlg:id="frameControl7" dlg:tab-index="60" dlg:left="3" dlg:top="265" dlg:width="261" dlg:height="34" dlg:help-text="&amp;6443.OrganigramPropsDialog.frameControl7.HelpText">
+   <dlg:title dlg:value="&amp;6444.OrganigramPropsDialog.frameControl7.Label"/>
+  </dlg:titledbox>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="lineConnOptionButton" dlg:tab-index="62" dlg:left="51" dlg:top="274" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6445.OrganigramPropsDialog.lineConnOptionButton.HelpText" dlg:value="&amp;6446.OrganigramPropsDialog.lineConnOptionButton.Label" dlg:group-name="Connectors"/>
+   <dlg:radio dlg:id="standardConnOptionButton" dlg:tab-index="61" dlg:left="8" dlg:top="274" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6447.OrganigramPropsDialog.standardConnOptionButton.HelpText" dlg:value="&amp;6448.OrganigramPropsDialog.standardConnOptionButton.Label" dlg:group-name="Connectors"/>
+   <dlg:radio dlg:id="straightConnOptionButton" dlg:tab-index="63" dlg:left="94" dlg:top="274" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6449.OrganigramPropsDialog.straightConnOptionButton.HelpText" dlg:value="&amp;6450.OrganigramPropsDialog.straightConnOptionButton.Label" dlg:group-name="Connectors"/>
+   <dlg:radio dlg:id="curvedConnOptionButton" dlg:tab-index="64" dlg:left="137" dlg:top="274" dlg:width="40" dlg:height="9" dlg:help-text="&amp;6451.OrganigramPropsDialog.curvedConnOptionButton.HelpText" dlg:value="&amp;6452.OrganigramPropsDialog.curvedConnOptionButton.Label" dlg:group-name="Connectors"/>
+  </dlg:radiogroup>
+  <dlg:text dlg:id="arrowsLabel" dlg:tab-index="67" dlg:left="10" dlg:top="285" dlg:width="30" dlg:height="9" dlg:help-text="&amp;6453.OrganigramPropsDialog.arrowsLabel.HelpText" dlg:value="&amp;6454.OrganigramPropsDialog.arrowsLabel.Label" dlg:tabstop="false"/>
+  <dlg:checkbox dlg:id="startArrowsCheckBox" dlg:tab-index="68" dlg:left="40" dlg:top="285" dlg:width="84" dlg:height="9" dlg:help-text="&amp;6455.OrganigramPropsDialog.startArrowsCheckBox.HelpText" dlg:value="&amp;6456.OrganigramPropsDialog.startArrowsCheckBox.Label" dlg:checked="false"/>
+  <dlg:checkbox dlg:id="endArrowsCheckBox" dlg:tab-index="69" dlg:left="125" dlg:top="285" dlg:width="84" dlg:height="9" dlg:help-text="&amp;6457.OrganigramPropsDialog.endArrowsCheckBox.HelpText" dlg:value="&amp;6458.OrganigramPropsDialog.endArrowsCheckBox.Label" dlg:checked="false"/>
+  <dlg:text dlg:id="connLineWidthLabel" dlg:tab-index="65" dlg:left="179" dlg:top="274" dlg:width="47" dlg:height="9" dlg:help-text="&amp;6459.OrganigramPropsDialog.connLineWidthLabel.HelpText" dlg:value="&amp;6460.OrganigramPropsDialog.connLineWidthLabel.Label" dlg:align="right" dlg:tabstop="true"/>
+  <dlg:menulist dlg:id="connLineWidthListBox" dlg:tab-index="66" dlg:left="229" dlg:top="272" dlg:width="30" dlg:height="12" dlg:help-text="&amp;6461.OrganigramPropsDialog.connLineWidthListBox.HelpText" dlg:spin="true" dlg:linecount="6">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6462.connLineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6463.connLineWidthListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6464.connLineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6465.connLineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6466.connLineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6467.connLineWidthListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:text dlg:id="endColorLabel" dlg:tab-index="24" dlg:disabled="true" dlg:left="133" dlg:top="116" dlg:width="34" dlg:height="10" dlg:help-text="&amp;6468.OrganigramPropsDialog.endColorLabel.HelpText" dlg:value="&amp;6469.OrganigramPropsDialog.endColorLabel.Label" dlg:tabstop="false"/>
+  <dlg:menulist dlg:id="listBox" dlg:tab-index="7" dlg:left="3" dlg:top="3" dlg:width="72" dlg:height="236" dlg:help-text="&amp;6470.OrganigramPropsDialog.listBox.HelpText" dlg:linecount="27">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6471.listBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6472.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6473.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6474.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6475.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6476.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6477.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6478.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6479.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6480.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6481.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6482.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6483.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6484.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6485.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6486.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6487.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6488.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6489.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6490.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6491.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6492.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6493.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6494.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6495.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6496.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6497.listBox.StringItemList"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedStyle" script:language="UNO"/>
+  </dlg:menulist>
+  <dlg:titledbox dlg:id="frameControl8" dlg:tab-index="72" dlg:left="3" dlg:top="301" dlg:width="60" dlg:height="23" dlg:help-text="&amp;6498.OrganigramPropsDialog.frameControl8.HelpText">
+   <dlg:title dlg:value="&amp;6499.OrganigramPropsDialog.frameControl8.Label"/>
+  </dlg:titledbox>
+  <dlg:checkbox dlg:id="mainItemHiddenCheckBox" dlg:tab-index="73" dlg:left="8" dlg:top="310" dlg:width="50" dlg:height="9" dlg:help-text="&amp;6500.OrganigramPropsDialog.mainItemHiddenCheckBox.HelpText" dlg:value="&amp;6501.OrganigramPropsDialog.mainItemHiddenCheckBox.Label" dlg:checked="false"/>
+  <dlg:titledbox dlg:id="frameControl9" dlg:tab-index="74" dlg:disabled="true" dlg:left="67" dlg:top="301" dlg:width="74" dlg:height="23" dlg:help-text="&amp;6502.OrganigramPropsDialog.frameControl9.HelpText">
+   <dlg:title dlg:value="&amp;6503.OrganigramPropsDialog.frameControl9.Label"/>
+  </dlg:titledbox>
+  <dlg:menulist dlg:id="lastHorLevelListBox" dlg:tab-index="75" dlg:disabled="true" dlg:left="73" dlg:top="309" dlg:width="20" dlg:height="12" dlg:help-text="&amp;6504.OrganigramPropsDialog.lastHorLevelListBox.HelpText" dlg:spin="true" dlg:linecount="8">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6505.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6506.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6507.lastHorLevelListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6508.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6509.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6510.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6511.lastHorLevelListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6512.lastHorLevelListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:text dlg:id="connColorLabel" dlg:tab-index="70" dlg:left="215" dlg:top="286" dlg:width="25" dlg:height="9" dlg:help-text="&amp;6513.OrganigramPropsDialog.connColorLabel.HelpText" dlg:value="&amp;6514.OrganigramPropsDialog.connColorLabel.Label" dlg:align="right" dlg:tabstop="false"/>
+  <dlg:img dlg:style-id="3" dlg:id="connColorImageControl" dlg:tab-index="71" dlg:left="244" dlg:top="286" dlg:width="15" dlg:height="10" dlg:help-text="&amp;6515.OrganigramPropsDialog.connColorImageControl.HelpText" dlg:tabstop="true">
+   <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
+  </dlg:img>
+  <dlg:menulist dlg:id="preDefinedColorSchemesListBox" dlg:tab-index="21" dlg:disabled="true" dlg:left="199" dlg:top="90" dlg:width="60" dlg:height="12" dlg:help-text="&amp;6516.OrganigramPropsDialog.preDefinedColorSchemesListBox.HelpText" dlg:spin="true" dlg:linecount="12">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6517.preDefinedColorSchemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6518.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6519.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6520.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6521.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6522.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6523.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6524.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6525.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6526.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6527.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6528.preDefinedColorSchemesListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="preDefinedColorSchemesOptionButton" dlg:tab-index="17" dlg:disabled="true" dlg:left="83" dlg:top="92" dlg:width="100" dlg:height="8" dlg:help-text="&amp;6529.OrganigramPropsDialog.preDefinedColorSchemesOptionButton.HelpText" dlg:value="&amp;6530.OrganigramPropsDialog.preDefinedColorSchemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorSchemes" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="preDefinedColorThemesListBox" dlg:tab-index="20" dlg:disabled="true" dlg:left="199" dlg:top="78" dlg:width="60" dlg:height="12" dlg:help-text="&amp;6533.OrganigramPropsDialog.preDefinedColorThemesListBox.HelpText" dlg:spin="true" dlg:linecount="10">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;6560.preDefinedColorThemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6561.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6562.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6563.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6564.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6565.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6566.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6567.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6568.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6569.preDefinedColorThemesListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="preDefinedColorThemesOptionButton" dlg:tab-index="16" dlg:disabled="true" dlg:left="83" dlg:top="81" dlg:width="100" dlg:height="9" dlg:help-text="&amp;6547.OrganigramPropsDialog.preDefinedColorThemesOptionButton.HelpText" dlg:value="&amp;6548.OrganigramPropsDialog.preDefinedColorThemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorThemes" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
  </dlg:bulletinboard>
 </dlg:window>

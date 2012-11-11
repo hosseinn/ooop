@@ -3,8 +3,8 @@ package oxygenoffice.extensions.smart.diagram.organizationcharts.tablehierarchyo
 import com.sun.star.awt.Point;
 import com.sun.star.awt.Size;
 import com.sun.star.drawing.XShape;
-import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChartTree;
 import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChart;
+import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChartTree;
 import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChartTreeItem;
 
 
@@ -154,12 +154,16 @@ class TableHierarchyOrgChartTreeItem extends OrganizationChartTreeItem{
 
     // set _horUnit, _shapeWidth, , horSpace, _verUnit, _shapeHeight, verSpace, _groupPosX, _groupPosY
     @Override
-    public void setProps(){
+    public void setMeasureProps(){
+        int iHiddenElementNum = 0;
+        if(getDiagramTree().getOrgChart().isHiddenRootElementProp())
+            iHiddenElementNum = 1;
+        
         int baseShapeWidth = getDiagramTree().getControlShapeSize().Width;
         int baseShapeHeight = getDiagramTree().getControlShapeSize().Height;
 
         _shapeWidth =  (int)(baseShapeWidth / (_maxPos + 1));
-        _shapeHeight = baseShapeHeight / (_maxLevel + 1);
+        _shapeHeight = baseShapeHeight / ((_maxLevel + 1) - iHiddenElementNum);
 
         _groupPosX = getDiagramTree().getControlShapePos().X;
         _groupPosY = getDiagramTree().getControlShapePos().Y;
@@ -169,14 +173,20 @@ class TableHierarchyOrgChartTreeItem extends OrganizationChartTreeItem{
     public void setPosOfRect(){
         int xCoord = _groupPosX + (int)(_shapeWidth * getPos());
         int yCoord = _groupPosY + _shapeHeight * getLevel();
+        if(getDiagramTree().getOrgChart().isHiddenRootElementProp()){
+            if(this.equals(getDiagramTree().getRootItem()))
+                yCoord = _groupPosY - 10;
+            else
+                yCoord = _groupPosY + _shapeHeight * (getLevel() - 1);
+        }
         setPosition(new Point(xCoord, yCoord));
 
-        int width = (int)(_shapeWidth * m_WidthUnit - TableHierarchyOrgChart.GAP);
-        int height = _shapeHeight - TableHierarchyOrgChart.GAP;
+        int width = (int)(_shapeWidth * m_WidthUnit - TableHierarchyOrgChart.GAP - getDiagramTree().getOrgChart().getShapesLineWidhtProp());
+        int height = _shapeHeight - TableHierarchyOrgChart.GAP - getDiagramTree().getOrgChart().getShapesLineWidhtProp();
 
-        if(getDiagramTree().getOrgChart().isShadowProps()){
-            width -= OrganizationChart.SHADOW_DIST;
-            height -= OrganizationChart.SHADOW_DIST;
+        if(getDiagramTree().getOrgChart().isShadowProp()){
+            width -= OrganizationChart.SHADOW_DIST1;
+            height -= OrganizationChart.SHADOW_DIST1;
         }      
         setSize(new Size( width, height));
     }

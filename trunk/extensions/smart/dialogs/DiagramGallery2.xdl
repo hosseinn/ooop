@@ -1,46 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="DiagramGallery2" dlg:left="155" dlg:top="87" dlg:width="265" dlg:height="126" dlg:help-text="&amp;4.DiagramGallery2.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;5.DiagramGallery2.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="DiagramGallery2" dlg:left="155" dlg:top="87" dlg:width="258" dlg:height="119" dlg:help-text="&amp;6235.DiagramGallery2.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;6236.DiagramGallery2.Title">
  <dlg:bulletinboard>
-  <dlg:menulist dlg:id="ListBox" dlg:tab-index="0" dlg:left="5" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6.DiagramGallery2.ListBox.HelpText">
+  <dlg:menulist dlg:id="ListBox" dlg:tab-index="0" dlg:left="3" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6237.DiagramGallery2.ListBox.HelpText">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;7.ListBox.StringItemList" dlg:selected="true"/>
-    <dlg:menuitem dlg:value="&amp;8.ListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;9.ListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;10.ListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;11.ListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6238.ListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6239.ListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6240.ListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6241.ListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6242.ListBox.StringItemList"/>
    </dlg:menupopup>
    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:itemChangedInList" script:language="UNO"/>
   </dlg:menulist>
-  <dlg:text dlg:id="Label1" dlg:tab-index="10" dlg:left="8" dlg:top="59" dlg:width="249" dlg:height="10" dlg:help-text="&amp;12.DiagramGallery2.Label1.HelpText" dlg:value="&amp;13.DiagramGallery2.Label1.Label"/>
-  <dlg:text dlg:id="Label2" dlg:tab-index="11" dlg:left="8" dlg:top="70" dlg:width="249" dlg:height="20" dlg:help-text="&amp;14.DiagramGallery2.Label2.HelpText" dlg:value="&amp;15.DiagramGallery2.Label2.Label" dlg:multiline="true"/>
-  <dlg:button dlg:id="OkButton" dlg:tab-index="9" dlg:left="5" dlg:top="107" dlg:width="255" dlg:height="14" dlg:help-text="&amp;16.DiagramGallery2.OkButton.HelpText" dlg:value="&amp;17.DiagramGallery2.OkButton.Label">
-   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:eventOK" script:language="UNO"/>
-  </dlg:button>
-  <dlg:button dlg:id="Item0" dlg:tab-index="1" dlg:left="60" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;18.DiagramGallery2.Item0.HelpText" dlg:default="true" dlg:value="&amp;19.DiagramGallery2.Item0.Label">
+  <dlg:text dlg:id="Label1" dlg:tab-index="9" dlg:left="4" dlg:top="59" dlg:width="250" dlg:height="10" dlg:help-text="&amp;6243.DiagramGallery2.Label1.HelpText" dlg:value="&amp;6244.DiagramGallery2.Label1.Label"/>
+  <dlg:text dlg:id="Label2" dlg:tab-index="10" dlg:left="4" dlg:top="70" dlg:width="250" dlg:height="24" dlg:help-text="&amp;6245.DiagramGallery2.Label2.HelpText" dlg:value="&amp;6246.DiagramGallery2.Label2.Label" dlg:multiline="true"/>
+  <dlg:button dlg:id="OkButton" dlg:tab-index="12" dlg:left="182" dlg:top="102" dlg:width="35" dlg:height="14" dlg:help-text="&amp;6247.DiagramGallery2.OkButton.HelpText" dlg:value="&amp;6248.DiagramGallery2.OkButton.Label" dlg:button-type="ok"/>
+  <dlg:button dlg:id="Item0" dlg:tab-index="1" dlg:left="55" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6249.DiagramGallery2.Item0.HelpText" dlg:default="true" dlg:value="&amp;6250.DiagramGallery2.Item0.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item0Pressed" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="Item1" dlg:tab-index="2" dlg:left="110" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;20.DiagramGallery2.Item1.HelpText" dlg:value="&amp;21.DiagramGallery2.Item1.Label">
+  <dlg:button dlg:id="Item1" dlg:tab-index="2" dlg:left="105" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6251.DiagramGallery2.Item1.HelpText" dlg:value="&amp;6252.DiagramGallery2.Item1.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item1Pressed" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="Item2" dlg:tab-index="3" dlg:left="160" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;22.DiagramGallery2.Item2.HelpText" dlg:value="&amp;23.DiagramGallery2.Item2.Label">
+  <dlg:button dlg:id="Item2" dlg:tab-index="3" dlg:left="155" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6253.DiagramGallery2.Item2.HelpText" dlg:value="&amp;6254.DiagramGallery2.Item2.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item2Pressed" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="Item3" dlg:tab-index="4" dlg:left="210" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;24.DiagramGallery2.Item3.HelpText" dlg:value="&amp;25.DiagramGallery2.Item3.Label">
+  <dlg:button dlg:id="Item3" dlg:tab-index="4" dlg:left="205" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6255.DiagramGallery2.Item3.HelpText" dlg:value="&amp;6256.DiagramGallery2.Item3.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item3Pressed" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="Item4" dlg:tab-index="5" dlg:left="60" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;26.DiagramGallery2.Item4.HelpText" dlg:default="true" dlg:value="&amp;27.DiagramGallery2.Item4.Label">
+  <dlg:button dlg:id="Item4" dlg:tab-index="5" dlg:left="55" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6257.DiagramGallery2.Item4.HelpText" dlg:default="true" dlg:value="&amp;6258.DiagramGallery2.Item4.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item4Pressed" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="Item5" dlg:tab-index="6" dlg:left="110" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;28.DiagramGallery2.Item5.HelpText" dlg:value="&amp;29.DiagramGallery2.Item5.Label">
+  <dlg:button dlg:id="Item5" dlg:tab-index="6" dlg:left="105" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6259.DiagramGallery2.Item5.HelpText" dlg:value="&amp;6260.DiagramGallery2.Item5.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item5Pressed" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="Item6" dlg:tab-index="7" dlg:left="160" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;30.DiagramGallery2.Item6.HelpText" dlg:value="&amp;31.DiagramGallery2.Item6.Label">
+  <dlg:button dlg:id="Item6" dlg:tab-index="7" dlg:left="155" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6261.DiagramGallery2.Item6.HelpText" dlg:value="&amp;6262.DiagramGallery2.Item6.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item6Pressed" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="Item7" dlg:tab-index="8" dlg:left="210" dlg:top="5" dlg:width="50" dlg:height="50" dlg:help-text="&amp;32.DiagramGallery2.Item7.HelpText" dlg:value="&amp;33.DiagramGallery2.Item7.Label">
+  <dlg:button dlg:id="Item7" dlg:tab-index="8" dlg:left="205" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6263.DiagramGallery2.Item7.HelpText" dlg:value="&amp;6264.DiagramGallery2.Item7.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item7Pressed" script:language="UNO"/>
   </dlg:button>
-  <dlg:checkbox dlg:id="TipsCheckBox" dlg:tab-index="12" dlg:left="8" dlg:top="94" dlg:width="80" dlg:height="10" dlg:help-text="&amp;38.DiagramGallery2.TipsCheckBox.HelpText" dlg:value="&amp;39.DiagramGallery2.TipsCheckBox.Label" dlg:checked="false"/>
+  <dlg:checkbox dlg:id="TipsCheckBox" dlg:tab-index="11" dlg:left="8" dlg:top="100" dlg:width="80" dlg:height="10" dlg:help-text="&amp;6265.DiagramGallery2.TipsCheckBox.HelpText" dlg:value="&amp;6266.DiagramGallery2.TipsCheckBox.Label" dlg:checked="false"/>
+  <dlg:button dlg:id="CancelCommandButton" dlg:tab-index="13" dlg:left="220" dlg:top="102" dlg:width="35" dlg:height="14" dlg:help-text="&amp;6267.DiagramGallery2.CancelCommandButton.HelpText" dlg:value="&amp;6268.DiagramGallery2.CancelCommandButton.Label" dlg:button-type="cancel"/>
+  <dlg:button dlg:id="Item8" dlg:tab-index="14" dlg:left="55" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6269.DiagramGallery2.Item8.HelpText" dlg:default="true" dlg:value="&amp;6270.DiagramGallery2.Item8.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item8Pressed" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="Item9" dlg:tab-index="15" dlg:left="105" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6271.DiagramGallery2.Item9.HelpText" dlg:value="&amp;6272.DiagramGallery2.Item9.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item9Pressed" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="Item10" dlg:tab-index="16" dlg:left="155" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6273.DiagramGallery2.Item10.HelpText" dlg:value="&amp;6274.DiagramGallery2.Item10.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item10Pressed" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="Item11" dlg:tab-index="17" dlg:left="205" dlg:top="3" dlg:width="50" dlg:height="50" dlg:help-text="&amp;6275.DiagramGallery2.Item11.HelpText" dlg:value="&amp;6276.DiagramGallery2.Item11.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:item11Pressed" script:language="UNO"/>
+  </dlg:button>
  </dlg:bulletinboard>
 </dlg:window>

@@ -160,8 +160,9 @@
     <target name="uno-idl-compile" description="Compiles UNO idl files" depends="-uno-idl-result"/>
 
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->    
-
-    <target name="jar" depends="-uno-project-init,uno-idl-compile,-jar-idl-types,compile,-pre-jar,-do-jar-with-manifest,-do-jar-without-manifest,-do-jar-with-mainclass,-do-jar-with-libraries,-do-openoffice-manifest,-post-jar">
+    <!-- deleted librarias in jar -->
+    <!--<target name="jar" depends="-uno-project-init,uno-idl-compile,-jar-idl-types,compile,-pre-jar,-do-jar-with-manifest,-do-jar-without-manifest,-do-jar-with-mainclass,-do-jar-with-libraries,-do-openoffice-manifest,-post-jar"> -->
+    <target name="jar" depends="-uno-project-init,uno-idl-compile,-jar-idl-types,compile,-pre-jar,-do-jar-with-manifest,-do-jar-without-manifest,-do-jar-with-mainclass,-do-openoffice-manifest,-post-jar">
         <jar basedir="${build.classes.dir}" compress="true" filesonly="true" manifest="${build.dir}/MANIFEST.MF" jarfile="${dist.jar}" excludes="**/*.xml,**/*.txt,${idl.file.list},${build.classes.excludes}"/>
     </target>
 
@@ -422,8 +423,8 @@
             <arg value="--suppress-license"/>
             <arg file="${uno.package.name}"/>
         </exec>
-        <echo message="${office.sdraw}"/>
-        <exec executable="${office.sdraw}" dir="${office.program.dir}" failonerror="true">
+        <echo message="${office.simpress}"/>
+        <exec executable="${office.simpress}" dir="${office.program.dir}" failonerror="true">
             <arg value="${office.startup.options}"/>
         </exec>
     </target>

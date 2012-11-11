@@ -13,6 +13,14 @@ class TableHierarchyOrgChartTree extends OrganizationChartTree {
         super(thOrganigram);
     }
 
+    TableHierarchyOrgChartTree(TableHierarchyOrgChart sOrganigram, XShape xControlShape, XShape xRootItemShape) {
+        super(sOrganigram);
+        setControlShape(xControlShape);
+        TableHierarchyOrgChartTreeItem.initStaticMembers();
+        addToRectangles(xRootItemShape);
+        m_RootItem = new TableHierarchyOrgChartTreeItem(this, xRootItemShape, null, (short)0, 0.0);
+    }
+
     TableHierarchyOrgChartTree(TableHierarchyOrgChart thOrganigram, OrganizationChartTree diagramTree) {
         super(thOrganigram, diagramTree);
         TableHierarchyOrgChartTreeItem.initStaticMembers();
@@ -36,9 +44,8 @@ class TableHierarchyOrgChartTree extends OrganizationChartTree {
         m_RootItem.setPos(0.0);
         ((TableHierarchyOrgChartTreeItem)m_RootItem).setWidthUnit(1.0);
         m_RootItem.setPositionsOfItems();
-        m_RootItem.setProps();
+        m_RootItem.setMeasureProps();
         m_RootItem.display();
-        setGradientColorProps();
     }
 
     @Override

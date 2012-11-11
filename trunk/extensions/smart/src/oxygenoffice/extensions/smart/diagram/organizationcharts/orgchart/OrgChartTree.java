@@ -1,13 +1,11 @@
 package oxygenoffice.extensions.smart.diagram.organizationcharts.orgchart;
 
 import com.sun.star.awt.Point;
-import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.drawing.XShape;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.WrappedTargetException;
-import com.sun.star.text.XText;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChartTree;
@@ -22,14 +20,27 @@ public class OrgChartTree extends OrganizationChartTree{
         super(organigram);
     }
 
+    OrgChartTree(OrgChart sOrganigram, XShape xControlShape, XShape xRootItemShape) {
+        super(sOrganigram);
+        setControlShape(xControlShape);
+        OrgChartTreeItem.initStaticMembers();
+        addToRectangles(xRootItemShape);
+        m_RootItem = new OrgChartTreeItem(this, xRootItemShape, null, (short)0, 0.0);
+    }
+
     public OrgChartTree(OrgChart organigram, OrganizationChartTree diagramTree) {
         super(organigram, diagramTree);
         OrgChartTreeItem.initStaticMembers();
-        setHorLevelOfControlShape(OrgChartTree.LASTHORLEVEL);
+        getOrgChart().setHorLevelOfControlShape(getControlShape(), OrgChartTree.LASTHORLEVEL);
         m_RootItem = new OrgChartTreeItem(this, null, diagramTree.getRootItem());
         m_RootItem.setLevel((short)0);
         m_RootItem.setPos(0.0);
         m_RootItem.convertTreeItems(diagramTree.getRootItem());
+    }
+
+    public void setLastHorLevel(short level){
+        LASTHORLEVEL = level;
+        getOrgChart().setHorLevelOfControlShape(m_xControlShape, level);
     }
 
     @Override
@@ -39,36 +50,6 @@ public class OrgChartTree extends OrganizationChartTree{
         m_RootItem.initTreeItems();
     }
 
-    public final void setHorLevelOfControlShape(short i){
-        OrgChartTree.LASTHORLEVEL = i;
-        XText xText = (XText)UnoRuntime.queryInterface(XText.class, getControlShape());
-        if(xText != null){
-            xText.setString("" + i);
-            XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
-            try {
-                //CharHidden proerty is useless with 3.3 LO api
-                xTextProps.setPropertyValue( "CharWeight", new Float(0.0));
-                xTextProps.setPropertyValue( "CharHeight", new Float(0.0));
-            } catch (UnknownPropertyException ex) {
-                System.err.println(ex.getLocalizedMessage());
-            } catch (PropertyVetoException ex) {
-                System.err.println(ex.getLocalizedMessage());
-            } catch (IllegalArgumentException ex) {
-                System.err.println(ex.getLocalizedMessage());
-            } catch (WrappedTargetException ex) {
-                System.err.println(ex.getLocalizedMessage());
-            }
-        }
-    }
-
-    public short getHorLevelOfControlShape(){
-        XText xText = (XText)UnoRuntime.queryInterface(XText.class, getControlShape());
-        String text = xText.getString();
-        if(text.equals(""))
-            return -1;
-        else
-            return Short.parseShort(text);
-    }
 
     @Override
     public XShape getFirstChildShape(XShape xDadShape){
@@ -169,9 +150,8 @@ public class OrgChartTree extends OrganizationChartTree{
         m_RootItem.setLevel((short)0);
         m_RootItem.setPos(0.0);
         m_RootItem.setPositionsOfItems();
-        m_RootItem.setProps();
+        m_RootItem.setMeasureProps();
         m_RootItem.display();
-        setGradientColorProps();
     }
 
     @Override
@@ -195,11 +175,11 @@ public class OrgChartTree extends OrganizationChartTree{
             XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnShape);
                 return AnyConverter.toInt(xProps.getPropertyValue("EndGluePointIndex"));
         } catch (UnknownPropertyException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (WrappedTargetException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         return -1;
     }

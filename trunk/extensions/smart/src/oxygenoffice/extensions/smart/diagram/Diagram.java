@@ -8,6 +8,7 @@ import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
 import com.sun.star.drawing.FillStyle;
+import com.sun.star.drawing.LineStyle;
 import com.sun.star.drawing.TextFitToSizeType;
 import com.sun.star.drawing.XDrawPage;
 import com.sun.star.drawing.XShape;
@@ -23,7 +24,10 @@ import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
-import oxygenoffice.extensions.smart.Gui;
+import oxygenoffice.extensions.smart.diagram.organizationcharts.OrganizationChart;
+import oxygenoffice.extensions.smart.diagram.processes.ProcessDiagram;
+import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
+import oxygenoffice.extensions.smart.gui.Gui;
 
 
 
@@ -60,7 +64,36 @@ public abstract class Diagram extends DiagramProperties{
         m_xMSF = (XMultiServiceFactory) UnoRuntime.queryInterface(XMultiServiceFactory.class, m_xModel);
         setGroupSize();
     }
-
+    
+    public void setGroupShapeSizeAndPos(int width, int height, int xPos, int yPos){
+        if(m_xGroupShape != null){
+            try {
+                m_xGroupShape.setSize(new Size(width, height));
+                m_xGroupShape.setPosition(new Point(xPos, yPos));
+            }  catch (Exception ex) {
+                System.err.println(ex.getLocalizedMessage());
+            }
+        }
+    }
+    
+    public Object getGroupShape(){
+        if(m_xGroupShape != null)
+            return m_xGroupShape;
+        return null;
+    }
+    
+    public Point getGroupShapePos(){
+        if(m_xGroupShape != null)
+            return m_xGroupShape.getPosition();
+        return null;
+    }
+    
+    public Size getGroupShapeSize(){
+        if(m_xGroupShape != null)
+            return m_xGroupShape.getSize();
+        return null;
+    }
+    
     public Controller getController(){
         return m_Controller;
     }
@@ -78,18 +111,19 @@ public abstract class Diagram extends DiagramProperties{
     public int getDrawAreaWidth(){
         return m_DrawAreaWidth;
     }
+    
+    public void setDrawAreaWidth(int s){
+        m_DrawAreaWidth = s;
+    }
 
     public int getDrawAreaHeight(){
         return m_DrawAreaHeight;
     }
-
-    @Override
-    public void setGradientProps(boolean bool){
-        super.setGradientProps(bool);
-        if(getController().getGroupType() == Controller.ORGANIGROUP)
-            getGui().setImageColorOfControlDialog(m_iColor);
-    }
     
+    public void setDrawAreaHeight(int s){
+        m_DrawAreaHeight = s;
+    }
+
     // determinde m_GroupSize
     public final void setGroupSize(){
         if(m_xDrawPage == null);
@@ -145,6 +179,8 @@ public abstract class Diagram extends DiagramProperties{
             getController().setSelectedShape(xShapes);
     }
 
+    public abstract void createDiagram(DataOfDiagram datas);
+    
     // set m_xDrawPage, PageProps, m_xGroupSize, m_xGroupShape and m_xShapes
     public void createDiagram(){
         try {
@@ -194,23 +230,32 @@ public abstract class Diagram extends DiagramProperties{
             System.err.println(ex.getLocalizedMessage());
         }
     }
-
+    
+    public abstract void setDrawArea();
+    
     public abstract void refreshDiagram();
 
     public abstract void addShape();
 
     public abstract void removeShape();
 
-    public abstract void refreshShapeProperties();
+    public abstract void showPropertyDialog();
 
     public abstract void setShapeProperties(XShape xShape, String type);
-
 
     public void removeShapeFromGroup(XShape xShape){
         if(m_xShapes != null)
             m_xShapes.remove(xShape);
     }
 
+    @Override
+    public void setDefaultBaseColors(){
+        if(getController().getGroupType() == Controller.RELATIONGROUP)
+            DiagramProperties._setDefaultBaseColors("BaseColors");
+        if(getController().getGroupType() == Controller.PROCESSGROUP)
+            DiagramProperties._setDefaultBaseColors("RainbowColors");
+    }
+    
     public XShape createShape(String type, int num){
         XShape xShape = null;
         try {
@@ -278,14 +323,19 @@ public abstract class Diagram extends DiagramProperties{
         }
         return false;
     }
-    
+  
     public void setColorOfShape(XShape xShape, int color){
         try {
             XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
+            xProp.setPropertyValue("FillStyle", FillStyle.SOLID);
             xProp.setPropertyValue("FillColor", new Integer(color));
         }  catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
+    }
+
+    public void setColorOfShape(XShape xShape){
+        setColorOfShape(xShape, getColorProp());
     }
 
     public String getShapeName(XShape xShape){
@@ -295,34 +345,59 @@ public abstract class Diagram extends DiagramProperties{
         }
         return null;
     }
-/*
-    public void setTextFitToSize(XShape xShape){
+
+    public abstract void setFontPropertyValues();
+
+    public void setTextColorOfShape(XShape xShape){
         try {
-            XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
-            xPropText.setPropertyValue("TextFitToSize", TextFitToSizeType.PROPORTIONAL);
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, xShape);
+            XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
+            xTextProps.setPropertyValue("CharColor", new Integer(getTextColorProp()));
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
     }
-*/
-    public abstract void setFontPropertyValues();
-
+    
+    public void setControlShapeProps(XShape xShape){
+        try {
+            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
+            xProp.setPropertyValue("FillStyle", FillStyle.NONE);
+            xProp.setPropertyValue("LineStyle", LineStyle.NONE);
+            xProp.setPropertyValue("MoveProtect", new Boolean(true));
+            if(isTextFitProp())
+                xProp.setPropertyValue("TextFitToSize", TextFitToSizeType.PROPORTIONAL);
+            else
+                xProp.setPropertyValue("TextFitToSize", TextFitToSizeType.NONE);
+        } catch (java.lang.Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+    
+    public void setControlShapePropsWithoutTextProps(XShape xShape){
+        try {
+            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
+            xProp.setPropertyValue("FillStyle", FillStyle.NONE);
+            xProp.setPropertyValue("LineStyle", LineStyle.NONE);
+            xProp.setPropertyValue("MoveProtect", new Boolean(true));
+        } catch (java.lang.Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+    
     public void setFontPropertiesOfShape(XShape xShape){
         try {
             XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
-            if(isTextFitProps()){
+            if(isTextFitProp()){
                 xPropText.setPropertyValue("TextFitToSize", TextFitToSizeType.PROPORTIONAL);
             }else{
                 xPropText.setPropertyValue("TextFitToSize", TextFitToSizeType.NONE);
-                xPropText.setPropertyValue("CharHeight", new Float(getFontSizeProps()));
+                xPropText.setPropertyValue("CharHeight", new Float(getFontSizeProp()));
             }
-
             if(isTextColorChange()){
                 XText xText = (XText)UnoRuntime.queryInterface(XText.class, xShape);
                 XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
-                xTextProps.setPropertyValue( "CharColor", new Integer(getTextColorProps()));
+                xTextProps.setPropertyValue("CharColor", new Integer(getTextColorProp()));
             }
-
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
@@ -336,7 +411,14 @@ public abstract class Diagram extends DiagramProperties{
             System.err.println(ex.getLocalizedMessage());
         }
     }
- 
+
+    public void setGradientWithAutoAngle(XShape xShape){
+        if(getGradientDirectionProp() == Diagram.VERTICAL)
+            setGradient(xShape);
+        else
+            setGradient(xShape, (short)900);
+    }
+
     public void setGradient(XShape xShape){
         setGradient(xShape, GradientStyle.LINEAR, m_iStartColor, m_iEndColor, (short)0, (short)0, (short)0, (short)0, (short)100, (short)100);
     }
@@ -381,9 +463,254 @@ public abstract class Diagram extends DiagramProperties{
         }
     }
 
+    public void setLineColorOfShape(XShape xShape){
+        XPropertySet xProp = null;
+        try {
+            xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
+            xProp.setPropertyValue("LineColor", new Integer(getLineColorProp()));
+        } catch (PropertyVetoException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+
     public void setTextOfShape(XShape xShape, String str){
         if(xShape != null)
             ((XText) UnoRuntime.queryInterface(XText.class, xShape)).setString(str);
+    }
+ 
+    @Override
+    public void setColorModeProp(short colorMode){
+        super.setColorModeProp(colorMode);
+        getGui().setColorModeOfImageOfControlDialog();
+        if(getController().getGroupType() == Controller.ORGANIGROUP)
+            setColorModeOfControlShape(((OrganizationChart)this).getDiagramTree().getControlShape(), colorMode);
+        if(getController().getGroupType() == Controller.RELATIONGROUP)
+            setColorModeOfControlShape(((RelationDiagram)this).getControlShape(), colorMode);
+        if(getController().getGroupType() == Controller.PROCESSGROUP)
+            setColorModeOfControlShape(((ProcessDiagram)this).getControlShape(), colorMode);
+    }
+
+
+    @Override
+    public void setStyleProp(short selected) {
+        super.setStyleProp(selected);
+        if(getController().getGroupType() == Controller.ORGANIGROUP)
+            setStyleOfControlShape(((OrganizationChart)this).getDiagramTree().getControlShape(), selected);
+        if(getController().getGroupType() == Controller.RELATIONGROUP)
+            setStyleOfControlShape(((RelationDiagram)this).getControlShape(), selected);
+        if(getController().getGroupType() == Controller.PROCESSGROUP)
+            setStyleOfControlShape(((ProcessDiagram)this).getControlShape(), selected);
+    }
+
+
+    public boolean isColorSchemeStyle(short style){ return false; }
+    public short getColorModeOfSchemeStyle(short style){ return -1; }
+    public boolean isColorThemeGradientStyle(short style){ return false; }
+    public short getColorModeOfThemeGradientStyle(short style){ return -1; }
+    public boolean isColorThemeStyle(short style){ return false; }
+    public short getColorModeOfThemeStyle(short style){ return -1; }
+
+    
+    abstract public void initColorModeAndStyle();
+            
+    public void initColorModeAndStyle(XShape xControlShape){
+        short colorMode = getColorModeOfControlShape(xControlShape);
+        short style = getStyleOfControlShape(xControlShape);
+        setColorModeProp(colorMode);
+        setStyleProp(style);
+    }
+    
+    abstract public void initProperties();
+    
+    public void setColorModeAndStyeOfControlShape(XShape xControlShape){
+        setShortPropertyOfControlShape("ColorMode", xControlShape, getColorModeProp());
+        setShortPropertyOfControlShape("Style", xControlShape, getStyleProp());
+    }
+    
+    public void setColorModeOfControlShape(XShape xControlShape, short colorMode){
+        setShortPropertyOfControlShape("ColorMode", xControlShape, colorMode);
+    }
+    
+    public final void setStyleOfControlShape(XShape xControlShape, short style){
+        setShortPropertyOfControlShape("Style", xControlShape, style);
+    }
+
+    public final void setShortPropertyOfControlShape(String propertyName, XShape xControlShape, short value){
+        if(xControlShape != null){
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, xControlShape);
+            if(xText != null){
+                String shapeText = "";
+                shapeText = xText.getString();
+                if(shapeText.equals("") || shapeText.indexOf(":") == -1){
+                    if(shapeText.equals(""))
+                        xText.setString(propertyName + ":" + value);
+                    else
+                        xText.setString(shapeText + ":" + propertyName + ":" + value);
+                }else{
+                    boolean isAllreadyDefined = false;
+                    String[] aStr = shapeText.split(":");
+                    for(int i = 0; i < aStr.length - 1; i++){
+                        if(aStr[i].equals(propertyName)){
+                            aStr[i+1] = "" + value;
+                            isAllreadyDefined = true;
+                        }
+                    }
+                    if(isAllreadyDefined){
+                        shapeText = "";
+                        for(int i = 0; i < aStr.length; i++){
+                            shapeText += aStr[i];
+                            if(i < aStr.length - 1)
+                                shapeText += ":";
+                        }
+                    }else{
+                        shapeText += ":" + propertyName + ":" + value;
+                    }
+                    xText.setString(shapeText);
+                }
+///*
+                XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
+                try {
+                    //CharHidden property is useless with 3.3 LO api
+                    xTextProps.setPropertyValue( "CharWeight", new Float(0.0));
+                    xTextProps.setPropertyValue( "CharHeight", new Float(0.0));
+                } catch (UnknownPropertyException ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                } catch (PropertyVetoException ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                } catch (IllegalArgumentException ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                } catch (WrappedTargetException ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                }
+//*/
+            }
+        }
+    }
+
+    public short getColorModeOfControlShape(XShape xControlShape){
+        return getShortPropertyOfControlShape("ColorMode", xControlShape);
+    }
+
+    public short getStyleOfControlShape(XShape xControlShape){
+        return getShortPropertyOfControlShape("Style", xControlShape);
+    }
+
+    public short getShortPropertyOfControlShape(String propertyName, XShape xControlShape){
+        if(xControlShape != null){
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, xControlShape);
+            String text = xText.getString();
+            String sNumber = "";
+            if(text.indexOf(":") == -1){
+                return -1;
+            }else{
+                String[] aStr = text.split(":");
+                for(int i = 0; i < aStr.length - 1; i++)
+                    if(aStr[i].equals(propertyName))
+                        sNumber = aStr[i+1];
+            }
+            if(sNumber.equals(""))
+                return -1;
+            else
+                return Short.parseShort(sNumber);
+        }
+        return -1;
+    }
+
+    //LastHorLevel is defined version 0.9.4
+    //it must be threat specially becouse of compatiblity with previous versions
+    public final void setHorLevelOfControlShape(XShape xControlShape, short level){
+        if(xControlShape != null){
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, xControlShape);
+            if(xText != null){
+                String text = "";
+                text = xText.getString();
+                if(text.equals("") || text.indexOf(":") == -1){
+                    xText.setString("LastHorLevel:" + level);
+                }else{
+                    boolean isAllreadyDefined = false;
+                    String[] aStr = text.split(":");
+                    for(int i = 0; i < aStr.length - 1; i++){
+                        if(aStr[i].equals("LastHorLevel")){
+                            aStr[i+1] = "" + level;
+                            isAllreadyDefined = true;
+                        }
+                    }
+                    if(isAllreadyDefined){
+                        text = "";
+                        for(int i = 0; i < aStr.length; i++){
+                            text += aStr[i];
+                            if(i < aStr.length - 1)
+                                text += ":";
+                        }
+                    }else{
+                        text += ":LastHorLevel:" + level;
+                    }
+
+                    xText.setString(text);
+                }
+
+                XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
+                try {
+                    //CharHidden property is useless with 3.3 LO api
+                    xTextProps.setPropertyValue( "CharWeight", new Float(0.0));
+                    xTextProps.setPropertyValue( "CharHeight", new Float(0.0));
+                } catch (UnknownPropertyException ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                } catch (PropertyVetoException ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                } catch (IllegalArgumentException ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                } catch (WrappedTargetException ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                }
+  
+            }
+        }
+    }
+
+    public short getHorLevelOfControlShape(XShape xControlShape){
+        if(xControlShape != null){
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, xControlShape);
+            String text = xText.getString();
+            String sNumber = "";
+            if(text.indexOf(":") == -1){
+                sNumber = text;
+            }else{
+                String[] aStr = text.split(":");
+                for(int i=0; i<aStr.length - 1; i++)
+                    if(aStr[i].equals("LastHorLevel"))
+                        sNumber = aStr[i+1];
+            }
+            if(sNumber.equals(""))
+                return -1;
+            else
+                return Short.parseShort(sNumber);
+        }
+        return -1;
+    }
+    
+    public void removeHorLevelPropsOfControlShape(XShape xControlShape){
+        if(xControlShape != null){
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, xControlShape);
+            String text = xText.getString();
+            if(!(text.indexOf("LastHorLevel:") == -1)){
+                String newText = "";
+                String[] aStr = text.split(":");
+                for(int i = 0; i < aStr.length - 1; i += 2)
+                    if(!aStr[i].equals("LastHorLevel"))
+                        newText += aStr[i] + ":" + aStr[i+1] + ":";
+                newText = newText.substring(0, newText.length()-1);
+                xText.setString(newText);
+            }
+        }
+           
+          
     }
  
 }

@@ -1,178 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="TargetDiagramPropsDialog" dlg:left="0" dlg:top="0" dlg:width="235" dlg:height="260" dlg:help-text="&amp;1127.TargetDiagramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;1128.TargetDiagramPropsDialog.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="TargetDiagramPropsDialog" dlg:left="0" dlg:top="0" dlg:width="248" dlg:height="286" dlg:help-text="&amp;6930.TargetDiagramPropsDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;6931.TargetDiagramPropsDialog.Title">
  <dlg:styles>
-  <dlg:style dlg:style-id="0" dlg:background-color="0xff" dlg:border="simple"/>
+  <dlg:style dlg:style-id="0" dlg:background-color="0xff"/>
   <dlg:style dlg:style-id="1" dlg:background-color="0x0" dlg:border="simple"/>
  </dlg:styles>
  <dlg:bulletinboard>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="9" dlg:visible="false" dlg:left="155" dlg:top="13" dlg:width="70" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1129.TargetDiagramPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;1130.TargetDiagramPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
+   <dlg:radio dlg:id="selectedItemsOptionButton" dlg:tab-index="12" dlg:left="150" dlg:top="26" dlg:width="85" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6932.TargetDiagramPropsDialog.selectedItemsOptionButton.HelpText" dlg:value="&amp;6933.TargetDiagramPropsDialog.selectedItemsOptionButton.Label" dlg:group-name="Area">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setSelectedShapes" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="14" dlg:visible="false" dlg:left="191" dlg:top="53" dlg:width="15" dlg:height="11" dlg:printable="false" dlg:help-text="&amp;1131.TargetDiagramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="0" dlg:id="colorImageControl" dlg:tab-index="18" dlg:left="119" dlg:top="54" dlg:width="15" dlg:height="11" dlg:printable="false" dlg:help-text="&amp;6934.TargetDiagramPropsDialog.colorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
-  <dlg:img dlg:id="imageControl" dlg:tab-index="31" dlg:left="80" dlg:top="3" dlg:width="150" dlg:height="150" dlg:help-text="&amp;1132.TargetDiagramPropsDialog.imageControl.HelpText"/>
-  <dlg:titledbox dlg:id="frameControl2" dlg:tab-index="10" dlg:visible="false" dlg:left="80" dlg:top="30" dlg:width="149" dlg:height="40" dlg:printable="false" dlg:help-text="&amp;1133.TargetDiagramPropsDialog.frameControl2.HelpText">
-   <dlg:title dlg:value="&amp;1134.TargetDiagramPropsDialog.frameControl2.Label"/>
+  <dlg:img dlg:id="imageControl" dlg:tab-index="32" dlg:left="78" dlg:top="3" dlg:width="167" dlg:height="167" dlg:help-text="&amp;6935.TargetDiagramPropsDialog.imageControl.HelpText" dlg:tabstop="false"/>
+  <dlg:titledbox dlg:id="frameControl2" dlg:tab-index="8" dlg:left="78" dlg:top="3" dlg:width="167" dlg:height="88" dlg:printable="false" dlg:help-text="&amp;6936.TargetDiagramPropsDialog.frameControl2.HelpText">
+   <dlg:title dlg:value="&amp;6937.TargetDiagramPropsDialog.frameControl2.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="frameControl1" dlg:tab-index="7" dlg:visible="false" dlg:left="80" dlg:top="3" dlg:width="149" dlg:height="24" dlg:help-text="&amp;1135.TargetDiagramPropsDialog.frameControl1.HelpText">
-   <dlg:title dlg:value="&amp;1136.TargetDiagramPropsDialog.frameControl1.Label"/>
+  <dlg:titledbox dlg:id="frameControl1" dlg:tab-index="10" dlg:left="83" dlg:top="17" dlg:width="157" dlg:height="22" dlg:help-text="&amp;6938.TargetDiagramPropsDialog.frameControl1.HelpText">
+   <dlg:title dlg:value="&amp;6939.TargetDiagramPropsDialog.frameControl1.Label"/>
   </dlg:titledbox>
-  <dlg:menulist dlg:id="listBox" dlg:tab-index="6" dlg:left="5" dlg:top="4" dlg:width="70" dlg:height="186" dlg:help-text="&amp;1137.TargetDiagramPropsDialog.listBox.HelpText">
+  <dlg:menulist dlg:id="listBox" dlg:tab-index="7" dlg:left="3" dlg:top="3" dlg:width="72" dlg:height="236" dlg:help-text="&amp;6940.TargetDiagramPropsDialog.listBox.HelpText">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;1384.listBox.StringItemList" dlg:selected="true"/>
-    <dlg:menuitem dlg:value="&amp;1385.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1386.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1387.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1388.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1389.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1390.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1391.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1392.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1393.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1394.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1395.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1396.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1397.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1398.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1399.listBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1400.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6941.listBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;6942.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6943.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6944.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6945.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6946.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6947.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6948.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6949.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6950.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6951.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6952.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6953.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6954.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6955.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6956.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6957.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6958.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6959.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6960.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6961.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6962.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6963.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6964.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6965.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6966.listBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;6967.listBox.StringItemList"/>
    </dlg:menupopup>
    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedStyle" script:language="UNO"/>
   </dlg:menulist>
-  <dlg:titledbox dlg:id="frameControl3" dlg:tab-index="15" dlg:visible="false" dlg:left="80" dlg:top="73" dlg:width="149" dlg:height="24" dlg:printable="false" dlg:help-text="&amp;1145.TargetDiagramPropsDialog.frameControl3.HelpText">
-   <dlg:title dlg:value="&amp;1146.TargetDiagramPropsDialog.frameControl3.Label"/>
+  <dlg:titledbox dlg:id="frameControl3" dlg:tab-index="21" dlg:left="78" dlg:top="92" dlg:width="167" dlg:height="22" dlg:printable="false" dlg:help-text="&amp;6968.TargetDiagramPropsDialog.frameControl3.HelpText">
+   <dlg:title dlg:value="&amp;6969.TargetDiagramPropsDialog.frameControl3.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="frameControl4" dlg:tab-index="18" dlg:visible="false" dlg:left="80" dlg:top="100" dlg:width="149" dlg:height="24" dlg:printable="false" dlg:help-text="&amp;1147.TargetDiagramPropsDialog.frameControl4.HelpText">
-   <dlg:title dlg:value="&amp;1148.TargetDiagramPropsDialog.frameControl4.Label"/>
+  <dlg:titledbox dlg:id="frameControl4" dlg:tab-index="24" dlg:left="78" dlg:top="115" dlg:width="167" dlg:height="32" dlg:printable="false" dlg:help-text="&amp;6970.TargetDiagramPropsDialog.frameControl4.HelpText">
+   <dlg:title dlg:value="&amp;6971.TargetDiagramPropsDialog.frameControl4.Label"/>
   </dlg:titledbox>
-  <dlg:titledbox dlg:id="frameControl5" dlg:tab-index="21" dlg:visible="false" dlg:left="80" dlg:top="127" dlg:width="149" dlg:height="24" dlg:printable="false" dlg:help-text="&amp;1149.TargetDiagramPropsDialog.frameControl5.HelpText">
-   <dlg:title dlg:value="&amp;1150.TargetDiagramPropsDialog.frameControl5.Label"/>
+  <dlg:titledbox dlg:id="frameControl5" dlg:tab-index="29" dlg:left="78" dlg:top="148" dlg:width="167" dlg:height="22" dlg:printable="false" dlg:help-text="&amp;6972.TargetDiagramPropsDialog.frameControl5.HelpText">
+   <dlg:title dlg:value="&amp;6973.TargetDiagramPropsDialog.frameControl5.Label"/>
   </dlg:titledbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="8" dlg:visible="false" dlg:left="90" dlg:top="13" dlg:width="40" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1151.TargetDiagramPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;1152.TargetDiagramPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
+   <dlg:radio dlg:id="allDiagramOptionButton" dlg:tab-index="11" dlg:left="88" dlg:top="26" dlg:width="40" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6974.TargetDiagramPropsDialog.allDiagramOptionButton.HelpText" dlg:value="&amp;6975.TargetDiagramPropsDialog.allDiagramOptionButton.Label" dlg:group-name="Area" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setAllShapes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="13" dlg:visible="false" dlg:left="155" dlg:top="54" dlg:width="35" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1153.TargetDiagramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;1154.TargetDiagramPropsDialog.colorOptionButton.Label" dlg:group-name="Color">
+   <dlg:radio dlg:id="colorOptionButton" dlg:tab-index="14" dlg:left="83" dlg:top="54" dlg:width="34" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6976.TargetDiagramPropsDialog.colorOptionButton.HelpText" dlg:value="&amp;6977.TargetDiagramPropsDialog.colorOptionButton.Label" dlg:group-name="Color">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setColor" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="baseColorOptionButton" dlg:tab-index="12" dlg:visible="false" dlg:left="90" dlg:top="54" dlg:width="60" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1155.TargetDiagramPropsDialog.baseColorOptionButton.HelpText" dlg:value="&amp;1156.TargetDiagramPropsDialog.baseColorOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
-    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setBaseColor" script:language="UNO"/>
-   </dlg:radio>
   </dlg:radiogroup>
-  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="11" dlg:visible="false" dlg:left="90" dlg:top="42" dlg:width="75" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;1157.TargetDiagramPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;1158.TargetDiagramPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
+  <dlg:checkbox dlg:id="modifyColorsCheckBox" dlg:tab-index="9" dlg:left="130" dlg:top="10" dlg:width="75" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6978.TargetDiagramPropsDialog.modifyColorsCheckBox.HelpText" dlg:tabstop="true" dlg:value="&amp;6979.TargetDiagramPropsDialog.modifyColorsCheckBox.Label" dlg:checked="false">
    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyColors" script:language="UNO"/>
   </dlg:checkbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="yesFrameOptionButton" dlg:tab-index="22" dlg:visible="false" dlg:left="90" dlg:top="137" dlg:width="50" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1159.TargetDiagramPropsDialog.yesFrameOptionButton.HelpText" dlg:value="&amp;1160.TargetDiagramPropsDialog.yesFrameOptionButton.Label" dlg:group-name="Frame">
-    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFrameYes" script:language="UNO"/>
-   </dlg:radio>
-   <dlg:radio dlg:id="noFrameOptionButton" dlg:tab-index="23" dlg:visible="false" dlg:left="155" dlg:top="137" dlg:width="50" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1161.TargetDiagramPropsDialog.noFrameOptionButton.HelpText" dlg:value="&amp;1162.TargetDiagramPropsDialog.noFrameOptionButton.Label" dlg:group-name="Frame" dlg:checked="true">
-    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFrameNo" script:language="UNO"/>
-   </dlg:radio>
-   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="19" dlg:visible="false" dlg:left="90" dlg:top="110" dlg:width="50" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1163.TargetDiagramPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;1164.TargetDiagramPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Monographic" dlg:checked="true">
+   <dlg:radio dlg:id="yesFrameOptionButton" dlg:tab-index="30" dlg:left="83" dlg:top="157" dlg:width="50" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6980.TargetDiagramPropsDialog.yesFrameOptionButton.HelpText" dlg:value="&amp;6981.TargetDiagramPropsDialog.yesFrameOptionButton.Label" dlg:group-name="Frame"/>
+   <dlg:radio dlg:id="noFrameOptionButton" dlg:tab-index="31" dlg:left="160" dlg:top="157" dlg:width="50" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6982.TargetDiagramPropsDialog.noFrameOptionButton.HelpText" dlg:value="&amp;6983.TargetDiagramPropsDialog.noFrameOptionButton.Label" dlg:group-name="Frame" dlg:checked="true"/>
+   <dlg:radio dlg:id="yesOutlineOptionButton" dlg:tab-index="25" dlg:left="83" dlg:top="124" dlg:width="50" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6984.TargetDiagramPropsDialog.yesOutlineOptionButton.HelpText" dlg:value="&amp;6985.TargetDiagramPropsDialog.yesOutlineOptionButton.Label" dlg:group-name="Monographic" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineYes" script:language="UNO"/>
    </dlg:radio>
-   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="20" dlg:visible="false" dlg:left="155" dlg:top="110" dlg:width="50" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1165.TargetDiagramPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;1166.TargetDiagramPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Monographic">
+   <dlg:radio dlg:id="noOutlineOptionButton" dlg:tab-index="26" dlg:left="83" dlg:top="134" dlg:width="50" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;6986.TargetDiagramPropsDialog.noOutlineOptionButton.HelpText" dlg:value="&amp;6987.TargetDiagramPropsDialog.noOutlineOptionButton.Label" dlg:group-name="Monographic">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setOutlineNo" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="96" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1167.TargetDiagramPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;1168.TargetDiagramPropsDialog.allShapeButton.Label">
+  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="96" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6988.TargetDiagramPropsDialog.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6989.TargetDiagramPropsDialog.allShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:allShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="textShapeButton" dlg:tab-index="5" dlg:left="171" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1169.TargetDiagramPropsDialog.textShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;1170.TargetDiagramPropsDialog.textShapeButton.Label">
+  <dlg:button dlg:id="textShapeButton" dlg:tab-index="5" dlg:left="171" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6990.TargetDiagramPropsDialog.textShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6991.TargetDiagramPropsDialog.textShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:textShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="mainShapeButton" dlg:tab-index="4" dlg:left="156" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1171.TargetDiagramPropsDialog.mainShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;1172.TargetDiagramPropsDialog.mainShapeButton.Label">
+  <dlg:button dlg:id="mainShapeButton" dlg:tab-index="4" dlg:left="156" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6992.TargetDiagramPropsDialog.mainShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6993.TargetDiagramPropsDialog.mainShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:mainShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="3" dlg:left="141" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1173.TargetDiagramPropsDialog.nextShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;1174.TargetDiagramPropsDialog.nextShapeButton.Label">
+  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="3" dlg:left="141" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6994.TargetDiagramPropsDialog.nextShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6995.TargetDiagramPropsDialog.nextShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:next" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="2" dlg:left="126" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1175.TargetDiagramPropsDialog.previousShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;1176.TargetDiagramPropsDialog.previousShapeButton.Label">
+  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="2" dlg:left="126" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6996.TargetDiagramPropsDialog.previousShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6997.TargetDiagramPropsDialog.previousShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:previous" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="111" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1177.TargetDiagramPropsDialog.firstShapeButton.HelpText" dlg:tabstop="true" dlg:value="&amp;1178.TargetDiagramPropsDialog.firstShapeButton.Label">
+  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="111" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:printable="false" dlg:help-text="&amp;6998.TargetDiagramPropsDialog.firstShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;6999.TargetDiagramPropsDialog.firstShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:first" script:language="UNO"/>
   </dlg:button>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="centerLayoutOptionButton" dlg:tab-index="16" dlg:visible="false" dlg:left="90" dlg:top="83" dlg:width="30" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1179.TargetDiagramPropsDialog.centerLayoutOptionButton.HelpText" dlg:value="&amp;1180.TargetDiagramPropsDialog.centerLayoutOptionButton.Label" dlg:group-name="Layout" dlg:checked="true"/>
-   <dlg:radio dlg:id="leftLayoutOptionButton" dlg:tab-index="17" dlg:visible="false" dlg:left="155" dlg:top="83" dlg:width="32" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;1181.TargetDiagramPropsDialog.leftLayoutOptionButton.HelpText" dlg:value="&amp;1182.TargetDiagramPropsDialog.leftLayoutOptionButton.Label" dlg:group-name="Layout"/>
+   <dlg:radio dlg:id="centerLayoutOptionButton" dlg:tab-index="22" dlg:left="83" dlg:top="101" dlg:width="60" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;7000.TargetDiagramPropsDialog.centerLayoutOptionButton.HelpText" dlg:value="&amp;7001.TargetDiagramPropsDialog.centerLayoutOptionButton.Label" dlg:group-name="Layout" dlg:checked="true"/>
+   <dlg:radio dlg:id="leftLayoutOptionButton" dlg:tab-index="23" dlg:left="160" dlg:top="101" dlg:width="60" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;7002.TargetDiagramPropsDialog.leftLayoutOptionButton.HelpText" dlg:value="&amp;7003.TargetDiagramPropsDialog.leftLayoutOptionButton.Label" dlg:group-name="Layout"/>
   </dlg:radiogroup>
-  <dlg:button dlg:id="okCommandButton" dlg:tab-index="30" dlg:left="5" dlg:top="242" dlg:width="225" dlg:height="14" dlg:help-text="&amp;1183.TargetDiagramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;1184.TargetDiagramPropsDialog.okCommandButton.Label">
-   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setTargetDiagramProps" script:language="UNO"/>
-  </dlg:button>
-  <dlg:text dlg:id="Label1" dlg:tab-index="33" dlg:left="13" dlg:top="204" dlg:width="55" dlg:height="9" dlg:help-text="&amp;1185.TargetDiagramPropsDialog.Label1.HelpText" dlg:value="&amp;1186.TargetDiagramPropsDialog.Label1.Label"/>
-  <dlg:text dlg:id="Label2" dlg:tab-index="34" dlg:left="13" dlg:top="213" dlg:width="55" dlg:height="9" dlg:help-text="&amp;1187.TargetDiagramPropsDialog.Label2.HelpText" dlg:value="&amp;1188.TargetDiagramPropsDialog.Label2.Label"/>
-  <dlg:titledbox dlg:id="FrameControl" dlg:tab-index="32" dlg:left="5" dlg:top="194" dlg:width="225" dlg:height="42" dlg:help-text="&amp;1189.TargetDiagramPropsDialog.FrameControl.HelpText">
-   <dlg:title dlg:value="&amp;1190.TargetDiagramPropsDialog.FrameControl.Label"/>
+  <dlg:button dlg:id="okCommandButton" dlg:tab-index="52" dlg:left="172" dlg:top="269" dlg:width="35" dlg:height="14" dlg:help-text="&amp;7004.TargetDiagramPropsDialog.okCommandButton.HelpText" dlg:value="&amp;7005.TargetDiagramPropsDialog.okCommandButton.Label" dlg:button-type="ok"/>
+  <dlg:titledbox dlg:id="FrameControl" dlg:tab-index="33" dlg:left="78" dlg:top="172" dlg:width="167" dlg:height="66" dlg:help-text="&amp;7006.TargetDiagramPropsDialog.FrameControl.HelpText">
+   <dlg:title dlg:value="&amp;7007.TargetDiagramPropsDialog.FrameControl.Label"/>
   </dlg:titledbox>
-  <dlg:text dlg:id="Label3" dlg:tab-index="43" dlg:left="13" dlg:top="222" dlg:width="55" dlg:height="9" dlg:help-text="&amp;1191.TargetDiagramPropsDialog.Label3.HelpText" dlg:value="&amp;1192.TargetDiagramPropsDialog.Label3.Label"/>
-  <dlg:text dlg:id="Label12" dlg:tab-index="42" dlg:left="185" dlg:top="222" dlg:width="35" dlg:height="9" dlg:help-text="&amp;1193.TargetDiagramPropsDialog.Label12.HelpText" dlg:value="&amp;1194.TargetDiagramPropsDialog.Label12.Label"/>
-  <dlg:text dlg:id="Label11" dlg:tab-index="41" dlg:left="185" dlg:top="213" dlg:width="35" dlg:height="9" dlg:help-text="&amp;1195.TargetDiagramPropsDialog.Label11.HelpText" dlg:value="&amp;1196.TargetDiagramPropsDialog.Label11.Label"/>
-  <dlg:text dlg:id="Label10" dlg:tab-index="40" dlg:left="185" dlg:top="204" dlg:width="35" dlg:height="9" dlg:help-text="&amp;1197.TargetDiagramPropsDialog.Label10.HelpText" dlg:value="&amp;1198.TargetDiagramPropsDialog.Label10.Label"/>
-  <dlg:text dlg:id="Label9" dlg:tab-index="44" dlg:left="68" dlg:top="222" dlg:width="50" dlg:height="9" dlg:help-text="&amp;1199.TargetDiagramPropsDialog.Label9.HelpText" dlg:value="&amp;1200.TargetDiagramPropsDialog.Label9.Label"/>
-  <dlg:text dlg:id="Label8" dlg:tab-index="39" dlg:left="68" dlg:top="213" dlg:width="50" dlg:height="9" dlg:help-text="&amp;1201.TargetDiagramPropsDialog.Label8.HelpText" dlg:value="&amp;1202.TargetDiagramPropsDialog.Label8.Label"/>
-  <dlg:text dlg:id="Label7" dlg:tab-index="38" dlg:left="68" dlg:top="204" dlg:width="50" dlg:height="9" dlg:help-text="&amp;1203.TargetDiagramPropsDialog.Label7.HelpText" dlg:value="&amp;1204.TargetDiagramPropsDialog.Label7.Label"/>
-  <dlg:text dlg:id="Label6" dlg:tab-index="37" dlg:left="130" dlg:top="222" dlg:width="55" dlg:height="9" dlg:help-text="&amp;1205.TargetDiagramPropsDialog.Label6.HelpText" dlg:value="&amp;1206.TargetDiagramPropsDialog.Label6.Label"/>
-  <dlg:text dlg:id="Label5" dlg:tab-index="36" dlg:left="130" dlg:top="213" dlg:width="55" dlg:height="9" dlg:help-text="&amp;1207.TargetDiagramPropsDialog.Label5.HelpText" dlg:value="&amp;1208.TargetDiagramPropsDialog.Label5.Label"/>
-  <dlg:text dlg:id="Label4" dlg:tab-index="35" dlg:left="130" dlg:top="204" dlg:width="55" dlg:height="9" dlg:help-text="&amp;1209.TargetDiagramPropsDialog.Label4.HelpText" dlg:value="&amp;1210.TargetDiagramPropsDialog.Label4.Label"/>
-  <dlg:menulist dlg:id="fontSizeListBox" dlg:tab-index="27" dlg:disabled="true" dlg:left="196" dlg:top="162" dlg:width="24" dlg:height="12" dlg:help-text="&amp;1211.TargetDiagramPropsDialog.fontSizeListBox.HelpText" dlg:spin="true" dlg:linecount="29">
+  <dlg:menulist dlg:id="fontSizeListBox" dlg:tab-index="49" dlg:disabled="true" dlg:left="123" dlg:top="247" dlg:width="24" dlg:height="12" dlg:help-text="&amp;7008.TargetDiagramPropsDialog.fontSizeListBox.HelpText" dlg:spin="true" dlg:linecount="29">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;1212.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1213.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1214.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1215.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1216.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1217.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1218.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1219.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1220.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1221.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1222.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1223.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1224.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1225.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1226.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1227.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1228.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1229.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1230.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1231.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1232.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1233.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1234.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1235.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1236.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1237.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1238.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1239.fontSizeListBox.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;1240.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7009.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7010.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7011.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7012.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7013.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7014.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7015.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7016.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7017.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7018.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7019.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7020.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7021.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7022.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7023.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7024.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7025.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7026.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7027.fontSizeListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7028.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7029.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7030.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7031.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7032.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7033.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7034.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7035.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7036.fontSizeListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7037.fontSizeListBox.StringItemList"/>
    </dlg:menupopup>
-   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:changedFontSize" script:language="UNO"/>
   </dlg:menulist>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="fontSizeOptionButton" dlg:tab-index="26" dlg:left="155" dlg:top="164" dlg:width="40" dlg:height="10" dlg:help-text="&amp;1241.TargetDiagramPropsDialog.fontSizeOptionButton.HelpText" dlg:value="&amp;1242.TargetDiagramPropsDialog.fontSizeOptionButton.Label" dlg:group-name="FontSettings">
+   <dlg:radio dlg:id="fontSizeOptionButton" dlg:tab-index="48" dlg:left="76" dlg:top="249" dlg:width="45" dlg:height="10" dlg:help-text="&amp;7038.TargetDiagramPropsDialog.fontSizeOptionButton.HelpText" dlg:value="&amp;7039.TargetDiagramPropsDialog.fontSizeOptionButton.Label" dlg:group-name="FontSettings">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setFontSize" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:titledbox dlg:id="frameControl7" dlg:tab-index="24" dlg:left="80" dlg:top="155" dlg:width="149" dlg:height="34" dlg:help-text="&amp;1243.TargetDiagramPropsDialog.frameControl7.HelpText">
-   <dlg:title dlg:value="&amp;1244.TargetDiagramPropsDialog.frameControl7.Label"/>
+  <dlg:titledbox dlg:id="frameControl7" dlg:tab-index="46" dlg:left="3" dlg:top="240" dlg:width="242" dlg:height="23" dlg:help-text="&amp;7040.TargetDiagramPropsDialog.frameControl7.HelpText">
+   <dlg:title dlg:value="&amp;7041.TargetDiagramPropsDialog.frameControl7.Label"/>
   </dlg:titledbox>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="textFitOptionButton" dlg:tab-index="25" dlg:left="88" dlg:top="164" dlg:width="60" dlg:height="10" dlg:help-text="&amp;1245.TargetDiagramPropsDialog.textFitOptionButton.HelpText" dlg:value="&amp;1246.TargetDiagramPropsDialog.textFitOptionButton.Label" dlg:group-name="FontSettings" dlg:checked="true">
+   <dlg:radio dlg:id="textFitOptionButton" dlg:tab-index="47" dlg:left="8" dlg:top="249" dlg:width="66" dlg:height="10" dlg:help-text="&amp;7042.TargetDiagramPropsDialog.textFitOptionButton.HelpText" dlg:value="&amp;7043.TargetDiagramPropsDialog.textFitOptionButton.Label" dlg:group-name="FontSettings" dlg:checked="true">
     <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setTextToFitToSize" script:language="UNO"/>
    </dlg:radio>
   </dlg:radiogroup>
-  <dlg:checkbox dlg:id="modifyTextColorCheckBox" dlg:tab-index="28" dlg:left="88" dlg:top="177" dlg:width="72" dlg:height="10" dlg:help-text="&amp;1247.TargetDiagramPropsDialog.modifyTextColorCheckBox.HelpText" dlg:value="&amp;1248.TargetDiagramPropsDialog.modifyTextColorCheckBox.Label" dlg:checked="false">
+  <dlg:checkbox dlg:id="modifyTextColorCheckBox" dlg:tab-index="50" dlg:left="158" dlg:top="249" dlg:width="65" dlg:height="10" dlg:help-text="&amp;7044.TargetDiagramPropsDialog.modifyTextColorCheckBox.HelpText" dlg:value="&amp;7045.TargetDiagramPropsDialog.modifyTextColorCheckBox.Label" dlg:checked="false">
    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:modifyTextColor" script:language="UNO"/>
   </dlg:checkbox>
-  <dlg:text dlg:id="textColorLabel" dlg:tab-index="45" dlg:disabled="true" dlg:left="164" dlg:top="177" dlg:width="30" dlg:height="10" dlg:help-text="&amp;1249.TargetDiagramPropsDialog.textColorLabel.HelpText" dlg:value="&amp;1250.TargetDiagramPropsDialog.textColorLabel.Label"/>
-  <dlg:img dlg:style-id="1" dlg:id="textColorImageControl" dlg:tab-index="29" dlg:disabled="true" dlg:left="196" dlg:top="176" dlg:width="15" dlg:height="10" dlg:help-text="&amp;1251.TargetDiagramPropsDialog.textColorImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="1" dlg:id="textColorImageControl" dlg:tab-index="51" dlg:disabled="true" dlg:left="226" dlg:top="249" dlg:width="15" dlg:height="10" dlg:help-text="&amp;7046.TargetDiagramPropsDialog.textColorImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable" script:language="UNO"/>
   </dlg:img>
+  <dlg:button dlg:id="cancelCommandButton" dlg:tab-index="53" dlg:left="210" dlg:top="269" dlg:width="35" dlg:height="14" dlg:help-text="&amp;7047.TargetDiagramPropsDialog.cancelCommandButton.HelpText" dlg:value="&amp;7048.TargetDiagramPropsDialog.cancelCommandButton.Label" dlg:button-type="cancel"/>
+  <dlg:button dlg:id="sizeButton" dlg:tab-index="6" dlg:left="186" dlg:top="-10" dlg:width="15" dlg:height="9" dlg:help-text="&amp;7049.TargetDiagramPropsDialog.sizeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7050.TargetDiagramPropsDialog.sizeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:size" script:language="UNO"/>
+  </dlg:button>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="baseColorsOptionButton" dlg:tab-index="13" dlg:left="83" dlg:top="43" dlg:width="80" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;7051.TargetDiagramPropsDialog.baseColorsOptionButton.HelpText" dlg:value="&amp;7052.TargetDiagramPropsDialog.baseColorsOptionButton.Label" dlg:group-name="Color" dlg:checked="true">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setBaseColors" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:button dlg:id="setBaseColorsCommandButton" dlg:tab-index="17" dlg:left="170" dlg:top="41" dlg:width="70" dlg:height="13" dlg:help-text="&amp;7053.TargetDiagramPropsDialog.setBaseColorsCommandButton.HelpText" dlg:value="&amp;7054.TargetDiagramPropsDialog.setBaseColorsCommandButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setBaseColorsSettings" script:language="UNO"/>
+  </dlg:button>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="preDefinedColorThemesOptionButton" dlg:tab-index="15" dlg:left="83" dlg:top="65" dlg:width="70" dlg:height="9" dlg:help-text="&amp;7055.TargetDiagramPropsDialog.preDefinedColorThemesOptionButton.HelpText" dlg:value="&amp;7056.TargetDiagramPropsDialog.preDefinedColorThemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorTheme" script:language="UNO"/>
+   </dlg:radio>
+   <dlg:radio dlg:id="preDefinedColorSchemesOptionButton" dlg:tab-index="16" dlg:left="83" dlg:top="76" dlg:width="70" dlg:height="9" dlg:help-text="&amp;7057.TargetDiagramPropsDialog.preDefinedColorSchemesOptionButton.HelpText" dlg:value="&amp;7058.TargetDiagramPropsDialog.preDefinedColorSchemesOptionButton.Label" dlg:group-name="Color">
+    <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.UNO:setPreDefinedColorScheme" script:language="UNO"/>
+   </dlg:radio>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="preDefinedColorThemesListBox" dlg:tab-index="19" dlg:left="180" dlg:top="63" dlg:width="60" dlg:height="12" dlg:help-text="&amp;7059.TargetDiagramPropsDialog.preDefinedColorThemesListBox.HelpText" dlg:spin="true" dlg:linecount="10">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;7060.preDefinedColorThemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7061.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7062.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7063.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7064.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7065.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7066.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7067.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7068.preDefinedColorThemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7069.preDefinedColorThemesListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:menulist dlg:id="preDefinedColorSchemesListBox" dlg:tab-index="20" dlg:left="180" dlg:top="75" dlg:width="60" dlg:height="12" dlg:help-text="&amp;7070.TargetDiagramPropsDialog.preDefinedColorSchemesListBox.HelpText" dlg:spin="true" dlg:linecount="12">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;7071.preDefinedColorSchemesListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7072.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7073.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7074.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7075.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7076.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7077.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7078.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7079.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7080.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7081.preDefinedColorSchemesListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7082.preDefinedColorSchemesListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:text dlg:id="lineWidthLabel" dlg:tab-index="27" dlg:left="157" dlg:top="126" dlg:width="50" dlg:height="10" dlg:help-text="&amp;7083.TargetDiagramPropsDialog.lineWidthLabel.HelpText" dlg:value="&amp;7084.TargetDiagramPropsDialog.lineWidthLabel.Label" dlg:align="right" dlg:tabstop="true"/>
+  <dlg:menulist dlg:id="lineWidthListBox" dlg:tab-index="28" dlg:left="210" dlg:top="124" dlg:width="30" dlg:height="12" dlg:help-text="&amp;7085.TargetDiagramPropsDialog.lineWidthListBox.HelpText" dlg:spin="true" dlg:linecount="6">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;7086.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7087.lineWidthListBox.StringItemList" dlg:selected="true"/>
+    <dlg:menuitem dlg:value="&amp;7088.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7089.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7090.lineWidthListBox.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;7091.lineWidthListBox.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:text dlg:id="propsLabel1" dlg:tab-index="34" dlg:left="85" dlg:top="181" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7092.TargetDiagramPropsDialog.propsLabel1.HelpText" dlg:value="&amp;7093.TargetDiagramPropsDialog.propsLabel1.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel2" dlg:tab-index="36" dlg:left="85" dlg:top="190" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7094.TargetDiagramPropsDialog.propsLabel2.HelpText" dlg:value="&amp;7095.TargetDiagramPropsDialog.propsLabel2.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel3" dlg:tab-index="38" dlg:left="85" dlg:top="199" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7096.TargetDiagramPropsDialog.propsLabel3.HelpText" dlg:value="&amp;7097.TargetDiagramPropsDialog.propsLabel3.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel4" dlg:tab-index="40" dlg:left="85" dlg:top="208" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7098.TargetDiagramPropsDialog.propsLabel4.HelpText" dlg:value="&amp;7099.TargetDiagramPropsDialog.propsLabel4.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel5" dlg:tab-index="42" dlg:left="85" dlg:top="217" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7100.TargetDiagramPropsDialog.propsLabel5.HelpText" dlg:value="&amp;7101.TargetDiagramPropsDialog.propsLabel5.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel6" dlg:tab-index="44" dlg:left="85" dlg:top="226" dlg:width="65" dlg:height="9" dlg:help-text="&amp;7102.TargetDiagramPropsDialog.propsLabel6.HelpText" dlg:value="&amp;7103.TargetDiagramPropsDialog.propsLabel6.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel7" dlg:tab-index="35" dlg:left="152" dlg:top="181" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7104.TargetDiagramPropsDialog.propsLabel7.HelpText" dlg:value="&amp;7105.TargetDiagramPropsDialog.propsLabel7.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel8" dlg:tab-index="37" dlg:left="152" dlg:top="190" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7106.TargetDiagramPropsDialog.propsLabel8.HelpText" dlg:value="&amp;7107.TargetDiagramPropsDialog.propsLabel8.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel9" dlg:tab-index="39" dlg:left="152" dlg:top="199" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7108.TargetDiagramPropsDialog.propsLabel9.HelpText" dlg:value="&amp;7109.TargetDiagramPropsDialog.propsLabel9.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel10" dlg:tab-index="41" dlg:left="152" dlg:top="208" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7110.TargetDiagramPropsDialog.propsLabel10.HelpText" dlg:value="&amp;7111.TargetDiagramPropsDialog.propsLabel10.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel11" dlg:tab-index="43" dlg:left="152" dlg:top="217" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7112.TargetDiagramPropsDialog.propsLabel11.HelpText" dlg:value="&amp;7113.TargetDiagramPropsDialog.propsLabel11.Label" dlg:tabstop="false"/>
+  <dlg:text dlg:id="propsLabel12" dlg:tab-index="45" dlg:left="152" dlg:top="226" dlg:width="90" dlg:height="9" dlg:help-text="&amp;7114.TargetDiagramPropsDialog.propsLabel12.HelpText" dlg:value="&amp;7115.TargetDiagramPropsDialog.propsLabel12.Label" dlg:tabstop="false"/>
  </dlg:bulletinboard>
 </dlg:window>

@@ -7,6 +7,7 @@ import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.container.XNamed;
+import com.sun.star.drawing.ConnectorType;
 import com.sun.star.drawing.FillStyle;
 import com.sun.star.drawing.LineStyle;
 import com.sun.star.drawing.TextFitToSizeType;
@@ -16,15 +17,17 @@ import com.sun.star.frame.XFrame;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.text.XText;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
 import oxygenoffice.extensions.smart.Controller;
-import oxygenoffice.extensions.smart.Gui;
+import oxygenoffice.extensions.smart.diagram.DataOfDiagram;
 import oxygenoffice.extensions.smart.diagram.Diagram;
-import oxygenoffice.extensions.smart.diagram.GradientDefinitions;
+import oxygenoffice.extensions.smart.diagram.SchemeDefinitions;
+import oxygenoffice.extensions.smart.gui.Gui;
 
 
-public abstract class OrganizationChart extends Diagram{
+public abstract class OrganizationChart extends Diagram {
 
     // rates of measure of groupShape (e.g.: 10:6)
     protected int               m_iGroupWidth;
@@ -47,31 +50,181 @@ public abstract class OrganizationChart extends Diagram{
     //item hierarhich tpye in diagram
     protected short             m_sNewItemHType     = UNDERLING;
 
-    //styles
+    //styles of property dialog
     public final static short   DEFAULT             = 0;
     public final static short   WITHOUT_OUTLINE     = 1;
     public final static short   NOT_ROUNDED         = 2;
     public final static short   WITH_SHADOW         = 3;
-    // 4 - 15 Gradients from GradientDefinitions.java
-    public final static short   USER_DEFINE         = 16;
 
-    //values of propperties
-    private final static int    CORNER_RADIUS1      = 350;
-    private final static int    CORNER_RADIUS2      = 700;
-    public final static int     SHADOW_DIST         = 300;
-    private final static int    SHADOW_TRANSP       = 30;
-   
+    public final static short   GREEN_DARK          = 4;
+    public final static short   GREEN_BRIGHT        = 5;
+    public final static short   BLUE_DARK           = 6;
+    public final static short   BLUE_BRIGHT         = 7;
+    public final static short   PURPLE_DARK         = 8;
+    public final static short   PURPLE_BRIGHT       = 9;
+    public final static short   ORANGE_DARK         = 10;
+    public final static short   ORANGE_BRIGHT       = 11;
+    public final static short   YELLOW_DARK         = 12;
+    public final static short   YELLOW_BRIGHT       = 13;
+
+    public final static short   BLUE_SCHEME         = 14;
+    public final static short   AQUA_SCHEME         = 15;
+    public final static short   RED_SCHEME          = 16;
+    public final static short   FIRE_SCHEME         = 17;
+    public final static short   SUN_SCHEME          = 18;
+    public final static short   GREEN_SCHEME        = 19;
+    public final static short   OLIVE_SCHEME        = 20;
+    public final static short   PURPLE_SCHEME       = 21;
+    public final static short   PINK_SCHEME         = 22;
+    public final static short   INDIAN_SCHEME       = 23;
+    public final static short   MAROON_SCHEME       = 24;
+    public final static short   BROWN_SCHEME        = 25;
+    public final static short   USER_DEFINE         = 26;
+
+    public final static short   FIRST_COLORTHEMEGRADIENT_STYLE_VALUE = 4;
+    public final static short   FIRST_COLORSCHEME_STYLE_VALUE = 14;
+
+    private boolean m_IsHiddenRootElement           = false;
+    
+    public boolean isHiddenRootElementProp(){
+        return m_IsHiddenRootElement;
+    }
+    
+    public void setHiddenRootElementProp(boolean isHidden){
+        m_IsHiddenRootElement = isHidden;
+    }
+
+    public void initRootElementHiddenProperty(){
+        if(getDiagramTree().getRootItem() != null)
+            m_IsHiddenRootElement = getDiagramTree().getRootItem().isHiddenElement();
+    }
 
     public OrganizationChart(Controller controller, Gui gui, XFrame xFrame) {
         super(controller, gui, xFrame);
         m_sNewItemHType = UNDERLING;
-        setSelectedAllShapesProps(true);
-        setModifyColorsProps(false);
-        m_IsGradients = false;
-        m_IsPreDefinedGradients = false;
-        m_sRounded = Diagram.MEDIUM_ROUNDED;
-        m_IsOutline = true;
-        m_IsShadow = false;
+        setDefaultProps();
+    }
+
+    @Override
+    public boolean isColorSchemeStyle(short style){
+        return  style == BLUE_SCHEME   || style == AQUA_SCHEME   ||
+                style == RED_SCHEME    || style == FIRE_SCHEME   ||
+                style == SUN_SCHEME    || style == GREEN_SCHEME  ||
+                style == OLIVE_SCHEME  || style == PURPLE_SCHEME ||
+                style == PINK_SCHEME   || style == INDIAN_SCHEME ||
+                style == MAROON_SCHEME || style == BROWN_SCHEME;
+    }
+
+    @Override
+    public short getColorModeOfSchemeStyle(short style){
+        return (short)(style - FIRST_COLORSCHEME_STYLE_VALUE + Diagram.FIRST_COLORSCHEME_MODE_VALUE);
+    }
+
+    @Override
+    public boolean isColorThemeGradientStyle(short style){
+        return  style == GREEN_DARK  || style == GREEN_BRIGHT  ||
+                style == BLUE_DARK   || style == BLUE_BRIGHT   ||
+                style == PURPLE_DARK || style == PURPLE_BRIGHT ||
+                style == ORANGE_DARK || style == ORANGE_BRIGHT ||
+                style == YELLOW_DARK || style == YELLOW_BRIGHT;
+    }
+
+    @Override
+    public short getColorModeOfThemeGradientStyle(short style){
+        return (short)(style - FIRST_COLORTHEMEGRADIENT_STYLE_VALUE + Diagram.FIRST_COLORTHEMEGRADIENT_MODE_VALUE);
+    }
+    
+    @Override
+    public void initColorModeAndStyle(){
+        initColorModeAndStyle(getDiagramTree().getControlShape());
+    }
+    
+    @Override
+    public void initProperties(){
+        XShape xControlShape = getDiagramTree().getControlShape();
+        XShape xRootShape = getDiagramTree().getRootItem().getRectangleShape();
+        if(xControlShape != null && xRootShape != null){
+            initProperties(xControlShape, xRootShape);
+            initRootElementHiddenProperty();
+        }
+    }
+    
+    public void initProperties(XShape xControlShape, XShape xRootShape){
+        setDefaultProps();
+        initColorModeAndStyle();
+        XPropertySet xProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xRootShape);
+        try {
+            if (isSimpleColorMode()){
+                setColorProp(AnyConverter.toInt(xProps.getPropertyValue("FillColor")));
+            }
+            if(isGradientColorMode()){
+                Gradient aGradient = (Gradient)xProps.getPropertyValue("FillGradient");
+                setStartColorProp(aGradient.StartColor);
+                setEndColorProp(aGradient.EndColor);
+                if(aGradient.Angle == 900)
+                    setGradientDirectionProp(Diagram.HORIZONTAL);
+            }
+            if(isColorThemeGradientMode()){
+                setColorThemeGradientColors();
+                //setShapesLineWidthProp(Diagram.LINE_WIDTH200);
+                setRoundedProp(Diagram.NULL_ROUNDED);
+            }
+            //if(getStyleProp() == OrganizationChart.DEFAULT){ }
+            if(getStyleProp() == OrganizationChart.WITHOUT_OUTLINE)
+                setOutlineProp(false);
+            if(getStyleProp() == OrganizationChart.NOT_ROUNDED)
+                setRoundedProp(Diagram.NULL_ROUNDED);
+            if(getStyleProp() == OrganizationChart.WITH_SHADOW)
+                setShadowProp(true);
+
+            if(getStyleProp() == OrganizationChart.USER_DEFINE){
+                if(((LineStyle)xProps.getPropertyValue("LineStyle")).getValue() == LineStyle.NONE_value)
+                    setOutlineProp(false);
+                setShapesLineWidthProp(AnyConverter.toInt(xProps.getPropertyValue("LineWidth")));
+                int cornerRadius = AnyConverter.toInt(xProps.getPropertyValue("CornerRadius"));
+                if(cornerRadius < 200)
+                    setRoundedProp(Diagram.NULL_ROUNDED);
+                else if(cornerRadius < 600)
+                    setRoundedProp(Diagram.MEDIUM_ROUNDED);
+                else
+                    setRoundedProp(Diagram.EXTRA_ROUNDED);
+                if(AnyConverter.toBoolean(xProps.getPropertyValue("Shadow")))
+                    setShadowProp(true);
+            }
+
+            setFontPropertyValues();
+
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, xRootShape);
+            XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
+            setTextColorProp(AnyConverter.toInt(xTextProps.getPropertyValue("CharColor")));
+
+            if(getDiagramTypeName().equals("TableHierarchyDiagram"))
+                setShownConnectorsProp(false);
+            if(isShownConnectorsProp()){
+                XShape xConnShape = ((OrganizationChart)this).getRootsConnector();
+                xProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xConnShape);
+                setConnectorsLineWidthProp(AnyConverter.toInt(xProps.getPropertyValue("LineWidth")));
+                setConnectorColorProp(AnyConverter.toInt(xProps.getPropertyValue("LineColor")));
+                if(((ConnectorType)xProps.getPropertyValue("EdgeKind")).getValue() == ConnectorType.STANDARD_value)
+                    setConnectorTypeProp(Diagram.CONN_STANDARD);
+                if(((ConnectorType)xProps.getPropertyValue("EdgeKind")).getValue() == ConnectorType.LINE_value)
+                    setConnectorTypeProp(Diagram.CONN_LINE);
+                if(((ConnectorType)xProps.getPropertyValue("EdgeKind")).getValue() == ConnectorType.LINES_value)
+                    setConnectorTypeProp(Diagram.CONN_STRAIGHT);
+                if(((ConnectorType)xProps.getPropertyValue("EdgeKind")).getValue() == ConnectorType.CURVE_value)
+                    setConnectorTypeProp(Diagram.CONN_CURVED);
+                if((AnyConverter.toString(xProps.getPropertyValue("LineStartName"))).equals("Arrow"))
+                    setConnectorStartArrowProp(true);
+                if((AnyConverter.toString(xProps.getPropertyValue("LineEndName"))).equals("Arrow"))
+                    setConnectorEndArrowProp(true);
+            }
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
     }
 
     public abstract void initDiagramTree(OrganizationChartTree diagramTree);
@@ -105,6 +258,11 @@ public abstract class OrganizationChart extends Diagram{
     }
 
     @Override
+    public void createDiagram(DataOfDiagram datas){
+        super.createDiagram();
+    }
+
+    @Override
     public void createDiagram(){
         super.createDiagram();
         createDiagram(4);
@@ -112,12 +270,13 @@ public abstract class OrganizationChart extends Diagram{
 
     public abstract void createDiagram(int n);
 
+    @Override
     public void setDrawArea(){
         try {
             //allow horizontal place for shadow properties
-            m_PageProps.BorderTop += (SHADOW_DIST + 100);
-            m_DrawAreaWidth -= ( 2 * SHADOW_DIST + 100);
-            m_DrawAreaHeight -= (SHADOW_DIST + 100);
+            m_PageProps.BorderTop += (SHADOW_DIST1 + 100);
+            m_DrawAreaWidth -= ( 2 * SHADOW_DIST1 + 100);
+            m_DrawAreaHeight -= (SHADOW_DIST1 + 100);
 
             int orignGSWidth = m_DrawAreaWidth;
             if ((m_DrawAreaWidth / m_iGroupWidth) <= (m_DrawAreaHeight / m_iGroupHeight)) {
@@ -130,7 +289,7 @@ public abstract class OrganizationChart extends Diagram{
             m_iHalfDiff = 0;
             if (orignGSWidth > m_DrawAreaWidth)
                 m_iHalfDiff = (orignGSWidth - m_DrawAreaWidth) / 2;
-            m_iHalfDiff += SHADOW_DIST;
+            m_iHalfDiff += SHADOW_DIST1;
             m_xGroupShape.setPosition(new Point(m_PageProps.BorderLeft + m_iHalfDiff, m_PageProps.BorderTop));
         } catch (PropertyVetoException ex) {
             System.err.println(ex.getLocalizedMessage());
@@ -164,7 +323,6 @@ public abstract class OrganizationChart extends Diagram{
 
     @Override
     public void removeShape(){
-        
         XShapes xSelectedShapes = getController().getSelectedShapes();
         XShape xShape = null;
         try{
@@ -196,12 +354,14 @@ public abstract class OrganizationChart extends Diagram{
                     // clear everythin under the item in the tree
                     OrganizationChartTreeItem selectedItem = getDiagramTree().getTreeItem(xSelectedShape);
 
+                    boolean noItem = false;
                     OrganizationChartTreeItem dadItem = selectedItem.getDad();
                     if(selectedItem.equals(dadItem.getFirstChild())){
                         if(selectedItem.getFirstSibling() != null){
                             dadItem.setFirstChild(selectedItem.getFirstSibling());
                         }else{
                             dadItem.setFirstChild(null);
+                            noItem = true;
                         }
                     }else{
                         OrganizationChartTreeItem previousSibling = getDiagramTree().getPreviousSibling(selectedItem);
@@ -226,10 +386,24 @@ public abstract class OrganizationChart extends Diagram{
                     getDiagramTree().removeFromRectangles(xSelectedShape);
                     m_xShapes.remove(xSelectedShape);
                     setNullSelectedItem(selectedItem);
-                    getController().setSelectedShape((Object)xDadShape);
+                    if(isHiddenRootElementProp() && getDiagramTree().getRootItem().getRectangleShape().equals(xDadShape)){
+                        if(noItem){
+                            getDiagramTree().getRootItem().hideElement();
+                            setHiddenRootElementProp(false);
+                            getController().setSelectedShape((Object)xDadShape);
+                        }else{
+                            getController().setSelectedShape((Object)getDiagramTree().getRootItem().getFirstChild().getRectangleShape());
+                        }
+                    }else{
+                        getController().setSelectedShape((Object)xDadShape);
+                    }
                 }
             }
         }
+    }
+
+    public XShape getRootsConnector(){
+        return getDiagramTree().getRootsConnector();
     }
 
     public boolean isErrorInTree(){
@@ -252,110 +426,128 @@ public abstract class OrganizationChart extends Diagram{
         initDiagram();
     }
 
-    public void setControlShapeProps(XShape xBaseShape){
-        try {
-            XPropertySet xBaseProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xBaseShape);
-            xBaseProps.setPropertyValue("FillStyle", FillStyle.NONE);
-            xBaseProps.setPropertyValue("LineStyle", LineStyle.NONE);
-            xBaseProps.setPropertyValue("MoveProtect", new Boolean(true));
-        } catch (UnknownPropertyException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (PropertyVetoException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (IllegalArgumentException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (WrappedTargetException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        }
-    }
-
     @Override
     public void refreshDiagram(){
         getDiagramTree().refresh();
     }
 
+    public void refreshSchemesColors(){
+        getDiagramTree().refreshSchemesColors();
+    }
+
     public void refreshConnectorProps(){
         getDiagramTree().refreshConnectorProps();
     }
-    
-    public void setGradientsStylesColors(short level, int iSteps){
-        setStartColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, level, iSteps));
-        setEndColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, level+1, iSteps));
+
+    public void setSchemesColors(short level, int iSteps){
+        int colorCode = getColorModeProp() - Diagram.FIRST_COLORSCHEME_MODE_VALUE;
+        setStartColorProp(SchemeDefinitions.getGradientColor(colorCode, level, iSteps));
+        setEndColorProp(SchemeDefinitions.getGradientColor(colorCode, level+1, iSteps));
+    }
+
+    public void setColorSettingsOfShape(XShape xShape){
+        if(isAnyGradientColorMode()){
+            if(isColorSchemeMode()){
+                int iSteps = OrganizationChartTreeItem._maxLevel + 1;
+                short level = getLevelOfShape(xShape);
+                if(level != -1)
+                    setSchemesColors(level, iSteps);
+            }
+            setGradientWithAutoAngle(xShape);
+            setLineColorOfShape(xShape);
+        }else{
+            setColorOfShape(xShape);
+            setLineColorOfShape(xShape);
+        }
+    }
+
+    public short getLevelOfShape(XShape xShape){
+        OrganizationChartTree diagramTree = getDiagramTree();
+        if(diagramTree != null){
+            OrganizationChartTreeItem item = diagramTree.getTreeItem(xShape);
+            if(item != null){
+                if(getController().getDiagramType() == Controller.ORGANIGRAM)
+                    return item.getDeepOfItem();
+                else
+                    return item.getLevel();
+            }
+        }
+        return (short)-1;
     }
     
+    public void setShapeProperties(XShape xShape, String type, boolean isModifyColorOfShape) {
+        if(isModifyColorOfShape){
+            setModifyColorsProp(true);
+            setTextColorChange(true);
+            setShapeProperties(xShape, type);
+            setModifyColorsProp(false);
+            setTextColorChange(false);
+        } else {
+            setShapeProperties(xShape, type);
+        }
+    }
+
     @Override
     public void setShapeProperties(XShape xShape, String type) {
-        int color = -1;
-        XPropertySet xProp = null;
         try {
-            xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
+            XPropertySet xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
             
-            if(isModifyColorsProps()){
-                if(m_IsGradients || m_IsPreDefinedGradients){
-                    if(m_IsPreDefinedGradients){
-                        OrganizationChartTree diagramTree = getDiagramTree();
-                        if(diagramTree != null){
-                            OrganizationChartTreeItem item = diagramTree.getTreeItem(xShape);
-                            if(item != null){
-                                int iSteps = OrganizationChartTreeItem._maxLevel + 1;
-                                if(getController().getDiagramType() == Controller.ORGANIGRAM)
-                                    setGradientsStylesColors(item.getDeepOfItem(), iSteps);
-                                else
-                                    setGradientsStylesColors(item.getLevel(), iSteps);
-                            }
-                        }
-                    }
-                    if(getGradientDirectionProps() == Diagram.VERTICAL)
-                        setGradient(xShape);
-                    else
-                        setGradient(xShape, (short)900);
+            if(type.equals("BaseShape")){
+                if(isTextFitProp()){
+                    xProp.setPropertyValue("TextFitToSize", TextFitToSizeType.PROPORTIONAL);
                 }else{
-                    if(getGui() != null && getGui().getControlDialogWindow() != null)
-                        color = getGui().getImageColorOfControlDialog();
-                    if(color == -1)
-                        color = m_iColor;
-                    xProp.setPropertyValue("FillStyle", FillStyle.SOLID);
-                    xProp.setPropertyValue("FillColor", new Integer(color));
+                    xProp.setPropertyValue("TextFitToSize", TextFitToSizeType.NONE);
+                    xProp.setPropertyValue("CharHeight", new Float(40.0));
                 }
             }
+  
+            if(type.equals("RectangleShape")){
+                if(isModifyColorsProp())
+                    setColorSettingsOfShape(xShape);
+                
+                if(getRoundedProp() == Diagram.NULL_ROUNDED)
+                    xProp.setPropertyValue("CornerRadius", new Integer(0));
+                if(getRoundedProp() == Diagram.MEDIUM_ROUNDED)
+                    xProp.setPropertyValue("CornerRadius", new Integer(CORNER_RADIUS2));
+                if(getRoundedProp() == Diagram.EXTRA_ROUNDED)
+                    xProp.setPropertyValue("CornerRadius", new Integer(CORNER_RADIUS3));
 
-            if(m_sRounded == Diagram.NULL_ROUNDED)
-                xProp.setPropertyValue("CornerRadius", new Integer(0));
-            if(m_sRounded == Diagram.MEDIUM_ROUNDED)
-                xProp.setPropertyValue("CornerRadius", new Integer(CORNER_RADIUS1));
-            if(m_sRounded == Diagram.EXTRA_ROUNDED)
-                xProp.setPropertyValue("CornerRadius", new Integer(CORNER_RADIUS2));
-
-            if(m_IsOutline){
-                xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
-                xProp.setPropertyValue("LineWidth", new Integer(100));
-            }else{
-                xProp.setPropertyValue("LineStyle", LineStyle.NONE);
-            }
-    
-            if(m_IsShadow){
-                xProp.setPropertyValue("Shadow", new Boolean(true));
-                xProp.setPropertyValue("ShadowXDistance", new Integer(SHADOW_DIST));
-                xProp.setPropertyValue("ShadowYDistance", new Integer(-SHADOW_DIST));
-                xProp.setPropertyValue("ShadowTransparence", new Integer(SHADOW_TRANSP));
-                int shadowColor = -1;
-                if(((FillStyle)xProp.getPropertyValue("FillStyle")) == FillStyle.SOLID)
-                    shadowColor = AnyConverter.toInt(xProp.getPropertyValue("FillColor"));
-                else{
-                    if(getGradientDirectionProps() == Diagram.VERTICAL)
-                        shadowColor = ((Gradient)xProp.getPropertyValue("FillGradient")).StartColor;
-                    if(getGradientDirectionProps() == Diagram.HORIZONTAL)
-                        shadowColor = ((Gradient)xProp.getPropertyValue("FillGradient")).EndColor;
+                if(isOutlineProp()){
+                    xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
+                    xProp.setPropertyValue("LineWidth", new Integer(getShapesLineWidhtProp()));
+                }else{
+                    xProp.setPropertyValue("LineStyle", LineStyle.NONE);
                 }
-                if(shadowColor == -1)
-                    shadowColor = 8421504;
-                xProp.setPropertyValue("ShadowColor", new Integer(shadowColor));
-            }else{
-                xProp.setPropertyValue("Shadow", new Boolean(false));
+
+                if(isShadowProp()){
+                    xProp.setPropertyValue("Shadow", new Boolean(true));
+                    xProp.setPropertyValue("ShadowXDistance", new Integer(SHADOW_DIST1));
+                    xProp.setPropertyValue("ShadowYDistance", new Integer(-SHADOW_DIST1));
+                    xProp.setPropertyValue("ShadowTransparence", new Integer(SHADOW_TRANSP));
+                    int shadowColor = -1;
+                    if(((FillStyle)xProp.getPropertyValue("FillStyle")) == FillStyle.SOLID)
+                        shadowColor = AnyConverter.toInt(xProp.getPropertyValue("FillColor"));
+                    else{
+                        int startColor = ((Gradient)xProp.getPropertyValue("FillGradient")).StartColor;
+                        int endColor = ((Gradient)xProp.getPropertyValue("FillGradient")).EndColor;
+                        shadowColor = startColor < endColor ? startColor : endColor;
+                    }
+                    if(shadowColor == -1)
+                        shadowColor = 8421504;
+                    xProp.setPropertyValue("ShadowColor", new Integer(shadowColor));
+                }else{
+                    xProp.setPropertyValue("Shadow", new Boolean(false));
+                }
+                setFontPropertiesOfShape(xShape);
             }
-
-            setFontPropertiesOfShape(xShape);
-
+            if(type.equals("ConnectorShape")){
+                if(isTextFitProp()){
+                    xProp.setPropertyValue("TextFitToSize", TextFitToSizeType.PROPORTIONAL);
+                }else{
+                    xProp.setPropertyValue("TextFitToSize", TextFitToSizeType.NONE);
+                }
+                setConnectorShapeLineProps(xShape);
+            }
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
@@ -373,100 +565,62 @@ public abstract class OrganizationChart extends Diagram{
             XPropertySet xPropText = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, getDiagramTree().getRootItem().getRectangleShape());
             TextFitToSizeType textFit = (TextFitToSizeType)xPropText.getPropertyValue("TextFitToSize");
             if(textFit.getValue() == TextFitToSizeType.NONE_value){
-                setTextFitProps(false);
+                setTextFitProp(false);
             } else{
-                setTextFitProps(true);
+                setTextFitProp(true);
             }
             float fontSizeValue = AnyConverter.toFloat(xPropText.getPropertyValue("CharHeight"));
-            setFontSizeProps(fontSizeValue);
+            setFontSizeProp(fontSizeValue);
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
     }
-    
-    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, boolean isPreDefinedGradients, short sRounded, boolean isOutline, boolean isShadow){
-        setSelectedAllShapesProps(isSelectAllShape);
-        setModifyColorsProps(isModifyColors);
-        setPreDefinedGradientsProps(isPreDefinedGradients);
-        setRoundedProps(sRounded);
-        setOutlineProps(isOutline);
-        setShadowProps(isShadow);
-        getGui().setColorModeOfImageOfControlDialog();
+
+    public void setDiagramPropertyValues(boolean isSelectAllShape, boolean isModifyColors, short sRounded, boolean isOutline, int lineWidth, boolean isShadow){
+        setSelectedAllShapesProp(isSelectAllShape);
+        setModifyColorsProp(isModifyColors);
+        setRoundedProp(sRounded);
+        setOutlineProp(isOutline);
+        setShapesLineWidthProp(lineWidth);
+        setShadowProp(isShadow);
     }
-  
+ 
     @Override
-    public void refreshShapeProperties(){
-        
-        // need to memorize members, if user would exit into propsDialog
-        boolean isSelectAllShape = isSelectedAllShapesProps();
-        boolean isModifyColors = isModifyColorsProps();
-        boolean isGradients = m_IsGradients;
-        boolean isPreDefinedGradients = m_IsPreDefinedGradients;
-        short sRounded = m_sRounded;
-        boolean isOutline = m_IsOutline;
-        boolean isShadow = m_IsShadow;
-        
-        m_IsAction = false;
+    public void showPropertyDialog(){
+        getGui().enableControlDialogWindow(false);
+        short exec = getGui().executePropertiesDialog();
+        if(exec == 1){  
+            getGui().setPropertiesOfOrganingram();
 
-        getGui().executePropertiesDialog();
-
-        if(m_IsAction){
-            
-            if( m_Style == DEFAULT )
-                setPropertiesValues(true, false, false, Diagram.MEDIUM_ROUNDED, true, false);
-            if( m_Style == WITHOUT_OUTLINE)
-                setPropertiesValues(true, false, false, Diagram.MEDIUM_ROUNDED, false, false);
-            if( m_Style == NOT_ROUNDED)
-                setPropertiesValues(true, false, false, Diagram.NULL_ROUNDED, true, false);
-            if( m_Style == WITH_SHADOW)
-                setPropertiesValues(true, false, false, Diagram.MEDIUM_ROUNDED, true, true);
-            if(GradientDefinitions.isPreDefinedGradient(m_Style)){
-                setGradientProps(false);
-                if(getController().getDiagramType() == Controller.HORIZONTALORGANIGRAM)
-                    setGradientDirectionProps(Diagram.HORIZONTAL);
-                else
-                    setGradientDirectionProps(Diagram.VERTICAL);
-            }
-            if(GradientDefinitions.isPreDefinedGradient(m_Style))
-                setPropertiesValues(true, true, true, Diagram.MEDIUM_ROUNDED, true, false);
-            if(m_Style == USER_DEFINE){
-                if(isModifyColorsProps()){
-                    setPreDefinedGradientsProps(false);
-                    setGradientProps(getGui().isGradientPropsInDiagramPropsDialog());
-                    if(m_IsGradients){
-                        setStartColorProps(getGui().getImageColorOfControl(getGui().m_xStartColorImageControlOfPD));
-                        setEndColorProps(getGui().getImageColorOfControl(getGui().m_xEndColorImageControlOfPD));
-                    }else{
-                        setColorProps(getGui().getImageColorOfControl(getGui().m_xColorImageControlOfPD));
-                        getGui().setImageColorOfControlDialog(m_iColor);
-                    }
-                }
-            }
-            
-            if(isSelectedAllShapesProps()){
+            if(isSelectedAllShapesProp()){
                 setAllShapeProperties();
+                setModifyColorsProp(false);
             } else {
-                if(getSeletctedAreaProps() == Diagram.SELECTED_SHAPES)
+                if(getSeletctedAreaProp() == Diagram.SELECTED_SHAPES){
                     setSelectedShapesProperties();
-                if(getSeletctedAreaProps() == Diagram.SIBLING_SHAPES)
+                }
+                if(getSeletctedAreaProp() == Diagram.SIBLING_SHAPES){
                     setSiblingShapesProperties();
-                if(getSeletctedAreaProps() == Diagram.BRANCH_SHAPES)
+                }
+                if(getSeletctedAreaProp() == Diagram.BRANCH_SHAPES){
                     setBranchShapesProperties();
-                
-                setAllShapeFontMeausereProperties();
+                }
+                setModifyColorsProp(false);
+                setAllShapeProperties();
             }
-
-            setModifyColorsProps(false);
-        }else{
-            setSelectedAllShapesProps(isSelectAllShape);
-            setModifyColorsProps(isModifyColors);
-            m_IsGradients = isGradients;
-            m_IsPreDefinedGradients = isPreDefinedGradients;
-            m_sRounded = sRounded;
-            m_IsOutline = isOutline;
-            m_IsShadow = isShadow;
-        }
-        m_IsAction = false;
+            
+            if(getController().getDiagramType() == Controller.ORGANIGRAM){   
+                getController().getDiagram().refreshDiagram();
+                refreshConnectorProps();
+                if(getDiagramTree().getRootItem() != null)
+                    getDiagramTree().getRootItem().hideElement();
+            } else {
+                if(getDiagramTree().getRootItem() != null)
+                    getDiagramTree().getRootItem().hideElement();
+                getController().getDiagram().refreshDiagram();
+            }
+        } 
+        getGui().enableAndSetFocusControlDialog();
     }
     
     public void setAllShapeProperties(){
@@ -476,9 +630,12 @@ public abstract class OrganizationChart extends Diagram{
             for(int i=0; i < m_xShapes.getCount(); i++){
                 xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
                 currShapeName = getShapeName(xCurrShape);
-                if (currShapeName.contains("RectangleShape")&& !currShapeName.endsWith("RectangleShape0")) {
+                if (currShapeName.contains("RectangleShape") && !currShapeName.endsWith("RectangleShape0"))
                     setShapeProperties(xCurrShape,"RectangleShape");
-                }
+                if (currShapeName.contains("ConnectorShape"))
+                    setShapeProperties(xCurrShape,"ConnectorShape");
+                if (currShapeName.contains("RectangleShape0"))
+                    setShapeProperties(xCurrShape,"BaseShape");
             }
         } catch (IndexOutOfBoundsException ex) {
             System.err.println(ex.getLocalizedMessage());
@@ -486,30 +643,11 @@ public abstract class OrganizationChart extends Diagram{
             System.err.println(ex.getLocalizedMessage());
         }
     }
-
-    public void setAllShapeFontMeausereProperties(){
-        try {
-            XShape xCurrShape = null;
-            String currShapeName = "";
-            for(int i=0; i < m_xShapes.getCount(); i++){
-                xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
-                currShapeName = getShapeName(xCurrShape);
-                if (currShapeName.contains("RectangleShape")&& !currShapeName.endsWith("RectangleShape0")) {
-                    setFontPropertiesOfShape(xCurrShape);
-                }
-            }
-        } catch (IndexOutOfBoundsException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        } catch (WrappedTargetException ex) {
-            System.err.println(ex.getLocalizedMessage());
-        }
-    }
-    
+   
     public void setSelectedShapesProperties(){
          XShape xCurrShape = null;
          String currShapeName = "";
          XShapes xShapes = getController().getSelectedShapes();
-         
          try{
             if(xShapes != null){
                 for(int i = 0; i < xShapes.getCount(); i++){
@@ -608,62 +746,103 @@ public abstract class OrganizationChart extends Diagram{
         }
     }
 
-    public void setItemProperties(XShape xRectangleShape, short level){
-        setMoveProtectOfShape(xRectangleShape);
-        setFontPropertiesOfShape(xRectangleShape);
-        if(m_IsGradients || m_IsPreDefinedGradients){
-            if(m_IsGradients){
-                if(getGradientDirectionProps() == Diagram.VERTICAL)
-                    setGradient(xRectangleShape);
-                else
-                    setGradient(xRectangleShape, (short)900);
-            }
-        } else{
-            setColorOfShape(xRectangleShape, getColor());
-        }
-        setShapeProperties(xRectangleShape, "RectangleShape");
-    }
-
-    public void setItemProperties(XShape xRectangleShape, short level, int iSteps){
-        setMoveProtectOfShape(xRectangleShape);
-
-        setFontPropertiesOfShape(xRectangleShape);
-
-        if(m_IsGradients || m_IsPreDefinedGradients){
-            if(level != -1 && m_IsPreDefinedGradients)
-                setGradientsStylesColors(level, iSteps);
-            if(getGradientDirectionProps() == Diagram.VERTICAL)
-                setGradient(xRectangleShape);
-            else
-                setGradient(xRectangleShape, (short)900);
-        } else{
-            setColorOfShape(xRectangleShape, getColor());
-        }
-        setShapeProperties(xRectangleShape, "RectangleShape");
-    }
-   
-    public void setGradientColor(XShape xRectangleShape, short level, int iSteps){
+    public void setShapesGradientColor(XShape xRectangleShape, short level, int iSteps){
             if(level != -1)
-                setGradientsStylesColors(level, iSteps);
-            if(getGradientDirectionProps() == Diagram.VERTICAL)
+                setSchemesColors(level, iSteps);
+            if(getGradientDirectionProp() == Diagram.VERTICAL)
                 setGradient(xRectangleShape);
             else
                 setGradient(xRectangleShape, (short)900);
     }
     
-
-    public int getColor(){
-        int color = -1;
-        if(getGui() != null && getGui().getControlDialogWindow() != null)
-            color = getGui().getImageColorOfControlDialog();
-        if(color < 0)
-            color = m_iColor;
-        return color;
+    //public abstract void setConnectorShapeProps(XShape xConnectorShape, XShape xStartShape, Integer startIndex, XShape xEndShape, Integer endIndex);
+    public void setConnectorShapeProps(XShape xConnectorShape, XShape xStartShape, Integer startIndex, XShape xEndShape, Integer endIndex){
+        try {
+            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnectorShape);
+            xProps.setPropertyValue("StartShape", xStartShape);
+            xProps.setPropertyValue("EndShape", xEndShape);
+            xProps.setPropertyValue("StartGluePointIndex", startIndex);
+            xProps.setPropertyValue("EndGluePointIndex", endIndex);
+            xProps.setPropertyValue("LineColor", new Integer(getConnectorColorProp()));
+            setConnectorShapeLineProps(xConnectorShape);
+            if(isTextFitProp())
+                xProps.setPropertyValue("TextFitToSize", TextFitToSizeType.PROPORTIONAL);
+            else
+                xProps.setPropertyValue("TextFitToSize", TextFitToSizeType.NONE);
+        } catch (com.sun.star.beans.PropertyVetoException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
     }
 
-    public abstract void setConnectorShapeProps(XShape xConnectorShape, XShape xStartShape, Integer startIndex, XShape xEndShape, Integer endIndex);
+    //public abstract void setConnectorShapeProps(XShape xConnShape, Integer start, Integer end);
+    public void setConnectorShapeProps(XShape xConnectorShape, Integer startIndex, Integer endIndex){
+        try {
+            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnectorShape);
+            xProps.setPropertyValue("StartGluePointIndex", startIndex);
+            xProps.setPropertyValue("EndGluePointIndex", endIndex);
+            setConnectorShapeLineProps(xConnectorShape);
+        } catch (com.sun.star.beans.PropertyVetoException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
 
-    public abstract void setConnectorShapeProps(XShape xConnShape, Integer start, Integer end);
+    public void setConnectorShapeLineProps(XShape xConnectorShape){
+        try {
+            XPropertySet xProps = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xConnectorShape);
+            xProps.setPropertyValue("LineColor",new Integer(getConnectorColorProp()));
+            if(isShownConnectorsProp())
+                xProps.setPropertyValue("LineStyle", LineStyle.SOLID);
+            else
+                xProps.setPropertyValue("LineStyle", LineStyle.NONE);
+            if(getConnectorTypeProp() == Diagram.CONN_STANDARD)
+                xProps.setPropertyValue("EdgeKind", ConnectorType.STANDARD);
+            if(getConnectorTypeProp() == Diagram.CONN_LINE)
+                xProps.setPropertyValue("EdgeKind", ConnectorType.LINE);
+            if(getConnectorTypeProp() == Diagram.CONN_STRAIGHT)
+                xProps.setPropertyValue("EdgeKind", ConnectorType.LINES);
+            if(getConnectorTypeProp() == Diagram.CONN_CURVED)
+                xProps.setPropertyValue("EdgeKind", ConnectorType.CURVE);
+
+            if(isConnectorStartArrowProp())
+                xProps.setPropertyValue("LineStartName", "Arrow");
+            else
+                xProps.setPropertyValue("LineStartName", "");
+            if(isConnectorEndArrowProp())
+                xProps.setPropertyValue("LineEndName", "Arrow");
+            else
+                xProps.setPropertyValue("LineEndName", "");
+
+            xProps.setPropertyValue("LineWidth",new Integer(getConnectorsLineWidhtProp()));
+            int lineWidth = getConnectorsLineWidhtProp();
+            int arrowWidth = 400;
+            if(lineWidth == 200)
+                arrowWidth = 600;
+            else if(lineWidth >= 300)
+                arrowWidth = (int)(lineWidth * 2.5);
+            xProps.setPropertyValue("LineStartWidth",new Integer(arrowWidth));
+            xProps.setPropertyValue("LineEndWidth",new Integer(arrowWidth));
+        } catch (com.sun.star.beans.PropertyVetoException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
 
     public void clearEmptyDiagramAndReCreate(){
         try {

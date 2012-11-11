@@ -15,14 +15,17 @@ import com.sun.star.frame.XFrame;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.IndexOutOfBoundsException;
 import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.text.XText;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.UnoRuntime;
+import java.util.ArrayList;
 import oxygenoffice.extensions.smart.Controller;
-import oxygenoffice.extensions.smart.Gui;
-import oxygenoffice.extensions.smart.diagram.GradientDefinitions;
-import oxygenoffice.extensions.smart.diagram.relationdiagrams.Color;
-import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
+import oxygenoffice.extensions.smart.diagram.Color;
+import oxygenoffice.extensions.smart.diagram.Diagram;
+import oxygenoffice.extensions.smart.diagram.SchemeDefinitions;
 import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagram;
+import oxygenoffice.extensions.smart.diagram.relationdiagrams.RelationDiagramItem;
+import oxygenoffice.extensions.smart.gui.Gui;
 
 
 public class PyramidDiagram extends RelationDiagram {
@@ -34,33 +37,114 @@ public class PyramidDiagram extends RelationDiagram {
     public final static short   DEFAULT             = 0;
     public final static short   WITHOUT_OUTLINE     = 1;
     public final static short   WITH_SHADOW         = 2;
-    public final static short   BC_WITH_GRADIENTS   = 3;
-    // 4 - 15 Gradients from GradientDefinitions.java
-    public final static short   USER_DEFINE         = 16;
+    public final static short   BC_WITH_GRADIENTS   = 3;   
+    public final static short   GREEN_DARK      = 4;
+    public final static short   GREEN_BRIGHT    = 5;
+    public final static short   BLUE_DARK       = 6;
+    public final static short   BLUE_BRIGHT     = 7;
+    public final static short   PURPLE_DARK     = 8;
+    public final static short   PURPLE_BRIGHT   = 9;
+    public final static short   ORANGE_DARK     = 10;
+    public final static short   ORANGE_BRIGHT   = 11;
+    public final static short   YELLOW_DARK     = 12;
+    public final static short   YELLOW_BRIGHT   = 13;
+    public final static short   BLUE_SCHEME      = 14;
+    public final static short   AQUA_SCHEME      = 15;
+    public final static short   RED_SCHEME       = 16;
+    public final static short   FIRE_SCHEME      = 17;
+    public final static short   SUN_SCHEME       = 18;
+    public final static short   GREEN_SCHEME     = 19;
+    public final static short   OLIVE_SCHEME     = 20;
+    public final static short   PURPLE_SCHEME    = 21;
+    public final static short   PINK_SCHEME      = 22;
+    public final static short   INDIAN_SCHEME    = 23;
+    public final static short   MAROON_SCHEME    = 24;
+    public final static short   BROWN_SCHEME     = 25;
+    public final static short   USER_DEFINE         = 26;
 
-    private final static int    SHADOW_DIST         = 400;
-    private final static int    SHADOW_TRANSP       = 30;
+    public final static short   FIRST_COLORTHEME_STYLE_VALUE = 4;
+    public final static short   FIRST_COLORSCHEME_STYLE_VALUE = 14;
+    
     
 
     public PyramidDiagram(Controller controller, Gui gui, XFrame xFrame) {
         super(controller, gui, xFrame);
         m_iGroupWidth   = 5;
         m_iGroupHeight  = 4;
+        setDefaultProps();
+        setColorModeProp(Diagram.BASE_COLORS_MODE);
+    }
+    
+    @Override
+    public short getUserDefineStyleValue(){
+        return USER_DEFINE;
+    }
 
-        setSelectedAllShapesProps(true);
-        setModifyColorsProps(false);
-        setBaseColorsProps(true);
-        m_IsBaseColorsWithGradients = false;
-        m_IsPreDefinedGradients = false;
-        m_IsShadow = false;
-        m_IsOutline = true;
+    @Override
+    public boolean isColorSchemeStyle(short style){
+        return  style == BLUE_SCHEME || style == AQUA_SCHEME ||
+                style == RED_SCHEME || style == FIRE_SCHEME ||
+                style == SUN_SCHEME || style == GREEN_SCHEME ||
+                style == OLIVE_SCHEME || style == PURPLE_SCHEME ||
+                style == PINK_SCHEME || style == INDIAN_SCHEME ||
+                style == MAROON_SCHEME || style == BROWN_SCHEME;
+    }
 
-        m_IsAction = false;
+    @Override
+    public short getColorModeOfSchemeStyle(short style){
+        return (short)(style - FIRST_COLORSCHEME_STYLE_VALUE + Diagram.FIRST_COLORSCHEME_MODE_VALUE);
+    }
+    
+    @Override
+    public boolean isColorThemeStyle(short style){
+        return  style == GREEN_DARK || style == GREEN_BRIGHT ||
+                style == BLUE_DARK || style == BLUE_BRIGHT || 
+                style == PURPLE_DARK || style == PURPLE_BRIGHT ||
+                style == ORANGE_DARK || style == ORANGE_BRIGHT ||
+                style == YELLOW_DARK || style == YELLOW_BRIGHT;
+    }
+    
+    @Override
+    public short getColorModeOfThemeStyle(short style){
+        return (short)(style - FIRST_COLORTHEME_STYLE_VALUE + Diagram.FIRST_COLORTHEME_MODE_VALUE);
     }
     
     @Override
     public String getDiagramTypeName(){
         return "PyramidDiagram";
+    }
+    
+    @Override
+    public void initProperties(XShape xControlShape, ArrayList<RelationDiagramItem> items){
+        super.initProperties(xControlShape, items);
+        XPropertySet xProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, items.get(0).getMainShape());
+        try {
+            //if(getStyleProp() == VennDiagram.DEFAULT){ }
+            if(getStyleProp() == PyramidDiagram.WITHOUT_OUTLINE)
+                setOutlineProp(false);
+            if(getStyleProp() == PyramidDiagram.WITH_SHADOW)
+                setShadowProp(true);
+            //if(getStyleProp() == PyramidDiagram.BC_WITH_GRADIENTS){ }
+            if(getStyleProp() == PyramidDiagram.USER_DEFINE){
+                if(((LineStyle)xProps.getPropertyValue("LineStyle")).getValue() == LineStyle.NONE_value)
+                    setOutlineProp(false);
+                setShapesLineWidthProp(AnyConverter.toInt(xProps.getPropertyValue("LineWidth")));
+                            
+                if(AnyConverter.toBoolean(xProps.getPropertyValue("Shadow")))
+                    setShadowProp(true);
+            }
+
+            setFontPropertyValues();
+            XText xText = (XText)UnoRuntime.queryInterface(XText.class, items.get(0).getTextShape());
+            XPropertySet xTextProps = (XPropertySet)UnoRuntime.queryInterface( XPropertySet.class, xText.createTextCursor());
+            setTextColorProp(AnyConverter.toInt(xTextProps.getPropertyValue("CharColor")));
+        } catch (UnknownPropertyException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (com.sun.star.lang.IllegalArgumentException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        } catch (WrappedTargetException ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
     }
 
     @Override
@@ -79,15 +163,15 @@ public class PyramidDiagram extends RelationDiagram {
         Point b = new Point(m_PageProps.BorderLeft + m_DrawAreaWidth / 2 + m_iHalfDiff, m_PageProps.BorderTop);
         Point c = new Point(m_PageProps.BorderLeft + m_DrawAreaWidth + m_iHalfDiff, m_PageProps.BorderTop + m_DrawAreaHeight);
         setControlTriangleShape(xControlTriangle, a, b, c);
-        setControlShapeProps(xControlTriangle);
+        setControlShapeProps(getControlShape());
     }
     
     @Override
     public void setDrawArea(){
         try {
-            m_PageProps.BorderTop += (SHADOW_DIST / 2 + 100);
-            m_DrawAreaWidth -= ( 2 * SHADOW_DIST + 100);
-            m_DrawAreaHeight -= (SHADOW_DIST / 2 + 100);
+            m_PageProps.BorderTop += (SHADOW_DIST2 / 2 + 100);
+            m_DrawAreaWidth -= ( 2 * SHADOW_DIST2 + 100);
+            m_DrawAreaHeight -= (SHADOW_DIST2 / 2 + 100);
 
             int orignGSWidth = m_DrawAreaWidth;
             if ((m_DrawAreaWidth / m_iGroupWidth) <= (m_DrawAreaHeight / m_iGroupHeight)) {
@@ -100,7 +184,7 @@ public class PyramidDiagram extends RelationDiagram {
             m_iHalfDiff = 0;
             if (orignGSWidth > m_DrawAreaWidth)
                 m_iHalfDiff = (orignGSWidth - m_DrawAreaWidth) / 2;
-            m_iHalfDiff += SHADOW_DIST;
+            m_iHalfDiff += SHADOW_DIST2;
             m_xGroupShape.setPosition(new Point(m_PageProps.BorderLeft + m_iHalfDiff, m_PageProps.BorderTop));
         } catch (PropertyVetoException ex) {
             System.err.println(ex.getLocalizedMessage());
@@ -145,11 +229,10 @@ public class PyramidDiagram extends RelationDiagram {
         if(selectedShapeID == -1 ){
             super.createDiagram();
             createDiagram(1);
-            getGui().setColorModeOfImageOfControlDialog();
         }else{
             createItem(selectedShapeID + 1);
-            if(isBaseColorsProps() && getGui() != null && getGui().getControlDialogWindow() != null)
-                getGui().setImageColorOfControlDialog(aCOLORS[ (selectedShapeID + 1) % 8] );
+            if(isBaseColorsMode() || isBaseColorsWithGradientMode())
+                setColorProp(_aBaseColors[(selectedShapeID + 1) % 8]);
         }
     }
 
@@ -165,27 +248,15 @@ public class PyramidDiagram extends RelationDiagram {
         item.setText(str);
         item.setShapesProps();
         item.setColor(oColor);
+        item.setLineColor();
         getController().setSelectedShape(xTrapezeShape);
         return item;
     }
 
     @Override
-    public RelationDiagramItem createItem(int shapeID, String str, int color) {
+    public RelationDiagramItem createItem(int shapeID, String str) {
         XShape xTrapezeShape = createShape("PolyPolygonShape", shapeID);
         m_xShapes.add(xTrapezeShape);
-        if(m_IsBaseColorsWithGradients || m_IsPreDefinedGradients){
-            if(m_IsBaseColorsWithGradients){
-                setColorsOfGradients(color);
-                setGradient(xTrapezeShape, GradientStyle.RECT, (short)0, (short)0, (short)50, (short)50, (short)100, (short)75);
-            }
-            if(m_IsPreDefinedGradients){
-                if(shapeID > 0)
-                    setGradientsStyleColors(shapeID);
-                setGradient(xTrapezeShape);
-            }
-        }else{
-            setColorOfShape(xTrapezeShape, color);
-        }
         setMoveProtectOfShape(xTrapezeShape);
 
         PyramidDiagramItem item = new PyramidDiagramItem(this, shapeID, xTrapezeShape);
@@ -197,11 +268,13 @@ public class PyramidDiagram extends RelationDiagram {
             item.setDefaultText();
         else
             item.setText(str);
-        item.setShapesProps();
+        item.setShapesProps(true);
+        setTextColorOfShape(item.getTextShape());
         getController().setSelectedShape(xTrapezeShape);
+
         return item;
     }
-
+ 
     @Override
     public void initDiagram(){
         super.initDiagram();
@@ -211,16 +284,21 @@ public class PyramidDiagram extends RelationDiagram {
             XShape xCurrShape;
             String currShapeName = "";
             int currShapeID;
-
-            for( int i=0; i < m_xShapes.getCount(); i++ ){
+            for(int i = 0; i < m_xShapes.getCount(); i++ ){
                 xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(i));
                 currShapeName = getShapeName(xCurrShape);
-                if (currShapeName.contains("PolyPolygonShape")) {
-                    if(currShapeName.endsWith("PolyPolygonShape0")){
-                        m_xControlShape = xCurrShape;
-                    }else{
+                if(currShapeName.endsWith("PolyPolygonShape0"))
+                    m_xControlShape = xCurrShape;
+            }
+            int topShapeID = getTopShapeID();
+            for(int i = 1; i <= topShapeID; i++ ){
+                for(int j = 0; j < m_xShapes.getCount(); j++ ){
+                    xCurrShape = (XShape) UnoRuntime.queryInterface(XShape.class, m_xShapes.getByIndex(j));
+                    currShapeName = getShapeName(xCurrShape);
+                    if (currShapeName.contains("PolyPolygonShape")) {
                         currShapeID = getController().getShapeID(currShapeName);
-                        addItem(new PyramidDiagramItem(this, currShapeID, xCurrShape));
+                        if(currShapeID == i)
+                            addItem(new PyramidDiagramItem(this, currShapeID, xCurrShape));
                     }
                 }
             }
@@ -229,7 +307,7 @@ public class PyramidDiagram extends RelationDiagram {
         } catch (WrappedTargetException ex) {
             System.err.println(ex.getLocalizedMessage());
         }
-        setControlShapeProps(getControlShape());
+        setControlShapePropsWithoutTextProps(getControlShape());
     }
 
     @Override
@@ -243,7 +321,7 @@ public class PyramidDiagram extends RelationDiagram {
 
         for(RelationDiagramItem item : items){
             ((PyramidDiagramItem)item).setPosition(numOfItems, controlShapeSize, controlShapePos);
-            if(isPreDefinedGradientsProps() && m_Style != USER_DEFINE)
+            if(isColorSchemeMode())
                 setGradientColor(item.getMainShape());
         }
     }
@@ -251,13 +329,14 @@ public class PyramidDiagram extends RelationDiagram {
     public void setGradientColor(XShape xShape){
         int shapeID = getController().getShapeID(getShapeName(xShape));
         if(shapeID > 0){
-            setGradientsStyleColors(shapeID);
+            setSchemesAndBCGColors(shapeID);
             setGradient(xShape);
         }
     }
 
+    @Override
     public XShape getControlShape(){
-        if(m_xControlShape == null){
+        if(m_xControlShape == null && m_xShapes != null){
             XShape xCurrShape = null;
             String currShapeName = "";
             try {
@@ -331,13 +410,13 @@ public class PyramidDiagram extends RelationDiagram {
                     decreaseItemsIDs(selectedShapeID);
                 }else{
                     xNextSelectedShape = getControlShape();
-                    if(isBaseColorsProps() && getGui() != null && getGui().isVisibleControlDialog())
-                        getGui().setImageColorOfControlDialog(aCOLORS[0]);
                     selectedItem.removeItem();
                 }
 
                 if(xNextSelectedShape != null)
                     getController().setSelectedShape(xNextSelectedShape);
+                if(isBaseColorsMode() || isBaseColorsWithGradientMode())
+                    setColorProp(getNextColor());
             }
         }
     }
@@ -385,145 +464,99 @@ public class PyramidDiagram extends RelationDiagram {
         }
     }
 
-    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, boolean isBaseColors, boolean isBaseColorsWithGradients, boolean isPreDefinedGradients, boolean isOutline, boolean isShadow){
-        setSelectedAllShapesProps(isSelectAllShape);
-        setModifyColorsProps(isModifyColors);
-        setBaseColorsProps(isBaseColors);
-        setBaseColorsWithGradientsProps(isBaseColorsWithGradients);
-        setPreDefinedGradientsProps(isPreDefinedGradients);
-        setOutlineProps(isOutline);
-        setShadowProps(isShadow);
-        getGui().setColorModeOfImageOfControlDialog();
+    public void setPropertiesValues(boolean isSelectAllShape, boolean isModifyColors, short sColorMode, boolean isOutline, int lineWidth, boolean isShadow){
+        setSelectedAllShapesProp(isSelectAllShape);
+        setModifyColorsProp(isModifyColors);
+        setColorModeProp(sColorMode);
+        setOutlineProp(isOutline);
+        setShapesLineWidthProp(lineWidth);
+        setShadowProp(isShadow);
     }
 
     @Override
-    public void refreshShapeProperties(){
-        // need to memorize members, if user would exit into propsDialog
-        boolean isSelectAllShape = isSelectedAllShapesProps();
-        boolean isModifyColors = isModifyColorsProps();
-        boolean isBaseColors = isBaseColorsProps();
-        boolean isBaseColorsWithGradients = m_IsBaseColorsWithGradients;
-        boolean isPreDefinedGradients = m_IsPreDefinedGradients;
-        boolean isShadow =  m_IsShadow;
-        boolean isOutline = m_IsOutline;
-
-        m_IsAction = false;
-
-        getGui().executePropertiesDialog();
-
-        if(m_IsAction){
-            if( m_Style == DEFAULT ){
-                setPropertiesValues(true, true, true, false, false, true, false);
-                getGui().setImageColorOfControlDialog(getNextColor());
-            }
-            if( m_Style == WITHOUT_OUTLINE){
-                setPropertiesValues(true, true, true, false, false, false, false);
-                getGui().setImageColorOfControlDialog(getNextColor());
-            }
-            if( m_Style == WITH_SHADOW){
-                setPropertiesValues(true, true, true, false, false, true, true);
-                getGui().setImageColorOfControlDialog(getNextColor());
-            }
-            if( m_Style == BC_WITH_GRADIENTS){
-                setPropertiesValues(true, true, true, true, false, true, false);
-                getGui().setImageColorOfControlDialog(getNextColor());
-            }
-            if(GradientDefinitions.isPreDefinedGradient(m_Style))
-                setPropertiesValues(true, true, false, false, true, true, false);
-            if(m_Style == USER_DEFINE){
-                setModifyColorsProps(getGui().isModifyColorsPropsInDiagramPropsDialog());
-                if(isModifyColorsProps()){
-                    setBaseColorsWithGradientsProps(false);
-                    setPreDefinedGradientsProps(false);
-                    setBaseColorsProps(getGui().isBaseColorsPropsInDiagramPropsDialog());
-                    if(isBaseColorsProps()){
-                        getGui().setImageColorOfControlDialog(getNextColor());
-                    }else{
-                        setColorProps(getGui().getImageColorOfControl(getGui().m_xColorImageControlOfPD));
-                        getGui().setImageColorOfControlDialog(m_iColor);
-                    }
-                    getGui().setColorModeOfImageOfControlDialog();
-                }
-            }
-
-            if(isSelectedAllShapesProps()){
+    public void showPropertyDialog(){
+        getGui().enableControlDialogWindow(false);
+        short exec = getGui().executePropertiesDialog();
+        if(exec == 1){  
+            getGui().setPropertiesOfPyramidDiagram();
+            if(isSelectedAllShapesProp()){
                 setAllShapeProperties();
-            } else{
+                setModifyColorsProp(false);
+            } else {
                 setSelectedShapesProperties();
-                setAllShapeFontMeausereProperties();
+                setModifyColorsProp(false);
+                setAllShapeProperties();
             }
-
-            setModifyColorsProps(false);
+            
+            getController().getDiagram().refreshDiagram();
+        } 
+        getGui().enableAndSetFocusControlDialog();
+    }
+    
+    public void setColorSettingsOfShape(XShape xShape){
+        if(isColorSchemeMode() || isBaseColorsWithGradientMode()){
+            int shapeID = getController().getShapeID(getShapeName(xShape));
+            if(isBaseColorsWithGradientMode()){
+                if(shapeID > 0)
+                    setSchemesAndBCGColors(shapeID);
+                setGradient(xShape, GradientStyle.RECT, (short)0, (short)0, (short)50, (short)50, (short)100, (short)75);
+            }
+            if(isColorSchemeMode()){
+                if(shapeID > 0)
+                    setSchemesAndBCGColors(shapeID);
+                setGradient(xShape);
+            }
+            setLineColorProp(getDefaultLineColor());
         }else{
-            setSelectedAllShapesProps(isSelectAllShape);
-            setModifyColorsProps(isModifyColors);
-            setBaseColorsProps(isBaseColors);
-            m_IsBaseColorsWithGradients = isBaseColorsWithGradients;
-            m_IsPreDefinedGradients = isPreDefinedGradients;
-            m_IsShadow = isShadow;
-            m_IsOutline = isOutline;
+            if(isSimpleColorMode())
+                setLineColorProp(getDefaultLineColor());    
+            if(isBaseColorsMode())
+                setLineColorProp(getDefaultLineColor());
+            if(isColorThemeMode())
+                setColorThemeColors();
+
+            setColorOfShape(xShape);
         }
-        m_IsAction = false;
+        setLineColorOfShape(xShape);
     }
 
     @Override
     public void setShapeProperties(XShape xShape, String type) {
+        setFontPropertiesOfShape(xShape);
         XPropertySet xProp = null;
         try {
             xProp = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, xShape);
-
-            if(isModifyColorsProps()){
-                int color = -1;
-                int shapeID = getController().getShapeID(getShapeName(xShape));
-                if(m_IsBaseColorsWithGradients || m_IsPreDefinedGradients){
-                    if(m_IsBaseColorsWithGradients){
-                        if(shapeID > 0)
-                            setGradientsStyleColors(shapeID);
-                        setGradient(xShape, GradientStyle.RECT, (short)0, (short)0, (short)50, (short)50, (short)100, (short)75);
-                    }
-                    if(m_IsPreDefinedGradients){
-                        if(shapeID > 0)
-                            setGradientsStyleColors(shapeID);
-                        setGradient(xShape);
-                    }
+            if(type.equals("BaseShape"))
+                if(!isTextFitProp())
+                    xProp.setPropertyValue("CharHeight", new Float(40.0));
+            
+            if(!type.equals("BaseShape")) {
+                if(isModifyColorsProp())
+                    setColorSettingsOfShape(xShape);
+                if(m_IsShadow){
+                    xProp.setPropertyValue("Shadow", new Boolean(true));
+                    xProp.setPropertyValue("ShadowXDistance", new Integer(SHADOW_DIST2));
+                    xProp.setPropertyValue("ShadowYDistance", new Integer(-SHADOW_DIST2/2));
+                    xProp.setPropertyValue("ShadowTransparence", new Integer(SHADOW_TRANSP));
+                    int shadowColor = -1;
+                    if(((FillStyle)xProp.getPropertyValue("FillStyle")) == FillStyle.SOLID)
+                        shadowColor = AnyConverter.toInt(xProp.getPropertyValue("FillColor"));
+                    else
+                        shadowColor = ((Gradient)xProp.getPropertyValue("FillGradient")).EndColor;
+                    if(shadowColor == -1)
+                        shadowColor = 8421504;
+                    xProp.setPropertyValue("ShadowColor", new Integer(shadowColor));
                 }else{
-                    if(isBaseColorsProps()){
-                        color = aCOLORS[(shapeID - 1) % 8];
-                    }else{
-                        if(getGui() != null && getGui().getControlDialogWindow() != null)
-                            color = getGui().getImageColorOfControlDialog();
-                        if(color == -1)
-                            color = m_iColor;
-                    }
-                    xProp.setPropertyValue("FillStyle", FillStyle.SOLID);
-                    xProp.setPropertyValue("FillColor", new Integer(color));
+                    xProp.setPropertyValue("Shadow", new Boolean(false));
+                }
+                
+                if(m_IsOutline){
+                    xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
+                    xProp.setPropertyValue("LineWidth", new Integer(getShapesLineWidhtProp()));
+                } else {
+                    xProp.setPropertyValue("LineStyle", LineStyle.NONE);
                 }
             }
-
-            if(m_IsShadow){
-                xProp.setPropertyValue("Shadow", new Boolean(true));
-                xProp.setPropertyValue("ShadowXDistance", new Integer(SHADOW_DIST));
-                xProp.setPropertyValue("ShadowYDistance", new Integer(-SHADOW_DIST/2));
-                xProp.setPropertyValue("ShadowTransparence", new Integer(SHADOW_TRANSP));
-                int shadowColor = -1;
-                if(((FillStyle)xProp.getPropertyValue("FillStyle")) == FillStyle.SOLID)
-                    shadowColor = AnyConverter.toInt(xProp.getPropertyValue("FillColor"));
-                else
-                    shadowColor = ((Gradient)xProp.getPropertyValue("FillGradient")).EndColor;
-                if(shadowColor == -1)
-                    shadowColor = 8421504;
-                xProp.setPropertyValue("ShadowColor", new Integer(shadowColor));
-            }else{
-                xProp.setPropertyValue("Shadow", new Boolean(false));
-            }
-
-            if(m_IsOutline)
-                xProp.setPropertyValue("LineStyle", LineStyle.SOLID);
-            else
-                xProp.setPropertyValue("LineStyle", LineStyle.NONE);
-  
-            setFontPropertiesOfShape(xShape);
-            
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getLocalizedMessage());
         } catch (UnknownPropertyException ex) {
@@ -537,26 +570,26 @@ public class PyramidDiagram extends RelationDiagram {
 
     public void setColorsOfGradients(int color){
         if (color != -1) {
-            setStartColorProps(color);
-            setEndColorProps(color);
+            setStartColorProp(color);
+            setEndColorProp(color);
         }
     }
 
-    public void setGradientsStyleColors(int shapeID){
+    public void setSchemesAndBCGColors(int shapeID){
         --shapeID;
-        if(m_IsBaseColorsWithGradients){
+        if(getColorModeProp() == Diagram.BASE_COLORS_WITH_GRADIENT_MODE){
             int color = -1;
-            color = aCOLORS[shapeID % 8];
+            color = _aBaseColors[shapeID % 8];
             if (color != -1) {
-                setStartColorProps(color);
-                setEndColorProps(color);
+                setStartColorProp(color);
+                setEndColorProp(color);
             }
         }
-        if(m_IsPreDefinedGradients){
+        if(isColorSchemeMode()){
+            int colorCode = getColorModeProp() - Diagram.FIRST_COLORSCHEME_MODE_VALUE;
             int topShapeID = getTopShapeID();
-            setStartColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, shapeID, topShapeID));
-            setEndColorProps(GradientDefinitions.getPreDefinedGradient(m_Style, shapeID + 1, topShapeID));
+            setStartColorProp(SchemeDefinitions.getGradientColor(colorCode, shapeID, topShapeID));
+            setEndColorProp(SchemeDefinitions.getGradientColor(colorCode, shapeID + 1, topShapeID));
         }
     }
-
 }

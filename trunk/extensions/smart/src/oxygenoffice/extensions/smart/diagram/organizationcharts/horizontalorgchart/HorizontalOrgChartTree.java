@@ -13,6 +13,14 @@ public class HorizontalOrgChartTree extends OrganizationChartTree{
         super(hOrganigram);
     }
 
+    HorizontalOrgChartTree(HorizontalOrgChart sOrganigram, XShape xControlShape, XShape xRootItemShape) {
+        super(sOrganigram);
+        setControlShape(xControlShape);
+        HorizontalOrgChartTreeItem.initStaticMembers();
+        addToRectangles(xRootItemShape);
+        m_RootItem = new HorizontalOrgChartTreeItem(this, xRootItemShape, null, (short)0, 0.0);
+    }
+
     HorizontalOrgChartTree(HorizontalOrgChart hOrganigram, OrganizationChartTree diagramTree) {
         super(hOrganigram, diagramTree);
         HorizontalOrgChartTreeItem.initStaticMembers();
@@ -35,9 +43,8 @@ public class HorizontalOrgChartTree extends OrganizationChartTree{
         m_RootItem.setLevel((short)0);
         m_RootItem.setPos(0.0);
         m_RootItem.setPositionsOfItems();
-        m_RootItem.setProps();
+        m_RootItem.setMeasureProps();
         m_RootItem.display();
-        setGradientColorProps();
     }
 
     @Override

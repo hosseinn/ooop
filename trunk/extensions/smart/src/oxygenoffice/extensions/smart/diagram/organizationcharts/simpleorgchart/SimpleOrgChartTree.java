@@ -12,6 +12,14 @@ public class SimpleOrgChartTree extends OrganizationChartTree{
         super(sOrganigram);
     }
 
+    SimpleOrgChartTree(SimpleOrgChart sOrganigram, XShape xControlShape, XShape xRootItemShape) {
+        super(sOrganigram);
+        setControlShape(xControlShape);
+        SimpleOrgChartTreeItem.initStaticMembers();
+        addToRectangles(xRootItemShape);
+        m_RootItem = new SimpleOrgChartTreeItem(this, xRootItemShape, null, (short)0, 0.0);
+    }
+
     SimpleOrgChartTree(SimpleOrgChart sOrganigram, OrganizationChartTree diagramTree) {
         super(sOrganigram, diagramTree);
         SimpleOrgChartTreeItem.initStaticMembers();
@@ -79,9 +87,8 @@ public class SimpleOrgChartTree extends OrganizationChartTree{
         m_RootItem.setLevel((short)0);
         m_RootItem.setPos(0.0);
         m_RootItem.setPositionsOfItems();
-        m_RootItem.setProps();
+        m_RootItem.setMeasureProps();
         m_RootItem.display();
-        setGradientColorProps();
     }
 
     @Override

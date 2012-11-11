@@ -1,6 +1,6 @@
-Extensão SmART 
+Extensão SmART Gallery 
 
-A Extensão SmART foi licenciado sob termo de GNU Lesser General Public License (LGPL). Podes ler e entender a licença LGPL aqui:
+A Extensão SmART Gallery foi licenciado sob termo de GNU Lesser General Public License (LGPL). Podes ler e entender a licença LGPL aqui:
 http://www.gnu.org/licenses/lgpl.html
 
 Esta extensão é criada por:

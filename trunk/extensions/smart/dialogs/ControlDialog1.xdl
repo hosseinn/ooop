@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="ControlDialog1" dlg:left="100" dlg:top="250" dlg:width="224" dlg:height="39" dlg:help-text="&amp;2884.ControlDialog1.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;2885.ControlDialog1.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="ControlDialog1" dlg:left="100" dlg:top="250" dlg:width="150" dlg:height="31" dlg:help-text="&amp;7575.ControlDialog1.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;7576.ControlDialog1.Title">
  <dlg:styles>
   <dlg:style dlg:style-id="0" dlg:background-color="0xff00"/>
+  <dlg:style dlg:style-id="1" dlg:font-height="9"/>
  </dlg:styles>
  <dlg:bulletinboard>
-  <dlg:img dlg:style-id="0" dlg:id="ImageControl" dlg:tab-index="7" dlg:left="1" dlg:top="2" dlg:width="15" dlg:height="12" dlg:help-text="&amp;2886.ControlDialog1.ImageControl.HelpText" dlg:tabstop="true">
+  <dlg:img dlg:style-id="0" dlg:id="ImageControl" dlg:tab-index="9" dlg:left="1" dlg:top="2" dlg:width="15" dlg:height="12" dlg:help-text="&amp;7577.ControlDialog1.ImageControl.HelpText" dlg:tabstop="true">
    <script:event script:event-name="on-mousedown" script:macro-name="vnd.sun.star.UNO:showColorTable3" script:language="UNO"/>
   </dlg:img>
-  <dlg:text dlg:id="Text" dlg:tab-index="14" dlg:disabled="true" dlg:left="33" dlg:top="-12" dlg:width="40" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;2887.ControlDialog1.Text.HelpText" dlg:value="&amp;2888.ControlDialog1.Text.Label"/>
-  <dlg:button dlg:id="addShapeButton" dlg:tab-index="8" dlg:left="18" dlg:top="1" dlg:width="65" dlg:height="14" dlg:help-text="&amp;2889.ControlDialog1.addShapeButton.HelpText" dlg:value="&amp;2890.ControlDialog1.addShapeButton.Label">
+  <dlg:text dlg:id="Text" dlg:tab-index="0" dlg:disabled="true" dlg:left="24" dlg:top="-9" dlg:width="40" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7578.ControlDialog1.Text.HelpText" dlg:value="&amp;7579.ControlDialog1.Text.Label" dlg:tabstop="false"/>
+  <dlg:button dlg:id="addShapeButton" dlg:tab-index="10" dlg:left="18" dlg:top="1" dlg:width="65" dlg:height="14" dlg:help-text="&amp;7580.ControlDialog1.addShapeButton.HelpText" dlg:value="&amp;7581.ControlDialog1.addShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:addShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="removeShapeButton" dlg:tab-index="9" dlg:left="84" dlg:top="1" dlg:width="65" dlg:height="14" dlg:help-text="&amp;2891.ControlDialog1.removeShapeButton.HelpText" dlg:value="&amp;2892.ControlDialog1.removeShapeButton.Label">
+  <dlg:button dlg:id="removeShapeButton" dlg:tab-index="11" dlg:left="84" dlg:top="1" dlg:width="65" dlg:height="14" dlg:help-text="&amp;7582.ControlDialog1.removeShapeButton.HelpText" dlg:value="&amp;7583.ControlDialog1.removeShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:removeShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="2" dlg:left="124" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;2893.ControlDialog1.previousShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;2894.ControlDialog1.previousShapeButton.Label">
+  <dlg:button dlg:id="previousShapeButton" dlg:tab-index="3" dlg:left="89" dlg:top="-9" dlg:width="10" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7584.ControlDialog1.previousShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7585.ControlDialog1.previousShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:previous" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="allShapeButton" dlg:tab-index="0" dlg:left="94" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;2895.ControlDialog1.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;2896.ControlDialog1.allShapeButton.Label">
+  <dlg:button dlg:id="allShapeButton" dlg:tab-index="1" dlg:left="69" dlg:top="-9" dlg:width="10" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7586.ControlDialog1.allShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7587.ControlDialog1.allShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:allShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="1" dlg:left="109" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;2897.ControlDialog1.firstShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;2898.ControlDialog1.firstShapeButton.Label">
+  <dlg:button dlg:id="firstShapeButton" dlg:tab-index="2" dlg:left="79" dlg:top="-9" dlg:width="10" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7588.ControlDialog1.firstShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7589.ControlDialog1.firstShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:first" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="3" dlg:left="139" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;2899.ControlDialog1.nextShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;2900.ControlDialog1.nextShapeButton.Label">
+  <dlg:button dlg:id="nextShapeButton" dlg:tab-index="4" dlg:left="99" dlg:top="-9" dlg:width="10" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7590.ControlDialog1.nextShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7591.ControlDialog1.nextShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:next" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="editButton" dlg:tab-index="6" dlg:left="184" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;2901.ControlDialog1.editButton.HelpText" dlg:tabstop="false" dlg:value="&amp;2902.ControlDialog1.editButton.Label">
+  <dlg:button dlg:id="editButton" dlg:tab-index="7" dlg:left="129" dlg:top="-9" dlg:width="10" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7592.ControlDialog1.editButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7593.ControlDialog1.editButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:edit" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="mainShapeButton" dlg:tab-index="4" dlg:left="154" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;2903.ControlDialog1.mainShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;2904.ControlDialog1.mainShapeButton.Label">
+  <dlg:button dlg:id="mainShapeButton" dlg:tab-index="5" dlg:left="109" dlg:top="-9" dlg:width="10" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7594.ControlDialog1.mainShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7595.ControlDialog1.mainShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:mainShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="textShapeButton" dlg:tab-index="5" dlg:left="169" dlg:top="-11" dlg:width="15" dlg:height="10" dlg:printable="false" dlg:help-text="&amp;2905.ControlDialog1.textShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;2906.ControlDialog1.textShapeButton.Label">
+  <dlg:button dlg:id="textShapeButton" dlg:tab-index="6" dlg:left="119" dlg:top="-9" dlg:width="10" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7596.ControlDialog1.textShapeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7597.ControlDialog1.textShapeButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:textShape" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="convertButton" dlg:tab-index="10" dlg:left="150" dlg:top="1" dlg:width="14" dlg:height="14" dlg:help-text="&amp;2907.ControlDialog1.convertButton.HelpText" dlg:value="&amp;2908.ControlDialog1.convertButton.Label">
+  <dlg:button dlg:id="convertButton" dlg:tab-index="13" dlg:left="69" dlg:top="16" dlg:width="14" dlg:height="14" dlg:help-text="&amp;7598.ControlDialog1.convertButton.HelpText" dlg:value="&amp;7599.ControlDialog1.convertButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:convert" script:language="UNO"/>
   </dlg:button>
-  <dlg:button dlg:id="downUpButton" dlg:tab-index="12" dlg:left="214" dlg:top="1" dlg:width="9" dlg:height="14" dlg:help-text="&amp;2909.ControlDialog1.downUpButton.HelpText" dlg:value="&amp;2910.ControlDialog1.downUpButton.Label">
-   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:downUpAction" script:language="UNO"/>
-  </dlg:button>
-  <dlg:button dlg:id="propertiesButton" dlg:tab-index="11" dlg:left="165" dlg:top="1" dlg:width="48" dlg:height="14" dlg:printable="false" dlg:help-text="&amp;2913.ControlDialog1.propertiesButton.HelpText" dlg:tabstop="true" dlg:value="&amp;2914.ControlDialog1.propertiesButton.Label">
+  <dlg:button dlg:id="propertiesButton" dlg:tab-index="14" dlg:left="84" dlg:top="16" dlg:width="50" dlg:height="14" dlg:printable="false" dlg:help-text="&amp;7602.ControlDialog1.propertiesButton.HelpText" dlg:tabstop="true" dlg:value="&amp;7603.ControlDialog1.propertiesButton.Label">
    <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:setProperties" script:language="UNO"/>
   </dlg:button>
-  <dlg:textfield dlg:id="textField" dlg:tab-index="13" dlg:left="1" dlg:top="16" dlg:width="222" dlg:height="22" dlg:help-text="&amp;2915.ControlDialog1.textField.HelpText" dlg:vscroll="true" dlg:multiline="true" dlg:value="&amp;2916.ControlDialog1.textField.Text">
+  <dlg:textfield dlg:style-id="1" dlg:id="textField" dlg:tab-index="12" dlg:left="1" dlg:top="16" dlg:width="67" dlg:height="14" dlg:help-text="&amp;7604.ControlDialog1.textField.HelpText" dlg:multiline="true" dlg:value="&amp;7605.ControlDialog1.textField.Text">
    <script:event script:event-name="on-textchange" script:macro-name="vnd.sun.star.UNO:textFieldModified" script:language="UNO"/>
   </dlg:textfield>
+  <dlg:button dlg:id="sizeButton" dlg:tab-index="8" dlg:left="139" dlg:top="-9" dlg:width="10" dlg:height="8" dlg:printable="false" dlg:help-text="&amp;7606.ControlDialog1.sizeButton.HelpText" dlg:tabstop="false" dlg:value="&amp;7607.ControlDialog1.sizeButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:size" script:language="UNO"/>
+  </dlg:button>
+  <dlg:button dlg:id="exportButton" dlg:tab-index="15" dlg:left="135" dlg:top="16" dlg:width="14" dlg:height="14" dlg:help-text="&amp;7620.ControlDialog1.exportButton.HelpText" dlg:value="&amp;7621.ControlDialog1.exportButton.Label">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.UNO:export" script:language="UNO"/>
+  </dlg:button>
  </dlg:bulletinboard>
 </dlg:window>
